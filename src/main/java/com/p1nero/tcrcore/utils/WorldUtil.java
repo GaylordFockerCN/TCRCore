@@ -42,7 +42,7 @@ public class WorldUtil {
     private static final Pattern LOCATE_PATTERN = Pattern.compile(".*?\\[\\s*(-?\\d+)\\s*,\\s*~\\s*,\\s*(-?\\d+)\\s*\\].*");
 
     public static boolean inMainLand(Entity entity) {
-        return entity.level().dimension() == Level.OVERWORLD && entity.position().subtract(CENTER_POS).horizontalDistance() < 150;
+        return entity.level().dimension() == Level.OVERWORLD && entity.position().subtract(CENTER_POS).horizontalDistance() < 250;
     }
 
     public static boolean isInStructure(LivingEntity entity, String structure) {
