@@ -94,7 +94,11 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: [""]
+			description: [
+				"{ftbquests.chapter.chaptertcr2.quest970201556921326311.description1}"
+				""
+				"{ftbquests.chapter.chaptertcr2.quest970201556921326311.description2}"
+			]
 			icon: "cataclysm:soul_render"
 			id: "0D76D92CF8D39AE7"
 			rewards: [{
@@ -119,6 +123,7 @@
 			description: [
 				""
 				""
+				"{ftbquests.chapter.chaptertcr2.quest5465744286518435450.description1}"
 			]
 			icon: "efn:meen_spear"
 			icon_scale: 2.0d
@@ -189,6 +194,32 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			icon_scale: 2.0d
+			id: "78E45E3D95EA9899"
+			rewards: [{
+				id: "14970E6B6C7B9569"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "square"
+			subtitle: "{ftbquests.chapter.chaptertcr2.quest8711191197842577561.subtitle}"
+			tasks: [{
+				id: "44DE680769AA7A4B"
+				item: {
+					Count: 1
+					id: "aquamirae:poisoned_blade"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest4807562247735743917.description1}"]
 			id: "42B7E4648BDE15AD"
 			rewards: [{
 				id: "07195972494246F2"
@@ -208,8 +239,11 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			description: [
+				"{ftbquests.chapter.chaptertcr2.quest1352920048638303632.description1}"
 				""
+				"{ftbquests.chapter.chaptertcr2.quest1352920048638303632.description2}"
 				""
+				"{ftbquests.chapter.chaptertcr2.quest1352920048638303632.description3}"
 			]
 			id: "12C6899DBC971D90"
 			rewards: [{
@@ -405,7 +439,11 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: [""]
+			description: [
+				"{ftbquests.chapter.chaptertcr2.quest103322110141927354.description1}"
+				""
+				"{ftbquests.chapter.chaptertcr2.quest103322110141927354.description2}"
+			]
 			icon: "cataclysm:the_incinerator"
 			id: "016F12E968740FBA"
 			rewards: [{
@@ -427,7 +465,11 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: [""]
+			description: [
+				"{ftbquests.chapter.chaptertcr2.quest5283406340565177552.description1}"
+				""
+				"{ftbquests.chapter.chaptertcr2.quest5283406340565177552.description2}"
+			]
 			icon: "cataclysm:wrath_of_the_desert"
 			id: "49526E12F56F14D0"
 			rewards: [{
@@ -449,7 +491,11 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: [""]
+			description: [
+				"{ftbquests.chapter.chaptertcr2.quest4621109420579122097.description1}"
+				""
+				"{ftbquests.chapter.chaptertcr2.quest4621109420579122097.description2}"
+			]
 			icon: "cataclysm:ceraunus"
 			id: "40217A88C9D46BB1"
 			rewards: [{
@@ -471,6 +517,7 @@
 		}
 		{
 			dependencies: ["387C944EDD8FA25B"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest1696022313405171865.description1}"]
 			hide_dependency_lines: false
 			hide_dependent_lines: true
 			icon: "efn:ruinsgreatsword"
@@ -495,7 +542,9 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			description: [
+				"{ftbquests.chapter.chaptertcr2.quest8446857425516070955.description1}"
 				""
+				"{ftbquests.chapter.chaptertcr2.quest8446857425516070955.description2}"
 				""
 				"[\"\",{\"translate\":\"ftbquests.chapter.chaptertcr2.quest8446857425516070955.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.chaptertcr2.quest8446857425516070955.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"032062CBCDEC3C85\"}}]"
 			]
@@ -521,7 +570,9 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			description: [
+				"{ftbquests.chapter.chaptertcr2.quest3488621290210509115.description1}"
 				""
+				"{ftbquests.chapter.chaptertcr2.quest3488621290210509115.description2}"
 				""
 				"[\"\",{\"translate\":\"ftbquests.chapter.chaptertcr2.quest3488621290210509115.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.chaptertcr2.quest3488621290210509115.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"032062CBCDEC3C85\"}}]"
 			]
@@ -549,6 +600,7 @@
 			description: [
 				""
 				""
+				"{ftbquests.chapter.chaptertcr2.quest6948876923325267382.description1}"
 			]
 			icon: "efn:nf_dual_sword"
 			icon_scale: 2.0d
@@ -574,6 +626,7 @@
 			description: [
 				""
 				""
+				"{ftbquests.chapter.chaptertcr2.quest3746410661820674281.description1}"
 			]
 			icon_scale: 2.0d
 			id: "33FDECA5C88EB0E9"
@@ -610,8 +663,8 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			description: [
-				""
 				"{ftbquests.chapter.chaptertcr2.quest7097191615691279450.description1}"
+				""
 				""
 				""
 				"{ftbquests.chapter.chaptertcr2.quest7097191615691279450.description2}"
@@ -651,6 +704,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest6405878139389124747.description1}"]
 			icon: {
 				Count: 1
 				id: "monsterexpansion:horn_of_the_shattercry"
@@ -792,7 +846,10 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			dependency_requirement: "one_completed"
-			description: [""]
+			description: [
+				""
+				"{ftbquests.chapter.chaptertcr2.quest401042223978499222.description1}"
+			]
 			icon: {
 				Count: 1
 				id: "p1nero_bow:mortis"
@@ -827,14 +884,9 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			hide_dependency_lines: false
-			id: "5FC97CB3031CF731"
-			rewards: [{
-				id: "13C6D65A65F4F038"
-				type: "xp"
-				xp: 100
-			}]
+			id: "74AD9CC2957BE149"
 			tasks: [{
-				id: "4DA0E23790F658E7"
+				id: "0CA8BDBA2E7D3290"
 				item: {
 					Count: 1
 					id: "enchantinginfuser:enchanting_infuser"
@@ -848,16 +900,11 @@
 			y: -9.0d
 		}
 		{
-			dependencies: ["5FC97CB3031CF731"]
-			id: "1A4CFA80B91473DB"
-			rewards: [{
-				id: "57E8243450490B6D"
-				type: "xp"
-				xp: 100
-			}]
+			dependencies: ["74AD9CC2957BE149"]
+			id: "26D99F4F0A539E99"
 			shape: "rsquare"
 			tasks: [{
-				id: "3E07D204114B845F"
+				id: "2B318C7FF8A79104"
 				item: {
 					Count: 1
 					id: "enchantinginfuser:advanced_enchanting_infuser"
