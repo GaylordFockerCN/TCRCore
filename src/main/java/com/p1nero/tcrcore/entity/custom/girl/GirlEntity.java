@@ -177,7 +177,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 new ItemStack(EFNItem.MEEN_SPEAR.get(), 1),
                 142857, 0, 0.02f));
         offersWeapon.add(new MerchantOffer(
-                new ItemStack(ModItems.CURSIUM_INGOT.get(), 1),
+                new ItemStack(ModItems.CURSIUM_BLOCK.get(), 1),
                 new ItemStack(Items.DRAGON_EGG, 1),
                 new ItemStack(EFNItem.YAMATO_DMC_IN_SHEATH.get(), 1),
                 142857, 0, 0.02f));

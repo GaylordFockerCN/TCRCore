@@ -2,6 +2,7 @@ package com.p1nero.tcrcore;
 
 import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.github.L_Ender.cataclysm.init.ModItems;
+import com.google.common.collect.MoreCollectors;
 import com.hm.efn.registries.EFNItem;
 import com.mojang.logging.LogUtils;
 import com.p1nero.tcrcore.block.TCRBlocks;
@@ -16,6 +17,7 @@ import com.p1nero.tcrcore.item.TCRItemTabs;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
+import net.mcreator.morecritters.init.MoreCrittersModEntities;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -72,6 +74,9 @@ public class TCRCoreMod {
 //                isCheatMod = true;
 //            }
 //        });
+        if(WraithonConfig.ARACHNOPHOBIA_MODE.get()) {
+            LivingEntityEventListeners.illegalEntityTypes.add(MoreCrittersModEntities.SNOWFLAKE_SPIDER.get());
+        }
         LivingEntityEventListeners.illegalEntityTypes.addAll(List.of(
                 ModEntities.URCHINKIN.get(),
                 ModEntities.KOBOLETON.get(),

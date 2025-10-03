@@ -1,0 +1,37 @@
+Warning = ["All number values need to include decimals !", "Use 10.0 instead of 10"]
+
+["Boss Health"]
+	#Max Health : 1024.0 (Use mods like AttributeFix to use higher values)
+	"Sandworm Health" = 200.0
+	"Yeti Health" = 250.0
+	"Dragon Health" = 300.0
+	"Knight Health" = 300.0
+
+["Boss Armor"]
+	#Max Armor : 30
+	"Sandworm Armor" = 20.0
+	"Yeti Armor" = 5.0
+	"Dragon Armor" = 25.0
+	"Knight Armor" = 25.0
+
+["Base Boss Damages"]
+	#Not all damages sources depends on this variable !
+	"Sandworm Damage" = 10.0
+	"Yeti Damage" = 18.0
+	"Dragon Damage" = 15.0
+	"Knight Damage" = 30.0
+
+[Values]
+	#Change the speed of the recovery of the Roll ability
+	"Movement Recovery Factor" = 1.0
+
+["Gameplay Changes"]
+	#Can players use the Roll ability (act like a directional dash)
+	"Roll ability" = false
+	#Do players need to have an item providing Movement Recovery to use the Roll ability (Knight Armor piece, Enhanced Shield, etc)
+	"Need item to Roll" = false
+	#Will the Roll display a first-person Camera Roll (Can make some users feel dizzy)
+	"Roll First-Person Animation" = false
+	#Will boss use the advanced Bossbar textures (Advanced Bossbar may use a large proportion of the screen)
+	"Advanced Bossbar" = true
+

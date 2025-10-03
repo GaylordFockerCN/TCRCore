@@ -37,7 +37,7 @@ public abstract class CaptainCorneliaMixin extends Monster {
 
     @Redirect(method = "baseTick", at = @At(value = "INVOKE", target = "Lcom/obscuria/aquamirae/common/entities/CaptainCornelia;heal(F)V"))
     private void tcr$baseTick$heal(CaptainCornelia instance, float v) {
-        this.heal(0.2F);
+        this.heal(0.8F);
     }
 
     @Inject(method = "baseTick", at = @At("TAIL"))

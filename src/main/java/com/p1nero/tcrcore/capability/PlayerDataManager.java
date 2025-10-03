@@ -27,6 +27,7 @@ public class PlayerDataManager {
     public static BoolData dodged = new BoolData("dodged", false);
     public static BoolData parried = new BoolData("parried", false);
     public static BoolData locked = new BoolData("locked", false);
+    public static BoolData tutorial_passed = new BoolData("tutorial_passed", false);
     public static BoolData weapon_innate_used = new BoolData("weapon_innate_used", false);
     public static BoolData pillagerKilled = new BoolData("pillager_killed", false);//初始任务
     public static BoolData mapMarked = new BoolData("map_marked", false);//是否标记过地图了，省的二次搜索地图浪费

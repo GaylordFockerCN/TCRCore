@@ -132,7 +132,6 @@ public class LivingEntityEventListeners {
 
             if (entity instanceof Scylla_Entity) {
                 ItemUtil.addItemEntity(entity, ModItems.CERAUNUS.get(), 1, 0xfff66d);
-                event.setCanceled(true);
             }
 
             if (entity instanceof Ignis_Entity) {
@@ -143,7 +142,6 @@ public class LivingEntityEventListeners {
             }
             if (entity instanceof Maledictus_Entity) {
                 ItemUtil.addItemEntity(entity, ModItems.SOUL_RENDER.get(), 1, 0xfff66d);
-                event.setCanceled(true);
             }
             if (entity instanceof Ancient_Remnant_Entity) {
                 ItemUtil.addItemEntity(entity, ModItems.WRATH_OF_THE_DESERT.get(), 1, 0xfff66d);
@@ -155,7 +153,7 @@ public class LivingEntityEventListeners {
                 if(entity.getRandom().nextFloat() < 0.1F) {
                     ItemUtil.addItemEntity(entity, Items.DIAMOND, 1, 0xc000ff);
                 }
-                if(entity.getRandom().nextFloat() < 0.05F) {
+                if(entity.getRandom().nextFloat() < 0.01F) {
                     ItemUtil.addItemEntity(entity, Items.NETHERITE_INGOT, 1, 0xc000ff);
                 }
             } else if(entity instanceof Enemy) {

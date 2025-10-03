@@ -66,6 +66,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRBlocks.FLAME_ALTAR_BLOCK.get(), "Flame Altar");
         this.add(TCRBlocks.DESERT_ALTAR_BLOCK.get(), "Desert Altar");
 
+        this.addInfo("after_heal_stop_attack", "§6Stop attack to clear anger.");
+        this.addInfo("cloud_follow_me", "§6[Magic Cloud]: §fHi, follow me!");
         this.addInfo("dim_demending", "§6Rebuilding... Wait[%d§6]s");
         this.addInfo("to_be_continue", "[P1nero]: §6Thank you for playing! Congratulations on experiencing all the content of the beta version. To be continued!");
         this.addInfo("second_after_boss_die_left", "Returning to the Overworld in %d seconds");

@@ -262,25 +262,11 @@
 				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest4272713576519895019.rich_description3\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest4272713576519895019.rich_description4\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3CB062BCA9BD0FEC\"}}]"
 			]
 			id: "3B4BBA5C2B7507EB"
-			rewards: [
-				{
-					id: "6F3F90AF6A082B1E"
-					item: "cataclysm:music_disc_ancient_remnant"
-					type: "item"
-				}
-				{
-					count: 16
-					id: "7BA312860ED61B0A"
-					item: {
-						Count: 1
-						id: "cataclysm:koboleton_bone"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "6F3F90AF6A082B1E"
+				item: "cataclysm:music_disc_ancient_remnant"
+				type: "item"
+			}]
 			shape: "rsquare"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest4272713576519895019.subtitle}"
@@ -368,18 +354,6 @@
 					type: "item"
 				}
 				{
-					count: 2
-					id: "1CC3021BE8CC73A9"
-					item: {
-						Count: 1
-						id: "efn:deepdark_heart"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
 					id: "143DCC4EF2D22025"
 					item: {
 						Count: 1
@@ -422,16 +396,9 @@
 			]
 			id: "2BF1F71D59A76031"
 			rewards: [{
-				count: 8
-				id: "4C64C8986C35BE18"
-				item: {
-					Count: 1
-					id: "fromtheshadows:corrupted_heart"
-					tag: {
-						fdbosses: { }
-					}
-				}
-				type: "item"
+				id: "3AEF6D477D1694ED"
+				type: "xp"
+				xp: 100
 			}]
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.subtitle}"
 			tasks: [{
@@ -456,83 +423,26 @@
 			]
 			icon: "monsterexpansion:skrythe_frill"
 			id: "2C89A1EDBADA8DB5"
-			rewards: [
-				{
-					id: "4D69F6191A356F5C"
-					item: {
-						Count: 1
-						id: "tcrcore:artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
+			rewards: [{
+				id: "4D69F6191A356F5C"
+				item: {
+					Count: 1
+					id: "tcrcore:artifact_ticket"
+					tag: {
+						fdbosses: { }
 					}
-					type: "item"
 				}
-				{
-					id: "52CFB2F5F150D4AB"
-					item: {
-						Count: 1
-						id: "monsterexpansion:skrythe_helmet"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "63BD9D4EFFF82304"
-					item: {
-						Count: 1
-						id: "monsterexpansion:skrythe_chestplate"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "7D788BF93E3B3297"
-					item: {
-						Count: 1
-						id: "monsterexpansion:skrythe_leggings"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "4DC98F67DEBF5840"
-					item: {
-						Count: 1
-						id: "monsterexpansion:skrythe_boots"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-			]
+				type: "item"
+			}]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.subtitle}"
-			tasks: [
-				{
-					entity: "monsterexpansion:skrythe"
-					icon: "monsterexpansion:skrythe_frill"
-					id: "1FA8DD758BB3E887"
-					type: "kill"
-					value: 1L
-				}
-				{
-					biome: "minecraft:windswept_gravelly_hills"
-					id: "56D8D8254C1A17A7"
-					type: "biome"
-				}
-			]
+			tasks: [{
+				entity: "monsterexpansion:skrythe"
+				icon: "monsterexpansion:skrythe_frill"
+				id: "1FA8DD758BB3E887"
+				type: "kill"
+				value: 1L
+			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.title}"
 			x: -3.5d
 			y: 1.0d
@@ -713,12 +623,6 @@
 					type: "item"
 				}
 				{
-					count: 3
-					id: "305F67287A3D5872"
-					item: "minecraft:nether_star"
-					type: "item"
-				}
-				{
 					id: "6D18910D14426DFB"
 					item: {
 						Count: 1
@@ -783,65 +687,32 @@
 			}
 			icon_scale: 1.5d
 			id: "4E2DD4620173E511"
-			rewards: [
-				{
-					id: "6AC28DE285DBEF1E"
-					item: {
-						Count: 1
-						id: "block_factorys_bosses:dragon_bones_leggings"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
+			rewards: [{
+				id: "716CFBFF5641D334"
+				item: {
+					Count: 1
+					id: "tcrcore:artifact_ticket"
+					tag: {
+						fdbosses: { }
 					}
-					type: "item"
 				}
-				{
-					id: "463D3EAD749F0031"
-					item: {
-						Count: 1
-						id: "block_factorys_bosses:dragon_bones_boots"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "716CFBFF5641D334"
-					item: {
-						Count: 1
-						id: "tcrcore:artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-			]
+				type: "item"
+			}]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest5633392226306614545.subtitle}"
-			tasks: [
-				{
-					entity: "block_factorys_bosses:infernal_dragon"
-					icon: {
-						Count: 1
-						id: "block_factorys_bosses:dragon_skull"
-						tag: {
-							fdbosses: { }
-						}
+			tasks: [{
+				entity: "block_factorys_bosses:infernal_dragon"
+				icon: {
+					Count: 1
+					id: "block_factorys_bosses:dragon_skull"
+					tag: {
+						fdbosses: { }
 					}
-					id: "03BBFB33B22431C9"
-					type: "kill"
-					value: 1L
 				}
-				{
-					id: "3CF1992B48EAA897"
-					structure: "block_factorys_bosses:dragon_tower"
-					type: "structure"
-				}
-			]
+				id: "03BBFB33B22431C9"
+				type: "kill"
+				value: 1L
+			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest5633392226306614545.title}"
 			x: 5.5d
 			y: 1.0d
@@ -856,67 +727,17 @@
 				}
 			}
 			id: "1076C4FBFF37BE92"
-			rewards: [
-				{
-					id: "7B2866E15C714FE0"
-					item: {
-						Count: 1
-						id: "monsterexpansion:rhyza_helmet"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
+			rewards: [{
+				id: "76D1BE099119C1A8"
+				item: {
+					Count: 1
+					id: "tcrcore:rare_artifact_ticket"
+					tag: {
+						fdbosses: { }
 					}
-					type: "item"
 				}
-				{
-					id: "58B6B3959877C99A"
-					item: {
-						Count: 1
-						id: "monsterexpansion:rhyza_chestplate"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "5E7992FB70139590"
-					item: {
-						Count: 1
-						id: "monsterexpansion:rhyza_leggings"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "3D09776FD3C5C42F"
-					item: {
-						Count: 1
-						id: "monsterexpansion:rhyza_boots"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "76D1BE099119C1A8"
-					item: {
-						Count: 1
-						id: "tcrcore:rare_artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-			]
+				type: "item"
+			}]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest1186352138456383122.subtitle}"
 			tasks: [{

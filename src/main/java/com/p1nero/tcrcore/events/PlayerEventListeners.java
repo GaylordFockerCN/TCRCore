@@ -182,7 +182,7 @@ public class PlayerEventListeners {
                 if(!serverPlayer.serverLevel().isLoaded(serverPlayer.getOnPos())) {
                     return;
                 }
-                if(!PlayerDataManager.bllSummoned.get(event.player) && WorldUtil.isInStructure(event.player, WorldUtil.COVES)) {
+                if(PlayerDataManager.stormEyeTraded.get(event.player) && !PlayerDataManager.bllSummoned.get(event.player) && WorldUtil.isInStructure(event.player, WorldUtil.COVES)) {
                     //定点生
                     BlockPos pos = TCRLevelSaveData.get(serverPlayer.serverLevel()).getCoversPos();
                     if(pos.equals(BlockPos.ZERO)) {

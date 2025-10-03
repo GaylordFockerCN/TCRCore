@@ -1,0 +1,40 @@
+
+[mobs]
+
+	[mobs."Bone Chimera"]
+		#Bone Chimera's Health Multiplier
+		#Range: 0.0 ~ 1000000.0
+		"Bone Chimera HealthMultiplier" = 1.0
+		#Bone Chimera's Damage Multiplier
+		#Range: 0.0 ~ 1000000.0
+		"Bone Chimera DamageMultiplier" = 2.0
+
+	[mobs."Dead Horn"]
+		#Dead Horn's Health Multiplier
+		#Range: 0.0 ~ 1000000.0
+		"Dead Horn HealthMultiplier" = 1.0
+		#Dead Horn's Damage Multiplier
+		#Range: 0.0 ~ 1000000.0
+		"Dead Horn DamageMultiplier" = 1.0
+
+	[mobs."Mecha Dino"]
+		#Mecha Dino's Health Multiplier
+		#Range: 0.0 ~ 1000000.0
+		"Mecha Dino HealthMultiplier" = 1.0
+		#Mecha Dino's Damage Multiplier
+		#Range: 0.0 ~ 1000000.0
+		"Mecha Dino DamageMultiplier" = 1.0
+
+	[mobs."LizardMan Guardian"]
+		#Mecha Dino's Health Multiplier
+		#Range: 0.0 ~ 1000000.0
+		"Mecha Dino HealthMultiplier" = 1.0
+		#Mecha Dino's Damage Multiplier
+		#Range: 0.0 ~ 1000000.0
+		"Mecha Dino DamageMultiplier" = 1.0
+
+	[mobs.etc]
+		#If the boss leaves the summoned location and there is no target, it returns to the summoned location. When set to 0, it does not return
+		#Range: 0 ~ 200
+		ReturnHomeTick = 20
+
