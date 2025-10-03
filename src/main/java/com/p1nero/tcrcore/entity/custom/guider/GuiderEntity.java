@@ -21,6 +21,7 @@ import com.p1nero.tcrcore.save_data.TCRLevelSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WaypointUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
+import com.p1nero.tudigong.util.StructureUtil;
 import dev.ftb.mods.ftbquests.item.FTBQuestsItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -29,6 +30,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -98,6 +100,12 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
     public void tick() {
         super.tick();
         if(level() instanceof ServerLevel serverLevel) {
+            if(tickCount % 100 == 0) {
+                BlockPos myPos = this.getOnPos();
+                if(myPos.getX() != WorldUtil.GUIDER_BLOCK_POS.getX() || myPos.getZ() != WorldUtil.GUIDER_BLOCK_POS.getZ()) {
+                    this.setPos(new BlockPos(WorldUtil.GUIDER_BLOCK_POS).getCenter());
+                }
+            }
             double step = 5.0 / particleCount;
             if(spawnParticleTimer > 0) {
                 spawnParticleTimer--;
@@ -207,9 +215,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 0 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(15,
-                                        Component.translatable("structure.trek.overworld.very_rare.floating_farm_large").withStyle(ChatFormatting.AQUA),
+                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
                                         TCRCoreMod.getInfo("iron_golem_name").withStyle(ChatFormatting.GOLD),
-                                        Component.translatable("structure.trek.overworld.very_rare.floating_farm_large").withStyle(ChatFormatting.AQUA),
+                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
                                         SGItems.GOLEM_HEART.get().getDescription().copy().withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
@@ -217,9 +225,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 1 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(16,
-                                        Component.translatable("structure.trek.overworld.very_rare.coves").withStyle(ChatFormatting.BLUE),
+                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.COVES))).withStyle(ChatFormatting.BLUE),
                                         EntityRegistry.BULLDROGIOTH.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                                        Component.translatable("structure.trek.overworld.very_rare.coves").withStyle(ChatFormatting.BLUE),
+                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.COVES))).withStyle(ChatFormatting.BLUE),
                                         ItemRegistry.CRIMSON_SHELL.get().getDescription().copy().withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
@@ -227,9 +235,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 3 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(17,
-                                        Component.translatable("structure.aquamirae.ice_maze").withStyle(ChatFormatting.DARK_GREEN),
+                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN),
                                         AquamiraeEntities.CAPTAIN_CORNELIA.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                                        Component.translatable("structure.aquamirae.ice_maze").withStyle(ChatFormatting.DARK_GREEN),
+                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN),
                                         EFNItem.DEEPDARK_HEART.get().getDescription().copy().withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
@@ -237,9 +245,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 2 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(18,
-                                        Component.translatable("structure.dodosmobs.jungle_prison").withStyle(ChatFormatting.YELLOW),
+                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW),
                                         ModEntities.BONE_CHIMERA.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                                        Component.translatable("structure.dodosmobs.jungle_prison").withStyle(ChatFormatting.YELLOW),
+                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW),
                                         ModItems.CHIERA_CLAW.get().getDescription().copy().withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
@@ -247,9 +255,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 4 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(19,
-                                        Component.translatable("structure.block_factorys_bosses.underworld_arena").withStyle(ChatFormatting.RED),
+                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED),
                                         BlockFactorysBossesModEntities.UNDERWORLD_KNIGHT.get().getDescription().copy().withStyle(ChatFormatting.RED),
-                                        Component.translatable("structure.block_factorys_bosses.underworld_arena").withStyle(ChatFormatting.RED),
+                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED),
                                         BlockFactorysBossesModItems.DRAGON_SKULL.get().getDescription().copy().withStyle(ChatFormatting.GOLD)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
@@ -375,7 +383,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
 
             if(newStage == 4) {
                 ItemUtil.addItem(player, AquamiraeItems.SHELL_HORN.get(), 1, true);//给号角
-                pos = WorldUtil.getNearbyStructurePos(player, "aquamirae:ship");//船长
+                pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.WATER);//船长
                 if (pos != null) {
                     WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("cursed_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.BLUE);
                 }

@@ -17,7 +17,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["{ftbquests.chapter.chaptertcr1.quest6347185815800914950.description1}"]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
 			icon_scale: 2.0d
@@ -39,13 +38,8 @@
 		}
 		{
 			description: [
-				"{ftbquests.chapter.chaptertcr1.quest2897062365475952465.description1}"
 				""
-				"{ftbquests.chapter.chaptertcr1.quest2897062365475952465.description2}"
-				"{ftbquests.chapter.chaptertcr1.quest2897062365475952465.description3}"
 				""
-				"{ftbquests.chapter.chaptertcr1.quest2897062365475952465.description4}"
-				"{ftbquests.chapter.chaptertcr1.quest2897062365475952465.description5}"
 			]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
@@ -101,14 +95,10 @@
 		}
 		{
 			description: [
-				"{ftbquests.chapter.chaptertcr1.quest4485700162389836201.description1}"
 				""
 				""
-				"{ftbquests.chapter.chaptertcr1.quest4485700162389836201.description2}"
-				"{ftbquests.chapter.chaptertcr1.quest4485700162389836201.description3}"
 				""
 				""
-				"{ftbquests.chapter.chaptertcr1.quest4485700162389836201.description4}"
 			]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
@@ -165,11 +155,8 @@
 		}
 		{
 			description: [
-				"{ftbquests.chapter.chaptertcr1.quest225288608841219205.description1}"
 				""
 				""
-				"{ftbquests.chapter.chaptertcr1.quest225288608841219205.description2}"
-				"{ftbquests.chapter.chaptertcr1.quest225288608841219205.description3}"
 			]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
@@ -248,11 +235,8 @@
 		}
 		{
 			description: [
-				"{ftbquests.chapter.chaptertcr1.quest3846763826501237441.description1}"
 				""
 				""
-				"{ftbquests.chapter.chaptertcr1.quest3846763826501237441.description2}"
-				"{ftbquests.chapter.chaptertcr1.quest3846763826501237441.description3}"
 			]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
@@ -345,13 +329,9 @@
 		}
 		{
 			description: [
-				"{ftbquests.chapter.chaptertcr1.quest8215733437259381056.description1}"
 				""
 				""
-				"{ftbquests.chapter.chaptertcr1.quest8215733437259381056.description2}"
-				"{ftbquests.chapter.chaptertcr1.quest8215733437259381056.description3}"
 				""
-				"{ftbquests.chapter.chaptertcr1.quest8215733437259381056.description4}"
 			]
 			hide_dependency_lines: true
 			hide_dependent_lines: true

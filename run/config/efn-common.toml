@@ -32,32 +32,54 @@
 	#Range: 1 ~ 1200
 	yamatoParryStunCooldown = 60
 
-["Lock-On Fix Settings"]
-	#Enable/disable the lock-on fix for WOM's weapon attack
-	#When enabled, attacks won't automatically disable lock-on
-	#Default: false (disabled)
-	enableLockOnFix = false
-
 ["JudgementCut-End Camera Animation Settings"]
 	#Enable/disable camera animations for JudgementCut-End
 	#When enabled, JudgementCut-End will play cinematic camera animations
 	#Default: true (enabled)
 	enableCameraAnimations = true
 
-	["JudgementCut-End Camera Animation Settings"."Yamato Reward Settings"]
-		#Enable/disable the skill book reward for Yamato JudgementCut-End
-		#When enabled, players will receive JudgementCut-End skill book after reaching the kill threshold
-		#Default: true (enabled)
-		yamatoRewardEnabled = true
-		#Number of kills required to receive the Yamato JudgementCut-End reward
-		#Set to 0 to disable the reward system
-		#Default: 100 kills
-		#Range: 0 ~ 10000
-		yamatoRewardKillThreshold = 100
-
 ["Bloodlust Skill Post-effect Settings"]
 	#Enable/disable post-effect when bloodlust's skill active
 	#When enabled, bloodlust's skill will play post-effect
 	#Default: true (enabled)
 	enablePost-Effects = true
+
+["Yamato Reward Settings"]
+	#Enable/disable the skill book reward for Yamato JudgementCut-End
+	#When enabled, players will receive JudgementCut-End skill book after reaching the kill threshold
+	#Default: true (enabled)
+	yamatoRewardEnabled = true
+	#Number of kills required to receive the Yamato JudgementCut-End reward
+	#Set to 0 to disable the reward system
+	#Default: 100 kills
+	#Range: 0 ~ 10000
+	yamatoRewardKillThreshold = 500
+
+["JudgementCut-End Particle Settings"]
+	#Enable/disable particle effects for JudgementCut-End
+	#Disable Judgement Cut End's particle effects that may cause rendering incompatibility
+	#Default: true (enabled)
+	enableJudgementCutEndParticles = true
+
+["Judgement Cut End Damage Settings"]
+	#Base damage rate for Judgement Cut End
+	#This multiplies the base damage calculation
+	#Default: 2.0
+	#Range: 0.1 ~ 100.0
+	judgementCutEndDamageRate = 2.0
+	#Cut rate for Judgement Cut End (percentage of max health)
+	#This determines how much percentage damage is dealt based on target's max health
+	#Default: 0.4 (40%)
+	#Range: 0.01 ~ 1.0
+	judgementCutEndCutRate = 0.4
+	#Damage multiplier against Cataclysm bosses
+	#This multiplies the damage when attacking Cataclysm bosses
+	#Default: 1.0 (no multiplier)
+	#Range: 0.1 ~ 10.0
+	judgementCutEndBossDamageMultiplier = 1.0
+	#Health percentage used in damage calculation
+	#This is the percentage of max health used in the formula: cutRate * (maxHealth * healthPercentage)
+	#Default: 0.4 (40%)
+	#Range: 0.01 ~ 1.0
+	judgementCutEndHealthPercentage = 0.4
 

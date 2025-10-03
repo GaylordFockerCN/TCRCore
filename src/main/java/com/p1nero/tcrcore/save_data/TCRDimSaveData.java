@@ -12,6 +12,25 @@ public class TCRDimSaveData extends SavedData {
 
     private boolean bossKilled;
     private boolean bossSummoned;
+    private int resetCooldown;
+
+    public boolean isResetting() {
+        return resetCooldown > 0;
+    }
+
+    public void tickResetting() {
+        if(resetCooldown > 0) {
+            resetCooldown--;
+        }
+    }
+
+    public int getResetCooldown() {
+        return resetCooldown;
+    }
+
+    public void setResetCooldown(int resetCooldown) {
+        this.resetCooldown = resetCooldown;
+    }
 
     public boolean isBossSummoned() {
         return bossSummoned;

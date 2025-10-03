@@ -15,6 +15,7 @@ import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.events.SafeNetherTeleporter;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.utils.ItemUtil;
+import com.p1nero.tcrcore.utils.WorldUtil;
 import com.talhanation.smallships.client.option.ModGameOptions;
 import com.yesman.epicskills.client.gui.screen.SkillTreeScreen;
 import net.genzyuro.uniqueaccessories.item.UAUniqueCurioItem;
@@ -22,6 +23,7 @@ import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.kenddie.fantasyarmor.item.FAItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -91,12 +93,28 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         initMerchant();
     }
 
+    @Override
+    public void tick() {
+        super.tick();
+        if(!level().isClientSide) {
+            if(tickCount % 100 == 0) {
+                BlockPos myPos = this.getOnPos();
+                if(myPos.getX() != WorldUtil.GIRL_POS.getX() || myPos.getZ() != WorldUtil.GIRL_POS.getZ()) {
+                    this.setPos(new BlockPos(WorldUtil.GIRL_POS).getCenter());
+                }
+            }
+        }
+    }
+
     private void initMerchant() {
         offers.clear();
         offersArmor.clear();
         offersWeapon.clear();
         offersArtifact.clear();
         ForgeRegistries.ITEMS.getValues().forEach(item -> {
+            if(item == artifacts.registry.ModItems.SCARF_OF_INVISIBILITY.get()) {
+                return;
+            }
             if(item instanceof ArtifactItem || item instanceof UAUniqueCurioItem) {
                 if(rareItems.contains(item)) {
                     offersArtifact.add(new MerchantOffer(
@@ -159,16 +177,18 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 new ItemStack(EFNItem.MEEN_SPEAR.get(), 1),
                 142857, 0, 0.02f));
         offersWeapon.add(new MerchantOffer(
+                new ItemStack(ModItems.CURSIUM_INGOT.get(), 1),
                 new ItemStack(Items.DRAGON_EGG, 1),
                 new ItemStack(EFNItem.YAMATO_DMC_IN_SHEATH.get(), 1),
                 142857, 0, 0.02f));
         offersWeapon.add(new MerchantOffer(
-                new ItemStack(Items.DRAGON_EGG, 1),
+                new ItemStack(ModItems.IGNITIUM_BLOCK.get(), 1),
+                new ItemStack(Items.NETHER_STAR, 1),
                 new ItemStack(EFNItem.YAMATO_DMC4_IN_SHEATH.get(), 1),
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
-                new ItemStack(Items.NETHERITE_INGOT, 1),
+                new ItemStack(Items.NETHERITE_BLOCK, 1),
                 new ItemStack(Items.DIAMOND, 4),
                 new ItemStack(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, 1),
                 142857, 0, 0.02f));

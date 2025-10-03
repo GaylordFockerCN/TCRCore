@@ -31,16 +31,18 @@ public class WorldUtil {
     public static final Vec3i START_POS = new Vec3i(78, 75, -193);
     public static final Vec3 CENTER_POS = new Vec3(-19, 75, -79);
     public static final Vec3 GUIDER_POS = new Vec3(-186, 85, -191);
+    public static final Vec3i GUIDER_BLOCK_POS = new Vec3i(-186, 85, -191);
     public static final String COVES = "trek:overworld/very_rare/coves";
     public static final String SKY_ISLAND = "trek:overworld/very_rare/floating_farm_large";
     public static final String SAND = "dodosmobs:jungle_prison";
+    public static final String WATER = "aquamirae:ship";
     public static final String FIRE = "block_factorys_bosses:underworld_arena";
     public static Vec2i storm, flame, abyss, cursed, desert;
 
     private static final Pattern LOCATE_PATTERN = Pattern.compile(".*?\\[\\s*(-?\\d+)\\s*,\\s*~\\s*,\\s*(-?\\d+)\\s*\\].*");
 
     public static boolean inMainLand(Entity entity) {
-        return entity.level().dimension() == Level.OVERWORLD && entity.position().subtract(CENTER_POS).horizontalDistance() < 250;
+        return entity.level().dimension() == Level.OVERWORLD && entity.position().subtract(CENTER_POS).horizontalDistance() < 150;
     }
 
     public static boolean isInStructure(LivingEntity entity, String structure) {

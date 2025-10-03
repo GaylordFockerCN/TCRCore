@@ -50,6 +50,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神谕残卷");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "上面写着古老的神谕，暗示了火种散落的地方。回主城给守望者看看吧，说不定对冒险有帮助！");
 
+        this.addInfo("shift_to_pic", "潜行时攻击以收回");
+        this.addInfo("no_place_to_ship", "空间不足，无法摆放船只！");
         this.addInfo("boss_killed_ready_return", "§6幻境英灵已击败！已解锁方块交互！");
         this.addInfo("click_to_return", "§a[点击返回主城]");
         this.addInfo("cs_warning", "§c§l警告！Compute Shader未启用！建议在史诗战斗设置中开启以获得更流畅的体验！");
@@ -64,6 +66,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRBlocks.FLAME_ALTAR_BLOCK.get(), "烈焰祭坛");
         this.add(TCRBlocks.DESERT_ALTAR_BLOCK.get(), "沙漠祭坛");
 
+        this.addInfo("dim_demending", "§6幻境重铸中...请等待[%d§6]秒");
         this.addInfo("to_be_continue", "[P1nero]: §6感谢游玩！恭喜你体验完测试版的全部内容，未完待续！");
 
         this.addInfo("second_after_boss_die_left", "将在 %d 秒后返回主世界");
@@ -100,16 +103,16 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("press_to_open_portal_screen", "对着传送石长按§6[右键]§r以回到曾经点亮过的石碑！");
         this.addInfo("press_to_show_progress", "按下§6[L]键§f以查看指引！");
         this.addInfo("press_to_skill_tree", "经验充足，按下§6[K]键§f以进行技能加点！");
-        this.addInfo("lock_tutorial", "按下§6[鼠标中键]§r以锁定目标");
+        this.addInfo("lock_tutorial", "按下§6[%s§6]§r以锁定目标");
         this.addInfo("lock_tutorial_sub", "§c晃动鼠标以切换锁定目标！再次按下以解除锁定！");
-        this.addInfo("riptide_tutorial", "在水中按下§6[闪避]键§f以释放§b激流");
-        this.addInfo("dodge_tutorial", "按下§6[左ALT]§f以释放闪避技能");
-        this.addInfo("weapon_innate_tutorial", "按下§6[R]键§f以释放武器技能");
+        this.addInfo("riptide_tutorial", "在水中按下§6[%s§6]键§f以释放§b激流");
+        this.addInfo("dodge_tutorial", "按下§6[%s§6]§f以释放闪避技能");
+        this.addInfo("weapon_innate_tutorial", "按下§6[%s§6]键§f以释放武器技能");
         this.addInfo("weapon_innate_charge_tutorial", "§6[完美闪避]§c或§6[完美招架]§c可以对部分武器进行充能！");
-        this.addInfo("perfect_dodge_tutorial", "§c抓住实机闪避以释放完美闪避！");
+        this.addInfo("perfect_dodge_tutorial", "§c抓住时机闪避以释放完美闪避！");
         this.addInfo("hurt_damage", "造成[ %.1f ]点伤害！");
-        this.addInfo("parry_tutorial", "按下§6[右键]§f以进行格挡");
-        this.addInfo("perfect_parry_tutorial", "§c抓住实机格挡以触发完美招架！");
+        this.addInfo("parry_tutorial", "按下§6[%s§6]§f以进行格挡");
+        this.addInfo("perfect_parry_tutorial", "§c抓住时机格挡以触发完美招架！");
         this.addInfo("you_pass", "§6你过关！！");
 
         this.addInfo("press_to_open_map", "按下§6[M]键§f以查看地图");
@@ -154,6 +157,9 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         BanPortalScreenHandler.onGenerateZH(this);
 
+        this.addDialogAnswer(EntityType.IRON_GOLEM, 0, "人类，准备好接受试炼了？");
+        this.addDialogOption(EntityType.IRON_GOLEM, 0, "确定");
+        this.addDialogOption(EntityType.IRON_GOLEM, 1, "再等等");
         this.addDialogAnswer(EntityType.VILLAGER, -2, "曼波？");
         this.addDialogAnswer(EntityType.VILLAGER, -1, "！！！");
         this.addDialogAnswer(EntityType.VILLAGER, 0, "曼波，曼波，哦嘛吉利，曼波~");
@@ -164,6 +170,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(EntityType.VILLAGER, 5, "叮咚鸡~叮咚鸡~");
         this.addDialogAnswer(EntityType.VILLAGER, 6, "有哒有哒~");
         this.addDialogAnswer(EntityType.VILLAGER, 7, "阿西噶哈雅酷那路~ wow~");
+        this.addDialogOption(EntityType.VILLAGER, -3, "[或许可以试试绿宝石？]");
         this.addDialogOption(EntityType.VILLAGER, -2, "[这位村民对该物品并没有兴趣...]");
         this.addDialogOption(EntityType.VILLAGER, -1, "[收下]");
         this.addDialogOption(EntityType.VILLAGER, 0, "[？？？]");

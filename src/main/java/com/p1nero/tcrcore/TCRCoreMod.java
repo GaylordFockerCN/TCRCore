@@ -7,6 +7,7 @@ import com.mojang.logging.LogUtils;
 import com.p1nero.tcrcore.block.TCRBlocks;
 import com.p1nero.tcrcore.block.entity.TCRBlockEntities;
 import com.p1nero.tcrcore.client.sound.TCRSounds;
+import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.events.ItemEvents;
 import com.p1nero.tcrcore.events.LivingEntityEventListeners;
@@ -59,6 +60,7 @@ public class TCRCoreMod {
         TCRBlockEntities.REGISTRY.register(bus);
         TCRItems.REGISTRY.register(bus);
         TCRItemTabs.REGISTRY.register(bus);
+        TCREffects.REGISTRY.register(bus);
         context.registerConfig(ModConfig.Type.COMMON, TCRConfig.SPEC);
     }
 

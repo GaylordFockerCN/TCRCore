@@ -1,0 +1,18 @@
+{
+  "item.baublemounts.mount_bauble" : "坐骑宝饰",
+  "item.baublemounts.mount_bauble_broken" : "损坏的坐骑宝饰",
+  "item.baublemounts.vehicle_bauble": "载具钥匙",
+  "item.baublemounts.vehicle_bauble_broken": "损坏的载具钥匙",
+  "curios.identifier.mountbauble": "坐骑宝饰",
+  "key.baublemounts.mountsummon": "召唤坐骑",
+  "key.categories.baublemounts": "坐骑宝饰模组",
+  "tooltip.baublemounts.getname" : "坐骑名称：%s",
+  "tooltip.baublemounts.gethealth" : "坐骑生命值：%s",
+  "tooltip.baublemounts.desc" : "§o按住Shift查看详情",
+  "tooltip.baublemounts.shiftdesc" : "使用此物品时，对着坐骑按下右键即可将其收纳。之后可通过再次右键释放坐骑，或将其置于§e坐骑宝饰§r槽位中。按%s键可从槽位释放或收纳坐骑",
+  "tooltip.baublemounts.shiftdescbroken" : "该宝饰已损坏，因其内部的坐骑在外界死亡。通过合成修复后可重新召唤坐骑。",
+  "tooltip.baublemounts.vehicleshiftdesc" : "使用此物品时，对着载具按下右键即可将其收纳。之后可通过再次右键释放载具，或将其置于§e坐骑宝饰§r槽位中。按%s键可从槽位释放或收纳载具",
+  "tooltip.baublemounts.vehicleshiftdescbroken" : "该宝饰已损坏，因其内部的载具在外界死亡。通过合成修复后可重新召唤载具。",
+  "sounds.baublemounts.mount_summon": "坐骑召唤",
+  "sounds.baublemounts.mount_unsummon": "坐骑消失"
+}

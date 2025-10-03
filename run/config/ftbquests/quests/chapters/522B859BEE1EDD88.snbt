@@ -37,7 +37,6 @@
 		}
 		{
 			dependencies: ["54060FC753C24428"]
-			description: ["{ftbquests.chapter.522B859BEE1EDD88.quest5237705525294358869.description1}"]
 			icon: "armourers_workshop:skin-library-global"
 			icon_scale: 2.0d
 			id: "48B0116CB9456155"
@@ -56,13 +55,12 @@
 			y: -5.5d
 		}
 		{
-			dependencies: ["7DF46FF0EC2E12A8"]
-			dependency_requirement: "one_started"
-			description: [
-				"{ftbquests.chapter.522B859BEE1EDD88.quest348391678466111360.description1}"
-				""
-				"{ftbquests.chapter.522B859BEE1EDD88.quest348391678466111360.description2}"
+			dependencies: [
+				"7DF46FF0EC2E12A8"
+				"54060FC753C24428"
 			]
+			dependency_requirement: "one_started"
+			description: [""]
 			icon: "armourers_workshop:skin-library"
 			icon_scale: 2.0d
 			id: "04D5BC62BDACB780"
@@ -82,9 +80,11 @@
 		}
 		{
 			can_repeat: true
-			dependencies: ["48B0116CB9456155"]
+			dependencies: [
+				"48B0116CB9456155"
+				"54060FC753C24428"
+			]
 			dependency_requirement: "one_started"
-			description: ["{ftbquests.chapter.522B859BEE1EDD88.quest9076002229603668648.rich_description1}{ftbquests.chapter.522B859BEE1EDD88.quest9076002229603668648.rich_description2}{ftbquests.chapter.522B859BEE1EDD88.quest9076002229603668648.rich_description3}"]
 			icon: "armourers_workshop:skin-template"
 			id: "7DF46FF0EC2E12A8"
 			optional: true
@@ -111,8 +111,10 @@
 			y: -5.5d
 		}
 		{
-			dependencies: ["04D5BC62BDACB780"]
-			description: ["{ftbquests.chapter.522B859BEE1EDD88.quest7469604769731266141.description1}"]
+			dependencies: [
+				"04D5BC62BDACB780"
+				"54060FC753C24428"
+			]
 			icon: "armourers_workshop:skinning-table"
 			icon_scale: 2.0d
 			id: "67A95DF66065465D"

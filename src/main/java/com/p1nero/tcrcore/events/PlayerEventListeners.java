@@ -8,14 +8,17 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
 import com.p1nero.tcrcore.datagen.TCRAdvancementData;
+import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.network.packet.clientbound.CSTipPacket;
-import com.p1nero.tcrcore.network.packet.clientbound.helper.DistHelper;
+import com.p1nero.tcrcore.network.packet.clientbound.PlayTitlePacket;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.save_data.TCRLevelSaveData;
 import com.p1nero.tcrcore.utils.EntityUtil;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
+import com.p1nero.tudigong.item.TDGItemTabs;
+import com.p1nero.tudigong.item.TDGItems;
 import com.yesman.epicskills.world.capability.AbilityPoints;
 import net.blay09.mods.waystones.block.ModBlocks;
 import net.minecraft.ChatFormatting;
@@ -32,14 +35,12 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
@@ -53,7 +54,6 @@ import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import net.sonmok14.fromtheshadows.server.entity.mob.BulldrogiothEntity;
 import net.sonmok14.fromtheshadows.server.utils.registry.EntityRegistry;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
-import yesman.epicfight.config.ClientConfig;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.entitypatch.player.ServerPlayerPatch;
 
@@ -91,8 +91,9 @@ public class PlayerEventListeners {
                 }
 //                player.displayClientMessage(TCRCoreMod.getInfo("press_to_show_progress"), false);
             }
+
             if(namespace.equals("minecraft") && path.equals("recipes/transportation/oak_boat")) {
-                player.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("riptide_tutorial")));
+                PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(4), player);
             }
 
         }
@@ -106,7 +107,6 @@ public class PlayerEventListeners {
                 TCRAdvancementData.finishAdvancement(TCRCoreMod.MOD_ID, serverPlayer);
                 CommandSourceStack commandSourceStack = serverPlayer.createCommandSourceStack().withPermission(2).withSuppressedOutput();
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/gamerule keepInventory true");
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/gamerule canSwitchPlayerMode true");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/gamerule mobGriefing false");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s epicskills:battleborn efn:efn_step true");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s epicskills:battleborn efn:efn_dodge true");
@@ -118,6 +118,7 @@ public class PlayerEventListeners {
                 ItemUtil.addItem(serverPlayer, Items.IRON_SWORD, 1);
                 ItemUtil.addItem(serverPlayer, ModItems.BACKPACK.get(), 1);
                 ItemUtil.addItem(serverPlayer, Items.BREAD, 32);
+                ItemUtil.addItem(serverPlayer, TDGItems.TUDI_COMMAND_SPELL.get(), 1);
                 serverPlayer.setItemSlot(EquipmentSlot.CHEST, EFNItem.RUINFIGHTER_CHESTPLATE.get().getDefaultInstance());
 
                 PlayerDataManager.firstJoint.put(serverPlayer, true);
@@ -169,6 +170,15 @@ public class PlayerEventListeners {
                 }
             }
             if(event.player instanceof ServerPlayer serverPlayer) {
+                if(!serverPlayer.isInvulnerable()) {
+                    if(serverPlayer.hasEffect(TCREffects.INVULNERABLE.get())) {
+                        serverPlayer.setInvulnerable(true);
+                    }
+                } else {
+                    if(!serverPlayer.hasEffect(TCREffects.INVULNERABLE.get()) && !serverPlayer.isCreative() && !serverPlayer.isSpectator()) {
+                        serverPlayer.setInvulnerable(false);
+                    }
+                }
                 if(!serverPlayer.serverLevel().isLoaded(serverPlayer.getOnPos())) {
                     return;
                 }
@@ -241,7 +251,9 @@ public class PlayerEventListeners {
             }
             if(CataclysmDimensions.LEVELS.contains(event.getTo())) {
                 serverPlayer.displayClientMessage(TCRCoreMod.getInfo("reset_when_no_player").withStyle(ChatFormatting.RED, ChatFormatting.BOLD), false);
-                TCRDimSaveData.get(serverPlayer.getServer().getLevel(event.getTo())).setBossKilled(false);
+                if(serverPlayer.serverLevel().players().size() <= 1) {
+                    TCRDimSaveData.get(serverPlayer.getServer().getLevel(event.getTo())).setBossKilled(false);
+                }
             }
         }
     }

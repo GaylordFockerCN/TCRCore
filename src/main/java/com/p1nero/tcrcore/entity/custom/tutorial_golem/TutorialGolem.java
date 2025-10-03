@@ -1,7 +1,10 @@
 package com.p1nero.tcrcore.entity.custom.tutorial_golem;
 
+import com.p1nero.fast_tpa.network.PacketRelay;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
+import com.p1nero.tcrcore.network.TCRPacketHandler;
+import com.p1nero.tcrcore.network.packet.clientbound.PlayTitlePacket;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tudigong.entity.XianQiEntity;
 import net.minecraft.ChatFormatting;
@@ -82,17 +85,14 @@ public class TutorialGolem extends IronGolem {
         super.baseTick();
         if(this.getTarget() instanceof ServerPlayer serverPlayer && this.tickCount % 60 == 0) {
             if(!PlayerDataManager.dodged.get(serverPlayer)) {
-                serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("dodge_tutorial")));
-                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("perfect_dodge_tutorial"), true);
+                PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(1), serverPlayer);
             } else if(!PlayerDataManager.parried.get(serverPlayer)) {
-                serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("parry_tutorial")));
-                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("perfect_parry_tutorial"), true);
+                PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(2), serverPlayer);
 //            } else if(!PlayerDataManager.weapon_innate_used.get(serverPlayer)) {
 //                serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("weapon_innate_tutorial")));
 //                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("weapon_innate_charge_tutorial"), true);
             } else if(!PlayerDataManager.locked.get(serverPlayer)) {
-                serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("lock_tutorial")));
-                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("lock_tutorial_sub"), true);
+                PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(3), serverPlayer);
             } else {
                 serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("you_pass")));
                 serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));

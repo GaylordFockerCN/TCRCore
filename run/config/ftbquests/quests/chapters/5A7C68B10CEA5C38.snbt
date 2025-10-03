@@ -19,11 +19,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: [
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest8224116903557449688.description1}"
-				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest8224116903557449688.description2}"
-			]
+			description: [""]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
 			hide_until_deps_complete: true
@@ -31,9 +27,9 @@
 			id: "7221EEC023D3C7D8"
 			invisible: true
 			rewards: [{
-				id: "7D6A65A022DEC3EA"
-				item: "more_critters:critter_atlas"
-				type: "item"
+				id: "7AC0521702E1B28F"
+				type: "xp"
+				xp: 100
 			}]
 			shape: "rsquare"
 			size: 2.0d
@@ -132,15 +128,10 @@
 		{
 			dependencies: ["7221EEC023D3C7D8"]
 			description: [
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.description1}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.description2}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.description3}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.description4}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.description5}"
 			]
 			id: "2FC8D0A969FBC1CE"
 			rewards: [{
@@ -165,11 +156,8 @@
 		{
 			dependencies: ["7221EEC023D3C7D8"]
 			description: [
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1470580929012265040.description1}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1470580929012265040.description2}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1470580929012265040.description3}"
 			]
 			icon: {
 				Count: 1
@@ -197,17 +185,11 @@
 		{
 			dependencies: ["7221EEC023D3C7D8"]
 			description: [
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description1}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description2}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description3}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description4}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description5}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description6}"
 			]
 			icon: {
 				Count: 1
@@ -304,11 +286,8 @@
 		{
 			dependencies: ["7221EEC023D3C7D8"]
 			description: [
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1892043973836821613.description1}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1892043973836821613.description2}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1892043973836821613.description3}"
 			]
 			icon: {
 				Count: 1
@@ -342,12 +321,9 @@
 		{
 			dependencies: ["7221EEC023D3C7D8"]
 			description: [
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.description1}"
-				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.description2}"
 				""
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.description3}"
+				""
 			]
 			icon: {
 				Count: 1
@@ -377,11 +353,7 @@
 		}
 		{
 			dependencies: ["7221EEC023D3C7D8"]
-			description: [
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3288439856153403711.description1}"
-				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3288439856153403711.image0}"
-			]
+			description: [""]
 			icon: {
 				Count: 1
 				id: "monsterexpansion:skrythe_frill"

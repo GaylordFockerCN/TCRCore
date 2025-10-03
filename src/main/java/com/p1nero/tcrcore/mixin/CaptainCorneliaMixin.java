@@ -37,13 +37,12 @@ public abstract class CaptainCorneliaMixin extends Monster {
 
     @Redirect(method = "baseTick", at = @At(value = "INVOKE", target = "Lcom/obscuria/aquamirae/common/entities/CaptainCornelia;heal(F)V"))
     private void tcr$baseTick$heal(CaptainCornelia instance, float v) {
-
+        this.heal(0.2F);
     }
 
     @Inject(method = "baseTick", at = @At("TAIL"))
     private void tcr$baseTick(CallbackInfo ci) {
         if (this.level().isClientSide) {
-            Vec3 center = this.position();
             //附近再播放
             if(this.isAlive()) {
                 CorneliaMusicPlayer.playBossMusic(this, AquamiraeSounds.MUSIC_FORSAKEN_DROWNAGE.get(), 32);

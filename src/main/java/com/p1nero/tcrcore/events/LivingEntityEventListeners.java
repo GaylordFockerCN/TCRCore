@@ -8,6 +8,7 @@ import com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonste
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.github.dodo.dodosmobs.entity.InternalAnimationMonster.IABossMonsters.Bone_Chimera_Entity;
 import com.hm.efn.registries.EFNItem;
+import com.merlin204.sg.entity.super_golem.SGPatch;
 import com.merlin204.sg.item.SGItems;
 import com.obscuria.aquamirae.common.entities.CaptainCornelia;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
@@ -18,6 +19,7 @@ import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
 import com.p1nero.tcrcore.client.sound.CorneliaMusicPlayer;
 import com.p1nero.tcrcore.client.sound.WraithonMusicPlayer;
+import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.gameassets.TCRSkills;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
@@ -29,11 +31,13 @@ import com.p1nero.tcrcore.utils.WorldUtil;
 import net.kenddie.fantasyarmor.item.FAItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -41,6 +45,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -76,6 +81,7 @@ import org.merlin204.wraithon.worldgen.WraithonDimensions;
 import yesman.epicfight.api.animation.AnimationPlayer;
 import yesman.epicfight.gameasset.Animations;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
+import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 import yesman.epicfight.world.capabilities.entitypatch.player.PlayerPatch;
 import yesman.epicfight.world.capabilities.entitypatch.player.ServerPlayerPatch;
 import yesman.epicfight.world.item.EpicFightItems;
@@ -178,15 +184,24 @@ public class LivingEntityEventListeners {
         Vec3 center = livingEntity.position();
         livingEntity.level().getEntitiesOfClass(ServerPlayer.class, (new AABB(center, center)).inflate(30)).forEach(player ->{
 
-            if(livingEntity instanceof IronGolem && !PlayerDataManager.stormEyeTraded.get(player) && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND)) {
-                ItemUtil.addItemEntity(player, ModItems.STORM_EYE.get(), 1, ChatFormatting.AQUA.getColor().intValue());
-                player.displayClientMessage(TCRCoreMod.getInfo("kill_boss1"), false);
-                player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player);
-                PlayerDataManager.stormEyeTraded.put(player, true);
+            if(livingEntity instanceof IronGolem ironGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND)) {
+                if(!PlayerDataManager.stormEyeTraded.get(player)) {
+                    ItemUtil.addItemEntity(player, ModItems.STORM_EYE.get(), 1, ChatFormatting.AQUA.getColor().intValue());
+                    player.displayClientMessage(TCRCoreMod.getInfo("kill_boss1"), false);
+                    player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
+                    giveOracle(player);
+                    PlayerDataManager.stormEyeTraded.put(player, true);
+                }
+
+                if(event.getSource().getEntity() instanceof ServerPlayer serverPlayer) {
+                    serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("you_pass")));
+                    serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
+                }
             }
 
-            if(livingEntity instanceof BulldrogiothEntity && !PlayerDataManager.abyssEyeTraded.get(player) && WorldUtil.isInStructure(livingEntity, WorldUtil.COVES)) {
+            if(livingEntity instanceof BulldrogiothEntity
+                    && PlayerDataManager.stormEyeTraded.get(player)
+                    && !PlayerDataManager.abyssEyeTraded.get(player)) {
                 ItemUtil.addItemEntity(player, ModItems.ABYSS_EYE.get(), 1, ChatFormatting.BLUE.getColor().intValue());
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss3"), false);
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
@@ -252,7 +267,7 @@ public class LivingEntityEventListeners {
 
         }
 
-        if(livingEntity instanceof IronGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND)) {
+        if(livingEntity instanceof IronGolem && !event.isCanceled()) {
             ItemUtil.addItemEntity(livingEntity, SGItems.GOLEM_HEART.get(), 1, ChatFormatting.GOLD.getColor().intValue());
         }
 
@@ -281,6 +296,13 @@ public class LivingEntityEventListeners {
                 wraithonLevel.getAllEntities().forEach(Entity::discard);
                 TCRDimSaveData.get(wraithonLevel).setBossSummoned(false);
             }
+            serverPlayer.setRespawnPosition(Level.OVERWORLD, new BlockPos(WorldUtil.START_POS), 0, true, false);
+            if(EntityUtil.getNearByPlayers(serverPlayer, 30).isEmpty()) {
+                if(event.getSource().getEntity() instanceof LivingEntity living) {
+                    living.setHealth(living.getMaxHealth());
+                    living.removeAllEffects();
+                }
+            }
         }
     }
 
@@ -299,6 +321,11 @@ public class LivingEntityEventListeners {
                 }
             });
         }
+
+        if(event.getEntity() instanceof IronGolem ironGolem && WorldUtil.isInStructure(ironGolem, WorldUtil.SKY_ISLAND)) {
+            ironGolem.setPlayerCreated(false);
+        }
+
     }
 
     @SubscribeEvent
@@ -317,9 +344,9 @@ public class LivingEntityEventListeners {
         if(living instanceof Player player) {
             if(EpicFightCapabilities.getEntityPatch(player, PlayerPatch.class).getSkillCapability().hasLearned(TCRSkills.WATER_AVOID)) {
                 event.setCanBreathe(true);
-            }
-            if(player.tickCount % 2 == 0) {
+                event.setCanRefillAir(true);
                 event.setConsumeAirAmount(0);
+                event.setRefillAirAmount(5);
             }
         }
     }

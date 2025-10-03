@@ -17,6 +17,10 @@ public class BlockEvents {
         }
         if(event.getPlayer().level() instanceof ServerLevel serverLevel) {
             if(CataclysmDimensions.LEVELS.contains(event.getPlayer().level().dimension())) {
+                //利维坦得挖进去
+                if(event.getPlayer().level().dimension() == CataclysmDimensions.CATACLYSM_ABYSSAL_DEPTHS_LEVEL_KEY) {
+                    return;
+                }
                 if(!TCRDimSaveData.get(serverLevel).isBossKilled()) {
                     event.getPlayer().displayClientMessage(TCRCoreMod.getInfo("dim_block_no_interact"), true);
                     event.setCanceled(true);

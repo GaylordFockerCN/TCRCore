@@ -50,6 +50,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "Oracle Fragment");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "It bears an ancient oracle hinting at the locations of scattered embers. Show it to the The Sanctuary Keeper in the The Sanctuary; it might aid your adventure!");
 
+        this.addInfo("shift_to_pic", "Attack when pressing Shift to take");
+        this.addInfo("no_place_to_ship", "No Space for ship!");
         this.addInfo("boss_killed_ready_return", "§6Boss has been defeated! Block interaction unlocked!");
         this.addInfo("click_to_return", "§a[Click to return]");
         this.addInfo("cs_warning", "§c§l WARNING！Compute Shader is inactive now! You could enable it in Epic Fight config to get a better experience!");
@@ -64,6 +66,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRBlocks.FLAME_ALTAR_BLOCK.get(), "Flame Altar");
         this.add(TCRBlocks.DESERT_ALTAR_BLOCK.get(), "Desert Altar");
 
+        this.addInfo("dim_demending", "§6Rebuilding... Wait[%d§6]s");
         this.addInfo("to_be_continue", "[P1nero]: §6Thank you for playing! Congratulations on experiencing all the content of the beta version. To be continued!");
         this.addInfo("second_after_boss_die_left", "Returning to the Overworld in %d seconds");
         this.addInfo("press_to_open_battle_mode", "§cPlease enable Battle Mode!§r");
@@ -98,15 +101,15 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("press_to_open_portal_screen", "Hold §6[Right-click]§r on the Waystone to return to previously activated stones!");
         this.addInfo("press_to_show_progress", "Press §6[L]§f to view guidance!");
         this.addInfo("press_to_skill_tree", "Sufficient EXP available. Press §6[K]§f to allocate skill points!");
-        this.addInfo("lock_tutorial", "Press §6[Middle Mouse Button]§r to lock on target");
+        this.addInfo("lock_tutorial", "Press §6[[%s§6]§r to lock on target");
         this.addInfo("lock_tutorial_sub", "§cMove the mouse to switch targets! Press again to unlock!");
-        this.addInfo("riptide_tutorial", "Press the §6[Dodge Key]§f while in water to activate §bRiptide");
-        this.addInfo("dodge_tutorial", "Press §6[Left ALT]§f to perform a dodge");
-        this.addInfo("weapon_innate_tutorial", "Press §6[R]§f to activate the weapon skill");
+        this.addInfo("riptide_tutorial", "Press the §6[[%s§6]§f while in water to activate §bRiptide");
+        this.addInfo("dodge_tutorial", "Press §6[[%s§6]§f to perform a dodge");
+        this.addInfo("weapon_innate_tutorial", "Press §6[[%s§6]§f to activate the weapon skill");
         this.addInfo("weapon_innate_charge_tutorial", "§6[Perfect Dodge]§c or §6[Perfect Parry]§c can charge certain weapons!");
         this.addInfo("perfect_dodge_tutorial", "§cDodge at the right moment to perform a Perfect Dodge!");
         this.addInfo("hurt_damage", "Dealt [ %.1f ] damage!");
-        this.addInfo("parry_tutorial", "Press §6[Right-click]§f to block");
+        this.addInfo("parry_tutorial", "Press §6[[%s§6]§f to block");
         this.addInfo("perfect_parry_tutorial", "§cBlock at the right moment to trigger a Perfect Parry!");
         this.addInfo("you_pass", "§6You passed!!");
 
@@ -152,6 +155,9 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         BanPortalScreenHandler.onGenerateZH(this);
 
+        this.addDialogAnswer(EntityType.IRON_GOLEM, 0, "Man, are you ready？");
+        this.addDialogOption(EntityType.IRON_GOLEM, 0, "Yes");
+        this.addDialogOption(EntityType.IRON_GOLEM, 1, "Wait");
         this.addDialogAnswer(EntityType.VILLAGER, -2, "Mambo?");
         this.addDialogAnswer(EntityType.VILLAGER, -1, "!!!");
         this.addDialogAnswer(EntityType.VILLAGER, 0, "Mambo, mambo, oh my gilly, mambo~");
@@ -162,6 +168,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(EntityType.VILLAGER, 5, "Ding dong ji~ Ding dong ji~");
         this.addDialogAnswer(EntityType.VILLAGER, 6, "You da you da~");
         this.addDialogAnswer(EntityType.VILLAGER, 7, "Axi ga hayaku naru~ wow~");
+        this.addDialogOption(EntityType.VILLAGER, -3, "[Try Emeralds?]");
         this.addDialogOption(EntityType.VILLAGER, -2, "[This villager shows no interest...]");
         this.addDialogOption(EntityType.VILLAGER, -1, "[Accept]");
         this.addDialogOption(EntityType.VILLAGER, 0, "[???]");

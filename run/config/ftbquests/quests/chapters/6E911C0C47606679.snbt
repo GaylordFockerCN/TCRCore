@@ -77,11 +77,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: [
-				"{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.description1}"
-				"{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.description2}"
-				"{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.description3}"
-			]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
 			hide_until_deps_complete: false
@@ -156,18 +151,6 @@
 					type: "item"
 				}
 				{
-					count: 4
-					id: "3FB160267FD9AA47"
-					item: {
-						Count: 1
-						id: "minecraft:diamond_block"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
 					id: "4554E5EA99136194"
 					item: {
 						Count: 1
@@ -220,37 +203,11 @@
 				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest5047085965933135713.rich_description3\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest5047085965933135713.rich_description4\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D76D92CF8D39AE7\"}}]"
 			]
 			id: "460AD9F2064DC761"
-			rewards: [
-				{
-					id: "7B4F9FCDF7CF600F"
-					item: "cataclysm:music_disc_maledictus"
-					type: "item"
-				}
-				{
-					count: 4
-					id: "1C52C7A4136CD1F1"
-					item: {
-						Count: 1
-						id: "cataclysm:cursium_block"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					count: 4
-					id: "5253C6CB165F0BBD"
-					item: {
-						Count: 1
-						id: "minecraft:diamond_block"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "7B4F9FCDF7CF600F"
+				item: "cataclysm:music_disc_maledictus"
+				type: "item"
+			}]
 			shape: "rsquare"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest5047085965933135713.subtitle}"
@@ -272,25 +229,11 @@
 				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest6378650516386893855.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest6378650516386893855.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"40217A88C9D46BB1\"}}]"
 			]
 			id: "588584D95F9A501F"
-			rewards: [
-				{
-					id: "16E7BEA1F0909A4F"
-					item: "cataclysm:music_disc_scylla"
-					type: "item"
-				}
-				{
-					count: 4
-					id: "52D25163F0FE1C96"
-					item: {
-						Count: 1
-						id: "minecraft:diamond_block"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "16E7BEA1F0909A4F"
+				item: "cataclysm:music_disc_scylla"
+				type: "item"
+			}]
 			shape: "rsquare"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest6378650516386893855.subtitle}"
@@ -332,30 +275,6 @@
 					}
 					type: "item"
 				}
-				{
-					count: 4
-					id: "1AEA122B1B851312"
-					item: {
-						Count: 1
-						id: "cataclysm:ancient_metal_block"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					count: 4
-					id: "1DD81E755CB56065"
-					item: {
-						Count: 1
-						id: "minecraft:diamond_block"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
 			]
 			shape: "rsquare"
 			size: 2.0d
@@ -374,7 +293,6 @@
 		{
 			dependencies: ["68EDC89BB022788B"]
 			description: [
-				"{ftbquests.chapter.6E911C0C47606679.quest867631697875350248.description1}"
 				""
 				""
 				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest867631697875350248.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest867631697875350248.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"016F12E968740FBA\"}}]"
@@ -394,29 +312,6 @@
 					item: {
 						Count: 1
 						id: "cataclysm:burning_ashes"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "607D3F4C4E42FF1B"
-					item: {
-						Count: 1
-						id: "cataclysm:ignitium_ingot"
-						tag: {
-							fdbosses: { }
-						}
-					}
-					type: "item"
-				}
-				{
-					count: 16
-					id: "2BA47757BC896998"
-					item: {
-						Count: 1
-						id: "minecraft:blaze_powder"
 						tag: {
 							fdbosses: { }
 						}
@@ -452,7 +347,6 @@
 		{
 			dependencies: ["68EDC89BB022788B"]
 			description: [
-				"{ftbquests.chapter.6E911C0C47606679.quest3774287354747791257.description1}"
 				""
 				""
 				"[\"\",{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3774287354747791257.rich_description1\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"606F5EBEBAB63DB6\"}}]"
@@ -492,20 +386,13 @@
 			]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3774287354747791257.subtitle}"
-			tasks: [
-				{
-					entity: "minecraft:warden"
-					icon: "efn:deepdark_heart"
-					id: "0D2A0E0DCC3F302F"
-					type: "kill"
-					value: 1L
-				}
-				{
-					id: "3E0EA04E3F2FFC8C"
-					structure: "minecraft:ancient_city"
-					type: "structure"
-				}
-			]
+			tasks: [{
+				entity: "minecraft:warden"
+				icon: "efn:deepdark_heart"
+				id: "0D2A0E0DCC3F302F"
+				type: "kill"
+				value: 1L
+			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest3774287354747791257.title}"
 			x: -1.0d
 			y: -2.5d
@@ -513,7 +400,6 @@
 		{
 			dependencies: ["68EDC89BB022788B"]
 			description: [
-				"{ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.description1}"
 				""
 				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6B63BADC1AD47A2B\"}}]"
 				""
@@ -549,7 +435,6 @@
 			description: [
 				""
 				""
-				"{ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.description1}"
 				""
 				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"083E31035AB51591\"}}]"
 			]
@@ -618,20 +503,13 @@
 			]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.subtitle}"
-			tasks: [
-				{
-					entity: "monsterexpansion:skrythe"
-					icon: "monsterexpansion:skrythe_frill"
-					id: "1FA8DD758BB3E887"
-					type: "kill"
-					value: 1L
-				}
-				{
-					biome: "minecraft:windswept_gravelly_hills"
-					id: "56D8D8254C1A17A7"
-					type: "biome"
-				}
-			]
+			tasks: [{
+				entity: "monsterexpansion:skrythe"
+				icon: "monsterexpansion:skrythe_frill"
+				id: "1FA8DD758BB3E887"
+				type: "kill"
+				value: 1L
+			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.title}"
 			x: -3.5d
 			y: 1.0d
@@ -646,20 +524,13 @@
 				xp: 100
 			}]
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3332094715611645652.subtitle}"
-			tasks: [
-				{
-					entity: "block_factorys_bosses:yeti"
-					icon: "block_factorys_bosses:yeti_spawn_egg"
-					id: "3A5F56B41325A69C"
-					type: "kill"
-					value: 1L
-				}
-				{
-					id: "19A68D959B716189"
-					structure: "block_factorys_bosses:yeti_hideout"
-					type: "structure"
-				}
-			]
+			tasks: [{
+				entity: "block_factorys_bosses:yeti"
+				icon: "block_factorys_bosses:yeti_spawn_egg"
+				id: "3A5F56B41325A69C"
+				type: "kill"
+				value: 1L
+			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest3332094715611645652.title}"
 			x: 0.0d
 			y: -4.0d
@@ -696,27 +567,20 @@
 			]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest7601716060644059390.subtitle}"
-			tasks: [
-				{
-					entity: "block_factorys_bosses:sandworm"
-					icon: {
-						Count: 1
-						id: "block_factorys_bosses:sandworm_dart"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
+			tasks: [{
+				entity: "block_factorys_bosses:sandworm"
+				icon: {
+					Count: 1
+					id: "block_factorys_bosses:sandworm_dart"
+					tag: {
+						Damage: 0
+						fdbosses: { }
 					}
-					id: "424210C6D8BB4252"
-					type: "kill"
-					value: 1L
 				}
-				{
-					id: "2E38402EB6613F66"
-					structure: "block_factorys_bosses:sandworm_nest"
-					type: "structure"
-				}
-			]
+				id: "424210C6D8BB4252"
+				type: "kill"
+				value: 1L
+			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest7601716060644059390.title}"
 			x: 3.5d
 			y: -2.5d
@@ -742,7 +606,6 @@
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
-			description: ["{ftbquests.chapter.6E911C0C47606679.quest6338649673391673759.description1}"]
 			id: "57F7684B5A28119F"
 			rewards: [{
 				id: "017BBE4536481F10"
@@ -801,7 +664,6 @@
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
-			description: ["{ftbquests.chapter.6E911C0C47606679.quest9130988065080719209.description1}"]
 			icon_scale: 1.5d
 			id: "7EB7C9446377B769"
 			rewards: [
@@ -921,26 +783,19 @@
 			]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest5633392226306614545.subtitle}"
-			tasks: [
-				{
-					entity: "block_factorys_bosses:infernal_dragon"
-					icon: {
-						Count: 1
-						id: "block_factorys_bosses:dragon_skull"
-						tag: {
-							fdbosses: { }
-						}
+			tasks: [{
+				entity: "block_factorys_bosses:infernal_dragon"
+				icon: {
+					Count: 1
+					id: "block_factorys_bosses:dragon_skull"
+					tag: {
+						fdbosses: { }
 					}
-					id: "03BBFB33B22431C9"
-					type: "kill"
-					value: 1L
 				}
-				{
-					id: "3CF1992B48EAA897"
-					structure: "block_factorys_bosses:dragon_tower"
-					type: "structure"
-				}
-			]
+				id: "03BBFB33B22431C9"
+				type: "kill"
+				value: 1L
+			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest5633392226306614545.title}"
 			x: 5.5d
 			y: 1.0d

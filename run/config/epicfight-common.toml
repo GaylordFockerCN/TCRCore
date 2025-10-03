@@ -10,7 +10,7 @@
 	keepSkills = true
 	hasFallAnimation = true
 	disapleEntityUI = false
-	canSwitchPlayerMode = false
+	canSwitchPlayerMode = true
 	stiffComboAttacks = true
 	noMobsInBossfight = true
 	#0 = vanilla, 1 = epicfight

@@ -280,7 +280,7 @@
 	#Range: 0 ~ 100
 	IgnisDamageTime = 15
 	#Ignis's cracked block breaking ignore the MobGriefing
-	IgnisBlockBreaking = true
+	IgnisBlockBreaking = false
 
 [revenant]
 	#Revenant's Health Multiplier

@@ -1,0 +1,51 @@
+{
+  "chat.epicskills.unlock_notification": "已解锁新技能树",
+  "chat.epicskills.messages.no_page": "无技能树页面",
+
+  "gui.epicskills.skill_tree": "技能树界面",
+  "gui.epicskills.skill_tree.imported_node": "此技能来自%s",
+
+  "gui.epicskills.exp_meter.tooltip": "已有/需要经验值以转化为技能点",
+  "gui.epicskills.abilitypoints.tooltip": "技能点",
+
+  "gui.epicskills.skillinfo.unlock": "解锁",
+  "gui.epicskills.skillinfo.locked": "已锁定",
+  "gui.epicskills.skillinfo.equip": "装备",
+  "gui.epicskills.skillinfo.unequip": "卸下",
+
+  "gui.epicskills.skillinfo.no_ability_points.tooltip": "该技能需要%s技能点（当前拥有%s）",
+  "gui.epicskills.skillinfo.locked.tooltip": "该技能已锁定",
+  "gui.epicskills.skillinfo.already_equipping.tooltip": "你已装备该技能",
+
+  "item.epicskills.ability_stone": "技能石",
+
+  "skill_tree.epicskills.battleborn": "战斗血脉",
+  "skill_tree.epicskills.infernal_might": "炼狱威能",
+  "skill_tree.epicskills.infernal_might.unlock_tip": "在更深层世界中探寻渎神之力",
+
+  "unlock_tip.epicskills.battleborn.meteor_slam": "击败末影龙",
+
+  "commands.epicskills.failed.no_players": "未找到匹配的玩家",
+  "commands.epicskills.abilitypoints.success.single": "已将%s的技能点设置为%s",
+  "commands.epicskills.abilitypoints.success.others": "已为%s个目标设置技能点",
+  "commands.epicskills.abilitypoints.reset_exp_requirement.success.single": "已重置%s的经验需求",
+  "commands.epicskills.abilitypoints.reset_exp_requirement.success.others": "已为%s个目标重置经验需求",
+  "commands.epicskills.abilitypoints.value.get.success": "玩家%s的技能点数值为%s",
+  "commands.epicskills.abilitypoints.value.get.fail": "玩家%s没有技能点",
+  "commands.epicskills.skilltree_progression.reset.success.single": "已重置%s的技能树",
+  "commands.epicskills.skilltree_progression.reset.success.other": "已重置%s个目标的技能树",
+  "commands.epicskills.skilltree_progression.unlock.success.single": "已为%s在%s技能树中解锁%s",
+  "commands.epicskills.skilltree_progression.unlock.success.other": "已为%s个目标在%s技能树中解锁%s",
+  "commands.epicskills.skilltree_progression.unlock.failed": "无法解锁该节点。相邻节点的状态阻止了解锁操作",
+  "commands.epicskills.skilltree_progression.lock.success.single": "已为%s在%s技能树中锁定%s",
+  "commands.epicskills.skilltree_progression.lock.success.other": "已为%s个目标在%s技能树中锁定%s",
+  "commands.epicskills.skilltree_progression.lock.failed": "无法锁定该节点。相邻节点的状态阻止了锁定操作",
+  "commands.epicskills.skilltree_progression.unlock_tree.success.single": "已为%s解锁%s",
+  "commands.epicskills.skilltree_progression.unlock_tree.success.other": "已为%s个目标解锁%s",
+  "commands.epicskills.skilltree_progression.lock_tree.success.single": "已为%s锁定%s",
+  "commands.epicskills.skilltree_progression.lock_tree.success.other": "已为%s个目标锁定%s",
+  "commands.epicskills.skilltree_progression.lock_tree.failed": "无法锁定技能树。请清除所有节点或将强制选项设为true",
+  "commands.epicskills.skilltree_progression.failed": "因玩家数据无效而执行命令失败",
+
+  "eof": "文件结束"
+}

@@ -21,7 +21,8 @@ public class HandleVillagerDialog {
                     .addFinalChoice(-2);
         } else {
             treeBuilder.start(self.getRandom().nextInt(8))
-                    .addFinalChoice(self.getRandom().nextInt(3));
+                    .addFinalChoice(self.getRandom().nextInt(3))
+                    .addFinalChoice(-3);
         }
         Minecraft.getInstance().setScreen(treeBuilder.build());
     }
