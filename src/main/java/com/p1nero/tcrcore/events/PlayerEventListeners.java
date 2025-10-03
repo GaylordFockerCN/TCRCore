@@ -185,7 +185,7 @@ public class PlayerEventListeners {
                 if(PlayerDataManager.stormEyeTraded.get(event.player) && !PlayerDataManager.bllSummoned.get(event.player) && WorldUtil.isInStructure(event.player, WorldUtil.COVES)) {
                     //定点生
                     BlockPos pos = TCRLevelSaveData.get(serverPlayer.serverLevel()).getCoversPos();
-                    if(pos.equals(BlockPos.ZERO)) {
+                    if(pos.equals(BlockPos.ZERO) || !serverPlayer.serverLevel().isLoaded(pos)) {
                         pos = event.player.getOnPos();
                     }
                     //保险措施
