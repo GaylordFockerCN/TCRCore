@@ -217,7 +217,7 @@ dependencies {
     implementation fg.deobf("curse.maven:monster-expansion-1336105:7052712")
     implementation fg.deobf("curse.maven:from-the-shadow-reborn-986907:7037169")
     implementation fg.deobf("curse.maven:more-hitboxes-1115989:6942239")
-    implementation fg.deobf("curse.maven:cataclysm-dimensions-1303494:7028006")
+    implementation fg.deobf("libs:cataclysm_dimension:1.5.6")
     implementation fg.deobf("curse.maven:lendercataclysm-551586:6906993")
     implementation fg.deobf("curse.maven:curios-309927:6418456")
     implementation fg.deobf("curse.maven:lionfish-api-1001614:5922047")

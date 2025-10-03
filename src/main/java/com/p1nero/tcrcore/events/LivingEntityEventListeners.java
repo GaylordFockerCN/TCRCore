@@ -54,6 +54,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.monster.Skeleton;
@@ -367,6 +368,14 @@ public class LivingEntityEventListeners {
     public static void onLivingJoin(EntityJoinLevelEvent event){
         if(event.getEntity().level().isClientSide) {
             return;
+        }
+
+        if(event.getEntity() instanceof ItemEntity itemEntity) {
+            if(itemEntity.getItem().is(net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.FEEDING_UPGRADE.get())
+                || itemEntity.getItem().is(net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_FEEDING_UPGRADE.get())) {
+                event.setCanceled(true);
+                return;
+            }
         }
 
         if(event.getEntity() instanceof Skeleton skeleton) {

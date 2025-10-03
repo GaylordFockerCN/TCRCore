@@ -611,9 +611,10 @@
 			dependencies: ["2F9F109962C8ADF4"]
 			description: [
 				""
-				"杀敌数达&6500&r可解锁次元斩决技能"
+				"{ftbquests.chapter.chaptertcr2.quest7097191615691279450.description1}"
 				""
 				""
+				"{ftbquests.chapter.chaptertcr2.quest7097191615691279450.description2}"
 			]
 			icon: "efn:yamato_dmc4_in_sheath"
 			id: "627E4A2C0428CC5A"

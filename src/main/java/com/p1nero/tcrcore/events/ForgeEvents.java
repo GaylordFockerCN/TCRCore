@@ -17,6 +17,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.merlin204.wraithon.util.PositionTeleporter;
 
+import java.util.Iterator;
+
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID)
 public class ForgeEvents {
 
@@ -32,17 +34,23 @@ public class ForgeEvents {
 
     @SubscribeEvent
     public static void onLevelTick(TickEvent.LevelTickEvent event) {
-        if(event.level instanceof ServerLevel serverLevel && CataclysmDimensions.LEVELS.contains(event.level.dimension())) {
-            TCRDimSaveData dimSaveData = TCRDimSaveData.get(serverLevel);
-            dimSaveData.tickResetting();
-            if(dimSaveData.isResetting()) {
-                for(ServerPlayer serverPlayer : serverLevel.players()) {
-                    serverPlayer.changeDimension(serverLevel.getServer().getLevel(Level.OVERWORLD), new PositionTeleporter(new BlockPos(WorldUtil.START_POS)));
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_demending", dimSaveData.getResetCooldown() / 20), true);
+        if(event.phase == TickEvent.Phase.START) {
+            if(event.level instanceof ServerLevel serverLevel && CataclysmDimensions.LEVELS.contains(event.level.dimension())) {
+                TCRDimSaveData dimSaveData = TCRDimSaveData.get(serverLevel);
+                dimSaveData.tickResetting();
+                if(dimSaveData.isResetting() || CataclysmDimensionMod.RESOURCE_LOCATION_INTEGER_MAP.getOrDefault(serverLevel.dimension().location(), 0) > 0) {
+                    Iterator<ServerPlayer> iterator = serverLevel.players().iterator();
+                    while (iterator.hasNext()) {
+                        ServerPlayer serverPlayer = iterator.next();
+                        serverPlayer.changeDimension(serverLevel.getServer().getLevel(Level.OVERWORLD), new PositionTeleporter(new BlockPos(WorldUtil.START_POS)));
+                        serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_demending", dimSaveData.getResetCooldown() / 20), false);
+                        break;
+                    }
                 }
-            }
-            if(serverLevel.players().isEmpty() && !dimSaveData.isResetting() && !CataclysmDimensionMod.RESOURCE_KEY_BOOLEAN_MAP.get(serverLevel.dimension().location())){
-                dimSaveData.setResetCooldown(200);
+                if(serverLevel.players().isEmpty() && !dimSaveData.isResetting()
+                        && CataclysmDimensionMod.RESOURCE_LOCATION_INTEGER_MAP.getOrDefault(serverLevel.dimension().location(), 0) > 0){
+                    dimSaveData.setResetCooldown(300);
+                }
             }
         }
     }
@@ -50,13 +58,18 @@ public class ForgeEvents {
     @SubscribeEvent
     public static void onEntityJoinDim(EntityTravelToDimensionEvent event) {
         if(event.getEntity().level() instanceof ServerLevel serverLevel && CataclysmDimensions.LEVELS.contains(event.getDimension())) {
-            TCRDimSaveData dimSaveData = TCRDimSaveData.get(serverLevel);
-            dimSaveData.tickResetting();
-            if(dimSaveData.isResetting()) {
-                event.setCanceled(true);
+            ServerLevel targetLevel = serverLevel.getServer().getLevel(event.getDimension());
+            TCRDimSaveData dimSaveData = TCRDimSaveData.get(targetLevel);
+            if(dimSaveData.isResetting() || CataclysmDimensionMod.RESOURCE_LOCATION_INTEGER_MAP.getOrDefault(targetLevel.dimension().location(), 0) > 0){
                 if(event.getEntity() instanceof ServerPlayer serverPlayer) {
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_demending", dimSaveData.getResetCooldown() / 20), true);
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_demending", dimSaveData.getResetCooldown() / 20), false);
                 }
+                event.setCanceled(true);
+                return;
+            }
+            if(event.getEntity() instanceof ServerPlayer serverPlayer && serverPlayer.tickCount < 300) {
+                event.setCanceled(true);
+                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_demending", (300 - serverPlayer.tickCount) / 20), false);
             }
         }
     }
