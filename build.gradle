@@ -270,7 +270,7 @@ dependencies {
     implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
 
     implementation fg.deobf("curse.maven:configured-457570:5180900")
-    implementation fg.deobf("curse.maven:havns-style-combat-1355783:7048590")
+    implementation fg.deobf("curse.maven:havns-style-combat-1355783:7062128")
 
     implementation fg.deobf("curse.maven:blueprint-382216:6408581")
 

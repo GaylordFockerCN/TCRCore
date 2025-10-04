@@ -1,0 +1,103 @@
+
+[HUD]
+	#Enable or disable the Style Combat HUD box
+	hud_enabled = true
+	#X position of HUD box (distance from left of screen)
+	#Range: 0 ~ 5000
+	hud_x = 20
+	#Y position of HUD box (distance from top of screen)
+	#Range: 0 ~ 5000
+	hud_y = 60
+	#Width of the HUD box
+	#Range: 50 ~ 1000
+	hud_width = 160
+	#Height of the HUD box
+	#Range: 20 ~ 1000
+	hud_height = 160
+	#Show text current/max points above progress bar
+	hudShowPointsText = true
+	#Show background box or not
+	hudShowBackgroundBox = false
+	#Time (ms) after last score event before HUD fades out (Default: 3000ms = 3s)
+	#Range: 1000 ~ 100000
+	hudInactiveTimeout = 3000
+	#Fade animation duration in ms(Default: 1000ms = 1s)
+	#Range: 100 ~ 50000
+	hudFadeDuration = 1000
+
+["Rank Text / Icon Customize"]
+	#Size of the rank icon (pixels) (Default: 32x32)
+	#Range: 4 ~ 128
+	hudRankIconSize = 32
+	#Show text next to rank icon
+	hudShowRankSmallText = true
+	#Scale multiplier for rank small text
+	#Range: 1 ~ 5
+	hudRankSmallTextSize = 2
+	#Text for SSS
+	hudTextSSS = "Hitstorm"
+	#Text for SS
+	hudTextSS = "adistic"
+	#Text for S
+	hudTextS = "upreme"
+	#Text for A
+	hudTextA = "ggressive"
+	#Text for B
+	hudTextB = "rutal"
+	#Text for C
+	hudTextC = "haotic"
+	#Text for D
+	hudTextD = "estructive"
+
+["Offset For Rank Text"]
+	#Range: -200 ~ 200
+	hudOffsetX_SSS = 35
+	#Range: -200 ~ 200
+	hudOffsetY_SSS = 10
+	#Range: -200 ~ 200
+	hudOffsetX_SS = 34
+	#Range: -200 ~ 200
+	hudOffsetY_SS = 16
+	#Range: -200 ~ 200
+	hudOffsetX_S = 30
+	#Range: -200 ~ 200
+	hudOffsetY_S = 15
+	#Range: -200 ~ 200
+	hudOffsetX_A = 30
+	#Range: -200 ~ 200
+	hudOffsetY_A = 16
+	#Range: -200 ~ 200
+	hudOffsetX_B = 32
+	#Range: -200 ~ 200
+	hudOffsetY_B = 16
+	#Range: -200 ~ 200
+	hudOffsetX_C = 32
+	#Range: -200 ~ 200
+	hudOffsetY_C = 15
+	#Range: -200 ~ 200
+	hudOffsetX_D = 30
+	#Range: -200 ~ 200
+	hudOffsetY_D = 15
+
+["Action Texts"]
+	#How long are action texts fading out! (Default: 3500Milis = 3.5s) (Set 0 is disable this option)
+	#Range: 0 ~ 10000
+	actionTextFadingOut = 3500
+	#Scale (size) of action texts like +Kill, +Parry, +Dodge
+	#Range: 0.5 ~ 5.0
+	actionTextScale = 1.1
+	#Offset X position (Dependent On Process Bar Points Offset X) (For EX: barX + OffsetX)
+	#Range: 0 ~ 10000
+	actionTextOffsetX = 2
+	#Offset Y position (Dependent On Process Bar Points Offset Y) (For EX: barY + OffsetY)
+	#Range: 0 ~ 10000
+	actionTextOffsetY = 24
+	#Maxium of Action Text show on (Default: 8) (For Example: If there're 10 texts show on rapidly, it'll remove 2 texts at the bottom immediately) (Set 0 is disable this option)
+	#Range: 0 ~ 1000
+	actionTextMaxText = 8
+
+[Other]
+	#How long do combos shake! (Default: 500Milis = 0.5s) (Set 0 is disable this option)
+	#Range: 0 ~ 100000
+	hudComboShake = 500
+

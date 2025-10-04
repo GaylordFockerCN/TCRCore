@@ -70,7 +70,7 @@ public class TutorialGolem extends IronGolem {
         } else {
             return false;
         }
-        return super.hurt(source, Math.max(value, this.getHealth() - 10));
+        return super.hurt(source, 3);
     }
 
     @Override
@@ -131,6 +131,8 @@ public class TutorialGolem extends IronGolem {
                 serverPlayer.displayClientMessage(TCRCoreMod.getInfo("cloud_follow_me"), false);
                 level().addFreshEntity(xianQiEntity);
                 PlayerDataManager.tutorial_passed.put(serverPlayer, true);
+            } else {
+                this.setTarget(null);
             }
         }
     }

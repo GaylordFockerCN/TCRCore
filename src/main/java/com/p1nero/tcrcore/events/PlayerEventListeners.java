@@ -42,6 +42,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
 import net.minecraftforge.event.entity.player.AdvancementEvent;
@@ -185,8 +186,12 @@ public class PlayerEventListeners {
                 if(PlayerDataManager.stormEyeTraded.get(event.player) && !PlayerDataManager.bllSummoned.get(event.player) && WorldUtil.isInStructure(event.player, WorldUtil.COVES)) {
                     //定点生
                     BlockPos pos = TCRLevelSaveData.get(serverPlayer.serverLevel()).getCoversPos();
-                    if(pos.equals(BlockPos.ZERO) || !serverPlayer.serverLevel().isLoaded(pos)) {
-                        pos = event.player.getOnPos();
+                    if(!serverPlayer.serverLevel().isLoaded(pos)) {
+                        return;
+                    }
+                    if(pos.equals(BlockPos.ZERO)) {
+                        Vec3 targetPos = event.player.position().add(event.player.getViewVector(1.0F).scale(10));
+                        pos = new BlockPos((int) targetPos.x, (int) (event.player.getY() + 5), (int) targetPos.z);
                     }
                     //保险措施
                     if(EntityUtil.getNearByEntities(serverPlayer.serverLevel(), pos.getCenter(), 100, BulldrogiothEntity.class).isEmpty()) {
