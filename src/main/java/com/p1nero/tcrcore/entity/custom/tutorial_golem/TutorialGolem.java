@@ -70,7 +70,12 @@ public class TutorialGolem extends IronGolem {
         } else {
             return false;
         }
-        return super.hurt(source, 3);
+        return super.hurt(source, value);
+    }
+
+    @Override
+    public void die(@NotNull DamageSource damageSource) {
+        this.setHealth(this.getMaxHealth());
     }
 
     @Override
@@ -108,7 +113,7 @@ public class TutorialGolem extends IronGolem {
     @Override
     public void baseTick() {
         super.baseTick();
-        if(this.getTarget() instanceof ServerPlayer serverPlayer && this.tickCount % 60 == 0) {
+        if(this.getTarget() instanceof ServerPlayer serverPlayer && this.tickCount % 40 == 0) {
             if(this.hasEffect(MobEffects.HEAL)) {
                 serverPlayer.displayClientMessage(TCRCoreMod.getInfo("after_heal_stop_attack"), true);
                 return;

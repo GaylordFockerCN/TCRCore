@@ -103,15 +103,15 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("press_to_open_portal_screen", "Hold §6[Right-click]§r on the Waystone to return to previously activated stones!");
         this.addInfo("press_to_show_progress", "Press §6[L]§f to view guidance!");
         this.addInfo("press_to_skill_tree", "Sufficient EXP available. Press §6[K]§f to allocate skill points!");
-        this.addInfo("lock_tutorial", "Press §6[[%s§6]§r to lock on target");
+        this.addInfo("lock_tutorial", "§6[[%s§6]§r to lock on");
         this.addInfo("lock_tutorial_sub", "§cMove the mouse to switch targets! Press again to unlock!");
-        this.addInfo("riptide_tutorial", "Press the §6[[%s§6]§f while in water to activate §bRiptide");
-        this.addInfo("dodge_tutorial", "Press §6[[%s§6]§f to perform a dodge");
-        this.addInfo("weapon_innate_tutorial", "Press §6[[%s§6]§f to activate the weapon skill");
+        this.addInfo("riptide_tutorial", "§6[[%s§6]§f to §bRiptide");
+        this.addInfo("dodge_tutorial", "§6[[%s§6]§f to dodge");
+        this.addInfo("weapon_innate_tutorial", "§6[[%s§6]§f to weapon skill");
         this.addInfo("weapon_innate_charge_tutorial", "§6[Perfect Dodge]§c or §6[Perfect Parry]§c can charge certain weapons!");
         this.addInfo("perfect_dodge_tutorial", "§cDodge at the right moment to perform a Perfect Dodge!");
         this.addInfo("hurt_damage", "Dealt [ %.1f ] damage!");
-        this.addInfo("parry_tutorial", "Press §6[[%s§6]§f to block");
+        this.addInfo("parry_tutorial", "§6[[%s§6]§f to guard");
         this.addInfo("perfect_parry_tutorial", "§cBlock at the right moment to trigger a Perfect Parry!");
         this.addInfo("you_pass", "§6You passed!!");
 
