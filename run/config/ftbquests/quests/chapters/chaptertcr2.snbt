@@ -37,9 +37,7 @@
 					item: {
 						Count: 1
 						id: "minecraft:enchanting_table"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -610,9 +608,6 @@
 				item: {
 					Count: 1
 					id: "fantasy_armor:moon_crystal"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				type: "item"
 			}]
@@ -666,9 +661,7 @@
 					item: {
 						Count: 1
 						id: "efn:yamato_dmc_in_sheath"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					optional_task: true
 					type: "item"
@@ -716,10 +709,6 @@
 			icon: {
 				Count: 1
 				id: "super_golem:golem_heart"
-				tag: {
-					Damage: 0
-					fdbosses: { }
-				}
 			}
 			icon_scale: 2.0d
 			id: "30D9DD9BAA59B75A"
@@ -735,10 +724,6 @@
 				item: {
 					Count: 1
 					id: "super_golem:golem_heart"
-					tag: {
-						Damage: 0
-						fdbosses: { }
-					}
 				}
 				optional_task: true
 				type: "item"
@@ -755,9 +740,6 @@
 			icon: {
 				Count: 1
 				id: "efn:nf_shortsword"
-				tag: {
-					fdbosses: { }
-				}
 			}
 			icon_scale: 2.0d
 			id: "32C5B1F0B7165EC2"
@@ -773,9 +755,6 @@
 				item: {
 					Count: 1
 					id: "efn:nf_shortsword"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				optional_task: true
 				type: "item"
@@ -788,10 +767,6 @@
 			icon: {
 				Count: 1
 				id: "epicfight:golden_dagger"
-				tag: {
-					Damage: 0
-					fdbosses: { }
-				}
 			}
 			icon_scale: 2.0d
 			id: "23459350174F79BD"
@@ -807,10 +782,6 @@
 				item: {
 					Count: 1
 					id: "epicfight:golden_dagger"
-					tag: {
-						Damage: 0
-						fdbosses: { }
-					}
 				}
 				optional_task: true
 				type: "item"
@@ -828,9 +799,6 @@
 			icon: {
 				Count: 1
 				id: "p1nero_bow:mortis"
-				tag: {
-					fdbosses: { }
-				}
 			}
 			icon_scale: 2.0d
 			id: "0590C9C7242BCC96"
@@ -846,9 +814,6 @@
 				item: {
 					Count: 1
 					id: "p1nero_bow:mortis"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				optional_task: true
 				type: "item"
@@ -866,9 +831,6 @@
 				item: {
 					Count: 1
 					id: "enchantinginfuser:enchanting_infuser"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				type: "item"
 			}]
@@ -885,9 +847,6 @@
 				item: {
 					Count: 1
 					id: "enchantinginfuser:advanced_enchanting_infuser"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				type: "item"
 			}]

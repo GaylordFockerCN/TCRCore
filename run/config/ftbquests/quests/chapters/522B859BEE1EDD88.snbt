@@ -100,9 +100,6 @@
 				item: {
 					Count: 1
 					id: "armourers_workshop:skin-template"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				type: "item"
 			}]

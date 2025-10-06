@@ -102,9 +102,6 @@
 					item: {
 						Count: 1
 						id: "minecraft:obsidian"
-						tag: {
-							fdbosses: { }
-						}
 					}
 					type: "item"
 				}
@@ -113,10 +110,6 @@
 					item: {
 						Count: 1
 						id: "minecraft:flint_and_steel"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
 					}
 					type: "item"
 				}
@@ -125,7 +118,7 @@
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.subtitle}"
 			tasks: [{
-				advancement: "tcrcore:stage4"
+				advancement: "tcrcore:stage3"
 				criterion: ""
 				id: "18A4D4525511C684"
 				title: "{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.task.1775777603170453124.title}"
@@ -144,9 +137,6 @@
 			icon: {
 				Count: 1
 				id: "cataclysm:abyssal_sacrifice"
-				tag: {
-					fdbosses: { }
-				}
 			}
 			id: "6FD4134465F4B80A"
 			rewards: [
@@ -160,9 +150,7 @@
 					item: {
 						Count: 1
 						id: "tcrcore:rare_artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -176,9 +164,7 @@
 					icon: {
 						Count: 1
 						id: "cataclysm:tidal_claws"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					id: "31F81725804DBD7A"
 					type: "kill"
@@ -189,9 +175,7 @@
 					item: {
 						Count: 1
 						id: "cataclysm:abyssal_sacrifice"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -304,9 +288,7 @@
 					item: {
 						Count: 1
 						id: "cataclysm:burning_ashes"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -315,9 +297,7 @@
 					item: {
 						Count: 1
 						id: "tcrcore:rare_artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -358,9 +338,7 @@
 					item: {
 						Count: 1
 						id: "tcrcore:artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -428,9 +406,6 @@
 				item: {
 					Count: 1
 					id: "tcrcore:artifact_ticket"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				type: "item"
 			}]
@@ -481,10 +456,6 @@
 			icon: {
 				Count: 1
 				id: "block_factorys_bosses:sandworm_dart"
-				tag: {
-					Damage: 0
-					fdbosses: { }
-				}
 			}
 			id: "697EB87B461228FE"
 			rewards: [
@@ -498,9 +469,7 @@
 					item: {
 						Count: 1
 						id: "tcrcore:artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -513,10 +482,6 @@
 					icon: {
 						Count: 1
 						id: "block_factorys_bosses:sandworm_dart"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
 					}
 					id: "424210C6D8BB4252"
 					type: "kill"
@@ -627,9 +592,7 @@
 					item: {
 						Count: 1
 						id: "tcrcore:artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -681,9 +644,6 @@
 			icon: {
 				Count: 1
 				id: "block_factorys_bosses:dragon_skull"
-				tag: {
-					fdbosses: { }
-				}
 			}
 			icon_scale: 1.5d
 			id: "4E2DD4620173E511"
@@ -692,9 +652,6 @@
 				item: {
 					Count: 1
 					id: "tcrcore:artifact_ticket"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				type: "item"
 			}]
@@ -705,9 +662,6 @@
 				icon: {
 					Count: 1
 					id: "block_factorys_bosses:dragon_skull"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				id: "03BBFB33B22431C9"
 				type: "kill"
@@ -722,9 +676,6 @@
 			icon: {
 				Count: 1
 				id: "monsterexpansion:rhyza_tail"
-				tag: {
-					fdbosses: { }
-				}
 			}
 			id: "1076C4FBFF37BE92"
 			rewards: [{
@@ -732,9 +683,6 @@
 				item: {
 					Count: 1
 					id: "tcrcore:rare_artifact_ticket"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				type: "item"
 			}]
@@ -745,9 +693,6 @@
 				icon: {
 					Count: 1
 					id: "monsterexpansion:rhyza_tail"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				id: "2D9D94888B5B48C1"
 				type: "kill"

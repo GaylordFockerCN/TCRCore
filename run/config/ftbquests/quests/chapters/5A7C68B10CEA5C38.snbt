@@ -250,7 +250,6 @@
 							Fireworks: {
 								Flight: 3b
 							}
-							fdbosses: { }
 						}
 					}
 					type: "item"
@@ -265,7 +264,6 @@
 							Fireworks: {
 								Flight: 2b
 							}
-							fdbosses: { }
 						}
 					}
 					type: "item"
@@ -280,7 +278,6 @@
 							Fireworks: {
 								Flight: 1b
 							}
-							fdbosses: { }
 						}
 					}
 					type: "item"
@@ -313,9 +310,6 @@
 			icon: {
 				Count: 1
 				id: "minecraft:iron_ore"
-				tag: {
-					fdbosses: { }
-				}
 			}
 			id: "1A41E3F83FF6546D"
 			rewards: [{
@@ -323,9 +317,6 @@
 				item: {
 					Count: 1
 					id: "minecraft:diamond"
-					tag: {
-						fdbosses: { }
-					}
 				}
 				type: "item"
 			}]
@@ -356,7 +347,6 @@
 					Fireworks: {
 						Flight: 3b
 					}
-					fdbosses: { }
 				}
 			}
 			id: "67E822F4B51CE749"
@@ -385,9 +375,6 @@
 			icon: {
 				Count: 1
 				id: "monsterexpansion:skrythe_frill"
-				tag: {
-					fdbosses: { }
-				}
 			}
 			id: "2DA2E2A05342A13F"
 			rewards: [{

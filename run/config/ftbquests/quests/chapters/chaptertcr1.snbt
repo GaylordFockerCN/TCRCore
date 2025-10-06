@@ -59,10 +59,6 @@
 					item: {
 						Count: 1
 						id: "super_golem:golem_heart"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
 					}
 					type: "item"
 				}
@@ -71,9 +67,7 @@
 					item: {
 						Count: 1
 						id: "tcrcore:artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -124,9 +118,7 @@
 					item: {
 						Count: 1
 						id: "fromtheshadows:crimson_shell"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -135,9 +127,7 @@
 					item: {
 						Count: 1
 						id: "tcrcore:artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -183,9 +173,7 @@
 					item: {
 						Count: 1
 						id: "block_factorys_bosses:dragon_skull"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -195,9 +183,7 @@
 					item: {
 						Count: 1
 						id: "block_factorys_bosses:dragon_bone"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -206,10 +192,6 @@
 					item: {
 						Count: 1
 						id: "block_factorys_bosses:dragon_bones_chestplate"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
 					}
 					type: "item"
 				}
@@ -218,9 +200,7 @@
 					item: {
 						Count: 1
 						id: "tcrcore:artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -267,9 +247,7 @@
 					item: {
 						Count: 1
 						id: "aquamirae:ship_graveyard_echo"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -278,10 +256,6 @@
 					item: {
 						Count: 1
 						id: "aquamirae:three_bolt_suit"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
 					}
 					type: "item"
 				}
@@ -290,10 +264,6 @@
 					item: {
 						Count: 1
 						id: "aquamirae:three_bolt_leggings"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
 					}
 					type: "item"
 				}
@@ -302,10 +272,6 @@
 					item: {
 						Count: 1
 						id: "aquamirae:three_bolt_boots"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
 					}
 					type: "item"
 				}
@@ -314,10 +280,6 @@
 					item: {
 						Count: 1
 						id: "aquamirae:three_bolt_helmet"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
 					}
 					type: "item"
 				}
@@ -365,10 +327,6 @@
 					item: {
 						Count: 1
 						id: "dodosmobs:chimera_armor_chestplate"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
 					}
 					type: "item"
 				}
@@ -377,9 +335,7 @@
 					item: {
 						Count: 1
 						id: "dodosmobs:chimera_claw"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}
@@ -388,9 +344,7 @@
 					item: {
 						Count: 1
 						id: "tcrcore:artifact_ticket"
-						tag: {
-							fdbosses: { }
-						}
+						
 					}
 					type: "item"
 				}

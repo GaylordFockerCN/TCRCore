@@ -12,7 +12,7 @@
 		shape: "rsquare"
 		subtitle: "{ftbquests.chapter.740CE6181E401B15.quest6146305648948097430.subtitle}"
 		tasks: [{
-			advancement: "tcrcore:stage5"
+			advancement: "tcrcore:stage4"
 			criterion: ""
 			id: "3A9602C28077A9F6"
 			type: "advancement"

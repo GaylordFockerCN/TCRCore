@@ -455,10 +455,6 @@
 					item: {
 						Count: 1
 						id: "fromtheshadows:diabolium_boots"
-						tag: {
-							Damage: 0
-							fdbosses: { }
-						}
 					}
 					type: "item"
 				}
