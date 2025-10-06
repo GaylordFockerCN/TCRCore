@@ -34,6 +34,11 @@ public class CursedAltarBlockEntity extends AbstractAltarBlockEntity {
     }
 
     @Override
+    public boolean checkEyeFound(Player player) {
+        return PlayerDataManager.cursedEyeTraded.get(player);
+    }
+
+    @Override
     public int getColor() {
         return ChatFormatting.DARK_GREEN.getColor();
     }

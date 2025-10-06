@@ -7,6 +7,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.animal.IronGolem;
@@ -32,4 +33,12 @@ public class IronGolemMixin extends AbstractGolem {
             DialogueLib.sendDialog((IronGolem) (Object) this, tag, serverPlayer);
         }
     }
+
+    @Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
+    private void tcr$hurt(DamageSource p_28848_, float p_28849_, CallbackInfoReturnable<Boolean> cir){
+        if(this.tickCount < 40) {
+            cir.setReturnValue(false);
+        }
+    }
+
 }

@@ -28,6 +28,11 @@ public class FlameAltarBlockEntity extends AbstractAltarBlockEntity {
     }
 
     @Override
+    public boolean checkEyeFound(Player player) {
+        return PlayerDataManager.flameEyeTraded.get(player);
+    }
+
+    @Override
     public int getColor() {
         return ChatFormatting.RED.getColor();
     }

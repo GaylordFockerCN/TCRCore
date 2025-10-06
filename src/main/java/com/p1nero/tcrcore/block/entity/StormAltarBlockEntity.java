@@ -34,6 +34,11 @@ public class StormAltarBlockEntity extends AbstractAltarBlockEntity {
     }
 
     @Override
+    public boolean checkEyeFound(Player player) {
+        return PlayerDataManager.stormEyeTraded.get(player);
+    }
+
+    @Override
     public int getColor() {
         return ChatFormatting.AQUA.getColor();
     }

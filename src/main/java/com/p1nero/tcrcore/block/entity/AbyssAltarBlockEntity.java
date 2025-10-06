@@ -34,6 +34,11 @@ public class AbyssAltarBlockEntity extends AbstractAltarBlockEntity {
     }
 
     @Override
+    public boolean checkEyeFound(Player player) {
+        return PlayerDataManager.abyssEyeTraded.get(player);
+    }
+
+    @Override
     public int getColor() {
         return ChatFormatting.BLUE.getColor();
     }

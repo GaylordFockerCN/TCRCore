@@ -33,6 +33,10 @@ public class DesertAltarBlockEntity extends AbstractAltarBlockEntity {
         return PlayerDataManager.desertEyeKilled.get(player);
     }
 
+    @Override
+    public boolean checkEyeFound(Player player) {
+        return PlayerDataManager.desertEyeTraded.get(player);
+    }
 
     @Override
     public int getColor() {

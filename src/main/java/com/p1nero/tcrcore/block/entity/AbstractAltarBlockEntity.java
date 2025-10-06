@@ -93,7 +93,7 @@ public abstract class AbstractAltarBlockEntity extends BlockEntity {
             return;
         }
         if(this.isActivated){
-            if(!PlayerDataManager.isAllEyeGet(pPlayer)) {
+            if(!checkEyeFound(pPlayer)) {
                 pPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_before_finish"), false);
                 return;
             }
@@ -183,6 +183,7 @@ public abstract class AbstractAltarBlockEntity extends BlockEntity {
     }
 
     public abstract boolean checkBossKilled(Player player);
+    public abstract boolean checkEyeFound(Player player);
 
     public abstract int getColor();
     public float getAlpha(){
