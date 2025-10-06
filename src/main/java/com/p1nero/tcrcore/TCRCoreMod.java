@@ -5,6 +5,7 @@ import com.github.L_Ender.cataclysm.init.ModItems;
 import com.google.common.collect.MoreCollectors;
 import com.hm.efn.registries.EFNItem;
 import com.mojang.logging.LogUtils;
+import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.tcrcore.block.TCRBlocks;
 import com.p1nero.tcrcore.block.entity.TCRBlockEntities;
 import com.p1nero.tcrcore.client.sound.TCRSounds;
@@ -12,11 +13,13 @@ import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.events.ItemEvents;
 import com.p1nero.tcrcore.events.LivingEntityEventListeners;
+import com.p1nero.tcrcore.events.PlayerEventListeners;
 import com.p1nero.tcrcore.gameassets.TCRSkillSlots;
 import com.p1nero.tcrcore.item.TCRItemTabs;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
+import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.mcreator.morecritters.init.MoreCrittersModEntities;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -74,6 +77,15 @@ public class TCRCoreMod {
 //                isCheatMod = true;
 //            }
 //        });
+
+        PlayerEventListeners.illegalItems.add(UAItems.STARVED_WOLF_SKULL.get());
+        PlayerEventListeners.illegalItems.add(artifacts.registry.ModItems.VAMPIRIC_GLOVE.get());
+        PlayerEventListeners.illegalItems.add(UAItems.BURNING_SOUL.get());
+        PlayerEventListeners.illegalItems.add(AquamiraeItems.DIVIDER.get());
+        PlayerEventListeners.illegalItems.add(net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.FEEDING_UPGRADE.get());
+        PlayerEventListeners.illegalItems.add(net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_FEEDING_UPGRADE.get());
+        PlayerEventListeners.illegalItems.add(artifacts.registry.ModItems.SCARF_OF_INVISIBILITY.get());
+
         if(WraithonConfig.ARACHNOPHOBIA_MODE.get()) {
             LivingEntityEventListeners.illegalEntityTypes.add(MoreCrittersModEntities.SNOWFLAKE_SPIDER.get());
         }

@@ -4,6 +4,7 @@ import com.obscuria.aquamirae.common.entities.CaptainCornelia;
 import com.obscuria.aquamirae.common.items.weapon.DividerItem;
 import com.obscuria.aquamirae.common.items.weapon.WhisperOfTheAbyssItem;
 import com.obscuria.aquamirae.registry.AquamiraeSounds;
+import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.client.sound.CorneliaMusicPlayer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.damagesource.DamageSource;
@@ -37,7 +38,10 @@ public abstract class CaptainCorneliaMixin extends Monster {
 
     @Redirect(method = "baseTick", at = @At(value = "INVOKE", target = "Lcom/obscuria/aquamirae/common/entities/CaptainCornelia;heal(F)V"))
     private void tcr$baseTick$heal(CaptainCornelia instance, float v) {
-        this.heal(0.8F);
+        this.heal(0.5F);
+        if(this.getTarget() instanceof Player player) {
+            player.displayClientMessage(TCRCoreMod.getInfo("captain_start_heal"), true);
+        }
     }
 
     @Inject(method = "baseTick", at = @At("TAIL"))

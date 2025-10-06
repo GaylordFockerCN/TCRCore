@@ -13,11 +13,10 @@ import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.network.packet.clientbound.CSTipPacket;
 import com.p1nero.tcrcore.network.packet.clientbound.PlayTitlePacket;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
-import com.p1nero.tcrcore.save_data.TCRLevelSaveData;
+import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.EntityUtil;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
-import com.p1nero.tudigong.item.TDGItemTabs;
 import com.p1nero.tudigong.item.TDGItems;
 import com.yesman.epicskills.world.capability.AbilityPoints;
 import net.blay09.mods.waystones.block.ModBlocks;
@@ -37,6 +36,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -45,20 +46,25 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
+import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.player.AdvancementEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerXpEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import net.sonmok14.fromtheshadows.server.entity.mob.BulldrogiothEntity;
 import net.sonmok14.fromtheshadows.server.utils.registry.EntityRegistry;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
+import top.theillusivec4.curios.api.event.CurioEquipEvent;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.entitypatch.player.ServerPlayerPatch;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID)
 public class PlayerEventListeners {
@@ -81,10 +87,6 @@ public class PlayerEventListeners {
             String path = event.getAdvancement().getId().getPath();
             String namespace = event.getAdvancement().getId().getNamespace();
             if(namespace.equals(TCRCoreMod.MOD_ID)) {
-                if(path.equals("kill_pillager") && !PlayerDataManager.pillagerKilled.get(player)) {
-                    LivingEntityEventListeners.giveOracle(player);
-                    PlayerDataManager.pillagerKilled.put(player, true);
-                }
                 if(path.equals("stage3")) {
                     player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_dim_girl"), false);
                     player.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("unlock_new_dim")));
@@ -120,7 +122,6 @@ public class PlayerEventListeners {
                 ItemUtil.addItem(serverPlayer, ModItems.BACKPACK.get(), 1);
                 ItemUtil.addItem(serverPlayer, Items.BREAD, 32);
                 ItemUtil.addItem(serverPlayer, TDGItems.TUDI_COMMAND_SPELL.get(), 1);
-                serverPlayer.setItemSlot(EquipmentSlot.CHEST, EFNItem.RUINFIGHTER_CHESTPLATE.get().getDefaultInstance());
 
                 PlayerDataManager.firstJoint.put(serverPlayer, true);
             }
@@ -162,15 +163,36 @@ public class PlayerEventListeners {
 
     }
 
+    public static final Set<Item> illegalItems = new HashSet<>();
+
+    @SubscribeEvent
+    public static void onCurioEquip(CurioEquipEvent event) {
+        if(illegalItems.contains(event.getStack().getItem())) {
+            event.setResult(Event.Result.DENY);
+            if(event.getEntity() instanceof Player player) {
+                player.displayClientMessage(TCRCoreMod.getInfo("illegal_item_tip"), true);
+            }
+        }
+    }
+
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if(event.phase == TickEvent.Phase.START) {
+
             if(event.player.isLocalPlayer() && WorldUtil.inMainLand(event.player)) {
                 if(isNearBarrier(event.player)) {
                     event.player.displayClientMessage(TCRCoreMod.getInfo("hit_barrier"), true);
                 }
             }
             if(event.player instanceof ServerPlayer serverPlayer) {
+
+                ItemStack mainHandItem = serverPlayer.getMainHandItem();
+                if(illegalItems.contains(mainHandItem.getItem())) {
+                    event.player.drop(mainHandItem.copy(), true);
+                    mainHandItem.shrink(1);
+                    event.player.displayClientMessage(TCRCoreMod.getInfo("illegal_item_tip"), true);
+                }
+
                 if(!serverPlayer.isInvulnerable()) {
                     if(serverPlayer.hasEffect(TCREffects.INVULNERABLE.get())) {
                         serverPlayer.setInvulnerable(true);
@@ -185,7 +207,7 @@ public class PlayerEventListeners {
                 }
                 if(PlayerDataManager.stormEyeTraded.get(event.player) && !PlayerDataManager.bllSummoned.get(event.player) && WorldUtil.isInStructure(event.player, WorldUtil.COVES)) {
                     //定点生
-                    BlockPos pos = TCRLevelSaveData.get(serverPlayer.serverLevel()).getCoversPos();
+                    BlockPos pos = TCRMainLevelSaveData.get(serverPlayer.serverLevel()).getAbyssPos();
                     if(!serverPlayer.serverLevel().isLoaded(pos)) {
                         return;
                     }
@@ -237,7 +259,7 @@ public class PlayerEventListeners {
     @SubscribeEvent
     public static void onPlayerEnterDim(EntityTravelToDimensionEvent event) {
         if(event.getEntity() instanceof ServerPlayer serverPlayer && (event.getDimension() == Level.END || event.getDimension() == Level.NETHER)) {
-            if(PlayerDataManager.stage.getInt(serverPlayer) < 3) {
+            if(PlayerDataManager.stage.getInt(serverPlayer) < 4) {
                 event.setCanceled(true);
                 serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_dim"), true);
             }

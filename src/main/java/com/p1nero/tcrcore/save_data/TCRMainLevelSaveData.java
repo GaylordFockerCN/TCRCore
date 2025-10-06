@@ -12,11 +12,14 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.storage.DimensionDataStorage;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
-public class TCRLevelSaveData extends SavedData {
-    private BlockPos coversPos = BlockPos.ZERO;
+public class TCRMainLevelSaveData extends SavedData {
+    private BlockPos abyssPos = BlockPos.ZERO;
+    private BlockPos desertPos = BlockPos.ZERO;
+    private BlockPos stormPos = BlockPos.ZERO;
+    private BlockPos cursedPos = BlockPos.ZERO;
+    private BlockPos flamePos = BlockPos.ZERO;
     private boolean girlPlaced;
     private boolean stormFinish;
     private boolean desertFinish;
@@ -57,16 +60,50 @@ public class TCRLevelSaveData extends SavedData {
         }
     }
 
-    public static TCRLevelSaveData create() {
-        return new TCRLevelSaveData();
+    public static TCRMainLevelSaveData create() {
+        return new TCRMainLevelSaveData();
     }
 
-    public void setCoversPos(BlockPos coversPos) {
-        this.coversPos = coversPos;
+    public void setAbyssPos(BlockPos abyssPos) {
+        this.abyssPos = abyssPos;
+    }
+    public void setDesertPos(BlockPos desertPos) {
+        this.desertPos = desertPos;
+        setDirty();
     }
 
-    public BlockPos getCoversPos() {
-        return coversPos;
+    public BlockPos getDesertPos() {
+        return desertPos;
+    }
+
+    public void setStormPos(BlockPos stormPos) {
+        this.stormPos = stormPos;
+        setDirty();
+    }
+
+    public BlockPos getStormPos() {
+        return stormPos;
+    }
+
+    public void setCursedPos(BlockPos cursedPos) {
+        this.cursedPos = cursedPos;
+        setDirty();
+    }
+
+    public BlockPos getCursedPos() {
+        return cursedPos;
+    }
+
+    public void setFlamePos(BlockPos flamePos) {
+        this.flamePos = flamePos;
+        setDirty();
+    }
+
+    public BlockPos getFlamePos() {
+        return flamePos;
+    }
+    public BlockPos getAbyssPos() {
+        return abyssPos;
     }
 
     public boolean isGirlPlaced() {
@@ -130,9 +167,26 @@ public class TCRLevelSaveData extends SavedData {
 
     @Override
     public @NotNull CompoundTag save(@NotNull CompoundTag pCompoundTag) {
-        pCompoundTag.putInt("covesPosX", coversPos.getX());
-        pCompoundTag.putInt("covesPosY", coversPos.getY());
-        pCompoundTag.putInt("covesPosZ", coversPos.getZ());
+        pCompoundTag.putInt("covesPosX", abyssPos.getX());
+        pCompoundTag.putInt("covesPosY", abyssPos.getY());
+        pCompoundTag.putInt("covesPosZ", abyssPos.getZ());
+
+        pCompoundTag.putInt("desertPosX", desertPos.getX());
+        pCompoundTag.putInt("desertPosY", desertPos.getY());
+        pCompoundTag.putInt("desertPosZ", desertPos.getZ());
+
+        pCompoundTag.putInt("stormPosX", stormPos.getX());
+        pCompoundTag.putInt("stormPosY", stormPos.getY());
+        pCompoundTag.putInt("stormPosZ", stormPos.getZ());
+
+        pCompoundTag.putInt("cursedPosX", cursedPos.getX());
+        pCompoundTag.putInt("cursedPosY", cursedPos.getY());
+        pCompoundTag.putInt("cursedPosZ", cursedPos.getZ());
+
+        pCompoundTag.putInt("flamePosX", flamePos.getX());
+        pCompoundTag.putInt("flamePosY", flamePos.getY());
+        pCompoundTag.putInt("flamePosZ", flamePos.getZ());
+
         pCompoundTag.putBoolean("girlPlaced", girlPlaced);
         pCompoundTag.putBoolean("stormFinish", stormFinish);
         pCompoundTag.putBoolean("desertFinish", desertFinish);
@@ -144,7 +198,31 @@ public class TCRLevelSaveData extends SavedData {
     }
 
     public void load(CompoundTag nbt) {
-        this.coversPos = new BlockPos(nbt.getInt("covesPosX"), nbt.getInt("covesPosY"), nbt.getInt("covesPosZ"));
+        this.abyssPos = new BlockPos(
+                nbt.getInt("covesPosX"),
+                nbt.getInt("covesPosY"),
+                nbt.getInt("covesPosZ")
+        );
+        this.desertPos = new BlockPos(
+                nbt.getInt("desertPosX"),
+                nbt.getInt("desertPosY"),
+                nbt.getInt("desertPosZ")
+        );
+        this.stormPos = new BlockPos(
+                nbt.getInt("stormPosX"),
+                nbt.getInt("stormPosY"),
+                nbt.getInt("stormPosZ")
+        );
+        this.cursedPos = new BlockPos(
+                nbt.getInt("cursedPosX"),
+                nbt.getInt("cursedPosY"),
+                nbt.getInt("cursedPosZ")
+        );
+        this.flamePos = new BlockPos(
+                nbt.getInt("flamePosX"),
+                nbt.getInt("flamePosY"),
+                nbt.getInt("flamePosZ")
+        );
         this.girlPlaced = nbt.getBoolean("girlPlaced");
         this.stormFinish = nbt.getBoolean("stormFinish");
         this.desertFinish = nbt.getBoolean("desertFinish");
@@ -154,16 +232,16 @@ public class TCRLevelSaveData extends SavedData {
         this.progressCount = nbt.getInt("progressCount"); // 加载进度计数
     }
 
-    public static TCRLevelSaveData decode(CompoundTag tag){
-        TCRLevelSaveData saveData = TCRLevelSaveData.create();
+    public static TCRMainLevelSaveData decode(CompoundTag tag){
+        TCRMainLevelSaveData saveData = TCRMainLevelSaveData.create();
         saveData.load(tag);
         return saveData;
     }
 
-    public static TCRLevelSaveData get(ServerLevel worldIn) {
+    public static TCRMainLevelSaveData get(ServerLevel worldIn) {
         ServerLevel world = worldIn.getServer().getLevel(ServerLevel.OVERWORLD);
         DimensionDataStorage dataStorage = world.getDataStorage();
-        TCRLevelSaveData levelSaveData = dataStorage.computeIfAbsent(TCRLevelSaveData::decode, TCRLevelSaveData::create, TCRLevelSaveData.NAME);
+        TCRMainLevelSaveData levelSaveData = dataStorage.computeIfAbsent(TCRMainLevelSaveData::decode, TCRMainLevelSaveData::create, TCRMainLevelSaveData.NAME);
         levelSaveData.setLevel(world);
         return levelSaveData;
     }

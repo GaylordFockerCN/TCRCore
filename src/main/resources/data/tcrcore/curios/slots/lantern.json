@@ -1,0 +1,7 @@
+{
+  "order": 120,
+  "size": 1,
+  "icon": "curios:slot/empty_belt_slot",
+  "validators": ["curios:tag"],
+  "add_cosmetic": true
+}

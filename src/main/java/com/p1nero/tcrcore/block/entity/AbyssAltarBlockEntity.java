@@ -2,7 +2,9 @@ package com.p1nero.tcrcore.block.entity;
 
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.github.L_Ender.cataclysm.init.ModParticle;
-import com.p1nero.tcrcore.save_data.TCRLevelSaveData;
+import com.p1nero.tcrcore.capability.PlayerDataManager;
+import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
@@ -18,11 +20,21 @@ public class AbyssAltarBlockEntity extends AbstractAltarBlockEntity {
     @Override
     protected void onActive(Player pPlayer, ItemStack mainHandItem, ServerLevel pLevel, BlockPos pPos) {
         super.onActive(pPlayer, mainHandItem, pLevel, pPos);
-        TCRLevelSaveData.get(pLevel).setAbyssFinish(true);
+        TCRMainLevelSaveData.get(pLevel).setAbyssFinish(true);
     }
 
     @Override
     protected ParticleOptions getSpawnerParticle() {
         return ModParticle.SOUL_LAVA.get();
+    }
+
+    @Override
+    public boolean checkBossKilled(Player player) {
+        return PlayerDataManager.abyssEyeKilled.get(player);
+    }
+
+    @Override
+    public int getColor() {
+        return ChatFormatting.BLUE.getColor();
     }
 }

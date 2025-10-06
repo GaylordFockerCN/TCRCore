@@ -161,7 +161,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:epic-fight-mod-405076:7035137")
     implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7035166")
-    implementation fg.deobf("libs:wraithon:1.0.0")
+    implementation fg.deobf("curse.maven:epic-fight-wraithon-1354901:7068815")
     implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7018600")
     implementation fg.deobf("curse.maven:p1neros-epic-bow-1338443:6964978")
     implementation fg.deobf("curse.maven:sword-soaring-1011068:7035767")
@@ -171,7 +171,13 @@ dependencies {
     implementation fg.deobf("libs:p1nero_ec:20.12.0.1")
     implementation fg.deobf("libs:p1nero_dl:1.6.0")
 
+    implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:6993788")
+
     implementation fg.deobf("curse.maven:better-lock-on-1339577:7037697")
+
+    implementation fg.deobf("curse.maven:default-options-232131:6972483")
+
+    implementation fg.deobf("curse.maven:radiant-gear-602199:6029352")
 
     implementation fg.deobf("libs:tudigong:1.1.0")
     implementation fg.deobf("curse.maven:lithostitched-936015:6742615")//村庄插入

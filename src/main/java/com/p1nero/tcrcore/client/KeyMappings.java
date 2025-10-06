@@ -5,6 +5,7 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.network.packet.serverbound.ExecuteRiptidePacket;
 import net.minecraft.client.KeyMapping;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.event.TickEvent;
@@ -32,9 +33,11 @@ public class KeyMappings {
 		@SubscribeEvent
 		public static void onClientTick(TickEvent.ClientTickEvent event) {
 			if(event.phase == TickEvent.Phase.END) {
-				while (RIPTIDE.consumeClick()) {
-					PacketRelay.sendToServer(TCRPacketHandler.INSTANCE, new ExecuteRiptidePacket());
-				}
+                while (RIPTIDE.consumeClick()) {
+                    if(Minecraft.getInstance().player != null && Minecraft.getInstance().player.isUnderWater()) {
+                        PacketRelay.sendToServer(TCRPacketHandler.INSTANCE, new ExecuteRiptidePacket());
+                    }
+                }
 			}
 		}
 

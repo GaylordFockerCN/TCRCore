@@ -17,7 +17,7 @@ import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
 import com.p1nero.tcrcore.datagen.TCRAdvancementData;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
-import com.p1nero.tcrcore.save_data.TCRLevelSaveData;
+import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WaypointUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
@@ -178,9 +178,11 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
         if (player instanceof ServerPlayer serverPlayer) {
             CompoundTag tag = new CompoundTag();
             tag.putInt("stage", PlayerDataManager.stage.getInt(player));
-            tag.putBoolean("finished", TCRLevelSaveData.get(serverPlayer.serverLevel()).isAllFinish());
+            tag.putBoolean("finished", TCRMainLevelSaveData.get(serverPlayer.serverLevel()).isAllFinish());
             tag.putBoolean("map_mark", PlayerDataManager.mapMarked.get(serverPlayer));
             tag.putBoolean("pillager_kill", PlayerDataManager.pillagerKilled.get(serverPlayer));
+            tag.putBoolean("finish_all_eye_boss", PlayerDataManager.isAllEyeGet(serverPlayer));
+            tag.putBoolean("finish_all_altar_boss", PlayerDataManager.isAllAltarKilled(serverPlayer));
             if (player.getItemInHand(hand).is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get())) {
                 tag.putBoolean("is_oracle", true);
             }
@@ -199,14 +201,18 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             treeBuilder.start(5).addFinalChoice(6);
             return treeBuilder;
         }
-        if(compoundTag.getBoolean("finished")) {
-            treeBuilder.start(8)
-                    .addChoice(12, 11)
-                    .thenExecute(4)
-                    .thenExecute((dialogueScreen -> GuiderGeoRenderer.useRedModel = true))
-                    .addChoice(13, 12)
-                    .addChoice(14, 13)
-                    .addFinalChoice(15, 3);
+        if(compoundTag.getBoolean("finished") && compoundTag.getBoolean("finish_all_eye_boss")) {
+            if(compoundTag.getBoolean("finish_all_altar_boss")) {
+                treeBuilder.start(8)
+                        .addChoice(12, 11)
+                        .thenExecute(4)
+                        .thenExecute((dialogueScreen -> GuiderGeoRenderer.useRedModel = true))
+                        .addChoice(13, 12)
+                        .addChoice(14, 13)
+                        .addFinalChoice(15, 3);
+            } else {
+                treeBuilder.start(21).addFinalChoice(0);
+            }
             return treeBuilder;
         }
 
@@ -376,7 +382,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.COVES);//隐秘水湾
                 if (pos != null) {
                     BlockPos covesPos = new BlockPos(pos.x, 156, pos.y);
-                    TCRLevelSaveData.get(player.serverLevel()).setCoversPos(covesPos);
+                    TCRMainLevelSaveData.get(player.serverLevel()).setAbyssPos(covesPos);
                     WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("abyss_pos"), covesPos, WaypointColor.DARK_BLUE);
                 }
             }

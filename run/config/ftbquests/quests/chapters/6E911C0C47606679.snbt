@@ -125,7 +125,7 @@
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.subtitle}"
 			tasks: [{
-				advancement: "tcrcore:stage3"
+				advancement: "tcrcore:stage4"
 				criterion: ""
 				id: "18A4D4525511C684"
 				title: "{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.task.1775777603170453124.title}"

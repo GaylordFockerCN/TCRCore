@@ -1,7 +1,9 @@
 package com.p1nero.tcrcore.block.entity;
 
 import com.github.L_Ender.cataclysm.init.ModItems;
-import com.p1nero.tcrcore.save_data.TCRLevelSaveData;
+import com.p1nero.tcrcore.capability.PlayerDataManager;
+import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
@@ -16,6 +18,17 @@ public class FlameAltarBlockEntity extends AbstractAltarBlockEntity {
     @Override
     protected void onActive(Player pPlayer, ItemStack mainHandItem, ServerLevel pLevel, BlockPos pPos) {
         super.onActive(pPlayer, mainHandItem, pLevel, pPos);
-        TCRLevelSaveData.get(pLevel).setFlameFinish(true);
+        TCRMainLevelSaveData.get(pLevel).setFlameFinish(true);
+    }
+
+
+    @Override
+    public boolean checkBossKilled(Player player) {
+        return PlayerDataManager.flameEyeKilled.get(player);
+    }
+
+    @Override
+    public int getColor() {
+        return ChatFormatting.RED.getColor();
     }
 }

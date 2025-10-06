@@ -6,9 +6,14 @@ import com.p1nero.dialog_lib.events.ServerNpcEntityInteractEvent;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.utils.WorldUtil;
+import net.alp.monsterexpansion.entity.custom.SkrytheEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.TickEvent;
@@ -28,6 +33,14 @@ public class ForgeEvents {
             if(event.getInteractId() == 1) {
                 ironGolem.setPlayerCreated(false);
                 ironGolem.setTarget(event.getServerPlayer());
+            }
+        }
+
+        if(event.getSelf() instanceof SkrytheEntity skrytheEntity) {
+            if(event.getInteractId() == 1) {
+                ServerPlayer player = event.getServerPlayer();
+                skrytheEntity.tame(player);
+                player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
             }
         }
     }

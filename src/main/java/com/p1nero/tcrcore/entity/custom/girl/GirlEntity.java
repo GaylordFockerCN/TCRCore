@@ -12,6 +12,7 @@ import com.p1nero.dialog_lib.api.goal.LookAtConservingPlayerGoal;
 import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
 import com.p1nero.epicfightbow.item.EFBowItems;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
+import com.p1nero.tcrcore.events.PlayerEventListeners;
 import com.p1nero.tcrcore.events.SafeNetherTeleporter;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.utils.ItemUtil;
@@ -87,9 +88,12 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 artifacts.registry.ModItems.FERAL_CLAWS.get(),
                 artifacts.registry.ModItems.VAMPIRIC_GLOVE.get(),
                 artifacts.registry.ModItems.POWER_GLOVE.get(),
+                artifacts.registry.ModItems.NOVELTY_DRINKING_HAT.get(),
+                artifacts.registry.ModItems.PLASTIC_DRINKING_HAT.get(),
                 UAItems.SUN_STONE.get(),
                 UAItems.MOON_STONE.get(),
-                UAItems.HERO_EMBLEM.get());
+                UAItems.HERO_EMBLEM.get(),
+                UAItems.SHINY_STONE.get());
         initMerchant();
     }
 
@@ -112,7 +116,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         offersWeapon.clear();
         offersArtifact.clear();
         ForgeRegistries.ITEMS.getValues().forEach(item -> {
-            if(item == artifacts.registry.ModItems.SCARF_OF_INVISIBILITY.get()) {
+            if(PlayerEventListeners.illegalItems.contains(item)) {
                 return;
             }
             if(item instanceof ArtifactItem || item instanceof UAUniqueCurioItem) {
@@ -157,7 +161,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 142857, 0, 0.02f));
         offersWeapon.add(new MerchantOffer(
                 new ItemStack(Items.BOW, 1),
-                new ItemStack(ModItems.BLACK_STEEL_INGOT.get(), 1),
+                new ItemStack(ModItems.CURSIUM_INGOT.get(), 1),
                 new ItemStack(EFBowItems.MORTIS.get(), 1),
                 142857, 0, 0.02f));
         offersWeapon.add(new MerchantOffer(
@@ -293,6 +297,27 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 new ItemStack(Items.DIAMOND_CHESTPLATE, 1),
                 new ItemStack(ModItems.BONE_REPTILE_CHESTPLATE.get(), 1),
                 142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.ESSENCE_OF_THE_STORM.get(), 1),
+                new ItemStack(EFNItem.RUINFIGHTER_HELMET.get(), 1),
+                142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.ESSENCE_OF_THE_STORM.get(), 2),
+                new ItemStack(EFNItem.RUINFIGHTER_CHESTPLATE.get(), 1),
+                142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.ESSENCE_OF_THE_STORM.get(), 2),
+                new ItemStack(EFNItem.RUINFIGHTER_LEGGINGS.get(), 1),
+                142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.ESSENCE_OF_THE_STORM.get(), 1),
+                new ItemStack(EFNItem.RUINFIGHTER_BOOTS.get(), 1),
+                142857, 0, 0.02f));
+
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.IGNITIUM_INGOT.get(), 1),
                 new ItemStack(Items.DIAMOND_HELMET, 1),
@@ -303,6 +328,27 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 new ItemStack(Items.DIAMOND_CHESTPLATE, 1),
                 new ItemStack(ModItems.IGNITIUM_CHESTPLATE.get(), 1),
                 142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
+                new ItemStack(EFNItem.DUSKFIRE_HELMET.get(), 1),
+                142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
+                new ItemStack(EFNItem.DUSKFIRE_CHESTPLATE.get(), 2),
+                142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
+                new ItemStack(EFNItem.DUSKFIRE_LEGGINGS.get(), 2),
+                142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
+                new ItemStack(EFNItem.DUSKFIRE_BOOTS.get(), 1),
+                142857, 0, 0.02f));
+
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.IGNITIUM_INGOT.get(), 1),
                 new ItemStack(Items.DIAMOND_LEGGINGS, 1),

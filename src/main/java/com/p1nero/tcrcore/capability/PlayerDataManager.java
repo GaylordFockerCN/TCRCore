@@ -31,11 +31,33 @@ public class PlayerDataManager {
     public static BoolData weapon_innate_used = new BoolData("weapon_innate_used", false);
     public static BoolData pillagerKilled = new BoolData("pillager_killed", false);//初始任务
     public static BoolData mapMarked = new BoolData("map_marked", false);//是否标记过地图了，省的二次搜索地图浪费
-    public static BoolData stormEyeTraded = new BoolData("storm_eye_traded", false);//是否与村民交易过眼睛
-    public static BoolData flameEyeTraded = new BoolData("flame_eye_traded", false);//是否与村民交易过眼睛
-    public static BoolData abyssEyeTraded = new BoolData("abyss_eye_traded", false);//是否与村民交易过眼睛
-    public static BoolData cursedEyeTraded = new BoolData("cursed_eye_traded", false);//是否与村民交易过眼睛
-    public static BoolData desertEyeTraded = new BoolData("desert_eye_traded", false);//是否与村民交易过眼睛
+    public static BoolData stormEyeTraded = new BoolData("storm_eye_traded", false);
+    public static BoolData flameEyeTraded = new BoolData("flame_eye_traded", false);
+    public static BoolData abyssEyeTraded = new BoolData("abyss_eye_traded", false);
+    public static BoolData cursedEyeTraded = new BoolData("cursed_eye_traded", false);
+    public static BoolData desertEyeTraded = new BoolData("desert_eye_traded", false);
+
+    public static BoolData stormEyeKilled = new BoolData("storm_eye_killed", false);
+    public static BoolData flameEyeKilled = new BoolData("flame_eye_killed", false);
+    public static BoolData abyssEyeKilled = new BoolData("abyss_eye_killed", false);
+    public static BoolData cursedEyeKilled = new BoolData("cursed_eye_killed", false);
+    public static BoolData desertEyeKilled = new BoolData("desert_eye_killed", false);
+
+    public static boolean isAllEyeGet(Player player) {
+        return stormEyeTraded.get(player)
+                &&flameEyeTraded.get(player)
+                &&abyssEyeTraded.get(player)
+                &&cursedEyeTraded.get(player)
+                &&desertEyeTraded.get(player);
+    }
+
+    public static boolean isAllAltarKilled(Player player) {
+        return stormEyeKilled.get(player)
+                && flameEyeKilled.get(player)
+                && abyssEyeKilled.get(player)
+                && cursedEyeKilled.get(player)
+                && desertEyeKilled.get(player);
+    }
 
     public static void putData(Player player, String key, double value) {
         getTCRPlayer(player).putDouble(key, value);

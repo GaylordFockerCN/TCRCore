@@ -2,7 +2,7 @@ package com.p1nero.tcrcore.events;
 
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.entity.TCREntities;
-import com.p1nero.tcrcore.save_data.TCRLevelSaveData;
+import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.DimensionResourceCopier;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import net.blay09.mods.waystones.block.ModBlocks;
@@ -14,7 +14,6 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.event.server.ServerAboutToStartEvent;
@@ -47,13 +46,13 @@ public class ServerEvents {
     public static void onLevelLoad(LevelEvent.Load event) {
         if(event.getLevel() instanceof ServerLevel serverLevel && serverLevel.dimension() == Level.OVERWORLD) {
             //懒得重新搞地图了
-            TCRLevelSaveData tcrLevelSaveData = TCRLevelSaveData.get(serverLevel);
-            if(!tcrLevelSaveData.isGirlPlaced()) {
+            TCRMainLevelSaveData tcrMainLevelSaveData = TCRMainLevelSaveData.get(serverLevel);
+            if(!tcrMainLevelSaveData.isGirlPlaced()) {
                 TCREntities.GIRL.get().spawn(serverLevel, new BlockPos(WorldUtil.GIRL_POS), MobSpawnType.SPAWNER);
                 serverLevel.setBlock(new BlockPos(WorldUtil.GIRL_PORTAL_POS), ModBlocks.waystone.defaultBlockState(), 3);
                 serverLevel.setBlock(new BlockPos(WorldUtil.GIRL_PORTAL_POS).above(), ModBlocks.waystone.defaultBlockState().setValue(WaystoneBlock.HALF, DoubleBlockHalf.UPPER), 3);
                 tryHandleLight(serverLevel);
-                tcrLevelSaveData.setGirlPlaced(true);
+                tcrMainLevelSaveData.setGirlPlaced(true);
             }
         }
     }

@@ -4,8 +4,10 @@ import com.p1nero.dialog_lib.client.screen.DialogueScreen;
 import com.p1nero.dialog_lib.events.ClientNpcEntityDialogueEvent;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.client.gui.HandleIronGolemDialog;
+import com.p1nero.tcrcore.client.gui.HandleSkrytheEntityDialog;
 import com.p1nero.tcrcore.client.gui.HandleVillagerDialog;
 import com.p1nero.tcrcore.mixin.IronGolemMixin;
+import net.alp.monsterexpansion.entity.custom.SkrytheEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.Villager;
@@ -36,6 +38,9 @@ public class ClientForgeEvents {
         }
         if(event.getSelf() instanceof IronGolem ironGolem) {
             HandleIronGolemDialog.openDialogScreen(ironGolem, event.getLocalPlayer(), event.getServerData());
+        }
+        if(event.getSelf() instanceof SkrytheEntity skrytheEntity) {
+            HandleSkrytheEntityDialog.openDialogScreen(skrytheEntity, event.getLocalPlayer(), event.getServerData());
         }
     }
 

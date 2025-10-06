@@ -9,6 +9,7 @@ import com.p1nero.tcrcore.client.gui.BanPortalScreenHandler;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
+import net.alp.monsterexpansion.entity.ModEntities;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
@@ -50,6 +51,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "Oracle Fragment");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "It bears an ancient oracle hinting at the locations of scattered embers. Show it to the The Sanctuary Keeper in the The Sanctuary; it might aid your adventure!");
 
+        this.addInfo("captain_start_heal", "§cCornelia start healing! Increase your damage!");
+        this.addInfo("illegal_item_tip", "§cIllegal Item!");
         this.addInfo("shift_to_pic", "Attack when pressing Shift to take");
         this.addInfo("no_place_to_ship", "No Space for ship!");
         this.addInfo("boss_killed_ready_return", "§6Boss has been defeated! Block interaction unlocked!");
@@ -66,6 +69,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRBlocks.FLAME_ALTAR_BLOCK.get(), "Flame Altar");
         this.add(TCRBlocks.DESERT_ALTAR_BLOCK.get(), "Desert Altar");
 
+        this.addInfo("attack_to_restart", "§cAttack to restart");
         this.addInfo("after_heal_stop_attack", "§6Stop attack to clear anger.");
         this.addInfo("cloud_follow_me", "§6[Magic Cloud]: §fHi, follow me!");
         this.addInfo("dim_demending", "§6Rebuilding... Wait[%d§6]s");
@@ -115,7 +119,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("perfect_parry_tutorial", "§cBlock at the right moment to trigger a Perfect Parry!");
         this.addInfo("you_pass", "§6You passed!!");
 
-        this.addInfo("press_to_open_map", "Press §6[M]§f to view the map");
+        this.addInfo("press_to_open_map", "§6[M]§f to view the map");
 
         this.addInfo("storm_pos", "Location of the Storm Echo: Sky Island");
         this.addInfo("cursed_pos", "Location of the Cursed Echo: Ice Maze");
@@ -155,7 +159,12 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCREntities.GIRL.get(), "Ferry girl");
         this.add(TCREntities.TUTORIAL_GOLEM.get(), "Training Golem");
 
-        BanPortalScreenHandler.onGenerateZH(this);
+        BanPortalScreenHandler.onGenerateEN(this);
+
+        this.addDialogAnswer(ModEntities.SKRYTHE.get(), 0, "Chosen One, I have long awaited your arrival.");
+        this.addDialogAnswer(ModEntities.SKRYTHE.get(), 1, "I am Skrythe, the divine steed. During the Black Tide War, I suffered grave injuries and have slumbered until now. Upon awakening, I sensed signs of revival within the Sanctuary, thus I returned. The Sanctuary Keeper, upon seeing me, informed me of the matter regarding the Chosen One and commanded me to await you here.");
+        this.addDialogOption(ModEntities.SKRYTHE.get(), 0, "Who are you?");
+        this.addDialogOption(ModEntities.SKRYTHE.get(), 1, "Tame");
 
         this.addDialogAnswer(EntityType.IRON_GOLEM, 0, "Man, are you ready？");
         this.addDialogOption(EntityType.IRON_GOLEM, 0, "Yes");
@@ -222,6 +231,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GUIDER.get(), 17, "§2The Cursed Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. §c[%s§c]§f, you might check with the Ferry girl; perhaps you can exchange for some treasure.");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§eThe Desert Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. §e[%s§e]§f, you might check with the Ferry girl; perhaps you can exchange for some treasure.");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 20, "How did you get extra Oracle Fragments by following the normal流程? Did you steal them from someone?");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 21, "Since you have lit all the altars, once you §6enter, defeat the spirits, and infuse yourself with the power of the spirits,§f we shall commence the ritual!");
 
         this.addDialogAnswer(TCREntities.GIRL.get(), 0, "Long time no see, esteemed one!");
         this.addDialogAnswer(TCREntities.GIRL.get(), 1, "Have you forgotten me? I am the Ferry girl of the Saint Temple, here to guide the lost. If you have any rare treasures, show them to me. I can extract their memoria and transform them into artifacts! When you can set foot in §cthe Nether§f or §dthe End§f, I can also give you a ride.");

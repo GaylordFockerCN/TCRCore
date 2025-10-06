@@ -175,4 +175,12 @@ public abstract class AbstractAltarBlockEntity extends BlockEntity {
     protected ParticleOptions getSpawnerParticle(){
         return ParticleTypes.FLAME;
     }
+
+    public abstract boolean checkBossKilled(Player player);
+
+    public abstract int getColor();
+    public float getAlpha(){
+        return 1.0F;
+    }
+
 }

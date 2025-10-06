@@ -16,7 +16,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -30,6 +29,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import yesman.epicfight.world.effect.EpicFightMobEffects;
 
 public class TutorialGolem extends IronGolem {
     public TutorialGolem(EntityType<? extends IronGolem> entityType, Level level) {
@@ -63,7 +63,7 @@ public class TutorialGolem extends IronGolem {
         if(source.getEntity() instanceof ServerPlayer serverPlayer) {
             serverPlayer.displayClientMessage(TCRCoreMod.getInfo("hurt_damage", value).withStyle(ChatFormatting.RED), false);
             if(PlayerDataManager.locked.get(serverPlayer)) {
-                this.addEffect(new MobEffectInstance(MobEffects.HEAL, 200, 1));
+                this.addEffect(new MobEffectInstance(EpicFightMobEffects.INSTABILITY.get(), 200, 1));
             } else {
                 return false;
             }
@@ -95,7 +95,7 @@ public class TutorialGolem extends IronGolem {
      * 挨打就当作试炼中
      */
     private boolean shouldAttack(LivingEntity living) {
-        if(this.hasEffect(MobEffects.HEAL)) {
+        if(this.hasEffect(EpicFightMobEffects.INSTABILITY.get())) {
             return true;
         }
         if(living instanceof ServerPlayer serverPlayer) {
@@ -114,7 +114,7 @@ public class TutorialGolem extends IronGolem {
     public void baseTick() {
         super.baseTick();
         if(this.getTarget() instanceof ServerPlayer serverPlayer && this.tickCount % 40 == 0) {
-            if(this.hasEffect(MobEffects.HEAL)) {
+            if(this.hasEffect(EpicFightMobEffects.INSTABILITY.get())) {
                 serverPlayer.displayClientMessage(TCRCoreMod.getInfo("after_heal_stop_attack"), true);
                 return;
             }

@@ -525,10 +525,10 @@
 [Maledictus]
 	#Maledictus's Health Multiplier
 	#Range: 0.0 ~ 1000000.0
-	MaledictusHealthMultiplier = 1.0
+	MaledictusHealthMultiplier = 1.4
 	#Maledictus's Damage Multiplier
 	#Range: 0.0 ~ 1000000.0
-	MaledictusDamageMultiplier = 1.0
+	MaledictusDamageMultiplier = 1.4
 	#Maledictus's Immune to Long distance attack range.
 	#Range: 1.0 ~ 1000000.0
 	"Maledictus's prevent attacks from far away Range" = 12.0
@@ -537,7 +537,7 @@
 	MaledictusNatureHealing = 25.0
 	#Maledictus's Phantom Halberd Damage
 	#Range: 0.0 ~ 1000000.0
-	"Maledictus' Phantom Halberd Damage'" = 10.0
+	"Maledictus' Phantom Halberd Damage'" = 14.0
 	#Maledictus's DamageCap
 	#Range: 0.0 ~ 1000000.0
 	MaledictusDamageCap = 20.0
