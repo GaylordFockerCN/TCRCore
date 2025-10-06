@@ -119,6 +119,12 @@ public class LivingEntityEventListeners {
             });
         }
 
+        if(event.getEntity() instanceof UnderworldKnightEntity underworldKnight) {
+            if(underworldKnight.isDeadOrDying()) {
+                event.setCanceled(true);
+            }
+        }
+
         if(event.getEntity() instanceof ServerPlayer serverPlayer) {
             if(event.getSource().getEntity() instanceof UnderworldKnightEntity underworldKnight) {
                 if(!underworldKnight.getPersistentData().getBoolean("hurt_mark")) {

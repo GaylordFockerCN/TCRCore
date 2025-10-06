@@ -289,12 +289,12 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 142857, 0, 0.02f));
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.KOBOLEDIATOR_SKULL.get(), 1),
-                new ItemStack(Items.DIAMOND_HELMET, 1),
+                new ItemStack(Items.NETHERITE_HELMET, 1),
                 new ItemStack(ModItems.BONE_REPTILE_HELMET.get(), 1),
                 142857, 0, 0.02f));
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.KOBOLETON_BONE.get(), 1),
-                new ItemStack(Items.DIAMOND_CHESTPLATE, 1),
+                new ItemStack(Items.NETHERITE_CHESTPLATE, 1),
                 new ItemStack(ModItems.BONE_REPTILE_CHESTPLATE.get(), 1),
                 142857, 0, 0.02f));
 
@@ -304,79 +304,86 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
-                new ItemStack(ModItems.ESSENCE_OF_THE_STORM.get(), 2),
+                new ItemStack(ModItems.ESSENCE_OF_THE_STORM.get(), 1),
+                new ItemStack(Items.NETHERITE_CHESTPLATE, 1),
                 new ItemStack(EFNItem.RUINFIGHTER_CHESTPLATE.get(), 1),
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
-                new ItemStack(ModItems.ESSENCE_OF_THE_STORM.get(), 2),
+                new ItemStack(ModItems.ESSENCE_OF_THE_STORM.get(), 1),
+                new ItemStack(Items.NETHERITE_LEGGINGS, 1),
                 new ItemStack(EFNItem.RUINFIGHTER_LEGGINGS.get(), 1),
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.ESSENCE_OF_THE_STORM.get(), 1),
+                new ItemStack(Items.NETHERITE_BOOTS, 1),
                 new ItemStack(EFNItem.RUINFIGHTER_BOOTS.get(), 1),
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.IGNITIUM_INGOT.get(), 1),
-                new ItemStack(Items.DIAMOND_HELMET, 1),
+                new ItemStack(Items.NETHERITE_HELMET, 1),
                 new ItemStack(ModItems.IGNITIUM_HELMET.get(), 1),
                 142857, 0, 0.02f));
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.IGNITIUM_INGOT.get(), 1),
-                new ItemStack(Items.DIAMOND_CHESTPLATE, 1),
+                new ItemStack(Items.NETHERITE_CHESTPLATE, 1),
                 new ItemStack(ModItems.IGNITIUM_CHESTPLATE.get(), 1),
                 142857, 0, 0.02f));
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.IGNITIUM_INGOT.get(), 1),
-                new ItemStack(Items.DIAMOND_LEGGINGS, 1),
+                new ItemStack(Items.NETHERITE_LEGGINGS, 1),
                 new ItemStack(ModItems.IGNITIUM_LEGGINGS.get(), 1),
                 142857, 0, 0.02f));
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.IGNITIUM_INGOT.get(), 1),
-                new ItemStack(Items.DIAMOND_BOOTS, 1),
+                new ItemStack(Items.NETHERITE_BOOTS, 1),
                 new ItemStack(ModItems.IGNITIUM_BOOTS.get(), 1),
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
+                new ItemStack(Items.NETHERITE_HELMET, 1),
                 new ItemStack(EFNItem.DUSKFIRE_HELMET.get(), 1),
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
-                new ItemStack(ModItems.MONSTROUS_HORN.get(), 2),
+                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
+                new ItemStack(Items.NETHERITE_CHESTPLATE, 1),
                 new ItemStack(EFNItem.DUSKFIRE_CHESTPLATE.get(), 1),
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
-                new ItemStack(ModItems.MONSTROUS_HORN.get(), 2),
+                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
+                new ItemStack(Items.NETHERITE_LEGGINGS, 1),
                 new ItemStack(EFNItem.DUSKFIRE_LEGGINGS.get(), 1),
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
+                new ItemStack(Items.NETHERITE_BOOTS, 1),
                 new ItemStack(EFNItem.DUSKFIRE_BOOTS.get(), 1),
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.CURSIUM_INGOT.get(), 1),
-                new ItemStack(Items.DIAMOND_HELMET, 1),
+                new ItemStack(Items.NETHERITE_HELMET, 1),
                 new ItemStack(ModItems.CURSIUM_HELMET.get(), 1),
                 142857, 0, 0.02f));
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.CURSIUM_INGOT.get(), 1),
-                new ItemStack(Items.DIAMOND_CHESTPLATE, 1),
+                new ItemStack(Items.NETHERITE_CHESTPLATE, 1),
                 new ItemStack(ModItems.CURSIUM_CHESTPLATE.get(), 1),
                 142857, 0, 0.02f));
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.CURSIUM_INGOT.get(), 1),
-                new ItemStack(Items.DIAMOND_LEGGINGS, 1),
+                new ItemStack(Items.NETHERITE_LEGGINGS, 1),
                 new ItemStack(ModItems.CURSIUM_LEGGINGS.get(), 1),
                 142857, 0, 0.02f));
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.CURSIUM_INGOT.get(), 1),
-                new ItemStack(Items.DIAMOND_BOOTS, 1),
+                new ItemStack(Items.NETHERITE_BOOTS, 1),
                 new ItemStack(ModItems.CURSIUM_BOOTS.get(), 1),
                 142857, 0, 0.02f));
     }
