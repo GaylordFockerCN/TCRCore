@@ -5,6 +5,7 @@ import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.cataclysm_dimension.worldgen.portal.CDNetherTeleporter;
 import com.p1nero.cataclysm_dimension.worldgen.portal.CDTeleporter;
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.PlayerDataManager;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
@@ -92,6 +93,11 @@ public abstract class AbstractAltarBlockEntity extends BlockEntity {
             return;
         }
         if(this.isActivated){
+            if(!PlayerDataManager.isAllEyeGet(pPlayer)) {
+                pPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_before_finish"), false);
+                return;
+            }
+
             ItemStack defaultInstance = this.itemInnate.getDefaultInstance();
             boolean flag = true;
             if(defaultInstance.is(ModItems.ABYSS_EYE.get())) {

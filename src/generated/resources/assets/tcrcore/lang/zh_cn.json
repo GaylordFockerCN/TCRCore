@@ -144,6 +144,7 @@
   "info.tcr.altar_dim_info": "幻境信息：",
   "info.tcr.attack_to_restart": "§c攻击Boss以再次发起挑战",
   "info.tcr.boss_killed_ready_return": "§6幻境英灵已击败！已解锁方块交互！",
+  "info.tcr.can_not_enter_before_finish": "§6当前没有进入幻镜的命运。",
   "info.tcr.can_not_enter_dim": "看来当前还未能达到神之认可，无法进入...§6继续收集火种§r以获取更多神谕吧！",
   "info.tcr.captain_start_heal": "§c可妮莉亚船长开始回血！增大伤害击败她！",
   "info.tcr.click_to_return": "§a[点击返回主城]",

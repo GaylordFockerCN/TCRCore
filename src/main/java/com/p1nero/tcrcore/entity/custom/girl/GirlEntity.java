@@ -328,27 +328,6 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 new ItemStack(Items.DIAMOND_CHESTPLATE, 1),
                 new ItemStack(ModItems.IGNITIUM_CHESTPLATE.get(), 1),
                 142857, 0, 0.02f));
-
-        offersArmor.add(new MerchantOffer(
-                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
-                new ItemStack(EFNItem.DUSKFIRE_HELMET.get(), 1),
-                142857, 0, 0.02f));
-
-        offersArmor.add(new MerchantOffer(
-                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
-                new ItemStack(EFNItem.DUSKFIRE_CHESTPLATE.get(), 2),
-                142857, 0, 0.02f));
-
-        offersArmor.add(new MerchantOffer(
-                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
-                new ItemStack(EFNItem.DUSKFIRE_LEGGINGS.get(), 2),
-                142857, 0, 0.02f));
-
-        offersArmor.add(new MerchantOffer(
-                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
-                new ItemStack(EFNItem.DUSKFIRE_BOOTS.get(), 1),
-                142857, 0, 0.02f));
-
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.IGNITIUM_INGOT.get(), 1),
                 new ItemStack(Items.DIAMOND_LEGGINGS, 1),
@@ -359,6 +338,27 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 new ItemStack(Items.DIAMOND_BOOTS, 1),
                 new ItemStack(ModItems.IGNITIUM_BOOTS.get(), 1),
                 142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
+                new ItemStack(EFNItem.DUSKFIRE_HELMET.get(), 1),
+                142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.MONSTROUS_HORN.get(), 2),
+                new ItemStack(EFNItem.DUSKFIRE_CHESTPLATE.get(), 1),
+                142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.MONSTROUS_HORN.get(), 2),
+                new ItemStack(EFNItem.DUSKFIRE_LEGGINGS.get(), 1),
+                142857, 0, 0.02f));
+
+        offersArmor.add(new MerchantOffer(
+                new ItemStack(ModItems.MONSTROUS_HORN.get(), 1),
+                new ItemStack(EFNItem.DUSKFIRE_BOOTS.get(), 1),
+                142857, 0, 0.02f));
+
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.CURSIUM_INGOT.get(), 1),
                 new ItemStack(Items.DIAMOND_HELMET, 1),

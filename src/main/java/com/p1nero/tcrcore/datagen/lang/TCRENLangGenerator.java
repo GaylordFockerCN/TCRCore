@@ -26,10 +26,10 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "Brewed using §c[Crystallized Blood Marrow]§r, a drop from §d[Nehemoth]§r");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "Obtained by defeating the §2[Warden]§r or §2[Captain Cornelia]§r");
         this.addTCRItemInfo(BlockFactorysBossesModItems.DRAGON_SKULL.get(), "Obtained by defeating the §c[Underworld Knight]§r or §4[Infernal Dragon]§r");
-        this.addTCRItemInfo(ModItems.CORAL_CHUNK.get(), "Obtained by defeating the §a[Coral Colossus]§r in the §dRealm of The Leviathan§r");
+        this.addTCRItemInfo(ModItems.CORAL_CHUNK.get(), "Obtained by defeating the §a[Coral Colossus]§r in the §dcloudland of The Leviathan§r");
         this.addTCRItemInfo(BlockFactorysBossesModItems.DRAGON_BONE.get(), "Obtained by defeating the §c[Underworld Knight]§r or §4[Infernal Dragon]§r");
         this.addTCRItemInfo(com.github.dodo.dodosmobs.init.ModItems.CHIERA_CLAW.get(), "Obtained by defeating the §e[Bone Chimera]§r");
-        this.addTCRItemInfo(ModItems.CHITIN_CLAW.get(), "Obtained by defeating the §3[Giant Claw Guard]§r in the §3Realm of Scylla§r");
+        this.addTCRItemInfo(ModItems.CHITIN_CLAW.get(), "Obtained by defeating the §3[Giant Claw Guard]§r in the §3cloudland of Scylla§r");
         this.addTCRItemInfo(BlockFactorysBossesModItems.KNIGHT_SWORD.get(), "Obtained by defeating the §c[Underworld Knight]§r");
         this.addTCRItemInfo(Items.DRAGON_EGG, "Obtained by defeating the §d[Ender Dragon]§r in the §dEnd§r");
         this.addTCRItemInfo(EpicSkillsItems.ABILIITY_STONE.get(), "Right-click to use and gain skill points");
@@ -51,6 +51,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "Oracle Fragment");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "It bears an ancient oracle hinting at the locations of scattered embers. Show it to the The Sanctuary Keeper in the The Sanctuary; it might aid your adventure!");
 
+        this.addInfo("can_not_enter_before_finish", "§6You are not destined to enter the cloudland.");
         this.addInfo("captain_start_heal", "§cCornelia start healing! Increase your damage!");
         this.addInfo("illegal_item_tip", "§cIllegal Item!");
         this.addInfo("shift_to_pic", "Attack when pressing Shift to take");
@@ -60,8 +61,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("cs_warning", "§c§l WARNING！Compute Shader is inactive now! You could enable it in Epic Fight config to get a better experience!");
         this.addInfo("wraithon_start_tip", "§d[Wraithon]: §6Outsider, your journey ends here!");
         this.addInfo("wraithon_end_tip", "§d[Wraithon]: §6This... is impossible...");
-        this.addInfo("dim_block_no_interact", "§cBoss not defeated! Cannot interact with the realm block yet!");
-        this.addInfo("altar_dim_info", "Realm Info:");
+        this.addInfo("dim_block_no_interact", "§cBoss not defeated! Cannot interact with the cloudland block yet!");
+        this.addInfo("altar_dim_info", "Cloudland Info:");
         this.addInfo("related_loot", "Monster: [%s] | Related Loot: [%s]");
         this.add(TCRBlocks.CURSED_ALTAR_BLOCK.get(), "Cursed Altar");
         this.add(TCRBlocks.ABYSS_ALTAR_BLOCK.get(), "Abyss Altar");
@@ -91,7 +92,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("time_to_end", "All altars are lit. It's time to find the The Sanctuary Keeper to perform the ritual...");
 
         this.addInfo("can_not_enter_dim", "It seems you have not yet gained the divine approval to enter... §6Continue collecting embers§r to receive more oracles!");
-        this.addInfo("reset_when_no_player", "If no players remain in the realm, leaving for too long will reset the realm!");
+        this.addInfo("reset_when_no_player", "If no players remain in the Cloudland, leaving for too long will reset the Cloudland!");
         this.addInfo("on_full_set", "Full Set Effect");
         this.addInfo("unlock_new_ftb_page", "A new quest page has been unlocked. Please open the §6[Quest Book]§r to check");
         this.addInfo("unlock_new_skill_page", "A new skill book interface has been unlocked. Press §6[K]§r to check");
@@ -99,7 +100,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("hit_barrier", "This area is not available yet. Come back later!");
 
         this.addInfo("death_info", "§6When enemies are too powerful, try combining different skills!");
-        this.addInfo("enter_dimension_tip", "Right-click the altar core to enter the Realm");
+        this.addInfo("enter_dimension_tip", "Right-click the altar core to enter the Cloudland");
         this.addInfo("use_true_eye_tip", "Please use [%s] to right-click the altar core");
 
         this.addInfo("add_item_tip", "New item obtained: %s × %d!");
@@ -108,15 +109,15 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("press_to_show_progress", "Press §6[L]§f to view guidance!");
         this.addInfo("press_to_skill_tree", "Sufficient EXP available. Press §6[K]§f to allocate skill points!");
         this.addInfo("lock_tutorial", "§6[[%s§6]§r to lock on");
-        this.addInfo("lock_tutorial_sub", "§cMove the mouse to switch targets! Press again to unlock!");
+        this.addInfo("lock_tutorial_sub", "§cMove the mouse to switch targets!");
         this.addInfo("riptide_tutorial", "§6[[%s§6]§f to §bRiptide");
         this.addInfo("dodge_tutorial", "§6[[%s§6]§f to dodge");
         this.addInfo("weapon_innate_tutorial", "§6[[%s§6]§f to weapon skill");
         this.addInfo("weapon_innate_charge_tutorial", "§6[Perfect Dodge]§c or §6[Perfect Parry]§c can charge certain weapons!");
-        this.addInfo("perfect_dodge_tutorial", "§cDodge at the right moment to perform a Perfect Dodge!");
+        this.addInfo("perfect_dodge_tutorial", "§cDodge in time to Perfect Dodge!");
         this.addInfo("hurt_damage", "Dealt [ %.1f ] damage!");
         this.addInfo("parry_tutorial", "§6[[%s§6]§f to guard");
-        this.addInfo("perfect_parry_tutorial", "§cBlock at the right moment to trigger a Perfect Parry!");
+        this.addInfo("perfect_parry_tutorial", "§cBlock in time to Perfect Parry!");
         this.addInfo("you_pass", "§6You passed!!");
 
         this.addInfo("press_to_open_map", "§6[M]§f to view the map");
