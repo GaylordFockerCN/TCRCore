@@ -1,0 +1,219 @@
+[
+  {
+    "section": "Production Team",
+    "disciplines": [
+      {
+        "discipline": "Author",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Planner",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Programmer",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Quest Book, Illustrated Handbook, Tutorial Production",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Dialogue Design",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Story Design",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Art Director",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Background Setting",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "External Support",
+        "titles": [
+          {
+            "title": "Sanctuary ",
+            "names": [
+              "El_mal（玩建筑的牢E）"
+            ]
+          },
+          {
+            "title": "Some Animations",
+            "names": [
+              "merlin204"
+            ]
+          },
+          {
+            "title": "Some Textures",
+            "names": [
+              "一只路过的小吴 Some Items",
+              "XVIII-凌 Some Sword Effects",
+              "Ao Some Skills, npc",
+              "脚踏梯子hill Trail"
+            ]
+          },
+          {
+            "title": "Terrain",
+            "names": [
+              "wonderful艾晨"
+            ]
+          }
+        ,
+          {
+            "title": "Create ServerPack",
+            "names": [
+              "KamiKaguya"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Equipment Support",
+        "titles": [
+          {
+            "title": "Test Server Sponsorship",
+            "names": [
+              "白露（NHBlock）"
+            ]
+          },
+          {
+            "title": "Assistance in Filming",
+            "names": [
+              "Arcadia"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Closed Beta Contributions",
+    "disciplines": [
+      {
+        "discipline": "",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "T_muse_Y",
+              "HuaSheng_peanuts",
+              "merlin204",
+              "ShelMarow",
+              "Arcadia",
+              "霖",
+              "32spark",
+              "脚踏梯子hill"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Advertising Space Available",
+    "disciplines": [
+      {
+        "discipline": "Advertising Space Available",
+        "titles": [
+          {
+            "title": "Advertising Space Available",
+            "names": [
+              "Advertising Space Available",
+              "Contact P1nero for details"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Special Thanks",
+    "disciplines": [
+      {
+        "discipline": "",
+        "titles": [
+          {
+            "title": "I18n (Translators for other languages can add your name here)",
+            "names": [
+              "zh_cn, en_us - P1nero",
+              "fr_fr - NShiro",
+              "ja_jp - umasika26"
+            ]
+          },
+          {
+            "title": "Tributes",
+            "names": [
+              "Yesman",
+              "Super Awesome Baby Team",
+              "Minecraft",
+              "Minecraft Forge",
+              "And all mods, resource packs, and shader packs used in this modpack."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
