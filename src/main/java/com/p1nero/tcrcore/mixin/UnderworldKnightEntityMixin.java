@@ -1,16 +1,14 @@
 package com.p1nero.tcrcore.mixin;
 
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.utils.EntityUtil;
-import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 import net.unusual.blockfactorysbosses.entity.UnderworldKnightEntity;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -31,7 +29,9 @@ public abstract class UnderworldKnightEntityMixin extends Monster {
     private void tcr$baseTick(CallbackInfo ci) {
         if(!tcr$hurtMark) {
             EntityUtil.nearPlayerDo(this, 30, (player -> {
-                player.displayClientMessage(TCRCoreMod.getInfo("attack_to_restart"), true);
+                if(PlayerDataManager.flameEyeTraded.get(player)) {
+                    player.displayClientMessage(TCRCoreMod.getInfo("attack_to_restart"), true);
+                }
             }));
             this.setTarget(null);
         }
@@ -43,6 +43,7 @@ public abstract class UnderworldKnightEntityMixin extends Monster {
             cir.setReturnValue(false);
         } else {
             tcr$hurtMark = true;
+            this.getPersistentData().putBoolean("hurt_mark", true);
         }
     }
 

@@ -21,6 +21,7 @@ import com.p1nero.tcrcore.client.sound.CorneliaMusicPlayer;
 import com.p1nero.tcrcore.client.sound.WraithonMusicPlayer;
 import com.p1nero.tcrcore.gameassets.TCRSkills;
 import com.p1nero.tcrcore.item.TCRItems;
+import com.p1nero.tcrcore.mixin.UnderworldKnightEntityMixin;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.network.packet.clientbound.PlayItemPickupParticlePacket;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
@@ -116,6 +117,23 @@ public class LivingEntityEventListeners {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("press_to_open_battle_mode"), true);
                 }
             });
+        }
+
+        if(event.getEntity() instanceof ServerPlayer serverPlayer) {
+            if(event.getSource().getEntity() instanceof UnderworldKnightEntity underworldKnight) {
+                if(!underworldKnight.getPersistentData().getBoolean("hurt_mark")) {
+                    event.setCanceled(true);
+                }
+            }
+
+            EpicFightCapabilities.getUnparameterizedEntityPatch(serverPlayer, ServerPlayerPatch.class).ifPresent(serverPlayerPatch -> {
+                AnimationPlayer player = serverPlayerPatch.getAnimator().getPlayerFor(null);
+                //激流期间无敌
+                if(player != null && player.getAnimation() == Animations.TSUNAMI_REINFORCED) {
+                    event.setCanceled(true);
+                }
+            });
+
         }
 
         //防止摔死
@@ -351,21 +369,6 @@ public class LivingEntityEventListeners {
         if(TCRCoreMod.hasCheatMod()) {
             event.getEntity().setHealth(0);
         }
-        if(event.getEntity() instanceof ServerPlayer serverPlayer) {
-            EpicFightCapabilities.getUnparameterizedEntityPatch(serverPlayer, ServerPlayerPatch.class).ifPresent(serverPlayerPatch -> {
-                AnimationPlayer player = serverPlayerPatch.getAnimator().getPlayerFor(null);
-                //激流期间无敌
-                if(player != null && player.getAnimation() == Animations.TSUNAMI_REINFORCED) {
-                    event.setAmount(0);
-                    event.setCanceled(true);
-                }
-            });
-        }
-
-        if(event.getEntity() instanceof IronGolem ironGolem && WorldUtil.isInStructure(ironGolem, WorldUtil.SKY_ISLAND)) {
-            ironGolem.setPlayerCreated(false);
-        }
-
     }
 
     @SubscribeEvent

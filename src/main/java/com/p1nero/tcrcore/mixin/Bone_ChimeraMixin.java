@@ -3,6 +3,7 @@ package com.p1nero.tcrcore.mixin;
 import com.github.dodo.dodosmobs.entity.InternalAnimationMonster.IABossMonsters.Bone_Chimera_Entity;
 import com.github.dodo.dodosmobs.entity.InternalAnimationMonster.IABossMonsters.IABoss_monster;
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.utils.EntityUtil;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
@@ -31,7 +32,9 @@ public class Bone_ChimeraMixin extends IABoss_monster {
     private void tcr$baseTick(CallbackInfo ci) {
         if(!tcr$hurtMark) {
             EntityUtil.nearPlayerDo(this, 30, (player -> {
-                player.displayClientMessage(TCRCoreMod.getInfo("attack_to_restart"), true);
+                if(PlayerDataManager.desertEyeTraded.get(player)) {
+                    player.displayClientMessage(TCRCoreMod.getInfo("attack_to_restart"), true);
+                }
             }));
             ci.cancel();
         }
@@ -41,7 +44,9 @@ public class Bone_ChimeraMixin extends IABoss_monster {
     private void tcr$aiStep(CallbackInfo ci) {
         if(!tcr$hurtMark) {
             EntityUtil.nearPlayerDo(this, 30, (player -> {
-                player.displayClientMessage(TCRCoreMod.getInfo("attack_to_restart"), true);
+                if(PlayerDataManager.desertEyeTraded.get(player)) {
+                    player.displayClientMessage(TCRCoreMod.getInfo("attack_to_restart"), true);
+                }
             }));
             ci.cancel();
         }
