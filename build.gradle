@@ -179,7 +179,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:radiant-gear-602199:6029352")
 
-    implementation fg.deobf("libs:tudigong:1.1.0")
+    implementation fg.deobf("curse.maven:tudigong-wayfinder-1350265:7076274")
     implementation fg.deobf("curse.maven:lithostitched-936015:6742615")//村庄插入
 
     implementation fg.deobf("curse.maven:global-shaderpack-properties-1344473:6982618")//全局光影包配置，添加灾变维度用。

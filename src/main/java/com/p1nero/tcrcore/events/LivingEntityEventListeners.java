@@ -159,6 +159,10 @@ public class LivingEntityEventListeners {
         LivingEntity entity = event.getEntity();
         if(!entity.level().isClientSide) {
 
+            if(entity instanceof IronGolem ironGolem && WorldUtil.isInStructure(ironGolem, WorldUtil.SKY_ISLAND)) {
+                event.setCanceled(true);
+            }
+
             if (entity instanceof Scylla_Entity) {
                 ItemUtil.addItemEntity(entity, ModItems.CERAUNUS.get(), 1, 0xfff66d);
             }
@@ -316,20 +320,23 @@ public class LivingEntityEventListeners {
                 });
             }
 
-            if(livingEntity instanceof IronGolem ironGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND)) {
+            if(livingEntity instanceof IronGolem ironGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //秽土转生
                 EntityType.IRON_GOLEM.spawn(serverLevel, ironGolem.getOnPos().above(), MobSpawnType.MOB_SUMMONED);
                 ItemUtil.addItemEntity(livingEntity, SGItems.GOLEM_HEART.get(), 1, ChatFormatting.GOLD.getColor().intValue());
+                livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
-            if(livingEntity instanceof Bone_Chimera_Entity boneChimeraEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.SAND)) {
+            if(livingEntity instanceof Bone_Chimera_Entity boneChimeraEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.SAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //偷懒，直接秽土转生
                 ModEntities.BONE_CHIMERA.get().spawn(serverLevel, boneChimeraEntity.getOnPos().above(), MobSpawnType.MOB_SUMMONED);
+                livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
-            if(livingEntity instanceof UnderworldKnightEntity underworldKnight && WorldUtil.isInStructure(livingEntity, WorldUtil.FIRE)) {
+            if(livingEntity instanceof UnderworldKnightEntity underworldKnight && WorldUtil.isInStructure(livingEntity, WorldUtil.FIRE) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //偷懒，直接秽土转生
                 BlockFactorysBossesModEntities.UNDERWORLD_KNIGHT.get().spawn(serverLevel, underworldKnight.getOnPos().above(), MobSpawnType.MOB_SUMMONED);
+                livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
         }
@@ -482,6 +489,16 @@ public class LivingEntityEventListeners {
                 livingEntity.getAttribute(Attributes.MAX_HEALTH).addPermanentModifier(healthBoost);
                 livingEntity.setHealth(livingEntity.getMaxHealth());
             }
+        }
+    }
+
+    /**
+     * 保险
+     */
+    @SubscribeEvent
+    public static void onLivingDespawn(MobSpawnEvent.AllowDespawn event){
+        if(event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity && WorldUtil.isInStructure(bulldrogiothEntity, WorldUtil.COVES)) {
+            event.setResult(Event.Result.DENY);
         }
     }
 

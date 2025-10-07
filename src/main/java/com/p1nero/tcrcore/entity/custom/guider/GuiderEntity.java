@@ -21,7 +21,7 @@ import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WaypointUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
-import com.p1nero.tudigong.util.StructureUtil;
+import com.p1nero.tudigong.util.StructureUtils;
 import dev.ftb.mods.ftbquests.item.FTBQuestsItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -221,9 +221,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 0 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(15,
-                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
                                         TCRCoreMod.getInfo("iron_golem_name").withStyle(ChatFormatting.GOLD),
-                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
                                         SGItems.GOLEM_HEART.get().getDescription().copy().withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
@@ -231,9 +231,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 1 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(16,
-                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.COVES))).withStyle(ChatFormatting.BLUE),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.COVES))).withStyle(ChatFormatting.BLUE),
                                         EntityRegistry.BULLDROGIOTH.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.COVES))).withStyle(ChatFormatting.BLUE),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.COVES))).withStyle(ChatFormatting.BLUE),
                                         ItemRegistry.CRIMSON_SHELL.get().getDescription().copy().withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
@@ -241,9 +241,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 3 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(17,
-                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN),
                                         AquamiraeEntities.CAPTAIN_CORNELIA.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN),
                                         EFNItem.DEEPDARK_HEART.get().getDescription().copy().withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
@@ -251,9 +251,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 2 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(18,
-                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW),
                                         ModEntities.BONE_CHIMERA.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW),
                                         ModItems.CHIERA_CLAW.get().getDescription().copy().withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
@@ -261,9 +261,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 4 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(19,
-                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED),
                                         BlockFactorysBossesModEntities.UNDERWORLD_KNIGHT.get().getDescription().copy().withStyle(ChatFormatting.RED),
-                                        Component.literal(StructureUtil.getStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED),
                                         BlockFactorysBossesModItems.DRAGON_SKULL.get().getDescription().copy().withStyle(ChatFormatting.GOLD)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
