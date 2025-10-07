@@ -258,12 +258,25 @@ public class PlayerEventListeners {
 
     @SubscribeEvent
     public static void onPlayerEnterDim(EntityTravelToDimensionEvent event) {
-        if(event.getEntity() instanceof ServerPlayer serverPlayer && (event.getDimension() == Level.END || event.getDimension() == Level.NETHER)) {
-            if(PlayerDataManager.stage.getInt(serverPlayer) < 4) {
+
+        if(event.getEntity() instanceof ServerPlayer serverPlayer) {
+            if(event.getDimension() == Level.END || event.getDimension() == Level.NETHER) {
+                if(PlayerDataManager.stage.getInt(serverPlayer) < 4) {
+                    event.setCanceled(true);
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_dim"), true);
+                }
+            }
+
+            if((event.getDimension() == CataclysmDimensions.CATACLYSM_SANCTUM_FALLEN_LEVEL_KEY && !PlayerDataManager.stormEyeTraded.get(serverPlayer))
+                    ||(event.getDimension() == CataclysmDimensions.CATACLYSM_INFERNOS_MAW_LEVEL_KEY && !PlayerDataManager.flameEyeTraded.get(serverPlayer))
+                    ||(event.getDimension() == CataclysmDimensions.CATACLYSM_ETERNAL_FROSTHOLD_LEVEL_KEY && !PlayerDataManager.cursedEyeTraded.get(serverPlayer))
+                    ||(event.getDimension() == CataclysmDimensions.CATACLYSM_PHARAOHS_BANE_LEVEL_KEY && !PlayerDataManager.desertEyeTraded.get(serverPlayer))
+                    ||(event.getDimension() == CataclysmDimensions.CATACLYSM_ABYSSAL_DEPTHS_LEVEL_KEY && !PlayerDataManager.abyssEyeTraded.get(serverPlayer))) {
+                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_before_finish"), false);
                 event.setCanceled(true);
-                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_dim"), true);
             }
         }
+
     }
 
     @SubscribeEvent

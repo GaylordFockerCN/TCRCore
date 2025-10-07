@@ -119,6 +119,12 @@ public class LivingEntityEventListeners {
             });
         }
 
+        if(event.getEntity() instanceof Bone_Chimera_Entity boneChimeraEntity) {
+            if(boneChimeraEntity.isDeadOrDying()) {
+                event.setCanceled(true);
+            }
+        }
+
         if(event.getEntity() instanceof UnderworldKnightEntity underworldKnight) {
             if(underworldKnight.isDeadOrDying()) {
                 event.setCanceled(true);

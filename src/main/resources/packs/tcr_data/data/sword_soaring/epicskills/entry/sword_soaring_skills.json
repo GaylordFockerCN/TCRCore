@@ -1,6 +1,15 @@
 {
   "nodes": [
     {
+      "ability_points": 1,
+      "hidden": false,
+      "position_in_screen": [
+        120,
+        30
+      ],
+      "skill": "sword_soaring:sword_soaring_elytra_apprentice"
+    },
+    {
       "ability_points": 2,
       "hidden": false,
       "parents": [
