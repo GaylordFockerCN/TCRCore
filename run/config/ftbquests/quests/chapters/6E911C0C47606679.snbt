@@ -99,10 +99,7 @@
 				{
 					count: 12
 					id: "52673A4ECC9B6C07"
-					item: {
-						Count: 1
-						id: "minecraft:obsidian"
-					}
+					item: "minecraft:obsidian"
 					type: "item"
 				}
 				{
@@ -110,6 +107,9 @@
 					item: {
 						Count: 1
 						id: "minecraft:flint_and_steel"
+						tag: {
+							Damage: 0
+						}
 					}
 					type: "item"
 				}
@@ -134,10 +134,7 @@
 				""
 				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest8058086817761900554.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest8058086817761900554.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"12C6899DBC971D90\"}}]"
 			]
-			icon: {
-				Count: 1
-				id: "cataclysm:abyssal_sacrifice"
-			}
+			icon: "cataclysm:abyssal_sacrifice"
 			id: "6FD4134465F4B80A"
 			rewards: [
 				{
@@ -147,11 +144,7 @@
 				}
 				{
 					id: "4554E5EA99136194"
-					item: {
-						Count: 1
-						id: "tcrcore:rare_artifact_ticket"
-						
-					}
+					item: "tcrcore:rare_artifact_ticket"
 					type: "item"
 				}
 			]
@@ -161,22 +154,14 @@
 			tasks: [
 				{
 					entity: "cataclysm:the_leviathan"
-					icon: {
-						Count: 1
-						id: "cataclysm:tidal_claws"
-						
-					}
+					icon: "cataclysm:tidal_claws"
 					id: "31F81725804DBD7A"
 					type: "kill"
 					value: 1L
 				}
 				{
 					id: "0D15D4B2351D8886"
-					item: {
-						Count: 1
-						id: "cataclysm:abyssal_sacrifice"
-						
-					}
+					item: "cataclysm:abyssal_sacrifice"
 					type: "item"
 				}
 			]
@@ -285,20 +270,12 @@
 				{
 					count: 3
 					id: "35DA541CA12E8C21"
-					item: {
-						Count: 1
-						id: "cataclysm:burning_ashes"
-						
-					}
+					item: "cataclysm:burning_ashes"
 					type: "item"
 				}
 				{
 					id: "4CF3CE22F74D8719"
-					item: {
-						Count: 1
-						id: "tcrcore:rare_artifact_ticket"
-						
-					}
+					item: "tcrcore:rare_artifact_ticket"
 					type: "item"
 				}
 			]
@@ -335,30 +312,19 @@
 				}
 				{
 					id: "143DCC4EF2D22025"
-					item: {
-						Count: 1
-						id: "tcrcore:artifact_ticket"
-						
-					}
+					item: "tcrcore:artifact_ticket"
 					type: "item"
 				}
 			]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3774287354747791257.subtitle}"
-			tasks: [
-				{
-					entity: "minecraft:warden"
-					icon: "efn:deepdark_heart"
-					id: "0D2A0E0DCC3F302F"
-					type: "kill"
-					value: 1L
-				}
-				{
-					id: "3E0EA04E3F2FFC8C"
-					structure: "minecraft:ancient_city"
-					type: "structure"
-				}
-			]
+			tasks: [{
+				entity: "minecraft:warden"
+				icon: "efn:deepdark_heart"
+				id: "0D2A0E0DCC3F302F"
+				type: "kill"
+				value: 1L
+			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest3774287354747791257.title}"
 			x: -1.0d
 			y: -2.5d
@@ -403,10 +369,7 @@
 			id: "2C89A1EDBADA8DB5"
 			rewards: [{
 				id: "4D69F6191A356F5C"
-				item: {
-					Count: 1
-					id: "tcrcore:artifact_ticket"
-				}
+				item: "tcrcore:artifact_ticket"
 				type: "item"
 			}]
 			shape: "rsquare"
@@ -432,20 +395,13 @@
 				xp: 100
 			}]
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3332094715611645652.subtitle}"
-			tasks: [
-				{
-					entity: "block_factorys_bosses:yeti"
-					icon: "block_factorys_bosses:yeti_spawn_egg"
-					id: "3A5F56B41325A69C"
-					type: "kill"
-					value: 1L
-				}
-				{
-					id: "19A68D959B716189"
-					structure: "block_factorys_bosses:yeti_hideout"
-					type: "structure"
-				}
-			]
+			tasks: [{
+				entity: "block_factorys_bosses:yeti"
+				icon: "block_factorys_bosses:yeti_spawn_egg"
+				id: "3A5F56B41325A69C"
+				type: "kill"
+				value: 1L
+			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest3332094715611645652.title}"
 			x: 0.0d
 			y: -4.0d
@@ -456,6 +412,9 @@
 			icon: {
 				Count: 1
 				id: "block_factorys_bosses:sandworm_dart"
+				tag: {
+					Damage: 0
+				}
 			}
 			id: "697EB87B461228FE"
 			rewards: [
@@ -466,33 +425,25 @@
 				}
 				{
 					id: "3E3B93FA73E8DAC8"
-					item: {
-						Count: 1
-						id: "tcrcore:artifact_ticket"
-						
-					}
+					item: "tcrcore:artifact_ticket"
 					type: "item"
 				}
 			]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest7601716060644059390.subtitle}"
-			tasks: [
-				{
-					entity: "block_factorys_bosses:sandworm"
-					icon: {
-						Count: 1
-						id: "block_factorys_bosses:sandworm_dart"
+			tasks: [{
+				entity: "block_factorys_bosses:sandworm"
+				icon: {
+					Count: 1
+					id: "block_factorys_bosses:sandworm_dart"
+					tag: {
+						Damage: 0
 					}
-					id: "424210C6D8BB4252"
-					type: "kill"
-					value: 1L
 				}
-				{
-					id: "2E38402EB6613F66"
-					structure: "block_factorys_bosses:sandworm_nest"
-					type: "structure"
-				}
-			]
+				id: "424210C6D8BB4252"
+				type: "kill"
+				value: 1L
+			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest7601716060644059390.title}"
 			x: 3.5d
 			y: -2.5d
@@ -589,11 +540,7 @@
 				}
 				{
 					id: "6D18910D14426DFB"
-					item: {
-						Count: 1
-						id: "tcrcore:artifact_ticket"
-						
-					}
+					item: "tcrcore:artifact_ticket"
 					type: "item"
 				}
 			]
@@ -641,28 +588,19 @@
 			dependencies: ["68EDC89BB022788B"]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
-			icon: {
-				Count: 1
-				id: "block_factorys_bosses:dragon_skull"
-			}
+			icon: "block_factorys_bosses:dragon_skull"
 			icon_scale: 1.5d
 			id: "4E2DD4620173E511"
 			rewards: [{
 				id: "716CFBFF5641D334"
-				item: {
-					Count: 1
-					id: "tcrcore:artifact_ticket"
-				}
+				item: "tcrcore:artifact_ticket"
 				type: "item"
 			}]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest5633392226306614545.subtitle}"
 			tasks: [{
 				entity: "block_factorys_bosses:infernal_dragon"
-				icon: {
-					Count: 1
-					id: "block_factorys_bosses:dragon_skull"
-				}
+				icon: "block_factorys_bosses:dragon_skull"
 				id: "03BBFB33B22431C9"
 				type: "kill"
 				value: 1L
@@ -673,27 +611,18 @@
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
-			icon: {
-				Count: 1
-				id: "monsterexpansion:rhyza_tail"
-			}
+			icon: "monsterexpansion:rhyza_tail"
 			id: "1076C4FBFF37BE92"
 			rewards: [{
 				id: "76D1BE099119C1A8"
-				item: {
-					Count: 1
-					id: "tcrcore:rare_artifact_ticket"
-				}
+				item: "tcrcore:rare_artifact_ticket"
 				type: "item"
 			}]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest1186352138456383122.subtitle}"
 			tasks: [{
 				entity: "monsterexpansion:rhyza"
-				icon: {
-					Count: 1
-					id: "monsterexpansion:rhyza_tail"
-				}
+				icon: "monsterexpansion:rhyza_tail"
 				id: "2D9D94888B5B48C1"
 				type: "kill"
 				value: 1L

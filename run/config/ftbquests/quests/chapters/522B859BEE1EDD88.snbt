@@ -97,10 +97,7 @@
 			rewards: [{
 				count: 64
 				id: "21F90D5EBFB0FAE5"
-				item: {
-					Count: 1
-					id: "armourers_workshop:skin-template"
-				}
+				item: "armourers_workshop:skin-template"
 				type: "item"
 			}]
 			shape: "square"

@@ -307,17 +307,11 @@
 				""
 				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1892043973836821613.description3}"
 			]
-			icon: {
-				Count: 1
-				id: "minecraft:iron_ore"
-			}
+			icon: "minecraft:iron_ore"
 			id: "1A41E3F83FF6546D"
 			rewards: [{
 				id: "63864E5C13928197"
-				item: {
-					Count: 1
-					id: "minecraft:diamond"
-				}
+				item: "minecraft:diamond"
 				type: "item"
 			}]
 			shape: "rsquare"
@@ -372,10 +366,7 @@
 				""
 				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3288439856153403711.image0}"
 			]
-			icon: {
-				Count: 1
-				id: "monsterexpansion:skrythe_frill"
-			}
+			icon: "monsterexpansion:skrythe_frill"
 			id: "2DA2E2A05342A13F"
 			rewards: [{
 				id: "494045C0E9E4DE18"

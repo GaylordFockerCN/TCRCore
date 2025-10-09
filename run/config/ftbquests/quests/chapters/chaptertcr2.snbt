@@ -34,11 +34,7 @@
 				}
 				{
 					id: "20DE5B4ADDEB8BA9"
-					item: {
-						Count: 1
-						id: "minecraft:enchanting_table"
-						
-					}
+					item: "minecraft:enchanting_table"
 					type: "item"
 				}
 			]
@@ -605,10 +601,7 @@
 			id: "33FDECA5C88EB0E9"
 			rewards: [{
 				id: "79EB344BD3CE5785"
-				item: {
-					Count: 1
-					id: "fantasy_armor:moon_crystal"
-				}
+				item: "fantasy_armor:moon_crystal"
 				type: "item"
 			}]
 			shape: "square"
@@ -658,11 +651,7 @@
 				}
 				{
 					id: "2D9499D0983779E3"
-					item: {
-						Count: 1
-						id: "efn:yamato_dmc_in_sheath"
-						
-					}
+					item: "efn:yamato_dmc_in_sheath"
 					optional_task: true
 					type: "item"
 				}
@@ -709,6 +698,9 @@
 			icon: {
 				Count: 1
 				id: "super_golem:golem_heart"
+				tag: {
+					Damage: 0
+				}
 			}
 			icon_scale: 2.0d
 			id: "30D9DD9BAA59B75A"
@@ -724,6 +716,9 @@
 				item: {
 					Count: 1
 					id: "super_golem:golem_heart"
+					tag: {
+						Damage: 0
+					}
 				}
 				optional_task: true
 				type: "item"
@@ -737,10 +732,7 @@
 				"23459350174F79BD"
 			]
 			hide_dependency_lines: false
-			icon: {
-				Count: 1
-				id: "efn:nf_shortsword"
-			}
+			icon: "efn:nf_shortsword"
 			icon_scale: 2.0d
 			id: "32C5B1F0B7165EC2"
 			rewards: [{
@@ -752,10 +744,7 @@
 			subtitle: "{ftbquests.chapter.chaptertcr2.quest3658525919730360002.subtitle}"
 			tasks: [{
 				id: "59F8C4F178149A3A"
-				item: {
-					Count: 1
-					id: "efn:nf_shortsword"
-				}
+				item: "efn:nf_shortsword"
 				optional_task: true
 				type: "item"
 			}]
@@ -767,6 +756,9 @@
 			icon: {
 				Count: 1
 				id: "epicfight:golden_dagger"
+				tag: {
+					Damage: 0
+				}
 			}
 			icon_scale: 2.0d
 			id: "23459350174F79BD"
@@ -782,6 +774,9 @@
 				item: {
 					Count: 1
 					id: "epicfight:golden_dagger"
+					tag: {
+						Damage: 0
+					}
 				}
 				optional_task: true
 				type: "item"
@@ -796,10 +791,7 @@
 				""
 				"{ftbquests.chapter.chaptertcr2.quest401042223978499222.description1}"
 			]
-			icon: {
-				Count: 1
-				id: "p1nero_bow:mortis"
-			}
+			icon: "p1nero_bow:mortis"
 			icon_scale: 2.0d
 			id: "0590C9C7242BCC96"
 			rewards: [{
@@ -811,10 +803,7 @@
 			subtitle: "{ftbquests.chapter.chaptertcr2.quest401042223978499222.subtitle}"
 			tasks: [{
 				id: "4C5C12FB9A27DB22"
-				item: {
-					Count: 1
-					id: "p1nero_bow:mortis"
-				}
+				item: "p1nero_bow:mortis"
 				optional_task: true
 				type: "item"
 			}]
@@ -828,10 +817,7 @@
 			id: "74AD9CC2957BE149"
 			tasks: [{
 				id: "0CA8BDBA2E7D3290"
-				item: {
-					Count: 1
-					id: "enchantinginfuser:enchanting_infuser"
-				}
+				item: "enchantinginfuser:enchanting_infuser"
 				type: "item"
 			}]
 			x: -3.0d
@@ -844,10 +830,7 @@
 			shape: "rsquare"
 			tasks: [{
 				id: "2B318C7FF8A79104"
-				item: {
-					Count: 1
-					id: "enchantinginfuser:advanced_enchanting_infuser"
-				}
+				item: "enchantinginfuser:advanced_enchanting_infuser"
 				type: "item"
 			}]
 			x: -3.0d
