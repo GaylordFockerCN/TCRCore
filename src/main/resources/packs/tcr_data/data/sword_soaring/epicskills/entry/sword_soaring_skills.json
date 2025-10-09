@@ -4,6 +4,43 @@
       "ability_points": 1,
       "hidden": false,
       "position_in_screen": [
+        20,
+        30
+      ],
+      "skill": "sword_soaring:sword_soaring_apprentice"
+    },
+    {
+      "ability_points": 2,
+      "hidden": false,
+      "parents": [
+        {
+          "skill": "sword_soaring:sword_soaring_apprentice"
+        }
+      ],
+      "position_in_screen": [
+        20,
+        130
+      ],
+      "skill": "sword_soaring:sword_soaring_expert"
+    },
+    {
+      "ability_points": 3,
+      "hidden": false,
+      "parents": [
+        {
+          "skill": "sword_soaring:sword_soaring_apprentice"
+        }
+      ],
+      "position_in_screen": [
+        20,
+        230
+      ],
+      "skill": "sword_soaring:sword_soaring_master"
+    },
+    {
+      "ability_points": 1,
+      "hidden": false,
+      "position_in_screen": [
         120,
         30
       ],
@@ -56,7 +93,7 @@
       "skill": "sword_soaring:kill_aura_2"
     },
     {
-      "ability_points": 5,
+      "ability_points": 10,
       "hidden": false,
       "parents": [
         {
@@ -103,7 +140,7 @@
       "skill": "sword_soaring:rain_sword"
     },
     {
-      "ability_points": 5,
+      "ability_points": 10,
       "hidden": false,
       "parents": [
         {
