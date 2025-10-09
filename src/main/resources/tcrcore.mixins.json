@@ -6,6 +6,7 @@
   "refmap": "tcrcore.refmap.json",
   "mixins": [
     "AbstractLargeMonsterMixin",
+    "AltarOfAbyssBlockEntityMixin",
     "Ancient_Remnant_EntityMixin",
     "AnimatedAttackGoalMixin",
     "BackpackConfigMixin",
@@ -26,6 +27,7 @@
     "KnightSwordItemMixin",
     "PlayerAdvancementsMixin",
     "PlayerPatchMixin",
+    "ShellHornItemMixin",
     "ShipMixin",
     "SkillContainerMixin",
     "TakeDamageEventAttackMixin",

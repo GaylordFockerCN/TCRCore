@@ -223,6 +223,8 @@
   "screen.tcr.opt.ban_portal_0": "好吧",
   "skill.tcrcore.fire_avoid": "避火咒",
   "skill.tcrcore.fire_avoid.tooltip": "免疫火焰伤害！",
+  "skill.tcrcore.perfect_dodge": "闪避特效",
+  "skill.tcrcore.perfect_dodge.tooltip": "完美闪避时将有帅气的动作！",
   "skill.tcrcore.water_avoid": "避水咒",
   "skill.tcrcore.water_avoid.tooltip": "可在水下自由呼吸！",
   "skill_tree.sword_soaring.unlock_tip": "与§6[天空岛]§r村民用绿宝石交易解锁",

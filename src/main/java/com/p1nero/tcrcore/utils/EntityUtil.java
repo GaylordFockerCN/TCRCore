@@ -88,4 +88,8 @@ public class EntityUtil {
         self.level().getEntitiesOfClass(Player.class, (new AABB(center, center)).inflate(radius)).forEach(consumer);
     }
 
+    public static void nearPlayerDo(Level level, Vec3 center, int radius, Consumer<Player> consumer) {
+        level.getEntitiesOfClass(Player.class, (new AABB(center, center)).inflate(radius)).forEach(consumer);
+    }
+
 }

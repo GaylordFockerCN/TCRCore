@@ -223,6 +223,8 @@
   "screen.tcr.opt.ban_portal_0": "Alright",
   "skill.tcrcore.fire_avoid": "Fire Avoidance Charm",
   "skill.tcrcore.fire_avoid.tooltip": "Immunity to fire damage!",
+  "skill.tcrcore.perfect_dodge": "Dodge Effect",
+  "skill.tcrcore.perfect_dodge.tooltip": "Play a cool animation when perfect dodge!",
   "skill.tcrcore.water_avoid": "Water Avoidance Charm",
   "skill.tcrcore.water_avoid.tooltip": "Allows free breathing underwater!",
   "skill_tree.sword_soaring.unlock_tip": "Unlocked by trading with villagers in §6[Sky Island]§r using emeralds",

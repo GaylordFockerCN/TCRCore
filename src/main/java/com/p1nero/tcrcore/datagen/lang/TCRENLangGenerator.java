@@ -43,6 +43,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add("unlock_tip.tcrcore.battleborn.fire_avoid", "Learned by defeating the §6[Bone Chimera]§r");
         this.addSkill("water_avoid", "Water Avoidance Charm", "Allows free breathing underwater!");
         this.addSkill("fire_avoid", "Fire Avoidance Charm", "Immunity to fire damage!");
+        this.addSkill("perfect_dodge", "Dodge Effect", "Play a cool animation when perfect dodge!");
 
         this.add(TCRItems.ARTIFACT_TICKET.get(), "Artifact Essence");
         this.addItemUsageInfo(TCRItems.ARTIFACT_TICKET.get(), "Obtained from certain quests in the quest book. Can be used to refine artifact with the §3[Ferry girl]§r at the §d[Saint Harbor]§r");

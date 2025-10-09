@@ -16,17 +16,12 @@
             "ability_points": 2
         },
 		{
-			"skill": "epicfight:parrying",
+			"skill": "tcrcore:perfect_dodge",
 			"position_in_screen": [340, 30],
 			"ability_points": 1
 		},
 		{
 			"skill": "epicfight:berserker",
-			"parents": [
-				{
-					"skill": "epicfight:parrying"
-				}
-			],
 			"position_in_screen": [340, 100],
 			"ability_points": 5
 		},

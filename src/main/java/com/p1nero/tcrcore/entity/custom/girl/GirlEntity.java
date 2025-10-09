@@ -192,7 +192,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 142857, 0, 0.02f));
 
         offersArmor.add(new MerchantOffer(
-                new ItemStack(Items.NETHERITE_BLOCK, 1),
+                new ItemStack(Items.NETHERITE_INGOT, 1),
                 new ItemStack(Items.DIAMOND, 4),
                 new ItemStack(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, 1),
                 142857, 0, 0.02f));

@@ -159,14 +159,21 @@ public abstract class AbstractAltarBlockEntity extends BlockEntity {
                 } else {
                     if(pLevel.getGameTime() % 10 == 0) {
                         Vec3 center = pPos.getCenter();
-                        pLevel.getEntitiesOfClass(Player.class, (new AABB(center, center)).inflate(5.0F)).forEach(player ->
-                                player.displayClientMessage(TCRCoreMod.getInfo("use_true_eye_tip", abstractAltarBlockEntity.itemInnate.getDescription().copy().withStyle(ChatFormatting.GOLD)), true));
+                        pLevel.getEntitiesOfClass(Player.class, (new AABB(center, center)).inflate(5.0F)).forEach(abstractAltarBlockEntity::playUseEyeTip);
                     }
                 }
             } else if(pLevel.getGameTime() % 120 == 0 && abstractAltarBlockEntity.isActivated){
                 pLevel.playSound(null, pPos.getX(), pPos.getY(), pPos.getZ(), SoundEvents.BEACON_AMBIENT, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
         }
+    }
+
+    /**
+     * 某些眼睛显示【？？？】或乱码
+     * @param player
+     */
+    protected void playUseEyeTip(Player player) {
+        player.displayClientMessage(TCRCoreMod.getInfo("use_true_eye_tip", this.itemInnate.getDescription().copy().withStyle(ChatFormatting.GOLD)), true);
     }
 
     protected void onActive(Player pPlayer, ItemStack mainHandItem, ServerLevel pLevel, BlockPos pPos) {

@@ -28,8 +28,8 @@ import java.util.regex.Pattern;
 public class WorldUtil {
     public static final Vec3i GIRL_POS = new Vec3i(80, 74, -133);
     public static final Vec3i GIRL_PORTAL_POS = new Vec3i(80, 73, -138);
-    public static final Vec3i START_POS = new Vec3i(78, 75, -193);
-    public static final Vec3 START_POS_VEC3 = new Vec3(78, 75, -193);
+    public static final Vec3i START_POS = new Vec3i(-3, 75, -190);
+    public static final Vec3 GOLEM_CENTER_POS_VEC3 = new Vec3(78, 75, -190);
     public static final Vec3 CENTER_POS = new Vec3(-19, 75, -79);
     public static final Vec3 GUIDER_POS = new Vec3(-186, 85, -191);
     public static final Vec3i GUIDER_BLOCK_POS = new Vec3i(-186, 85, -191);

@@ -9,6 +9,7 @@ import com.obscuria.obscureapi.api.utils.Icons;
 import com.obscuria.obscureapi.util.PlayerUtils;
 import com.obscuria.obscureapi.util.TextUtils;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
+import com.p1nero.tcrcore.utils.EntityUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
@@ -16,7 +17,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnGroupData;
@@ -41,7 +41,7 @@ public class ShellHornItemMixin extends Item {
         super(p_41383_);
     }
 
-    @Inject(method = "use", at = @At("HEAD"))
+    @Inject(method = "use", at = @At("HEAD"), cancellable = true)
     private void tcr$use(@NotNull Level world, @NotNull Player entity, @NotNull InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> cir) {
         InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
         Level var6 = entity.level();
@@ -62,10 +62,12 @@ public class ShellHornItemMixin extends Item {
 
                 for(int iz = -6; iz <= 6; ++iz) {
                     int sz = entity.getBlockZ() + iz;
-                    if (AquamiraeUtils.isInIceMaze(entity) && entity.level().getBlockState(new BlockPos(sx, 62, sz)).getBlock() == Blocks.WATER && entity.level().getBlockState(new BlockPos(sx, 58, sz)).getBlock() == Blocks.WATER && entity.level().getBlockState(new BlockPos(sx - 1, 62, sz)).getBlock() == Blocks.WATER && entity.level().getBlockState(new BlockPos(sx + 1, 62, sz)).getBlock() == Blocks.WATER && entity.level().getBlockState(new BlockPos(sx, 62, sz - 1)).getBlock() == Blocks.WATER && entity.level().getBlockState(new BlockPos(sx, 62, sz + 1)).getBlock() == Blocks.WATER) {
+                    if (AquamiraeUtils.isInIceMaze(entity) && entity.level().getBlockState(new BlockPos(sx, 62, sz)).getBlock() == Blocks.WATER && entity.level().getBlockState(new BlockPos(sx, 58, sz)).getBlock() == Blocks.WATER && entity.level().getBlockState(new BlockPos(sx - 1, 62, sz)).getBlock() == Blocks.WATER && entity.level().getBlockState(new BlockPos(sx + 1, 62, sz)).getBlock() == Blocks.WATER && entity.level().getBlockState(new BlockPos(sx, 62, sz - 1)).getBlock() == Blocks.WATER && entity.level().getBlockState(new BlockPos(sx, 62, sz + 1)).getBlock() == Blocks.WATER
+                        && EntityUtil.getNearByEntities(CaptainCornelia.class, entity, 30).isEmpty()
+                    ) {
                         summon = true;
                         pos = new BlockPos(sx, 58, sz);
-                        stack.shrink(1);
+                        entity.getCooldowns().addCooldown(stack.getItem(), 1145);
                         entity.getInventory().setChanged();
                         break label38;
                     }
@@ -122,7 +124,7 @@ public class ShellHornItemMixin extends Item {
                 }
 
             }
-        }.start(60, entity, pos, summon);
+        }.start(60, entity, pos, summon);//逆天mcr
         cir.setReturnValue(ar);
     }
 

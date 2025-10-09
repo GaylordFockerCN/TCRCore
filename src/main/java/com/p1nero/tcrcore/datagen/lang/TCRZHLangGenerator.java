@@ -43,6 +43,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add("unlock_tip.tcrcore.battleborn.fire_avoid", "击败§6[骸骨奇美拉]§r习得");
         this.addSkill("water_avoid", "避水咒", "可在水下自由呼吸！");
         this.addSkill("fire_avoid", "避火咒", "免疫火焰伤害！");
+        this.addSkill("perfect_dodge", "闪避特效", "完美闪避时将有帅气的动作！");
 
         this.add(TCRItems.ARTIFACT_TICKET.get(), "饰品精华");
         this.addItemUsageInfo(TCRItems.ARTIFACT_TICKET.get(), "通过任务书某些任务获取。可在§d[圣殿港口]§r的§3[摆渡人]§r处提炼饰品");
@@ -203,7 +204,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GUIDER.get(), 0, "所以说…你们是从世界之外…漂流来的？当你们准备降落的时候，有陌生的魔神将你们拉入结界，然后你们便不省人事？");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 1, "我是此世界的守护神，那日天象异常，雷声四起，天有流星坠入海中，于是我在海底捞起了你们，想必你们就是古老预言中的天外勇者。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 2, "曾经，这里有个荣光的王国，英灵们守护着天地。直到有一天，§d「黑潮」§f降临世间，万物受到侵蚀，甚至部分村民黑化为灾厄村民。而众神不敌§d「黑潮」§f，化为英灵。依照古老预言所示，我将他们残存的部分力量封印于此，§6但它们仍有部分火种，散落至世界各地。§f我受到诅咒而无法离开此地，因此只能默默等待一位救世主降临...");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 3, "古老预言所示，待你点亮所有火种，便可重建神庙，获取英灵的力量，举行仪式，清洗§d「黑潮」§f！不过在这之前，先§6击杀一位灾厄村民§f再§f来找我吧。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 3, "古老预言所示，待你点亮所有火种，便可重建神庙，获取英灵的力量，举行仪式，清洗§d「黑潮」§f！不过在这之前，先§6击杀一位灾厄村民（掠夺者）§f再§f来找我吧。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 4, "看来阁下真是预言中的救世主！阁下冒险途中是否收集了§d『神谕残卷』§f？将§d『神谕残卷』§f与我，我将为你揭示神谕所记载的火种方位！待你点亮所有火种，吾便启动§d「黑潮」§f清洗仪式！");
 
         this.addDialogAnswer(TCREntities.GUIDER.get(), 5, "阁下何故攻击我？");

@@ -1,7 +1,5 @@
 package com.p1nero.tcrcore.events;
 
-
-import com.hm.efn.registries.EFNItem;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.fast_tpa.network.PacketRelay;
 import com.p1nero.tcrcore.TCRCoreMod;
@@ -17,6 +15,7 @@ import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.EntityUtil;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
+import com.p1nero.tudigong.entity.XianQiEntity;
 import com.p1nero.tudigong.item.TDGItems;
 import com.yesman.epicskills.world.capability.AbilityPoints;
 import net.blay09.mods.waystones.block.ModBlocks;
@@ -33,7 +32,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -46,7 +44,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
-import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.player.AdvancementEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -113,7 +110,6 @@ public class PlayerEventListeners {
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/gamerule mobGriefing false");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s epicskills:battleborn efn:efn_step true");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s epicskills:battleborn efn:efn_dodge true");
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s epicskills:battleborn epicfight:parrying true");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s dodge_parry_reward:passive dodge_parry_reward:stamina1 true");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s dodge efn:efn_dodge");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s guard epicfight:parrying");
@@ -122,7 +118,10 @@ public class PlayerEventListeners {
                 ItemUtil.addItem(serverPlayer, ModItems.BACKPACK.get(), 1);
                 ItemUtil.addItem(serverPlayer, Items.BREAD, 32);
                 ItemUtil.addItem(serverPlayer, TDGItems.TUDI_COMMAND_SPELL.get(), 1);
-
+                //引导玩家去守望者处
+                XianQiEntity xianQiEntity = new XianQiEntity(serverPlayer.serverLevel(), WorldUtil.GUIDER_POS, serverPlayer, null);
+                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("cloud_follow_me"), false);
+                serverPlayer.serverLevel().addFreshEntity(xianQiEntity);
                 PlayerDataManager.firstJoint.put(serverPlayer, true);
             }
 

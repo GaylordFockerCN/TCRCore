@@ -33,6 +33,10 @@ public class ItemEvents {
             event.getToolTip().add(TCRCoreMod.getInfo("shift__to_enter_dim"));
         }
 
+        if(PlayerEventListeners.illegalItems.contains(event.getItemStack().getItem())) {
+            event.getToolTip().add(1, TCRCoreMod.getInfo("illegal_item_tip"));
+        }
+
     }
 
 }

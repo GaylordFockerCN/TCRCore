@@ -50,8 +50,8 @@ public class TutorialGolem extends IronGolem {
     public void tick() {
         super.tick();
         if(!level().isClientSide) {
-            if(this.distanceToSqr(WorldUtil.START_POS_VEC3) > 70 * 70) {
-                Vec3 dir = WorldUtil.START_POS_VEC3.subtract(this.position()).normalize();
+            if(this.distanceToSqr(WorldUtil.GOLEM_CENTER_POS_VEC3) > 70 * 70) {
+                Vec3 dir = WorldUtil.GOLEM_CENTER_POS_VEC3.subtract(this.position()).normalize();
                 Vec3 targetPos = this.position().add(dir.scale(30));
                 this.getNavigation().moveTo(targetPos.x, targetPos.y, targetPos.z, 1.0F);
             }
@@ -131,10 +131,6 @@ public class TutorialGolem extends IronGolem {
                 serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("you_pass")));
                 serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                 this.setTarget(null);
-                //引导玩家去守望者处
-                XianQiEntity xianQiEntity = new XianQiEntity(level(), WorldUtil.GUIDER_POS, serverPlayer, null);
-                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("cloud_follow_me"), false);
-                level().addFreshEntity(xianQiEntity);
                 PlayerDataManager.tutorial_passed.put(serverPlayer, true);
             } else {
                 this.setTarget(null);

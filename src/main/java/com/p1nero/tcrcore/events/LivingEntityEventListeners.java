@@ -439,12 +439,6 @@ public class LivingEntityEventListeners {
             }
         }
 
-        if(event.getEntity() instanceof Skeleton skeleton) {
-            if(skeleton.getMainHandItem().is(Items.BOW) && skeleton.getRandom().nextFloat() < 0.8) {
-                skeleton.setItemInHand(InteractionHand.MAIN_HAND, EpicFightItems.IRON_GREATSWORD.get().getDefaultInstance());
-            }
-        }
-
         if(event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity) {
             if(!EntityUtil.getNearByEntities(event.getLevel(), bulldrogiothEntity.position(), 50, BulldrogiothEntity.class).isEmpty()) {
                 event.setCanceled(true);
