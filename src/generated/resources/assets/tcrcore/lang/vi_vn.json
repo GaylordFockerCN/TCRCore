@@ -1,0 +1,231 @@
+{
+  "advancement.tcrcore.abyss_eye": "Mắt của Vực Sâu",
+  "advancement.tcrcore.abyss_eye.desc": "§a§oKhi vực thẳm nuốt chửng vùng đất, Ngài tự khâu mình vào đáy biển, da thịt Ngài trở thành một thành phố bong bóng.",
+  "advancement.tcrcore.abyss_kill": "Linh Hồn của Leviathan",
+  "advancement.tcrcore.abyss_kill.desc": "Đánh bại Leviathan và nhận được Vuốt Thủy Triều.",
+  "advancement.tcrcore.aquamirae_weapon": "Truyền Thuyết Tinh Linh Biển - Vũ Khí",
+  "advancement.tcrcore.aquamirae_weapon.desc": "",
+  "advancement.tcrcore.cataclysm_weapon": "Đại Hồng Thủy - Vũ Khí",
+  "advancement.tcrcore.cataclysm_weapon.desc": "",
+  "advancement.tcrcore.cursed_eye": "Mắt Bị Nguyền Rủa",
+  "advancement.tcrcore.cursed_eye.desc": "§a§oKhi kẻ phản bội đâm xuyên xương sống của cô, những giọt nước mắt đóng băng ngay lập tức phong ấn ba nghìn con tàu ma.",
+  "advancement.tcrcore.cursed_kill": "Linh Hồn của Maledictus",
+  "advancement.tcrcore.cursed_kill.desc": "Đánh bại Maledictus và nhận được Chiến Búa Phân Chia Linh Hồn.",
+  "advancement.tcrcore.desert_eye": "Mắt của Sa Mạc",
+  "advancement.tcrcore.desert_eye.desc": "§a§oNhững người bảo vệ không phải là quái vật; họ là những bia mộ sống sẵn sàng được người dân biến đổi.",
+  "advancement.tcrcore.desert_kill": "Linh Hồn của Tàn Tích Cổ Đại",
+  "advancement.tcrcore.desert_kill.desc": "Đánh bại Tàn Tích Cổ Đại và nhận được Cơn Thịnh Nộ của Bão Cát.",
+  "advancement.tcrcore.dragon_tame": "Người Thuần Rồng",
+  "advancement.tcrcore.dragon_tame.desc": "Thuần hóa Skrythe",
+  "advancement.tcrcore.ef_legacy": "Epic Fight - Vũ Khí",
+  "advancement.tcrcore.ef_legacy.desc": "Tất cả có thể nhận được thông qua chế tạo, có các kỹ năng vũ khí và mẫu hoạt ảnh khác nhau. Kiểm tra JEI để biết công thức và thông tin kỹ năng.",
+  "advancement.tcrcore.find_ymsw": "Các Vịnh Nhỏ",
+  "advancement.tcrcore.find_ymsw.desc": "Đến được Các Vịnh Nhỏ",
+  "advancement.tcrcore.flame_eye": "Mắt của Ngọn Lửa",
+  "advancement.tcrcore.flame_eye.desc": "§a§oNơi magma trào dâng, Ngài đã khoét tim mình, tạo ra một ngọn hải đăng vĩnh cửu.",
+  "advancement.tcrcore.flame_kill": "Linh Hồn của Ignis",
+  "advancement.tcrcore.flame_kill.desc": "Đánh bại Ignis và nhận được Hỏa Táng.",
+  "advancement.tcrcore.kill_pillager": "Bằng Chứng Trung Thành",
+  "advancement.tcrcore.kill_pillager.desc": "Nhiệm vụ đã hoàn thành. Đã đến lúc trở về Người Giữ Khu Bảo Tồn.",
+  "advancement.tcrcore.legend_weapon": "Vũ Khí Huyền Thoại",
+  "advancement.tcrcore.legend_weapon.desc": "",
+  "advancement.tcrcore.mark_map": "Đánh Dấu Vị Trí",{
+  "advancement.tcrcore.mark_map.desc": "The The Sanctuary Keeper đã đánh dấu vị trí của những Divine Eyes rải rác trên bản đồ của bạn. Bây giờ, hãy đi thu hồi chúng!",
+  "advancement.tcrcore.stage1": "Giai đoạn 1",
+  "advancement.tcrcore.stage1.desc": "",
+  "advancement.tcrcore.stage2": "Giai đoạn 2",
+  "advancement.tcrcore.stage2.desc": "",
+  "advancement.tcrcore.stage3": "Giai đoạn 3",
+  "advancement.tcrcore.stage3.desc": "",
+  "advancement.tcrcore.stage4": "Giai đoạn 4",
+  "advancement.tcrcore.stage4.desc": "",
+  "advancement.tcrcore.stage5": "Giai đoạn 5",
+  "advancement.tcrcore.stage5.desc": "",
+  "advancement.tcrcore.storm_eye": "Mắt Bão",
+  "advancement.tcrcore.storm_eye.desc": "§a§oKhi chiến tranh xé toạc những đám mây, cô ấy đã sử dụng cơn bão như một cầu thang, xây dựng một thiên đường lơ lửng cho người dân của mình.",
+  "advancement.tcrcore.storm_kill": "Linh Hồn của Scylla",
+  "advancement.tcrcore.storm_kill.desc": "Đánh bại Scylla và nhận Courtyard Wave Anchor Halberd.",
+  "advancement.tcrcore.tcrcore": "Rương Mộng Mị",
+  "advancement.tcrcore.tcrcore.desc": "Nơi giấc mơ bắt đầu. Đi đến The Sanctuary để tìm The Sanctuary Keeper.",
+  "advancement.tcrcore.tcrcore_weapon": "Kho Báu của Nhà Vua",
+  "advancement.tcrcore.tcrcore_weapon.desc": "Tất cả vũ khí hoặc vật liệu có thể thu được và điều chỉnh. Kiểm tra [JEI] để biết phương pháp và chi tiết thu thập.",
+  "block.block_factorys_bosses.dragon_skull.tcr_info": "Nhận được bằng cách đánh bại §c[Underworld Knight]§r hoặc §4[Infernal Dragon]§r",
+  "block.minecraft.dragon_egg.tcr_info": "Nhận được bằng cách đánh bại §d[Ender Dragon]§r trong §dEnd§r",
+  "block.tcrcore.abyss_altar_block": "Bàn Thờ Vực Sâu",
+  "block.tcrcore.cursed_altar_block": "Bàn Thờ Nguyền Rủa",
+  "block.tcrcore.desert_altar_block": "Bàn Thờ Sa Mạc",
+  "block.tcrcore.flame_altar_block": "Bàn Thờ Lửa",
+  "block.tcrcore.storm_altar_block": "Bàn Thờ Bão",
+  "entity.minecraft.iron_golem.answer0": "Này, bạn đã sẵn sàng chưa?",
+  "entity.minecraft.iron_golem.option0": "Rồi",
+  "entity.minecraft.iron_golem.option1": "Đợi đã",
+  "entity.minecraft.villager.answer-1": "!!!",
+  "entity.minecraft.villager.answer-2": "Mambo?",
+  "entity.minecraft.villager.answer0": "Mambo, mambo, oh my gilly, mambo~",
+  "entity.minecraft.villager.answer1": "Zabu zabu~",
+  "entity.minecraft.villager.answer2": "Wa i sha~ Mambo~",
+  "entity.minecraft.villager.answer3": "Nanbei ludou~ Axi ga axi~",
+  "entity.minecraft.villager.answer4": "Hakimi nanbei ludou~ Axi ga axi~",
+  "entity.minecraft.villager.answer5": "Axi ga hayaku naru~ wow~",
+  "entity.minecraft.villager.answer6": "[Chấp nhận]",
+  "entity.minecraft.villager.answer7": "[Người dân làng này không có hứng thú...]",
+  "entity.minecraft.villager.option-1": "[Thử Emeralds?]",
+  "entity.minecraft.villager.option-2": "[???]",
+  "entity.minecraft.villager.option-3": "[Có vẻ như cư dân địa phương đã bị tha hóa nặng nề!]",
+  "entity.minecraft.villager.option0": "[Ngươi đang lẩm bẩm gì vậy?]",
+  "entity.minecraft.villager.option1": "[Tại sao ta không thể hiểu được ngôn ngữ của dân làng...]",
+  "entity.minecraft.villager.option2": "[Người Được Chọn, ta đã chờ đ]ợi sự xuất hiện của ngươi từ lâu.",
+  "entity.minecraft.villager.option3": "[Ta là Skrythe, chiến mã thần thánh. Trong Chiến T]ranh Thủy Triều Đen, ta đã bị thương nặng và ngủ say cho đến bây giờ. Khi thức tỉnh, ta cảm nhận được dấu hiệu hồi sinh bên trong Thánh Địa, vì vậy ta đã trở lại. Người Giữ Thánh Địa, khi nhìn thấy ta, đã thông báo cho ta về vấn đề liên quan đến Người Được Chọn và ra lệnh cho ta chờ đợi ngươi ở đây.",
+  "entity.monsterexpansion.skrythe.answer0": "Ngươi là ai?",
+  "entity.monsterexpansion.skrythe.answer1": "Thuần hóa",
+  "entity.monsterexpansion.skrythe.option0": "Cô gái đưa đò",
+  "entity.monsterexpansion.skrythe.option1": "Lâu rồi không gặp, người đáng kính!",
+  "entity.tcrcore.girl": "Ngươi quên ta rồi sao? Ta là Cô gái đưa đò của Thánh Điện, ở đây để dẫn đường cho những người lạc lối. Nếu ngươi có bất kỳ kho báu quý hiếm nào, hãy cho ta xem. Ta có thể trích xuất memoria của chúng và biến chúng thành cổ vật! Khi ngươi có thể đặt chân đến §cthe Nether§f hoặc §dthe End§f, ta cũng có thể cho ngươi đi nhờ.",
+  "entity.tcrcore.girl.answer0": "Nếu ngươi có đủ kinh nghiệm, hãy mở bảng kỹ năng để học các kỹ năng. §6Nhấp vào quả cầu kinh nghiệm ở góc trên bên phải của giao diện cây kỹ năng để chuyển đổi kinh nghiệm thành điểm kỹ năng.§f Việc phân bổ kỹ năng là rất quan trọng; hãy cân nhắc việc học các kỹ năng giúp tăng khả năng sống sót, như Tăng Máu!",
+  "entity.tcrcore.girl.answer1": "Ta là Cô gái đưa đò của Thánh Điện, ở đây để dẫn đường cho những người lạc lối. Nếu ngươi có bất kỳ kho báu quý hiếm nào, hãy cho ta xem. Ta có thể trích xuất memoria của chúng và biến chúng thành cổ vật! Khi ngươi có thể đặt chân đến §cthe Nether§f hoặc §dthe End§f, ta cũng có thể cho ngươi đi nhờ. Như một món quà gặp mặt đầu tiên, hãy nhận lấy cổ vật này. Nhấn §d[%s]§f để triển khai cánh buồm và đi hàng ngàn dặm!",{
+  "entity.tcrcore.girl.answer2": "Thượng khách, ngài chắc chắn muốn đi chứ? Ta không thể đưa ngài trở lại... Xin hãy chắc chắn rằng ngài có Waystone bên mình.",§6§f
+  "entity.tcrcore.girl.answer3": "Quay lại",§c§f§d§f§d§f[]
+  "entity.tcrcore.girl.answer4": "Ngươi là ai?",
+  "entity.tcrcore.girl.option0": "Trích xuất vũ khí",
+  "entity.tcrcore.girl.option1": "Tinh luyện áo giáp",
+  "entity.tcrcore.girl.option2": "Học các kỹ thuật bí mật",
+  "entity.tcrcore.girl.option3": "Mở Cây Kỹ Năng",
+  "entity.tcrcore.girl.option4": "Đi đến Nether",
+  "entity.tcrcore.girl.option5": "Đi đến End",
+  "entity.tcrcore.girl.option6": "Xác nhận",
+  "entity.tcrcore.girl.option7": "Trích xuất cổ vật",
+  "entity.tcrcore.girl.option8": "Người Giữ Đền",
+  "entity.tcrcore.girl.option9": "Vậy... ngươi trôi dạt đến đây từ thế giới bên ngoài? Khi ngươi chuẩn bị hạ cánh, một vị thần xa lạ đã kéo ngươi vào một kết giới, và sau đó ngươi mất ý thức?",
+  "entity.tcrcore.guider": "Ta là Người Giữ Đền của thế giới này. Ngày đó, thiên tượng dị thường, sấm sét gầm rú, và một thiên thạch rơi xuống biển. Ta đã cứu ngươi từ vực sâu. Ngươi hẳn là những chiến binh thiên giới được tiên tri trong truyền thuyết cổ xưa.",
+  "entity.tcrcore.guider.answer0": "Chỉ cần đưa §d『Mảnh Vỡ Tiên Tri』§f cho ta, và ta sẽ tiết lộ vị trí tàn tro được ghi lại trong lời tiên tri! Sau đó, ngươi có thể đến những nơi ta đánh dấu trên bản đồ của ngươi, đánh bại quái vật, thu hồi tàn tro, §6và dâng chúng tại các bàn thờ trong sảnh§f. Khi tất cả tàn tro được thu thập, chúng ta có thể bắt đầu nghi lễ để thanh tẩy §d「Thủy Triều Đen」§f!",
+  "entity.tcrcore.guider.answer1": "Người ngoài... Ngươi thực sự nghĩ rằng ngươi là một vị cứu tinh sao... Hahahaha, ngươi chỉ là một con rối mà ta dùng để lấy lại sức mạnh của mình!",
+  "entity.tcrcore.guider.answer10": "Hiệp Sĩ Địa Ngục mà ngươi đánh bại, con rối của Đảo Trên Trời, Chimera trong nhà tù, và thủy thủ đoàn bị nguyền rủa dưới trướng Thuyền Trưởng—chúng là những người bảo vệ thần thánh thực sự của thế giới này, cản trở kế hoạch vĩ đại của ta! Sự biến mất của chúng chẳng có ý nghĩa gì, ngay cả khi phải trả giá bằng một vài illager. Hơn nữa, tàn tro thần thánh mà ngươi mang về sẽ giúp ta xây dựng lại hình hài vật chất của mình.",
+  "entity.tcrcore.guider.answer11": "§bThe Storm Ember§f... Ta cảm nhận được nó đang nằm rải rác ở §6[%s]§f. Đánh bại %s để lấy lại nó! Ta đã đánh dấu vị trí của §6[%s§6]§f trên bản đồ của ngươi. Ta sẽ đợi ở đây. §3[%s§3]§f, ngươi có thể kiểm tra với Ferry girl; có lẽ ngươi có thể đổi lấy một vài kho báu. §dThe Ferry girl§f đang đợi ngươi ở §6cảng của Saint Temple§f.",
+  "entity.tcrcore.guider.answer12": "§3The Abyss Ember§f... Ta cảm nhận được nó đang nằm rải rác ở §6[%s]§f. Đánh bại %s để lấy lại nó! Ta đã đánh dấu vị trí của §6[%s§6]§f trên bản đồ của ngươi. Ta sẽ đợi ở đây. §c[%s§c]§f, ngươi có thể kiểm tra với Ferry girl; có lẽ ngươi có thể đổi lấy một vài kho báu.",
+  "entity.tcrcore.guider.answer13": "§2The Cursed Ember§f... Ta cảm nhận được nó đang nằm rải rác ở §6[%s]§f. Đánh bại %s để lấy lại nó! Ta đã đánh dấu vị trí của §6[%s§6]§f trên bản đồ của ngươi. Ta sẽ đợi ở đây. §c[%s§c]§f, ngươi có thể kiểm tra với Ferry girl; có lẽ ngươi có thể đổi lấy một vài kho báu.",
+  "entity.tcrcore.guider.answer14": "§eThe Desert Ember§f... Ta cảm nhận được nó đang nằm rải rác ở §6[%s]§f. Đánh bại %s để lấy lại nó! Ta đã đánh dấu vị trí của §6[%s§6]§f trên bản đồ của ngươi. Ta sẽ đợi ở đây. §e[%s§e]§f, ngươi có thể kiểm tra với Ferry girl; có lẽ ngươi có thể đổi lấy một vài kho báu.",§d
+  "entity.tcrcore.guider.answer15": "§6The Flame Ember§f... Ta cảm nhận được nó đang nằm rải rác ở §6[%s]§f. Đánh bại %s để lấy lại nó! Ta đã đánh dấu vị trí của §6[%s§6]§f trên bản đồ của ngươi. Ta sẽ đợi ở đây. §c[%s§c]§f, ngươi có thể kiểm tra với Ferry girl; có lẽ ngươi có thể đổi lấy một vài kho báu.",§b§3§3§d
+  "entity.tcrcore.guider.answer16": "Ngày xưa, nơi đây từng là một vương quốc huy hoàng, [đư]ợc bảo vệ bởi những linh hồn anh hùng. Cho đến một ngày, §d「Black Tide」§f giáng xuống thế giới, làm tha hóa mọi thứ. Ngay cả một số dân làng cũng bị biến thành illager. Các vị thần, không thể chống lại §d「Black Tide」§f, đã trở thành linh hồn. Như lời tiên tri cổ xưa đã nói, ta đã phong ấn sức mạnh còn lại của họ ở đây. §6Tuy nhiên, các mảnh tàn của tàn lửa của họ vẫn còn rải rác khắp thế giới.§f Ta bị nguyền rủa và không thể rời khỏi nơi này, vì vậy ta chỉ có thể lặng lẽ chờ đợi một vị cứu tinh đến...",§3§c§c
+  "entity.tcrcore.guider.answer17": "Làm thế nào mà bạn có thêm Oracle Fragments bằng cách[ l]àm theo normal流程? Bạn đã ăn cắp chúng từ ai đó à?",{§2§f§6§f§6§6§f§c§c§f
+  "entity.tcrcore.guider.answer18": "Vì bạn đã thắp sáng tất cả các bàn thờ, một khi bạn §[6b]ước vào, đánh bại các linh hồn và truyền sức mạnh của các linh hồn vào bản thân,§f chúng ta sẽ bắt đầu nghi lễ!",§e§e§e
+  "entity.tcrcore.guider.answer19": "Lời tiên tri cổ xưa nói rằng một khi bạn đốt cháy tấ[t ]cả các tàn tro, bạn có thể xây dựng lại ngôi đền, có được sức mạnh của các linh hồn và thực hiện nghi lễ để thanh tẩy §d「Thủy Triều Đen」§f! Nhưng trước đó, trước tiên hãy §6đánh bại một illager§f và sau đó§f quay lại với ta.",§c§c
+  "entity.tcrcore.guider.answer2": "Có vẻ như bạn thực sự là vị cứu tinh được tiên tri! Bạn đã thu thập được bất kỳ §d『Mảnh Vỡ Tiên Tri』§f nào trong cuộc hành trình của mình chưa? Hãy đưa §d『Mảnh Vỡ Tiên Tri』§f cho ta, và ta sẽ tiết lộ vị trí của những tàn tro được ghi lại trong lời tiên tri! Một khi bạn đốt cháy tất cả các tàn tro, ta sẽ bắt đầu nghi lễ thanh tẩy §d「Thủy Triều Đen」§f!",§6
+  "entity.tcrcore.guider.answer20": "Tại sao bạn lại tấn công tôi?",
+  "entity.tcrcore.guider.answer21": "Vì bạn đã chứng minh được sức mạnh của mình, ta sẽ bỏ lớp ngụy trang và cho bạn thấy hình dạng thật của ta.",§6§f
+  "entity.tcrcore.guider.answer3": "§d『Mảnh Vỡ Tiên Tri!』§f Hãy đưa nó cho ta, và ta sẽ tiết lộ vị trí tàn tro mà nó ghi lại, cùng với những phước lành mà lời tiên tri ban cho!",§6
+  "entity.tcrcore.guider.answer4": "Hỡi vị cứu tinh được tiên tri, điều gì làm phiền bạn?",§d§f§d§f§d§f
+  "entity.tcrcore.guider.answer5": "§dEnder Dragon§f, nằm trong không gian ngoài hành tinh của End, có mối liên hệ sâu sắc với §d「Thủy Triều Đen」§f. Sau khi đánh bại nó, tinh chất mà nó sinh ra có thể được rèn thành Yamato, một sức mạnh từ một thế giới khác vượt xa tầm đo. Tuy nhiên, hãy cẩn thận: sau khi con rồng ngoài không gian biến mất, thế giới bị ảnh hưởng bởi §d「Thủy Triều Đen」§f sẽ khiến máu của quái vật tăng gấp đôi!",
+  "entity.tcrcore.guider.answer6": "Quay lại",
+  "entity.tcrcore.guider.answer7": "Ngươi là ai? Tại sao ngươi lại cứu ta?",§d§f
+  "entity.tcrcore.guider.answer8": "Sức mạnh mạnh nhất?",
+  "entity.tcrcore.guider.answer9": "Chúng ta nên làm gì tiếp theo?",§d§f§d§f§d§f
+  "entity.tcrcore.guider.option0": "[Tôi đã thắp sáng tất cả các bàn thờ!]",
+  "entity.tcrcore.guider.option1": "[Tôi không hiểu...]",
+  "entity.tcrcore.guider.option10": "[Ngươi thực sự là ai?]",
+  "entity.tcrcore.guider.option11": "[Tiếp tục]",
+  "entity.tcrcore.guider.option12": "[Các bàn thờ bị hư hại khác] trong sảnh?",
+  "entity.tcrcore.guider.option13": "[Hỏng rồi, hehe]",
+  "entity.tcrcore.guider.option14": "[What海底捞?",]
+  "entity.tcrcore.guider.option15": "[Điều gì ]đã xảy ra với thế giới này?",{
+  "entity.tcrcore.guider.option16": "Đánh dấu vị trí",
+  "entity.tcrcore.guider.option17": "[Tôi chỉ đùa ]thôi!",
+  "entity.tcrcore.guider.option2": "§aĐã đánh bại bọn cướp bóc§f",
+  "entity.tcrcore.guider.option3": "Ồ, một cô gái xinh đẹp?",
+  "entity.tcrcore.guider.option4": "Tiết lộ Oracle",
+  "entity.tcrcore.guider.option5": "Golem Huấn Luyện",
+  "entity.tcrcore.guider.option6": "Vị trí của Abyss Echo: Coves",
+  "entity.tcrcore.guider.option7": "Vật phẩm mới nhận được: %s × %d!",§a§f
+  "entity.tcrcore.guider.option8": "§6Dừng tấn công để giải tỏa cơn giận.",
+  "entity.tcrcore.guider.option9": "Thông tin Cloudland:",
+  "entity.tcrcore.tutorial_golem": "§cTấn công để khởi động lại",
+  "info.tcr.abyss_pos": "§6Trùm đã bị đánh bại! Mở khóa tương tác khối!",
+  "info.tcr.add_item_tip": "§6Bạn không có số phận để vào cloudland.",
+  "info.tcr.after_heal_stop_attack": "Có vẻ như bạn vẫn chưa nhận được sự chấp thuận thiêng liêng để vào... §6Tiếp tục thu thập tàn tro§r để nhận thêm oracles!",
+  "info.tcr.altar_dim_info": "§cCornelia bắt đầu hồi máu! Tăng sát thương của bạn!",
+  "info.tcr.attack_to_restart": "§a[Nhấn để trở về]",§c
+  "info.tcr.boss_killed_ready_return": "§6[Magic Cloud]: §fChào, đi theo tôi!",
+  "info.tcr.can_not_enter_before_finish": "§c§l CẢNH BÁO！Compute Shader hiện không hoạt động! Bạn có thể bật nó trong cấu hình Epic Fight để có trải nghiệm tốt hơn!",§6
+  "info.tcr.can_not_enter_dim": "Vị trí của Cursed Echo: Ice Maze",§6§r
+  "info.tcr.captain_start_heal": "§6Khi kẻ thù quá mạnh, hãy thử kết hợp các kỹ năng khác nhau!",§c
+  "info.tcr.click_to_return": "Vị[ trí của Desert] Echo: Chimera's Prison",§a
+  "info.tcr.cloud_follow_me": "§c[Trùm chưa b]ị đánh bại! Không thể tương tác với khối cloudland!",§6§f
+  "info.tcr.cs_warning": "§6Đang xây dựng lại... Chờ[%d§6]s",§c§l
+  "info.tcr.cursed_pos": "§6[[%s§6]§f để né tránh",
+  "info.tcr.death_info": "Nhấp chuột phải vào lõi bàn thờ để vào Cloudland",§6
+  "info.tcr.desert_pos": "§dTất cả các bàn thờ đã được thắp sáng!§r",
+  "info.tcr.dim_block_no_interact": "Vị trí của Flame Echo: Underworld Arena",§c
+  "info.tcr.dim_demending": "Khu vực này chưa khả[ dụn]g. Hãy quay lại sau!",§6§6
+  "info.tcr.dodge_tutorial": "Gây ra [ %.1f ] sát thương!",§6§6§f
+  "info.tcr.enter_dimension_tip": "§cVật phẩm bất hợp pháp!",
+  "info.tcr.finish_all_eye": "Sky Island Guardian",§d§r
+  "info.tcr.flame_pos": "§d[Giọng nói từ nguồn gốc không xác định]:§r Bảo vệ... Sky Island... Loại bỏ... Black Tide...",
+  "info.tcr.hit_barrier": "§a[Giọng nói từ nơi vô định]:§r ...Trả... lại... Ta muốn nhiều hơn...",
+  "info.tcr.hurt_damage": "§e[Giọng nói từ nơi vô định]:§r Hahaha, cuối cùng ta cũng được tự do!",
+  "info.tcr.illegal_item_tip": "§6[[%s§6]§r để khóa mục tiêu",§c
+  "info.tcr.iron_golem_name": "§cDi chuyển chuột để chuyển đổi mục tiêu!",
+  "info.tcr.kill_boss1": "Kh[ông có chỗ cho tàu!",§d§r]
+  "info.tcr.kill_boss2": "Hi[ệu ứng khi mang đủ bộ",§c]§r
+  "info.tcr.kill_boss3": "§6[[%s§6]§f để phòng thủ",§3§r
+  "info.tcr.kill_boss4": "§c[Né tránh đúng lúc để Né H]oàn Hảo!",§a§r
+  "info.tcr.kill_boss5": "§c[Chặn đúng lúc để Chặn Hoà]n Hảo!",§e§r
+  "info.tcr.lock_tutorial": "§c[Vui l]òng bật Chế Độ Chiến Đấu!§r",§6§6
+  "info.tcr.lock_tutorial_sub": "§6[M]§f để xem bản đồ",§c
+  "info.tcr.no_place_to_ship": "Giữ §6[Chuột phải]§r vào Waystone để trở về các Waystone đã kích hoạt trước đó!",
+  "info.tcr.on_full_set": "Nhấn §6[L]§f để xem hướng dẫn!",
+  "info.tcr.parry_tutorial": "Đã có đủ EXP. Nhấn §6[K]§f để phân bổ điểm kỹ năng!",
+  "info.tcr.perfect_dodge_tutorial": "Quái vật: [%s] | Vật phẩm liên quan: [%s]",§c
+  "info.tcr.perfect_parry_tutorial": "Nếu không còn người chơi nào ở Cloudland, rời đi quá lâu sẽ khiến Cloudland bị thiết lập lại!",§c
+  "info.tcr.press_to_open_battle_mode": "§6[[%s§6]§f để §bRiptide",§c§r
+  "info.tcr.press_to_open_map": "Tr[ở] về Overworld sau %d giây",§6§f
+  "info.tcr.press_to_open_portal_screen": "Tấn côn[g khi nhấn ]Shift để chụp",§6§r
+  "info.tcr.press_to_show_progress": "Kỹ năng [n]ày yêu cầu %d điểm kỹ năng để sử dụng",§6§f
+  "info.tcr.press_to_skill_tree": "Vị trí của Storm Echo: Đảo Trên Kh[ô]ng",§6§f
+  "info.tcr.related_loot": "Những tàn[ t]ro rải rác đã được tìm thấy. Đã đến lúc quay trở lại và thắp sáng các bàn thờ...",
+  "info.tcr.reset_when_no_player": "Tất cả các bàn thờ đã được thắp sáng. Đã đến lúc tìm The Sanctuary Keeper để thực hiện nghi lễ...",
+  "info.tcr.riptide_tutorial": "[P1nero]: §6Cảm ơn bạn đã chơi! Chúc mừng bạn đã trải nghiệm tất cả nội dung của phiên bản beta. Hẹn gặp lại!",§f§b
+  "info.tcr.second_after_boss_die_left": "§c[Nether]§d[End]§6 đã được mở khóa!§r",
+  "info.tcr.shift_to_pic": "§6Các tùy chọn mới đã được mở khóa tại Ferry girl!§r",
+  "info.tcr.skill_point_lack": "Một trang nhiệm vụ mới đã được mở khóa. Vui lòng mở §6[Quest Book]§r để kiểm tra",
+  "info.tcr.storm_pos": "Đã mở khóa [%s]! Nhấn §6[K]§r để kiểm tra",
+  "info.tcr.time_to_altar": "Một giao diện sách kỹ năng mới đã được mở khóa. Nhấn §6[K]§r để kiểm tra",{
+  "info.tcr.time_to_end": "Vui lòng sử dụng [%s] để nhấp chuột phải vào lõi bàn thờ",
+  "info.tcr.to_be_continue": "§6[Né Tránh Hoàn Hảo]§c hoặc §6[Đỡ Đòn Hoàn Hảo]§c có thể sạc một số vũ khí nhất định!",
+  "info.tcr.unlock_new_dim": "§6[[%s§6]§f đến kỹ năng vũ khí",§c§d§r
+  "info.tcr.unlock_new_dim_girl": "§d[Wraithon]: §6Điều này... là không thể...",§r
+  "info.tcr.unlock_new_ftb_page": "§d[Wraithon]: §6Kẻ ngoại lai, hành trình của ngươi kết thúc tại đây!",§r
+  "info.tcr.unlock_new_skill": "§6Bạn đã [vư]ợt qua!!",§r
+  "info.tcr.unlock_new_skill_page": "Nhận được khi đánh bại §c[Hiệp Sĩ Địa Ngục]§r hoặc §4[Rồng Địa Ngục]§r",§6
+  "info.tcr.use_true_eye_tip": "Nhận được khi đánh bại §c[Hiệp Sĩ Địa Ngục]§r",
+  "info.tcr.weapon_innate_charge_tutorial": "Nhận được khi đánh bại §3[Người Bảo Vệ Vuốt Khổng Lồ]§r ở §3vùng đất mây Scylla§r",§6§c§6§c
+  "info.tcr.weapon_innate_tutorial": "Nhận được khi đánh bại §a[Tượng San Hô Khổng Lồ]§r ở §dvùng đất mây The Leviathan§r",§6§6§f
+  "info.tcr.wraithon_end_tip": "Nhận được khi đánh bại §e[Chimera Xương]§r",§d§6
+  "info.tcr.wraithon_start_tip": "Nhận được khi đánh bại §2[Warden]§r hoặc §2[Thuyền Trưởng Cornelia]§r",§d§6
+  "info.tcr.you_pass": "Nhấp chuột phải để sử dụng và nhận điểm kỹ năng",§6
+  "item.block_factorys_bosses.dragon_bone.tcr_info": "Được ủ bằng §c[Tủy Huyết Kết Tinh]§r, một giọt từ §d[Nehemoth]§r",§4
+  "item.block_factorys_bosses.knight_sword.tcr_info": "Mảnh Vỡ Tiên Tri Cổ Đại",§c§[r]
+  "item.cataclysm.chitin_claw.tcr_info": "Nó mang một lời tiên tri cổ [xưa gợi ý về vị ]trí của những tàn tích rải rác. Hãy cho Người Giữ Thánh Địa xem nó ở Thánh Địa; nó có thể giúp ích cho cuộc phiêu lưu của bạn!",§3§r§3§r
+  "item.cataclysm.coral_chunk.tcr_info": "Tinh Chất Cổ Vật",§a§r§d§r[]
+  "item.dodosmobs.chimera_claw.tcr_info": "Nhận được từ một số nhiệm vụ nhất định trong sách nhiệm vụ. Có thể được sử dụng để tinh chế cổ vật với §3[Cô Gái Phà]§r tại §d[Cảng Saint]§r",§e
+  "item.efn.deepdark_heart.tcr_info": "Tinh Chất Cổ Vật Vàng",§2§r§[2§r]
+  "item.epicskills.ability_stone.tcr_info": "Nhận được từ một số nhiệm vụ nhất định trong sách nhiệm vụ. Có thể được sử dụng để tinh chế cổ vật hiếm với §3[Cô Gái Phà]§r tại §d[Cảng Saint]§r",
+  "item.fromtheshadows.bottle_of_blood.tcr_info": "The Casket of R[everies — Vật Phẩm Cốt Lõ]i",§c§r§d§r
+  "item.tcrcore.ancient_oracle_fragment": "The Casket of Reveries — Cốt Lõi",
+  "item.tcrcore.ancient_oracle_fragment.usage": "Riptide",
+  "item.tcrcore.artifact_ticket": "(Cổng dịch chuyển không xuất hiện như mong đợi. Có vẻ như giai đoạn trò chơi của bạn chưa đủ.",{
+  "item.tcrcore.artifact_ticket.usage": "Được rồi",§3§r§d§r[]
+  "item.tcrcore.rare_artifact_ticket": "Bùa Miễn Nhiễm Lửa",
+  "item.tcrcore.rare_artifact_ticket.usage": "Miễn nhiễm sát thương lửa!",§3§r§d§r[]
+  "itemGroup.tcr.items": "Bùa Miễn Nhiễm Nước",
+  "key.categories.tcrcore": "Cho phép thở tự do dưới nước!",
+  "key.tcrcore.riptide": "Mở khóa bằng cách giao dịch với dân làng ở §6[Sky Island]§r bằng ngọc lục bảo",
+  "screen.tcr.ans.ban_portal_0": "Học được bằng cách đánh bại §6[Bone Chimera]§r",
+  "screen.tcr.ban_portal": "Học được bằng cách giao dịch vớ,i dân làng ở §6[Coves]§r bằng ngọc lục bảo"
+  "screen.tcr.opt.ban_portal_0": "  ",
+  "skill.tcrcore.fire_avoid": "Fire Avoidance Charm",
+  "skill.tcrcore.fire_avoid.tooltip": "Immunity to fire damage!",
+  "skill.tcrcore.water_avoid": "Water Avoidance Charm",
+  "skill.tcrcore.water_avoid.tooltip": "Allows free breathing underwater!",
+  "skill_tree.sword_soaring.unlock_tip": "Unlocked by trading with villagers in §6[Sky Island]§r using emeralds",
+  "unlock_tip.tcrcore.battleborn.fire_avoid": "Learned by defeating the §6[Bone Chimera]§r",
+  "unlock_tip.tcrcore.battleborn.water_avoid": "Learned by trading with villagers in §6[Coves]§r using emeralds"
+}
