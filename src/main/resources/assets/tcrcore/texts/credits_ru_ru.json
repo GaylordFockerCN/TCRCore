@@ -1,0 +1,218 @@
+[
+  {
+    "section": "Производственная группа",
+    "disciplines": [
+      {
+        "discipline": "Автор",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Planner",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Программист",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Книга заданий, иллюстрированное руководство, обучающее руководство",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Дизайн диалогов",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Дизайн истории",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Арт-директор",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Настройка фона",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Внешняя поддержка",
+        "titles": [
+          {
+            "title": "Святилище ",
+            "names": [
+              "El_mal（玩建筑的牢E）"
+            ]
+          },
+          {
+            "title": "Некоторые анимации",
+            "names": [
+              "merlin204"
+            ]
+          },
+          {
+            "title": "Некоторые текстуры",
+            "names": [
+              "一只路过的小吴 Некоторые предметы",
+              "XVIII-凌 Некоторые эффекты меча",
+              "Ao Some Навыки, НПС",
+              "脚踏梯子hill Путь"
+            ]
+          },
+          {
+            "title": "Местность",
+            "names": [
+              "wonderful艾晨"
+            ]
+          }
+        ,
+          {
+            "title": "Создание серверного пакета",
+            "names": [
+              "KamiKaguya"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "Поддержка оборудования",
+        "titles": [
+          {
+            "title": "Спонсорство тестового сервера",
+            "names": [
+              "白露（NHBlock）"
+            ]
+          },
+          {
+            "title": "Помощь в съемках",
+            "names": [
+              "Arcadia"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Вклад в закрытое бета-тестирование",
+    "disciplines": [
+      {
+        "discipline": "",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "T_muse_Y",
+              "HuaSheng_peanuts",
+              "merlin204",
+              "ShelMarow",
+              "Arcadia",
+              "霖",
+              "32spark",
+              "脚踏梯子hill"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Доступно рекламное место",
+    "disciplines": [
+      {
+        "discipline": "Доступно рекламное место",
+        "titles": [
+          {
+            "title": "Доступно рекламное место",
+            "names": [
+              "Доступно рекламное место",
+              "Свяжитесь с P1nero для получения подробной информации"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Особая благодарность",
+    "disciplines": [
+      {
+        "discipline": "",
+        "titles": [
+          {
+            "title": "I18n (Переводчики на другие языки могут добавить своё имя здесь)",
+            "names": [
+              "zh_cn, en_us - P1nero",
+			  "ru_ru - lacrite"
+            ]
+          },
+          {
+            "title": "Дань уважения",
+            "names": [
+              "Yesman",
+              "Super Awesome Baby Team",
+              "Minecraft",
+              "Minecraft Forge",
+              "И всем модам, пакетам ресурсов и пакетам шейдеров, используемых в этом модпаке."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
