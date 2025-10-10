@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tcrcore:block/altar_block"
+    }
+  }
+}

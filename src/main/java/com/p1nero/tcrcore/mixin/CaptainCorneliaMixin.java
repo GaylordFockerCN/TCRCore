@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore.mixin;
 
+import com.obscuria.aquamirae.Aquamirae;
 import com.obscuria.aquamirae.common.entities.CaptainCornelia;
 import com.obscuria.aquamirae.common.items.weapon.DividerItem;
 import com.obscuria.aquamirae.common.items.weapon.WhisperOfTheAbyssItem;
@@ -7,13 +8,16 @@ import com.obscuria.aquamirae.registry.AquamiraeSounds;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.client.sound.CorneliaMusicPlayer;
 import net.minecraft.client.Minecraft;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -75,7 +79,15 @@ public abstract class CaptainCorneliaMixin extends Monster {
 
     @Inject(method = "dropEquipment", at = @At("HEAD"), cancellable = true)
     private void tcr$dropEquipment(CallbackInfo ci) {
-
+        if(level() instanceof ServerLevel server) {
+            ItemStack map = Aquamirae.getStructureMap(Aquamirae.SHELTER, server, this);
+            if (!map.isEmpty()) {
+                ItemEntity item = new ItemEntity(EntityType.ITEM, server);
+                item.setItem(map);
+                item.moveTo(this.position());
+                server.addFreshEntity(item);
+            }
+        }
         ci.cancel();
     }
 

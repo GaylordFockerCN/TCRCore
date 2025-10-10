@@ -300,6 +300,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
 
         offersArmor.add(new MerchantOffer(
                 new ItemStack(ModItems.ESSENCE_OF_THE_STORM.get(), 1),
+                new ItemStack(Items.NETHERITE_HELMET, 1),
                 new ItemStack(EFNItem.RUINFIGHTER_HELMET.get(), 1),
                 142857, 0, 0.02f));
 

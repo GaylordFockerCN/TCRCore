@@ -159,9 +159,10 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7076713")
+    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7090045")
 
-    implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7035166")
+    implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7090069")
+
     implementation fg.deobf("curse.maven:epic-fight-wraithon-1354901:7068815")
     implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7018600")
     implementation fg.deobf("curse.maven:p1neros-epic-bow-1338443:6964978")
@@ -179,6 +180,8 @@ dependencies {
     implementation fg.deobf("curse.maven:default-options-232131:6972483")
 
     implementation fg.deobf("curse.maven:radiant-gear-602199:6029352")
+
+    implementation fg.deobf("curse.maven:loot-beams-506757:5548970")
 
     implementation fg.deobf("libs:tudigong:1.2.1")
 //    implementation fg.deobf("curse.maven:tudigong-wayfinder-1350265:7076274")

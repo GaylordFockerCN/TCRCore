@@ -21,5 +21,11 @@ public class TCRBlockEntities {
             REGISTRY.register("desert_altar_altar_block_entity", () -> BlockEntityType.Builder.of(DesertAltarBlockEntity::new, TCRBlocks.DESERT_ALTAR_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<CursedAltarBlockEntity>> CURSED_ALTAR_BLOCK_ENTITY =
             REGISTRY.register("cursed_altar_block_entity", () -> BlockEntityType.Builder.of(CursedAltarBlockEntity::new, TCRBlocks.CURSED_ALTAR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<MechAltarBlockEntity>> MECH_ALTAR_BLOCK_ENTITY =
+            REGISTRY.register("mech_altar_block_entity", () -> BlockEntityType.Builder.of(MechAltarBlockEntity::new, TCRBlocks.MECH_ALTAR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<VoidAltarBlockEntity>> VOID_ALTAR_BLOCK_ENTITY =
+            REGISTRY.register("void_altar_block_entity", () -> BlockEntityType.Builder.of(VoidAltarBlockEntity::new, TCRBlocks.VOID_ALTAR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<MonstAltarBlockEntity>> MONST_ALTAR_BLOCK_ENTITY =
+            REGISTRY.register("monst_altar_block_entity", () -> BlockEntityType.Builder.of(MonstAltarBlockEntity::new, TCRBlocks.MONST_ALTAR_BLOCK.get()).build(null));
 
 }

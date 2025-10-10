@@ -62,6 +62,8 @@ import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
@@ -85,7 +87,6 @@ import yesman.epicfight.gameasset.Animations;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.entitypatch.player.PlayerPatch;
 import yesman.epicfight.world.capabilities.entitypatch.player.ServerPlayerPatch;
-import yesman.epicfight.world.item.EpicFightItems;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -163,22 +164,6 @@ public class LivingEntityEventListeners {
                 event.setCanceled(true);
             }
 
-            if (entity instanceof Scylla_Entity) {
-                ItemUtil.addItemEntity(entity, ModItems.CERAUNUS.get(), 1, 0xfff66d);
-            }
-
-            if (entity instanceof Ignis_Entity) {
-                event.getDrops().add(ItemUtil.addItemEntity(entity, ModItems.THE_INCINERATOR.get(), 1, 0xfff66d));
-            }
-            if (entity instanceof The_Leviathan_Entity) {
-                ItemUtil.addItemEntity(entity, ModItems.TIDAL_CLAWS.get(), 1, 0xfff66d);
-            }
-            if (entity instanceof Maledictus_Entity) {
-                ItemUtil.addItemEntity(entity, ModItems.SOUL_RENDER.get(), 1, 0xfff66d);
-            }
-            if (entity instanceof Ancient_Remnant_Entity) {
-                ItemUtil.addItemEntity(entity, ModItems.WRATH_OF_THE_DESERT.get(), 1, 0xfff66d);
-            }
             if(entity instanceof Pillager) {
                 if(entity.getRandom().nextFloat() < 0.2F) {
                     ItemUtil.addItemEntity(entity, Items.GOLD_INGOT, 1, 0xc000ff);
@@ -202,9 +187,10 @@ public class LivingEntityEventListeners {
         }
     }
 
-    public static void giveOracle(ServerPlayer player) {
-        ItemUtil.addItemEntity(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
-        PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayItemPickupParticlePacket(TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance()), player);
+    public static void giveOracle(ServerPlayer player, Item toDisplay) {
+        //改和女神兑换
+//        ItemUtil.addItemEntity(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
+        PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayItemPickupParticlePacket(toDisplay.getDefaultInstance()), player);
         player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.TOTEM_USE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
         player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
     }
@@ -237,7 +223,7 @@ public class LivingEntityEventListeners {
             }
 
             if(livingEntity instanceof AbstractIllager && !PlayerDataManager.pillagerKilled.get(player)) {
-                    LivingEntityEventListeners.giveOracle(player);
+                    LivingEntityEventListeners.giveOracle(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get());
                     PlayerDataManager.pillagerKilled.put(player, true);
             }
 
@@ -246,7 +232,7 @@ public class LivingEntityEventListeners {
                     ItemUtil.addItemEntity(player, ModItems.STORM_EYE.get(), 1, ChatFormatting.AQUA.getColor().intValue());
                     player.displayClientMessage(TCRCoreMod.getInfo("kill_boss1"), false);
                     player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                    giveOracle(player);
+                    giveOracle(player, ModItems.STORM_EYE.get());
                     player.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("you_pass")));
                     player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
 
@@ -260,7 +246,7 @@ public class LivingEntityEventListeners {
                 ItemUtil.addItemEntity(player, ModItems.ABYSS_EYE.get(), 1, ChatFormatting.BLUE.getColor().intValue());
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss3"), false);
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player);
+                giveOracle(player, ModItems.ABYSS_EYE.get());
                 PlayerDataManager.abyssEyeTraded.put(player, true);
             }
 
@@ -275,14 +261,14 @@ public class LivingEntityEventListeners {
                 ItemUtil.addItemEntity(player, ModItems.CURSED_EYE.get(), 1, ChatFormatting.DARK_GREEN.getColor().intValue());
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss4"), false);
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player);
+                giveOracle(player, ModItems.CURSED_EYE.get());
                 PlayerDataManager.cursedEyeTraded.put(player, true);
             }
             if(livingEntity instanceof Bone_Chimera_Entity && !PlayerDataManager.desertEyeTraded.get(player)) {
                 ItemUtil.addItemEntity(player, ModItems.DESERT_EYE.get(), 1, ChatFormatting.YELLOW.getColor().intValue());
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss5"), false);
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player);
+                giveOracle(player, ModItems.DESERT_EYE.get());
                 PlayerDataManager.desertEyeTraded.put(player, true);
 
                 CommandSourceStack commandSourceStack = player.createCommandSourceStack().withPermission(2).withSuppressedOutput();

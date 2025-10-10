@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 5456445,
+    "separation": 80,
+    "spacing": 100
+  },
+  "structures": [
+    {
+      "structure": "fdbosses:chesed_arena",
+      "weight": 1
+    }
+  ]
+}

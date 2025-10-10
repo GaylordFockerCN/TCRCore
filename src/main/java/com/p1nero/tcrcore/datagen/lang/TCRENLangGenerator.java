@@ -51,7 +51,9 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.RARE_ARTIFACT_TICKET.get(), "Obtained from certain quests in the quest book. Can be used to refine rare artifact with the §3[Ferry girl]§r at the §d[Saint Harbor]§r");
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "Oracle Fragment");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "It bears an ancient oracle hinting at the locations of scattered embers. Show it to the The Sanctuary Keeper in the The Sanctuary; it might aid your adventure!");
+        this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§cIn multiplayer mode, do not occupy other players'! Everyone must submit their own!", 2);
 
+        this.addInfo("dim_max_4_players", "§6Cloudland can only contain 4 players!");
         this.addInfo("can_not_enter_before_finish", "§6You are not destined to enter the cloudland.");
         this.addInfo("captain_start_heal", "§cCornelia start healing! Increase your damage!");
         this.addInfo("illegal_item_tip", "§cIllegal Item!");
@@ -70,6 +72,9 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRBlocks.STORM_ALTAR_BLOCK.get(), "Storm Altar");
         this.add(TCRBlocks.FLAME_ALTAR_BLOCK.get(), "Flame Altar");
         this.add(TCRBlocks.DESERT_ALTAR_BLOCK.get(), "Desert Altar");
+        this.add(TCRBlocks.MONST_ALTAR_BLOCK.get(), "Monst Altar");
+        this.add(TCRBlocks.VOID_ALTAR_BLOCK.get(), "Void Altar");
+        this.add(TCRBlocks.MECH_ALTAR_BLOCK.get(), "Mech Altar");
 
         this.addInfo("attack_to_restart", "§cAttack to restart");
         this.addInfo("after_heal_stop_attack", "§6Stop attack to clear anger.");
@@ -190,7 +195,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(EntityType.VILLAGER, 3, "[Why can't I understand the villagers' language...]");
         this.addDialogOption(TCREntities.GUIDER.get(), 0, "Back");
         this.addDialogOption(TCREntities.GUIDER.get(), 1, "Who are you? Why did you save me?");
-        this.addDialogOption(TCREntities.GUIDER.get(), 2, "What海底捞?");
+        this.addDialogOption(TCREntities.GUIDER.get(), 2, "What?");
         this.addDialogOption(TCREntities.GUIDER.get(), 3, "What happened to this world?");
         this.addDialogOption(TCREntities.GUIDER.get(), 4, "How can I help you?");
         this.addDialogOption(TCREntities.GUIDER.get(), 5, "Mark Locations");
@@ -219,6 +224,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.GUIDER.get(), 14, "[Who are you really?]");
         this.addDialogOption(TCREntities.GUIDER.get(), 15, "[Continue]"); // Pulled into the barrier
         this.addDialogOption(TCREntities.GUIDER.get(), 17, "[Busted, hehe]");
+        this.addDialogOption(TCREntities.GUIDER.get(), 18, "How to get Oracle?");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 9, "The §dEnder Dragon§f, located in the End's alien space, has deep connections to the §d「Black Tide」§f. After defeating it, the essence it births can be forged into the Yamato, a power from another world beyond measure. However, be warned: after the extradimensional dragon vanishes, the world affected by the §d「Black Tide」§f will cause monsters' health to double!");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 10, "Simply give the §d『Oracle Fragments』§f to me, and I will reveal the ember locations recorded in the oracle! Then you can head to the places I mark on your map, defeat the monsters, reclaim the embers, §6and offer them at the altars in the hall§f. Once all embers are gathered, we can initiate the ritual to purify the §d「Black Tide」§f!");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 11, "Outsider... You didn't really think you were some savior, did you... Hahahaha, you are merely a puppet I used to reclaim my power!");
@@ -234,6 +240,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§eThe Desert Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. §e[%s§e]§f, you might check with the Ferry girl; perhaps you can exchange for some treasure.");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 20, "How did you get extra Oracle Fragments by following the normal流程? Did you steal them from someone?");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 21, "Since you have lit all the altars, once you §6enter, defeat the spirits, and infuse yourself with the power of the spirits,§f we shall commence the ritual!");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "Go to the place I guide you, retrieve the §d[Eye of God]§f, and offer it to the §6[Sanctuary of the Central Courtyard where the Goddess Statue resides]§f. The Goddess Statue will reveal the divine prophecy to you!");
 
         this.addDialogAnswer(TCREntities.GIRL.get(), 0, "Long time no see, esteemed one!");
         this.addDialogAnswer(TCREntities.GIRL.get(), 1, "Have you forgotten me? I am the Ferry girl of the Saint Temple, here to guide the lost. If you have any rare treasures, show them to me. I can extract their memoria and transform them into artifacts! When you can set foot in §cthe Nether§f or §dthe End§f, I can also give you a ride.");

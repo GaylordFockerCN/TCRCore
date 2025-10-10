@@ -211,6 +211,7 @@
   "item.fromtheshadows.bottle_of_blood.tcr_info": "Brewed using §c[Crystallized Blood Marrow]§r, a drop from §d[Nehemoth]§r",
   "item.tcrcore.ancient_oracle_fragment": "Oracle Fragment",
   "item.tcrcore.ancient_oracle_fragment.usage": "It bears an ancient oracle hinting at the locations of scattered embers. Show it to the The Sanctuary Keeper in the The Sanctuary; it might aid your adventure!",
+  "item.tcrcore.ancient_oracle_fragment.usage2": "§cIn multiplayer mode, do not occupy other players'! Everyone must submit their own!",
   "item.tcrcore.artifact_ticket": "Artifact Essence",
   "item.tcrcore.artifact_ticket.usage": "Obtained from certain quests in the quest book. Can be used to refine artifact with the §3[Ferry girl]§r at the §d[Saint Harbor]§r",
   "item.tcrcore.rare_artifact_ticket": "Golden Artifact Essence",

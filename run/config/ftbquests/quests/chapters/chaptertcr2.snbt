@@ -164,30 +164,6 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			id: "733EFEA0B7DE9EFA"
-			rewards: [{
-				id: "2F603E7A1B1AE238"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "square"
-			subtitle: "{ftbquests.chapter.chaptertcr2.quest8304354729150815994.subtitle}"
-			tasks: [{
-				id: "44C0883B531DC3C8"
-				item: {
-					Count: 1
-					id: "aquamirae:dagger_of_greed"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 1.0d
-			y: 3.5d
-		}
-		{
-			dependencies: ["2F9F109962C8ADF4"]
 			description: ["{ftbquests.chapter.chaptertcr2.quest4807562247735743917.description1}"]
 			id: "42B7E4648BDE15AD"
 			rewards: [{
@@ -230,90 +206,6 @@
 			}]
 			x: -3.0d
 			y: -4.5d
-		}
-		{
-			dependencies: ["2F9F109962C8ADF4"]
-			icon: {
-				Count: 1
-				id: "aquamirae:divider"
-				tag: {
-					Damage: 0
-				}
-			}
-			id: "0118D4E469FE640F"
-			rewards: [{
-				id: "31DCE58C9B41C31F"
-				item: "fantasy_armor:moon_crystal"
-				type: "item"
-			}]
-			shape: "square"
-			subtitle: "{ftbquests.chapter.chaptertcr2.quest79047070974895119.subtitle}"
-			tasks: [{
-				id: "4E06F15B26469E3D"
-				item: {
-					Count: 1
-					id: "aquamirae:divider"
-					tag: {
-						Damage: 0
-					}
-				}
-				optional_task: true
-				type: "item"
-			}]
-			x: -6.0d
-			y: 3.5d
-		}
-		{
-			dependencies: ["2F9F109962C8ADF4"]
-			icon: {
-				Count: 1
-				id: "aquamirae:maze_rose"
-				tag: {
-					Damage: 0
-					Enchantments: [
-						{
-							id: "obscure_api:distance"
-							lvl: 3s
-						}
-						{
-							id: "obscure_api:fast_spin"
-							lvl: 5s
-						}
-					]
-				}
-			}
-			id: "5493BB23E47E16BA"
-			rewards: [{
-				id: "6074EDD1361C765C"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "square"
-			subtitle: "{ftbquests.chapter.chaptertcr2.quest6094420483594131130.subtitle}"
-			tasks: [{
-				id: "0CC228538AD46E3E"
-				item: {
-					Count: 1
-					id: "aquamirae:maze_rose"
-					tag: {
-						Damage: 0
-						Enchantments: [
-							{
-								id: "obscure_api:distance"
-								lvl: 3s
-							}
-							{
-								id: "obscure_api:fast_spin"
-								lvl: 5s
-							}
-						]
-					}
-				}
-				optional_task: true
-				type: "item"
-			}]
-			x: -7.5d
-			y: 3.5d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]

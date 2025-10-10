@@ -20,17 +20,13 @@ public class ItemEvents {
     public static Set<Item> items = new HashSet<>();
     @SubscribeEvent
     public static void onItemDesc(ItemTooltipEvent event) {
-        if (List.of(ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get()).contains(event.getItemStack().getItem())) {
+        if (List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get(), ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get()).contains(event.getItemStack().getItem())) {
             event.getToolTip().add(TCRCoreMod.getInfo("time_to_altar").withStyle(ChatFormatting.GRAY));
         }
         //TODO delete
 //        event.getToolTip().add(1, Component.literal(BuiltInRegistries.ITEM.getKey(event.getItemStack().getItem()).toString()));
         if(items.contains(event.getItemStack().getItem())) {
             event.getToolTip().add(1, Component.translatable(event.getItemStack().getItem().getDescriptionId() + ".tcr_info"));
-        }
-
-        if (List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get()).contains(event.getItemStack().getItem())) {
-            event.getToolTip().add(TCRCoreMod.getInfo("shift__to_enter_dim"));
         }
 
         if(PlayerEventListeners.illegalItems.contains(event.getItemStack().getItem())) {

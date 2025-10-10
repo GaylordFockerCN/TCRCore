@@ -51,7 +51,9 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.RARE_ARTIFACT_TICKET.get(), "通过任务书某些任务获取。可在§d[圣殿港口]§r的§3[摆渡人]§r处提炼稀有饰品");
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神谕残卷");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "上面写着古老的神谕，暗示了火种散落的地方。回主城给守望者看看吧，说不定对冒险有帮助！");
+        this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c多人模式请勿占据他人任务道具！每人都需各自提交！", 2);
 
+        this.addInfo("dim_max_4_players", "§6幻境最多容纳4人！");
         this.addInfo("can_not_enter_before_finish", "§6当前没有进入幻镜的命运。");
         this.addInfo("after_heal_stop_attack", "§6停止攻击以取消傀儡仇恨");
         this.addInfo("cloud_follow_me", "§6[仙气]：§f嗨伙计，跟着我！");
@@ -70,6 +72,9 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRBlocks.STORM_ALTAR_BLOCK.get(), "风暴祭坛");
         this.add(TCRBlocks.FLAME_ALTAR_BLOCK.get(), "烈焰祭坛");
         this.add(TCRBlocks.DESERT_ALTAR_BLOCK.get(), "沙漠祭坛");
+        this.add(TCRBlocks.MONST_ALTAR_BLOCK.get(), "恶兽祭坛");
+        this.add(TCRBlocks.VOID_ALTAR_BLOCK.get(), "虚空祭坛");
+        this.add(TCRBlocks.MECH_ALTAR_BLOCK.get(), "机械祭坛");
 
         this.addInfo("attack_to_restart", "§c攻击Boss以再次发起挑战");
         this.addInfo("captain_start_heal", "§c可妮莉亚船长开始回血！增大伤害击败她！");
@@ -222,6 +227,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.GUIDER.get(), 14, "[你到底是谁？]");
         this.addDialogOption(TCREntities.GUIDER.get(), 15, "[继续]");//拉入结界
         this.addDialogOption(TCREntities.GUIDER.get(), 17, "[被发现了嘿嘿]");
+        this.addDialogOption(TCREntities.GUIDER.get(), 18, "我该如何获取神谕残卷？");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 9, "位于终界异空间内的§d终界龙§f，它与§d「黑潮」§f颇有渊源。击败它后，它诞下的精华可铸成阎魔刀，乃来自异世之力，不可估量。但阁下需留意的是，异界魔龙消散之后，世间受到§d「黑潮」§f影响，魔物的生命将翻倍！");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 10, "阁下只需将§d『神谕残卷』§f与我，我将为你揭示神谕所记载的火种方位！随后阁下便可前往吾在地图上所标注之处，击败魔物，夺回火种，§6并将它们供奉在长廊之祭坛之上§f。待集齐所有火种即可启动仪式，净化§d「黑潮」§f！");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 11, "外来之人...你不会真以为自己是什么救世主吧...哈哈哈哈哈，你不过是孤的夺回力量的傀儡罢了！");
@@ -238,6 +244,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§e沙漠之火种§f...我感受到它就散落在§6[%s]§f击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。§e[%s§e]§f，可去摆渡人处看看，说不定能换什么宝具。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 20, "正常走流程怎么会多出神谕残卷？你是不是偷了别人的？");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 21, "既然你已点亮所有祭坛，待你§6入内击败英灵，吸收众英灵之力后§f，我们再开始仪式吧！");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "前往吾指引之处，取回§d[神之眼]§6f，将其供奉予§6[圣殿中心庭院之女神像所在]§f，女神像将为你揭晓神谕！");
 
         this.addDialogAnswer(TCREntities.GIRL.get(), 0, "阁下，好久不见！");
         this.addDialogAnswer(TCREntities.GIRL.get(), 1, "阁下忘了我么？我是圣殿摆渡人，为众人指点迷津。阁下如有奇珍异宝，可与我瞧瞧，小女子可提取忆质，将其化为宝具！当你能踏足§c地狱§f或§d末地§f时，我也可以送你一程。");

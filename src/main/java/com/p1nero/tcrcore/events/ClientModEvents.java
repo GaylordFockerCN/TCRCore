@@ -56,6 +56,15 @@ public class ClientModEvents {
         BlockTooltipHandler.registerBlockTooltip(TCRBlocks.STORM_ALTAR_BLOCK,
                 TCRCoreMod.getInfo("altar_dim_info"),
                 TCRCoreMod.getInfo("related_loot", ModEntities.SCYLLA.get().getDescription().copy().withStyle(ChatFormatting.AQUA), ModItems.CERAUNUS.get().getDescription().copy().withStyle(ChatFormatting.GOLD)));
+        BlockTooltipHandler.registerBlockTooltip(TCRBlocks.VOID_ALTAR_BLOCK,
+                TCRCoreMod.getInfo("altar_dim_info"),
+                TCRCoreMod.getInfo("related_loot", "???", "???"));
+        BlockTooltipHandler.registerBlockTooltip(TCRBlocks.MECH_ALTAR_BLOCK,
+                TCRCoreMod.getInfo("altar_dim_info"),
+                TCRCoreMod.getInfo("related_loot", "???", "???"));
+        BlockTooltipHandler.registerBlockTooltip(TCRBlocks.MONST_ALTAR_BLOCK,
+                TCRCoreMod.getInfo("altar_dim_info"),
+                TCRCoreMod.getInfo("related_loot", "???", "???"));
     }
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
@@ -71,5 +80,8 @@ public class ClientModEvents {
         event.registerBlockEntityRenderer(TCRBlockEntities.STORM_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
         event.registerBlockEntityRenderer(TCRBlockEntities.FLAME_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
         event.registerBlockEntityRenderer(TCRBlockEntities.CURSED_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
+        event.registerBlockEntityRenderer(TCRBlockEntities.MONST_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
+        event.registerBlockEntityRenderer(TCRBlockEntities.VOID_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
+        event.registerBlockEntityRenderer(TCRBlockEntities.MECH_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
     }
 }

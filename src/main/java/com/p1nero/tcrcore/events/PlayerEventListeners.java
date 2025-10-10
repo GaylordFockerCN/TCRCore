@@ -25,6 +25,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -32,7 +33,11 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -62,6 +67,7 @@ import yesman.epicfight.world.capabilities.entitypatch.player.ServerPlayerPatch;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID)
 public class PlayerEventListeners {
@@ -259,10 +265,19 @@ public class PlayerEventListeners {
     public static void onPlayerEnterDim(EntityTravelToDimensionEvent event) {
 
         if(event.getEntity() instanceof ServerPlayer serverPlayer) {
+            //TODO 拆开
             if(event.getDimension() == Level.END || event.getDimension() == Level.NETHER) {
                 if(PlayerDataManager.stage.getInt(serverPlayer) < 4) {
                     event.setCanceled(true);
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_dim"), true);
+                }
+            }
+
+            if(CataclysmDimensions.LEVELS.contains(event.getDimension())) {
+                ServerLevel targetLevel = serverPlayer.server.getLevel(event.getDimension());
+                if(targetLevel != null && targetLevel.players().size() >= 4) {
+                    event.setCanceled(true);
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_max_4_players"), false);
                 }
             }
 
@@ -294,7 +309,55 @@ public class PlayerEventListeners {
                     TCRDimSaveData.get(serverPlayer.getServer().getLevel(event.getTo())).setBossKilled(false);
                 }
             }
+            updateHealth(serverPlayer, event.getFrom());
+            updateHealth(serverPlayer, event.getTo());
         }
     }
+
+    /**
+     * 动态改变多人血量
+     */
+    public static void updateHealth(ServerPlayer serverPlayer, ResourceKey<Level> levelResourceKey) {
+        if(CataclysmDimensions.LEVELS.contains(levelResourceKey)) {
+            ServerLevel targetLevel = serverPlayer.server.getLevel(levelResourceKey);
+            if(targetLevel != null) {
+                int playerCnt = targetLevel.players().size();
+                double healthMultiplier = 1.0;
+                if(playerCnt == 2) {
+                    healthMultiplier = 1.6;
+                } else if(playerCnt == 3) {
+                    healthMultiplier = 2.0;
+                } else if(playerCnt >= 4) {
+                    healthMultiplier = 2.4;
+                }
+
+                final double finalMultiplier = healthMultiplier;
+                final UUID HEALTH_MODIFIER_UUID = UUID.fromString("11451419-1981-0234-1234-123456789abc");
+
+                targetLevel.getAllEntities().forEach(entity -> {
+                    if(entity instanceof LivingEntity living && living.isAlive() && !(living instanceof Player)) {
+                        float preHealth = living.getHealth();
+                        float preMaxHealth = living.getMaxHealth();
+                        AttributeInstance maxHealthAttr = living.getAttribute(Attributes.MAX_HEALTH);
+                        if(maxHealthAttr != null) {
+                            maxHealthAttr.removeModifier(HEALTH_MODIFIER_UUID);
+                            if(playerCnt > 1) {
+                                AttributeModifier healthModifier = new AttributeModifier(
+                                        HEALTH_MODIFIER_UUID,
+                                        "team_health_boost",
+                                        finalMultiplier - 1,
+                                        AttributeModifier.Operation.MULTIPLY_TOTAL
+                                );
+                                maxHealthAttr.addPermanentModifier(healthModifier);
+                                living.setHealth(preHealth * living.getMaxHealth() / preMaxHealth);
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    }
+
+
 
 }

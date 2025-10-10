@@ -36,12 +36,18 @@ public class PlayerDataManager {
     public static BoolData abyssEyeTraded = new BoolData("abyss_eye_traded", false);
     public static BoolData cursedEyeTraded = new BoolData("cursed_eye_traded", false);
     public static BoolData desertEyeTraded = new BoolData("desert_eye_traded", false);
+    public static BoolData mechEyeTraded = new BoolData("mech_eye_traded", false);
+    public static BoolData voidEyeTraded = new BoolData("void_eye_traded", false);
+    public static BoolData monstEyeTraded = new BoolData("monst_eye_traded", false);
 
     public static BoolData stormEyeKilled = new BoolData("storm_eye_killed", false);
     public static BoolData flameEyeKilled = new BoolData("flame_eye_killed", false);
     public static BoolData abyssEyeKilled = new BoolData("abyss_eye_killed", false);
     public static BoolData cursedEyeKilled = new BoolData("cursed_eye_killed", false);
     public static BoolData desertEyeKilled = new BoolData("desert_eye_killed", false);
+    public static BoolData mechEyeKilled = new BoolData("mech_eye_killed", false);
+    public static BoolData voidEyeKilled = new BoolData("void_eye_killed", false);
+    public static BoolData monstEyeKilled = new BoolData("monst_eye_killed", false);
 
     public static boolean isAllEyeGet(Player player) {
         return stormEyeTraded.get(player)

@@ -27,6 +27,7 @@ provider = "NULL"
 	use_compute_shader = true
 	enable_mine_block_guide = false
 	enable_target_entity_guide = false
+	resolve_key_conflicts = true
 
 	[ingame.ui]
 		stamina_bar_x = 120
