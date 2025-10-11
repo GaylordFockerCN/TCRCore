@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:nether_star"
+    },
+    "base": {
+        "item": "magistuarmory:netherite_pike"
+    },
+    "result": {
+        "item": "efn:meen_spear"
+    },
+    "template": {
+        "item": "efn:duskfire_ingot"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "block_factorys_bosses:knight_sword"
+    },
+    "base": {
+        "item": "epicfight:netherite_greatsword"
+    },
+    "result": {
+        "item": "efn:ruinsgreatsword"
+    },
+    "template": {
+        "item": "efn:duskfire_ingot"
+    }
+}

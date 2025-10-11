@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "cataclysm:lacrima"
+    },
+    "base": {
+        "item": "epicfight:netherite_spear"
+    },
+    "result": {
+        "item": "cataclysm:astrape"
+    },
+    "template": {
+        "item": "cataclysm:essence_of_the_storm"
+    }
+}

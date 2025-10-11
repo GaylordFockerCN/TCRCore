@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "block_factorys_bosses:dragon_bone"
+    },
+    "base": {
+        "item": "epicfight:netherite_tachi"
+    },
+    "result": {
+        "item": "efn:co_tachi"
+    },
+    "template": {
+        "item": "block_factorys_bosses:dragon_bone"
+    }
+}

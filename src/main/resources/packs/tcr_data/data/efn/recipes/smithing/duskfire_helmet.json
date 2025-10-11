@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "efn:duskfire_ingot"
+    },
+    "base": {
+        "item": "efn:ruinfighter_helmet"
+    },
+    "result": {
+        "item": "efn:duskfire_helmet"
+    },
+    "template": {
+        "item": "efn:duskfire_ingot"
+    }
+}

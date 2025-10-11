@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "cataclysm:lava_power_cell"
+    },
+    "base": {
+        "item": "minecraft:netherite_helmet"
+    },
+    "result": {
+        "item": "cataclysm:monstrous_helm"
+    },
+    "template": {
+        "item": "cataclysm:monstrous_horn"
+    }
+}

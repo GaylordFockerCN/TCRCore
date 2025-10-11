@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "fromtheshadows:crystallized_blood"
+    },
+    "base": {
+        "item": "epicfight:iron_greatsword"
+    },
+    "result": {
+        "item": "fromtheshadows:devil_splitter"
+    },
+    "template": {
+        "item": "fromtheshadows:crystallized_blood"
+    }
+}

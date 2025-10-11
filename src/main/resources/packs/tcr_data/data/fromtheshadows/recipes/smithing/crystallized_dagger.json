@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "fromtheshadows:crystallized_blood"
+    },
+    "base": {
+        "item": "epicfight:netherite_dagger"
+    },
+    "result": {
+        "item": "fromtheshadows:crystallized_dagger"
+    },
+    "template": {
+        "item": "fromtheshadows:crystallized_blood"
+    }
+}

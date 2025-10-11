@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "epicfight:netherite_longsword"
+    },
+    "base": {
+        "item": "epicfight:netherite_longsword"
+    },
+    "result": {
+        "item": "efn:nf_dual_sword"
+    },
+    "template": {
+        "item": "efn:deepdark_heart"
+    }
+}

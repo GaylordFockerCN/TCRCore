@@ -1,0 +1,10 @@
+{
+  "type": "cataclysm:amethyst_bless",
+  "ingredients": {
+    "item": "epicfight:glove"
+  },
+  "result": {
+    "item": "efn:nf_claw"
+  },
+  "time": 120
+}

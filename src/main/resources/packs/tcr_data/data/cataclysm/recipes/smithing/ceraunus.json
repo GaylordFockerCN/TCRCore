@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "cataclysm:lacrima"
+    },
+    "base": {
+        "item": "magistuarmory:netherite_concavehalberd"
+    },
+    "result": {
+        "item": "cataclysm:ceraunus"
+    },
+    "template": {
+        "item": "cataclysm:essence_of_the_storm"
+    }
+}
