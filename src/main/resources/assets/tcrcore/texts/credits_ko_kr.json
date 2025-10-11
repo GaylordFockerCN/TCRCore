@@ -1,0 +1,211 @@
+[
+  {
+    "section": "제작팀",
+    "disciplines": [
+      {
+        "discipline": "감독",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "기획",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "프로그래머",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "퀘스트 책, 일러스트북, 튜토리얼 제작",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "대사창 디자인",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "스토리 작가",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "미술 감독",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "세계관 설정",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "P1nero"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "외부 자문",
+        "titles": [
+          {
+            "title": "성소 ",
+            "names": [
+              "El_mal（玩建筑的牢E）"
+            ]
+          },
+          {
+            "title": "애니메이션 지원",
+            "names": [
+              "merlin204"
+            ]
+          },
+          {
+            "title": "텍스쳐 지원",
+            "names": [
+              "一只路过的小吴 아이템",
+              "XVIII-凌 검 효과",
+              "Ao 스킬 및 NPC",
+              "脚踏梯子hill 궤적"
+            ]
+          },
+          {
+            "title": "지형",
+            "names": [
+              "wonderful艾晨"
+            ]
+          }
+        ]
+      },
+      {
+        "discipline": "장비 지원",
+        "titles": [
+          {
+            "title": "테스트 서버 지원",
+            "names": [
+              "白露（NHBlock）"
+            ]
+          },
+          {
+            "title": "촬영 지원",
+            "names": [
+              "Arcadia"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "CBT 기여자",
+    "disciplines": [
+      {
+        "discipline": "",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "T_muse_Y",
+              "HuaSheng_peanuts",
+              "merlin204",
+              "ShelMarow",
+              "Arcadia",
+              "霖",
+              "32spark",
+              "脚踏梯子hill"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "광고 공간 문의",
+    "disciplines": [
+      {
+        "discipline": "광고 공간 문의",
+        "titles": [
+          {
+            "title": "광고 공간 문의",
+            "names": [
+              "광고 공간 문의",
+              "관심있으면 P1nero에게 문의"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "특별 감사",
+    "disciplines": [
+      {
+        "discipline": "",
+        "titles": [
+          {
+            "title": "번역자",
+            "names": [
+              "zh_cn, en_us - P1nero",
+              "ko_kr - TheOnlyMann"
+            ]
+          },
+          {
+            "title": "기여자",
+            "names": [
+              "Yesman",
+              "Super Awesome Baby Team",
+              "마인크래프트",
+              "마인크래프트 포지",
+              "그리고 이 모드팩에 사용된 모든 모드, 리소스팩 및 쉐이더 팩"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
