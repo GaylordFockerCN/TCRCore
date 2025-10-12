@@ -27,6 +27,9 @@ public abstract class UnderworldKnightEntityMixin extends Monster {
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void tcr$baseTick(CallbackInfo ci) {
+        if(level().dimension() == Level.OVERWORLD) {
+            this.discard();
+        }
         if(!tcr$hurtMark) {
             EntityUtil.nearPlayerDo(this, 30, (player -> {
                 if(PlayerDataManager.flameEyeTraded.get(player)) {

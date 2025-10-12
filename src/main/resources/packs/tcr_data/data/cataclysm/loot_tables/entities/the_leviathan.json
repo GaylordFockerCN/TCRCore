@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "name": "hammer",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tcrcore:abyss_core"
+
+        }
+      ]
+    },
+    {
+      "name": "horn",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:abyssal_egg"
+        }
+      ]
+    },
+    {
+      "name": "disc",
+      "conditions": [
+        {
+          "condition": "random_chance_with_looting",
+          "chance": 0.1,
+          "looting_multiplier": 0.1
+        }
+      ],
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:music_disc_the_leviathan",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

@@ -18,6 +18,10 @@ public class PlayerDataManager {
     private final static Set<String> EXISTING_ID = new HashSet<>();
     public static DoubleData stage = new DoubleData("stage", 0);
     public static BoolData boatGet = new BoolData("boat_get", false);
+    public static BoolData canEnterNether = new BoolData("canEnterNether", false);
+    public static BoolData canEnterEnd = new BoolData("canEnterEnd", false);
+    public static BoolData netherEntered = new BoolData("netherEntered", false);
+    public static BoolData endEntered = new BoolData("endEntered", false);
     public static BoolData swordSoaringUnlocked = new BoolData("sword_soaring_avoid_unlocked", false);
     public static BoolData fireAvoidUnlocked = new BoolData("fire_avoid_unlocked", false);
     public static BoolData waterAvoidUnlocked = new BoolData("water_avoid_unlocked", false);
@@ -48,6 +52,10 @@ public class PlayerDataManager {
     public static BoolData mechEyeKilled = new BoolData("mech_eye_killed", false);
     public static BoolData voidEyeKilled = new BoolData("void_eye_killed", false);
     public static BoolData monstEyeKilled = new BoolData("monst_eye_killed", false);
+    public static BoolData stormEyeBlessed = new BoolData("stormEyeBlessed", false);
+    public static BoolData abyssEyeBlessed = new BoolData("abyssEyeBlessed", false);
+    public static BoolData desertEyeBlessed = new BoolData("desertEyeBlessed", false);
+    public static BoolData cursedEyeBlessed = new BoolData("cursedEyeBlessed", false);
 
     public static boolean isAllEyeGet(Player player) {
         return stormEyeTraded.get(player)

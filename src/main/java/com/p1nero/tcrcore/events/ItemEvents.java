@@ -23,6 +23,9 @@ public class ItemEvents {
         if (List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get(), ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get()).contains(event.getItemStack().getItem())) {
             event.getToolTip().add(TCRCoreMod.getInfo("time_to_altar").withStyle(ChatFormatting.GRAY));
         }
+        if (List.of(ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.DESERT_EYE.get()).contains(event.getItemStack().getItem())) {
+            event.getToolTip().add(TCRCoreMod.getInfo("time_to_ask_godness_statue"));
+        }
         //TODO delete
 //        event.getToolTip().add(1, Component.literal(BuiltInRegistries.ITEM.getKey(event.getItemStack().getItem()).toString()));
         if(items.contains(event.getItemStack().getItem())) {

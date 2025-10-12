@@ -24,5 +24,8 @@ public class OracleItem extends SimpleDescriptionItem{
                 list.add(Component.translatable(this.getDescriptionId() + ".usage2").withStyle(ChatFormatting.GRAY));
             }
         }
+        if(itemStack.hasTag() && itemStack.getOrCreateTag().contains("player_name")) {
+            list.add(Component.literal("——" + itemStack.getOrCreateTag().getString("player_name")).withStyle(ChatFormatting.AQUA));
+        }
     }
 }

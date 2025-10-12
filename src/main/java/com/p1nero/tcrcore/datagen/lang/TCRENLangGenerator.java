@@ -41,10 +41,15 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add("skill_tree.sword_soaring.unlock_tip", "Unlocked by trading with villagers in §6[Sky Island]§r using emeralds");
         this.add("unlock_tip.tcrcore.battleborn.water_avoid", "Learned by trading with villagers in §6[Coves]§r using emeralds");
         this.add("unlock_tip.tcrcore.battleborn.fire_avoid", "Learned by defeating the §6[Bone Chimera]§r");
+        this.add("unlock_tip.tcrcore.get_vatansever", "Learned by defeating §d[The Wraithon]§f");
         this.addSkill("water_avoid", "Water Avoidance Charm", "Allows free breathing underwater!");
         this.addSkill("fire_avoid", "Fire Avoidance Charm", "Immunity to fire damage!");
         this.addSkill("perfect_dodge", "Dodge Effect", "Play a cool animation when perfect dodge!");
 
+        this.add(TCRItems.VOID_CORE.get(), "Void Essence");
+        this.addItemUsageInfo(TCRItems.VOID_CORE.get(), "Dropped by [Ender Guardian] when defeated");
+        this.add(TCRItems.ABYSS_CORE.get(), "Abyss Essence");
+        this.addItemUsageInfo(TCRItems.ABYSS_CORE.get(), "Dropped by [The Leviathan] when defeated");
         this.add(TCRItems.ARTIFACT_TICKET.get(), "Artifact Essence");
         this.addItemUsageInfo(TCRItems.ARTIFACT_TICKET.get(), "Obtained from certain quests in the quest book. Can be used to refine artifact with the §3[Ferry girl]§r at the §d[Saint Harbor]§r");
         this.add(TCRItems.RARE_ARTIFACT_TICKET.get(), "Golden Artifact Essence");
@@ -53,6 +58,9 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "It bears an ancient oracle hinting at the locations of scattered embers. Show it to the The Sanctuary Keeper in the The Sanctuary; it might aid your adventure!");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§cIn multiplayer mode, do not occupy other players'! Everyone must submit their own!", 2);
 
+        this.addInfo("nether_unlock", "Nether Unlocked!");
+        this.addInfo("end_unlock", "End Unlocked!");
+        this.addInfo("nothing_happen_after_bless", "§dNothing happen...");
         this.addInfo("dim_max_4_players", "§6Cloudland can only contain 4 players!");
         this.addInfo("can_not_enter_before_finish", "§6You are not destined to enter the cloudland.");
         this.addInfo("captain_start_heal", "§cCornelia start healing! Increase your damage!");
@@ -95,6 +103,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addInfo("finish_all_eye", "§dAll altars are lit!§r");
         this.addInfo("time_to_altar", "The scattered embers have been found. It's time to return and light the altars...");
+        this.addInfo("time_to_ask_godness_statue", "§d*This item can be used at the statue of the Goddess to request an oracle.");
         this.addInfo("time_to_end", "All altars are lit. It's time to find the The Sanctuary Keeper to perform the ritual...");
 
         this.addInfo("can_not_enter_dim", "It seems you have not yet gained the divine approval to enter... §6Continue collecting embers§r to receive more oracles!");

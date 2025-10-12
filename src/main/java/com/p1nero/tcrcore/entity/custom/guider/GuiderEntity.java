@@ -45,6 +45,7 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
@@ -129,6 +130,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
 
     @Override
     public boolean hurt(@NotNull DamageSource source, float value) {
+        if(source.isCreativePlayer()) {
+            this.discard();
+        }
         if (source.getEntity() instanceof ServerPlayer serverPlayer) {
             //彩蛋对话
             if (this.getConversingPlayer() == null) {
@@ -183,7 +187,10 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             tag.putBoolean("pillager_kill", PlayerDataManager.pillagerKilled.get(serverPlayer));
             tag.putBoolean("finish_all_eye_boss", PlayerDataManager.isAllEyeGet(serverPlayer));
             tag.putBoolean("finish_all_altar_boss", PlayerDataManager.isAllAltarKilled(serverPlayer));
-            if (player.getItemInHand(hand).is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get())) {
+            ItemStack itemStack = player.getItemInHand(hand);
+            if (itemStack.is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get())
+                    && (serverPlayer.isCreative()
+                        || (itemStack.hasTag() && itemStack.getOrCreateTag().getString("player_name").equals(player.getGameProfile().getName())))) {
                 tag.putBoolean("is_oracle", true);
             }
             this.sendDialogTo(serverPlayer, tag);
@@ -274,6 +281,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
         else if(compoundTag.getBoolean("map_mark")) {
             DialogNode root = new DialogNode(dBuilder.ans(8), dBuilder.optWithBrackets(0));//开场白 | 返回
 
+            //接下来干鸟
             DialogNode ans1 = new DialogNode(dBuilder.ans(9), dBuilder.optWithBrackets(10))
                     .addChild(root);
 
@@ -283,7 +291,11 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             DialogNode ans3 = new DialogNode(dBuilder.ans(14), dBuilder.optWithBrackets(16))
                     .addChild(root);
 
-            root.addChild(ans1).addChild(ans2).addChild(ans3);
+            //如何获得神谕
+            DialogNode ans4 = new DialogNode(dBuilder.ans(22), dBuilder.optWithBrackets(18))
+                    .addChild(root);
+
+            root.addChild(ans2).addChild(ans4).addChild(ans1).addChild(ans3);
 
             treeBuilder.setRoot(root);
             return treeBuilder;
@@ -388,7 +400,6 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             }
 
             if(newStage == 4) {
-                ItemUtil.addItem(player, AquamiraeItems.SHELL_HORN.get(), 1, true);//给号角
                 pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.WATER);//船长
                 if (pos != null) {
                     WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("cursed_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.BLUE);

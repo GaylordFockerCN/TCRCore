@@ -179,9 +179,6 @@ public abstract class AbstractAltarBlockEntity extends BlockEntity {
     protected void onActive(Player pPlayer, ItemStack mainHandItem, ServerLevel pLevel, BlockPos pPos) {
         this.isActivated = true;
         this.sync();
-        if(!pPlayer.isCreative()) {
-            mainHandItem.shrink(1);
-        }
         pLevel.playSound(null, pPos.getX(), pPos.getY(), pPos.getZ(), SoundEvents.BEACON_ACTIVATE, SoundSource.BLOCKS, 1.0F, 1.0F);
     }
 

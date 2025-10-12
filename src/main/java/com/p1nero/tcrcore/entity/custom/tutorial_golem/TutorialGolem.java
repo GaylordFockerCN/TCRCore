@@ -75,6 +75,9 @@ public class TutorialGolem extends IronGolem {
 
     @Override
     public void die(@NotNull DamageSource damageSource) {
+        if(damageSource.isCreativePlayer()) {
+            super.die(damageSource);
+        }
         this.setHealth(this.getMaxHealth());
     }
 

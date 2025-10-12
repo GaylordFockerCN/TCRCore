@@ -41,10 +41,15 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add("skill_tree.sword_soaring.unlock_tip", "与§6[天空岛]§r村民用绿宝石交易解锁");
         this.add("unlock_tip.tcrcore.battleborn.water_avoid", "使用绿宝石向§6[隐秘水湾]§r的村民交易习得");
         this.add("unlock_tip.tcrcore.battleborn.fire_avoid", "击败§6[骸骨奇美拉]§r习得");
+        this.add("unlock_tip.tcrcore.get_vatansever", "击败§dWraithon§f后解锁");
         this.addSkill("water_avoid", "避水咒", "可在水下自由呼吸！");
         this.addSkill("fire_avoid", "避火咒", "免疫火焰伤害！");
         this.addSkill("perfect_dodge", "闪避特效", "完美闪避时将有帅气的动作！");
 
+        this.add(TCRItems.VOID_CORE.get(), "虚空精华");
+        this.addItemUsageInfo(TCRItems.VOID_CORE.get(), "击败[末影守卫]掉落");
+        this.add(TCRItems.ABYSS_CORE.get(), "深渊精华");
+        this.addItemUsageInfo(TCRItems.ABYSS_CORE.get(), "击败[利维坦]掉落");
         this.add(TCRItems.ARTIFACT_TICKET.get(), "饰品精华");
         this.addItemUsageInfo(TCRItems.ARTIFACT_TICKET.get(), "通过任务书某些任务获取。可在§d[圣殿港口]§r的§3[摆渡人]§r处提炼饰品");
         this.add(TCRItems.RARE_ARTIFACT_TICKET.get(), "稀有饰品精华");
@@ -53,6 +58,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "上面写着古老的神谕，暗示了火种散落的地方。回主城给守望者看看吧，说不定对冒险有帮助！");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c多人模式请勿占据他人任务道具！每人都需各自提交！", 2);
 
+        this.addInfo("nether_unlock", "地狱之门已解锁！");
+        this.addInfo("end_unlock", "末地之门已解锁！");
         this.addInfo("dim_max_4_players", "§6幻境最多容纳4人！");
         this.addInfo("can_not_enter_before_finish", "§6当前没有进入幻镜的命运。");
         this.addInfo("after_heal_stop_attack", "§6停止攻击以取消傀儡仇恨");
@@ -76,6 +83,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRBlocks.VOID_ALTAR_BLOCK.get(), "虚空祭坛");
         this.add(TCRBlocks.MECH_ALTAR_BLOCK.get(), "机械祭坛");
 
+        this.addInfo("nothing_happen_after_bless", "§d无事发生...");
         this.addInfo("attack_to_restart", "§c攻击Boss以再次发起挑战");
         this.addInfo("captain_start_heal", "§c可妮莉亚船长开始回血！增大伤害击败她！");
         this.addInfo("illegal_item_tip", "§c检测到非法物品！");
@@ -98,6 +106,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         this.addInfo("finish_all_eye", "§d众祭坛已点亮！§r");
         this.addInfo("time_to_altar", "失散火种已寻，该回去点亮祭坛了...");
+        this.addInfo("time_to_ask_godness_statue", "§d*可在女神像处祈求神谕");
         this.addInfo("time_to_end", "所有祭坛已点亮，该找守卫者举行仪式了...");
 
         this.addInfo("can_not_enter_dim", "看来当前还未能达到神之认可，无法进入...§6继续收集火种§r以获取更多神谕吧！");
@@ -244,7 +253,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§e沙漠之火种§f...我感受到它就散落在§6[%s]§f击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。§e[%s§e]§f，可去摆渡人处看看，说不定能换什么宝具。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 20, "正常走流程怎么会多出神谕残卷？你是不是偷了别人的？");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 21, "既然你已点亮所有祭坛，待你§6入内击败英灵，吸收众英灵之力后§f，我们再开始仪式吧！");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "前往吾指引之处，取回§d[神之眼]§6f，将其供奉予§6[圣殿中心庭院之女神像所在]§f，女神像将为你揭晓神谕！");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "前往吾指引之处，取回§d[神之眼]§f，将其供奉予§6[圣殿中心庭院之女神像所在]§f，女神像将为你揭晓神谕！");
 
         this.addDialogAnswer(TCREntities.GIRL.get(), 0, "阁下，好久不见！");
         this.addDialogAnswer(TCREntities.GIRL.get(), 1, "阁下忘了我么？我是圣殿摆渡人，为众人指点迷津。阁下如有奇珍异宝，可与我瞧瞧，小女子可提取忆质，将其化为宝具！当你能踏足§c地狱§f或§d末地§f时，我也可以送你一程。");

@@ -19,6 +19,7 @@ import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.talhanation.smallships.client.option.ModGameOptions;
 import com.yesman.epicskills.client.gui.screen.SkillTreeScreen;
+import net.blay09.mods.waystones.block.ModBlocks;
 import net.genzyuro.uniqueaccessories.item.UAUniqueCurioItem;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.kenddie.fantasyarmor.item.FAItems;
@@ -115,6 +116,11 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         offersArmor.clear();
         offersWeapon.clear();
         offersArtifact.clear();
+        offersArtifact.add(new MerchantOffer(
+                new ItemStack(Items.ENDER_EYE, 1),
+                new ItemStack(ModBlocks.waystone, 1),
+                142857, 0, 0.02f));
+
         ForgeRegistries.ITEMS.getValues().forEach(item -> {
             if(PlayerEventListeners.illegalItems.contains(item)) {
                 return;
@@ -390,7 +396,10 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
     }
 
     @Override
-    public boolean hurt(DamageSource p_21016_, float p_21017_) {
+    public boolean hurt(@NotNull DamageSource damageSource, float p_21017_) {
+        if(damageSource.isCreativePlayer()) {
+            this.discard();
+        }
         return false;
     }
 
@@ -400,7 +409,8 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         if (player instanceof ServerPlayer serverPlayer) {
             CompoundTag tag = new CompoundTag();
             tag.putBoolean("boat", PlayerDataManager.boatGet.get(serverPlayer));
-            tag.putBoolean("dim_unlock", PlayerDataManager.stage.getInt(serverPlayer) >= 3);
+            tag.putBoolean("nether_dim_unlock", PlayerDataManager.netherEntered.get(player));
+            tag.putBoolean("end_dim_unlock", PlayerDataManager.endEntered.get(player));
             this.sendDialogTo(serverPlayer, tag);
         }
         return InteractionResult.sidedSuccess(level().isClientSide);
@@ -426,10 +436,10 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
             DialogNode ans1 = new DialogNode(dBuilder.ans(3, ModGameOptions.SAIL_KEY.getTranslatedKeyMessage().copy().withStyle(ChatFormatting.GOLD)), dBuilder.optWithBrackets(1))
                     .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(8), 3));
 
-            //武器
-            DialogNode ans2 = new DialogNode.FinalNode(dBuilder.optWithBrackets(2), 1);
-            //盔甲
-            DialogNode ans3 = new DialogNode.FinalNode(dBuilder.optWithBrackets(3), 2);
+//            //武器
+//            DialogNode ans2 = new DialogNode.FinalNode(dBuilder.optWithBrackets(2), 1);
+//            //盔甲
+//            DialogNode ans3 = new DialogNode.FinalNode(dBuilder.optWithBrackets(3), 2);
             //技能
             DialogNode ans4 = new DialogNode(dBuilder.ans(2), dBuilder.optWithBrackets(4))
                     .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(5), 3, (s) -> {
@@ -440,7 +450,11 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                     }));
             //饰品
             DialogNode ans7 = new DialogNode.FinalNode(dBuilder.optWithBrackets(9), 7);
-            root.addChild(ans1).addChild(ans2).addChild(ans3).addChild(ans7).addChild(ans4);
+            root.addChild(ans1)
+//                    .addChild(ans2)
+//                    .addChild(ans3)
+                    .addChild(ans7)
+                    .addChild(ans4);
             treeBuilder.setRoot(root);
         } else {
             DialogNode root = new DialogNode(dBuilder.ans(0), dBuilder.optWithBrackets(0));//开场白 | 返回
@@ -465,16 +479,18 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
 
             root.addChild(ans1).addChild(ans2).addChild(ans3).addChild(ans7).addChild(ans4);
 
-            if(compoundTag.getBoolean("dim_unlock")) {
+            if(compoundTag.getBoolean("nether_dim_unlock")) {
                 DialogNode ans5 = new DialogNode(dBuilder.ans(4), dBuilder.optWithBrackets(6))
                         .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(8), 5))
                         .addChild(root);
+                root.addChild(ans5);
+            }
 
+            if(compoundTag.getBoolean("end_dim_unlock")) {
                 DialogNode ans6 = new DialogNode(dBuilder.ans(4), dBuilder.optWithBrackets(7))
                         .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(8), 6))
                         .addChild(root);
-
-                root.addChild(ans5).addChild(ans6);
+                root.addChild(ans6);
             }
 
             treeBuilder.setRoot(root);

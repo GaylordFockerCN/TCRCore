@@ -9,6 +9,7 @@
     "AltarOfAbyssBlockEntityMixin",
     "Ancient_Remnant_EntityMixin",
     "AnimatedAttackGoalMixin",
+    "ArteriusMixin",
     "BackpackConfigMixin",
     "BoatItemMixin",
     "Bone_ChimeraMixin",
@@ -21,15 +22,18 @@
     "FAArmorItemMixin",
     "GuardSkillMixin",
     "HornOfTheShattercryMixin",
+    "IForgetItemMixin",
     "Ignited_Revenant_EntityMixin",
     "IronGolemMixin",
     "ItemStackMixin",
     "KnightSwordItemMixin",
+    "PiglinAiMixin",
     "PlayerAdvancementsMixin",
     "PlayerPatchMixin",
     "ShellHornItemMixin",
     "ShipMixin",
     "SkillContainerMixin",
+    "SkillTreeGameEventsMixin",
     "TakeDamageEventAttackMixin",
     "ThirstforBloodItemMixin",
     "UnderworldKnightEntityMixin",
@@ -39,11 +43,14 @@
   "client": [
     "AquamiraeClientMixin",
     "CataclysmClientEventMixin",
+    "ClientAnimatorMixin",
     "EFClientConfigMixin",
     "LocalPlayerPatchAccessor",
     "LocalPlayerPatchMixin",
     "LogoRendererMixin",
-    "PanoramaRendererMixin"
+    "PanoramaRendererMixin",
+    "SkillTreeScreenAccessor",
+    "SkillTreeScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

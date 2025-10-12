@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.datagen;
 
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.item.TCRItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -26,7 +27,8 @@ public class TCRItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        
+        simpleItem(TCRItems.ABYSS_CORE);
+        simpleItem(TCRItems.VOID_CORE);
     }
 
     // Thank you kaupenjoe & El_Redstoniano!

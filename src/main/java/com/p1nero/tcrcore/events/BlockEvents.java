@@ -1,9 +1,13 @@
 package com.p1nero.tcrcore.events;
 
+import com.github.L_Ender.cataclysm.init.ModBlocks;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
+import com.p1nero.tcrcore.utils.WorldUtil;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,6 +20,11 @@ public class BlockEvents {
             return;
         }
         if(event.getPlayer().level() instanceof ServerLevel serverLevel) {
+            //不可破坏神像
+            if(event.getState().is(ModBlocks.GODDESS_STATUE.get()) && WorldUtil.inMainLand(event.getPlayer())) {
+                EntityType.LIGHTNING_BOLT.spawn(serverLevel, event.getPos(), MobSpawnType.MOB_SUMMONED);
+                event.setCanceled(true);
+            }
             if(CataclysmDimensions.LEVELS.contains(event.getPlayer().level().dimension())) {
                 //利维坦得挖进去
                 if(event.getPlayer().level().dimension() == CataclysmDimensions.CATACLYSM_ABYSSAL_DEPTHS_LEVEL_KEY) {

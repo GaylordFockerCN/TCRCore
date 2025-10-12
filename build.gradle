@@ -169,9 +169,12 @@ dependencies {
     implementation fg.deobf("curse.maven:sword-soaring-1011068:7035767")
     implementation fg.deobf("libs:dodge_parry_reward:20.12.1")
     implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7058350")
-    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
-    implementation fg.deobf("libs:p1nero_ec:20.12.0.1")
+//    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
+    implementation fg.deobf("libs:p1nero_ec:20.12.0.2")
     implementation fg.deobf("libs:p1nero_dl:1.6.0")
+    implementation fg.deobf("libs:nightfall_invade:1.0.0")
+    implementation fg.deobf("libs:mimic:1.0.0")
+    implementation fg.deobf("libs:EpicFightNightfall:2.0")
 
     implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:6993788")
 
@@ -279,6 +282,7 @@ dependencies {
     implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
     implementation fg.deobf("curse.maven:obscure-tooltips-715660:4686579")//FIXME runData时需注释掉
     implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
 
     implementation fg.deobf("curse.maven:configured-457570:5180900")
     implementation fg.deobf("curse.maven:havns-style-combat-1355783:7062128")
