@@ -4,6 +4,8 @@ import com.p1nero.cataclysm_dimension.CataclysmDimensionMod;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.dialog_lib.events.ServerNpcEntityInteractEvent;
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
+import com.p1nero.tcrcore.capability.TCRPlayer;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import net.alp.monsterexpansion.entity.custom.SkrytheEntity;
@@ -40,8 +42,9 @@ public class ForgeEvents {
         if(event.getSelf() instanceof Arterius arterius) {
             if(event.getInteractId() == 1) {
                 arterius.resetBossStatus(true);
-                arterius.setInBattle(true);
-                arterius.setTarget(event.getServerPlayer());
+                TCRPlayer tcrPlayer = TCRCapabilityProvider.getTCRPlayer(event.getServerPlayer());
+                tcrPlayer.setArterius(arterius);
+                tcrPlayer.setTickAfterStartArterius(62);
             }
         }
 
