@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:sculk",
+    "#efn:deep_dark",
+    "#apotheosis:sculk",
+    "#apotheosis:deep_dark"
+  ]
+}

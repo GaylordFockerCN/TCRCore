@@ -1,5 +1,0 @@
-#A list of blocks to whitelist or blacklist. (Default: ["*:*"])
-blocks = ["*:*"]
-#The type of mask to use. Can be 'whitelist' or 'blacklist'. (Default: whitelist)
-type = "whitelist"
-

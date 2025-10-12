@@ -1,6 +1,6 @@
 {
   "entity.fromtheshadows.cleric": "秘教祭司",
-  "entity.fromtheshadows.nehemoth": "尼赫莫斯魔像",
+  "entity.fromtheshadows.nehemoth": "尼希摩斯魔像",
   "entity.fromtheshadows.froglin": "沼蛤怪",
   "entity.fromtheshadows.bulldrogioth": "蛮屠巨兽",
   "entity.fromtheshadows.coral_thorn": "珊瑚荆棘",
@@ -12,7 +12,7 @@
 
   "item.fromtheshadows.cultist_spawn_egg": "秘教徒生成蛋",
   "item.fromtheshadows.froglin_spawn_egg": "沼蛤怪生成蛋",
-  "item.fromtheshadows.nehemoth_spawn_egg": "尼赫莫斯生成蛋",
+  "item.fromtheshadows.nehemoth_spawn_egg": "尼希摩斯生成蛋",
   "item.fromtheshadows.bulldrogioth_spawn_egg": "蛮屠巨兽生成蛋",
   "item.fromtheshadows.cleric_spawn_egg": "秘教祭司生成蛋",
   "item.fromtheshadows.cooked_froglin_leg": "炙烤沼蛤腿",
@@ -68,13 +68,13 @@
   "enchantment.fromtheshadows.retribution": "报应轮回",
 
   "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_stomp": "重踏",
-  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_idle": "尼赫莫斯低吼",
-  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_hurt": "尼赫莫斯哀鸣",
-  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_death": "尼赫莫斯尖啸",
-  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_roar": "尼赫莫斯咆哮",
-  "fromtheshadows.sound.subtitle.fromtheshadows.bite_warn": "尼赫莫斯试图撕咬",
-  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_bite": "尼赫莫斯噬咬",
-  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_charge": "尼赫莫斯跃击",
+  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_idle": "尼希摩斯低吼",
+  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_hurt": "尼希摩斯哀鸣",
+  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_death": "尼希摩斯尖啸",
+  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_roar": "尼希摩斯咆哮",
+  "fromtheshadows.sound.subtitle.fromtheshadows.bite_warn": "尼希摩斯试图撕咬",
+  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_bite": "尼希摩斯噬咬",
+  "fromtheshadows.sound.subtitle.fromtheshadows.nehemoth_charge": "尼希摩斯跃击",
 
   "fromtheshadows.sound.subtitle.fromtheshadows.bulldrogioth_idle": "蛮屠巨兽低吼",
   "fromtheshadows.sound.subtitle.fromtheshadows.bulldrogioth_hurt": "蛮屠巨兽哀鸣",
@@ -82,8 +82,8 @@
   "fromtheshadows.sound.subtitle.fromtheshadows.bulldrogioth_attack": "蛮屠巨兽猛击",
 
   "fromtheshadows.sound.subtitle.fromtheshadows.goresound": "创口撕裂",
-  "fromtheshadows.sound.subtitle.fromtheshadows.soul_laser": "尼赫莫斯光束发射",
-  "fromtheshadows.sound.subtitle.fromtheshadows.soul_laser_ready": "尼赫莫斯蓄能",
+  "fromtheshadows.sound.subtitle.fromtheshadows.soul_laser": "尼希摩斯光束发射",
+  "fromtheshadows.sound.subtitle.fromtheshadows.soul_laser_ready": "尼希摩斯蓄能",
 
   "fromtheshadows.sound.subtitle.fromtheshadows.cultist_mumble": "秘教徒低语",
   "fromtheshadows.sound.subtitle.fromtheshadows.cultist_hurt": "秘教徒受创",
@@ -93,8 +93,8 @@
 
   "fromtheshadows.thirst_for_blood.text": "以近战击杀敌人时，将逐层充能激光",
   "fromtheshadows.thirst_for_blood.text2": "右键发射焚灭敌人的激光",
-  "fromtheshadows.devil_splitter.text": "对尼赫莫斯造成额外伤害",
-  "fromtheshadows.devil_splitter.text2": "以此武器击杀尼赫莫斯可微量修复其耐久",
+  "fromtheshadows.devil_splitter.text": "对尼希摩斯造成额外伤害",
+  "fromtheshadows.devil_splitter.text2": "以此武器击杀尼希摩斯可微量修复其耐久",
   "fromtheshadows.diablium_armor.text": "全身着甲并对敌人造成伤害时",
   "fromtheshadows.diablium_armor.text2": "将按比例恢复生命",
   "fromtheshadows.plague_doctor_mask.text": "佩戴时免疫蔓延瘟疫效果",
@@ -104,5 +104,9 @@
   "fromtheshadows.apocalypsehorn.text": "天启正在降临……",
   "fromtheshadows.apocalypsehorn_used.text": "号角中只传出空洞的回响……",
   "fromtheshadows.crystallized_dagger.text": "生命值越低，攻速越快",
-  "fromtheshadows.crystallized_dagger.text2": "击杀特定敌人时有概率掉落晶化碎片"
+  "fromtheshadows.crystallized_dagger.text2": "击杀特定敌人时有概率掉落晶化碎片",
+
+  "enchantment.fromtheshadows.divinity.desc": "对恶魔类生物（例如尼希摩斯）造成额外伤害。",
+  "enchantment.fromtheshadows.retribution.desc": "对灾厄村民类生物（例如掠夺者和卫道士）造成额外伤害。",
+  "enchantment.fromtheshadows.freezing.desc": "攻击生物时造成额外冻结伤害。"
 }

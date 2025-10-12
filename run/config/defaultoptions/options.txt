@@ -5,12 +5,12 @@ autoSuggestions:true
 chatColors:true
 chatLinks:true
 chatLinksPrompt:true
-enableVsync:true
+enableVsync:false
 entityShadows:true
 forceUnicodeFont:false
 discrete_mouse_scroll:false
 invertYMouse:false
-realmsNotifications:true
+realmsNotifications:false
 reducedDebugInfo:false
 showSubtitles:false
 directionalAudio:false
@@ -30,22 +30,22 @@ glintSpeed:0.5
 glintStrength:0.75
 damageTiltStrength:1.0
 highContrast:false
-gamma:0.5
+gamma:1.0
 renderDistance:12
-simulationDistance:12
+simulationDistance:8
 entityDistanceScaling:1.0
 guiScale:0
 particles:0
-maxFps:120
+maxFps:260
 graphicsMode:1
 ao:true
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
-renderClouds:"true"
+renderClouds:"false"
 resourcePacks:["vanilla","mod_resources","file/MMR.zip","file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip","file/Stay_True_1.20.zip","tcr_assets"]
 incompatibleResourcePacks:["file/MMR.zip","file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip"]
 lastServer:
-lang:zh_cn
+lang:en_us
 soundDevice:""
 chatVisibility:0
 chatOpacity:1.0
