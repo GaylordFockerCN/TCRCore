@@ -27,7 +27,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -408,20 +407,19 @@ public class PlayerEventListeners {
     public static void onItemPickup(PlayerEvent.ItemPickupEvent event) {
         ItemStack itemStack = event.getStack();
         if (event.getEntity() instanceof ServerPlayer player) {
-            if (itemStack.is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get()) && !PlayerDataManager.pillagerKilled.get(player)) {
-                giveOracle(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get());
-                PlayerDataManager.pillagerKilled.put(player, true);
+            if (itemStack.is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get()) && itemStack.getOrCreateTag().getString(TCRPlayer.PLAYER_NAME).equals(player.getGameProfile().getName())) {
+                giveOracleEffect(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get());
             }
 
             if (!PlayerDataManager.stormEyeTraded.get(player) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get())) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get());
+                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get());
                 PlayerDataManager.stormEyeTraded.put(player, true);
             }
 
             if (!PlayerDataManager.abyssEyeTraded.get(player) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get())) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get());
+                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get());
                 PlayerDataManager.abyssEyeTraded.put(player, true);
             }
 
@@ -432,31 +430,31 @@ public class PlayerEventListeners {
 
             if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get()) && !PlayerDataManager.cursedEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get());
+                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get());
                 PlayerDataManager.cursedEyeTraded.put(player, true);
             }
 
             if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get()) && !PlayerDataManager.desertEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get());
+                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get());
                 PlayerDataManager.desertEyeTraded.put(player, true);
             }
 
             if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.VOID_EYE.get()) && !PlayerDataManager.voidEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.VOID_EYE.get());
+                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.VOID_EYE.get());
                 PlayerDataManager.voidEyeTraded.put(player, true);
             }
 
             if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.MECH_EYE.get()) && !PlayerDataManager.mechEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.MECH_EYE.get());
+                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.MECH_EYE.get());
                 PlayerDataManager.mechEyeTraded.put(player, true);
             }
 
             if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.MONSTROUS_EYE.get()) && !PlayerDataManager.monstEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.MONSTROUS_EYE.get());
+                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.MONSTROUS_EYE.get());
                 PlayerDataManager.monstEyeTraded.put(player, true);
             }
 
@@ -464,7 +462,7 @@ public class PlayerEventListeners {
 
     }
 
-    public static void giveOracle(ServerPlayer player, Item toDisplay) {
+    public static void giveOracleEffect(ServerPlayer player, Item toDisplay) {
         //改和女神兑换
 //        ItemUtil.addItemEntity(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
         PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayItemPickupParticlePacket(toDisplay.getDefaultInstance()), player);

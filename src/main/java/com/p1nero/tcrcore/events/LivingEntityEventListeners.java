@@ -10,7 +10,6 @@ import com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonste
 import com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Scylla.Scylla_Entity;
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.github.dodo.dodosmobs.entity.InternalAnimationMonster.IABossMonsters.Bone_Chimera_Entity;
-import com.github.dodo.dodosmobs.init.ModEntities;
 import com.hm.efn.registries.EFNItem;
 import com.merlin204.sg.item.SGItems;
 import com.obscuria.aquamirae.Aquamirae;
@@ -31,7 +30,6 @@ import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.utils.EntityUtil;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
-import com.yesman.epicskills.world.capability.SkillTreeProgression;
 import net.kenddie.fantasyarmor.item.FAItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
@@ -43,7 +41,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -74,11 +71,9 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.p1nero.ss.SwordSoaringMod;
-import net.p1nero.ss.gameassets.SwordSoaringSkills;
-import net.p1nero.ss.gameassets.skills.SwordControllerSkills;
 import net.p1nero.ss.item.SwordSoaringItems;
 import net.shelmarow.nightfall_invade.entity.NFIEntities;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
@@ -103,6 +98,8 @@ import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID)
 public class LivingEntityEventListeners {
+
+    public static final String TRIGGERED = "death_triggered";
 
     @SubscribeEvent
     public static void onLivingAttack(LivingAttackEvent event){
@@ -195,10 +192,13 @@ public class LivingEntityEventListeners {
         }
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onLivingDeath(LivingDeathEvent event){
         LivingEntity livingEntity = event.getEntity();
-
+        if(event.isCanceled() || livingEntity.getPersistentData().getBoolean(TRIGGERED)) {
+            return;
+        }
+        livingEntity.getPersistentData().putBoolean(TRIGGERED, true);
         Vec3 center = livingEntity.position();
         livingEntity.level().getEntitiesOfClass(ServerPlayer.class, (new AABB(center, center)).inflate(30)).forEach(player -> {
 
@@ -246,6 +246,7 @@ public class LivingEntityEventListeners {
                 ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
                 itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
                 ItemUtil.addItemEntity(player, itemStack, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
+                PlayerDataManager.pillagerKilled.put(player, true);
             }
 
             if(livingEntity instanceof IronGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND)) {
@@ -265,7 +266,7 @@ public class LivingEntityEventListeners {
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss3"), false);
             }
 
-            if(livingEntity instanceof Arterius arterius && !PlayerDataManager.flameEyeTraded.get(player)) {
+            if(livingEntity instanceof Arterius arterius && !PlayerDataManager.flameEyeTraded.get(player) && arterius.isInBattle()) {
                 ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_arterius", NFIEntities.ARTERIUS.get().getDescription().copy().withStyle(ChatFormatting.RED), EFNItem.DUSKFIRE_INGOT.get().getDescription()), false);
                 ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), 3, ChatFormatting.RED.getColor());
@@ -443,18 +444,18 @@ public class LivingEntityEventListeners {
                 event.getEntity().setGlowingTag(true);
             }
         }
-        if(event.getLevel().getLevel().dimension() == Level.OVERWORLD) {
-            if(event.getEntity() instanceof UnderworldKnightEntity underworldKnight && WorldUtil.isInStructure(underworldKnight, WorldUtil.FIRE)) {
-                if(EntityUtil.getNearByEntities(event.getLevel().getLevel(), underworldKnight.position(), 50, Arterius.class).isEmpty()) {
-                    Arterius arterius = NFIEntities.ARTERIUS.get().spawn(event.getLevel().getLevel(), underworldKnight.getOnPos().above(5), MobSpawnType.STRUCTURE);
-                    if(arterius != null) {
-                        arterius.setInBattle(false);
-                    }
-                }
-                event.setCanceled(true);
-                event.getLevel().destroyBlock(underworldKnight.getOnPos(), false);
-            }
-        }
+//        if(event.getLevel().getLevel().dimension() == Level.OVERWORLD) {
+//            if(event.getEntity() instanceof UnderworldKnightEntity underworldKnight && WorldUtil.isInStructure(underworldKnight, WorldUtil.FIRE)) {
+//                if(EntityUtil.getNearByEntities(event.getLevel().getLevel(), underworldKnight.position(), 50, Arterius.class).isEmpty()) {
+//                    Arterius arterius = NFIEntities.ARTERIUS.get().spawn(event.getLevel().getLevel(), underworldKnight.getOnPos().above(5), MobSpawnType.STRUCTURE);
+//                    if(arterius != null) {
+//                        arterius.setInBattle(false);
+//                    }
+//                }
+//                event.setCanceled(true);
+//                event.getLevel().destroyBlock(underworldKnight.getOnPos(), false);
+//            }
+//        }
     }
 
     @SubscribeEvent

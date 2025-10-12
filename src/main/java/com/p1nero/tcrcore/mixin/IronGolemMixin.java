@@ -30,7 +30,7 @@ public class IronGolemMixin extends AbstractGolem {
         if(this.getTarget() == null && player instanceof ServerPlayer serverPlayer && WorldUtil.isInStructure(player, WorldUtil.SKY_ISLAND)) {
             TCRCapabilityProvider.getTCRPlayer(serverPlayer).setCurrentTalkingEntity(this);
             CompoundTag tag = new CompoundTag();
-            DialogueLib.sendDialog(this, tag, serverPlayer);
+            DialogueLib.sendDialog((IronGolem)(Object)this, tag, serverPlayer);
         }
     }
 
