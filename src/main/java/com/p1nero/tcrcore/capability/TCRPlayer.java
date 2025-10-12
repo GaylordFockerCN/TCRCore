@@ -12,6 +12,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.server.level.ServerLevel;
@@ -25,6 +26,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
 import org.jetbrains.annotations.Nullable;
 import yesman.epicfight.world.entity.ai.attribute.EpicFightAttributes;
 
@@ -36,7 +38,17 @@ public class TCRPlayer {
 
     private int tickAfterBossDieLeft;
     private int tickAfterBless;
+    private int tickAfterStartArterius;
+    private Arterius arterius;
     private BlockPos blessPos;
+
+    public void setTickAfterStartArterius(int tickAfterStartArterius) {
+        this.tickAfterStartArterius = tickAfterStartArterius;
+    }
+
+    public void setArterius(Arterius arterius) {
+        this.arterius = arterius;
+    }
 
     public void setTickAfterBless(int tickAfterBless) {
         this.tickAfterBless = tickAfterBless;
@@ -117,6 +129,27 @@ public class TCRPlayer {
             handleTalking(serverPlayer);
             handleAfterBossFight(serverPlayer);
             handleBless(serverLevel, serverPlayer);
+            handleArtelus(serverPlayer);
+        }
+    }
+
+    private void handleArtelus(ServerPlayer player) {
+        if(tickAfterStartArterius > 0) {
+            tickAfterStartArterius--;
+            if(arterius != null) {
+                arterius.getLookControl().setLookAt(player);
+            } else {
+                return;
+            }
+            if(tickAfterStartArterius % 20 == 0 && tickAfterStartArterius / 20 > 0) {
+                player.connection.send(new ClientboundSetTitleTextPacket(Component.literal("" + tickAfterStartArterius / 20).withStyle(ChatFormatting.RED)));
+                player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.ANVIL_LAND), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
+            }
+
+            if(tickAfterStartArterius == 0) {
+                arterius.setInBattle(true);
+                arterius.setTarget(player);
+            }
 
         }
     }
