@@ -64,7 +64,12 @@
 			"skill": "epicfight:hypervitality",
 			"position_in_screen": [20, 100],
 			"ability_points": 5
-		}
+		},
+        {
+          "skill": "efn:precise_parry",
+          "position_in_screen": [120, 170],
+          "ability_points": 5
+        }
 	],
 	"priority": 0
 }

@@ -46,6 +46,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addSkill("fire_avoid", "Fire Avoidance Charm", "Immunity to fire damage!");
         this.addSkill("perfect_dodge", "Dodge Effect", "Play a cool animation when perfect dodge!");
 
+        this.add(TCRItems.DUAL_BOKKEN.get(), "Bokeen");
+        this.addItemUsageInfo(TCRItems.DUAL_BOKKEN.get(), "I may have skill issue but I m not lacking on dedication so do you lacking in dedication?");
         this.add(TCRItems.VOID_CORE.get(), "Void Essence");
         this.addItemUsageInfo(TCRItems.VOID_CORE.get(), "Dropped by [Ender Guardian] when defeated");
         this.add(TCRItems.ABYSS_CORE.get(), "Abyss Essence");
@@ -95,6 +97,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("unlock_new_dim", "§c[Nether]§d[End]§6 unlocked!§r");
         this.addInfo("iron_golem_name", "Sky Island Guardian");
 
+        this.addInfo("kill_arterius", "[%s]: Otherworlder, you are indeed formidable! It seems the prophecy is true! Then, I shall bestow these pieces of [%s] upon you!");
         this.addInfo("kill_boss1", "§d[Voice from unknown origin]:§r Defend... Sky Island... Eliminate... the Black Tide...");
         this.addInfo("kill_boss2", "§c[Voice from unknown origin]:§r Defend... the Dragonborn... Eliminate... the Black Tide...");
         this.addInfo("kill_boss3", "§3[Voice from unknown origin]:§r ...Run...");

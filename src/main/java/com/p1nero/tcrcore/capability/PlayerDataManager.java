@@ -18,6 +18,7 @@ public class PlayerDataManager {
     private final static Set<String> EXISTING_ID = new HashSet<>();
     public static DoubleData stage = new DoubleData("stage", 0);
     public static BoolData boatGet = new BoolData("boat_get", false);
+    public static BoolData arteriusKilled = new BoolData("arteriusKilled", false);
     public static BoolData canEnterNether = new BoolData("canEnterNether", false);
     public static BoolData canEnterEnd = new BoolData("canEnterEnd", false);
     public static BoolData netherEntered = new BoolData("netherEntered", false);

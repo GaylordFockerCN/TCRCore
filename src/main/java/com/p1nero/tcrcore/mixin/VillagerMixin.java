@@ -75,10 +75,10 @@ public abstract class VillagerMixin extends AbstractVillager {
                 mainHand.shrink(1);
                 CompoundTag tag = new CompoundTag();
                 tag.putBoolean("from_trade", true);
-                DialogueLib.sendDialog((Villager) (Object) this, tag, serverPlayer);
+                DialogueLib.sendDialog(this, tag, serverPlayer);
                 cir.setReturnValue(InteractionResult.SUCCESS);
             } else {
-                DialogueLib.sendDialog((Villager) (Object) this, serverPlayer);
+                DialogueLib.sendDialog(this, serverPlayer);
                 cir.setReturnValue(InteractionResult.SUCCESS);
             }
         }

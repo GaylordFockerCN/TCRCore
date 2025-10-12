@@ -108,6 +108,9 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                     this.setPos(new BlockPos(WorldUtil.GIRL_POS).getCenter());
                 }
             }
+            if(conversingPlayer != null && (conversingPlayer.isRemoved() || conversingPlayer.isDeadOrDying())) {
+                conversingPlayer = null;
+            }
         }
     }
 
@@ -462,10 +465,10 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
             DialogNode ans1 = new DialogNode(dBuilder.ans(1), dBuilder.optWithBrackets(1))
                     .addChild(root);
 
-            //武器
-            DialogNode ans2 = new DialogNode.FinalNode(dBuilder.optWithBrackets(2), 1);
-            //盔甲
-            DialogNode ans3 = new DialogNode.FinalNode(dBuilder.optWithBrackets(3), 2);
+//            //武器
+//            DialogNode ans2 = new DialogNode.FinalNode(dBuilder.optWithBrackets(2), 1);
+//            //盔甲
+//            DialogNode ans3 = new DialogNode.FinalNode(dBuilder.optWithBrackets(3), 2);
             //技能
             DialogNode ans4 = new DialogNode(dBuilder.ans(2), dBuilder.optWithBrackets(4))
                     .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(5), -1, (s) -> {
@@ -477,7 +480,11 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
             //饰品
             DialogNode ans7 = new DialogNode.FinalNode(dBuilder.optWithBrackets(9), 7);
 
-            root.addChild(ans1).addChild(ans2).addChild(ans3).addChild(ans7).addChild(ans4);
+            root.addChild(ans1)
+//                    .addChild(ans2)
+//                    .addChild(ans3)
+                    .addChild(ans7)
+                    .addChild(ans4);
 
             if(compoundTag.getBoolean("nether_dim_unlock")) {
                 DialogNode ans5 = new DialogNode(dBuilder.ans(4), dBuilder.optWithBrackets(6))

@@ -13,6 +13,7 @@ import net.alp.monsterexpansion.entity.ModEntities;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
+import net.shelmarow.nightfall_invade.entity.NFIEntities;
 import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
 import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModItems;
 
@@ -46,6 +47,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addSkill("fire_avoid", "避火咒", "免疫火焰伤害！");
         this.addSkill("perfect_dodge", "闪避特效", "完美闪避时将有帅气的动作！");
 
+        this.add(TCRItems.DUAL_BOKKEN.get(), "双持木棍");
+        this.addItemUsageInfo(TCRItems.DUAL_BOKKEN.get(), "我或许能力不足，但绝不缺乏奉献精神，难道你缺少奉献精神吗？");
         this.add(TCRItems.VOID_CORE.get(), "虚空精华");
         this.addItemUsageInfo(TCRItems.VOID_CORE.get(), "击败[末影守卫]掉落");
         this.add(TCRItems.ABYSS_CORE.get(), "深渊精华");
@@ -98,6 +101,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("unlock_new_dim", "§c[地狱]§d[末地]§6已解锁!§r");
         this.addInfo("iron_golem_name", "天空岛之守卫");
 
+        this.addInfo("kill_arterius", "[%s]: 异界之人，果然有几分本事！看来预言是对的！这几块[%s§f]，赠予你罢！");
         this.addInfo("kill_boss1", "§d[不知何处的声音]：§r捍卫…天空岛…扫除…黑潮…");
         this.addInfo("kill_boss2", "§c[不知何处的声音]：§r捍卫…龙裔…扫除…黑潮…");
         this.addInfo("kill_boss3", "§3[不知何处的声音]：§r…快逃…");
@@ -271,6 +275,23 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.GIRL.get(), 7, "前往末地");
         this.addDialogOption(TCREntities.GIRL.get(), 8, "确定");
         this.addDialogOption(TCREntities.GIRL.get(), 9, "饰品提取");
+
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 0, "异界之人，你为何来此？");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 1, "哈哈哈，守望者将烈焰之眼托付于我，为的是避免落入不义之人手中。即使是她老人家亲自来了，也得过我这关！我倒是要看看，你有没有这个能耐！");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 2, "异界之人，好久不见！");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 3, "准备好了吗？");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 4, "位于地狱的[猪灵一族]，在黑潮时期，曾造出[%s]来抵御黑潮。可惜他们败了，失去了神智。但他们仍然认得[%s§f§f]，使用[%s§f§f]与他们交易，便可揭开远古战争机器的面纱。");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 5, "[%s]和[%s]，则分别守护着[%s]和[%s]的回响。");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 6, "饰品提取");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 7, "饰品提取");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 0, "取回烈焰之眼");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 1, "取你性命");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 2, "发起挑战");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 3, "再等等");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 4, "切磋切磋");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 5, "打探消息");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 6, "继续");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 7, "告辞");
 
     }
 }

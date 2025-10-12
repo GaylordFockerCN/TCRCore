@@ -2,6 +2,9 @@
   "chat.epicskills.unlock_notification": "已解锁新技能树",
   "chat.epicskills.messages.no_page": "无技能树页面",
 
+  "gui.epicskills.messages.change_skill_one": "是否将技能%d替换为%d？",
+  "gui.epicskills.messages.change_skill_multiple": "是否将已习得的某个技能替换为%d？",
+
   "gui.epicskills.skill_tree": "技能树界面",
   "gui.epicskills.skill_tree.imported_node": "此技能来自%s",
 

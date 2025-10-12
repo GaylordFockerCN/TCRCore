@@ -21,6 +21,7 @@ import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tudigong.entity.XianQiEntity;
 import com.p1nero.tudigong.item.TDGItems;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
+import com.yesman.epicskills.world.capability.SkillTreeProgression;
 import net.blay09.mods.waystones.block.ModBlocks;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
@@ -29,6 +30,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -59,6 +61,8 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.p1nero.ss.SwordSoaringMod;
+import net.p1nero.ss.gameassets.skills.SwordControllerSkills;
 import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import net.sonmok14.fromtheshadows.server.entity.mob.BulldrogiothEntity;
 import net.sonmok14.fromtheshadows.server.utils.registry.EntityRegistry;
@@ -77,20 +81,34 @@ public class PlayerEventListeners {
 
     @SubscribeEvent
     public static void onPlayerAdvancementEarn(AdvancementEvent.AdvancementEarnEvent event) {
-        if (event.getEntity() instanceof ServerPlayer player) {
+        if (event.getEntity() instanceof ServerPlayer serverPlayer) {
             String path = event.getAdvancement().getId().getPath();
             String namespace = event.getAdvancement().getId().getNamespace();
             if (namespace.equals(TCRCoreMod.MOD_ID)) {
-                if (path.equals("stage3")) {
-                    player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_dim_girl"), false);
-                    player.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("unlock_new_dim")));
-                    player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
+                if (path.equals("vatansever")) {
+                    serverPlayer.getCapability(SkillTreeProgression.SKILL_TREE_PROGRESSION).ifPresent(skillTreeProgression -> {
+                        skillTreeProgression.unlockTree(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"));
+//                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.RAIN_SWORD);
+//                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.SCREEN_SWORD);
+//                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.KILL_AURA_1);
+//                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.KILL_AURA_2);
+                    });
+
+                    CommandSourceStack commandSourceStack = serverPlayer.createCommandSourceStack().withPermission(2).withSuppressedOutput();
+                    Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s sword_soaring:sword_soaring_skills " + SwordControllerSkills.RAIN_SWORD.getRegistryName() + " true");
+                    Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s sword_soaring:sword_soaring_skills " + SwordControllerSkills.SCREEN_SWORD.getRegistryName() + " true");
+                    Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s sword_soaring:sword_soaring_skills " + SwordControllerSkills.KILL_AURA_1.getRegistryName() + " true");
+                    Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s sword_soaring:sword_soaring_skills " + SwordControllerSkills.KILL_AURA_2.getRegistryName() + " true");
+
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.RAIN_SWORD.getDisplayName()), false);
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.SCREEN_SWORD.getDisplayName()), false);
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.KILL_AURA_1.getDisplayName()), false);
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.KILL_AURA_2.getDisplayName()), false);
                 }
-//                player.displayClientMessage(TCRCoreMod.getInfo("press_to_show_progress"), false);
             }
 
             if (namespace.equals("minecraft") && path.equals("recipes/transportation/oak_boat")) {
-                PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(4), player);
+                PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(4), serverPlayer);
             }
 
         }
@@ -268,7 +286,7 @@ public class PlayerEventListeners {
     public static void onPlayerEnterDim(EntityTravelToDimensionEvent event) {
 
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
-            if(!serverPlayer.isCreative()) {
+            if (!serverPlayer.isCreative()) {
                 if (event.getDimension() == Level.NETHER) {
                     if (!PlayerDataManager.canEnterNether.get(serverPlayer)) {
                         event.setCanceled(true);
@@ -276,7 +294,7 @@ public class PlayerEventListeners {
                     }
                 }
 
-                if(event.getDimension() == Level.END) {
+                if (event.getDimension() == Level.END) {
                     if (!PlayerDataManager.canEnterEnd.get(serverPlayer)) {
                         event.setCanceled(true);
                         serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_dim"), true);
@@ -320,11 +338,17 @@ public class PlayerEventListeners {
                     TCRDimSaveData.get(serverPlayer.getServer().getLevel(event.getTo())).setBossKilled(false);
                 }
             }
-            if(event.getTo() == Level.NETHER) {
-                PlayerDataManager.netherEntered.put(serverPlayer, true);
+            if (event.getTo() == Level.NETHER) {
+                if (!PlayerDataManager.netherEntered.get(serverPlayer)) {
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_dim_girl"), false);
+                    PlayerDataManager.netherEntered.put(serverPlayer, true);
+                }
             }
-            if(event.getTo() == Level.END) {
-                PlayerDataManager.endEntered.put(serverPlayer, true);
+            if (event.getTo() == Level.END) {
+                if (!PlayerDataManager.endEntered.get(serverPlayer)) {
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_dim_girl"), false);
+                    PlayerDataManager.endEntered.put(serverPlayer, true);
+                }
             }
             updateHealth(serverPlayer, event.getFrom());
             updateHealth(serverPlayer, event.getTo());
@@ -383,54 +407,54 @@ public class PlayerEventListeners {
     @SubscribeEvent
     public static void onItemPickup(PlayerEvent.ItemPickupEvent event) {
         ItemStack itemStack = event.getStack();
-        if(event.getEntity() instanceof ServerPlayer player) {
-            if(itemStack.is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get()) && !PlayerDataManager.pillagerKilled.get(player)){
+        if (event.getEntity() instanceof ServerPlayer player) {
+            if (itemStack.is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get()) && !PlayerDataManager.pillagerKilled.get(player)) {
                 giveOracle(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get());
                 PlayerDataManager.pillagerKilled.put(player, true);
             }
 
-            if(!PlayerDataManager.stormEyeTraded.get(player) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get())) {
+            if (!PlayerDataManager.stormEyeTraded.get(player) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get())) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
                 giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get());
                 PlayerDataManager.stormEyeTraded.put(player, true);
             }
 
-            if(!PlayerDataManager.abyssEyeTraded.get(player) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get())) {
+            if (!PlayerDataManager.abyssEyeTraded.get(player) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get())) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
                 giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get());
                 PlayerDataManager.abyssEyeTraded.put(player, true);
             }
 
-            if(itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.FLAME_EYE.get()) && !PlayerDataManager.flameEyeTraded.get(player)) {
+            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.FLAME_EYE.get()) && !PlayerDataManager.flameEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
                 PlayerDataManager.flameEyeTraded.put(player, true);
             }
 
-            if(itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get()) && !PlayerDataManager.cursedEyeTraded.get(player)) {
+            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get()) && !PlayerDataManager.cursedEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
                 giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get());
                 PlayerDataManager.cursedEyeTraded.put(player, true);
             }
-            
-            if(itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get()) && !PlayerDataManager.desertEyeTraded.get(player)) {
+
+            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get()) && !PlayerDataManager.desertEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
                 giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get());
                 PlayerDataManager.desertEyeTraded.put(player, true);
             }
 
-            if(itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.VOID_EYE.get()) && !PlayerDataManager.voidEyeTraded.get(player)) {
+            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.VOID_EYE.get()) && !PlayerDataManager.voidEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
                 giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.VOID_EYE.get());
                 PlayerDataManager.voidEyeTraded.put(player, true);
             }
 
-            if(itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.MECH_EYE.get()) && !PlayerDataManager.mechEyeTraded.get(player)) {
+            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.MECH_EYE.get()) && !PlayerDataManager.mechEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
                 giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.MECH_EYE.get());
                 PlayerDataManager.mechEyeTraded.put(player, true);
             }
 
-            if(itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.MONSTROUS_EYE.get()) && !PlayerDataManager.monstEyeTraded.get(player)) {
+            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.MONSTROUS_EYE.get()) && !PlayerDataManager.monstEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
                 giveOracle(player, com.github.L_Ender.cataclysm.init.ModItems.MONSTROUS_EYE.get());
                 PlayerDataManager.monstEyeTraded.put(player, true);

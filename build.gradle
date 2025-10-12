@@ -160,7 +160,6 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     implementation fg.deobf("curse.maven:epic-fight-mod-405076:7090045")
-
     implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7090069")
 
     implementation fg.deobf("curse.maven:epic-fight-wraithon-1354901:7068815")
@@ -172,6 +171,7 @@ dependencies {
 //    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
     implementation fg.deobf("libs:p1nero_ec:20.12.0.2")
     implementation fg.deobf("libs:p1nero_dl:1.6.0")
+    implementation fg.deobf("curse.maven:entity-respawner-1363764:7098826")
     implementation fg.deobf("libs:nightfall_invade:1.0.0")
     implementation fg.deobf("libs:mimic:1.0.0")
     implementation fg.deobf("libs:EpicFightNightfall:2.0")
@@ -226,6 +226,7 @@ dependencies {
 
     //主要boss
     implementation fg.deobf("curse.maven:dodos-mobs-1349823:7018547")
+    implementation fg.deobf("curse.maven:mowzies-mobs-250498:6586086")
 //    implementation fg.deobf("curse.maven:bossesrise-1314084:6900933")
     implementation fg.deobf("libs:bossesrise:1.0.9.1")
     implementation fg.deobf("curse.maven:monster-expansion-1336105:7052712")
@@ -280,9 +281,12 @@ dependencies {
     implementation fg.deobf("curse.maven:terrablender-563928:6290448")
     implementation fg.deobf("curse.maven:glitchcore-955399:5787839")
     implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
-    implementation fg.deobf("curse.maven:obscure-tooltips-715660:4686579")//FIXME runData时需注释掉
     implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
     implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:prism-lib-638111:4650325")
+    implementation fg.deobf("curse.maven:iceberg-520110:5838149")
 
     implementation fg.deobf("curse.maven:configured-457570:5180900")
     implementation fg.deobf("curse.maven:havns-style-combat-1355783:7062128")

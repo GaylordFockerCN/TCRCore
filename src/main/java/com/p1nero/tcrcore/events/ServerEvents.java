@@ -48,9 +48,9 @@ public class ServerEvents {
             //懒得重新搞地图了
             TCRMainLevelSaveData tcrMainLevelSaveData = TCRMainLevelSaveData.get(serverLevel);
             if(!tcrMainLevelSaveData.isGirlPlaced()) {
-//                TCREntities.GIRL.get().spawn(serverLevel, new BlockPos(WorldUtil.GIRL_POS), MobSpawnType.SPAWNER);
-//                serverLevel.setBlock(new BlockPos(WorldUtil.GIRL_PORTAL_POS), ModBlocks.waystone.defaultBlockState(), 3);
-//                serverLevel.setBlock(new BlockPos(WorldUtil.GIRL_PORTAL_POS).above(), ModBlocks.waystone.defaultBlockState().setValue(WaystoneBlock.HALF, DoubleBlockHalf.UPPER), 3);
+                TCREntities.GIRL.get().spawn(serverLevel, new BlockPos(WorldUtil.GIRL_POS), MobSpawnType.SPAWNER);
+                serverLevel.setBlock(new BlockPos(WorldUtil.GIRL_PORTAL_POS), ModBlocks.waystone.defaultBlockState(), 3);
+                serverLevel.setBlock(new BlockPos(WorldUtil.GIRL_PORTAL_POS).above(), ModBlocks.waystone.defaultBlockState().setValue(WaystoneBlock.HALF, DoubleBlockHalf.UPPER), 3);
                 tryHandleLight(serverLevel);
                 tcrMainLevelSaveData.setGirlPlaced(true);
             }

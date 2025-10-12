@@ -14,6 +14,7 @@ import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
+import com.p1nero.tcrcore.capability.TCRPlayer;
 import com.p1nero.tcrcore.datagen.TCRAdvancementData;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
@@ -101,6 +102,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
     public void tick() {
         super.tick();
         if(level() instanceof ServerLevel serverLevel) {
+            if(conversingPlayer != null && (conversingPlayer.isRemoved() || conversingPlayer.isDeadOrDying())) {
+                conversingPlayer = null;
+            }
             if(tickCount % 100 == 0) {
                 BlockPos myPos = this.getOnPos();
                 if(myPos.getX() != WorldUtil.GUIDER_BLOCK_POS.getX() || myPos.getZ() != WorldUtil.GUIDER_BLOCK_POS.getZ()) {
@@ -190,7 +194,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             ItemStack itemStack = player.getItemInHand(hand);
             if (itemStack.is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get())
                     && (serverPlayer.isCreative()
-                        || (itemStack.hasTag() && itemStack.getOrCreateTag().getString("player_name").equals(player.getGameProfile().getName())))) {
+                        || (itemStack.hasTag() && itemStack.getOrCreateTag().getString(TCRPlayer.PLAYER_NAME).equals(player.getGameProfile().getName())))) {
                 tag.putBoolean("is_oracle", true);
             }
             this.sendDialogTo(serverPlayer, tag);

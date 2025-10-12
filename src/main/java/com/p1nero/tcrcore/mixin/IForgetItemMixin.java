@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.mixin;
 
 import com.github.L_Ender.cataclysm.init.ModItems;
+import com.hm.efn.registries.EFNItem;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -23,7 +24,7 @@ public interface IForgetItemMixin {
     default boolean isPiglinCurrency(ItemStack stack)
     {
         Item item = stack.getItem();
-        return item == PiglinAi.BARTERING_ITEM || item == ModItems.MONSTROUS_HORN.get();
+        return item == PiglinAi.BARTERING_ITEM || item == EFNItem.DUSKFIRE_INGOT.get();
     }
 
 }

@@ -18,9 +18,11 @@ import com.obscuria.aquamirae.AquamiraeUtils;
 import com.obscuria.aquamirae.common.entities.CaptainCornelia;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.dialog_lib.events.ServerNpcEntityInteractEvent;
+import com.p1nero.entityrespawner.EntityRespawnerMod;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
+import com.p1nero.tcrcore.capability.TCRPlayer;
 import com.p1nero.tcrcore.client.sound.CorneliaMusicPlayer;
 import com.p1nero.tcrcore.client.sound.WraithonMusicPlayer;
 import com.p1nero.tcrcore.gameassets.TCRSkills;
@@ -63,6 +65,7 @@ import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
@@ -79,6 +82,7 @@ import net.p1nero.ss.gameassets.skills.SwordControllerSkills;
 import net.p1nero.ss.item.SwordSoaringItems;
 import net.shelmarow.nightfall_invade.entity.NFIEntities;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
+import net.shelmarow.nightfall_invade.entity.spear_knight.ArteriusPatch;
 import net.sonmok14.fromtheshadows.server.entity.mob.BulldrogiothEntity;
 import net.unusual.blockfactorysbosses.entity.SwordWaveEntity;
 import net.unusual.blockfactorysbosses.entity.UnderworldKnightEntity;
@@ -239,7 +243,9 @@ public class LivingEntityEventListeners {
             }
 
             if(livingEntity instanceof AbstractIllager && !PlayerDataManager.pillagerKilled.get(player)) {
-                    ItemUtil.addItemEntity(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
+                ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
+                itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
+                ItemUtil.addItemEntity(player, itemStack, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
             }
 
             if(livingEntity instanceof IronGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND)) {
@@ -259,10 +265,17 @@ public class LivingEntityEventListeners {
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss3"), false);
             }
 
-            //TODO 改boss
-            if(livingEntity instanceof UnderworldKnightEntity && !PlayerDataManager.flameEyeTraded.get(player)) {
+            if(livingEntity instanceof Arterius arterius && !PlayerDataManager.flameEyeTraded.get(player)) {
                 ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
-                player.displayClientMessage(TCRCoreMod.getInfo("kill_boss2"), false);
+                player.displayClientMessage(TCRCoreMod.getInfo("kill_arterius", NFIEntities.ARTERIUS.get().getDescription().copy().withStyle(ChatFormatting.RED), EFNItem.DUSKFIRE_INGOT.get().getDescription()), false);
+                ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), 3, ChatFormatting.RED.getColor());
+                arterius.resetBossStatus(true);
+                arterius.setInBattle(false);
+                EpicFightCapabilities.getUnparameterizedEntityPatch(arterius, ArteriusPatch.class).ifPresent(arteriusPatch -> {
+                    arteriusPatch.playAnimation(Animations.GREATSWORD_GUARD_BREAK, 3);
+                });
+                PlayerDataManager.arteriusKilled.put(player, true);
+                event.setCanceled(true);
             }
 
             if(livingEntity instanceof CaptainCornelia && !PlayerDataManager.cursedEyeTraded.get(player)) {
@@ -307,37 +320,30 @@ public class LivingEntityEventListeners {
                 serverLevel.players().forEach(serverPlayer -> {
 //                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("wraithon_end_tip"), false);
                     TCRCapabilityProvider.getTCRPlayer(serverPlayer).setTickAfterBossDieLeft(200);
-                    serverPlayer.getCapability(SkillTreeProgression.SKILL_TREE_PROGRESSION).ifPresent(skillTreeProgression -> {
-                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.RAIN_SWORD);
-                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.SCREEN_SWORD);
-                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.KILL_AURA_1);
-                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.KILL_AURA_2);
-                        serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.RAIN_SWORD.getDisplayName()), false);
-                        serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.SCREEN_SWORD.getDisplayName()), false);
-                        serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.KILL_AURA_1.getDisplayName()), false);
-                        serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.KILL_AURA_2.getDisplayName()), false);
-                    });
                 });
             }
 
             if(livingEntity instanceof IronGolem ironGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //秽土转生
-                EntityType.IRON_GOLEM.spawn(serverLevel, ironGolem.getOnPos().above(), MobSpawnType.MOB_SUMMONED);
+                EntityRespawnerMod.addToRespawn(ironGolem, 40, true);
                 ItemUtil.addItemEntity(livingEntity, SGItems.GOLEM_HEART.get(), 1, ChatFormatting.GOLD.getColor().intValue());
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
             if(livingEntity instanceof Bone_Chimera_Entity boneChimeraEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.SAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //偷懒，直接秽土转生
-                ModEntities.BONE_CHIMERA.get().spawn(serverLevel, boneChimeraEntity.getOnPos().above(), MobSpawnType.MOB_SUMMONED);
+                EntityRespawnerMod.addToRespawn(boneChimeraEntity, 100, true);
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
-            //TODO 换boss
             if(livingEntity instanceof UnderworldKnightEntity underworldKnight && WorldUtil.isInStructure(livingEntity, WorldUtil.FIRE) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //偷懒，直接秽土转生
-                BlockFactorysBossesModEntities.UNDERWORLD_KNIGHT.get().spawn(serverLevel, underworldKnight.getOnPos().above(), MobSpawnType.MOB_SUMMONED);
+                EntityRespawnerMod.addToRespawn(underworldKnight, 100, true);
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
+            }
+
+            if (livingEntity instanceof Maledictus_Entity) {
+                ItemUtil.addItemEntity(livingEntity, TCRItems.DUAL_BOKKEN.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor());
             }
 
         }
@@ -430,7 +436,7 @@ public class LivingEntityEventListeners {
     public static void onMobSpawn(MobSpawnEvent.FinalizeSpawn event){
         if(AquamiraeUtils.isInIceMaze(event.getEntity())) {
             if(event.getEntity() instanceof Pillager pillager && event.getEntity().getRandom().nextFloat() < 0.3) {
-                pillager.getPersistentData().putString("DeathLootTable", Aquamirae.MODID + ":maze_captain");
+                pillager.getPersistentData().putString("DeathLootTable", Aquamirae.MODID + ":entities/maze_captain");
                 pillager.setGlowingTag(true);
             }
             if(event.getEntity().getLootTable().toString().endsWith("captain")) {
@@ -441,6 +447,9 @@ public class LivingEntityEventListeners {
             if(event.getEntity() instanceof UnderworldKnightEntity underworldKnight && WorldUtil.isInStructure(underworldKnight, WorldUtil.FIRE)) {
                 if(EntityUtil.getNearByEntities(event.getLevel().getLevel(), underworldKnight.position(), 50, Arterius.class).isEmpty()) {
                     Arterius arterius = NFIEntities.ARTERIUS.get().spawn(event.getLevel().getLevel(), underworldKnight.getOnPos().above(5), MobSpawnType.STRUCTURE);
+                    if(arterius != null) {
+                        arterius.setInBattle(false);
+                    }
                 }
                 event.setCanceled(true);
                 event.getLevel().destroyBlock(underworldKnight.getOnPos(), false);
@@ -454,6 +463,11 @@ public class LivingEntityEventListeners {
         if(event.getEntity().level().isClientSide) {
             return;
         }
+
+        if(event.getEntity() instanceof Arterius arterius) {
+            arterius.setInBattle(false);
+        }
+
         ServerLevel serverLevel = (ServerLevel) event.getEntity().level();
 
         if(event.getEntity() instanceof ItemEntity itemEntity) {

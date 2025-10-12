@@ -3,11 +3,16 @@ package com.p1nero.tcrcore.events;
 import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.hm.efn.registries.EFNItem;
+import com.p1nero.p1nero_ec.PECMod;
+import com.p1nero.p1nero_ec.client.item_renderer.RenderAnnihilator;
+import com.p1nero.p1nero_ec.client.item_renderer.RenderGauntletGuard;
+import com.p1nero.p1nero_ec.client.item_renderer.RenderTidalClaw;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.block.TCRBlocks;
 import com.p1nero.tcrcore.block.client.AltarBlockRenderer;
 import com.p1nero.tcrcore.block.entity.TCRBlockEntities;
 import com.p1nero.tcrcore.client.gui.BlockTooltipHandler;
+import com.p1nero.tcrcore.client.item_renderer.RenderDualBokken;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.entity.custom.girl.GirlGeoRenderer;
 import com.p1nero.tcrcore.entity.custom.guider.GuiderGeoRenderer;
@@ -16,6 +21,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ItemEntityRenderer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -83,5 +89,11 @@ public class ClientModEvents {
         event.registerBlockEntityRenderer(TCRBlockEntities.MONST_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
         event.registerBlockEntityRenderer(TCRBlockEntities.VOID_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
         event.registerBlockEntityRenderer(TCRBlockEntities.MECH_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
+    }
+
+
+    @SubscribeEvent
+    public static void registerItemRenderer(PatchedRenderersEvent.RegisterItemRenderer event) {
+        event.addItemRenderer(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "dual_bokken"), RenderDualBokken::new);
     }
 }

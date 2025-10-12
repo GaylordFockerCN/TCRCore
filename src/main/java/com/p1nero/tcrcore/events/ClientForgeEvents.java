@@ -3,6 +3,7 @@ package com.p1nero.tcrcore.events;
 import com.p1nero.dialog_lib.client.screen.DialogueScreen;
 import com.p1nero.dialog_lib.events.ClientNpcEntityDialogueEvent;
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.client.gui.HandleArteriusDialog;
 import com.p1nero.tcrcore.client.gui.HandleIronGolemDialog;
 import com.p1nero.tcrcore.client.gui.HandleSkrytheEntityDialog;
 import com.p1nero.tcrcore.client.gui.HandleVillagerDialog;
@@ -16,6 +17,7 @@ import net.minecraftforge.client.event.RenderGuiEvent;
 import net.minecraftforge.client.event.RenderGuiOverlayEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID, value = Dist.CLIENT)
 public class ClientForgeEvents {
@@ -41,6 +43,9 @@ public class ClientForgeEvents {
         }
         if(event.getSelf() instanceof SkrytheEntity skrytheEntity) {
             HandleSkrytheEntityDialog.openDialogScreen(skrytheEntity, event.getLocalPlayer(), event.getServerData());
+        }
+        if(event.getSelf() instanceof Arterius arterius) {
+            HandleArteriusDialog.openDialogScreen(arterius, event.getLocalPlayer(), event.getServerData());
         }
     }
 

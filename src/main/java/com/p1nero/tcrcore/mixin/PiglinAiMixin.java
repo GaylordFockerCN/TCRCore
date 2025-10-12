@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.mixin;
 
 import com.github.L_Ender.cataclysm.init.ModItems;
+import com.hm.efn.registries.EFNItem;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.item.ItemStack;
@@ -24,7 +25,7 @@ public abstract class PiglinAiMixin {
 
     @Inject(method = "stopHoldingOffHandItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/piglin/PiglinAi;throwItems(Lnet/minecraft/world/entity/monster/piglin/Piglin;Ljava/util/List;)V"), locals = LocalCapture.CAPTURE_FAILSOFT, cancellable = true)
     private static void stopHoldingOffHandItem(Piglin piglin, boolean p_34869_, CallbackInfo ci, ItemStack itemstack) {
-        if (itemstack.getItem() == ModItems.MONSTROUS_HORN.get()) {
+        if (itemstack.getItem() == EFNItem.DUSKFIRE_INGOT.get()) {
             throwItems(piglin, Collections.singletonList(ModItems.MONSTROUS_EYE.get().getDefaultInstance()));
             ci.cancel();
         }

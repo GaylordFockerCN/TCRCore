@@ -20,6 +20,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
 import org.merlin204.wraithon.util.PositionTeleporter;
 
 import java.util.Iterator;
@@ -33,6 +34,14 @@ public class ForgeEvents {
             if(event.getInteractId() == 1) {
                 ironGolem.setPlayerCreated(false);
                 ironGolem.setTarget(event.getServerPlayer());
+            }
+        }
+
+        if(event.getSelf() instanceof Arterius arterius) {
+            if(event.getInteractId() == 1) {
+                arterius.resetBossStatus(true);
+                arterius.setInBattle(true);
+                arterius.setTarget(event.getServerPlayer());
             }
         }
 
