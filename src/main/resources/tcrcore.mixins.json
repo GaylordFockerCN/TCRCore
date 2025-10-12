@@ -13,6 +13,7 @@
     "BackpackConfigMixin",
     "BoatItemMixin",
     "Bone_ChimeraMixin",
+    "BossSpawnerBlockEntityMixin",
     "CaptainCorneliaMixin",
     "CeraunusMixin",
     "DodgeAnimationMixin",

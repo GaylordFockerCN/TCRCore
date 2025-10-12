@@ -5,6 +5,7 @@ import com.hm.efn.registries.EFNItem;
 import com.p1nero.dialog_lib.api.component.DialogNode;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
 import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.nbt.CompoundTag;
@@ -28,8 +29,15 @@ public class HandleArteriusDialog {
                             .addChild(treeBuilder.newFinalNode(2, 1))
                             .addChild(treeBuilder.newFinalNode(3))
                     )
-                    .addChild(new DialogNode(componentBuilder.ans(4, ModEntities.NETHERITE_MONSTROSITY.get().getDescription(), EFNItem.DUSKFIRE_INGOT.get().getDescription(), EFNItem.DUSKFIRE_INGOT.get().getDescription()), componentBuilder.opt(5))
-                            .addChild(new DialogNode(componentBuilder.ans(5, EntityType.ENDER_DRAGON.getDescription(), EntityType.WITHER.getDescription(), ModEntities.ENDER_GUARDIAN.get().getDescription(), ModEntities.THE_HARBINGER.get().getDescription()), componentBuilder.opt(6))
+                    .addChild(new DialogNode(componentBuilder.ans(4,
+                            ModEntities.NETHERITE_MONSTROSITY.get().getDescription().copy().withStyle(ChatFormatting.RED),
+                            EFNItem.DUSKFIRE_INGOT.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                            EFNItem.DUSKFIRE_INGOT.get().getDescription().copy().withStyle(ChatFormatting.GOLD)), componentBuilder.opt(5))
+                            .addChild(new DialogNode(componentBuilder.ans(5,
+                                    EntityType.ENDER_DRAGON.getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE),
+                                    EntityType.WITHER.getDescription().copy().withStyle(ChatFormatting.RED),
+                                    ModEntities.ENDER_GUARDIAN.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE),
+                                    ModEntities.THE_HARBINGER.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED)), componentBuilder.opt(6))
                                     .addLeaf(componentBuilder.opt(7)))
                     )
 

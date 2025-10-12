@@ -53,6 +53,10 @@ public class WorldUtil {
         return new SafeStructureLocationPredicate(ResourceKey.create(Registries.STRUCTURE, ResourceLocation.parse(structure))).matches(((ServerLevel) entity.level()), entity.getX(), entity.getY(), entity.getZ());
     }
 
+    public static boolean isInStructure(ServerLevel serverLevel, Vec3 pos, String structure) {
+        return new SafeStructureLocationPredicate(ResourceKey.create(Registries.STRUCTURE, ResourceLocation.parse(structure))).matches(serverLevel, pos.x(), pos.y(), pos.z());
+    }
+
     /**
      * 获取结构位置
      */

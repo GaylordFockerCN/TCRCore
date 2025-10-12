@@ -245,7 +245,7 @@ public class LivingEntityEventListeners {
             if(livingEntity instanceof AbstractIllager && !PlayerDataManager.pillagerKilled.get(player)) {
                 ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
                 itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
-                ItemUtil.addItemEntity(player, itemStack, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
+                ItemUtil.addItemEntity(player, itemStack, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                 PlayerDataManager.pillagerKilled.put(player, true);
             }
 
@@ -444,18 +444,6 @@ public class LivingEntityEventListeners {
                 event.getEntity().setGlowingTag(true);
             }
         }
-//        if(event.getLevel().getLevel().dimension() == Level.OVERWORLD) {
-//            if(event.getEntity() instanceof UnderworldKnightEntity underworldKnight && WorldUtil.isInStructure(underworldKnight, WorldUtil.FIRE)) {
-//                if(EntityUtil.getNearByEntities(event.getLevel().getLevel(), underworldKnight.position(), 50, Arterius.class).isEmpty()) {
-//                    Arterius arterius = NFIEntities.ARTERIUS.get().spawn(event.getLevel().getLevel(), underworldKnight.getOnPos().above(5), MobSpawnType.STRUCTURE);
-//                    if(arterius != null) {
-//                        arterius.setInBattle(false);
-//                    }
-//                }
-//                event.setCanceled(true);
-//                event.getLevel().destroyBlock(underworldKnight.getOnPos(), false);
-//            }
-//        }
     }
 
     @SubscribeEvent

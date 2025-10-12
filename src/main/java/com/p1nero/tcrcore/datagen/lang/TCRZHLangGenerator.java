@@ -280,10 +280,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 1, "哈哈哈，守望者将烈焰之眼托付于我，为的是避免落入不义之人手中。即使是她老人家亲自来了，也得过我这关！我倒是要看看，你有没有这个能耐！");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 2, "异界之人，好久不见！");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 3, "准备好了吗？");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 4, "位于地狱的[猪灵一族]，在黑潮时期，曾造出[%s]来抵御黑潮。可惜他们败了，失去了神智。但他们仍然认得[%s§f§f]，使用[%s§f§f]与他们交易，便可揭开远古战争机器的面纱。");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 4, "位于地狱的§6[猪灵一族]§f，在黑潮时期，曾造出[%s]来抵御黑潮。可惜他们败了，失去了神智。但他们仍然认得[%s§f§f]，使用[%s§f§f]与他们交易，便可揭开远古战争机器的面纱。");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 5, "[%s]和[%s]，则分别守护着[%s]和[%s]的回响。");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 6, "饰品提取");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 7, "饰品提取");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 0, "取回烈焰之眼");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 1, "取你性命");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 2, "发起挑战");

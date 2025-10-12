@@ -13,6 +13,7 @@ import net.alp.monsterexpansion.entity.ModEntities;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
+import net.shelmarow.nightfall_invade.entity.NFIEntities;
 import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
 import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModItems;
 
@@ -271,5 +272,19 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.GIRL.get(), 8, "Confirm");
         this.addDialogOption(TCREntities.GIRL.get(), 9, "Artifact Extraction");
 
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 0, "Otherworldly one, why have you come here?");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 1, "Hahaha, the Sanctuary Keeper entrusted the Eye of Flame to me to prevent it from falling into the hands of the unworthy. Even if she were to come herself, she would have to get through me! Let me see if you have what it takes!");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 2, "Otherworldly one, long time no see!");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 3, "Are you ready?");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 4, "During the Black Tide, the §6[Piglin clan]§f§f of the Nether created [%s] to resist the darkness. Unfortunately, they were defeated and lost their sanity. However, they still recognize [%s§f§f]. Use [%s§f§f] to trade with them, and you may unveil the secrets of the ancient war machines.");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 5, "[%s] and [%s] guard the echoes of [%s] and [%s], respectively.");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 0, "Retrieve the Eye of Flame");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 1, "Take your life");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 2, "I'm ready");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 3, "Wait a moment");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 4, "Spar with me");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 5, "Ask information");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 6, "Continue");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 7, "Take my leave");
     }
 }
