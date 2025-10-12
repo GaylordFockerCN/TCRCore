@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:nether_star"
+    },
+    "base": {
+        "item": "magistuarmory:netherite_lucernhammer"
+    },
+    "result": {
+        "item": "cataclysm:meat_shredder"
+    },
+    "template": {
+        "item": "cataclysm:witherite_ingot"
+    }
+}

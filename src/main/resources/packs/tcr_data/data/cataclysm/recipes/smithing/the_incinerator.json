@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:blaze_rod"
+    },
+    "base": {
+        "item": "epicfight:netherite_greatsword"
+    },
+    "result": {
+        "item": "cataclysm:the_incinerator"
+    },
+    "template": {
+        "item": "cataclysm:ignitium_ingot"
+    }
+}

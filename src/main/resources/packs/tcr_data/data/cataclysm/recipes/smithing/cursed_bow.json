@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "cataclysm:black_steel_ingot"
+    },
+    "base": {
+        "item": "p1nero_bow:mortis"
+    },
+    "result": {
+        "item": "cataclysm:cursed_bow"
+    },
+    "template": {
+        "item": "cataclysm:cursium_ingot"
+    }
+}

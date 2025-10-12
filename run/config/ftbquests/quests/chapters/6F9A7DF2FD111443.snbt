@@ -19,17 +19,13 @@
 		rotation: 0.0d
 		width: 32.0d
 		x: 0.0d
-		y: -3.0d
+		y: 0.0d
 	}]
 	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
-			description: [
-				"{ftbquests.chapter.6F9A7DF2FD111443.quest7301166028169305205.description1}"
-				""
-				"{ftbquests.chapter.6F9A7DF2FD111443.quest7301166028169305205.description2}"
-			]
+			description: [""]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
 			icon: "fantasy_armor:moon_crystal"
@@ -41,7 +37,7 @@
 				item: "fantasy_armor:moon_crystal"
 				type: "item"
 			}]
-			shape: "square"
+			shape: "none"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest7301166028169305205.subtitle}"
 			tasks: [{
@@ -53,18 +49,18 @@
 			}]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest7301166028169305205.title}"
 			x: 0.0d
-			y: 2.0d
+			y: -9.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
-			description: ["{ftbquests.chapter.6F9A7DF2FD111443.quest8905345727084916768.description1}"]
+			icon_scale: 1.5d
 			id: "7B9624C198F07020"
 			rewards: [{
-				id: "30E35F3F8FAE4A06"
-				type: "xp"
-				xp: 100
+				id: "67602EDBC04A826D"
+				type: "xp_levels"
+				xp_levels: 100
 			}]
-			shape: "rsquare"
+			shape: "none"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest8905345727084916768.subtitle}"
 			tasks: [
@@ -158,19 +154,19 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest8905345727084916768.title}"
-			x: -6.0d
-			y: -7.5d
+			x: 3.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
-			description: ["{ftbquests.chapter.6F9A7DF2FD111443.quest5383589744301195021.description1}"]
+			icon_scale: 1.5d
 			id: "4AB65A5955823F0D"
 			rewards: [{
-				id: "203FF9EBF99D0C37"
-				type: "xp"
-				xp: 100
+				id: "13550954D93482D5"
+				type: "xp_levels"
+				xp_levels: 100
 			}]
-			shape: "rsquare"
+			shape: "none"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest5383589744301195021.subtitle}"
 			tasks: [
@@ -220,19 +216,19 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest5383589744301195021.title}"
-			x: 6.0d
-			y: -7.5d
+			x: 0.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
-			description: ["{ftbquests.chapter.6F9A7DF2FD111443.quest423285769789054440.description1}"]
+			icon_scale: 1.5d
 			id: "05DFD02A3AC11DE8"
 			rewards: [{
-				id: "3E31656CDA57D1DC"
-				type: "xp"
-				xp: 100
+				id: "654432D990A0D717"
+				type: "xp_levels"
+				xp_levels: 100
 			}]
-			shape: "rsquare"
+			shape: "none"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest423285769789054440.subtitle}"
 			tasks: [
@@ -326,8 +322,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest423285769789054440.title}"
-			x: 0.0d
-			y: -9.75d
+			x: -3.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -345,7 +341,8 @@
 				type: "xp"
 				xp: 100
 			}]
-			shape: "rsquare"
+			shape: "none"
+			size: 1.5d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest6067430759483142731.subtitle}"
 			tasks: [
 				{
@@ -371,17 +368,6 @@
 					type: "item"
 				}
 				{
-					id: "07C866732B5EBBB8"
-					item: {
-						Count: 1
-						id: "aquamirae:three_bolt_boots"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
 					id: "49829D98ED8EF190"
 					item: {
 						Count: 1
@@ -392,14 +378,24 @@
 					}
 					type: "item"
 				}
+				{
+					id: "07C866732B5EBBB8"
+					item: {
+						Count: 1
+						id: "aquamirae:three_bolt_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest6067430759483142731.title}"
-			x: 0.0d
-			y: -2.0d
+			x: -4.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
-			description: ["{ftbquests.chapter.6F9A7DF2FD111443.quest1691663356384465641.description1}"]
 			icon: {
 				Count: 1
 				id: "fromtheshadows:diabolium_helmet"
@@ -414,14 +410,15 @@
 				type: "xp"
 				xp: 100
 			}]
-			shape: "rsquare"
+			shape: "none"
+			size: 1.5d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest1691663356384465641.subtitle}"
 			tasks: [
 				{
-					id: "554A5A2845ABD3FA"
+					id: "7CA52384A2948395"
 					item: {
 						Count: 1
-						id: "fromtheshadows:diabolium_chest"
+						id: "fromtheshadows:diabolium_helmet"
 						tag: {
 							Damage: 0
 						}
@@ -429,10 +426,10 @@
 					type: "item"
 				}
 				{
-					id: "7CA52384A2948395"
+					id: "554A5A2845ABD3FA"
 					item: {
 						Count: 1
-						id: "fromtheshadows:diabolium_helmet"
+						id: "fromtheshadows:diabolium_chest"
 						tag: {
 							Damage: 0
 						}
@@ -463,8 +460,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest1691663356384465641.title}"
-			x: -1.0d
-			y: -0.40000000000000036d
+			x: -2.25d
+			y: 0.75d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -482,14 +479,15 @@
 				type: "xp"
 				xp: 100
 			}]
-			shape: "rsquare"
+			shape: "none"
+			size: 1.5d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest1725420005041994707.subtitle}"
 			tasks: [
 				{
-					id: "18AD35A7F0CA77E8"
+					id: "786B2CCB8E28EBA8"
 					item: {
 						Count: 1
-						id: "fromtheshadows:crust_chest"
+						id: "fromtheshadows:crust_helmet"
 						tag: {
 							Damage: 0
 						}
@@ -497,10 +495,10 @@
 					type: "item"
 				}
 				{
-					id: "786B2CCB8E28EBA8"
+					id: "18AD35A7F0CA77E8"
 					item: {
 						Count: 1
-						id: "fromtheshadows:crust_helmet"
+						id: "fromtheshadows:crust_chest"
 						tag: {
 							Damage: 0
 						}
@@ -520,23 +518,24 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest1725420005041994707.title}"
-			x: 1.0d
-			y: -0.40000000000000036d
+			x: 2.25d
+			y: 0.75d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
 			icon: {
 				Count: 1
-				id: "cataclysm:bone_reptile_chestplate"
+				id: "cataclysm:bone_reptile_helmet"
 				tag: {
 					Damage: 0
 				}
 			}
+			icon_scale: 1.5d
 			id: "3CB062BCA9BD0FEC"
 			rewards: [{
-				id: "67F6375E1C6965ED"
-				type: "xp"
-				xp: 100
+				id: "31EB92B29AF10D84"
+				item: "fantasy_armor:moon_crystal"
+				type: "item"
 			}]
 			shape: "none"
 			size: 2.0d
@@ -566,11 +565,12 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest4373103800617865196.title}"
-			x: -4.0d
-			y: -5.75d
+			x: 2.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
+			icon: "block_factorys_bosses:dragon_skull"
 			icon_scale: 1.5d
 			id: "7587A089143BA6FA"
 			rewards: [{
@@ -578,8 +578,8 @@
 				type: "xp"
 				xp: 100
 			}]
-			shape: "rsquare"
-			size: 1.2d
+			shape: "none"
+			size: 1.5d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest8468914134903924474.subtitle}"
 			tasks: [
 				{
@@ -622,19 +622,25 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest8468914134903924474.title}"
-			x: -1.2d
-			y: -3.5999999999999996d
+			x: 4.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
 			icon: {
 				Count: 1
-				id: "cataclysm:ignitium_elytra_chestplate"
+				id: "cataclysm:ignitium_helmet"
 				tag: {
 					Damage: 0
 				}
 			}
+			icon_scale: 1.5d
 			id: "66B95BDCAFA07D10"
+			rewards: [{
+				id: "506E18C59C183072"
+				item: "fantasy_armor:moon_crystal"
+				type: "item"
+			}]
 			shape: "none"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest7402048465957584144.subtitle}"
@@ -654,7 +660,7 @@
 					id: "59A4FEFE2F3CEFCA"
 					item: {
 						Count: 1
-						id: "cataclysm:ignitium_elytra_chestplate"
+						id: "cataclysm:ignitium_chestplate"
 						tag: {
 							Damage: 0
 						}
@@ -685,23 +691,24 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest7402048465957584144.title}"
-			x: 0.0d
-			y: -6.0d
+			x: -5.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
 			icon: {
 				Count: 1
-				id: "cataclysm:cursium_chestplate"
+				id: "cataclysm:cursium_helmet"
 				tag: {
 					Damage: 0
 				}
 			}
+			icon_scale: 1.5d
 			id: "54C39AAE680800C8"
 			rewards: [{
-				id: "6E2B89BC984681E7"
-				type: "xp"
-				xp: 100
+				id: "4D714DF16FF01A32"
+				item: "fantasy_armor:moon_crystal"
+				type: "item"
 			}]
 			shape: "none"
 			size: 2.0d
@@ -753,11 +760,18 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest6107895593504866504.title}"
-			x: 3.5d
-			y: -5.75d
+			x: -2.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
+			icon: {
+				Count: 1
+				id: "monsterexpansion:skrythe_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
 			icon_scale: 1.5d
 			id: "083E31035AB51591"
 			rewards: [{
@@ -765,15 +779,15 @@
 				type: "xp"
 				xp: 100
 			}]
-			shape: "rsquare"
-			size: 1.2d
+			shape: "none"
+			size: 1.5d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest593966091335964049.subtitle}"
 			tasks: [
 				{
-					id: "70CF4BD036E613E0"
+					id: "0C4B82D4296CD742"
 					item: {
 						Count: 1
-						id: "monsterexpansion:skrythe_chestplate"
+						id: "monsterexpansion:skrythe_helmet"
 						tag: {
 							Damage: 0
 						}
@@ -781,10 +795,10 @@
 					type: "item"
 				}
 				{
-					id: "0C4B82D4296CD742"
+					id: "70CF4BD036E613E0"
 					item: {
 						Count: 1
-						id: "monsterexpansion:skrythe_helmet"
+						id: "monsterexpansion:skrythe_chestplate"
 						tag: {
 							Damage: 0
 						}
@@ -815,8 +829,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest593966091335964049.title}"
-			x: 1.2d
-			y: -3.5999999999999996d
+			x: 0.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -834,7 +848,8 @@
 				type: "xp"
 				xp: 100
 			}]
-			shape: "rsquare"
+			shape: "none"
+			size: 1.5d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest3981524518237695884.subtitle}"
 			tasks: [
 				{
@@ -881,21 +896,10 @@
 					}
 					type: "item"
 				}
-				{
-					id: "0F71C6903E78E59B"
-					item: {
-						Count: 1
-						id: "aquamirae:abyssal_tiara"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest3981524518237695884.title}"
 			x: -1.5d
-			y: -2.0d
+			y: 3.75d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -913,7 +917,8 @@
 				type: "xp"
 				xp: 100
 			}]
-			shape: "rsquare"
+			shape: "none"
+			size: 1.5d
 			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest3452598305336821364.subtitle}"
 			tasks: [
 				{
@@ -962,8 +967,310 @@
 				}
 			]
 			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest3452598305336821364.title}"
-			x: 1.5d
+			x: -3.75d
+			y: 3.75d
+		}
+		{
+			dependencies: ["6552F3D1C32E5C75"]
+			icon: {
+				Count: 1
+				id: "cataclysm:monstrous_helm"
+				tag: {
+					Damage: 0
+				}
+			}
+			icon_scale: 1.5d
+			id: "0B54A04300D37937"
+			rewards: [{
+				id: "66AB65019B0E4DB4"
+				item: "fantasy_armor:moon_crystal"
+				type: "item"
+			}]
+			shape: "none"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest816453642098014519.subtitle}"
+			tasks: [{
+				id: "4349764666256787"
+				item: {
+					Count: 1
+					id: "cataclysm:monstrous_helm"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 5.0d
 			y: -2.0d
+		}
+		{
+			dependencies: ["6552F3D1C32E5C75"]
+			icon_scale: 1.5d
+			id: "275F6F276BCB8C38"
+			rewards: [{
+				id: "0D2B8E1527740EB3"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "none"
+			size: 1.5d
+			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest2837108505369611320.subtitle}"
+			tasks: [{
+				id: "7ECDE01560E3861C"
+				item: "mowziesmobs:wrought_helmet"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["6552F3D1C32E5C75"]
+			icon: "mowziesmobs:sol_visage"
+			icon_scale: 1.5d
+			id: "1D1BBCB1583DFAA8"
+			rewards: [{
+				id: "0CE631B72A2AA3AC"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "none"
+			size: 1.5d
+			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest2097477521346788008.subtitle}"
+			tasks: [{
+				id: "256A1FD0A1839A43"
+				item: "mowziesmobs:sol_visage"
+				type: "item"
+			}]
+			x: 3.75d
+			y: 3.75d
+		}
+		{
+			dependencies: ["6552F3D1C32E5C75"]
+			icon_scale: 1.5d
+			id: "6C3093F5277339EE"
+			rewards: [{
+				id: "2B75FA48A6D1287F"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "none"
+			size: 1.5d
+			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest7795893636116462062.subtitle}"
+			tasks: [
+				{
+					id: "4645C533EE3AFA22"
+					item: {
+						Count: 1
+						id: "mowziesmobs:umvuthana_mask_fury"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "123522EBFEC9CA6F"
+					item: {
+						Count: 1
+						id: "mowziesmobs:umvuthana_mask_fear"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "3485015E1F288C1B"
+					item: {
+						Count: 1
+						id: "mowziesmobs:umvuthana_mask_rage"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "3A5BED5439E2BEE8"
+					item: {
+						Count: 1
+						id: "mowziesmobs:umvuthana_mask_bliss"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "7E6F33001C7B5077"
+					item: {
+						Count: 1
+						id: "mowziesmobs:umvuthana_mask_misery"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "36F58CA6F10CF30C"
+					item: {
+						Count: 1
+						id: "mowziesmobs:umvuthana_mask_faith"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest7795893636116462062.title}"
+			x: 6.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["6552F3D1C32E5C75"]
+			icon: {
+				Count: 1
+				id: "mowziesmobs:geomancer_beads"
+				tag: {
+					Damage: 0
+				}
+			}
+			icon_scale: 1.5d
+			id: "3ECC6B589E42DF72"
+			rewards: [{
+				id: "68071C7859774D04"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "none"
+			size: 1.5d
+			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest4525109753956982642.subtitle}"
+			tasks: [
+				{
+					id: "5F2708D29535EC41"
+					item: {
+						Count: 1
+						id: "mowziesmobs:geomancer_beads"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "29958FA2E262C730"
+					item: {
+						Count: 1
+						id: "mowziesmobs:geomancer_robe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1E66D9EDE301BC51"
+					item: {
+						Count: 1
+						id: "mowziesmobs:geomancer_belt"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7F0F5EECC6F3CE69"
+					item: {
+						Count: 1
+						id: "mowziesmobs:geomancer_sandals"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest4525109753956982642.title}"
+			x: 1.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["6552F3D1C32E5C75"]
+			icon: {
+				Count: 1
+				id: "monsterexpansion:rhyza_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			icon_scale: 1.5d
+			id: "2D52E40AA55DAC05"
+			rewards: [{
+				id: "34C58E317D515A20"
+				item: "fantasy_armor:moon_crystal"
+				type: "item"
+			}]
+			shape: "none"
+			size: 1.5d
+			subtitle: "{ftbquests.chapter.6F9A7DF2FD111443.quest3265923414172216325.subtitle}"
+			tasks: [
+				{
+					id: "5446EE89FC095BC4"
+					item: {
+						Count: 1
+						id: "monsterexpansion:rhyza_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "04F2477174983593"
+					item: {
+						Count: 1
+						id: "monsterexpansion:rhyza_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3279DF419336419E"
+					item: {
+						Count: 1
+						id: "monsterexpansion:rhyza_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4E043A059BDEBF8A"
+					item: {
+						Count: 1
+						id: "monsterexpansion:rhyza_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "{ftbquests.chapter.6F9A7DF2FD111443.quest3265923414172216325.title}"
+			x: 0.0d
+			y: 2.25d
 		}
 	]
 	subtitle: ["{ftbquests.chapter.6F9A7DF2FD111443.subtitle0}"]

@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:blaze_rod"
+    },
+    "base": {
+        "item": "artifacts:fire_gauntlet"
+    },
+    "result": {
+        "item": "cataclysm:blazing_grips"
+    },
+    "template": {
+        "item": "cataclysm:ignitium_ingot"
+    }
+}

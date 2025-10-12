@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:iron_ingot"
+    },
+    "base": {
+        "item": "epicfight:uchigatana"
+    },
+    "result": {
+        "item": "efn:sword_of_pioneer"
+    },
+    "template": {
+        "item": "super_golem:golem_heart"
+    }
+}

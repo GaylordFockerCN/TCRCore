@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:bone"
+    },
+    "base": {
+        "item": "efn:co_tachi"
+    },
+    "result": {
+        "item": "efn:air_tachi"
+    },
+    "template": {
+        "item": "block_factorys_bosses:dragon_bone"
+    }
+}
