@@ -10,6 +10,6 @@
         "item": "cataclysm:gauntlet_of_guard"
     },
     "template": {
-        "item": "cataclysm:music_disc_ender_guardian"
+        "item": "tcrcore:void_core"
     }
 }
