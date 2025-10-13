@@ -1,0 +1,51 @@
+{
+  "name": "pillager_weapons",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/ballista_pillager",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/battering_ram_pillager",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/catapult_pillager",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/siege_tower_pillager",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/trebuchet_pillager",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      }
+  ]
+}

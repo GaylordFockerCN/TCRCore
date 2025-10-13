@@ -1,0 +1,30 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 10387312,
+    "separation": 16,
+    "spacing": 40
+  },
+  "structures": [
+    {
+      "structure": "trek:village/plains",
+      "weight": 1
+    },
+    {
+      "structure": "trek:village/desert",
+      "weight": 1
+    },
+    {
+      "structure": "trek:village/savanna",
+      "weight": 1
+    },
+    {
+      "structure": "trek:village/snowy",
+      "weight": 1
+    },
+    {
+      "structure": "trek:village/taiga",
+      "weight": 1
+    }
+  ]
+}

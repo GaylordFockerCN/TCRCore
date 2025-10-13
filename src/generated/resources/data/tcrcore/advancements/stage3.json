@@ -1,0 +1,29 @@
+{
+  "parent": "tcrcore:tcrcore",
+  "criteria": {
+    "stage3": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.tcrcore.stage3.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:anvil"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.tcrcore.stage3"
+    }
+  },
+  "requirements": [
+    [
+      "stage3"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

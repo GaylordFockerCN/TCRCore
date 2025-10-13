@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+      {
+          "rolls": 6,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:orange_tulip",
+                  "weight": 1
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:pink_tulip",
+                  "weight": 1
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:red_tulip",
+                  "weight": 1
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:white_tulip",
+                  "weight": 1
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:cornflower",
+                  "weight": 1
+              }
+          ]
+      }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "values": [
+    "minecraft:swamp",
+    {"id": "floravive:freshwater_swamp","required": false},
+    {"id": "terralith:orchid_swamp","required": false},
+    {"id": "biomesoplenty:bog","required": false}
+  ]
+}

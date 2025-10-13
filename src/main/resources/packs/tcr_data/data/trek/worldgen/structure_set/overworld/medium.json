@@ -1,0 +1,317 @@
+{
+    "structures": [
+        {
+            "structure": "trek:overworld/medium/all_abandoned",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/base_1",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/base_2",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/base_pillager",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/beehive_house",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/birch_fort",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/bone_dragon",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/buried_village",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/camp_1",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/camp_2",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/camp_3",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/camp_4",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/church",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/claw_pillager",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/claw_spike",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/cold_hideout",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/cold_red_trade",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/dark_oak_trade",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/desert_ranch",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/destroyed_house",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/dirt_hut",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/enchanter",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/explorer_cabin",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/farm_pillager",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/farm",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/fort",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/frozen_tree",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/graveyard",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/haunted_house",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/hobbit_hole",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/ice_fort",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/igloo_village",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/jungle_trade",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/jungle_treehouse",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/lush_ice",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/maison",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/mangrove_watchtower",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/oasis",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/offshore_platform_pillager",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/orbital",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/pillager_old_camp",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/pillager_weapons",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/plains_cottage",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/railroad",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/ritual",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/ruine_bateaux",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/ruine_cabane",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/ruine_tour",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/ship_pillager",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/small_pyramide",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/small_red_trade",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/snow_cottage",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/snowman",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/sorcerers_house",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/spruce_camp",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/spruce_cottage",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/square_tower",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/star_spike",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/stelzen",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/stonehedge",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/strange_house",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/street_vendor_pillager",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/street_vendor_stall",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/three_finger_ice",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/tour",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/tour_desert",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/tower_of_ice",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/tower",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/underwater_sword",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/wandering_trader_dark_oak",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/wandering_trader_oak",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/wandering_trader_spruce",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/water_reservoir_pillager",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/well_pillager_medium",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/wild_stone",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/medium/witch_tower",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 30,
+        "separation": 12,
+        "spread_type": "linear",
+        "salt": 14357621,
+        "frequency_reduction_method": "default",
+        "frequency": 1
+    }
+}

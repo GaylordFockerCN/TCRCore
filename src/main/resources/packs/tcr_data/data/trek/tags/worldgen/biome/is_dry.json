@@ -1,0 +1,8 @@
+{
+  "values": [
+    "#trek:badlands/is_any_badlands",
+    "#trek:forest/acacia/is_any_savanna",
+    "#trek:is_desert",
+    {"id": "biomesoplenty:volcanic_plains","required": false}
+  ]
+}

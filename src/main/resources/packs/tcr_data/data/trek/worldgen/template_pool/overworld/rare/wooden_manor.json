@@ -1,0 +1,15 @@
+{
+  "name": "wooden_manor",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:legacy_single_pool_element",
+              "location": "trek:overworld/rare/wooden_manor",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      }
+  ]
+}

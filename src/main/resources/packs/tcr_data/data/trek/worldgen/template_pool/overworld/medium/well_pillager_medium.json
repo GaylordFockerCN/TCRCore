@@ -1,0 +1,33 @@
+{
+  "name": "well_pillager_medium",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/well_pillager_medium",
+              "projection": "rigid",
+              "processors": "trek:combination/crackify_50_mossify_50"
+          }
+      },
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/well_pillager_big",
+              "projection": "rigid",
+              "processors": "trek:combination/crackify_50_mossify_50"
+          }
+      },
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/broken_well",
+              "projection": "rigid",
+              "processors": "trek:combination/crackify_50_mossify_50"
+          }
+      }
+  ]
+}

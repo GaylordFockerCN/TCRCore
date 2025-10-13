@@ -1,0 +1,8 @@
+{
+  "values": [
+    "minecraft:ice_spikes",
+    "#trek:ocean/is_frozen_ocean",
+    {"id": "terralith:frozen_cliffs","required": false},
+    {"id": "terralith:glacial_chasm","required": false}
+  ]
+}

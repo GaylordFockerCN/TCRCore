@@ -1,0 +1,127 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+      {
+          "rolls": 1,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:pumpkin_pie",
+                  "weight": 1
+              },
+              {
+                  "type": "minecraft:empty",
+                  "weight": 3
+              }
+          ]
+      },
+      {
+          "rolls": 2,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:sweet_berries",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 2
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "rolls": 1,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:feather",
+                  "weight": 2,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 2,
+                              "max": 3
+                          }
+                      }
+                  ]
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:iron_nugget",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 2,
+                              "max": 3
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "rolls": 3,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:spruce_log",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 2
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "rolls": 1,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:wooden_axe",
+                  "weight": 1
+              },
+              {
+                  "type": "minecraft:empty",
+                  "weight": 4
+              }
+          ]
+      },
+      {
+          "rolls": 1,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:tripwire_hook",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 3
+                          }
+                      }
+                  ]
+              },
+              {
+                  "type": "minecraft:empty",
+                  "weight": 2
+              }
+          ]
+      }
+  ]
+}

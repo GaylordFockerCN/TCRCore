@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#minecraft:is_savanna",
+    {"id": "terralith:ashen_savanna","required": false},
+    {"id": "terralith:fractured_savanna","required": false},
+    {"id": "terralith:savanna_badlands","required": false},
+    {"id": "terralith:savanna_slopes","required": false},
+    {"id": "biomesoplenty:dryland","required": false},
+    {"id": "biomesoplenty:lush_savanna","required": false}
+  ]
+}

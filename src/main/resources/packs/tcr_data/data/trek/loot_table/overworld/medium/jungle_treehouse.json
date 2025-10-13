@@ -1,0 +1,68 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+      {
+          "rolls": 2,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:emerald",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 2
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "rolls": 4,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:cocoa_beans",
+                  "weight": 2,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 3,
+                              "max": 6
+                          }
+                      }
+                  ]
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:sugar_cane",
+                  "weight": 2,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": 3
+                      }
+                  ]
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:vine",
+                  "weight": 2,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 3,
+                              "max": 4
+                          }
+                      }
+                  ]
+              }
+          ]
+      }
+  ]
+}

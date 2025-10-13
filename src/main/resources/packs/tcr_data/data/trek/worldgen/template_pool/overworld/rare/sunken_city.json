@@ -1,0 +1,15 @@
+{
+  "name": "sunken_city",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/rare/sunken_city",
+              "projection": "rigid",
+              "processors": "trek:combination/crackify_20_mossify_50"
+          }
+      }
+  ]
+}

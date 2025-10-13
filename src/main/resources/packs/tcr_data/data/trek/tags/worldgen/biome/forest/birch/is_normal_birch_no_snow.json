@@ -1,0 +1,7 @@
+{
+  "values": [
+    "minecraft:birch_forest",
+    {"id": "terralith:temperate_highlands","required": false},
+    {"id": "terralith:white_cliffs","required": false}
+  ]
+}

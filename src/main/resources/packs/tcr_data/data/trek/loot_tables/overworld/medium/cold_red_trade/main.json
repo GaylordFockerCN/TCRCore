@@ -1,0 +1,71 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+      {
+          "rolls": 3,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:cooked_cod",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 2
+                          }
+                      }
+                  ]
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:cooked_salmon",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 2
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "rolls": 2,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:string",
+                  "weight": 2,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 0,
+                              "max": 2
+                          }
+                      }
+                  ]
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:bone",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 2
+                          }
+                      }
+                  ]
+              }
+          ]
+      }
+  ]
+}

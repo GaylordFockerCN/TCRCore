@@ -1,0 +1,44 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "exclusion_zone": {
+      "chunk_count": 10,
+      "other_set": "minecraft:villages"
+    },
+    "frequency": 0.2,
+    "frequency_reduction_method": "legacy_type_1",
+    "salt": 165745296,
+    "separation": 8,
+    "spacing": 32
+  },
+  "structures": [
+    {
+      "structure": "minecraft:pillager_outpost",
+      "weight": 3
+    },
+    {
+      "structure": "minecraft:pillager_outpost_dark_forest",
+      "weight": 1
+    },
+    {
+      "structure": "minecraft:pillager_outpost_forest",
+      "weight": 1
+    },
+    {
+      "structure": "minecraft:pillager_outpost_mangrove",
+      "weight": 1
+    },
+    {
+      "structure": "minecraft:pillager_outpost_swamp",
+      "weight": 1
+    },
+    {
+      "structure": "trek:overworld/medium/desert_outpost",
+      "weight": 1
+    },
+    {
+      "structure": "trek:overworld/medium/jungle_outpost",
+      "weight": 1
+    }
+  ]
+}

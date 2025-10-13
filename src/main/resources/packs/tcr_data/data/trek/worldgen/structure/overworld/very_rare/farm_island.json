@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:jigsaw",
+    "biomes": "#trek:combination/plains_savanna_no_snow",
+    "max_distance_from_center": 127,
+    "size": 4,
+    "spawn_overrides": {
+      "ambient": {
+        "bounding_box": "full",
+        "spawns": []
+      },
+      "monster": {
+        "bounding_box": "full",
+        "spawns": []
+      }
+    },
+    "start_height": {
+        "below_top": 120
+    },
+    "start_pool": "trek:overworld/very_rare/farm_island/farm_island_1",
+    "step": "surface_structures",
+    "terrain_adaptation": "none",
+    "use_expansion_hack": false
+  }

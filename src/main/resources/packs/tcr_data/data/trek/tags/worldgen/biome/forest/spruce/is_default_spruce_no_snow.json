@@ -1,0 +1,16 @@
+{
+  "values": [
+    "minecraft:taiga",
+    "minecraft:windswept_forest",
+    {"id": "terralith:forested_highlands","required": false},
+    {"id": "terralith:lush_valley","required": false},
+    {"id": "terralith:shield","required": false},
+    {"id": "terralith:siberian_taiga","required": false},
+    {"id": "terralith:yellowstone","required": false},
+    {"id": "biomesoplenty:forested_field","required": false},
+    {"id": "biomesoplenty:hot_springs","required": false},
+    {"id": "biomesoplenty:mediterranean_forest","required": false},
+    {"id": "biomesoplenty:tundra","required": false},
+    {"id": "biomesoplenty:wetland","required": false}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "values": [
+    "minecraft:jungle",
+    {"id": "terralith:jungle_mountains","required": false},
+    {"id": "terralith:rocky_jungle","required": false},
+    {"id": "biomesoplenty:rainforest","required": false}
+  ]
+}

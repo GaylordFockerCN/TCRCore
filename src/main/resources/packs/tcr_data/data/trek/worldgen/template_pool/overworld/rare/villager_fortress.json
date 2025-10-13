@@ -1,0 +1,15 @@
+{
+  "name": "villager_fortress",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/rare/villager_fortress",
+              "projection": "rigid",
+              "processors": "trek:combination/crackify_50_mossify_20"
+          }
+      }
+  ]
+}

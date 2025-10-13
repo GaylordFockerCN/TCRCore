@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#trek:forest/acacia/is_acacia_forest_no_snow",
+    "#trek:forest/birch/is_birch_forest_no_snow",
+    "#trek:forest/dark_oak/is_dark_oak_no_snow",
+    "#trek:forest/oak/is_oak_forest_no_snow",
+    "#trek:forest/spruce/is_spruce_forest_no_snow"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:beach",
+    {"id": "floravive:cold_beach","required": false},
+    {"id": "floravive:lukewarm_beach","required": false},
+    {"id": "floravive:warm_beach","required": false},
+    {"id": "biomesoplenty:dune_beach","required": false}
+  ]
+}

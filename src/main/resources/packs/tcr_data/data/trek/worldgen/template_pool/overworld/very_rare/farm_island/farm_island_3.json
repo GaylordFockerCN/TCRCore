@@ -1,0 +1,15 @@
+{
+    "name": "farm_island_3",
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "trek:overworld/very_rare/farm_island/farm_island_3",
+                "projection": "rigid",
+                "processors": "minecraft:empty"
+            }
+        }
+    ]
+  }

@@ -1,0 +1,14 @@
+{
+	"variants": {
+		"open=false": [
+			{
+				"model": "ftbquests:block/barrier"
+			}
+		],
+		"open=true": [
+			{
+				"model": "ftbquests:block/barrier_open"
+			}
+		]
+	}
+}
