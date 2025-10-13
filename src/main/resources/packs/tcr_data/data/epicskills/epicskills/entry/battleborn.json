@@ -70,6 +70,12 @@
           "position_in_screen": [120, 170],
           "ability_points": 5
         }
+        ,
+        {
+          "skill": "efn:stomp",
+          "position_in_screen": [20, 170],
+          "ability_points": 5
+        }
 	],
 	"priority": 0
 }

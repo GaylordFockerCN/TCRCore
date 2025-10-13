@@ -1,14 +1,18 @@
 package com.p1nero.tcrcore.events;
 
+import com.hm.efn.registries.EFNItem;
 import com.p1nero.cataclysm_dimension.CataclysmDimensionMod;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.dialog_lib.events.ServerNpcEntityInteractEvent;
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
 import com.p1nero.tcrcore.capability.TCRPlayer;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
+import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import net.alp.monsterexpansion.entity.custom.SkrytheEntity;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
@@ -22,7 +26,9 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.shelmarow.nightfall_invade.entity.NFIEntities;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
+import org.merlin204.mimic.item.MimicItems;
 import org.merlin204.wraithon.util.PositionTeleporter;
 
 import java.util.Iterator;
@@ -45,6 +51,13 @@ public class ForgeEvents {
                 TCRPlayer tcrPlayer = TCRCapabilityProvider.getTCRPlayer(event.getServerPlayer());
                 tcrPlayer.setArterius(arterius);
                 tcrPlayer.setTickAfterStartArterius(62);
+            }
+            if(event.getInteractId() == 2) {
+                if(!PlayerDataManager.letterGet.get(event.getServerPlayer())) {
+                    ItemUtil.addItemEntity(event.getServerPlayer(), MimicItems.MIMIC_INVITATION.get(), 1, ChatFormatting.RED.getColor());
+                    event.getServerPlayer().displayClientMessage(TCRCoreMod.getInfo("get_mimic_invite", NFIEntities.ARTERIUS.get().getDescription().copy().withStyle(ChatFormatting.RED), MimicItems.MIMIC_INVITATION.get().getDescription()), false);
+                    PlayerDataManager.letterGet.put(event.getServerPlayer(), true);
+                }
             }
         }
 

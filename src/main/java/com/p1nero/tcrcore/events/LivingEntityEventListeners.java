@@ -266,17 +266,21 @@ public class LivingEntityEventListeners {
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss3"), false);
             }
 
-            if(livingEntity instanceof Arterius arterius && !PlayerDataManager.flameEyeTraded.get(player) && arterius.isInBattle()) {
-                ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
+            if(livingEntity instanceof Arterius arterius && arterius.isInBattle()) {
+                if(!PlayerDataManager.flameEyeTraded.get(player)) {
+                    ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
+                }
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_arterius", NFIEntities.ARTERIUS.get().getDescription().copy().withStyle(ChatFormatting.RED), EFNItem.DUSKFIRE_INGOT.get().getDescription()), false);
-                ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), 3, ChatFormatting.RED.getColor());
+                ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), arterius.getRandom().nextInt(3), ChatFormatting.RED.getColor());
                 arterius.resetBossStatus(true);
                 arterius.setInBattle(false);
+                event.setCanceled(true);
                 EpicFightCapabilities.getUnparameterizedEntityPatch(arterius, ArteriusPatch.class).ifPresent(arteriusPatch -> {
                     arteriusPatch.playAnimation(Animations.GREATSWORD_GUARD_BREAK, 3);
                 });
-                PlayerDataManager.arteriusKilled.put(player, true);
-                event.setCanceled(true);
+                if(!PlayerDataManager.arteriusKilled.get(player)) {
+                    PlayerDataManager.arteriusKilled.put(player, true);
+                }
             }
 
             if(livingEntity instanceof CaptainCornelia && !PlayerDataManager.cursedEyeTraded.get(player)) {

@@ -169,12 +169,12 @@ dependencies {
     implementation fg.deobf("libs:dodge_parry_reward:20.12.1")
     implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7058350")
 //    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
-    implementation fg.deobf("libs:p1nero_ec:20.12.0.2")
+    implementation fg.deobf("libs:p1nero_ec:20.12.0.3")
     implementation fg.deobf("libs:p1nero_dl:1.6.0")
     implementation fg.deobf("curse.maven:entity-respawner-1363764:7098826")
     implementation fg.deobf("libs:nightfall_invade:1.0.0")
     implementation fg.deobf("libs:mimic:1.0.0")
-    implementation fg.deobf("libs:EpicFightNightfall:2.0")
+    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7102758")
 
     implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:6993788")
 

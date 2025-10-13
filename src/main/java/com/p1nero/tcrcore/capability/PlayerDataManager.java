@@ -18,6 +18,7 @@ public class PlayerDataManager {
     private final static Set<String> EXISTING_ID = new HashSet<>();
     public static DoubleData stage = new DoubleData("stage", 0);
     public static BoolData boatGet = new BoolData("boat_get", false);
+    public static BoolData letterGet = new BoolData("letterGet", false);
     public static BoolData arteriusKilled = new BoolData("arteriusKilled", false);
     public static BoolData canEnterNether = new BoolData("canEnterNether", false);
     public static BoolData canEnterEnd = new BoolData("canEnterEnd", false);
@@ -57,6 +58,10 @@ public class PlayerDataManager {
     public static BoolData abyssEyeBlessed = new BoolData("abyssEyeBlessed", false);
     public static BoolData desertEyeBlessed = new BoolData("desertEyeBlessed", false);
     public static BoolData cursedEyeBlessed = new BoolData("cursedEyeBlessed", false);
+
+    public static boolean canGetInvite(Player player) {
+        return mechEyeTraded.get(player) && monstEyeTraded.get(player) && voidEyeTraded.get(player);
+    }
 
     public static boolean isAllEyeGet(Player player) {
         return stormEyeTraded.get(player)

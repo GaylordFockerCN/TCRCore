@@ -32,6 +32,8 @@ public class ArteriusMixin extends PathfinderMob {
         if(!this.inBattle && pPlayer instanceof ServerPlayer serverPlayer) {
             TCRCapabilityProvider.getTCRPlayer(serverPlayer).setCurrentTalkingEntity(this);
             CompoundTag tag = new CompoundTag();
+            tag.putBoolean("can_get_invite", PlayerDataManager.canGetInvite(serverPlayer));
+            tag.putBoolean("invite_get", PlayerDataManager.letterGet.get(pPlayer));
             tag.putBoolean("arterius_killed", PlayerDataManager.arteriusKilled.get(pPlayer));
             DialogueLib.sendDialog(this, tag, serverPlayer);
         }

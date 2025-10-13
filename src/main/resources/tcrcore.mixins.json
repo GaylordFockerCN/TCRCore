@@ -19,6 +19,7 @@
     "DodgeAnimationMixin",
     "DodgeLocationIndicatorMixin",
     "DodgeSkillMixin",
+    "EmergencyEscapeMixin",
     "ExtraDamageInstanceMixin",
     "FAArmorItemMixin",
     "GuardSkillMixin",

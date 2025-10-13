@@ -89,6 +89,7 @@
   "entity.nightfall_invade.arterius.answer3": "准备好了吗？",
   "entity.nightfall_invade.arterius.answer4": "位于地狱的§6[猪灵一族]§f，在黑潮时期，曾造出[%s]来抵御黑潮。可惜他们败了，失去了神智。但他们仍然认得[%s§f§f]，使用[%s§f§f]与他们交易，便可揭开远古战争机器的面纱。",
   "entity.nightfall_invade.arterius.answer5": "[%s]和[%s]，则分别守护着[%s]和[%s]的回响。",
+  "entity.nightfall_invade.arterius.answer6": "待你寻回他们的回响后，再来找我吧，我将带你见识§4§l[普罗特斯]§f§f的力量！",
   "entity.nightfall_invade.arterius.option0": "取回烈焰之眼",
   "entity.nightfall_invade.arterius.option1": "取你性命",
   "entity.nightfall_invade.arterius.option2": "发起挑战",
@@ -97,12 +98,14 @@
   "entity.nightfall_invade.arterius.option5": "打探消息",
   "entity.nightfall_invade.arterius.option6": "继续",
   "entity.nightfall_invade.arterius.option7": "告辞",
+  "entity.nightfall_invade.arterius.option8": "§a我已寻回他们的回响了",
   "entity.tcrcore.girl": "摆渡人",
   "entity.tcrcore.girl.answer0": "阁下，好久不见！",
   "entity.tcrcore.girl.answer1": "阁下忘了我么？我是圣殿摆渡人，为众人指点迷津。阁下如有奇珍异宝，可与我瞧瞧，小女子可提取忆质，将其化为宝具！当你能踏足§c地狱§f或§d末地§f时，我也可以送你一程。",
   "entity.tcrcore.girl.answer2": "阁下若是经验充足，可打开技能面板学习技能。在§6技能树界面右上角点击经验球，即可将经验化为技能点。§f技能加点十分重要，建议学习生命提升等提升生存能力的技能！",
   "entity.tcrcore.girl.answer3": "我是圣殿摆渡人，为众人指点迷津。阁下如有奇珍异宝，可与我瞧瞧，小女子可提取忆质，将其化为宝具！当你能踏足§c地狱§f或§d末地§f时，我也可以送你一程。初次见面，此宝具赠与阁下，按下§d[%s]§f可开风帆，行万里！",
   "entity.tcrcore.girl.answer4": "阁下，确定要前往吗？我无法将您送回来...请确保传送石带在身上了",
+  "entity.tcrcore.girl.answer5": "§d[%s]§f可通过遗迹宝箱或完成某些任务获取。阁下若是拥有§6[%s]§f，可按§d[%s]§f打开技能面板学习技能。技能加点十分重要，建议学习生命提升等提升生存能力的技能！",
   "entity.tcrcore.girl.option0": "返回",
   "entity.tcrcore.girl.option1": "你是何人？",
   "entity.tcrcore.girl.option2": "神兵萃取",
@@ -262,5 +265,5 @@
   "skill_tree.sword_soaring.unlock_tip": "与§6[天空岛]§r村民用绿宝石交易解锁",
   "unlock_tip.tcrcore.battleborn.fire_avoid": "击败§6[骸骨奇美拉]§r习得",
   "unlock_tip.tcrcore.battleborn.water_avoid": "使用绿宝石向§6[隐秘水湾]§r的村民交易习得",
-  "unlock_tip.tcrcore.get_vatansever": "击败§dWraithon§f后解锁"
+  "unlock_tip.tcrcore.get_vatansever": "获得§d「卫疆刃」§f后解锁"
 }

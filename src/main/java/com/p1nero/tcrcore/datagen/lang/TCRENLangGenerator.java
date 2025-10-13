@@ -98,6 +98,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("unlock_new_dim", "§c[Nether]§d[End]§6 unlocked!§r");
         this.addInfo("iron_golem_name", "Sky Island Guardian");
 
+        this.addInfo("get_mimic_invite", "[%s]: Otherworldly one, I knew I was right about you! Take this §6[%s§6]§f!");
         this.addInfo("kill_arterius", "[%s]: Otherworlder, you are indeed formidable! It seems the prophecy is true! Then, I shall bestow these pieces of [%s] upon you!");
         this.addInfo("kill_boss1", "§d[Voice from unknown origin]:§r Defend... Sky Island... Eliminate... the Black Tide...");
         this.addInfo("kill_boss2", "§c[Voice from unknown origin]:§r Defend... the Dragonborn... Eliminate... the Black Tide...");
@@ -260,12 +261,13 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GIRL.get(), 2, "If you have sufficient experience, open the skill panel to learn skills. §6Click the experience orb in the top right corner of the skill tree interface to convert experience into skill points.§f Skill allocation is crucial; consider learning skills that enhance survivability, like Health Boost!");
         this.addDialogAnswer(TCREntities.GIRL.get(), 3, "I am the Ferry girl of the Saint Temple, here to guide the lost. If you have any rare treasures, show them to me. I can extract their memoria and transform them into artifacts! When you can set foot in §cthe Nether§f or §dthe End§f, I can also give you a ride. As a first meeting gift, take this artifact. Press §d[%s]§f to deploy the sail and travel thousands of miles!");
         this.addDialogAnswer(TCREntities.GIRL.get(), 4, "Esteemed one, are you sure you wish to go? I cannot bring you back... Please ensure you have the Waystone with you.");
+        this.addDialogAnswer(TCREntities.GIRL.get(), 5, "§d[%s]§f can be obtained through relic chests or by completing certain quests. If you possess §d[%s]§f, press §6[%s]§f to open the skill panel and learn skills. Skill allocation is very important—it is recommended to learn skills like Health Boost and others that enhance survivability!");
 
         this.addDialogOption(TCREntities.GIRL.get(), 0, "Back");
         this.addDialogOption(TCREntities.GIRL.get(), 1, "Who are you?");
         this.addDialogOption(TCREntities.GIRL.get(), 2, "Weapon Extraction");
         this.addDialogOption(TCREntities.GIRL.get(), 3, "Armor Refining");
-        this.addDialogOption(TCREntities.GIRL.get(), 4, "Learn Secret Techniques");
+        this.addDialogOption(TCREntities.GIRL.get(), 4, "Learn Skills");
         this.addDialogOption(TCREntities.GIRL.get(), 5, "Open Skill Tree");
         this.addDialogOption(TCREntities.GIRL.get(), 6, "Go to the Nether");
         this.addDialogOption(TCREntities.GIRL.get(), 7, "Go to the End");
@@ -278,6 +280,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 3, "Are you ready?");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 4, "During the Black Tide, the §6[Piglin clan]§f§f of the Nether created [%s] to resist the darkness. Unfortunately, they were defeated and lost their sanity. However, they still recognize [%s§f§f]. Use [%s§f§f] to trade with them, and you may unveil the secrets of the ancient war machines.");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 5, "[%s] and [%s] guard the echoes of [%s] and [%s], respectively.");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 6, "After you retrieve them, come find me again, and I will show you the power of §4§l[Proteus]§f§f!");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 0, "Retrieve the Eye of Flame");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 1, "Take your life");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 2, "I'm ready");
@@ -286,5 +289,6 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 5, "Ask information");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 6, "Continue");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 7, "Take my leave");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 8, "§aFinish");
     }
 }

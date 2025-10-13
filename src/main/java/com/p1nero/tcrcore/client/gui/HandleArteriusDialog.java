@@ -21,6 +21,8 @@ public class HandleArteriusDialog {
 
     public static void openDialogScreen(Arterius self, LocalPlayer player, CompoundTag serverData) {
         boolean arteriusKilled = serverData.getBoolean("arterius_killed");
+        boolean canGetInvite = serverData.getBoolean("can_get_invite");
+        boolean inviteGet = serverData.getBoolean("invite_get");
         DialogueScreenBuilder treeBuilder = new DialogueScreenBuilder(self);
         DialogueComponentBuilder componentBuilder = treeBuilder.getComponentBuildr();
         DialogNode root;
@@ -39,10 +41,12 @@ public class HandleArteriusDialog {
                                     ("§c" + I18n.get(EntityType.WITHER.getDescriptionId()) + "§f"),
                                     ("§d" + I18n.get(ModEntities.ENDER_GUARDIAN.get().getDescriptionId()) + "§f"),
                                     ("§4" + I18n.get(ModEntities.THE_HARBINGER.get().getDescriptionId())) + "§f"), componentBuilder.opt(6))
-                                    .addLeaf(componentBuilder.opt(7)))
-                    )
-
-            ;
+                                    .addChild(treeBuilder.newNode(6, 6)
+                                            .addLeaf(componentBuilder.opt(7))))
+                    );
+            if(canGetInvite && !inviteGet) {
+                root.addLeaf(componentBuilder.opt(8), 2);
+            }
         } else {
             root = treeBuilder.newNode(0)
                     .addChild(treeBuilder.newNode(1, 0)

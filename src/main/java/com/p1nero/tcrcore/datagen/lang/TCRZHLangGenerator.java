@@ -101,6 +101,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("unlock_new_dim", "§c[地狱]§d[末地]§6已解锁!§r");
         this.addInfo("iron_golem_name", "天空岛之守卫");
 
+        this.addInfo("get_mimic_invite", "[%s]: 异界之人，我果然没看错你！这封§6[%s§6]§f，你收下罢！");
         this.addInfo("kill_arterius", "[%s]: 异界之人，果然有几分本事！看来预言是对的！这几块[%s§f]，赠予你罢！");
         this.addInfo("kill_boss1", "§d[不知何处的声音]：§r捍卫…天空岛…扫除…黑潮…");
         this.addInfo("kill_boss2", "§c[不知何处的声音]：§r捍卫…龙裔…扫除…黑潮…");
@@ -264,6 +265,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GIRL.get(), 2, "阁下若是经验充足，可打开技能面板学习技能。在§6技能树界面右上角点击经验球，即可将经验化为技能点。§f技能加点十分重要，建议学习生命提升等提升生存能力的技能！");
         this.addDialogAnswer(TCREntities.GIRL.get(), 3, "我是圣殿摆渡人，为众人指点迷津。阁下如有奇珍异宝，可与我瞧瞧，小女子可提取忆质，将其化为宝具！当你能踏足§c地狱§f或§d末地§f时，我也可以送你一程。初次见面，此宝具赠与阁下，按下§d[%s]§f可开风帆，行万里！");
         this.addDialogAnswer(TCREntities.GIRL.get(), 4, "阁下，确定要前往吗？我无法将您送回来...请确保传送石带在身上了");
+        this.addDialogAnswer(TCREntities.GIRL.get(), 5, "§d[%s]§f可通过遗迹宝箱或完成某些任务获取。阁下若是拥有§6[%s]§f，可按§d[%s]§f打开技能面板学习技能。技能加点十分重要，建议学习生命提升等提升生存能力的技能！");
 
         this.addDialogOption(TCREntities.GIRL.get(), 0, "返回");
         this.addDialogOption(TCREntities.GIRL.get(), 1, "你是何人？");
@@ -282,6 +284,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 3, "准备好了吗？");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 4, "位于地狱的§6[猪灵一族]§f，在黑潮时期，曾造出[%s]来抵御黑潮。可惜他们败了，失去了神智。但他们仍然认得[%s§f§f]，使用[%s§f§f]与他们交易，便可揭开远古战争机器的面纱。");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 5, "[%s]和[%s]，则分别守护着[%s]和[%s]的回响。");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 6, "待你寻回他们的回响后，再来找我吧，我将带你见识§4§l[普罗特斯]§f§f的力量！");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 0, "取回烈焰之眼");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 1, "取你性命");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 2, "发起挑战");
@@ -290,6 +293,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 5, "打探消息");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 6, "继续");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 7, "告辞");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 8, "§a我已寻回他们的回响了");
 
     }
 }

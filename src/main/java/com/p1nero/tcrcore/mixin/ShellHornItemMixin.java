@@ -41,34 +41,37 @@ public class ShellHornItemMixin extends Item {
     }
 
     @Inject(method = "use", at = @At("HEAD"), cancellable = true)
-    private void tcr$use(@NotNull Level world, @NotNull Player entity, @NotNull InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> cir) {
-        InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-        if (entity.level() instanceof ServerLevel level)
-            level.playSound(null, entity.blockPosition().above(),
+    private void tcr$use(@NotNull Level world, @NotNull Player player, @NotNull InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> cir) {
+        InteractionResultHolder<ItemStack> ar = super.use(world, player, hand);
+        if (player.level() instanceof ServerLevel level)
+            level.playSound(null, player.blockPosition().above(),
                     AquamiraeSounds.ITEM_SHELL_HORN_USE.get(), SoundSource.PLAYERS, 3, 1);
         ItemStack stack = ar.getObject();
-        entity.swing(InteractionHand.MAIN_HAND, true);
-        entity.getCooldowns().addCooldown(stack.getItem(), 120);
+        player.swing(InteractionHand.MAIN_HAND, true);
+        player.getCooldowns().addCooldown(stack.getItem(), 120);
         boolean summon = false;
         BlockPos pos = new BlockPos(0, 0, 0);
         waterSearch : for (int ix = -6; ix <= 6; ix++) {
-            final int sx = entity.getBlockX() + ix;
+            final int sx = player.getBlockX() + ix;
             for (int iz = -6; iz <= 6; iz++) {
-                final int sz = entity.getBlockZ() + iz;
-                if (AquamiraeUtils.isInIceMaze(entity)) {
-                    if ((entity.level().getBlockState(new BlockPos(sx, 62, sz))).getBlock() == Blocks.WATER
-                            && (entity.level().getBlockState(new BlockPos(sx, 58, sz))).getBlock() == Blocks.WATER
-                            && (entity.level().getBlockState(new BlockPos(sx - 1, 62, sz))).getBlock() == Blocks.WATER
-                            && (entity.level().getBlockState(new BlockPos(sx + 1, 62, sz))).getBlock() == Blocks.WATER
-                            && (entity.level().getBlockState(new BlockPos(sx, 62, sz - 1))).getBlock() == Blocks.WATER
-                            && (entity.level().getBlockState(new BlockPos(sx, 62, sz + 1))).getBlock() == Blocks.WATER) {
+                final int sz = player.getBlockZ() + iz;
+                if (AquamiraeUtils.isInIceMaze(player)) {
+                    if ((player.level().getBlockState(new BlockPos(sx, 62, sz))).getBlock() == Blocks.WATER
+                            && (player.level().getBlockState(new BlockPos(sx, 58, sz))).getBlock() == Blocks.WATER
+                            && (player.level().getBlockState(new BlockPos(sx - 1, 62, sz))).getBlock() == Blocks.WATER
+                            && (player.level().getBlockState(new BlockPos(sx + 1, 62, sz))).getBlock() == Blocks.WATER
+                            && (player.level().getBlockState(new BlockPos(sx, 62, sz - 1))).getBlock() == Blocks.WATER
+                            && (player.level().getBlockState(new BlockPos(sx, 62, sz + 1))).getBlock() == Blocks.WATER) {
                         summon = true;
                         pos = new BlockPos(sx, 58, sz);
-                        entity.getCooldowns().addCooldown(stack.getItem(), 1200);
+                        player.getCooldowns().addCooldown(stack.getItem(), 1200);
                         break waterSearch;
                     }
                 }
             }
+        }
+        if(!PlayerDataManager.desertEyeBlessed.get(player)) {
+            summon = false;
         }
         new Object() {
             private int ticks = 0;
@@ -111,7 +114,7 @@ public class ShellHornItemMixin extends Item {
                     PlayerUtils.sendMessage(summoner, Icons.BOSS.get() + TextUtils.translation("info.captain_spawn"));
                 }
             }
-        }.start(60, entity, pos, summon);
+        }.start(60, player, pos, summon);
         cir.setReturnValue(ar);
     }
 
