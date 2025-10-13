@@ -27,6 +27,7 @@
     "IForgetItemMixin",
     "Ignited_Revenant_EntityMixin",
     "IronGolemMixin",
+    "ItemMixin",
     "ItemStackMixin",
     "KnightSwordItemMixin",
     "PiglinAiMixin",
