@@ -38,7 +38,7 @@ public class TutorialGolem extends IronGolem {
 
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 100.0f)
+                .add(Attributes.MAX_HEALTH, 1000.0f)
                 .add(Attributes.ATTACK_DAMAGE, 0.01f)
                 .add(Attributes.ATTACK_SPEED, 1.0F)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f)

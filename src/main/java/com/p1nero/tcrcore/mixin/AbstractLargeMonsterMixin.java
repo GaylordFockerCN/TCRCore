@@ -25,10 +25,10 @@ public abstract class AbstractLargeMonsterMixin extends TamableAnimal {
         super(p_21803_, p_21804_);
     }
 
-    @Inject(method = "mobInteract", at = @At("HEAD"))
+    @Inject(method = "mobInteract", at = @At("HEAD"), cancellable = true)
     private void tcr$mobInteract(Player player, InteractionHand pHand, CallbackInfoReturnable<InteractionResult> cir) {
         if(((Object)this) instanceof SkrytheEntity skrytheEntity) {
-            if(this.getTarget() == null && player instanceof ServerPlayer serverPlayer && !this.isTame() && WorldUtil.inMainLand(this)) {
+            if(!skrytheEntity.isAggressive() && !skrytheEntity.isAttacking() && skrytheEntity.getTarget() == null && player instanceof ServerPlayer serverPlayer && !this.isTame() && WorldUtil.inMainLand(this)) {
                 TCRCapabilityProvider.getTCRPlayer(serverPlayer).setCurrentTalkingEntity(this);
                 CompoundTag tag = new CompoundTag();
                 DialogueLib.sendDialog((SkrytheEntity) (Object) this, tag, serverPlayer);

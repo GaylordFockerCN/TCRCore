@@ -1,11 +1,11 @@
 {
     "trail": {
-	"color": [120,150,160],
+	"color": [200,200,200],
     	"begin_pos": [0.0, 0.0, -0.0],
     	"end_pos": [0.0, -0.2, -1.0],
-    	"lifetime": 5,
+    	"lifetime": 8,
 		"interpolations": 4,
-    	"texture_path": "epicfight:textures/particle/hilltrail2.png",
+    	"texture_path": "epicfight:textures/particle/power_trail2.png",
     	"particle_type": "efn:bloom_trail"
     }
 }

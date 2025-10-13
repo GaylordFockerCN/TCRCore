@@ -42,7 +42,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add("skill_tree.sword_soaring.unlock_tip", "与§6[天空岛]§r村民用绿宝石交易解锁");
         this.add("unlock_tip.tcrcore.battleborn.water_avoid", "使用绿宝石向§6[隐秘水湾]§r的村民交易习得");
         this.add("unlock_tip.tcrcore.battleborn.fire_avoid", "击败§6[骸骨奇美拉]§r习得");
-        this.add("unlock_tip.tcrcore.get_vatansever", "击败§dWraithon§f后解锁");
+        this.add("unlock_tip.tcrcore.get_vatansever", "获得§d「卫疆刃」§f后解锁");
         this.addSkill("water_avoid", "避水咒", "可在水下自由呼吸！");
         this.addSkill("fire_avoid", "避火咒", "免疫火焰伤害！");
         this.addSkill("perfect_dodge", "闪避特效", "完美闪避时将有帅气的动作！");

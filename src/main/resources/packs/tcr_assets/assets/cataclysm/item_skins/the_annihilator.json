@@ -1,0 +1,12 @@
+{
+  "renderer": "p1nero_ec:dual_renderer",
+  "trail": {
+    "color": [200,200,200],
+    "begin_pos": [0.0, -0.1, 0.0],
+    "end_pos": [0.0, 0.25, -1.5],
+    "lifetime": 5,
+    "interpolations": 1,
+    "texture_path": "p1nero_ec:textures/particle/soul_trail2.png",
+    "particle_type": "efn:bloom_trail"
+  }
+}

@@ -19,6 +19,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
@@ -28,14 +29,18 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
 import org.jetbrains.annotations.Nullable;
+import org.merlin204.wraithon.entity.WraithonEntities;
+import org.merlin204.wraithon.entity.wraithon.WraithonEntity;
+import org.merlin204.wraithon.worldgen.WraithonDimensions;
 import yesman.epicfight.world.entity.ai.attribute.EpicFightAttributes;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class TCRPlayer {
     public static final String PLAYER_NAME = "player_name";
     private CompoundTag data = new CompoundTag();
-
+    private double healthAdder;
     private int tickAfterBossDieLeft;
     private int tickAfterBless;
     private int tickAfterStartArterius;
@@ -105,16 +110,24 @@ public class TCRPlayer {
     }
     public CompoundTag saveNBTData(CompoundTag tag) {
         tag.put("customDataManager", data);
+        tag.putDouble("healthAdder", healthAdder);
+        tag.putInt("tickAfterBossDieLeft", tickAfterBossDieLeft);
+        tag.putInt("tickAfterBless", tickAfterBless);
         return tag;
     }
 
     public void loadNBTData(CompoundTag tag) {
         data = tag.getCompound("customDataManager");
+        healthAdder = tag.getDouble("healthAdder");
+        tickAfterBossDieLeft = tag.getInt("tickAfterBossDieLeft");
+        tickAfterBless = tag.getInt("tickAfterBless");
     }
 
     public void copyFrom(TCRPlayer old) {
         this.data = old.data;
+        this.healthAdder = old.healthAdder;
         this.tickAfterBossDieLeft = old.tickAfterBossDieLeft;
+        this.tickAfterBless = old.tickAfterBless;
     }
 
     public void syncToClient(ServerPlayer serverPlayer) {
@@ -141,9 +154,14 @@ public class TCRPlayer {
             } else {
                 return;
             }
-            if(tickAfterStartArterius % 20 == 0 && tickAfterStartArterius / 20 > 0) {
-                player.connection.send(new ClientboundSetTitleTextPacket(Component.literal("" + tickAfterStartArterius / 20).withStyle(ChatFormatting.RED)));
-                player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.ANVIL_LAND), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
+            if(tickAfterStartArterius % 20 == 0) {
+                if(tickAfterStartArterius / 20 == 0) {
+                    player.connection.send(new ClientboundSetTitleTextPacket(Component.literal("Go!").withStyle(ChatFormatting.RED)));
+                    player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.ANVIL_LAND), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
+                } else {
+                    player.connection.send(new ClientboundSetTitleTextPacket(Component.literal("" + tickAfterStartArterius / 20).withStyle(ChatFormatting.RED)));
+                    player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.ANVIL_LAND), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
+                }
             }
 
             if(tickAfterStartArterius == 0) {
@@ -168,6 +186,9 @@ public class TCRPlayer {
         //Boss战后的返回倒计时
         if (tickAfterBossDieLeft > 0) {
             tickAfterBossDieLeft--;
+            //保险
+            new ArrayList<WraithonEntity>(player.server.getLevel(WraithonDimensions.SANCTUM_OF_THE_WRAITHON_LEVEL_KEY).getEntities(WraithonEntities.WRAITHON.get(), (wraithonEntity -> !wraithonEntity.isDead())))
+                    .forEach(Entity::discard);
             if (tickAfterBossDieLeft % 40 == 0) {
                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ANVIL_LAND, SoundSource.BLOCKS, 0.8F, 0.5F + tickAfterBossDieLeft / 400.0F);
                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BELL_BLOCK, SoundSource.BLOCKS, 0.8F, 0.5F + tickAfterBossDieLeft / 400.0F);
@@ -272,7 +293,6 @@ public class TCRPlayer {
             //给神谕，加血加耐
             if(tickAfterBless == 0) {
                 boolean flag = true;
-                double healthAdder = 1.0;
                 ItemStack oracle = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
                 oracle.getOrCreateTag().putString(PLAYER_NAME, serverPlayer.getGameProfile().getName());
                 if(PlayerDataManager.stormEyeTraded.get(serverPlayer) && !PlayerDataManager.stormEyeBlessed.get(serverPlayer)) {
@@ -302,34 +322,38 @@ public class TCRPlayer {
                     flag = false;
                 }
                 if(flag) {
-                    final UUID HEALTH_MODIFIER_UUID = UUID.fromString("11451419-1981-0234-1234-123456789abc");
-                    float preHealth = serverPlayer.getHealth();
-                    float preMaxHealth = serverPlayer.getMaxHealth();
-                    AttributeInstance maxHealthAttr = serverPlayer.getAttribute(Attributes.MAX_HEALTH);
-                    if (maxHealthAttr != null) {
-                        maxHealthAttr.removeModifier(HEALTH_MODIFIER_UUID);
-                        AttributeModifier healthModifier = new AttributeModifier(
-                                HEALTH_MODIFIER_UUID,
-                                "health_boost",
-                                healthAdder,
-                                AttributeModifier.Operation.ADDITION
-                        );
-                        maxHealthAttr.addPermanentModifier(healthModifier);
-                        serverPlayer.setHealth(preHealth * serverPlayer.getMaxHealth() / preMaxHealth);
-                    }
-                    AttributeInstance staminaAttr = serverPlayer.getAttribute(EpicFightAttributes.MAX_STAMINA.get());
-                    if (staminaAttr != null) {
-                        staminaAttr.removeModifier(HEALTH_MODIFIER_UUID);
-                        AttributeModifier staminaModifier = new AttributeModifier(
-                                HEALTH_MODIFIER_UUID,
-                                "stamina_boost",
-                                healthAdder,
-                                AttributeModifier.Operation.ADDITION
-                        );
-                        staminaAttr.addPermanentModifier(staminaModifier);
-                    }
+                    updateHealth(serverPlayer);
                 }
             }
+        }
+    }
+
+    public void updateHealth(ServerPlayer serverPlayer) {
+        final UUID HEALTH_MODIFIER_UUID = UUID.fromString("11451419-1981-0234-1234-123456789abc");
+        float preHealth = serverPlayer.getHealth();
+        float preMaxHealth = serverPlayer.getMaxHealth();
+        AttributeInstance maxHealthAttr = serverPlayer.getAttribute(Attributes.MAX_HEALTH);
+        if (maxHealthAttr != null) {
+            maxHealthAttr.removeModifier(HEALTH_MODIFIER_UUID);
+            AttributeModifier healthModifier = new AttributeModifier(
+                    HEALTH_MODIFIER_UUID,
+                    "health_boost",
+                    healthAdder,
+                    AttributeModifier.Operation.ADDITION
+            );
+            maxHealthAttr.addPermanentModifier(healthModifier);
+            serverPlayer.setHealth(preHealth * serverPlayer.getMaxHealth() / preMaxHealth);
+        }
+        AttributeInstance staminaAttr = serverPlayer.getAttribute(EpicFightAttributes.MAX_STAMINA.get());
+        if (staminaAttr != null) {
+            staminaAttr.removeModifier(HEALTH_MODIFIER_UUID);
+            AttributeModifier staminaModifier = new AttributeModifier(
+                    HEALTH_MODIFIER_UUID,
+                    "stamina_boost",
+                    healthAdder,
+                    AttributeModifier.Operation.ADDITION
+            );
+            staminaAttr.addPermanentModifier(staminaModifier);
         }
     }
 

@@ -1,5 +1,5 @@
 {
-  "renderer": "p1nero_ec:tidal_claw",
+  "renderer": "p1nero_ec:dual_renderer",
   "trail": {
     "color": [255, 255, 255],
     "begin_pos": [0.0, 0.0, 0.15],

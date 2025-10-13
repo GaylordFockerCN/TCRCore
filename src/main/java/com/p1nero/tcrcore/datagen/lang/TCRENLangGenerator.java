@@ -42,7 +42,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add("skill_tree.sword_soaring.unlock_tip", "Unlocked by trading with villagers in §6[Sky Island]§r using emeralds");
         this.add("unlock_tip.tcrcore.battleborn.water_avoid", "Learned by trading with villagers in §6[Coves]§r using emeralds");
         this.add("unlock_tip.tcrcore.battleborn.fire_avoid", "Learned by defeating the §6[Bone Chimera]§r");
-        this.add("unlock_tip.tcrcore.get_vatansever", "Learned by defeating §d[The Wraithon]§f");
+        this.add("unlock_tip.tcrcore.get_vatansever", "Unlocks after acquiring the §d[Vatansever]§f");
         this.addSkill("water_avoid", "Water Avoidance Charm", "Allows free breathing underwater!");
         this.addSkill("fire_avoid", "Fire Avoidance Charm", "Immunity to fire damage!");
         this.addSkill("perfect_dodge", "Dodge Effect", "Play a cool animation when perfect dodge!");

@@ -1,0 +1,20 @@
+{
+  "trail": {
+    "color": [200,200,200],
+    "begin_pos": [-0.57, -0.9, -1.62],
+    "end_pos": [0.57, -0.9, -1.62],
+    "lifetime": 6,
+    "interpolations": 5,
+    "texture_path": "p1nero_ec:textures/particle/forge_trail.png",
+    "particle_type": "efn:bloom_trail"
+  },
+  "transforms": {
+    "mainhand": {
+      "Tool_R": {
+        "translation": [0.0, 0.0, -0.9],
+        "rotation": [-90.0, 0.0, 0.0],
+        "scale": [1, 1, 1]
+      }
+    }
+  }
+}

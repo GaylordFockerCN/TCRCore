@@ -37,7 +37,7 @@ public class WorldUtil {
     public static final String SKY_ISLAND = "trek:overworld/very_rare/floating_farm_large";
     public static final String SAND = "dodosmobs:jungle_prison";
     public static final String WATER = "aquamirae:ship";
-    public static final String FIRE = "block_factorys_bosses:underworld_arena";
+    public static final String FIRE = "tcrcore:underworld_arena";
     public static Vec2i storm, flame, abyss, cursed, desert;
 
     private static final Pattern LOCATE_PATTERN = Pattern.compile(".*?\\[\\s*(-?\\d+)\\s*,\\s*~\\s*,\\s*(-?\\d+)\\s*\\].*");

@@ -1,0 +1,10 @@
+#Respawn ticks after die.
+#Range: > 0
+respawn_timer = 1200
+#Respawn when chunk reload.
+respawn_when_reload = true
+#Display soul particle
+soul_effect = true
+#A list of entities to respawn.
+entities = []
+

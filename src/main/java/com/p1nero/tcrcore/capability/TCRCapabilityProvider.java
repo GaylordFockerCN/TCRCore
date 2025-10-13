@@ -72,6 +72,9 @@ public class TCRCapabilityProvider implements ICapabilityProvider, INBTSerializa
             event.getOriginal().getCapability(TCRCapabilityProvider.TCR_PLAYER).ifPresent(oldStore -> {
                 event.getEntity().getCapability(TCRCapabilityProvider.TCR_PLAYER).ifPresent(newStore -> {
                     newStore.copyFrom(oldStore);
+                    if(event.getEntity() instanceof ServerPlayer serverPlayer) {
+                        newStore.updateHealth(serverPlayer);
+                    }
                     newStore.syncToClient(((ServerPlayer) event.getEntity()));
                 });
             });
