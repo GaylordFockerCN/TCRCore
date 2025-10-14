@@ -3,11 +3,7 @@ package com.p1nero.tcrcore.events;
 import com.p1nero.dialog_lib.client.screen.DialogueScreen;
 import com.p1nero.dialog_lib.events.ClientNpcEntityDialogueEvent;
 import com.p1nero.tcrcore.TCRCoreMod;
-import com.p1nero.tcrcore.client.gui.HandleArteriusDialog;
-import com.p1nero.tcrcore.client.gui.HandleIronGolemDialog;
-import com.p1nero.tcrcore.client.gui.HandleSkrytheEntityDialog;
-import com.p1nero.tcrcore.client.gui.HandleVillagerDialog;
-import com.p1nero.tcrcore.mixin.IronGolemMixin;
+import com.p1nero.tcrcore.client.gui.*;
 import net.alp.monsterexpansion.entity.custom.SkrytheEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.animal.IronGolem;
@@ -31,6 +27,9 @@ public class ClientForgeEvents {
 
     @SubscribeEvent
     public static void onRenderGui(RenderGuiEvent.Pre event) {
+        if(!Minecraft.getInstance().isPaused() && Minecraft.getInstance().screen == null && Minecraft.getInstance().player != null) {
+            CustomGuiderRenderer.render(Minecraft.getInstance().player, event.getGuiGraphics(), event.getWindow(), event.getPartialTick());
+        }
     }
 
     @SubscribeEvent

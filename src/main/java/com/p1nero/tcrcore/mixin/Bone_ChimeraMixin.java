@@ -54,7 +54,7 @@ public class Bone_ChimeraMixin extends IABoss_monster {
 
     @Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
     private void tcr$hurt(DamageSource damagesource, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if(this.tickCount < 100) {
+        if(this.tickCount < 20) {
             cir.setReturnValue(false);
         } else {
             tcr$hurtMark = true;

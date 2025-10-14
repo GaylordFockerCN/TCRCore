@@ -2,6 +2,7 @@ package com.p1nero.tcrcore.datagen.lang;
 
 import com.p1nero.dialog_lib.api.datagen.DialogueLanguageProvider;
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import com.p1nero.tcrcore.datagen.TCRAdvancementData;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.data.PackOutput;
@@ -34,9 +35,8 @@ public abstract class TCRLangProvider extends LanguageProvider implements Dialog
         this.add("info.tcr." + key, content);
     }
 
-    public void addTask(String key, String task, String content) {
-        this.add("task." + TCRCoreMod.MOD_ID + "." + key, task);
-        this.add("task_content." + TCRCoreMod.MOD_ID + "." + key, content);
+    public void addTask(TCRTaskManager.Task task, String desc) {
+        this.add(task.getDesc(), desc);
     }
 
     public void addBiome(ResourceKey<Biome> biome, String name) {

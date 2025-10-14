@@ -4,6 +4,7 @@ import com.github.L_Ender.cataclysm.init.ModItems;
 import com.hm.efn.registries.EFNItem;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.block.TCRBlocks;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import com.p1nero.tcrcore.client.KeyMappings;
 import com.p1nero.tcrcore.client.gui.BanPortalScreenHandler;
 import com.p1nero.tcrcore.entity.TCREntities;
@@ -24,6 +25,10 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
     @Override
     protected void addTranslations() {
+        this.addTask(TCRTaskManager.KILL_PILLAGER, "Kill illager.");
+        this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "Give §6[Oracle]§r to The Keeper");
+        this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "Offer §6[Eye]§r to Godness Statue");
+
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "Brewed using §c[Crystallized Blood Marrow]§r, a drop from §d[Nehemoth]§r");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "Obtained by defeating the §2[Warden]§r or §2[Captain Cornelia]§r");
         this.addTCRItemInfo(BlockFactorysBossesModItems.DRAGON_SKULL.get(), "Obtained by defeating the §c[Underworld Knight]§r or §4[Infernal Dragon]§r");
@@ -38,6 +43,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add("itemGroup.tcr.items", "The Casket of Reveries — Core Items");
         this.add("key.categories." + TCRCoreMod.MOD_ID, "The Casket of Reveries — Core");
         this.addKeyMapping(KeyMappings.RIPTIDE, "Riptide");
+        this.addKeyMapping(KeyMappings.SHOW_TASK, "Show/Hide Task");
 
         this.add("skill_tree.sword_soaring.unlock_tip", "Unlocked by trading with villagers in §6[Sky Island]§r using emeralds");
         this.add("unlock_tip.tcrcore.battleborn.water_avoid", "Learned by trading with villagers in §6[Coves]§r using emeralds");

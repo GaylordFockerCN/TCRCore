@@ -8,6 +8,7 @@ import com.mojang.logging.LogUtils;
 import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.tcrcore.block.TCRBlocks;
 import com.p1nero.tcrcore.block.entity.TCRBlockEntities;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import com.p1nero.tcrcore.client.sound.TCRSounds;
 import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.entity.TCREntities;
@@ -71,6 +72,7 @@ public class TCRCoreMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         TCRPacketHandler.register();
+        TCRTaskManager.init();
 //        List<String> cheatModList = List.of("tacz", "projecte", "enchantmentlevelbreak");
 //        cheatModList.forEach(s -> {
 //            if(ModList.get().isLoaded(s)){
@@ -112,6 +114,8 @@ public class TCRCoreMod {
                 EFNItem.DEEPDARK_HEART.get(),
                 EpicSkillsItems.ABILIITY_STONE.get()
         ));
+
+        ItemEvents.eyes.addAll(List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get(), ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get()));
     }
 
     public static boolean hasCheatMod() {

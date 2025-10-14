@@ -17,6 +17,7 @@ import java.util.Set;
 public class PlayerDataManager {
     private final static Set<String> EXISTING_ID = new HashSet<>();
     public static DoubleData stage = new DoubleData("stage", 0);
+    public static DoubleData currentTaskId = new DoubleData("currentTaskId", TCRTaskManager.NO_TASK);
     public static BoolData boatGet = new BoolData("boat_get", false);
     public static BoolData letterGet = new BoolData("letterGet", false);
     public static BoolData arteriusKilled = new BoolData("arteriusKilled", false);
@@ -58,6 +59,10 @@ public class PlayerDataManager {
     public static BoolData abyssEyeBlessed = new BoolData("abyssEyeBlessed", false);
     public static BoolData desertEyeBlessed = new BoolData("desertEyeBlessed", false);
     public static BoolData cursedEyeBlessed = new BoolData("cursedEyeBlessed", false);
+    public static BoolData flameEyeBlessed = new BoolData("flameEyeBlessed", false);
+    public static BoolData mechEyeBlessed = new BoolData("mechEyeBlessed", false);
+    public static BoolData monstEyeBlessed = new BoolData("monstEyeBlessed", false);
+    public static BoolData voidEyeBlessed = new BoolData("voidEyeBlessed", false);
 
     public static boolean canGetInvite(Player player) {
         return mechEyeTraded.get(player) && monstEyeTraded.get(player) && voidEyeTraded.get(player);
@@ -159,7 +164,7 @@ public class PlayerDataManager {
     public static class StringData extends Data<String> {
 
         protected boolean isLocked = false;//增加一个锁
-        protected String defaultString = "";
+        protected String defaultString;
 
         public StringData(String key, String defaultString) {
             super(key);
@@ -194,7 +199,7 @@ public class PlayerDataManager {
 
     public static class DoubleData extends Data<Double> {
 
-        private double defaultValue = 0;
+        private final double defaultValue;
 
         public DoubleData(String key, double defaultValue) {
             super(key);
@@ -204,6 +209,10 @@ public class PlayerDataManager {
         public void init(Player player) {
             isLocked = getTCRPlayer(player).getBoolean(key + "isLocked");
             put(player, defaultValue);
+        }
+
+        public void put(Player player, Integer value) {
+            put(player, value.doubleValue());
         }
 
         @Override

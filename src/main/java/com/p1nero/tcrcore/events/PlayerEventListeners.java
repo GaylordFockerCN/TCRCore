@@ -6,6 +6,7 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
 import com.p1nero.tcrcore.capability.TCRPlayer;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import com.p1nero.tcrcore.datagen.TCRAdvancementData;
 import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.item.TCRItems;
@@ -171,6 +172,7 @@ public class PlayerEventListeners {
                 serverLevel.playSound(null, blessPos, SoundEvents.BEACON_AMBIENT,
                         SoundSource.AMBIENT, 0.7F, 0.5F + serverLevel.random.nextFloat() * 0.3F);
 
+                TCRTaskManager.FIND_GODNESS_STATUE.finish(serverPlayer);
                 tcrPlayer.setTickAfterBless(100);
                 tcrPlayer.setBlessPos(event.getPos());
             }
@@ -429,8 +431,11 @@ public class PlayerEventListeners {
     public static void onItemPickup(PlayerEvent.ItemPickupEvent event) {
         ItemStack itemStack = event.getStack();
         if (event.getEntity() instanceof ServerPlayer player) {
-            if (itemStack.is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get()) && itemStack.getOrCreateTag().getString(TCRPlayer.PLAYER_NAME).equals(player.getGameProfile().getName())) {
-                giveOracleEffect(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get());
+            if(itemStack.is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get()) && itemStack.getOrCreateTag().getString(TCRPlayer.PLAYER_NAME).equals(player.getGameProfile().getName())) {
+                TCRTaskManager.GIVE_ORACLE_TO_KEEPER.start(player);
+                if(!PlayerDataManager.mapMarked.get(player)) {
+                    giveOracleEffect(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get());
+                }
             }
 
             if (!PlayerDataManager.stormEyeTraded.get(player) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get())) {
@@ -485,6 +490,9 @@ public class PlayerEventListeners {
     }
 
     public static void giveOracleEffect(ServerPlayer player, Item toDisplay) {
+        if(ItemEvents.eyes.contains(toDisplay)) {
+            TCRTaskManager.FIND_GODNESS_STATUE.start(player);
+        }
         //改和女神兑换
 //        ItemUtil.addItemEntity(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
         PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayItemPickupParticlePacket(toDisplay.getDefaultInstance()), player);

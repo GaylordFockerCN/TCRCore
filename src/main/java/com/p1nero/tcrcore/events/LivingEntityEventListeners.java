@@ -22,6 +22,7 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
 import com.p1nero.tcrcore.capability.TCRPlayer;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import com.p1nero.tcrcore.client.sound.CorneliaMusicPlayer;
 import com.p1nero.tcrcore.client.sound.WraithonMusicPlayer;
 import com.p1nero.tcrcore.gameassets.TCRSkills;
@@ -49,7 +50,6 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.IronGolem;
@@ -267,6 +267,7 @@ public class LivingEntityEventListeners {
                 ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
                 itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
                 ItemUtil.addItemEntity(player, itemStack, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
+                TCRTaskManager.KILL_PILLAGER.finish(player);
                 PlayerDataManager.pillagerKilled.put(player, true);
             }
 
@@ -364,11 +365,11 @@ public class LivingEntityEventListeners {
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
-            if(livingEntity instanceof UnderworldKnightEntity underworldKnight && WorldUtil.isInStructure(livingEntity, WorldUtil.FIRE) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
-                //偷懒，直接秽土转生
-                EntityRespawnerMod.addToRespawn(underworldKnight, 100, true);
-                livingEntity.getPersistentData().putBoolean("already_respawn", true);
-            }
+//            if(livingEntity instanceof UnderworldKnightEntity underworldKnight && WorldUtil.isInStructure(livingEntity, WorldUtil.FIRE) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
+//                //偷懒，直接秽土转生
+//                EntityRespawnerMod.addToRespawn(underworldKnight, 100, true);
+//                livingEntity.getPersistentData().putBoolean("already_respawn", true);
+//            }
 
             if (livingEntity instanceof Maledictus_Entity) {
                 ItemUtil.addItemEntity(livingEntity, TCRItems.DUAL_BOKKEN.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor());

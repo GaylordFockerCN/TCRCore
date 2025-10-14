@@ -40,7 +40,7 @@ import java.util.UUID;
 public class TCRPlayer {
     public static final String PLAYER_NAME = "player_name";
     private CompoundTag data = new CompoundTag();
-    private double healthAdder;
+    private double healthAdder = 0;
     private int tickAfterBossDieLeft;
     private int tickAfterBless;
     private int tickAfterStartArterius;
@@ -297,26 +297,42 @@ public class TCRPlayer {
                 oracle.getOrCreateTag().putString(PLAYER_NAME, serverPlayer.getGameProfile().getName());
                 if(PlayerDataManager.stormEyeTraded.get(serverPlayer) && !PlayerDataManager.stormEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
-                    healthAdder = 2.0;
+                    healthAdder += 2.0;
                     PlayerDataManager.stormEyeBlessed.put(serverPlayer, true);
                 } else if(PlayerDataManager.abyssEyeTraded.get(serverPlayer) && !PlayerDataManager.abyssEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
-                    healthAdder = 4.0;
+                    healthAdder += 2.0;
                     PlayerDataManager.abyssEyeBlessed.put(serverPlayer, true);
                 } else if(PlayerDataManager.desertEyeTraded.get(serverPlayer) && !PlayerDataManager.desertEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
-                    healthAdder = 6.0;
+                    healthAdder += 2.0;
                     PlayerDataManager.desertEyeBlessed.put(serverPlayer, true);
                     PlayerDataManager.canEnterNether.put(serverPlayer, true);
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("nether_unlock").withStyle(ChatFormatting.RED)));
                 } else if(PlayerDataManager.cursedEyeTraded.get(serverPlayer) && !PlayerDataManager.cursedEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
-                    healthAdder = 8.0;
+                    healthAdder += 2.0;
                     PlayerDataManager.cursedEyeBlessed.put(serverPlayer, true);
                     PlayerDataManager.canEnterEnd.put(serverPlayer, true);
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("end_unlock").withStyle(ChatFormatting.LIGHT_PURPLE)));
+                } else if(!PlayerDataManager.flameEyeBlessed.get(serverPlayer)) {
+                    healthAdder += 2.0;
+                    serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
+                    PlayerDataManager.flameEyeBlessed.put(serverPlayer, true);
+                } else if(!PlayerDataManager.monstEyeBlessed.get(serverPlayer)) {
+                    healthAdder += 4.0;
+                    serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
+                    PlayerDataManager.monstEyeBlessed.put(serverPlayer, true);
+                } else if(!PlayerDataManager.mechEyeBlessed.get(serverPlayer)) {
+                    healthAdder += 4.0;
+                    serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
+                    PlayerDataManager.mechEyeBlessed.put(serverPlayer, true);
+                } else if(!PlayerDataManager.voidEyeBlessed.get(serverPlayer)) {
+                    healthAdder += 4.0;
+                    serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
+                    PlayerDataManager.voidEyeBlessed.put(serverPlayer, true);
                 } else {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("nothing_happen_after_bless"), false);
                     flag = false;
@@ -350,7 +366,7 @@ public class TCRPlayer {
             AttributeModifier staminaModifier = new AttributeModifier(
                     HEALTH_MODIFIER_UUID,
                     "stamina_boost",
-                    healthAdder,
+                    (healthAdder / 2),
                     AttributeModifier.Operation.ADDITION
             );
             staminaAttr.addPermanentModifier(staminaModifier);

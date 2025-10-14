@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.datagen;
 
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import com.p1nero.tcrcore.datagen.lang.TCRENLangGenerator;
 import com.p1nero.tcrcore.datagen.lang.TCRZHLangGenerator;
 import com.p1nero.tcrcore.datagen.loot.TCRLootTableProvider;
@@ -24,6 +25,8 @@ import java.util.concurrent.CompletableFuture;
 public class TCRDataGenerators {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void gatherData(GatherDataEvent event) {
+        TCRTaskManager.init();
+
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         ExistingFileHelper helper = event.getExistingFileHelper();

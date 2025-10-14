@@ -5,7 +5,6 @@ import com.github.dodo.dodosmobs.init.ModItems;
 import com.hm.efn.registries.EFNItem;
 import com.merlin204.sg.item.SGItems;
 import com.obscuria.aquamirae.registry.AquamiraeEntities;
-import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.dialog_lib.api.IEntityNpc;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
 import com.p1nero.dialog_lib.api.component.DialogNode;
@@ -15,6 +14,7 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
 import com.p1nero.tcrcore.capability.TCRPlayer;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import com.p1nero.tcrcore.datagen.TCRAdvancementData;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
@@ -373,6 +373,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 this.setConversingPlayer(null);
                 return;
             }
+            TCRTaskManager.GIVE_ORACLE_TO_KEEPER.finish(player);
             TCRAdvancementData.finishAdvancement("stage" + (newStage), player);
             PlayerDataManager.stage.put(player, ((double) newStage));
             level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.PLAYERS, 1.0F, 1.0F);
@@ -437,6 +438,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
         }
 
         if(!PlayerDataManager.pillagerKilled.get(player)) {
+            TCRTaskManager.KILL_PILLAGER.start(player);
             DialogueComponentBuilder dBuilder = new DialogueComponentBuilder(this);
             player.displayClientMessage(dBuilder.buildDialogue(this, dBuilder.ans(3)), false);
         }

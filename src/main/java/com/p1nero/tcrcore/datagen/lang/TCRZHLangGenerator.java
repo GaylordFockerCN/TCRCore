@@ -4,6 +4,7 @@ import com.github.L_Ender.cataclysm.init.ModItems;
 import com.hm.efn.registries.EFNItem;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.block.TCRBlocks;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import com.p1nero.tcrcore.client.KeyMappings;
 import com.p1nero.tcrcore.client.gui.BanPortalScreenHandler;
 import com.p1nero.tcrcore.entity.TCREntities;
@@ -24,6 +25,10 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
     @Override
     protected void addTranslations() {
+        this.addTask(TCRTaskManager.KILL_PILLAGER, "击杀掠夺者");
+        this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "将§6[神谕残卷]§r交给守望者");
+        this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "将§6[神之眼]§r供奉于女神像");
+
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "使用§d[尼赫莫斯]§r掉落物§c[晶化血髓]§r酿造获取");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "击败§2[监守者]§r或§2[可妮莉亚船长]§r获取");
         this.addTCRItemInfo(BlockFactorysBossesModItems.DRAGON_SKULL.get(), "击败§c[冥界骑士]§r或§4[炼狱魔龙]§r获取");
@@ -38,6 +43,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add("itemGroup.tcr.items", "远梦之棺 —— 核心 物品");
         this.add("key.categories." + TCRCoreMod.MOD_ID, "远梦之棺 —— 核心");
         this.addKeyMapping(KeyMappings.RIPTIDE, "激流");
+        this.addKeyMapping(KeyMappings.SHOW_TASK, "隐藏/显示指引");
 
         this.add("skill_tree.sword_soaring.unlock_tip", "与§6[天空岛]§r村民用绿宝石交易解锁");
         this.add("unlock_tip.tcrcore.battleborn.water_avoid", "使用绿宝石向§6[隐秘水湾]§r的村民交易习得");

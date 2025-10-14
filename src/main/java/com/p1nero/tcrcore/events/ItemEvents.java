@@ -1,30 +1,35 @@
 package com.p1nero.tcrcore.events;
 
-
-import com.github.L_Ender.cataclysm.init.ModItems;
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.TCRPlayer;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.MinecartItem;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID)
 public class ItemEvents {
 
     public static Set<Item> items = new HashSet<>();
+    public static Set<Item> eyes = new HashSet<>();
+
     @SubscribeEvent
     public static void onItemDesc(ItemTooltipEvent event) {
-        if (List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get(), ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get()).contains(event.getItemStack().getItem())) {
+        if (eyes.contains(event.getItemStack().getItem()) && event.getEntity() != null) {
             event.getToolTip().add(TCRCoreMod.getInfo("time_to_altar").withStyle(ChatFormatting.GRAY));
-        }
-        if (List.of(ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.DESERT_EYE.get()).contains(event.getItemStack().getItem())) {
             event.getToolTip().add(TCRCoreMod.getInfo("time_to_ask_godness_statue"));
+            if(event.getItemStack().hasTag() && event.getItemStack().getOrCreateTag().contains(TCRPlayer.PLAYER_NAME)) {
+                String playerName = event.getItemStack().getOrCreateTag().getString(TCRPlayer.PLAYER_NAME);
+                event.getToolTip().add(Component.literal("——" + playerName).withStyle(ChatFormatting.AQUA));
+            }
         }
         //TODO delete
 //        event.getToolTip().add(1, Component.literal(BuiltInRegistries.ITEM.getKey(event.getItemStack().getItem()).toString()));

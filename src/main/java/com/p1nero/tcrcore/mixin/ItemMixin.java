@@ -21,7 +21,7 @@ public abstract class ItemMixin {
 
     @Inject(method = "getName", at = @At("RETURN"), cancellable = true)
     private void tcr$getDesc(ItemStack itemStack, CallbackInfoReturnable<Component> cir){
-        if(List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get(), ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get())
+        if(List.of()
                 .contains((Item) (Object) this)){
             cir.setReturnValue(cir.getReturnValue().copy().withStyle(ChatFormatting.GOLD));
         }
