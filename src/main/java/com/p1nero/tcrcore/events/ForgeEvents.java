@@ -12,7 +12,6 @@ import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import net.alp.monsterexpansion.entity.custom.AbstractLargeMonster;
-import net.alp.monsterexpansion.entity.custom.SkrytheEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
