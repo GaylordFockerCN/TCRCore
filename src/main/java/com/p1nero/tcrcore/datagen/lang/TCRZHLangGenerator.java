@@ -196,6 +196,10 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(ModEntities.SKRYTHE.get(), 1, "吾名斯克里兹，乃神之坐骑。黑潮一役，吾身负重伤，沉睡至今。苏醒之时，圣殿似有复苏之息，遂归。守望者见吾，告知救世主一事，命吾于此恭候。");
         this.addDialogOption(ModEntities.SKRYTHE.get(), 0, "你是何人？");
         this.addDialogOption(ModEntities.SKRYTHE.get(), 1, "驯服");
+        this.addDialogAnswer(ModEntities.RHYZA.get(), 0, "救世主，吾恭候已久。");
+        this.addDialogAnswer(ModEntities.RHYZA.get(), 1, "吾名莱萨，乃神之坐骑。黑潮一役，吾身负重伤，沉睡至今。苏醒之时，圣殿似有复苏之息，遂归。守望者见吾，告知救世主一事，命吾于此恭候。");
+        this.addDialogOption(ModEntities.RHYZA.get(), 0, "你是何人？");
+        this.addDialogOption(ModEntities.RHYZA.get(), 1, "驯服");
 
         this.addDialogAnswer(EntityType.IRON_GOLEM, 0, "人类，准备好接受试炼了？");
         this.addDialogOption(EntityType.IRON_GOLEM, 0, "确定");
@@ -258,11 +262,11 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GUIDER.get(), 14, "这...吾曾与§d「黑潮军团」§f在此地大战，损坏祭坛封印的英灵永远不会再回来了...但残存的英灵，已足以启动驱魔仪式。");
 
         this.addDialogAnswer(TCREntities.GUIDER.get(), 15, "§b" +
-                "风暴之火种§f...我感受到它就散落在§6[%s]§f，击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。§3[%s§3]§f，可去摆渡人处看看，说不定能换什么宝具。§d摆渡人§f就在§6圣殿的港口处§f等你。");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 19, "§6烈焰之火种§f...我感受到它就散落在§6[%s]§f，击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。§c[%s§c]§f，可去摆渡人处看看，说不定能换什么宝具。");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 16, "§3深渊之火种§f...我感受到它就散落在§6[%s]§f，击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。§c[%s§c]§f，可去摆渡人处看看，说不定能换什么宝具。");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 17, "§2诅咒之火种§f...我感受到它就散落在§6[%s]§f击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。§c[%s§c]§f，可去摆渡人处看看，说不定能换什么宝具。");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§e沙漠之火种§f...我感受到它就散落在§6[%s]§f击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。§e[%s§e]§f，可去摆渡人处看看，说不定能换什么宝具。");
+                "风暴之火种§f...我感受到它就散落在§6[%s]§f，击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 19, "§6烈焰之火种§f...我感受到它就散落在§6[%s]§f，击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 16, "§3深渊之火种§f...我感受到它就散落在§6[%s]§f，击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 17, "§2诅咒之火种§f...我感受到它就散落在§6[%s]§f击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§e沙漠之火种§f...我感受到它就散落在§6[%s]§f击败%s夺回它吧！我已将§6[%s§6]§f的位置标注在地图之上了，吾便在此地等候。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 20, "正常走流程怎么会多出神谕残卷？你是不是偷了别人的？");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 21, "既然你已点亮所有祭坛，待你§6入内击败英灵，吸收众英灵之力后§f，我们再开始仪式吧！");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "前往吾指引之处，取回§d[神之眼]§f，将其供奉予§6[圣殿中心庭院之女神像所在]§f，女神像将为你揭晓神谕！");

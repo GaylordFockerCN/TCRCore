@@ -33,6 +33,7 @@
     "PiglinAiMixin",
     "PlayerAdvancementsMixin",
     "PlayerPatchMixin",
+    "RhyzaEntityMixin",
     "ShellHornItemMixin",
     "ShipMixin",
     "SkillContainerMixin",

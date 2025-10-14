@@ -194,6 +194,11 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(ModEntities.SKRYTHE.get(), 0, "Who are you?");
         this.addDialogOption(ModEntities.SKRYTHE.get(), 1, "Tame");
 
+        this.addDialogAnswer(ModEntities.RHYZA.get(), 0, "Chosen One, I have long awaited your arrival.");
+        this.addDialogAnswer(ModEntities.RHYZA.get(), 1, "I am Rhyza, the divine steed. During the Black Tide War, I suffered grave injuries and have slumbered until now. Upon awakening, I sensed signs of revival within the Sanctuary, thus I returned. The Sanctuary Keeper, upon seeing me, informed me of the matter regarding the Chosen One and commanded me to await you here.");
+        this.addDialogOption(ModEntities.RHYZA.get(), 0, "Who are you?");
+        this.addDialogOption(ModEntities.RHYZA.get(), 1, "Tame");
+
         this.addDialogAnswer(EntityType.IRON_GOLEM, 0, "Man, are you ready？");
         this.addDialogOption(EntityType.IRON_GOLEM, 0, "Yes");
         this.addDialogOption(EntityType.IRON_GOLEM, 1, "Wait");
@@ -254,11 +259,11 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addDialogAnswer(TCREntities.GUIDER.get(), 14, "This... I once battled the §d「Black Tide Legion」§f here. The spirits sealed by the damaged altars will never return... But the remaining spirits are enough to initiate the exorcism ritual.");
 
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 15, "§bThe Storm Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. §3[%s§3]§f, you might check with the Ferry girl; perhaps you can exchange for some treasure. §dThe Ferry girl§f awaits you at the §6harbor of the Saint Temple§f.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 19, "§6The Flame Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. §c[%s§c]§f, you might check with the Ferry girl; perhaps you can exchange for some treasure.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 16, "§3The Abyss Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. §c[%s§c]§f, you might check with the Ferry girl; perhaps you can exchange for some treasure.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 17, "§2The Cursed Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. §c[%s§c]§f, you might check with the Ferry girl; perhaps you can exchange for some treasure.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§eThe Desert Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. §e[%s§e]§f, you might check with the Ferry girl; perhaps you can exchange for some treasure.");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 15, "§bThe Storm Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. ");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 19, "§6The Flame Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. ");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 16, "§3The Abyss Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. ");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 17, "§2The Cursed Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. ");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§eThe Desert Ember§f... I sense it is scattered in §6[%s]§f. Defeat %s to reclaim it! I have marked the location of §6[%s§6]§f on your map. I will wait here. ");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 20, "How did you get extra Oracle Fragments by following the normal流程? Did you steal them from someone?");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 21, "Since you have lit all the altars, once you §6enter, defeat the spirits, and infuse yourself with the power of the spirits,§f we shall commence the ritual!");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "Go to the place I guide you, retrieve the §d[Eye of God]§f, and offer it to the §6[Sanctuary of the Central Courtyard where the Goddess Statue resides]§f. The Goddess Statue will reveal the divine prophecy to you!");

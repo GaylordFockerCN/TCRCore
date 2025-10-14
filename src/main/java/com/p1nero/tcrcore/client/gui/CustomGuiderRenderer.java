@@ -72,7 +72,7 @@ public class CustomGuiderRenderer {
         int y = goldenRatioY;
 
         guiGraphics.pose().pushPose();
-        guiGraphics.pose().scale(0.8F, 0.8F, 0.8F);
+        guiGraphics.pose().scale(0.93F, 0.93F, 0.93F);
         // Set up alpha for rendering
         RenderSystem.enableBlend();
 

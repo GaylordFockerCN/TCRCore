@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.client.gui;
 
 import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
+import net.alp.monsterexpansion.entity.custom.AbstractLargeMonster;
 import net.alp.monsterexpansion.entity.custom.SkrytheEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -11,7 +12,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class HandleSkrytheEntityDialog {
 
-    public static void openDialogScreen(SkrytheEntity self, LocalPlayer player, CompoundTag serverData) {
+    public static void openDialogScreen(AbstractLargeMonster<?, ?> self, LocalPlayer player, CompoundTag serverData) {
         DialogueScreenBuilder treeBuilder = new DialogueScreenBuilder(self);
         treeBuilder.start(0)
                 .addChoice(0, 1)

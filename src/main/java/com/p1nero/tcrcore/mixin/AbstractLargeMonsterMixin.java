@@ -14,6 +14,7 @@ import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -21,19 +22,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(AbstractLargeMonster.class)
 public abstract class AbstractLargeMonsterMixin extends TamableAnimal {
 
+    @Shadow(remap = false)
+    public abstract boolean isAttacking();
+
     protected AbstractLargeMonsterMixin(EntityType<? extends TamableAnimal> p_21803_, Level p_21804_) {
         super(p_21803_, p_21804_);
     }
 
     @Inject(method = "mobInteract", at = @At("HEAD"), cancellable = true)
     private void tcr$mobInteract(Player player, InteractionHand pHand, CallbackInfoReturnable<InteractionResult> cir) {
-        if(((Object)this) instanceof SkrytheEntity skrytheEntity) {
-            if(!skrytheEntity.isAggressive() && !skrytheEntity.isAttacking() && skrytheEntity.getTarget() == null && player instanceof ServerPlayer serverPlayer && serverPlayer.isAlive() && !this.isTame() && WorldUtil.inMainLand(this)) {
-                TCRCapabilityProvider.getTCRPlayer(serverPlayer).setCurrentTalkingEntity(this);
-                CompoundTag tag = new CompoundTag();
-                DialogueLib.sendDialog((SkrytheEntity) (Object) this, tag, serverPlayer);
-                cir.setReturnValue(InteractionResult.SUCCESS);
-            }
+        if(!this.isAggressive() && !this.isAttacking() && this.getTarget() == null && player instanceof ServerPlayer serverPlayer && serverPlayer.isAlive() && !this.isTame() && WorldUtil.inMainLand(this)) {
+            TCRCapabilityProvider.getTCRPlayer(serverPlayer).setCurrentTalkingEntity(this);
+            CompoundTag tag = new CompoundTag();
+            DialogueLib.sendDialog(this, tag, serverPlayer);
+            cir.setReturnValue(InteractionResult.SUCCESS);
         }
     }
 

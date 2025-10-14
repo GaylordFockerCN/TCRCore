@@ -4,6 +4,7 @@ import com.p1nero.dialog_lib.client.screen.DialogueScreen;
 import com.p1nero.dialog_lib.events.ClientNpcEntityDialogueEvent;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.client.gui.*;
+import net.alp.monsterexpansion.entity.custom.AbstractLargeMonster;
 import net.alp.monsterexpansion.entity.custom.SkrytheEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.animal.IronGolem;
@@ -40,8 +41,8 @@ public class ClientForgeEvents {
         if(event.getSelf() instanceof IronGolem ironGolem) {
             HandleIronGolemDialog.openDialogScreen(ironGolem, event.getLocalPlayer(), event.getServerData());
         }
-        if(event.getSelf() instanceof SkrytheEntity skrytheEntity) {
-            HandleSkrytheEntityDialog.openDialogScreen(skrytheEntity, event.getLocalPlayer(), event.getServerData());
+        if(event.getSelf() instanceof AbstractLargeMonster<?, ?> abstractLargeMonster) {
+            HandleSkrytheEntityDialog.openDialogScreen(abstractLargeMonster, event.getLocalPlayer(), event.getServerData());
         }
         if(event.getSelf() instanceof Arterius arterius) {
             HandleArteriusDialog.openDialogScreen(arterius, event.getLocalPlayer(), event.getServerData());

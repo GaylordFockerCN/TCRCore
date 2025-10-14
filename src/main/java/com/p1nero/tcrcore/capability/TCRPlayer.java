@@ -359,6 +359,7 @@ public class TCRPlayer {
             );
             maxHealthAttr.addPermanentModifier(healthModifier);
             serverPlayer.setHealth(preHealth * serverPlayer.getMaxHealth() / preMaxHealth);
+            serverPlayer.displayClientMessage(Component.translatable(Attributes.MAX_HEALTH.getDescriptionId()).append(" + " + healthAdder), false);
         }
         AttributeInstance staminaAttr = serverPlayer.getAttribute(EpicFightAttributes.MAX_STAMINA.get());
         if (staminaAttr != null) {
@@ -371,6 +372,7 @@ public class TCRPlayer {
             );
             staminaAttr.addPermanentModifier(staminaModifier);
         }
+        serverPlayer.displayClientMessage(Component.translatable(EpicFightAttributes.MAX_STAMINA.get().getDescriptionId()).append(" + " + (healthAdder / 2)), false);
     }
 
 }

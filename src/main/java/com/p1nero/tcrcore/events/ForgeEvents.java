@@ -11,7 +11,7 @@ import com.p1nero.tcrcore.capability.TCRPlayer;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
-import net.alp.monsterexpansion.entity.custom.SkrytheEntity;
+import net.alp.monsterexpansion.entity.custom.AbstractLargeMonster;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -61,10 +61,10 @@ public class ForgeEvents {
             }
         }
 
-        if(event.getSelf() instanceof SkrytheEntity skrytheEntity) {
+        if(event.getSelf() instanceof AbstractLargeMonster<?, ?> abstractLargeMonster) {
             if(event.getInteractId() == 1) {
                 ServerPlayer player = event.getServerPlayer();
-                skrytheEntity.tame(player);
+                abstractLargeMonster.tame(player);
                 player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
             }
         }
