@@ -21,6 +21,7 @@ import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tudigong.entity.XianQiEntity;
 import com.p1nero.tudigong.item.TDGItems;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
+import com.yesman.epicskills.skilltree.SkillTree;
 import com.yesman.epicskills.world.capability.SkillTreeProgression;
 import net.blay09.mods.waystones.block.ModBlocks;
 import net.minecraft.ChatFormatting;
@@ -86,18 +87,13 @@ public class PlayerEventListeners {
             if (namespace.equals(TCRCoreMod.MOD_ID)) {
                 if (path.equals("vatansever")) {
                     serverPlayer.getCapability(SkillTreeProgression.SKILL_TREE_PROGRESSION).ifPresent(skillTreeProgression -> {
-                        skillTreeProgression.unlockTree(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"));
-//                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.RAIN_SWORD);
-//                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.SCREEN_SWORD);
-//                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.KILL_AURA_1);
-//                        skillTreeProgression.unlockNode(ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"), SwordControllerSkills.KILL_AURA_2);
+                        ResourceKey<SkillTree> resourceKey = ResourceKey.create(SkillTree.SKILL_TREE_REGISTRY_KEY, ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"));
+                        skillTreeProgression.unlockTree(resourceKey, serverPlayer);
+                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.RAIN_SWORD, serverPlayer);
+                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.SCREEN_SWORD, serverPlayer);
+                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.KILL_AURA_1, serverPlayer);
+                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.KILL_AURA_2, serverPlayer);
                     });
-
-                    CommandSourceStack commandSourceStack = serverPlayer.createCommandSourceStack().withPermission(2).withSuppressedOutput();
-                    Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s sword_soaring:sword_soaring_skills " + SwordControllerSkills.RAIN_SWORD.getRegistryName() + " true");
-                    Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s sword_soaring:sword_soaring_skills " + SwordControllerSkills.SCREEN_SWORD.getRegistryName() + " true");
-                    Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s sword_soaring:sword_soaring_skills " + SwordControllerSkills.KILL_AURA_1.getRegistryName() + " true");
-                    Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s sword_soaring:sword_soaring_skills " + SwordControllerSkills.KILL_AURA_2.getRegistryName() + " true");
 
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.RAIN_SWORD.getDisplayName()), false);
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.SCREEN_SWORD.getDisplayName()), false);
