@@ -56,6 +56,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.AdvancementEvent;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -394,6 +395,31 @@ public class PlayerEventListeners {
         }
     }
 
+    /**
+     * 未完成前置不能捡起
+     */
+    @SubscribeEvent
+    public static void onPlayerPickupItem(EntityItemPickupEvent event) {
+        if(event.getEntity() instanceof ServerPlayer player) {
+            if(!PlayerDataManager.stormEyeBlessed.get(player) && event.getItem().getItem().is(com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get())) {
+                player.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                event.setCanceled(true);
+            }
+            if(!PlayerDataManager.abyssEyeBlessed.get(player) && event.getItem().getItem().is(com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get())) {
+                player.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                event.setCanceled(true);
+            }
+            if(!PlayerDataManager.desertEyeBlessed.get(player) && event.getItem().getItem().is(com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get())) {
+                player.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                event.setCanceled(true);
+            }
+            if(!PlayerDataManager.cursedEyeBlessed.get(player) && event.getItem().getItem().is(com.github.L_Ender.cataclysm.init.ModItems.FLAME_EYE.get())) {
+                player.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                event.setCanceled(true);
+            }
+        }
+
+    }
 
     /**
      * 捡起物品后才视为成功获取，才爆特效，而非用击杀判定

@@ -103,6 +103,7 @@ public class LivingEntityEventListeners {
 
     @SubscribeEvent
     public static void onLivingAttack(LivingAttackEvent event){
+        LivingEntity entity = event.getEntity();
         if(event.getSource().getEntity() instanceof ServerPlayer serverPlayer) {
             if(serverPlayer.getMainHandItem().is(BlockFactorysBossesModItems.KNIGHT_SWORD.get()) && !serverPlayer.getCooldowns().isOnCooldown(BlockFactorysBossesModItems.KNIGHT_SWORD.get())) {
                 ServerLevel serverLevel = serverPlayer.serverLevel();
@@ -123,6 +124,26 @@ public class LivingEntityEventListeners {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("press_to_open_battle_mode"), true);
                 }
             });
+
+            if(!serverPlayer.isCreative()) {
+                if(!PlayerDataManager.stormEyeBlessed.get(serverPlayer) && entity instanceof BulldrogiothEntity) {
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                    event.setCanceled(true);
+                }
+                if(!PlayerDataManager.abyssEyeBlessed.get(serverPlayer) && entity instanceof Bone_Chimera_Entity) {
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                    event.setCanceled(true);
+                }
+                if(!PlayerDataManager.desertEyeBlessed.get(serverPlayer) && entity instanceof CaptainCornelia) {
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                    event.setCanceled(true);
+                }
+                if(!PlayerDataManager.cursedEyeBlessed.get(serverPlayer) && entity instanceof Arterius) {
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                    event.setCanceled(true);
+                }
+            }
+
         }
 
         if(event.getEntity() instanceof Bone_Chimera_Entity boneChimeraEntity) {
@@ -242,7 +263,7 @@ public class LivingEntityEventListeners {
                 ItemUtil.addItemEntity(player, ModItems.MECH_EYE.get(), 1, ChatFormatting.DARK_RED.getColor().intValue());
             }
 
-            if(livingEntity instanceof AbstractIllager && !PlayerDataManager.pillagerKilled.get(player)) {
+            if(event.getSource().getEntity() instanceof Player && livingEntity instanceof AbstractIllager && !PlayerDataManager.pillagerKilled.get(player)) {
                 ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
                 itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
                 ItemUtil.addItemEntity(player, itemStack, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
@@ -260,14 +281,33 @@ public class LivingEntityEventListeners {
             }
 
             if(livingEntity instanceof BulldrogiothEntity
-                    && PlayerDataManager.stormEyeTraded.get(player)
+                    && PlayerDataManager.stormEyeBlessed.get(player)
                     && !PlayerDataManager.abyssEyeTraded.get(player)) {
                 ItemUtil.addItemEntity(player, ModItems.ABYSS_EYE.get(), 1, ChatFormatting.BLUE.getColor().intValue());
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss3"), false);
             }
 
+
+            if(livingEntity instanceof Bone_Chimera_Entity && !PlayerDataManager.desertEyeTraded.get(player) && PlayerDataManager.abyssEyeBlessed.get(player)) {
+                ItemUtil.addItemEntity(player, ModItems.DESERT_EYE.get(), 1, ChatFormatting.YELLOW.getColor().intValue());
+                player.displayClientMessage(TCRCoreMod.getInfo("kill_boss5"), false);
+
+                CommandSourceStack commandSourceStack = player.createCommandSourceStack().withPermission(2).withSuppressedOutput();
+                if(!PlayerDataManager.fireAvoidUnlocked.get(player)) {
+                    Objects.requireNonNull(player.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s dodge_parry_reward:passive tcrcore:fire_avoid true");
+                    player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", Component.translatable(TCRSkills.FIRE_AVOID.getTranslationKey()).withStyle(ChatFormatting.AQUA)), false);
+                    player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.PLAYERS, 1.0F, 1.0F);
+                    PlayerDataManager.fireAvoidUnlocked.put(player, true);
+                }
+            }
+
+            if(livingEntity instanceof CaptainCornelia && !PlayerDataManager.cursedEyeTraded.get(player) && PlayerDataManager.desertEyeBlessed.get(player)) {
+                ItemUtil.addItemEntity(player, ModItems.CURSED_EYE.get(), 1, ChatFormatting.DARK_GREEN.getColor().intValue());
+                player.displayClientMessage(TCRCoreMod.getInfo("kill_boss4"), false);
+            }
+
             if(livingEntity instanceof Arterius arterius && arterius.isInBattle()) {
-                if(!PlayerDataManager.flameEyeTraded.get(player)) {
+                if(!PlayerDataManager.flameEyeTraded.get(player) && PlayerDataManager.cursedEyeBlessed.get(player)) {
                     ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
                 }
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_arterius", NFIEntities.ARTERIUS.get().getDescription().copy().withStyle(ChatFormatting.RED), EFNItem.DUSKFIRE_INGOT.get().getDescription()), false);
@@ -283,23 +323,6 @@ public class LivingEntityEventListeners {
                 }
             }
 
-            if(livingEntity instanceof CaptainCornelia && !PlayerDataManager.cursedEyeTraded.get(player)) {
-                ItemUtil.addItemEntity(player, ModItems.CURSED_EYE.get(), 1, ChatFormatting.DARK_GREEN.getColor().intValue());
-                player.displayClientMessage(TCRCoreMod.getInfo("kill_boss4"), false);
-            }
-
-            if(livingEntity instanceof Bone_Chimera_Entity && !PlayerDataManager.desertEyeTraded.get(player)) {
-                ItemUtil.addItemEntity(player, ModItems.DESERT_EYE.get(), 1, ChatFormatting.YELLOW.getColor().intValue());
-                player.displayClientMessage(TCRCoreMod.getInfo("kill_boss5"), false);
-
-                CommandSourceStack commandSourceStack = player.createCommandSourceStack().withPermission(2).withSuppressedOutput();
-                if(!PlayerDataManager.fireAvoidUnlocked.get(player)) {
-                    Objects.requireNonNull(player.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s dodge_parry_reward:passive tcrcore:fire_avoid true");
-                    player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", Component.translatable(TCRSkills.FIRE_AVOID.getTranslationKey()).withStyle(ChatFormatting.AQUA)), false);
-                    player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.PLAYERS, 1.0F, 1.0F);
-                    PlayerDataManager.fireAvoidUnlocked.put(player, true);
-                }
-            }
         });
 
         if(livingEntity.level() instanceof ServerLevel serverLevel) {
@@ -527,8 +550,4 @@ public class LivingEntityEventListeners {
         }
     }
 
-//    @SubscribeEvent
-//    public static void onPlayerPickupItem(EntityItemPickupEvent event) {
-//
-//    }
 }

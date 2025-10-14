@@ -8,6 +8,7 @@ import com.obscuria.aquamirae.registry.AquamiraeSounds;
 import com.obscuria.obscureapi.api.utils.Icons;
 import com.obscuria.obscureapi.util.PlayerUtils;
 import com.obscuria.obscureapi.util.TextUtils;
+import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.utils.EntityUtil;
 import net.minecraft.core.BlockPos;
@@ -70,7 +71,8 @@ public class ShellHornItemMixin extends Item {
                 }
             }
         }
-        if(!PlayerDataManager.desertEyeBlessed.get(player)) {
+        if(!PlayerDataManager.desertEyeBlessed.get(player) && !player.isCreative()) {
+            player.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), false);
             summon = false;
         }
         new Object() {

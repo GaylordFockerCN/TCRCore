@@ -66,6 +66,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("nothing_happen_after_bless", "§dNothing happen...");
         this.addInfo("dim_max_4_players", "§6Cloudland can only contain 4 players!");
         this.addInfo("can_not_enter_before_finish", "§6You are not destined to enter the cloudland.");
+        this.addInfo("can_not_do_this_too_early", "§6You are not destined to do this.");
         this.addInfo("captain_start_heal", "§cCornelia start healing! Increase your damage!");
         this.addInfo("illegal_item_tip", "§cIllegal Item!");
         this.addInfo("shift_to_pic", "Attack when pressing Shift to take");

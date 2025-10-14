@@ -65,6 +65,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("end_unlock", "末地之门已解锁！");
         this.addInfo("dim_max_4_players", "§6幻境最多容纳4人！");
         this.addInfo("can_not_enter_before_finish", "§6当前没有进入幻镜的命运。");
+        this.addInfo("can_not_do_this_too_early", "§6当前没有做此事的命运。");
         this.addInfo("after_heal_stop_attack", "§6停止攻击以取消傀儡仇恨");
         this.addInfo("cloud_follow_me", "§6[仙气]：§f嗨伙计，跟着我！");
         this.addInfo("shift_to_pic", "潜行时攻击以收回");
