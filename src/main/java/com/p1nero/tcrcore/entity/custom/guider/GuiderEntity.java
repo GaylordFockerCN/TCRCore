@@ -234,8 +234,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                                 dBuilder.ans(15,
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
                                         TCRCoreMod.getInfo("iron_golem_name").withStyle(ChatFormatting.GOLD),
-                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
-                                        SGItems.GOLEM_HEART.get().getDescription().copy().withStyle(ChatFormatting.RED)))
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
 
@@ -254,8 +253,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                                 dBuilder.ans(17,
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN),
                                         AquamiraeEntities.CAPTAIN_CORNELIA.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN),
-                                        EFNItem.DEEPDARK_HEART.get().getDescription().copy().withStyle(ChatFormatting.RED)))
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
 
@@ -264,8 +262,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                                 dBuilder.ans(18,
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW),
                                         ModEntities.BONE_CHIMERA.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW),
-                                        ModItems.CHIERA_CLAW.get().getDescription().copy().withStyle(ChatFormatting.RED)))
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
 
@@ -274,8 +271,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                                 dBuilder.ans(19,
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED),
                                         BlockFactorysBossesModEntities.UNDERWORLD_KNIGHT.get().getDescription().copy().withStyle(ChatFormatting.RED),
-                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED),
-                                        BlockFactorysBossesModItems.DRAGON_SKULL.get().getDescription().copy().withStyle(ChatFormatting.GOLD)))
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
                 default -> treeBuilder.start(20).addFinalChoice(17);
@@ -425,7 +421,11 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 }
 
                 //召唤龙
-                net.alp.monsterexpansion.entity.ModEntities.SKRYTHE.get().spawn(player.serverLevel(), new BlockPos(WorldUtil.START_POS.above(10)), MobSpawnType.MOB_SUMMONED);
+                if(player.getRandom().nextBoolean()) {
+                    net.alp.monsterexpansion.entity.ModEntities.SKRYTHE.get().spawn(player.serverLevel(), new BlockPos(WorldUtil.GOLEM_CENTER_POS_VEC3I.above(10)), MobSpawnType.MOB_SUMMONED);
+                } else {
+                    net.alp.monsterexpansion.entity.ModEntities.RHYZA.get().spawn(player.serverLevel(), new BlockPos(WorldUtil.GOLEM_CENTER_POS_VEC3I.above(4)), MobSpawnType.MOB_SUMMONED);
+                }
             }
 
             if(pos != null) {

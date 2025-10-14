@@ -81,6 +81,8 @@
   "structure.minecraft.pillager_outpost_forest": "森林劫寨",
   "structure.minecraft.pillager_outpost_dark_forest": "深色橡木林劫寨",
   "structure.minecraft.stronghold_big": "末地要塞",
+  "_comment": "TCR Core",
+  "structure.tcrcore.underworld_arena": "炼狱决斗场",
   "_comment": "more_critters",
   "structure.more_critters.mightshroom_burial": "力量菇冢",
   "structure.more_critters.collector_wagon_ocean": "瀚海搜奇车",

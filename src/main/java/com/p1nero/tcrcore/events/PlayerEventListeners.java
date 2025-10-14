@@ -436,6 +436,7 @@ public class PlayerEventListeners {
                 if(!PlayerDataManager.mapMarked.get(player)) {
                     giveOracleEffect(player, TCRItems.ANCIENT_ORACLE_FRAGMENT.get());
                 }
+                player.displayClientMessage(TCRCoreMod.getInfo("add_item_tip", itemStack.getDisplayName(), 1), false);
             }
 
             if (!PlayerDataManager.stormEyeTraded.get(player) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get())) {

@@ -73,9 +73,12 @@ public class CustomColorItemEntity extends ItemEntity {
         tag.putInt("color_id", this.getTeamColor());
     }
 
+    /**
+     * 有Loot Beam了，故取消
+     */
     @Override
     public boolean isCurrentlyGlowing() {
-        return true;
+        return false;
     }
 
     public void setTeamColor(int color){

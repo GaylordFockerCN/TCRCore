@@ -15,6 +15,7 @@ import com.merlin204.sg.item.SGItems;
 import com.obscuria.aquamirae.Aquamirae;
 import com.obscuria.aquamirae.AquamiraeUtils;
 import com.obscuria.aquamirae.common.entities.CaptainCornelia;
+import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.dialog_lib.events.ServerNpcEntityInteractEvent;
 import com.p1nero.entityrespawner.EntityRespawnerMod;
@@ -199,6 +200,9 @@ public class LivingEntityEventListeners {
                 }
                 if(entity.getRandom().nextFloat() < 0.01F) {
                     ItemUtil.addItemEntity(entity, Items.NETHERITE_INGOT, 1, 0xc000ff);
+                }
+                if(!event.getEntity().getLootTable().toString().endsWith("captain") && entity.hasGlowingTag()) {
+                    ItemUtil.addItemEntity(entity, AquamiraeItems.SHELL_HORN.get(), 1, ChatFormatting.GOLD.getColor());
                 }
             } else if(entity instanceof Enemy) {
                 if(entity.getRandom().nextFloat() < 0.1F) {
@@ -461,10 +465,10 @@ public class LivingEntityEventListeners {
 
     public static Set<EntityType<?>> illegalEntityTypes = new HashSet<>();
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onMobSpawn(MobSpawnEvent.FinalizeSpawn event){
         if(AquamiraeUtils.isInIceMaze(event.getEntity())) {
-            if(event.getEntity() instanceof Pillager pillager && event.getEntity().getRandom().nextFloat() < 0.3) {
+            if(event.getEntity() instanceof Pillager pillager && event.getEntity().getRandom().nextFloat() < 0.2) {
                 pillager.getPersistentData().putString("DeathLootTable", Aquamirae.MODID + ":entities/maze_captain");
                 pillager.setGlowingTag(true);
             }
