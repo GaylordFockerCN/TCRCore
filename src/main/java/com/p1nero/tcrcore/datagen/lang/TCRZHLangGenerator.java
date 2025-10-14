@@ -196,6 +196,10 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(ModEntities.SKRYTHE.get(), 1, "吾名斯克里兹，乃神之坐骑。黑潮一役，吾身负重伤，沉睡至今。苏醒之时，圣殿似有复苏之息，遂归。守望者见吾，告知救世主一事，命吾于此恭候。");
         this.addDialogOption(ModEntities.SKRYTHE.get(), 0, "你是何人？");
         this.addDialogOption(ModEntities.SKRYTHE.get(), 1, "驯服");
+        this.addDialogAnswer(ModEntities.RHYZA.get(), 0, "救世主，吾恭候已久。");
+        this.addDialogAnswer(ModEntities.RHYZA.get(), 1, "吾名莱萨，乃神之坐骑。黑潮一役，吾身负重伤，沉睡至今。苏醒之时，圣殿似有复苏之息，遂归。守望者见吾，告知救世主一事，命吾于此恭候。");
+        this.addDialogOption(ModEntities.RHYZA.get(), 0, "你是何人？");
+        this.addDialogOption(ModEntities.RHYZA.get(), 1, "驯服");
 
         this.addDialogAnswer(EntityType.IRON_GOLEM, 0, "人类，准备好接受试炼了？");
         this.addDialogOption(EntityType.IRON_GOLEM, 0, "确定");

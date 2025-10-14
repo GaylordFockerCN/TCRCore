@@ -194,6 +194,11 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(ModEntities.SKRYTHE.get(), 0, "Who are you?");
         this.addDialogOption(ModEntities.SKRYTHE.get(), 1, "Tame");
 
+        this.addDialogAnswer(ModEntities.RHYZA.get(), 0, "Chosen One, I have long awaited your arrival.");
+        this.addDialogAnswer(ModEntities.RHYZA.get(), 1, "I am Rhyza, the divine steed. During the Black Tide War, I suffered grave injuries and have slumbered until now. Upon awakening, I sensed signs of revival within the Sanctuary, thus I returned. The Sanctuary Keeper, upon seeing me, informed me of the matter regarding the Chosen One and commanded me to await you here.");
+        this.addDialogOption(ModEntities.RHYZA.get(), 0, "Who are you?");
+        this.addDialogOption(ModEntities.RHYZA.get(), 1, "Tame");
+
         this.addDialogAnswer(EntityType.IRON_GOLEM, 0, "Man, are you ready？");
         this.addDialogOption(EntityType.IRON_GOLEM, 0, "Yes");
         this.addDialogOption(EntityType.IRON_GOLEM, 1, "Wait");
