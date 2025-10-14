@@ -4,7 +4,7 @@
         "item": "minecraft:nether_star"
     },
     "base": {
-        "item": "magistuarmory:netherite_lucernhammer"
+        "item": "uniqueaccessories:magick_quiver"
     },
     "result": {
         "item": "cataclysm:laser_gatling"

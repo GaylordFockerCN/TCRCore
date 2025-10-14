@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:anvil"
+    },
+    "base": {
+        "item": "efn:yamato_dmc4_in_sheath"
+    },
+    "result": {
+        "item": "efn:yamato_dmc_in_sheath"
+    },
+    "template": {
+        "item": "minecraft:recovery_compass"
+    }
+}

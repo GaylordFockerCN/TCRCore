@@ -1,0 +1,10 @@
+{
+  "type": "cataclysm:amethyst_bless",
+  "ingredients": {
+    "item": "cataclysm:music_disc_the_cataclysmfarer"
+  },
+  "result": {
+    "item": "efn:yamato_dmc_in_sheath"
+  },
+  "time": 120
+}
