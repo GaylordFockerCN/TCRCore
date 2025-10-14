@@ -56,13 +56,7 @@
 			rewards: [
 				{
 					id: "16BD4B61B573A722"
-					item: {
-						Count: 1
-						id: "super_golem:golem_heart"
-						tag: {
-							Damage: 0
-						}
-					}
+					item: "epicskills:ability_stone"
 					type: "item"
 				}
 				{
@@ -112,9 +106,8 @@
 			invisible_until_tasks: 1
 			rewards: [
 				{
-					count: 4
 					id: "65648736A3477913"
-					item: "fromtheshadows:crimson_shell"
+					item: "epicskills:ability_stone"
 					type: "item"
 				}
 				{
@@ -165,20 +158,15 @@
 					type: "item"
 				}
 				{
-					count: 16
+					count: 4
 					id: "331642B1977C0113"
 					item: "block_factorys_bosses:dragon_bone"
 					type: "item"
 				}
 				{
+					count: 4
 					id: "3F6173380C59BDCC"
-					item: {
-						Count: 1
-						id: "block_factorys_bosses:dragon_bones_chestplate"
-						tag: {
-							Damage: 0
-						}
-					}
+					item: "epicskills:ability_stone"
 					type: "item"
 				}
 				{
@@ -224,9 +212,9 @@
 			invisible_until_tasks: 1
 			rewards: [
 				{
-					count: 4
+					count: 3
 					id: "7E0F45C687F137DC"
-					item: "aquamirae:ship_graveyard_echo"
+					item: "epicskills:ability_stone"
 					type: "item"
 				}
 				{
@@ -256,17 +244,6 @@
 					item: {
 						Count: 1
 						id: "aquamirae:three_bolt_boots"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "32840B289D44BB1E"
-					item: {
-						Count: 1
-						id: "aquamirae:three_bolt_helmet"
 						tag: {
 							Damage: 0
 						}
@@ -313,19 +290,9 @@
 			invisible_until_tasks: 1
 			rewards: [
 				{
-					id: "78938D3EC514BA3F"
-					item: {
-						Count: 1
-						id: "dodosmobs:chimera_armor_chestplate"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
+					count: 2
 					id: "397ED74115CCCF3B"
-					item: "dodosmobs:chimera_claw"
+					item: "epicskills:ability_stone"
 					type: "item"
 				}
 				{
@@ -354,6 +321,75 @@
 			title: "{ftbquests.chapter.chaptertcr1.quest8215733437259381056.title}"
 			x: 2.5d
 			y: -11.5d
+		}
+		{
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			id: "261ED495C5E3AEA1"
+			invisible: true
+			optional: true
+			shape: "none"
+			size: 2.0d
+			tasks: [{
+				id: "19EB265B386E00F2"
+				item: "cataclysm:mech_eye"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -15.0d
+		}
+		{
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			id: "3DA47BC417E1D50B"
+			invisible: true
+			optional: true
+			shape: "none"
+			size: 2.0d
+			tasks: [{
+				id: "0BB6BF2C23A5B7EB"
+				item: "cataclysm:void_eye"
+				type: "item"
+			}]
+			x: -6.0d
+			y: -12.0d
+		}
+		{
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			id: "12382A247CB2D102"
+			invisible: true
+			optional: true
+			shape: "none"
+			size: 2.0d
+			tasks: [{
+				id: "275B2CB357F46159"
+				item: "cataclysm:monstrous_eye"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -12.0d
+		}
+		{
+			dependencies: [
+				"12382A247CB2D102"
+				"261ED495C5E3AEA1"
+				"3DA47BC417E1D50B"
+			]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			id: "102F2CD255F309D2"
+			invisible: true
+			optional: true
+			shape: "none"
+			size: 3.0d
+			tasks: [{
+				id: "53A4DC7C24EA7312"
+				item: "mimic:mimic_invitation"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -10.5d
 		}
 	]
 	subtitle: ["{ftbquests.chapter.chaptertcr1.subtitle0}"]

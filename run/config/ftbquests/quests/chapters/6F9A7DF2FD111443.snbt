@@ -25,7 +25,11 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: [""]
+			description: [
+				"{ftbquests.chapter.6F9A7DF2FD111443.quest7301166028169305205.description1}"
+				""
+				"{ftbquests.chapter.6F9A7DF2FD111443.quest7301166028169305205.description2}"
+			]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
 			icon: "fantasy_armor:moon_crystal"
@@ -53,6 +57,7 @@
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
+			description: ["{ftbquests.chapter.6F9A7DF2FD111443.quest8905345727084916768.description1}"]
 			icon_scale: 1.5d
 			id: "7B9624C198F07020"
 			rewards: [{
@@ -159,6 +164,7 @@
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
+			description: ["{ftbquests.chapter.6F9A7DF2FD111443.quest5383589744301195021.description1}"]
 			icon_scale: 1.5d
 			id: "4AB65A5955823F0D"
 			rewards: [{
@@ -221,6 +227,7 @@
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
+			description: ["{ftbquests.chapter.6F9A7DF2FD111443.quest423285769789054440.description1}"]
 			icon_scale: 1.5d
 			id: "05DFD02A3AC11DE8"
 			rewards: [{
@@ -396,6 +403,7 @@
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
+			description: ["{ftbquests.chapter.6F9A7DF2FD111443.quest1691663356384465641.description1}"]
 			icon: {
 				Count: 1
 				id: "fromtheshadows:diabolium_helmet"

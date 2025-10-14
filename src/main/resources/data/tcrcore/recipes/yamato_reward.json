@@ -1,0 +1,41 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "WAS",
+        "VDI",
+        "LMC"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:dragon_egg"
+        },
+        "W": {
+            "item": "cataclysm:witherite_ingot"
+        },
+        "A": {
+            "item": "cataclysm:ancient_metal_ingot"
+        },
+        "S": {
+            "item": "cataclysm:essence_of_the_storm"
+        },
+        "I": {
+            "item": "cataclysm:ignitium_ingot"
+        },
+        "C": {
+            "item": "cataclysm:cursium_ingot"
+        },
+        "M": {
+            "item": "cataclysm:monstrous_horn"
+        },
+        "L": {
+            "item": "tcrcore:abyss_core"
+        },
+        "V": {
+            "item": "tcrcore:void_core"
+        }
+    },
+    "result": {
+        "item": "cataclysm:music_disc_the_cataclysmfarer",
+        "count": 1
+    }
+}
