@@ -90,30 +90,11 @@
 			icon_scale: 1.5d
 			id: "68EDC89BB022788B"
 			invisible: true
-			rewards: [
-				{
-					id: "4B50245D1763A8CF"
-					item: "tudigong:tudi_command_spell"
-					type: "item"
-				}
-				{
-					count: 12
-					id: "52673A4ECC9B6C07"
-					item: "minecraft:obsidian"
-					type: "item"
-				}
-				{
-					id: "0D8DEB36D9982906"
-					item: {
-						Count: 1
-						id: "minecraft:flint_and_steel"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "4B50245D1763A8CF"
+				item: "tudigong:tudi_command_spell"
+				type: "item"
+			}]
 			shape: "square"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.subtitle}"
@@ -398,11 +379,19 @@
 			]
 			icon: "monsterexpansion:skrythe_frill"
 			id: "2C89A1EDBADA8DB5"
-			rewards: [{
-				id: "4D69F6191A356F5C"
-				item: "tcrcore:artifact_ticket"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 4
+					id: "4D69F6191A356F5C"
+					item: "epicskills:ability_stone"
+					type: "item"
+				}
+				{
+					id: "23443CC7F973D649"
+					item: "tcrcore:artifact_ticket"
+					type: "item"
+				}
+			]
 			shape: "rsquare"
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.subtitle}"
 			tasks: [{
