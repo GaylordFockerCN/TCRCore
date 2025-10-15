@@ -1,9 +1,6 @@
 package com.p1nero.tcrcore.entity.custom.guider;
 
 import com.github.dodo.dodosmobs.init.ModEntities;
-import com.github.dodo.dodosmobs.init.ModItems;
-import com.hm.efn.registries.EFNItem;
-import com.merlin204.sg.item.SGItems;
 import com.obscuria.aquamirae.registry.AquamiraeEntities;
 import com.p1nero.dialog_lib.api.IEntityNpc;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
@@ -54,7 +51,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.sonmok14.fromtheshadows.server.utils.registry.EntityRegistry;
 import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
 import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModEntities;
-import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModItems;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.merlin204.wraithon.WraithonMod;
@@ -102,7 +98,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
     public void tick() {
         super.tick();
         if(level() instanceof ServerLevel serverLevel) {
-            if(conversingPlayer != null && (conversingPlayer.isRemoved() || conversingPlayer.isDeadOrDying())) {
+            if(conversingPlayer != null && (conversingPlayer.isRemoved() || conversingPlayer.isDeadOrDying() || conversingPlayer.distanceTo(this) > 5)) {
                 conversingPlayer = null;
             }
             if(tickCount % 100 == 0) {
@@ -189,6 +185,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             tag.putBoolean("finished", TCRMainLevelSaveData.get(serverPlayer.serverLevel()).isAllFinish());
             tag.putBoolean("map_mark", PlayerDataManager.mapMarked.get(serverPlayer));
             tag.putBoolean("pillager_kill", PlayerDataManager.pillagerKilled.get(serverPlayer));
+            tag.putBoolean("fire_eye_get", PlayerDataManager.flameEyeTraded.get(serverPlayer));
             tag.putBoolean("finish_all_eye_boss", PlayerDataManager.isAllEyeGet(serverPlayer));
             tag.putBoolean("finish_all_altar_boss", PlayerDataManager.isAllAltarKilled(serverPlayer));
             ItemStack itemStack = player.getItemInHand(hand);
@@ -251,9 +248,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                 case 3 -> treeBuilder.start(7)
                         .addChoice(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(17,
-                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.CURSED))).withStyle(ChatFormatting.DARK_GREEN),
                                         AquamiraeEntities.CAPTAIN_CORNELIA.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.WATER))).withStyle(ChatFormatting.DARK_GREEN)))
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.CURSED))).withStyle(ChatFormatting.DARK_GREEN)))
                         .thenExecute(2)
                         .addFinalChoice(dBuilder.optWithBrackets(5), 1);
 
@@ -401,7 +398,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             }
 
             if(newStage == 4) {
-                pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.WATER);//船长
+                pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.CURSED);//船长
                 if (pos != null) {
                     WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("cursed_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.BLUE);
                 }

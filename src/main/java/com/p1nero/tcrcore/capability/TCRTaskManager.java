@@ -17,6 +17,7 @@ public class TCRTaskManager {
     public static Task GIVE_ORACLE_TO_KEEPER;
     public static Task FIND_GODNESS_STATUE;
     public static Task FIND_ARTERIUS;
+    public static Task LIGHT_ALL_ALTAR;
     public static void init() {
         TASKS.clear();
         EMPTY = createTask("empty");//不知道为嘛默认0改不了= =
@@ -24,6 +25,7 @@ public class TCRTaskManager {
         GIVE_ORACLE_TO_KEEPER = createTask("give_oracle_to_keeper");
         FIND_GODNESS_STATUE = createTask("find_godness_statue");
         FIND_ARTERIUS = createTask("find_arterius");
+        LIGHT_ALL_ALTAR = createTask("light_all_altar");
     }
 
     public static Task createTask(String desc) {

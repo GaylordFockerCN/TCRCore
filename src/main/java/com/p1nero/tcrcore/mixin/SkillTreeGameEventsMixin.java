@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore.mixin;
 
+import com.obscuria.aquamirae.Aquamirae;
 import com.yesman.epicskills.event.GameEvents;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
@@ -35,7 +36,7 @@ public class SkillTreeGameEventsMixin {
                     .getTable()
                     .addPool(
                             LootPool.lootPool()
-                                    .setRolls(UniformGenerator.between(1.0F, 2.0F))
+                                    .setRolls(UniformGenerator.between(1.0F, 3.0F))
                                     .add(LootItem.lootTableItem(EpicSkillsItems.ABILIITY_STONE.get()))
                                     .when(LootItemRandomChanceCondition.randomChance(0.03F))
                                     .build()
@@ -53,7 +54,11 @@ public class SkillTreeGameEventsMixin {
                         event.getName().equals(BuiltInLootTables.JUNGLE_TEMPLE_DISPENSER) ||
                         event.getName().equals(BuiltInLootTables.SHIPWRECK_TREASURE) ||
                         event.getName().equals(BuiltInLootTables.STRONGHOLD_CORRIDOR) ||
-                        event.getName().equals(BuiltInLootTables.STRONGHOLD_CROSSING)
+                        event.getName().equals(BuiltInLootTables.STRONGHOLD_CROSSING) ||
+                        event.getName().getNamespace().equals("dungeons_arise") ||
+                        event.getName().getNamespace().equals("ati_structures")||
+                        event.getName().getNamespace().equals("trek")||
+                        (event.getName().getNamespace().equals(Aquamirae.MODID) && event.getName().getPath().contains("ship"))
         ) {
             event
                     .getTable()
@@ -61,7 +66,7 @@ public class SkillTreeGameEventsMixin {
                             LootPool.lootPool()
                                     .setRolls(UniformGenerator.between(1.0F, 2.0F))
                                     .add(LootItem.lootTableItem(EpicSkillsItems.ABILIITY_STONE.get()))
-                                    .when(LootItemRandomChanceCondition.randomChance(0.03F))
+                                    .when(LootItemRandomChanceCondition.randomChance(0.05F))
                                     .build()
                     );
         }
@@ -72,7 +77,8 @@ public class SkillTreeGameEventsMixin {
                         event.getName().equals(BuiltInLootTables.JUNGLE_TEMPLE) ||
                         event.getName().equals(BuiltInLootTables.STRONGHOLD_LIBRARY) ||
                         event.getName().equals(BuiltInLootTables.BASTION_TREASURE) ||
-                        event.getName().equals(BuiltInLootTables.WOODLAND_MANSION)
+                        event.getName().equals(BuiltInLootTables.WOODLAND_MANSION) ||
+                        (event.getName().getNamespace().equals(Aquamirae.MODID) && event.getName().getPath().contains("frozen_chest"))
 
         ) {
             event
@@ -81,7 +87,22 @@ public class SkillTreeGameEventsMixin {
                             LootPool.lootPool()
                                     .setRolls(ConstantValue.exactly(1.0F))
                                     .add(LootItem.lootTableItem(EpicSkillsItems.ABILIITY_STONE.get()))
-                                    .when(LootItemRandomChanceCondition.randomChance(0.3F))
+                                    .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                    .build()
+                    );
+        }
+
+        // High chance - one roll
+        if (
+                        (event.getName().getNamespace().equals(Aquamirae.MODID) && event.getName().getPath().contains("frozen_chest"))
+        ) {
+            event
+                    .getTable()
+                    .addPool(
+                            LootPool.lootPool()
+                                    .setRolls(ConstantValue.exactly(1.0F))
+                                    .add(LootItem.lootTableItem(EpicSkillsItems.ABILIITY_STONE.get()))
+                                    .when(LootItemRandomChanceCondition.randomChance(0.8F))
                                     .build()
                     );
         }

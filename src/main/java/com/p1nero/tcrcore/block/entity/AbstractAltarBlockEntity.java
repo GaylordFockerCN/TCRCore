@@ -5,7 +5,7 @@ import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.cataclysm_dimension.worldgen.portal.CDNetherTeleporter;
 import com.p1nero.cataclysm_dimension.worldgen.portal.CDTeleporter;
 import com.p1nero.tcrcore.TCRCoreMod;
-import com.p1nero.tcrcore.capability.PlayerDataManager;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
@@ -88,6 +88,7 @@ public abstract class AbstractAltarBlockEntity extends BlockEntity {
             return;
         }
         ServerLevel serverLevel = (ServerLevel) level;
+        TCRTaskManager.LIGHT_ALL_ALTAR.finish(((ServerPlayer) pPlayer));
         MinecraftServer minecraftServer = pPlayer.getServer();
         if(minecraftServer == null) {
             return;

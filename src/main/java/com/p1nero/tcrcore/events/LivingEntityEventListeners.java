@@ -47,7 +47,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -176,10 +175,6 @@ public class LivingEntityEventListeners {
 
         }
 
-        //防止摔死
-        if(event.getEntity() instanceof BulldrogiothEntity && event.getSource().is(DamageTypes.FALL)) {
-            event.setCanceled(true);
-        }
     }
 
     @SubscribeEvent
@@ -325,13 +320,7 @@ public class LivingEntityEventListeners {
                     ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
                 }
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_arterius", NFIEntities.ARTERIUS.get().getDescription().copy().withStyle(ChatFormatting.RED), EFNItem.DUSKFIRE_INGOT.get().getDescription()), false);
-                ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), arterius.getRandom().nextInt(3), ChatFormatting.RED.getColor());
-                arterius.resetBossStatus(true);
-                arterius.setInBattle(false);
-                event.setCanceled(true);
-                EpicFightCapabilities.getUnparameterizedEntityPatch(arterius, ArteriusPatch.class).ifPresent(arteriusPatch -> {
-                    arteriusPatch.playAnimation(Animations.GREATSWORD_GUARD_BREAK, 3);
-                });
+                ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), 2 + arterius.getRandom().nextInt(3), ChatFormatting.RED.getColor());
                 if(!PlayerDataManager.arteriusKilled.get(player)) {
                     PlayerDataManager.arteriusKilled.put(player, true);
                 }
@@ -357,6 +346,15 @@ public class LivingEntityEventListeners {
                 }));
 
             }
+            //改mixin
+//            if(livingEntity instanceof Arterius arterius) {
+//                arterius.resetBossStatus(true);
+//                arterius.setInBattle(false);
+//                event.setCanceled(true);
+//                EpicFightCapabilities.getUnparameterizedEntityPatch(arterius, ArteriusPatch.class).ifPresent(arteriusPatch -> {
+//                    arteriusPatch.playAnimation(Animations.GREATSWORD_GUARD_BREAK, 3);
+//                });
+//            }
 
             if(livingEntity instanceof WraithonEntity wraithonEntity && !wraithonEntity.isDead()) {
                 serverLevel.players().forEach(serverPlayer -> {
@@ -367,14 +365,20 @@ public class LivingEntityEventListeners {
 
             if(livingEntity instanceof IronGolem ironGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //秽土转生
-                EntityRespawnerMod.addToRespawn(ironGolem, 40, true);
+                EntityRespawnerMod.addToRespawn(ironGolem, 60, true);
                 ItemUtil.addItemEntity(livingEntity, SGItems.GOLEM_HEART.get(), 1, ChatFormatting.GOLD.getColor().intValue());
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
             if(livingEntity instanceof Bone_Chimera_Entity boneChimeraEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.SAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //偷懒，直接秽土转生
-                EntityRespawnerMod.addToRespawn(boneChimeraEntity, 100, true);
+                EntityRespawnerMod.addToRespawn(boneChimeraEntity, 200, true);
+                livingEntity.getPersistentData().putBoolean("already_respawn", true);
+            }
+
+            if(livingEntity instanceof BulldrogiothEntity bulldrogiothEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.COVES) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
+                //秽土转生
+                EntityRespawnerMod.addToRespawn(bulldrogiothEntity, 600, true);
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
@@ -500,15 +504,14 @@ public class LivingEntityEventListeners {
 
         ServerLevel serverLevel = (ServerLevel) event.getEntity().level();
 
-        if(event.getEntity() instanceof ItemEntity itemEntity) {
-            if(PlayerEventListeners.illegalItems.contains(itemEntity.getItem().getItem())){
-                event.setCanceled(true);
-                return;
+        if(event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity) {
+            if(WorldUtil.isInStructure(bulldrogiothEntity, WorldUtil.COVES)) {
+                bulldrogiothEntity.setGlowingTag(true);
             }
         }
 
-        if(event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity) {
-            if(!EntityUtil.getNearByEntities(event.getLevel(), bulldrogiothEntity.position(), 100, BulldrogiothEntity.class).isEmpty()) {
+        if(event.getEntity() instanceof ItemEntity itemEntity) {
+            if(PlayerEventListeners.illegalItems.contains(itemEntity.getItem().getItem())){
                 event.setCanceled(true);
                 return;
             }

@@ -29,6 +29,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "将§6[神谕残卷]§r交给守望者");
         this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "将§6[神之眼]§r供奉于女神像");
         this.addTask(TCRTaskManager.FIND_ARTERIUS, "回去找阿尔特留斯");
+        this.addTask(TCRTaskManager.LIGHT_ALL_ALTAR, "将§6[神之眼]§r置于祭坛上");
 
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "使用§d[尼赫莫斯]§r掉落物§c[晶化血髓]§r酿造获取");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "击败§2[监守者]§r或§2[可妮莉亚船长]§r获取");
@@ -120,7 +121,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         this.addInfo("finish_all_eye", "§d众祭坛已点亮！§r");
         this.addInfo("time_to_altar", "失散火种已寻，该回去点亮祭坛了...");
-        this.addInfo("time_to_ask_godness_statue", "§d*可在女神像处祈求神谕");
+        this.addInfo("time_to_ask_godness_statue", "§d*可在女神像处祈求祝福");
         this.addInfo("time_to_end", "所有祭坛已点亮，该找守卫者举行仪式了...");
 
         this.addInfo("can_not_enter_dim", "看来当前还未能达到神之认可，无法进入...§6继续收集火种§r以获取更多神谕吧！");

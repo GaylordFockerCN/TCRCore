@@ -29,6 +29,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "Give §6[Oracle]§r to The Keeper");
         this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "Offer §6[Eye]§r to Godness Statue");
         this.addTask(TCRTaskManager.FIND_ARTERIUS, "Go back to Arterius");
+        this.addTask(TCRTaskManager.LIGHT_ALL_ALTAR, "Light all altar.");
 
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "Brewed using §c[Crystallized Blood Marrow]§r, a drop from §d[Nehemoth]§r");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "Obtained by defeating the §2[Warden]§r or §2[Captain Cornelia]§r");
@@ -118,7 +119,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addInfo("finish_all_eye", "§dAll altars are lit!§r");
         this.addInfo("time_to_altar", "The scattered embers have been found. It's time to return and light the altars...");
-        this.addInfo("time_to_ask_godness_statue", "§d*This item can be used at the statue of the Goddess to request an oracle.");
+        this.addInfo("time_to_ask_godness_statue", "§d*This item can be used at the statue of the Goddess.");
         this.addInfo("time_to_end", "All altars are lit. It's time to find the The Sanctuary Keeper to perform the ritual...");
 
         this.addInfo("can_not_enter_dim", "It seems you have not yet gained the divine approval to enter... §6Continue collecting embers§r to receive more oracles!");
