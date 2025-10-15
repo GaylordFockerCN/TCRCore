@@ -1,0 +1,53 @@
+{
+  "pools": [
+    {
+      "name": "horn",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:monstrous_horn"
+        }
+      ]
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 24.0,
+                "min": 16.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cataclysm:lava_power_cell"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "name": "disc",
+      "conditions": [
+        {
+          "condition": "random_chance_with_looting",
+          "chance": 0.1,
+          "looting_multiplier": 0.1
+        }
+      ],
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:music_disc_netherite_monstrosity",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}
