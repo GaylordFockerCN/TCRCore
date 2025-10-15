@@ -165,7 +165,7 @@ public class PlayerEventListeners {
                 }
             }
 
-            if (blockState.is(com.github.L_Ender.cataclysm.init.ModBlocks.GODDESS_STATUE.get())) {
+            if (blockState.is(com.github.L_Ender.cataclysm.init.ModBlocks.GODDESS_STATUE.get()) && ItemEvents.eyes.contains(serverPlayer.getMainHandItem().getItem())) {
                 TCRPlayer tcrPlayer = TCRCapabilityProvider.getTCRPlayer(serverPlayer);
                 ServerLevel serverLevel = serverPlayer.serverLevel();
                 BlockPos blessPos = event.getPos();
@@ -173,8 +173,11 @@ public class PlayerEventListeners {
                         SoundSource.AMBIENT, 0.7F, 0.5F + serverLevel.random.nextFloat() * 0.3F);
 
                 TCRTaskManager.FIND_GODNESS_STATUE.finish(serverPlayer);
-                tcrPlayer.setTickAfterBless(100);
-                tcrPlayer.setBlessPos(event.getPos());
+                if(!tcrPlayer.inBlessing()) {
+                    tcrPlayer.setTickAfterBless(100);
+                    tcrPlayer.setBlessPos(event.getPos());
+                    tcrPlayer.setBlessItem(serverPlayer.getMainHandItem().getItem());
+                }
             }
 
             //击败boss前禁止交互
@@ -194,9 +197,9 @@ public class PlayerEventListeners {
     @SubscribeEvent
     public static void onCurioEquip(CurioEquipEvent event) {
         if (illegalItems.contains(event.getStack().getItem())) {
-            event.setResult(Event.Result.DENY);
-            if (event.getEntity() instanceof Player player) {
+            if (event.getEntity() instanceof Player player && !PlayerDataManager.wraithonKilled.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("illegal_item_tip"), true);
+                event.setResult(Event.Result.DENY);
             }
         }
     }
@@ -212,10 +215,10 @@ public class PlayerEventListeners {
             }
             if (event.player instanceof ServerPlayer serverPlayer) {
                 ItemStack mainHandItem = serverPlayer.getMainHandItem();
-                if (illegalItems.contains(mainHandItem.getItem())) {
-                    event.player.drop(mainHandItem.copy(), true);
+                if (illegalItems.contains(mainHandItem.getItem()) && !PlayerDataManager.wraithonKilled.get(serverPlayer)) {
+                    serverPlayer.drop(mainHandItem.copy(), true);
                     mainHandItem.shrink(1);
-                    event.player.displayClientMessage(TCRCoreMod.getInfo("illegal_item_tip"), true);
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("illegal_item_tip"), true);
                 }
 
                 if (!serverPlayer.isInvulnerable()) {
@@ -230,22 +233,23 @@ public class PlayerEventListeners {
                 if (!serverPlayer.serverLevel().isLoaded(serverPlayer.getOnPos())) {
                     return;
                 }
-                if (PlayerDataManager.stormEyeTraded.get(event.player) && serverPlayer.tickCount % 200 == 0 && WorldUtil.isInStructure(event.player, WorldUtil.COVES)) {
-                    //定点生
-                    BlockPos pos = TCRMainLevelSaveData.get(serverPlayer.serverLevel()).getAbyssPos();
-                    if (!serverPlayer.serverLevel().isLoaded(pos)) {
-                        return;
-                    }
-                    if (pos.equals(BlockPos.ZERO)) {
-                        Vec3 targetPos = event.player.position().add(event.player.getViewVector(1.0F).scale(10));
-                        pos = new BlockPos((int) targetPos.x, (int) (event.player.getY() + 5), (int) targetPos.z);
-                    }
-                    //保险措施
-                    if (EntityUtil.getNearByEntities(serverPlayer.serverLevel(), pos.getCenter(), 150, BulldrogiothEntity.class).isEmpty()) {
-                        BulldrogiothEntity entity = EntityRegistry.BULLDROGIOTH.get().spawn(serverPlayer.serverLevel(), pos, MobSpawnType.SPAWNER);
-                        entity.setGlowingTag(true);
-                    }
-                }
+                //改为合并进结构并自然重生
+//                if (PlayerDataManager.stormEyeTraded.get(serverPlayer) && serverPlayer.tickCount % 200 == 0 && WorldUtil.isInStructure(serverPlayer, WorldUtil.COVES)) {
+//                    //定点生
+//                    BlockPos pos = TCRMainLevelSaveData.get(serverPlayer.serverLevel()).getAbyssPos();
+//                    if (!serverPlayer.serverLevel().isLoaded(pos)) {
+//                        return;
+//                    }
+//                    if (pos.equals(BlockPos.ZERO)) {
+//                        Vec3 targetPos = serverPlayer.position().add(serverPlayer.getViewVector(1.0F).scale(10));
+//                        pos = new BlockPos((int) targetPos.x, (int) (serverPlayer.getY() + 5), (int) targetPos.z);
+//                    }
+//                    //保险措施
+//                    if (EntityUtil.getNearByEntities(serverPlayer.serverLevel(), pos.getCenter(), 150, BulldrogiothEntity.class).isEmpty()) {
+//                        BulldrogiothEntity entity = EntityRegistry.BULLDROGIOTH.get().spawn(serverPlayer.serverLevel(), pos, MobSpawnType.SPAWNER);
+//                        entity.setGlowingTag(true);
+//                    }
+//                }
                 if (WorldUtil.inMainLand(serverPlayer) && serverPlayer.isSprinting()) {
                     serverPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 10, 2, false, false, true));
                 }
@@ -284,6 +288,7 @@ public class PlayerEventListeners {
     public static void onPlayerEnterDim(EntityTravelToDimensionEvent event) {
 
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
+            //允许创造进
             if (!serverPlayer.isCreative()) {
                 if (event.getDimension() == Level.NETHER) {
                     if (!PlayerDataManager.canEnterNether.get(serverPlayer)) {
@@ -298,23 +303,24 @@ public class PlayerEventListeners {
                         serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_dim"), true);
                     }
                 }
-            }
 
-            if (CataclysmDimensions.LEVELS.contains(event.getDimension())) {
-                ServerLevel targetLevel = serverPlayer.server.getLevel(event.getDimension());
-                if (targetLevel != null && targetLevel.players().size() >= 4) {
-                    event.setCanceled(true);
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_max_4_players"), false);
+
+                if (CataclysmDimensions.LEVELS.contains(event.getDimension())) {
+                    ServerLevel targetLevel = serverPlayer.server.getLevel(event.getDimension());
+                    if (targetLevel != null && targetLevel.players().size() >= 4) {
+                        event.setCanceled(true);
+                        serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_max_4_players"), false);
+                    }
                 }
-            }
 
-            if ((event.getDimension() == CataclysmDimensions.CATACLYSM_SANCTUM_FALLEN_LEVEL_KEY && !PlayerDataManager.stormEyeTraded.get(serverPlayer))
-                    || (event.getDimension() == CataclysmDimensions.CATACLYSM_INFERNOS_MAW_LEVEL_KEY && !PlayerDataManager.flameEyeTraded.get(serverPlayer))
-                    || (event.getDimension() == CataclysmDimensions.CATACLYSM_ETERNAL_FROSTHOLD_LEVEL_KEY && !PlayerDataManager.cursedEyeTraded.get(serverPlayer))
-                    || (event.getDimension() == CataclysmDimensions.CATACLYSM_PHARAOHS_BANE_LEVEL_KEY && !PlayerDataManager.desertEyeTraded.get(serverPlayer))
-                    || (event.getDimension() == CataclysmDimensions.CATACLYSM_ABYSSAL_DEPTHS_LEVEL_KEY && !PlayerDataManager.abyssEyeTraded.get(serverPlayer))) {
-                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_before_finish"), false);
-                event.setCanceled(true);
+                if ((event.getDimension() == CataclysmDimensions.CATACLYSM_SANCTUM_FALLEN_LEVEL_KEY && !PlayerDataManager.stormEyeTraded.get(serverPlayer))
+                        || (event.getDimension() == CataclysmDimensions.CATACLYSM_INFERNOS_MAW_LEVEL_KEY && !PlayerDataManager.flameEyeTraded.get(serverPlayer))
+                        || (event.getDimension() == CataclysmDimensions.CATACLYSM_ETERNAL_FROSTHOLD_LEVEL_KEY && !PlayerDataManager.cursedEyeTraded.get(serverPlayer))
+                        || (event.getDimension() == CataclysmDimensions.CATACLYSM_PHARAOHS_BANE_LEVEL_KEY && !PlayerDataManager.desertEyeTraded.get(serverPlayer))
+                        || (event.getDimension() == CataclysmDimensions.CATACLYSM_ABYSSAL_DEPTHS_LEVEL_KEY && !PlayerDataManager.abyssEyeTraded.get(serverPlayer))) {
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_before_finish"), false);
+                    event.setCanceled(true);
+                }
             }
         }
 
@@ -453,6 +459,7 @@ public class PlayerEventListeners {
 
             if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.FLAME_EYE.get()) && !PlayerDataManager.flameEyeTraded.get(player)) {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
+                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.FLAME_EYE.get());
                 PlayerDataManager.flameEyeTraded.put(player, true);
             }
 

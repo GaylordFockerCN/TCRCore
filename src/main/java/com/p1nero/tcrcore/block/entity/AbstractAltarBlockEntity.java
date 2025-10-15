@@ -5,7 +5,7 @@ import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.cataclysm_dimension.worldgen.portal.CDNetherTeleporter;
 import com.p1nero.cataclysm_dimension.worldgen.portal.CDTeleporter;
 import com.p1nero.tcrcore.TCRCoreMod;
-import com.p1nero.tcrcore.capability.PlayerDataManager;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
@@ -88,12 +88,13 @@ public abstract class AbstractAltarBlockEntity extends BlockEntity {
             return;
         }
         ServerLevel serverLevel = (ServerLevel) level;
+        TCRTaskManager.LIGHT_ALL_ALTAR.finish(((ServerPlayer) pPlayer));
         MinecraftServer minecraftServer = pPlayer.getServer();
         if(minecraftServer == null) {
             return;
         }
         if(this.isActivated){
-            if(!checkEyeFound(pPlayer)) {
+            if(!pPlayer.isCreative() && !checkEyeFound(pPlayer)) {
                 pPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_enter_before_finish"), false);
                 return;
             }
@@ -102,28 +103,28 @@ public abstract class AbstractAltarBlockEntity extends BlockEntity {
             boolean flag = true;
             if(defaultInstance.is(ModItems.ABYSS_EYE.get())) {
                 ServerLevel level = minecraftServer.getLevel(CataclysmDimensions.CATACLYSM_ABYSSAL_DEPTHS_LEVEL_KEY);
-                pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 200, 0)));
+                flag = null != pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 200, 0)));
             } else if(defaultInstance.is(ModItems.MECH_EYE.get())) {
                 ServerLevel level = minecraftServer.getLevel(CataclysmDimensions.CATACLYSM_FORGE_OF_AEONS_LEVEL_KEY);
-                pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 150, 0)));
+                flag = null != pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 150, 0)));
             } else if(defaultInstance.is(ModItems.FLAME_EYE.get())) {
                 ServerLevel level = minecraftServer.getLevel(CataclysmDimensions.CATACLYSM_INFERNOS_MAW_LEVEL_KEY);
-                pPlayer.changeDimension(level, new CDNetherTeleporter(new BlockPos(0, 64, 0)));
+                flag = null != pPlayer.changeDimension(level, new CDNetherTeleporter(new BlockPos(0, 64, 0)));
             } else if(defaultInstance.is(ModItems.VOID_EYE.get())) {
                 ServerLevel level = minecraftServer.getLevel(CataclysmDimensions.CATACLYSM_BASTION_LOST_LEVEL_KEY);
-                pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 150, 0)));
+                flag = null != pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 150, 0)));
             } else if(defaultInstance.is(ModItems.MONSTROUS_EYE.get())) {
                 ServerLevel level = minecraftServer.getLevel(CataclysmDimensions.CATACLYSM_SOULS_ANVIL_LEVEL_KEY);
-                pPlayer.changeDimension(level, new CDNetherTeleporter(new BlockPos(0, 64, 0)));
+                flag = null != pPlayer.changeDimension(level, new CDNetherTeleporter(new BlockPos(0, 64, 0)));
             } else if(defaultInstance.is(ModItems.DESERT_EYE.get())) {
                 ServerLevel level = minecraftServer.getLevel(CataclysmDimensions.CATACLYSM_PHARAOHS_BANE_LEVEL_KEY);
-                pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 200, 0), 400));
+                flag = null != pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 200, 0), 400));
             } else if(defaultInstance.is(ModItems.CURSED_EYE.get())) {
                 ServerLevel level = minecraftServer.getLevel(CataclysmDimensions.CATACLYSM_ETERNAL_FROSTHOLD_LEVEL_KEY);
-                pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 200, 0), 400));
+                flag = null != pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 200, 0), 400));
             } else if(defaultInstance.is(ModItems.STORM_EYE.get())) {
                 ServerLevel level = minecraftServer.getLevel(CataclysmDimensions.CATACLYSM_SANCTUM_FALLEN_LEVEL_KEY);
-                pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 200, 0)));
+                flag = null != pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 200, 0)));
             } else {
                 flag = false;
             }

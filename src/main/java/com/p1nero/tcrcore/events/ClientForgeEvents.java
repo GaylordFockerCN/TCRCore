@@ -12,12 +12,20 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderGuiEvent;
 import net.minecraftforge.client.event.RenderGuiOverlayEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID, value = Dist.CLIENT)
 public class ClientForgeEvents {
+
+    @SubscribeEvent
+    public static void onClientTick(TickEvent.ClientTickEvent event){
+        if(Minecraft.getInstance().player != null) {
+            CustomGuiderRenderer.tick(Minecraft.getInstance().player);
+        }
+    }
 
     @SubscribeEvent
     public static void onRenderOverlay(RenderGuiOverlayEvent.Pre event){

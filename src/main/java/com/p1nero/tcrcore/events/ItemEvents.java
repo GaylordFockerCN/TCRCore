@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.events;
 
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRPlayer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -37,8 +38,8 @@ public class ItemEvents {
             event.getToolTip().add(1, Component.translatable(event.getItemStack().getItem().getDescriptionId() + ".tcr_info"));
         }
 
-        if(PlayerEventListeners.illegalItems.contains(event.getItemStack().getItem())) {
-            event.getToolTip().add(1, TCRCoreMod.getInfo("illegal_item_tip"));
+        if(!PlayerDataManager.wraithonKilled.get(event.getEntity()) && PlayerEventListeners.illegalItems.contains(event.getItemStack().getItem())) {
+            event.getToolTip().add(1, TCRCoreMod.getInfo("illegal_item_tip2"));
         }
 
     }

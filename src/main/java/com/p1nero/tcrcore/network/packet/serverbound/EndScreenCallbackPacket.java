@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.network.packet.serverbound;
 import com.p1nero.dialog_lib.network.packet.BasePacket;
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import net.minecraft.core.BlockPos;
@@ -27,6 +28,7 @@ public record EndScreenCallbackPacket() implements BasePacket {
             ServerLevel overworld = player.getServer().getLevel(Level.OVERWORLD);
             if (overworld != null) {
                 if(player.level().dimension() != Level.OVERWORLD) {
+                    PlayerDataManager.wraithonKilled.put(serverPlayer, true);
                     serverPlayer.changeDimension(overworld, new PositionTeleporter(new BlockPos(WorldUtil.START_POS)));
                 }
             }

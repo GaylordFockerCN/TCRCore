@@ -110,7 +110,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                     this.setPos(new BlockPos(WorldUtil.GIRL_POS).getCenter());
                 }
             }
-            if(conversingPlayer != null && (conversingPlayer.isRemoved() || conversingPlayer.isDeadOrDying())) {
+            if(conversingPlayer != null && (conversingPlayer.isRemoved() || conversingPlayer.isDeadOrDying() || conversingPlayer.distanceTo(this) > 5)) {
                 conversingPlayer = null;
             }
         }

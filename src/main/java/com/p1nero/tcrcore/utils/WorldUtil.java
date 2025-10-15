@@ -2,7 +2,6 @@ package com.p1nero.tcrcore.utils;
 
 import com.yungnickyoung.minecraft.yungsapi.criteria.SafeStructureLocationPredicate;
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -37,7 +36,7 @@ public class WorldUtil {
     public static final String COVES = "trek:overworld/very_rare/coves";
     public static final String SKY_ISLAND = "trek:overworld/very_rare/floating_farm_large";
     public static final String SAND = "dodosmobs:jungle_prison";
-    public static final String WATER = "aquamirae:ship";
+    public static final String CURSED = "aquamirae:ship";
     public static final String FIRE = "tcrcore:underworld_arena";
     public static Vec2i storm, flame, abyss, cursed, desert;
 

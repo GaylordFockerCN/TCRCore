@@ -165,6 +165,8 @@ dependencies {
 
     implementation fg.deobf("curse.maven:epic-fight-mod-405076:7103001-sources-7103018")
     implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7103049-sources-7103052")
+    implementation fg.deobf("curse.maven:p1nero-better-structure-block-970671:6817772")
+    implementation fg.deobf("curse.maven:epic-fight-indestructible-915201:6915161")
 
     implementation fg.deobf("curse.maven:epic-fight-wraithon-1354901:7068815")
     implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7018600")
@@ -255,12 +257,8 @@ dependencies {
     implementation fg.deobf("curse.maven:ati-structures-964608:6730813")
 //    implementation fg.deobf("libs:trek:B0.5") //内置为数据包，curse forge用数据包形式下载
     implementation fg.deobf("curse.maven:when-dungeons-arise-442508:4983862")
-    implementation fg.deobf("curse.maven:hopo-better-mineshaft-623723:6631774")
     implementation fg.deobf("curse.maven:towns-and-towers-626761:4923828")
     implementation fg.deobf("curse.maven:cristel-lib-856996:5869180")
-    implementation fg.deobf("curse.maven:moogs-end-structures-892382:6915265")
-    implementation fg.deobf("curse.maven:mns-moogs-nether-structures-967466:5850727")
-    implementation fg.deobf("curse.maven:mss-moogs-soaring-structures-1040210:6079893")
     implementation fg.deobf("curse.maven:abridged-948999:6745463")
     implementation "curse.maven:lukis-grand-capitals-1003666:6786014"
 

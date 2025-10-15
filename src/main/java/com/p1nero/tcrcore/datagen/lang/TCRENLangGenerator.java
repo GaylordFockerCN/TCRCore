@@ -25,9 +25,11 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
     @Override
     protected void addTranslations() {
-        this.addTask(TCRTaskManager.KILL_PILLAGER, "Kill illager.");
+        this.addTask(TCRTaskManager.KILL_PILLAGER, "Kill an illager");
         this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "Give §6[Oracle]§r to The Keeper");
         this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "Offer §6[Eye]§r to Godness Statue");
+        this.addTask(TCRTaskManager.FIND_ARTERIUS, "Go back to Arterius");
+        this.addTask(TCRTaskManager.LIGHT_ALL_ALTAR, "Light all altar.");
 
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "Brewed using §c[Crystallized Blood Marrow]§r, a drop from §d[Nehemoth]§r");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "Obtained by defeating the §2[Warden]§r or §2[Captain Cornelia]§r");
@@ -75,6 +77,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("can_not_do_this_too_early", "§6You are not destined to do this.");
         this.addInfo("captain_start_heal", "§cCornelia start healing! Increase your damage!");
         this.addInfo("illegal_item_tip", "§cIllegal Item!");
+        this.addInfo("illegal_item_tip2", "§6Currently, you are not destined to use this item.");
+
         this.addInfo("shift_to_pic", "Attack when pressing Shift to take");
         this.addInfo("no_place_to_ship", "No Space for ship!");
         this.addInfo("boss_killed_ready_return", "§6Boss has been defeated! Block interaction unlocked!");
@@ -115,7 +119,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addInfo("finish_all_eye", "§dAll altars are lit!§r");
         this.addInfo("time_to_altar", "The scattered embers have been found. It's time to return and light the altars...");
-        this.addInfo("time_to_ask_godness_statue", "§d*This item can be used at the statue of the Goddess to request an oracle.");
+        this.addInfo("time_to_ask_godness_statue", "§d*This item can be used at the statue of the Goddess.");
         this.addInfo("time_to_end", "All altars are lit. It's time to find the The Sanctuary Keeper to perform the ritual...");
 
         this.addInfo("can_not_enter_dim", "It seems you have not yet gained the divine approval to enter... §6Continue collecting embers§r to receive more oracles!");
@@ -292,7 +296,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 3, "Are you ready?");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 4, "During the Black Tide, the §6[Piglin clan]§f§f of the Nether created [%s] to resist the darkness. Unfortunately, they were defeated and lost their sanity. However, they still recognize [%s§f§f]. Use [%s§f§f] to trade with them, and you may unveil the secrets of the ancient war machines.");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 5, "[%s] and [%s] guard the echoes of [%s] and [%s], respectively.");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 6, "After you retrieve them, come find me again, and I will show you the power of §4§l[Proteus]§f§f!");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 6, "After you retrieve them, come find me again, and I will show you the power of §4§l[The Lethean Sea]§f§f!");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 0, "Retrieve the Eye of Flame");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 1, "Take your life");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 2, "I'm ready");

@@ -1,11 +1,13 @@
 package com.p1nero.tcrcore.capability;
 
+import com.github.L_Ender.cataclysm.init.ModItems;
 import com.p1nero.fast_tpa.network.PacketRelay;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.network.packet.clientbound.OpenEndScreenPacket;
 import com.p1nero.tcrcore.network.packet.clientbound.SyncTCRPlayerPacket;
+import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -26,6 +28,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
 import org.jetbrains.annotations.Nullable;
@@ -46,6 +49,7 @@ public class TCRPlayer {
     private int tickAfterStartArterius;
     private Arterius arterius;
     private BlockPos blessPos;
+    private Item blessItem;
 
     public void setTickAfterStartArterius(int tickAfterStartArterius) {
         this.tickAfterStartArterius = tickAfterStartArterius;
@@ -57,6 +61,14 @@ public class TCRPlayer {
 
     public void setTickAfterBless(int tickAfterBless) {
         this.tickAfterBless = tickAfterBless;
+    }
+
+    public void setBlessItem(Item blessItem) {
+        this.blessItem = blessItem;
+    }
+
+    public boolean inBlessing() {
+        return this.tickAfterBless > 1;
     }
 
     public void setBlessPos(BlockPos blessPos) {
@@ -292,59 +304,62 @@ public class TCRPlayer {
             }
             //给神谕，加血加耐
             if(tickAfterBless == 0) {
-                boolean flag = true;
+                final double oldAdder = healthAdder;
                 ItemStack oracle = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
                 oracle.getOrCreateTag().putString(PLAYER_NAME, serverPlayer.getGameProfile().getName());
-                if(PlayerDataManager.stormEyeTraded.get(serverPlayer) && !PlayerDataManager.stormEyeBlessed.get(serverPlayer)) {
+                ItemStack item = blessItem == null ? serverPlayer.getMainHandItem() : blessItem.getDefaultInstance();
+                if(item.is(ModItems.STORM_EYE.get()) && PlayerDataManager.stormEyeTraded.get(serverPlayer) && !PlayerDataManager.stormEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                     healthAdder += 2.0;
                     PlayerDataManager.stormEyeBlessed.put(serverPlayer, true);
-                } else if(PlayerDataManager.abyssEyeTraded.get(serverPlayer) && !PlayerDataManager.abyssEyeBlessed.get(serverPlayer)) {
+                } else if(item.is(ModItems.ABYSS_EYE.get()) && PlayerDataManager.abyssEyeTraded.get(serverPlayer) && !PlayerDataManager.abyssEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                     healthAdder += 2.0;
                     PlayerDataManager.abyssEyeBlessed.put(serverPlayer, true);
-                } else if(PlayerDataManager.desertEyeTraded.get(serverPlayer) && !PlayerDataManager.desertEyeBlessed.get(serverPlayer)) {
+                } else if(item.is(ModItems.DESERT_EYE.get()) && PlayerDataManager.desertEyeTraded.get(serverPlayer) && !PlayerDataManager.desertEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                     healthAdder += 2.0;
                     PlayerDataManager.desertEyeBlessed.put(serverPlayer, true);
                     PlayerDataManager.canEnterNether.put(serverPlayer, true);
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("nether_unlock").withStyle(ChatFormatting.RED)));
-                } else if(PlayerDataManager.cursedEyeTraded.get(serverPlayer) && !PlayerDataManager.cursedEyeBlessed.get(serverPlayer)) {
+                } else if(item.is(ModItems.CURSED_EYE.get()) && PlayerDataManager.cursedEyeTraded.get(serverPlayer) && !PlayerDataManager.cursedEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                     healthAdder += 2.0;
                     PlayerDataManager.cursedEyeBlessed.put(serverPlayer, true);
                     PlayerDataManager.canEnterEnd.put(serverPlayer, true);
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("end_unlock").withStyle(ChatFormatting.LIGHT_PURPLE)));
-                } else if(!PlayerDataManager.flameEyeBlessed.get(serverPlayer)) {
+                } else if(item.is(ModItems.FLAME_EYE.get()) && PlayerDataManager.flameEyeTraded.get(serverPlayer) && !PlayerDataManager.flameEyeBlessed.get(serverPlayer)) {
                     healthAdder += 2.0;
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     PlayerDataManager.flameEyeBlessed.put(serverPlayer, true);
-                } else if(!PlayerDataManager.monstEyeBlessed.get(serverPlayer)) {
+                } else if(item.is(ModItems.MONSTROUS_EYE.get()) && !PlayerDataManager.monstEyeBlessed.get(serverPlayer)) {
                     healthAdder += 4.0;
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     PlayerDataManager.monstEyeBlessed.put(serverPlayer, true);
-                } else if(!PlayerDataManager.mechEyeBlessed.get(serverPlayer)) {
+                } else if(item.is(ModItems.MECH_EYE.get()) && !PlayerDataManager.mechEyeBlessed.get(serverPlayer)) {
                     healthAdder += 4.0;
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     PlayerDataManager.mechEyeBlessed.put(serverPlayer, true);
-                } else if(!PlayerDataManager.voidEyeBlessed.get(serverPlayer)) {
+                } else if(item.is(ModItems.VOID_EYE.get()) && !PlayerDataManager.voidEyeBlessed.get(serverPlayer)) {
                     healthAdder += 4.0;
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     PlayerDataManager.voidEyeBlessed.put(serverPlayer, true);
+                }
+                if(oldAdder < healthAdder) {
+                    updateHealth(serverPlayer, true, oldAdder);
+                    if(PlayerDataManager.isAllEyeGet(serverPlayer) && !TCRMainLevelSaveData.get(serverLevel).isAllFinish()) {
+                        TCRTaskManager.LIGHT_ALL_ALTAR.start(serverPlayer);
+                    }
                 } else {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("nothing_happen_after_bless"), false);
-                    flag = false;
-                }
-                if(flag) {
-                    updateHealth(serverPlayer);
                 }
             }
         }
     }
 
-    public void updateHealth(ServerPlayer serverPlayer) {
+    public void updateHealth(ServerPlayer serverPlayer, boolean showTip, double originalAdder) {
         final UUID HEALTH_MODIFIER_UUID = UUID.fromString("11451419-1981-0234-1234-123456789abc");
         float preHealth = serverPlayer.getHealth();
         float preMaxHealth = serverPlayer.getMaxHealth();
@@ -359,7 +374,9 @@ public class TCRPlayer {
             );
             maxHealthAttr.addPermanentModifier(healthModifier);
             serverPlayer.setHealth(preHealth * serverPlayer.getMaxHealth() / preMaxHealth);
-            serverPlayer.displayClientMessage(Component.translatable(Attributes.MAX_HEALTH.getDescriptionId()).append(" + " + healthAdder), false);
+            if(showTip) {
+                serverPlayer.displayClientMessage(Component.translatable(Attributes.MAX_HEALTH.getDescriptionId()).withStyle(ChatFormatting.RED).append(" + " + (healthAdder - originalAdder)), false);
+            }
         }
         AttributeInstance staminaAttr = serverPlayer.getAttribute(EpicFightAttributes.MAX_STAMINA.get());
         if (staminaAttr != null) {
@@ -367,12 +384,14 @@ public class TCRPlayer {
             AttributeModifier staminaModifier = new AttributeModifier(
                     HEALTH_MODIFIER_UUID,
                     "stamina_boost",
-                    (healthAdder / 2),
+                    (healthAdder / 2.5F),
                     AttributeModifier.Operation.ADDITION
             );
             staminaAttr.addPermanentModifier(staminaModifier);
+            if(showTip) {
+                serverPlayer.displayClientMessage(Component.translatable(EpicFightAttributes.MAX_STAMINA.get().getDescriptionId()).withStyle(ChatFormatting.GOLD).append(String.format(" + %.1f", ((healthAdder - originalAdder) / 2.5F))), false);
+            }
         }
-        serverPlayer.displayClientMessage(Component.translatable(EpicFightAttributes.MAX_STAMINA.get().getDescriptionId()).append(" + " + (healthAdder / 2)), false);
     }
 
 }
