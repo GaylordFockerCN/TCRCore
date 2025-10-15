@@ -4,7 +4,7 @@
 	["BOSS Config"."Arterius Config"]
 		#攻击力倍率 （基础伤害 + 武器伤害）*倍率
 		#Range: 0.0 ~ 1.7976931348623157E308
-		arteriusAttackDamageMultiplier = 0.5
+		arteriusAttackDamageMultiplier = 0.3
 		#最大生命值倍率
 		#Range: 0.0 ~ 1.7976931348623157E308
 		arteriusMaxHealthMultiplier = 1.0

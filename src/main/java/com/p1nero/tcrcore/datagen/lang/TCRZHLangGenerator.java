@@ -28,6 +28,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addTask(TCRTaskManager.KILL_PILLAGER, "击杀掠夺者");
         this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "将§6[神谕残卷]§r交给守望者");
         this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "将§6[神之眼]§r供奉于女神像");
+        this.addTask(TCRTaskManager.FIND_ARTERIUS, "回去找阿尔特留斯");
 
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "使用§d[尼赫莫斯]§r掉落物§c[晶化血髓]§r酿造获取");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "击败§2[监守者]§r或§2[可妮莉亚船长]§r获取");
@@ -97,6 +98,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("attack_to_restart", "§c攻击Boss以再次发起挑战");
         this.addInfo("captain_start_heal", "§c可妮莉亚船长开始回血！增大伤害击败她！");
         this.addInfo("illegal_item_tip", "§c检测到非法物品！");
+        this.addInfo("illegal_item_tip2", "§6当前没有使用此物品的命运。");
 
         this.addInfo("dim_demending", "§6幻境重铸中...请等待[%d§6]秒");
         this.addInfo("to_be_continue", "[P1nero]: §6感谢游玩！恭喜你体验完测试版的全部内容，未完待续！");
@@ -295,7 +297,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 3, "准备好了吗？");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 4, "位于地狱的§6[猪灵一族]§f，在黑潮时期，曾造出[%s]来抵御黑潮。可惜他们败了，失去了神智。但他们仍然认得[%s§f§f]，使用[%s§f§f]与他们交易，便可揭开远古战争机器的面纱。");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 5, "[%s]和[%s]，则分别守护着[%s]和[%s]的回响。");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 6, "待你寻回他们的回响后，再来找我吧，我将带你见识§4§l[普罗特斯]§f§f的力量！");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 6, "待你寻回他们的回响后，再来找我吧，我将带你见识§4§l[遗忘之海]§f§f的力量！");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 0, "取回烈焰之眼");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 1, "取你性命");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 2, "发起挑战");

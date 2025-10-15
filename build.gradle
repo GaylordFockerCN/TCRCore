@@ -255,12 +255,8 @@ dependencies {
     implementation fg.deobf("curse.maven:ati-structures-964608:6730813")
 //    implementation fg.deobf("libs:trek:B0.5") //内置为数据包，curse forge用数据包形式下载
     implementation fg.deobf("curse.maven:when-dungeons-arise-442508:4983862")
-    implementation fg.deobf("curse.maven:hopo-better-mineshaft-623723:6631774")
     implementation fg.deobf("curse.maven:towns-and-towers-626761:4923828")
     implementation fg.deobf("curse.maven:cristel-lib-856996:5869180")
-    implementation fg.deobf("curse.maven:moogs-end-structures-892382:6915265")
-    implementation fg.deobf("curse.maven:mns-moogs-nether-structures-967466:5850727")
-    implementation fg.deobf("curse.maven:mss-moogs-soaring-structures-1040210:6079893")
     implementation fg.deobf("curse.maven:abridged-948999:6745463")
     implementation "curse.maven:lukis-grand-capitals-1003666:6786014"
 

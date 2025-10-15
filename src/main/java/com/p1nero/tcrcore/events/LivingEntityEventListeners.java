@@ -249,14 +249,23 @@ public class LivingEntityEventListeners {
 
             if (livingEntity instanceof Ender_Guardian_Entity) {
                 PlayerDataManager.voidEyeKilled.put(player, true);
+                if(PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
+                    TCRTaskManager.FIND_ARTERIUS.start(player);
+                }
             }
 
             if (livingEntity instanceof Netherite_Monstrosity_Entity) {
                 PlayerDataManager.monstEyeKilled.put(player, true);
+                if(PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
+                    TCRTaskManager.FIND_ARTERIUS.start(player);
+                }
             }
 
             if (livingEntity instanceof The_Harbinger_Entity) {
                 PlayerDataManager.mechEyeKilled.put(player, true);
+                if(PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
+                    TCRTaskManager.FIND_ARTERIUS.start(player);
+                }
             }
 
             if(livingEntity instanceof EnderDragon && !PlayerDataManager.voidEyeTraded.get(player)) {
@@ -311,7 +320,7 @@ public class LivingEntityEventListeners {
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss4"), false);
             }
 
-            if(livingEntity instanceof Arterius arterius && arterius.isInBattle()) {
+            if(livingEntity instanceof Arterius arterius) {
                 if(!PlayerDataManager.flameEyeTraded.get(player) && PlayerDataManager.cursedEyeBlessed.get(player)) {
                     ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
                 }
@@ -520,7 +529,7 @@ public class LivingEntityEventListeners {
 
         if(event.getEntity() instanceof EnderDragon enderDragon) {
             enderDragon.getAttribute(Attributes.MAX_HEALTH).removeModifier(uuid);
-            AttributeModifier healthBoost = new AttributeModifier(uuid, "Dragon Health Boost", 4, AttributeModifier.Operation.MULTIPLY_BASE);
+            AttributeModifier healthBoost = new AttributeModifier(uuid, "Dragon Health Boost", 2, AttributeModifier.Operation.MULTIPLY_BASE);
             enderDragon.getAttribute(Attributes.MAX_HEALTH).addPermanentModifier(healthBoost);
             enderDragon.setHealth(enderDragon.getMaxHealth());
         }

@@ -16,12 +16,14 @@ public class TCRTaskManager {
     public static Task KILL_PILLAGER;
     public static Task GIVE_ORACLE_TO_KEEPER;
     public static Task FIND_GODNESS_STATUE;
+    public static Task FIND_ARTERIUS;
     public static void init() {
         TASKS.clear();
         EMPTY = createTask("empty");//不知道为嘛默认0改不了= =
         KILL_PILLAGER = createTask("kill_pillager");
         GIVE_ORACLE_TO_KEEPER = createTask("give_oracle_to_keeper");
         FIND_GODNESS_STATUE = createTask("find_godness_statue");
+        FIND_ARTERIUS = createTask("find_arterius");
     }
 
     public static Task createTask(String desc) {

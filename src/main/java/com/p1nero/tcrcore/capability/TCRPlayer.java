@@ -59,6 +59,10 @@ public class TCRPlayer {
         this.tickAfterBless = tickAfterBless;
     }
 
+    public boolean inBlessing() {
+        return this.tickAfterBless > 0;
+    }
+
     public void setBlessPos(BlockPos blessPos) {
         this.blessPos = blessPos;
     }
@@ -338,13 +342,13 @@ public class TCRPlayer {
                     flag = false;
                 }
                 if(flag) {
-                    updateHealth(serverPlayer);
+                    updateHealth(serverPlayer, true);
                 }
             }
         }
     }
 
-    public void updateHealth(ServerPlayer serverPlayer) {
+    public void updateHealth(ServerPlayer serverPlayer, boolean showTip) {
         final UUID HEALTH_MODIFIER_UUID = UUID.fromString("11451419-1981-0234-1234-123456789abc");
         float preHealth = serverPlayer.getHealth();
         float preMaxHealth = serverPlayer.getMaxHealth();
@@ -359,7 +363,9 @@ public class TCRPlayer {
             );
             maxHealthAttr.addPermanentModifier(healthModifier);
             serverPlayer.setHealth(preHealth * serverPlayer.getMaxHealth() / preMaxHealth);
-            serverPlayer.displayClientMessage(Component.translatable(Attributes.MAX_HEALTH.getDescriptionId()).append(" + " + healthAdder), false);
+            if(showTip) {
+                serverPlayer.displayClientMessage(Component.translatable(Attributes.MAX_HEALTH.getDescriptionId()).append(" + " + healthAdder), false);
+            }
         }
         AttributeInstance staminaAttr = serverPlayer.getAttribute(EpicFightAttributes.MAX_STAMINA.get());
         if (staminaAttr != null) {
@@ -371,8 +377,10 @@ public class TCRPlayer {
                     AttributeModifier.Operation.ADDITION
             );
             staminaAttr.addPermanentModifier(staminaModifier);
+            if(showTip) {
+                serverPlayer.displayClientMessage(Component.translatable(EpicFightAttributes.MAX_STAMINA.get().getDescriptionId()).append(" + " + (healthAdder / 2)), false);
+            }
         }
-        serverPlayer.displayClientMessage(Component.translatable(EpicFightAttributes.MAX_STAMINA.get().getDescriptionId()).append(" + " + (healthAdder / 2)), false);
     }
 
 }

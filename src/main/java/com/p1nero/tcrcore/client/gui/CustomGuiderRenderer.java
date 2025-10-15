@@ -2,6 +2,7 @@ package com.p1nero.tcrcore.client.gui;
 
 import com.mojang.blaze3d.platform.Window;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.p1nero.tcrcore.TCRClientConfig;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.TCRTaskManager;
 import net.minecraft.client.Minecraft;
@@ -20,13 +21,19 @@ public class CustomGuiderRenderer {
     private static float alpha = 0.0f;
     private static final int FADE_DURATION = 30; // 30 ticks = 1.5 seconds
     private static Component lastTaskDesc = Component.empty();
-
+    private static int x;
+    private static int y;
+    private static int textX;
+    private static int textY;
+    private static long timeSinceStateChange;
     public static final ResourceLocation TASK_ICON = ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "textures/gui/task_icon.png");
 
-    public static void render(LocalPlayer localPlayer, GuiGraphics guiGraphics, Window window, float partialTick) {
+    public static void tick(LocalPlayer localPlayer) {
         Minecraft minecraft = Minecraft.getInstance();
+        Window window = minecraft.getWindow();
         long currentTime = localPlayer.level().getGameTime();
-
+        // Calculate alpha based on game time with partialTick interpolation
+        timeSinceStateChange = currentTime - fadeStartTime;
         hasTask = TCRTaskManager.hasTask(localPlayer);
         // Handle state changes
         if (hasTask != lastHasTask) {
@@ -37,8 +44,20 @@ public class CustomGuiderRenderer {
             }
         }
 
-        // Calculate alpha based on game time with partialTick interpolation
-        long timeSinceStateChange = currentTime - fadeStartTime;
+        lastHasTask = hasTask;
+
+        // Calculate position (golden ratio - left side, about 38.2% from top)
+        int screenHeight = window.getGuiScaledHeight();
+        int goldenRatioY = (int) (screenHeight * 0.382f);
+        x = 10 + TCRClientConfig.TASK_UI_X.get(); // 10 pixels from left edge
+        y = goldenRatioY + TCRClientConfig.TASK_UI_Y.get();
+        // Draw text with shadow
+        textX = x + 20; // 4 pixels spacing after icon
+        textY = y + 4; // Vertically center with 16px icon
+    }
+
+    public static void render(LocalPlayer localPlayer, GuiGraphics guiGraphics, Window window, float partialTick) {
+        Minecraft minecraft = Minecraft.getInstance();
         float interpolatedTime = timeSinceStateChange + partialTick;
 
         if (hasTask) {
@@ -57,20 +76,10 @@ public class CustomGuiderRenderer {
             }
         }
 
-        lastHasTask = hasTask;
-
         // Only render if there's something to show and alpha > 0
         if (alpha <= 0.0f || lastTaskDesc == null || lastTaskDesc.getString().isEmpty()) {
             return;
         }
-
-        // Calculate position (golden ratio - left side, about 38.2% from top)
-        int screenWidth = window.getGuiScaledWidth();
-        int screenHeight = window.getGuiScaledHeight();
-        int goldenRatioY = (int) (screenHeight * 0.382f);
-        int x = 10; // 10 pixels from left edge
-        int y = goldenRatioY;
-
         guiGraphics.pose().pushPose();
         guiGraphics.pose().scale(0.93F, 0.93F, 0.93F);
         // Set up alpha for rendering
@@ -80,19 +89,11 @@ public class CustomGuiderRenderer {
         guiGraphics.setColor(1.0f, 1.0f, 1.0f, alpha);
         guiGraphics.blit(TASK_ICON, x, y, 0, 0, 16, 16, 16, 16);
 
-        // Draw text with shadow
-        int textX = x + 20; // 4 pixels spacing after icon
-        int textY = y + 4; // Vertically center with 16px icon
-
-        // Get font from Minecraft instance
-        var font = minecraft.font;
-
         // Draw text with shadow and alpha
         int textColor = (int) (alpha * 255) << 24 | 0xFFFFFF; // White text with alpha
-        int shadowColor = (int) (alpha * 128) << 24; // Black shadow with half alpha
 
         // Draw main text
-        guiGraphics.drawString(font, lastTaskDesc, textX, textY, textColor, true);
+        guiGraphics.drawString(minecraft.font, lastTaskDesc, textX, textY, textColor, true);
 
         // Reset color
         guiGraphics.setColor(1.0f, 1.0f, 1.0f, 1.0f);

@@ -2,7 +2,6 @@ package com.p1nero.tcrcore;
 
 import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.github.L_Ender.cataclysm.init.ModItems;
-import com.google.common.collect.MoreCollectors;
 import com.hm.efn.registries.EFNItem;
 import com.mojang.logging.LogUtils;
 import com.obscuria.aquamirae.registry.AquamiraeItems;
@@ -29,7 +28,6 @@ import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.PathPackResources;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -67,7 +65,7 @@ public class TCRCoreMod {
         TCRItems.REGISTRY.register(bus);
         TCRItemTabs.REGISTRY.register(bus);
         TCREffects.REGISTRY.register(bus);
-        context.registerConfig(ModConfig.Type.COMMON, TCRConfig.SPEC);
+        context.registerConfig(ModConfig.Type.COMMON, TCRClientConfig.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
