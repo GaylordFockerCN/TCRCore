@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "uniqueaccessories:accessory_box_epic"
+    }
+  ],
+  "result": {
+    "item": "tcrcore:rare_artifact_ticket"
+  }
+}
