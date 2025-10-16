@@ -65,7 +65,7 @@ public class TCRCoreMod {
         TCRItems.REGISTRY.register(bus);
         TCRItemTabs.REGISTRY.register(bus);
         TCREffects.REGISTRY.register(bus);
-        context.registerConfig(ModConfig.Type.COMMON, TCRClientConfig.SPEC);
+        context.registerConfig(ModConfig.Type.CLIENT, TCRClientConfig.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
