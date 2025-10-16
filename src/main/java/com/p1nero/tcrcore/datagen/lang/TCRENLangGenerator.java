@@ -146,7 +146,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("weapon_innate_tutorial", "§6[[%s§6]§f to weapon skill");
         this.addInfo("weapon_innate_charge_tutorial", "§6[Perfect Dodge]§c or §6[Perfect Parry]§c can charge certain weapons!");
         this.addInfo("perfect_dodge_tutorial", "§cDodge in time to Perfect Dodge!");
-        this.addInfo("hurt_damage", "Dealt [ %.1f ] damage!");
+        this.addInfo("hurt_damage", "Dealt [ %s ] damage!");
         this.addInfo("parry_tutorial", "§6[[%s§6]§f to guard");
         this.addInfo("perfect_parry_tutorial", "§cBlock in time to Perfect Parry!");
         this.addInfo("you_pass", "§6You passed!!");

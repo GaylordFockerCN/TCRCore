@@ -190,7 +190,7 @@
   "info.tcr.flame_pos": "烈焰回响之所在：幽冥竞技场",
   "info.tcr.get_mimic_invite": "[%s]: 异界之人，我果然没看错你！这封§6[%s§6]§f，你收下罢！",
   "info.tcr.hit_barrier": "前面的区域，以后再来探索吧！",
-  "info.tcr.hurt_damage": "造成[ %.1f ]点伤害！",
+  "info.tcr.hurt_damage": "造成[ %s ]点伤害！",
   "info.tcr.illegal_item_tip": "§c检测到非法物品！",
   "info.tcr.illegal_item_tip2": "§6当前没有使用此物品的命运。",
   "info.tcr.iron_golem_name": "天空岛之守卫",

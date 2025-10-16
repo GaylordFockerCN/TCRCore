@@ -61,7 +61,7 @@ public class TutorialGolem extends IronGolem {
     @Override
     public boolean hurt(@NotNull DamageSource source, float value) {
         if(source.getEntity() instanceof ServerPlayer serverPlayer) {
-            serverPlayer.displayClientMessage(TCRCoreMod.getInfo("hurt_damage", value).withStyle(ChatFormatting.RED), false);
+            serverPlayer.displayClientMessage(TCRCoreMod.getInfo("hurt_damage", String.format("%.2f", value)).withStyle(ChatFormatting.RED), false);
             if(PlayerDataManager.locked.get(serverPlayer)) {
                 this.addEffect(new MobEffectInstance(EpicFightMobEffects.INSTABILITY.get(), 200, 1));
             } else {

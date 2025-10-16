@@ -148,7 +148,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("weapon_innate_tutorial", "按下§6[%s§6]键§f以释放武器技能");
         this.addInfo("weapon_innate_charge_tutorial", "§6[完美闪避]§c或§6[完美招架]§c可以对部分武器进行充能！");
         this.addInfo("perfect_dodge_tutorial", "§c抓住时机闪避以释放完美闪避！");
-        this.addInfo("hurt_damage", "造成[ %.1f ]点伤害！");
+        this.addInfo("hurt_damage", "造成[ %s ]点伤害！");
         this.addInfo("parry_tutorial", "按下§6[%s§6]§f以进行格挡");
         this.addInfo("perfect_parry_tutorial", "§c抓住时机格挡以触发完美招架！");
         this.addInfo("you_pass", "§6你过关！！");

@@ -190,7 +190,7 @@
   "info.tcr.flame_pos": "Location of the Flame Echo: Underworld Arena",
   "info.tcr.get_mimic_invite": "[%s]: Otherworldly one, I knew I was right about you! Take this §6[%s§6]§f!",
   "info.tcr.hit_barrier": "This area is not available yet. Come back later!",
-  "info.tcr.hurt_damage": "Dealt [ %.1f ] damage!",
+  "info.tcr.hurt_damage": "Dealt [ %s ] damage!",
   "info.tcr.illegal_item_tip": "§cIllegal Item!",
   "info.tcr.illegal_item_tip2": "§6Currently, you are not destined to use this item.",
   "info.tcr.iron_golem_name": "Sky Island Guardian",
