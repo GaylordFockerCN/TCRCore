@@ -12,7 +12,7 @@
 		#Range: 0.0 ~ 1000.0
 		armor = 4.0
 		#Range: 1.0 ~ 1000.0
-		attackDamage = 15.0
+		attackDamage = 10.0
 		#Range: 0.0 ~ 10.0
 		knockbackResistance = 0.5
 		#Range: 0.0 ~ 10.0
