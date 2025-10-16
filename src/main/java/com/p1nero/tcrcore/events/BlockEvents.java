@@ -26,8 +26,11 @@ public class BlockEvents {
                 event.setCanceled(true);
             }
             if(CataclysmDimensions.LEVELS.contains(event.getPlayer().level().dimension())) {
-                //利维坦得挖进去
+                //利维坦和末影守卫得挖进去
                 if(event.getPlayer().level().dimension() == CataclysmDimensions.CATACLYSM_ABYSSAL_DEPTHS_LEVEL_KEY) {
+                    return;
+                }
+                if(event.getPlayer().level().dimension() == CataclysmDimensions.CATACLYSM_BASTION_LOST_LEVEL_KEY) {
                     return;
                 }
                 if(!TCRDimSaveData.get(serverLevel).isBossKilled()) {
