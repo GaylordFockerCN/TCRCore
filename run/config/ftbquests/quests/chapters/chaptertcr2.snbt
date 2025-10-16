@@ -1125,6 +1125,7 @@
 		}
 		{
 			dependencies: ["04A38D08B97A07B0"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest8474908420337455815.description1}"]
 			hide_dependency_lines: false
 			hide_dependent_lines: true
 			icon: "cataclysm:gauntlet_of_bulwark"
@@ -1148,6 +1149,7 @@
 		}
 		{
 			dependencies: ["04A38D08B97A07B0"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest7307970604368276746.description1}"]
 			hide_dependency_lines: false
 			hide_dependent_lines: true
 			icon: "cataclysm:gauntlet_of_maelstrom"
@@ -1192,6 +1194,7 @@
 		}
 		{
 			dependencies: ["4A769401A7590B3F"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest5850307671537924095.description1}"]
 			hide_dependency_lines: false
 			hide_dependent_lines: true
 			icon: "cataclysm:the_immolator"
@@ -1215,6 +1218,7 @@
 		}
 		{
 			dependencies: ["72C5DAEE93ACFDD5"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest136175870569266267.description1}"]
 			hide_dependency_lines: false
 			hide_dependent_lines: true
 			icon: {
@@ -1283,6 +1287,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest665635487848629534.description1}"]
 			icon: "cataclysm:meat_shredder"
 			icon_scale: 2.0d
 			id: "093CCFF3131C851E"
@@ -1304,6 +1309,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest733255575103013824.description1}"]
 			icon: {
 				Count: 1
 				id: "cataclysm:laser_gatling"
@@ -1339,6 +1345,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest1487237069278884621.description1}"]
 			icon: "cataclysm:wither_assault_shoulder_weapon"
 			icon_scale: 2.0d
 			id: "14A3BA3C1B29330D"
@@ -1360,6 +1367,7 @@
 		}
 		{
 			dependencies: ["14A3BA3C1B29330D"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest2174003163847852864.description1}"]
 			hide_dependency_lines: false
 			hide_dependent_lines: true
 			icon: "cataclysm:void_assault_shoulder_weapon"
@@ -1383,6 +1391,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest8017075452207773164.description1}"]
 			icon: "cataclysm:bulwark_of_the_flame"
 			icon_scale: 2.0d
 			id: "6F425FA5C25935EC"
@@ -1424,6 +1433,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.chaptertcr2.quest6817462286218534865.description1}"]
 			icon_scale: 2.0d
 			id: "5E9C7DD42FAD9FD1"
 			rewards: [{
