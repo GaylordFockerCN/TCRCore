@@ -39,6 +39,7 @@ public abstract class UnderworldKnightEntityMixin extends Monster {
                 Arterius arterius = NFIEntities.ARTERIUS.get().spawn(serverLevel, this.getOnPos().above(3), MobSpawnType.MOB_SUMMONED);
                 if(arterius != null) {
                     arterius.setInBattle(false);
+                    arterius.setHomePos(this.getOnPos().above(3).getCenter());
                 }
             }
             if (level().getBlockState(BlockPos.containing(Math.floor(this.getX()), Math.floor(this.getY()), Math.floor(this.getZ()))).getBlock() == BlockFactorysBossesModBlocks.BOSS_SPAWNER.get()) {

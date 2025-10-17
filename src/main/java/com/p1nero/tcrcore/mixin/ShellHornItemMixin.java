@@ -63,6 +63,8 @@ public class ShellHornItemMixin extends Item {
                         summon = true;
                         pos = new BlockPos(sx, 58, sz);
                         player.getCooldowns().addCooldown(stack.getItem(), 1200);
+                        stack.shrink(1);
+                        player.getInventory().setChanged();
                         break waterSearch;
                     }
                 }

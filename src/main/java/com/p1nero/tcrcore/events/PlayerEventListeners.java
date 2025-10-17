@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore.events;
 
+import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.fast_tpa.network.PacketRelay;
 import com.p1nero.tcrcore.TCRCoreMod;
@@ -44,6 +45,7 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -83,29 +85,38 @@ public class PlayerEventListeners {
 
     @SubscribeEvent
     public static void onPlayerAdvancementEarn(AdvancementEvent.AdvancementEarnEvent event) {
-        if (event.getEntity() instanceof ServerPlayer serverPlayer) {
+        if (event.getEntity() instanceof ServerPlayer player) {
             String path = event.getAdvancement().getId().getPath();
             String namespace = event.getAdvancement().getId().getNamespace();
             if (namespace.equals(TCRCoreMod.MOD_ID)) {
                 if (path.equals("vatansever")) {
-                    serverPlayer.getCapability(SkillTreeProgression.SKILL_TREE_PROGRESSION).ifPresent(skillTreeProgression -> {
+                    player.getCapability(SkillTreeProgression.SKILL_TREE_PROGRESSION).ifPresent(skillTreeProgression -> {
                         ResourceKey<SkillTree> resourceKey = ResourceKey.create(SkillTree.SKILL_TREE_REGISTRY_KEY, ResourceLocation.fromNamespaceAndPath(SwordSoaringMod.MOD_ID, "sword_soaring_skills"));
-                        skillTreeProgression.unlockTree(resourceKey, serverPlayer);
-                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.RAIN_SWORD, serverPlayer);
-                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.SCREEN_SWORD, serverPlayer);
-                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.KILL_AURA_1, serverPlayer);
-                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.KILL_AURA_2, serverPlayer);
+                        skillTreeProgression.unlockTree(resourceKey, player);
+                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.RAIN_SWORD, player);
+                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.SCREEN_SWORD, player);
+                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.KILL_AURA_1, player);
+                        skillTreeProgression.unlockNode(resourceKey, SwordControllerSkills.KILL_AURA_2, player);
                     });
 
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.RAIN_SWORD.getDisplayName()), false);
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.SCREEN_SWORD.getDisplayName()), false);
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.KILL_AURA_1.getDisplayName()), false);
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.KILL_AURA_2.getDisplayName()), false);
+                    player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.RAIN_SWORD.getDisplayName()), false);
+                    player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.SCREEN_SWORD.getDisplayName()), false);
+                    player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.KILL_AURA_1.getDisplayName()), false);
+                    player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", SwordControllerSkills.KILL_AURA_2.getDisplayName()), false);
+                }
+                if(path.equals("kill_pillager")) {
+                    if(!PlayerDataManager.pillagerKilled.get(player)) {
+                        ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
+                        itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
+                        ItemUtil.addItemEntity(player, itemStack, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
+                        TCRTaskManager.KILL_PILLAGER.finish(player);
+                        PlayerDataManager.pillagerKilled.put(player, true);
+                    }
                 }
             }
 
             if (namespace.equals("minecraft") && path.equals("recipes/transportation/oak_boat")) {
-                PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(4), serverPlayer);
+                PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(4), player);
             }
 
         }
@@ -491,6 +502,10 @@ public class PlayerEventListeners {
                 player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
                 giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.MONSTROUS_EYE.get());
                 PlayerDataManager.monstEyeTraded.put(player, true);
+            }
+
+            if (itemStack.is(AquamiraeItems.SHELL_HORN.get()) && !PlayerDataManager.abyssEyeTraded.get(player)) {
+                giveOracleEffect(player, AquamiraeItems.SHELL_HORN.get());
             }
 
         }

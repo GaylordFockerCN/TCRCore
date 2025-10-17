@@ -414,7 +414,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             if(newStage == 5) {
                 pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.FIRE);
                 if (pos != null) {
-                    WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("flame_pos"), new BlockPos(pos.x, 256, pos.y), WaypointColor.RED);
+                    WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("flame_pos"), new BlockPos(pos.x, 95, pos.y), WaypointColor.RED);
                 }
 
                 //召唤龙

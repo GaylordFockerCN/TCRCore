@@ -25,8 +25,8 @@ provider = "NULL"
 	#Allowed Values: NONE, HURT, TARGET, TARGET_AND_HURT
 	health_bar_show_option = "HURT"
 	use_compute_shader = true
-	enable_mine_block_guide = false
 	enable_target_entity_guide = false
+	enable_mine_block_guide = true
 	resolve_key_conflicts = true
 
 	[ingame.ui]

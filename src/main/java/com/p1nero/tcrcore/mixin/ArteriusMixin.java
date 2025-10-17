@@ -43,6 +43,9 @@ public abstract class ArteriusMixin extends PathfinderMob {
     @Shadow(remap = false)
     public abstract void setInBattle(boolean inBattle);
 
+    @Shadow(remap = false)
+    public abstract void backToHomePos();
+
     protected ArteriusMixin(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
     }
@@ -68,22 +71,28 @@ public abstract class ArteriusMixin extends PathfinderMob {
 
     @Inject(method = "die", at = @At("HEAD"), cancellable = true)
     private void tcr$die(DamageSource cause, CallbackInfo ci) {
-        this.resetBossStatus(true);
-        this.setInBattle(false);
-        EpicFightCapabilities.getUnparameterizedEntityPatch(this, ArteriusPatch.class).ifPresent(arteriusPatch -> {
-            arteriusPatch.playAnimation(Animations.GREATSWORD_GUARD_BREAK, 3);
-        });
-        Vec3 center = this.position();
-        level().getEntitiesOfClass(ServerPlayer.class, (new AABB(center, center)).inflate(30)).forEach(player -> {
-            if(!PlayerDataManager.flameEyeTraded.get(player) && PlayerDataManager.cursedEyeBlessed.get(player)) {
-                ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
-            }
-            player.displayClientMessage(TCRCoreMod.getInfo("kill_arterius", NFIEntities.ARTERIUS.get().getDescription().copy().withStyle(ChatFormatting.RED), EFNItem.DUSKFIRE_INGOT.get().getDescription()), false);
-            ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), 2 + this.getRandom().nextInt(3), ChatFormatting.RED.getColor());
-            if(!PlayerDataManager.arteriusKilled.get(player)) {
-                PlayerDataManager.arteriusKilled.put(player, true);
-            }
-        });
+        if(cause.isCreativePlayer()) {
+            return;
+        }
+        if(!level().isClientSide) {
+            this.backToHomePos();
+            this.resetBossStatus(true);
+            this.setInBattle(false);
+            EpicFightCapabilities.getUnparameterizedEntityPatch(this, ArteriusPatch.class).ifPresent(arteriusPatch -> {
+                arteriusPatch.playAnimation(Animations.GREATSWORD_GUARD_BREAK, 3);
+            });
+            Vec3 center = this.position();
+            level().getEntitiesOfClass(ServerPlayer.class, (new AABB(center, center)).inflate(30)).forEach(player -> {
+                if(!PlayerDataManager.flameEyeTraded.get(player) && PlayerDataManager.cursedEyeBlessed.get(player)) {
+                    ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
+                }
+                player.displayClientMessage(TCRCoreMod.getInfo("kill_arterius", NFIEntities.ARTERIUS.get().getDescription().copy().withStyle(ChatFormatting.RED), EFNItem.DUSKFIRE_INGOT.get().getDescription()), false);
+                ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), 2 + this.getRandom().nextInt(3), ChatFormatting.RED.getColor());
+                if(!PlayerDataManager.arteriusKilled.get(player)) {
+                    PlayerDataManager.arteriusKilled.put(player, true);
+                }
+            });
+        }
         ci.cancel();
     }
 }

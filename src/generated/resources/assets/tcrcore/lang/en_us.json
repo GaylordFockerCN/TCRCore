@@ -204,7 +204,7 @@
   "info.tcr.lock_tutorial_sub": "§cMove the mouse to switch targets!",
   "info.tcr.nether_unlock": "Nether Unlocked!",
   "info.tcr.no_place_to_ship": "No Space for ship!",
-  "info.tcr.nothing_happen_after_bless": "§dNothing happen...",
+  "info.tcr.nothing_happen_after_bless": "§dNothing happen... The [Eye] has been used.",
   "info.tcr.on_full_set": "Full Set Effect",
   "info.tcr.parry_tutorial": "§6[[%s§6]§f to guard",
   "info.tcr.perfect_dodge_tutorial": "§cDodge in time to Perfect Dodge!",

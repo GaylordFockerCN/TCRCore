@@ -47,6 +47,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -56,7 +57,6 @@ import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.npc.Villager;
@@ -75,9 +75,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.p1nero.ss.item.SwordSoaringItems;
-import net.shelmarow.nightfall_invade.entity.NFIEntities;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
-import net.shelmarow.nightfall_invade.entity.spear_knight.ArteriusPatch;
 import net.sonmok14.fromtheshadows.server.entity.mob.BulldrogiothEntity;
 import net.unusual.blockfactorysbosses.entity.SwordWaveEntity;
 import net.unusual.blockfactorysbosses.entity.UnderworldKnightEntity;
@@ -129,16 +127,23 @@ public class LivingEntityEventListeners {
                 if(!PlayerDataManager.stormEyeBlessed.get(serverPlayer) && entity instanceof BulldrogiothEntity) {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
                     event.setCanceled(true);
+                    return;
                 }
                 if(!PlayerDataManager.abyssEyeBlessed.get(serverPlayer) && entity instanceof Bone_Chimera_Entity) {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
                     event.setCanceled(true);
+                    return;
                 }
                 if(!PlayerDataManager.desertEyeBlessed.get(serverPlayer) && entity instanceof CaptainCornelia) {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
                     event.setCanceled(true);
+                    return;
                 }
-                if(!PlayerDataManager.cursedEyeBlessed.get(serverPlayer) && entity instanceof Arterius) {
+                if(!PlayerDataManager.cursedEyeBlessed.get(serverPlayer) && entity instanceof Arterius arterius) {
+                    if(!arterius.isInBattle()) {
+                        event.setCanceled(true);
+                        return;
+                    }
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
                     event.setCanceled(true);
                 }
@@ -271,7 +276,7 @@ public class LivingEntityEventListeners {
                 ItemUtil.addItemEntity(player, ModItems.MECH_EYE.get(), 1, ChatFormatting.DARK_RED.getColor().intValue());
             }
 
-            if(event.getSource().getEntity() instanceof Player && livingEntity instanceof AbstractIllager && !PlayerDataManager.pillagerKilled.get(player)) {
+            if(event.getSource().getEntity() instanceof Player && livingEntity.getType().is(EntityTypeTags.RAIDERS) && !PlayerDataManager.pillagerKilled.get(player)) {
                 ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
                 itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
                 ItemUtil.addItemEntity(player, itemStack, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
@@ -335,15 +340,14 @@ public class LivingEntityEventListeners {
                 }));
 
             }
-            //改mixin
-//            if(livingEntity instanceof Arterius arterius) {
-//                arterius.resetBossStatus(true);
-//                arterius.setInBattle(false);
-//                event.setCanceled(true);
-//                EpicFightCapabilities.getUnparameterizedEntityPatch(arterius, ArteriusPatch.class).ifPresent(arteriusPatch -> {
-//                    arteriusPatch.playAnimation(Animations.GREATSWORD_GUARD_BREAK, 3);
-//                });
-//            }
+
+            //保险措施，一般到不了
+            if(livingEntity instanceof Arterius arterius) {
+                arterius.resetBossStatus(true);
+                arterius.backToHomePos();
+                arterius.setInBattle(false);
+                event.setCanceled(true);
+            }
 
             if(livingEntity instanceof WraithonEntity wraithonEntity && !wraithonEntity.isDead()) {
                 serverLevel.players().forEach(serverPlayer -> {

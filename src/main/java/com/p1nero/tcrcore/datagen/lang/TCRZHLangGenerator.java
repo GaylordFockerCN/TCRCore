@@ -95,7 +95,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRBlocks.VOID_ALTAR_BLOCK.get(), "虚空祭坛");
         this.add(TCRBlocks.MECH_ALTAR_BLOCK.get(), "机械祭坛");
 
-        this.addInfo("nothing_happen_after_bless", "§d无事发生...");
+        this.addInfo("nothing_happen_after_bless", "§d无事发生...看来该[神之眼]已经祈福过了");
         this.addInfo("attack_to_restart", "§c攻击Boss以再次发起挑战");
         this.addInfo("captain_start_heal", "§c可妮莉亚船长开始回血！增大伤害击败她！");
         this.addInfo("illegal_item_tip", "§c检测到非法物品！");

@@ -71,7 +71,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addInfo("nether_unlock", "Nether Unlocked!");
         this.addInfo("end_unlock", "End Unlocked!");
-        this.addInfo("nothing_happen_after_bless", "§dNothing happen...");
+        this.addInfo("nothing_happen_after_bless", "§dNothing happen... The [Eye] has been used.");
         this.addInfo("dim_max_4_players", "§6Cloudland can only contain 4 players!");
         this.addInfo("can_not_enter_before_finish", "§6You are not destined to enter the cloudland.");
         this.addInfo("can_not_do_this_too_early", "§6You are not destined to do this.");
