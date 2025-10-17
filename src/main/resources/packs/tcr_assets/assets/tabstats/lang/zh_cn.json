@@ -1,0 +1,12 @@
+{
+  "tabstats.gui.deaths": "死亡数",
+  "tabstats.gui.deaths_per_hour": "每小时死亡数",
+  "tabstats.gui.kills": "击杀数",
+  "tabstats.gui.last_seen": "最后一次上线时间",
+  "tabstats.gui.name": "ID",
+  "tabstats.gui.now": "正在游玩",
+  "tabstats.gui.page": "Page %d of %d",
+  "tabstats.gui.time_played": "游玩时间",
+  "tabstats.keys.category": "Tab状态栏",
+  "tabstats.keys.show": "显示Tab状态栏列表"
+}
