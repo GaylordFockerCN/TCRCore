@@ -40,6 +40,7 @@
     "SkillContainerMixin",
     "SkillTreeGameEventsMixin",
     "TakeDamageEventAttackMixin",
+    "TerribleSwordItemMixin",
     "ThirstforBloodItemMixin",
     "UnderworldKnightEntityMixin",
     "VillagerMixin",
