@@ -26,8 +26,10 @@ provider = "NULL"
 	health_bar_show_option = "HURT"
 	use_compute_shader = true
 	enable_target_entity_guide = false
-	enable_mine_block_guide = true
-	resolve_key_conflicts = true
+	#Allowed Values: NONE, CROSSHAIR, HIGHLIGHT, CROSSHAIR_AND_HIGHLIGHT
+	mine_block_guide_option = "CROSSHAIR_AND_HIGHLIGHT"
+	#Allowed Values: NONE, INTERACTION, ITEM_USE, INTERACTION_AND_ITEMUSE
+	key_conflict_resolve_scope = "INTERACTION"
 
 	[ingame.ui]
 		stamina_bar_x = 120

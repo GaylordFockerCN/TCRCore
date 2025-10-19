@@ -55,6 +55,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addSkill("fire_avoid", "Fire Avoidance Charm", "Immunity to fire damage!");
         this.addSkill("perfect_dodge", "Dodge Effect", "Play a cool animation when perfect dodge!");
 
+        this.add(TCRItems.PROOF_OF_ADVENTURE.get(), "Proof of Adventure");
+        this.addItemUsageInfo(TCRItems.PROOF_OF_ADVENTURE.get(), "Forged from the names of all foes vanquished by your blade. Your journey has reached its end, and your courage is now legend.");
         this.add(TCRItems.DUAL_BOKKEN.get(), "Bokeen");
         this.addItemUsageInfo(TCRItems.DUAL_BOKKEN.get(), "I may have skill issue but I m not lacking on dedication so do you lacking in dedication?");
         this.add(TCRItems.VOID_CORE.get(), "Void Essence");

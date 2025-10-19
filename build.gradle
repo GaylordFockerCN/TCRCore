@@ -163,17 +163,21 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7103001-sources-7103018")
-//    implementation fg.deobf("libs:epicfight:20.12.13.2")
-    implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7103049-sources-7103052")
+//    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7103001-sources-7103018")
+    implementation fg.deobf("libs:epicfight:20.13.1.3")
+    implementation fg.deobf("libs:epicfightskilltree:20.2.1")
+//    implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7103049-sources-7103052")
     implementation fg.deobf("curse.maven:p1nero-better-structure-block-970671:6817772")
-    implementation fg.deobf("curse.maven:epic-fight-indestructible-915201:6915161")
+//    implementation fg.deobf("curse.maven:epic-fight-indestructible-915201:6915161")
+    implementation fg.deobf("curse.maven:epic-fight-indestructible-915201:7125700")
 
     implementation fg.deobf("curse.maven:epic-fight-wraithon-1354901:7068815")
-    implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7018600")
-//    implementation fg.deobf("libs:invincible:20.12.4.4")
-    implementation fg.deobf("curse.maven:p1neros-epic-bow-1338443:6964978")
-    implementation fg.deobf("curse.maven:sword-soaring-1011068:7035767")
+//    implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7018600")
+    implementation fg.deobf("libs:invincible:20.12.4.4")
+    implementation fg.deobf("libs:p1nero_bow:20.13.1.4")
+//    implementation fg.deobf("curse.maven:p1neros-epic-bow-1338443:6964978")
+//    implementation fg.deobf("curse.maven:sword-soaring-1011068:7035767")
+    implementation fg.deobf("libs:sword_soaring:20.13.1.10")
     implementation fg.deobf("libs:dodge_parry_reward:20.12.1")
     implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7058350")
 //    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
@@ -284,11 +288,11 @@ dependencies {
     implementation fg.deobf("curse.maven:biomes-o-plenty-220318:6364065")
     implementation fg.deobf("curse.maven:terrablender-563928:6290448")
     implementation fg.deobf("curse.maven:glitchcore-955399:5787839")
-    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
-    implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
-    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
-    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
-    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
     implementation fg.deobf("curse.maven:prism-lib-638111:4650325")
     implementation fg.deobf("curse.maven:iceberg-520110:5838149")
 

@@ -371,7 +371,7 @@ public class LivingEntityEventListeners {
 
             if(livingEntity instanceof BulldrogiothEntity bulldrogiothEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.COVES) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //秽土转生
-                EntityRespawnerMod.addToRespawn(bulldrogiothEntity, 600, true);
+                EntityRespawnerMod.addToRespawn(bulldrogiothEntity, 300, true);
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 

@@ -29,6 +29,7 @@ public class TCRItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(TCRItems.ABYSS_CORE);
         simpleItem(TCRItems.VOID_CORE);
+        simpleItem(TCRItems.PROOF_OF_ADVENTURE);
     }
 
     // Thank you kaupenjoe & El_Redstoniano!
