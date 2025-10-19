@@ -18,6 +18,7 @@ import java.util.stream.Stream;
 
 public class DimensionResourceCopier {
     private static final String MOD_ID = TCRCoreMod.MOD_ID;
+    private static final String DIMENSION_PATH = "sanctum";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public static void copyDimensionToSaves(MinecraftServer server) {
@@ -25,13 +26,32 @@ public class DimensionResourceCopier {
         Path savesDir = gameDir.resolve("saves");
 
         if(server.isDedicatedServer()) {
-            copyToSave(gameDir.resolve(server.getWorldData().getLevelName()));
+            copyToDimSave(gameDir.resolve(server.getWorldData().getLevelName()));
         } else {
             try (Stream<Path> saveFolders = Files.list(savesDir)) {
-                saveFolders.filter(Files::isDirectory).forEach(DimensionResourceCopier::copyToSave);
+                saveFolders.filter(Files::isDirectory).forEach(DimensionResourceCopier::copyToDimSave);
             } catch (IOException e) {
                 LOGGER.error("TCR Core： 遍历存档目录失败: {}", e.getMessage());
             }
+        }
+    }
+
+    private static void copyToDimSave(Path saveFolder) {
+        Path targetDir = saveFolder.resolve("dimensions")
+                .resolve(MOD_ID)
+                .resolve(DIMENSION_PATH);
+
+        // 跳过已存在的目录，以region更好，以防提前生了data文件夹
+        if (Files.exists(targetDir.resolve("region"))) {
+            return;
+        }
+
+        try {
+            Files.createDirectories(targetDir);
+            copyUsingModClassLoader(targetDir);
+            LOGGER.info("TCR Core： {} 复制完成。", targetDir);
+        } catch (IOException e) {
+            LOGGER.error("TCR Core： 复制到存档失败: {} - {}", saveFolder.getFileName(), e.getMessage());
         }
     }
 

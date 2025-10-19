@@ -36,9 +36,9 @@ public class SkillTreeGameEventsMixin {
                     .getTable()
                     .addPool(
                             LootPool.lootPool()
-                                    .setRolls(UniformGenerator.between(1.0F, 3.0F))
+                                    .setRolls(ConstantValue.exactly(1.0F))
                                     .add(LootItem.lootTableItem(EpicSkillsItems.ABILIITY_STONE.get()))
-                                    .when(LootItemRandomChanceCondition.randomChance(0.01F))
+                                    .when(LootItemRandomChanceCondition.randomChance(0.02F))
                                     .build()
                     );
         }
@@ -64,9 +64,9 @@ public class SkillTreeGameEventsMixin {
                     .getTable()
                     .addPool(
                             LootPool.lootPool()
-                                    .setRolls(UniformGenerator.between(1.0F, 2.0F))
+                                    .setRolls(ConstantValue.exactly(1.0F))
                                     .add(LootItem.lootTableItem(EpicSkillsItems.ABILIITY_STONE.get()))
-                                    .when(LootItemRandomChanceCondition.randomChance(0.01F))
+                                    .when(LootItemRandomChanceCondition.randomChance(0.02F))
                                     .build()
                     );
         }
@@ -85,7 +85,7 @@ public class SkillTreeGameEventsMixin {
                             LootPool.lootPool()
                                     .setRolls(ConstantValue.exactly(1.0F))
                                     .add(LootItem.lootTableItem(EpicSkillsItems.ABILIITY_STONE.get()))
-                                    .when(LootItemRandomChanceCondition.randomChance(0.05F))
+                                    .when(LootItemRandomChanceCondition.randomChance(0.02F))
                                     .build()
                     );
         }

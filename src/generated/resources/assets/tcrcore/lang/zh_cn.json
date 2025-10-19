@@ -253,6 +253,8 @@
   "item.tcrcore.artifact_ticket.usage": "通过任务书某些任务获取。可在§d[圣殿港口]§r的§3[摆渡人]§r处提炼饰品",
   "item.tcrcore.dual_bokken": "双持木棍",
   "item.tcrcore.dual_bokken.usage": "我或许能力不足，但绝不缺乏奉献精神，难道你缺少奉献精神吗？",
+  "item.tcrcore.proof_of_adventure": "冒险之证",
+  "item.tcrcore.proof_of_adventure.usage": "此证乃是用所有败于你剑下的强敌之名铸就。你的冒险已抵达终点，你的勇气已化为传奇。",
   "item.tcrcore.rare_artifact_ticket": "稀有饰品精华",
   "item.tcrcore.rare_artifact_ticket.usage": "通过任务书某些任务获取。可在§d[圣殿港口]§r的§3[摆渡人]§r处提炼稀有饰品",
   "item.tcrcore.void_core": "虚空精华",

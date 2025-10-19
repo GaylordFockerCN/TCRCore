@@ -55,6 +55,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addSkill("fire_avoid", "避火咒", "免疫火焰伤害！");
         this.addSkill("perfect_dodge", "闪避特效", "完美闪避时将有帅气的动作！");
 
+        this.add(TCRItems.PROOF_OF_ADVENTURE.get(), "冒险之证");
+        this.addItemUsageInfo(TCRItems.PROOF_OF_ADVENTURE.get(), "此证乃是用所有败于你剑下的强敌之名铸就。你的冒险已抵达终点，你的勇气已化为传奇。");
         this.add(TCRItems.DUAL_BOKKEN.get(), "双持木棍");
         this.addItemUsageInfo(TCRItems.DUAL_BOKKEN.get(), "我或许能力不足，但绝不缺乏奉献精神，难道你缺少奉献精神吗？");
         this.add(TCRItems.VOID_CORE.get(), "虚空精华");
