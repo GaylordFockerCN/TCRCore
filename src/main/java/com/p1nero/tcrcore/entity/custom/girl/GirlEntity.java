@@ -51,6 +51,7 @@ import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
 import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModItems;
@@ -402,7 +403,8 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
 
     @Override
     public boolean hurt(@NotNull DamageSource damageSource, float p_21017_) {
-        if(damageSource.isCreativePlayer()) {
+        if(damageSource.getEntity() instanceof Player player && player.isCreative()) {
+            player.displayClientMessage(Component.translatable("/summon " + ForgeRegistries.ENTITY_TYPES.getKey(this.getType())), false);
             this.discard();
         }
         return false;

@@ -9,6 +9,7 @@ import com.p1nero.tcrcore.client.KeyMappings;
 import com.p1nero.tcrcore.client.gui.BanPortalScreenHandler;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.item.TCRItems;
+import com.p1nero.tcrcore.worldgen.TCRBiomes;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import net.alp.monsterexpansion.entity.ModEntities;
 import net.minecraft.data.PackOutput;
@@ -25,6 +26,10 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
     @Override
     protected void addTranslations() {
+
+        this.add("travelerstitles.tcrcore.sanctum", "梦之领域");
+        this.addBiome(TCRBiomes.AIR, "虚无之地");
+
         this.addTask(TCRTaskManager.KILL_PILLAGER, "击杀掠夺者");
         this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "将§6[神谕残卷]§r交给守望者");
         this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "将§6[神之眼]§r供奉于女神像");

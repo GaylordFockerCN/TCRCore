@@ -48,6 +48,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.sonmok14.fromtheshadows.server.utils.registry.EntityRegistry;
 import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
 import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModEntities;
@@ -130,7 +131,8 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
 
     @Override
     public boolean hurt(@NotNull DamageSource source, float value) {
-        if(source.isCreativePlayer()) {
+        if(source.getEntity() instanceof Player player && player.isCreative()) {
+            player.displayClientMessage(Component.translatable("/summon " + ForgeRegistries.ENTITY_TYPES.getKey(this.getType())), false);
             this.discard();
         }
         if (source.getEntity() instanceof ServerPlayer serverPlayer) {

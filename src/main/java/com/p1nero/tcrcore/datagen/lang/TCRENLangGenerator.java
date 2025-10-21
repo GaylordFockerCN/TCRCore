@@ -9,6 +9,7 @@ import com.p1nero.tcrcore.client.KeyMappings;
 import com.p1nero.tcrcore.client.gui.BanPortalScreenHandler;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.item.TCRItems;
+import com.p1nero.tcrcore.worldgen.TCRBiomes;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import net.alp.monsterexpansion.entity.ModEntities;
 import net.minecraft.data.PackOutput;
@@ -25,6 +26,10 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
     @Override
     protected void addTranslations() {
+
+        this.add("travelerstitles.tcrcore.sanctum", "Realm of the Dream");
+        this.addBiome(TCRBiomes.AIR, "Void Region");
+
         this.addTask(TCRTaskManager.KILL_PILLAGER, "Kill an illager");
         this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "Give §6[Oracle]§r to The Keeper");
         this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "Offer §6[Eye]§r to Godness Statue");

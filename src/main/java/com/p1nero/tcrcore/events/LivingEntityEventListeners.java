@@ -537,17 +537,17 @@ public class LivingEntityEventListeners {
             witherBoss.setHealth(witherBoss.getMaxHealth());
         }
 
-        if(event.getEntity() instanceof LivingEntity livingEntity
-                && !(livingEntity instanceof Player)
-                && !(livingEntity instanceof WraithonEntity)) {
-            ServerLevel end = serverLevel.getServer().getLevel(Level.END);
-            if(end != null && end.getDragonFight() != null && end.getDragonFight().hasPreviouslyKilledDragon()) {
-                livingEntity.getAttribute(Attributes.MAX_HEALTH).removeModifier(uuid);
-                AttributeModifier healthBoost = new AttributeModifier(uuid, "Health Boost After Dragon Killed", 1, AttributeModifier.Operation.MULTIPLY_BASE);
-                livingEntity.getAttribute(Attributes.MAX_HEALTH).addPermanentModifier(healthBoost);
-                livingEntity.setHealth(livingEntity.getMaxHealth());
-            }
-        }
+//        if(event.getEntity() instanceof LivingEntity livingEntity
+//                && !(livingEntity instanceof Player)
+//                && !(livingEntity instanceof WraithonEntity)) {
+//            ServerLevel end = serverLevel.getServer().getLevel(Level.END);
+//            if(end != null && end.getDragonFight() != null && end.getDragonFight().hasPreviouslyKilledDragon()) {
+//                livingEntity.getAttribute(Attributes.MAX_HEALTH).removeModifier(uuid);
+//                AttributeModifier healthBoost = new AttributeModifier(uuid, "Health Boost After Dragon Killed", 1, AttributeModifier.Operation.MULTIPLY_BASE);
+//                livingEntity.getAttribute(Attributes.MAX_HEALTH).addPermanentModifier(healthBoost);
+//                livingEntity.setHealth(livingEntity.getMaxHealth());
+//            }
+//        }
     }
 
     /**
