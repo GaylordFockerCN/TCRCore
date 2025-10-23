@@ -10,6 +10,7 @@
 
   "gui.epicskills.exp_meter.tooltip": "已有/需要经验值以转化为技能点",
   "gui.epicskills.abilitypoints.tooltip": "技能点",
+  "gui.epicskills.openskilleditor.tooltip": "查看已学习的技能",
 
   "gui.epicskills.skillinfo.unlock": "解锁",
   "gui.epicskills.skillinfo.locked": "已锁定",
@@ -52,7 +53,7 @@
 
   "key.epicskills.gui": "史诗战斗: 技能树 GUI",
 
-  "key.epicskills.open_skill_tree": "查看已习得的技能",
+  "key.epicskills.open_skill_tree": "打开技能树",
 
   "eof": "文件结束"
 }
