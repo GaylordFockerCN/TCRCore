@@ -69,6 +69,11 @@
           "skill": "efn:precise_parry",
           "position_in_screen": [120, 170],
           "ability_points": 5
+        },
+        {
+          "skill": "efn:execution",
+          "position_in_screen": [220, 170],
+          "ability_points": 5
         }
         ,
         {

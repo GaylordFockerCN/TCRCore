@@ -20,7 +20,6 @@ import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
-import net.mcreator.morecritters.init.MoreCrittersModEntities;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -86,9 +85,6 @@ public class TCRCoreMod {
         PlayerEventListeners.illegalItems.add(net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_FEEDING_UPGRADE.get());
         PlayerEventListeners.illegalItems.add(artifacts.registry.ModItems.SCARF_OF_INVISIBILITY.get());
 
-        if(WraithonConfig.ARACHNOPHOBIA_MODE.get()) {
-            LivingEntityEventListeners.illegalEntityTypes.add(MoreCrittersModEntities.SNOWFLAKE_SPIDER.get());
-        }
         LivingEntityEventListeners.illegalEntityTypes.addAll(List.of(
                 ModEntities.URCHINKIN.get(),
                 ModEntities.KOBOLETON.get(),

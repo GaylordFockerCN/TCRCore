@@ -3,14 +3,19 @@ package com.p1nero.tcrcore.capability;
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.p1nero.fast_tpa.network.PacketRelay;
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.datagen.TCRAdvancementData;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.network.packet.clientbound.OpenEndScreenPacket;
 import com.p1nero.tcrcore.network.packet.clientbound.SyncTCRPlayerPacket;
 import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
+import com.p1nero.tcrcore.utils.OverworldWaypointUtil;
+import com.p1nero.tcrcore.utils.WorldUtil;
+import dev.ftb.mods.ftbquests.item.FTBQuestsItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
@@ -23,6 +28,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -30,11 +36,15 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
 import org.jetbrains.annotations.Nullable;
 import org.merlin204.wraithon.entity.WraithonEntities;
 import org.merlin204.wraithon.entity.wraithon.WraithonEntity;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
+import xaero.hud.minimap.waypoint.WaypointColor;
+import yesman.epicfight.api.utils.math.Vec2i;
 import yesman.epicfight.world.entity.ai.attribute.EpicFightAttributes;
 
 import java.util.ArrayList;
@@ -46,10 +56,23 @@ public class TCRPlayer {
     private double healthAdder = 0;
     private int tickAfterBossDieLeft;
     private int tickAfterBless;
+    private int tickAfterTpToOverworld;
     private int tickAfterStartArterius;
+    private boolean needToMarkMapInOverworld;
     private Arterius arterius;
     private BlockPos blessPos;
     private Item blessItem;
+    //=======指路粒子=====
+    private int spawnParticleTimer = 0;
+    private final int particleCount = 20;
+    private Vec3 from = Vec3.ZERO;
+    private Vec3 dir = Vec3.ZERO;
+    //===================
+
+
+    public void setTickAfterTpToOverworld(int tickAfterTpToOverworld) {
+        this.tickAfterTpToOverworld = tickAfterTpToOverworld;
+    }
 
     public void setTickAfterStartArterius(int tickAfterStartArterius) {
         this.tickAfterStartArterius = tickAfterStartArterius;
@@ -65,6 +88,10 @@ public class TCRPlayer {
 
     public void setBlessItem(Item blessItem) {
         this.blessItem = blessItem;
+    }
+
+    public void setNeedToMarkMapInOverworld(boolean needToMarkMapInOverworld) {
+        this.needToMarkMapInOverworld = needToMarkMapInOverworld;
     }
 
     public boolean inBlessing() {
@@ -124,7 +151,9 @@ public class TCRPlayer {
         tag.put("customDataManager", data);
         tag.putDouble("healthAdder", healthAdder);
         tag.putInt("tickAfterBossDieLeft", tickAfterBossDieLeft);
+        tag.putInt("tickAfterTpToOverworld", tickAfterTpToOverworld);
         tag.putInt("tickAfterBless", tickAfterBless);
+        tag.putBoolean("needToMarkMapInOverworld", needToMarkMapInOverworld);
         return tag;
     }
 
@@ -133,6 +162,8 @@ public class TCRPlayer {
         healthAdder = tag.getDouble("healthAdder");
         tickAfterBossDieLeft = tag.getInt("tickAfterBossDieLeft");
         tickAfterBless = tag.getInt("tickAfterBless");
+        tickAfterTpToOverworld = tag.getInt("tickAfterTpToOverworld");
+        needToMarkMapInOverworld = tag.getBoolean("needToMarkMapInOverworld");
     }
 
     public void copyFrom(TCRPlayer old) {
@@ -140,6 +171,95 @@ public class TCRPlayer {
         this.healthAdder = old.healthAdder;
         this.tickAfterBossDieLeft = old.tickAfterBossDieLeft;
         this.tickAfterBless = old.tickAfterBless;
+        this.needToMarkMapInOverworld = old.needToMarkMapInOverworld;
+        this.tickAfterTpToOverworld = old.tickAfterTpToOverworld;
+    }
+
+    /**
+     * 移动到这延迟进行
+     */
+    public void tryMarkMapInOverworld(ServerPlayer serverPlayer) {
+        if(!PlayerDataManager.pillagerKilled.get(serverPlayer)) {
+            TCRTaskManager.clearTask(serverPlayer);
+            TCRTaskManager.KILL_PILLAGER.start(serverPlayer);
+        }
+        if(needToMarkMapInOverworld && serverPlayer.serverLevel().dimension() == Level.OVERWORLD) {
+            ServerLevel overworld = serverPlayer.server.overworld();
+            //揭示预言，即解锁新玩法。根据记录的id解锁，初始阶段0， 1解锁时装和武器 2解锁盔甲和boss图鉴，3解锁附魔地狱末地，具体在FTB看
+            //同时按阶段来解锁boss提示
+            int stage = PlayerDataManager.stage.getInt(serverPlayer);
+            int newStage = stage + 1;
+            if(newStage > 5) {
+                return;
+            }
+            TCRAdvancementData.finishAdvancement("stage" + (newStage), serverPlayer);
+            PlayerDataManager.stage.put(serverPlayer, ((double) newStage));
+
+            if(!PlayerDataManager.mapMarked.get(serverPlayer)){
+                ItemUtil.addItem(serverPlayer, FTBQuestsItems.BOOK.get(), 1);
+                PlayerDataManager.mapMarked.put(serverPlayer, true);
+            }
+            Vec2i pos = null;
+            if(newStage == 1) {
+                pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.SKY_ISLAND);//天空岛
+                if (pos != null) {
+                    OverworldWaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("storm_pos"), new BlockPos(pos.x, 230, pos.y), WaypointColor.AQUA);
+                }
+            }
+
+            if(newStage == 2) {
+                pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.COVES);//隐秘水湾
+                if (pos != null) {
+                    BlockPos covesPos = new BlockPos(pos.x, 145, pos.y);
+                    TCRMainLevelSaveData.get(serverPlayer.serverLevel()).setAbyssPos(covesPos);
+                    OverworldWaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("abyss_pos"), covesPos, WaypointColor.DARK_BLUE);
+                }
+            }
+
+            if(newStage == 4) {
+                pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.CURSED);//船长
+                if (pos != null) {
+                    OverworldWaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("cursed_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.BLUE);
+                }
+            }
+
+            if(newStage == 3) {
+                pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.SAND);//奇美拉
+                if (pos != null) {
+                    OverworldWaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("desert_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.YELLOW);
+                }
+            }
+
+            if(newStage == 5) {
+                pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.FIRE);
+                if (pos != null) {
+                    OverworldWaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("flame_pos"), new BlockPos(pos.x, 95, pos.y), WaypointColor.RED);
+                }
+
+//                //召唤龙
+//                if(serverPlayer.getRandom().nextBoolean()) {
+//                    net.alp.monsterexpansion.entity.ModEntities.SKRYTHE.get().spawn(serverPlayer.serverLevel(), new BlockPos(WorldUtil.GOLEM_CENTER_POS_VEC3I.above(10)), MobSpawnType.MOB_SUMMONED);
+//                } else {
+//                    net.alp.monsterexpansion.entity.ModEntities.RHYZA.get().spawn(serverPlayer.serverLevel(), new BlockPos(WorldUtil.GOLEM_CENTER_POS_VEC3I.above(4)), MobSpawnType.MOB_SUMMONED);
+//                }
+            }
+
+            if(pos != null) {
+                from = serverPlayer.getEyePosition();
+                Vec3 target = new Vec3(pos.x, serverPlayer.getEyeY(), pos.y);
+                dir = target.subtract(from).normalize();
+            }
+
+            if(stage <= 5) {
+                serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("press_to_open_map")));
+            }
+
+            serverPlayer.level().playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), SoundEvents.END_PORTAL_SPAWN, serverPlayer.getSoundSource(), 1.0F, 1.0F);
+            spawnParticleTimer = particleCount;
+            needToMarkMapInOverworld = false;
+            TCRTaskManager.GO_TO_OVERWORLD.finish(serverPlayer);
+        }
+
     }
 
     public void syncToClient(ServerPlayer serverPlayer) {
@@ -155,6 +275,38 @@ public class TCRPlayer {
             handleAfterBossFight(serverPlayer);
             handleBless(serverLevel, serverPlayer);
             handleArtelus(serverPlayer);
+            handleMarkMap(serverPlayer);
+            handleParticle(serverPlayer);
+        }
+    }
+
+    private void handleMarkMap(ServerPlayer serverPlayer) {
+        if(tickAfterTpToOverworld > 0) {
+            tickAfterTpToOverworld--;
+            if(tickAfterTpToOverworld == 0) {
+                tryMarkMapInOverworld(serverPlayer);
+            }
+        }
+    }
+
+    private void handleParticle(ServerPlayer serverPlayer) {
+        double step = 5.0 / particleCount;
+        if(spawnParticleTimer > 0) {
+            spawnParticleTimer--;
+            for (int i = particleCount - spawnParticleTimer; i <= particleCount; i++) {
+                ParticleOptions particle = ParticleTypes.END_ROD;
+                double distance = i * step;
+                Vec3 particlePos = from.add(dir.scale(distance).add(0, i * 0.1, 0));
+                serverPlayer.serverLevel().sendParticles(
+                        particle,
+                        particlePos.x,
+                        particlePos.y,
+                        particlePos.z,
+                        0,
+                        dir.x, dir.y, dir.z,
+                        0.1f
+                );
+            }
         }
     }
 

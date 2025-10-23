@@ -1,7 +1,7 @@
 package com.p1nero.tcrcore.network.packet.clientbound;
 
 import com.p1nero.dialog_lib.network.packet.BasePacket;
-import com.p1nero.tcrcore.utils.WaypointUtil;
+import com.p1nero.tcrcore.utils.OverworldWaypointUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -31,7 +31,7 @@ public record AddWaypointPacket(String name, BlockPos pos, @Nullable WaypointCol
     @Override
     public void execute(@Nullable Player playerEntity) {
         if (Minecraft.getInstance().player != null && Minecraft.getInstance().level != null) {
-            WaypointUtil.addWayPoint(pos, name, color);
+            OverworldWaypointUtil.addWayPoint(pos, name, color);
         }
     }
 }

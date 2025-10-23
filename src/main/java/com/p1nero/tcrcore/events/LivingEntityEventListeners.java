@@ -32,6 +32,7 @@ import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.utils.EntityUtil;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
+import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import net.kenddie.fantasyarmor.item.FAItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
@@ -277,10 +278,11 @@ public class LivingEntityEventListeners {
             }
 
             if(event.getSource().getEntity() instanceof Player && livingEntity.getType().is(EntityTypeTags.RAIDERS) && !PlayerDataManager.pillagerKilled.get(player)) {
-                ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
-                itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
-                ItemUtil.addItemEntity(player, itemStack, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
+//                ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
+//                itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
+//                ItemUtil.addItemEntity(player, itemStack, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                 TCRTaskManager.KILL_PILLAGER.finish(player);
+                TCRTaskManager.BACK_TO_KEEPER.start(player);
                 PlayerDataManager.pillagerKilled.put(player, true);
             }
 
@@ -414,7 +416,7 @@ public class LivingEntityEventListeners {
             }
             //多人则重置出生点
             if(!serverPlayer.server.isSingleplayer()) {
-                serverPlayer.setRespawnPosition(Level.OVERWORLD, new BlockPos(WorldUtil.START_POS), 0, true, false);
+                serverPlayer.setRespawnPosition(TCRDimensions.SANCTUM_LEVEL_KEY, new BlockPos(WorldUtil.START_POS), 0, true, false);
             }
 
             if(EntityUtil.getNearByPlayers(serverPlayer, 30).isEmpty()) {

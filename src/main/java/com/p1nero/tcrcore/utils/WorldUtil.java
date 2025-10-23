@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore.utils;
 
+import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import com.yungnickyoung.minecraft.yungsapi.criteria.SafeStructureLocationPredicate;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.Vec3i;
@@ -43,7 +44,7 @@ public class WorldUtil {
     private static final Pattern LOCATE_PATTERN = Pattern.compile(".*?\\[\\s*(-?\\d+)\\s*,\\s*~\\s*,\\s*(-?\\d+)\\s*\\].*");
 
     public static boolean inMainLand(Entity entity) {
-        return entity.level().dimension() == Level.OVERWORLD && entity.position().subtract(CENTER_POS).horizontalDistance() < 250;
+        return entity.level().dimension() == TCRDimensions.SANCTUM_LEVEL_KEY && entity.position().subtract(CENTER_POS).horizontalDistance() < 250;
     }
 
     public static boolean isInStructure(LivingEntity entity, String structure) {
@@ -57,12 +58,14 @@ public class WorldUtil {
         return new SafeStructureLocationPredicate(ResourceKey.create(Registries.STRUCTURE, ResourceLocation.parse(structure))).matches(serverLevel, pos.x(), pos.y(), pos.z());
     }
 
+
+
     /**
      * 获取结构位置
      */
     @Nullable
-    public static Vec2i getNearbyStructurePos(ServerPlayer serverPlayer, String structureId) {
-        String output = getCommandOutput(serverPlayer.serverLevel(), serverPlayer.position(), "/locate structure " + structureId);
+    public static Vec2i getNearbyStructurePos(ServerLevel serverLevel, Vec3 position, String structureId) {
+        String output = getCommandOutput(serverLevel, position, "/locate structure " + structureId);
         Matcher matcher = LOCATE_PATTERN.matcher(output);
         if(matcher.find()) {
             try {
@@ -74,6 +77,24 @@ public class WorldUtil {
         }
         return null;
     }
+
+//    /**
+//     * 获取结构位置
+//     */
+//    @Nullable
+//    public static Vec2i getNearbyStructurePos(ServerPlayer serverPlayer, String structureId) {
+//        String output = getCommandOutput(serverPlayer.serverLevel(), serverPlayer.position(), "/locate structure " + structureId);
+//        Matcher matcher = LOCATE_PATTERN.matcher(output);
+//        if(matcher.find()) {
+//            try {
+//                String xStr = matcher.group(1).trim();
+//                String zStr = matcher.group(2).trim();
+//                return new Vec2i(Integer.parseInt(xStr), Integer.parseInt(zStr));
+//            } catch (NumberFormatException ignored) {
+//            }
+//        }
+//        return null;
+//    }
 
     public static String getCommandOutput(ServerLevel serverLevel, @Nullable Vec3 vec, String command) {
         BaseCommandBlock baseCommandBlock = new BaseCommandBlock() {

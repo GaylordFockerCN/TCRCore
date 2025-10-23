@@ -5,6 +5,7 @@ import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.DimensionResourceCopier;
 import com.p1nero.tcrcore.utils.WorldUtil;
+import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import net.blay09.mods.waystones.block.ModBlocks;
 import net.blay09.mods.waystones.block.WaystoneBlock;
 import net.minecraft.core.BlockPos;
@@ -36,7 +37,7 @@ public class ServerEvents {
      */
     @SubscribeEvent
     public static void onWorldLoad(LevelEvent.CreateSpawnPosition e) {
-        if (e.getLevel() instanceof ServerLevel serverLevel && serverLevel.dimension() == ServerLevel.OVERWORLD) {
+        if (e.getLevel() instanceof ServerLevel serverLevel && serverLevel.dimension() == TCRDimensions.SANCTUM_LEVEL_KEY) {
             serverLevel.setDefaultSpawnPos(new BlockPos(WorldUtil.START_POS), 1.0F);
             e.setCanceled(true);
         }
@@ -44,7 +45,7 @@ public class ServerEvents {
 
     @SubscribeEvent
     public static void onLevelLoad(LevelEvent.Load event) {
-        if(event.getLevel() instanceof ServerLevel serverLevel && serverLevel.dimension() == Level.OVERWORLD) {
+        if(event.getLevel() instanceof ServerLevel serverLevel && serverLevel.dimension() == TCRDimensions.SANCTUM_LEVEL_KEY) {
             //懒得重新搞地图了
             TCRMainLevelSaveData tcrMainLevelSaveData = TCRMainLevelSaveData.get(serverLevel);
             if(!tcrMainLevelSaveData.isGirlPlaced()) {
