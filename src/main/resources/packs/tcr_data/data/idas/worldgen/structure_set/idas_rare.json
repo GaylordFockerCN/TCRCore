@@ -1,0 +1,62 @@
+{
+  "structures": [
+    {
+      "structure": "idas:pillager_fortress",
+      "weight": 3
+    },
+    {
+      "structure": "idas:labyrinth",
+      "weight": 3
+    },
+    {
+      "structure": "idas:bazaar",
+      "weight": 3
+    },
+    {
+      "structure": "idas:ancient_mines",
+      "weight": 3
+    },
+    {
+      "structure": "idas:tinkers_workshop",
+      "weight": 3
+    },
+    {
+      "structure": "idas:ruins_of_the_deep",
+      "weight": 3
+    },
+    {
+      "structure": "idas:tree_of_wisdom",
+      "weight": 1
+    },
+    {
+      "structure": "idas:iceandfire/dread_citadel",
+      "weight": 3
+    },
+    {
+      "structure": "idas:tinkers_citadel",
+      "weight": 3
+    },
+    {
+      "structure": "idas:ars_nouveau/archmages_tower",
+      "weight": 3
+    },
+    {
+      "structure": "idas:desert_pyramid",
+      "weight": 3
+    },
+    {
+      "structure": "idas:windswept_shrine",
+      "weight": 3
+    }
+  ],
+  "placement": {
+    "salt": 169480678,
+    "spacing": 45,
+    "separation": 20,
+    "type": "integrated_api:advanced_random_spread",
+    "super_exclusion_zone": {
+      "chunk_count": 2,
+      "other_set": "#idas:rare_avoid"
+    }
+  }
+}

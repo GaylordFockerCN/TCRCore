@@ -3,7 +3,7 @@ package com.p1nero.tcrcore.mixin;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.obscuria.aquamirae.common.items.weapon.TerribleSwordItem;
-import com.obscuria.obscureapi.registry.ObscureAPIAttributes;
+import dev.shadowsoffire.attributeslib.api.ALObjects.Attributes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -29,8 +29,8 @@ public class TerribleSwordItemMixin extends SwordItem {
         if (slot == EquipmentSlot.MAINHAND) {
             ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
             builder.putAll(multimap);
-            builder.put(ObscureAPIAttributes.CRITICAL_HIT.get(), new AttributeModifier(UUID.fromString("AB3F55D3-645C-4F38-A497-9C13A33DB5CF"), "Weapon modifier", 0.1F, AttributeModifier.Operation.MULTIPLY_BASE));
-            builder.put(ObscureAPIAttributes.CRITICAL_DAMAGE.get(), new AttributeModifier(UUID.fromString("AA3F55D3-645C-4F38-A497-9C13A33DB5CF"), "Weapon modifier", 1.5F, AttributeModifier.Operation.MULTIPLY_BASE));
+            builder.put(Attributes.CRIT_CHANCE.get(), new AttributeModifier(UUID.fromString("AB3F55D3-645C-4F38-A497-9C13A33DB5CF"), "Weapon modifier", 0.1F, AttributeModifier.Operation.MULTIPLY_BASE));
+            builder.put(Attributes.CRIT_DAMAGE.get(), new AttributeModifier(UUID.fromString("AA3F55D3-645C-4F38-A497-9C13A33DB5CF"), "Weapon modifier", 1.5F, AttributeModifier.Operation.MULTIPLY_BASE));
             cir.setReturnValue(builder.build());
         } else {
             cir.setReturnValue(multimap);

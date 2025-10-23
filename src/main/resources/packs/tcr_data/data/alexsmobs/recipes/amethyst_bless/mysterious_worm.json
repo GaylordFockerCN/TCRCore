@@ -1,0 +1,10 @@
+{
+  "type": "cataclysm:amethyst_bless",
+  "ingredients": {
+    "item": "alexsmobs:mosquito_larva"
+  },
+  "result": {
+    "item": "alexsmobs:mysterious_worm"
+  },
+  "time": 120
+}

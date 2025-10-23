@@ -1,0 +1,10 @@
+{
+  "type": "cataclysm:amethyst_bless",
+  "ingredients": {
+    "item": "minecraft:cod"
+  },
+  "result": {
+    "item": "alexsmobs:cosmic_cod"
+  },
+  "time": 120
+}

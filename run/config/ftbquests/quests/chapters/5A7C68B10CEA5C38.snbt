@@ -32,7 +32,7 @@
 			invisible: true
 			rewards: [{
 				id: "7D6A65A022DEC3EA"
-				item: "more_critters:critter_atlas"
+				item: "alexsmobs:animal_dictionary"
 				type: "item"
 			}]
 			shape: "rsquare"
@@ -48,86 +48,6 @@
 			}]
 			x: 0.0d
 			y: 2.0d
-		}
-		{
-			dependencies: ["7221EEC023D3C7D8"]
-			id: "59798FCA29E7219C"
-			rewards: [{
-				id: "01E1707879698B21"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest6447342440006754716.subtitle}"
-			tasks: [{
-				id: "43AF18FF03C7BB2C"
-				item: {
-					Count: 1
-					id: "more_critters:fungal_staff"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 6.0d
-			y: -3.0d
-		}
-		{
-			dependencies: ["7221EEC023D3C7D8"]
-			id: "1A8821AD4E702689"
-			rewards: [{
-				id: "2A0FB986926F3A33"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest1911815070047807113.subtitle}"
-			tasks: [{
-				id: "72CF0C6A03B19AB2"
-				item: {
-					Count: 1
-					id: "more_critters:booster_pump"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: -4.5d
-			y: -4.0d
-		}
-		{
-			dependencies: ["7221EEC023D3C7D8"]
-			id: "4AC983040F848723"
-			rewards: [{
-				id: "3783F42DAF88B6E9"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest5388982482588960547.subtitle}"
-			tasks: [{
-				id: "4CCB0960219EC247"
-				item: "more_critters:web_sack"
-				type: "item"
-			}]
-			x: -1.5d
-			y: -3.0d
-		}
-		{
-			dependencies: ["7221EEC023D3C7D8"]
-			id: "428A4623246C7459"
-			rewards: [{
-				id: "6883C22456938E8E"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest4794721870038201433.subtitle}"
-			tasks: [{
-				id: "405D488CC8A67A14"
-				item: "more_critters:shriek_bomb"
-				type: "item"
-			}]
-			x: 2.0d
-			y: -3.5d
 		}
 		{
 			dependencies: ["7221EEC023D3C7D8"]
