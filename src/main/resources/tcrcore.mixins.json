@@ -51,6 +51,7 @@
     "AquamiraeClientMixin",
     "CataclysmClientEventMixin",
     "ClientAnimatorMixin",
+    "ControlEngineMixin",
     "EFClientConfigMixin",
     "LocalPlayerPatchAccessor",
     "LocalPlayerPatchMixin",

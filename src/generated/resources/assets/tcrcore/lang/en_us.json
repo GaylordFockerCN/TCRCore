@@ -238,6 +238,7 @@
   "info.tcr.use_true_eye_tip": "Please use [%s] to right-click the altar core",
   "info.tcr.weapon_innate_charge_tutorial": "§6[Perfect Dodge]§c or §6[Perfect Parry]§c can charge certain weapons!",
   "info.tcr.weapon_innate_tutorial": "§6[[%s§6]§f to weapon skill",
+  "info.tcr.weapon_no_interact": "Weapon can not interact! Please use vanilla mode or other item.",
   "info.tcr.wraithon_end_tip": "§d[Wraithon]: §6This... is impossible...",
   "info.tcr.wraithon_start_tip": "§d[Wraithon]: §6Outsider, your journey ends here!",
   "info.tcr.you_pass": "§6You passed!!",

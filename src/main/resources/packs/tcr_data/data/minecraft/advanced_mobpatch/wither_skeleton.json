@@ -9,7 +9,7 @@
         "armor_negation": 0,    
         "max_strikes": 1,        
         "chasing_speed": 1.0,    
-        "max_stamina": 100, 
+        "max_stamina": 50, 
          "stamina_regan_multiply": 0.5,
         "stamina_regan_delay": 500,  
          "has_stun_reduction":false, 
@@ -47,7 +47,7 @@
 			"style":"one_hand", 	
 			"guard": "indestructible:guard/guard_sword",
 	        "stamina_cost_multiply": 10, 	
-			"parry_cost_multiply": 1.5,    
+			"parry_cost_multiply": 5,    
 	        "can_block_projectile" : true     
 	    },
 		{ 
@@ -55,7 +55,7 @@
 			"style":"two_hand", 	
 		    "guard": "indestructible:guard/guard_dualsword",
 		    "stamina_cost_multiply": 40, 	
-			"parry_cost_multiply": 2,    
+			"parry_cost_multiply": 5,    
 		    "can_block_projectile" : true     
 		},
 		{ 
@@ -63,7 +63,7 @@
 			"style":"two_hand", 	
 		    "guard": "indestructible:guard/guard_dualsword",
 		    "stamina_cost_multiply": 20, 	
-			"parry_cost_multiply": 2,    
+			"parry_cost_multiply": 5,    
 		    "can_block_projectile" : true     
 		},
 		{ 
@@ -71,7 +71,7 @@
 			"style":"common", 	
 	    	"guard": "indestructible:guard/guard_dualsword",
 		    "stamina_cost_multiply": 50, 	
-			"parry_cost_multiply": 2,  
+			"parry_cost_multiply": 5,  
 		    "can_block_projectile" : false     
 		},
 		{ 
@@ -79,7 +79,7 @@
 		    "style":"common", 	
 		    "guard": "indestructible:guard/guard_greatsword",
 	        "stamina_cost_multiply": 30, 	
-			"parry_cost_multiply": 3,    
+			"parry_cost_multiply": 5,    
 	        "can_block_projectile" : false     
 	    },
 		{ 
@@ -87,7 +87,7 @@
 		   "style":"common", 	
 		   "guard": "indestructible:guard/guard_katana",
 	       "stamina_cost_multiply": 10, 	  
-		   "parry_cost_multiply": 1.5,  
+		   "parry_cost_multiply": 5,  
 	       "can_block_projectile" : true    
 	    },
 		{ 
@@ -103,7 +103,7 @@
 		  "style":"common", 	
 		  "guard": "indestructible:guard/guard_spear",
 		  "stamina_cost_multiply": 10, 	  
-		  "parry_cost_multiply": 2,  
+		  "parry_cost_multiply": 5,  
 		  "can_block_projectile" : false     
 		}
        ],
@@ -195,7 +195,6 @@
 					"weight": 1.5,
 					"canBeInterrupted": true,
 					"looping": false,
-					"cooldown":50,
 					"behaviors": [					
 						{
 							"conditions": [
@@ -427,7 +426,6 @@
 					"weight": 1.5,
 					"canBeInterrupted": true,
 					"looping": false,
-					"cooldown":50,
 					"behaviors": [					
 						{
 							"conditions": [
@@ -650,7 +648,6 @@
 					"weight": 1.5,
 					"canBeInterrupted": true,
 					"looping": false,
-					"cooldown":50,
 					"behaviors": [					
 						{
 							"conditions": [
@@ -882,7 +879,6 @@
 					"weight": 1.5,
 					"canBeInterrupted": true,
 					"looping": false,
-					"cooldown":50,
 					"behaviors": [					
 						{
 							"conditions": [
@@ -1240,7 +1236,6 @@
 					"weight": 1.5,
 					"canBeInterrupted": true,
 					"looping": false,
-					"cooldown":50,
 					"behaviors": [					
 						{
 							"conditions": [
@@ -1988,7 +1983,6 @@
 					"weight": 1.5,
 					"canBeInterrupted": true,
 					"looping": false,
-					"cooldown":50,
 					"behaviors": [					
 						{
 							"conditions": [

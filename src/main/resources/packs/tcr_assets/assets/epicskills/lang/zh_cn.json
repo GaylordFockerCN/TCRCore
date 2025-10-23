@@ -50,5 +50,9 @@
   "commands.epicskills.skilltree_progression.lock_tree.failed": "无法锁定技能树。请清除所有节点或将强制选项设为true",
   "commands.epicskills.skilltree_progression.failed": "因玩家数据无效而执行命令失败",
 
+  "key.epicskills.gui": "史诗战斗: 技能树 GUI",
+
+  "key.epicskills.open_skill_tree": "查看已习得的技能",
+
   "eof": "文件结束"
 }

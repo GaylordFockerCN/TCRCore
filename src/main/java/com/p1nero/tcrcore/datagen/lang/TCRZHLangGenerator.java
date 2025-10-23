@@ -27,6 +27,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
     @Override
     protected void addTranslations() {
 
+        this.add("epicfight.skill_slot.passive4", "被动4");
+        this.add("epicfight.skill_slot.passive5", "被动5");
         this.add("travelerstitles.tcrcore.sanctum", "梦之领域");
         this.addBiome(TCRBiomes.AIR, "虚无之地");
 
@@ -78,6 +80,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "上面写着古老的神谕，暗示了火种散落的地方。回主城给守望者看看吧，说不定对冒险有帮助！");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c多人模式请勿占据他人任务道具！每人都需各自提交！", 2);
 
+        this.addInfo("weapon_no_interact", "武器禁止交互！请使用其他物品或按[%s]切换非战斗模式");
         this.addInfo("tudigong_gift", "[见面礼]");
         this.addInfo("tudigong_gift_get", "§6[土地公]§f: 老夫不中用矣，此宝具赠予你罢！");
         this.addInfo("need_to_unlock_waystone", "仍有传送石碑未激活！");

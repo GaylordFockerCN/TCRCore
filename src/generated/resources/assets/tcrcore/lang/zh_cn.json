@@ -238,6 +238,7 @@
   "info.tcr.use_true_eye_tip": "请使用 [%s] 右键祭坛核心",
   "info.tcr.weapon_innate_charge_tutorial": "§6[完美闪避]§c或§6[完美招架]§c可以对部分武器进行充能！",
   "info.tcr.weapon_innate_tutorial": "按下§6[%s§6]键§f以释放武器技能",
+  "info.tcr.weapon_no_interact": "武器禁止交互！请使用其他物品或非战斗模式",
   "info.tcr.wraithon_end_tip": "§d[Wraithon]: §6这...不可能...",
   "info.tcr.wraithon_start_tip": "§d[Wraithon]: §6外来之人，你的旅途到此结束！",
   "info.tcr.you_pass": "§6你过关！！",

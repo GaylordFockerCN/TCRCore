@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.mixin;
 
 import com.p1nero.tcrcore.client.gui.widget.AbilityPointsMeter;
+import com.p1nero.tcrcore.client.gui.widget.OpenSkillEditorButton;
 import com.yesman.epicskills.client.gui.screen.BackgroundRenderableScreen;
 import com.yesman.epicskills.client.gui.screen.SkillTreeScreen;
 import net.minecraft.client.gui.components.Button;
@@ -13,6 +14,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import yesman.epicfight.world.capabilities.skill.CapabilitySkill;
 
 import java.util.Map;
 
@@ -34,6 +36,10 @@ public abstract class SkillTreeScreenMixin extends Screen implements BackgroundR
     @Final
     private Button scaleDownButton;
 
+    @Shadow(remap = false)
+    @Final
+    private CapabilitySkill playerSkills;
+
     protected SkillTreeScreenMixin(Component p_96550_) {
         super(p_96550_);
     }
@@ -49,6 +55,7 @@ public abstract class SkillTreeScreenMixin extends Screen implements BackgroundR
         });
         this.addRenderableWidget(this.scaleUpButton);
         this.addRenderableWidget(this.scaleDownButton);
+        this.addRenderableWidget(new OpenSkillEditorButton(this.width - 30, 8, 20, 20, playerSkills));
         this.addRenderableOnly(new AbilityPointsMeter(this.width - 116, 10, (SkillTreeScreen) (Object) this));
         ci.cancel();
     }

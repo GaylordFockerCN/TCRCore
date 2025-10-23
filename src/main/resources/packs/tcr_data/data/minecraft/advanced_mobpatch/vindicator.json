@@ -1,14 +1,14 @@
 {
-    "model": "epicfight:entity/skeleton",
-    "armature": "epicfight:entity/skeleton",
-    "renderer": "minecraft:skeleton",
+    "model": "epicfight:entity/illager",
+    "armature": "epicfight:entity/biped",
+    "renderer": "minecraft:pillager",
     "isHumanoid": true,
     "faction": "undead",
     "attributes": {
 		"impact": 2,          
         "armor_negation": 0,    
         "max_strikes": 1,        
-        "chasing_speed": 1.0,    
+        "chasing_speed": 1.5,    
         "max_stamina": 50, 
          "stamina_regan_multiply": 0.5,
         "stamina_regan_delay": 500,  
@@ -232,7 +232,7 @@
 				},
 				{
 					"weight": 1.5,
-					"canBeInterrupted": false,
+					"canBeInterrupted": true,
 					"looping": false,
 					"cooldown":20,
 					"behaviors": [					
@@ -2115,9 +2115,66 @@
 							],
 							"animation": "efn:biped/dodge/step_b", 		 								
 							"stamina": 10,		
-				         	"play_speed": 1.1
+							 "play_speed": 1.1
 						}
-                    ]                 
+					]                 
+				},
+				{
+					"weight": 1.5,
+					"canBeInterrupted": true,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [					
+						{
+							"conditions": [
+							 {"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"}, {"predicate":"epicfight:within_eye_height"},  {"predicate":"epicfight:within_distance", "min": 0.4, "max": 6.0}
+							],
+							"animation": "efn:biped/dodge/dodge_f", 		 								
+							"stamina": 10,
+							 "play_speed": 1.1
+						},
+						{
+							"conditions": [
+							 {"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"}, {"predicate":"epicfight:within_eye_height"},  {"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "epicfight:biped/skill/the_guillotine", 		 								
+							"stamina": 10,			
+							"convert_time": 0.4,		
+							 "play_speed": 1.1
+						}
+					]                 
+				},
+				{
+					"weight": 1.5,
+					"canBeInterrupted": true,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [					
+						{
+							"conditions": [
+							 {"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"},{"predicate":"indestructible:attack_level", "min": 1, "max": 1}, {"predicate":"epicfight:within_eye_height"},  {"predicate":"epicfight:within_distance", "min": 0.0, "max": 6.0}
+							],
+							"animation": "efn:biped/dodge/step_b", 		 								
+							"stamina": 10,		
+							 "play_speed": 1.1
+						},
+						{
+							"conditions": [
+							 {"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"}, {"predicate":"epicfight:within_eye_height"},  {"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "efn:biped/exsiliumgladius_reborn/exsiliumgladius_d", 		 								
+							"stamina": 10,	
+							 "play_speed": 1.1
+						},
+						{
+							"conditions": [
+							 {"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"}, {"predicate":"epicfight:within_eye_height"},  {"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "p1nero_bow:biped/bow_dash_attack", 		 								
+							"stamina": 10,		
+							 "play_speed": 1.1
+						}
+					]                 
 				},
 				{
 					"weight": 1.5,
@@ -2131,9 +2188,9 @@
 							],
 							"animation": "efn:biped/dodge/step_l", 
 							"stamina": 15,			
-				         	"play_speed": 1		
+							 "play_speed": 1		
 						}
-                    ]                 
+					]                 
 				},
 				{
 					"weight": 1.5,
@@ -2147,9 +2204,9 @@
 							],
 							"animation": "efn:biped/dodge/step_r", 
 							"stamina": 15,			
-				         	"play_speed": 1		
+							 "play_speed": 1		
 						}
-                    ]                 
+					]                 
 				},
 				{
 					"weight": 1.5,
@@ -2162,14 +2219,34 @@
 								{"predicate":"indestructible:attack_level", "min": 1, "max": 1},{"predicate": "indestructible:stamina", "stamina": 0.05, "comparator": "greater_ratio"},{"predicate":"epicfight:within_eye_height"},  {"predicate":"epicfight:within_distance", "min": 0.0, "max": 4.0}
 							],
 							"guard": 20, 			
-							"counter": "efn:biped/yamato/biped_hitback_1",
+							"counter": "p1nero_bow:biped/elbow_2",
 							"counter_cost": 10, 		
 							"counter_chance": 0.4, 	
 							"cancel_after_counter":true,
 							"stun_immunity_time": 4,
 							"counter_speed": 1.1 			
 						}
-                    ]                 
+					]                 
+				},
+				{
+					"weight": 1.5,
+					"canBeInterrupted": true,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"indestructible:attack_level", "min": 1, "max": 1},{"predicate": "indestructible:stamina", "stamina": 0.05, "comparator": "greater_ratio"},{"predicate":"epicfight:within_eye_height"},  {"predicate":"epicfight:within_distance", "min": 0.0, "max": 4.0}
+							],
+							"guard": 20, 			
+							"counter": "efn:biped/exsiliumgladius_reborn/exsiliumgladius_aab", 
+							"counter_cost": 10, 		
+							"counter_chance": 0.4, 	
+							"cancel_after_counter":true,
+							"stun_immunity_time": 4,
+							"counter_speed": 1.1 			
+						}
+					]                 
 				},
 				{
 					"weight": 1.5,
@@ -2183,8 +2260,8 @@
 							],
 							"animation": "epicfight:biped/combat/axe_dash", 	
 							"convert_time": 0.5,		
-							"stamina": 15,	
-				         	"play_speed": 1.5		
+							"stamina": 15,
+							 "play_speed": 1.5		
 						},
 						{
 							"conditions": [
@@ -2193,7 +2270,7 @@
 							"animation": "epicfight:biped/combat/axe_auto1", 	
 							"convert_time": 0.5,			
 							"stamina": 10,	
-				         	"play_speed": 1.2		
+							 "play_speed": 1.2		
 						},
 						{
 							"conditions": [
@@ -2203,7 +2280,17 @@
 							"convert_time": 0.5,				
 							"stamina": 10,		
 							"set_phase": 1,
-				         	"play_speed":1.2		
+							 "play_speed":1.2		
+						},
+						{
+							"conditions": [
+								{"predicate": "indestructible:stamina", "stamina": 0.15, "comparator": "greater_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "epicfight:biped/skill/the_guillotine", 
+							"convert_time": 0.5,				
+							"stamina": 15,		
+							"set_phase": 1,
+							 "play_speed":1.2		
 						},
 						{
 							"conditions": [
@@ -2214,22 +2301,7 @@
 							"x_axis": 1,		   
 							"z_axis": 270    	  
 						}
-                    ]                 
-				},
-				{
-					"weight": 1.5,
-					"canBeInterrupted": true,
-					"looping": false,
-					"cooldown":60,
-					"behaviors": [					
-						{
-							"conditions": [
-								{"predicate":"indestructible:phase", "min": 0, "max": 2},{"predicate":"epicfight:within_distance", "min": 7.0, "max": 32.0}
-							],
-							"animation": "efn:biped/exsiliumgladius_reborn/exsiliumgladius_d", 
-							"stamina": 15
-						}
-                    ]                 
+					]                 
 				},
 				{
 					"weight": 1.5,
@@ -2246,9 +2318,9 @@
 							"x_axis": 1,		   
 							"z_axis": 270    	  
 						}
-                    ]                 
+					]                 
 				}
 			]
-        }
+		}
     ]
 }

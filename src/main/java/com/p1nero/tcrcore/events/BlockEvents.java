@@ -20,6 +20,10 @@ public class BlockEvents {
             return;
         }
         if(event.getPlayer().level() instanceof ServerLevel serverLevel) {
+            //主城不可破坏
+            if(WorldUtil.inMainLand(event.getPlayer())) {
+                event.setCanceled(true);
+            }
             //不可破坏神像
             if(event.getState().is(ModBlocks.GODDESS_STATUE.get()) && WorldUtil.inMainLand(event.getPlayer())) {
                 EntityType.LIGHTNING_BOLT.spawn(serverLevel, event.getPos(), MobSpawnType.MOB_SUMMONED);
@@ -38,6 +42,14 @@ public class BlockEvents {
                     event.setCanceled(true);
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onBlockPlace(BlockEvent.EntityPlaceEvent event) {
+        //主城保护
+        if(event.getEntity() != null && WorldUtil.inMainLand(event.getEntity())) {
+            event.setCanceled(true);
         }
     }
 

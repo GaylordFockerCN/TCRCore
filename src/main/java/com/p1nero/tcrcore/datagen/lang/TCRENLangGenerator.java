@@ -27,6 +27,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
     @Override
     protected void addTranslations() {
 
+        this.add("epicfight.skill_slot.passive4", "Passive 4");
+        this.add("epicfight.skill_slot.passive5", "Passive 5");
         this.add("travelerstitles.tcrcore.sanctum", "Realm of the Dream");
         this.addBiome(TCRBiomes.AIR, "Void Region");
 
@@ -78,6 +80,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "It bears an ancient oracle hinting at the locations of scattered embers. Show it to the The Sanctuary Keeper in the The Sanctuary; it might aid your adventure!");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§cIn multiplayer mode, do not occupy other players'! Everyone must submit their own!", 2);
 
+        this.addInfo("weapon_no_interact", "Can not interact! Please press [%s] vanilla mode or other item.");
         this.addInfo("tudigong_gift", "[Gift]");
         this.addInfo("tudigong_gift_get", "§6[TuDi]§f: I have grown old and useless, so I pass this treasure on to you！");
         this.addInfo("need_to_unlock_waystone", "Some waystones remain inactive!");
