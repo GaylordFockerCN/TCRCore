@@ -31,7 +31,7 @@ public class TCRDimensions {
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         context.register(SANCTUM_DIM_TYPE,
                 new DimensionType(
-                    OptionalLong.of(6000),       // 跟随主世界时间
+                    OptionalLong.empty(),       // 跟随主世界时间
                     true,                       // 有天空光照
                     false,                      // 无天花板
                     false,                      // 非超高温
@@ -44,7 +44,7 @@ public class TCRDimensions {
                     256,                        // 逻辑高度
                     BlockTags.INFINIBURN_OVERWORLD,
                     BuiltinDimensionTypes.OVERWORLD_EFFECTS,
-                    1.0F,                       // 稍暗的环境光
+                    0.2F,                       // 稍暗的环境光
                     new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)
                 )
         );

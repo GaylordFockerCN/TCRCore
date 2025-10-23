@@ -11,9 +11,11 @@ import com.p1nero.dialog_lib.api.component.DialogNode;
 import com.p1nero.dialog_lib.api.goal.LookAtConservingPlayerGoal;
 import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
 import com.p1nero.epicfightbow.item.EFBowItems;
+import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.events.PlayerEventListeners;
 import com.p1nero.tcrcore.events.SafeNetherTeleporter;
+import com.p1nero.tcrcore.events.SafeOverworldTeleporter;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
@@ -404,7 +406,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
     @Override
     public boolean hurt(@NotNull DamageSource damageSource, float p_21017_) {
         if(damageSource.getEntity() instanceof Player player && player.isCreative()) {
-            player.displayClientMessage(Component.translatable("/summon " + ForgeRegistries.ENTITY_TYPES.getKey(this.getType())), false);
+            player.displayClientMessage(Component.translatable("/summon " + ForgeRegistries.ENTITY_TYPES.getKey(this.getType())).withStyle(ChatFormatting.RED), false);
             this.discard();
         }
         return false;
@@ -462,6 +464,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
 //                    .addChild(ans3)
                     .addChild(ans7)
                     .addChild(ans4);
+            root.addLeaf(dBuilder.optWithBrackets(10), 8);
             treeBuilder.setRoot(root);
         } else {
             DialogNode root = new DialogNode(dBuilder.ans(0), dBuilder.optWithBrackets(0));//开场白 | 返回
@@ -504,6 +507,8 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 root.addChild(ans6);
             }
 
+            root.addLeaf(dBuilder.optWithBrackets(10), 8);
+
             treeBuilder.setRoot(root);
         }
         return treeBuilder;
@@ -520,6 +525,15 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
             //传送末地
             ServerLevel level = serverPlayer.server.getLevel(Level.END);
             serverPlayer.changeDimension(level);
+        }
+        if(i == 8) {
+            if(PlayerDataManager.wayStoneInteracted.get(serverPlayer)){
+                //传送主世界
+                ServerLevel level = serverPlayer.server.getLevel(Level.OVERWORLD);
+                serverPlayer.changeDimension(level, new SafeOverworldTeleporter());
+            } else {
+                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("need_to_unlock_waystone").withStyle(ChatFormatting.RED), false);
+            }
         }
         if(i == 3) {
             if(!PlayerDataManager.boatGet.get(serverPlayer)) {

@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.save_data;
 
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
@@ -239,7 +240,7 @@ public class TCRMainLevelSaveData extends SavedData {
     }
 
     public static TCRMainLevelSaveData get(ServerLevel worldIn) {
-        ServerLevel world = worldIn.getServer().getLevel(ServerLevel.OVERWORLD);
+        ServerLevel world = worldIn.getServer().getLevel(TCRDimensions.SANCTUM_LEVEL_KEY);
         DimensionDataStorage dataStorage = world.getDataStorage();
         TCRMainLevelSaveData levelSaveData = dataStorage.computeIfAbsent(TCRMainLevelSaveData::decode, TCRMainLevelSaveData::create, TCRMainLevelSaveData.NAME);
         levelSaveData.setLevel(world);

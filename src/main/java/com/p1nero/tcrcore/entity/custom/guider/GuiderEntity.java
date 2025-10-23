@@ -17,7 +17,7 @@ import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
-import com.p1nero.tcrcore.utils.WaypointUtil;
+import com.p1nero.tcrcore.utils.OverworldWaypointUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tudigong.util.StructureUtils;
 import dev.ftb.mods.ftbquests.item.FTBQuestsItems;
@@ -78,10 +78,6 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
 
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.god_girl.idle2");
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-    private Vec3 from = Vec3.ZERO;
-    private Vec3 dir = Vec3.ZERO;
-    private int spawnParticleTimer = 0;
-    private final int particleCount = 20;
     @Nullable
     private Player conversingPlayer;
 
@@ -108,31 +104,13 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                     this.setPos(new BlockPos(WorldUtil.GUIDER_BLOCK_POS).getCenter());
                 }
             }
-            double step = 5.0 / particleCount;
-            if(spawnParticleTimer > 0) {
-                spawnParticleTimer--;
-                for (int i = particleCount - spawnParticleTimer; i <= particleCount; i++) {
-                    ParticleOptions particle = ParticleTypes.END_ROD;
-                    double distance = i * step;
-                    Vec3 particlePos = from.add(dir.scale(distance).add(0, i * 0.1, 0));
-                    serverLevel.sendParticles(
-                            particle,
-                            particlePos.x,
-                            particlePos.y,
-                            particlePos.z,
-                            0,
-                            dir.x, dir.y, dir.z,
-                            0.1f
-                    );
-                }
-            }
         }
     }
 
     @Override
     public boolean hurt(@NotNull DamageSource source, float value) {
         if(source.getEntity() instanceof Player player && player.isCreative()) {
-            player.displayClientMessage(Component.translatable("/summon " + ForgeRegistries.ENTITY_TYPES.getKey(this.getType())), false);
+            player.displayClientMessage(Component.translatable("/summon " + ForgeRegistries.ENTITY_TYPES.getKey(this.getType())).withStyle(ChatFormatting.RED), false);
             this.discard();
         }
         if (source.getEntity() instanceof ServerPlayer serverPlayer) {
@@ -182,6 +160,8 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
     @Override
     protected @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand) {
         if (player instanceof ServerPlayer serverPlayer) {
+            TCRTaskManager.GIVE_ORACLE_TO_KEEPER.finish(serverPlayer);
+            TCRTaskManager.BACK_TO_KEEPER.finish(serverPlayer);
             CompoundTag tag = new CompoundTag();
             tag.putInt("stage", PlayerDataManager.stage.getInt(player));
             tag.putBoolean("finished", TCRMainLevelSaveData.get(serverPlayer.serverLevel()).isAllFinish());
@@ -281,8 +261,8 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             DialogNode root = new DialogNode(dBuilder.ans(8), dBuilder.optWithBrackets(0));//开场白 | 返回
 
             //接下来干鸟
-            DialogNode ans1 = new DialogNode(dBuilder.ans(9), dBuilder.optWithBrackets(10))
-                    .addChild(root);
+//            DialogNode ans1 = new DialogNode(dBuilder.ans(9), dBuilder.optWithBrackets(10))
+//                    .addChild(root);
 
             DialogNode ans2 = new DialogNode(dBuilder.ans(10), dBuilder.optWithBrackets(11))
                     .addChild(root);
@@ -294,7 +274,10 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             DialogNode ans4 = new DialogNode(dBuilder.ans(22), dBuilder.optWithBrackets(18))
                     .addChild(root);
 
-            root.addChild(ans2).addChild(ans4).addChild(ans1).addChild(ans3);
+            root.addChild(ans2)
+                    .addChild(ans4)
+//                    .addChild(ans1)
+                    .addChild(ans3);
 
             treeBuilder.setRoot(root);
             return treeBuilder;
@@ -311,10 +294,19 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
                     .addChild(root);
 
             if (compoundTag.getBoolean("pillager_kill")) {
-                ans3 = new DialogNode(dBuilder.ans(4), dBuilder.optWithBrackets(7))
-                        .addChild(root);
-                root.addChild(new DialogNode(dBuilder.ans(6), dBuilder.optWithBrackets(8))
-                        .addChild(root));
+//                ans3 = new DialogNode(dBuilder.ans(4), dBuilder.optWithBrackets(7))
+//                        .addChild(root);
+//                root.addChild(new DialogNode(dBuilder.ans(6), dBuilder.optWithBrackets(8))
+//                        .addChild(root));
+                treeBuilder.start(0)
+                        .addChoice(dBuilder.optWithBrackets(7),
+                                dBuilder.ans(15,
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
+                                        TCRCoreMod.getInfo("iron_golem_name").withStyle(ChatFormatting.GOLD),
+                                        Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA)))
+                        .thenExecute(2)
+                        .addFinalChoice(dBuilder.optWithBrackets(5), 1);
+                return treeBuilder;
             }
 
             root.addChild(ans1).addChild(ans2).addChild(ans3);
@@ -353,86 +345,17 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
             if(stage <= 3) {
                 player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_ftb_page"), false);
             }
-            if(stage <= 5) {
-                player.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("press_to_open_map")));
-            }
-            spawnParticleTimer = particleCount;
         }
 
         if (code == 2) {
-            //揭示预言，即解锁新玩法。根据记录的id解锁，初始阶段0， 1解锁时装和武器 2解锁盔甲和boss图鉴，3解锁附魔地狱末地，具体在FTB看
-            //同时按阶段来解锁boss提示
-            int stage = PlayerDataManager.stage.getInt(player);
-            int newStage = stage + 1;
-            if(newStage > 5) {
-                this.setConversingPlayer(null);
-                return;
-            }
-            TCRTaskManager.GIVE_ORACLE_TO_KEEPER.finish(player);
-            TCRAdvancementData.finishAdvancement("stage" + (newStage), player);
-            PlayerDataManager.stage.put(player, ((double) newStage));
-            level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.PLAYERS, 1.0F, 1.0F);
+            TCRCapabilityProvider.getTCRPlayer(player).setNeedToMarkMapInOverworld(true);
+            player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.PLAYERS, 1.0F, 1.0F);
             if (player.getMainHandItem().is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get())) {
                 player.getMainHandItem().shrink(1);
             } else if (player.getOffhandItem().is(TCRItems.ANCIENT_ORACLE_FRAGMENT.get())){
                 player.getOffhandItem().shrink(1);
             }
-
-            if(!PlayerDataManager.mapMarked.get(player)){
-                ItemUtil.addItem(player, FTBQuestsItems.BOOK.get(), 1);
-                PlayerDataManager.mapMarked.put(player, true);
-            }
-            Vec2i pos = null;
-            if(newStage == 1) {
-                pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.SKY_ISLAND);//天空岛
-                if (pos != null) {
-                    WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("storm_pos"), new BlockPos(pos.x, 230, pos.y), WaypointColor.AQUA);
-                }
-            }
-
-            if(newStage == 2) {
-                pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.COVES);//隐秘水湾
-                if (pos != null) {
-                    BlockPos covesPos = new BlockPos(pos.x, 156, pos.y);
-                    TCRMainLevelSaveData.get(player.serverLevel()).setAbyssPos(covesPos);
-                    WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("abyss_pos"), covesPos, WaypointColor.DARK_BLUE);
-                }
-            }
-
-            if(newStage == 4) {
-                pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.CURSED);//船长
-                if (pos != null) {
-                    WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("cursed_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.BLUE);
-                }
-            }
-
-            if(newStage == 3) {
-                pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.SAND);//奇美拉
-                if (pos != null) {
-                    WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("desert_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.YELLOW);
-                }
-            }
-
-            if(newStage == 5) {
-                pos = WorldUtil.getNearbyStructurePos(player, WorldUtil.FIRE);
-                if (pos != null) {
-                    WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("flame_pos"), new BlockPos(pos.x, 95, pos.y), WaypointColor.RED);
-                }
-
-                //召唤龙
-                if(player.getRandom().nextBoolean()) {
-                    net.alp.monsterexpansion.entity.ModEntities.SKRYTHE.get().spawn(player.serverLevel(), new BlockPos(WorldUtil.GOLEM_CENTER_POS_VEC3I.above(10)), MobSpawnType.MOB_SUMMONED);
-                } else {
-                    net.alp.monsterexpansion.entity.ModEntities.RHYZA.get().spawn(player.serverLevel(), new BlockPos(WorldUtil.GOLEM_CENTER_POS_VEC3I.above(4)), MobSpawnType.MOB_SUMMONED);
-                }
-            }
-
-            if(pos != null) {
-                from = player.getEyePosition();
-                Vec3 target = new Vec3(pos.x, player.getEyeY(), pos.y);
-                dir = target.subtract(from).normalize();
-            }
-            player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.END_PORTAL_SPAWN, player.getSoundSource(), 1.0F, 1.0F);
+            TCRTaskManager.GO_TO_OVERWORLD.start(player);
             return;
         }
 

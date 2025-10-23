@@ -38,10 +38,10 @@ public class CustomGuiderRenderer {
         // Handle state changes
         if (hasTask != lastHasTask) {
             fadeStartTime = currentTime;
-            if (hasTask) {
-                // Update task description when task appears
-                lastTaskDesc = TCRTaskManager.getCurrentTaskDesc(localPlayer);
-            }
+        }
+        if (hasTask) {
+            // Update task description when task appears
+            lastTaskDesc = TCRTaskManager.getCurrentTaskDesc(localPlayer);
         }
 
         lastHasTask = hasTask;

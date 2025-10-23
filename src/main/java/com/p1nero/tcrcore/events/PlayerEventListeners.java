@@ -16,10 +16,9 @@ import com.p1nero.tcrcore.network.packet.clientbound.CSTipPacket;
 import com.p1nero.tcrcore.network.packet.clientbound.PlayItemPickupParticlePacket;
 import com.p1nero.tcrcore.network.packet.clientbound.PlayTitlePacket;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
-import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
-import com.p1nero.tcrcore.utils.EntityUtil;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
+import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import com.p1nero.tudigong.entity.XianQiEntity;
 import com.p1nero.tudigong.item.TDGItems;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
@@ -41,11 +40,9 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -54,7 +51,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -68,8 +64,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.p1nero.ss.SwordSoaringMod;
 import net.p1nero.ss.gameassets.skills.SwordControllerSkills;
 import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
-import net.sonmok14.fromtheshadows.server.entity.mob.BulldrogiothEntity;
-import net.sonmok14.fromtheshadows.server.utils.registry.EntityRegistry;
+import org.merlin204.wraithon.util.PositionTeleporter;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
 import top.theillusivec4.curios.api.event.CurioEquipEvent;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
@@ -106,10 +101,11 @@ public class PlayerEventListeners {
                 }
                 if(path.equals("kill_pillager")) {
                     if(!PlayerDataManager.pillagerKilled.get(player)) {
-                        ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
-                        itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
-                        ItemUtil.addItemEntity(player, itemStack, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
+//                        ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
+//                        itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
+//                        ItemUtil.addItemEntity(player, itemStack, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                         TCRTaskManager.KILL_PILLAGER.finish(player);
+                        TCRTaskManager.BACK_TO_KEEPER.start(player);
                         PlayerDataManager.pillagerKilled.put(player, true);
                     }
                 }
@@ -127,6 +123,9 @@ public class PlayerEventListeners {
         Player player = event.getEntity();
         if (player instanceof ServerPlayer serverPlayer) {
             if (!PlayerDataManager.firstJoint.get(serverPlayer)) {
+                serverPlayer.setRespawnPosition(TCRDimensions.SANCTUM_LEVEL_KEY, new BlockPos(WorldUtil.START_POS), 90, true, false);
+                ServerLevel targetLevel = serverPlayer.server.getLevel(TCRDimensions.SANCTUM_LEVEL_KEY);
+                serverPlayer = (ServerPlayer) serverPlayer.changeDimension(targetLevel, new PositionTeleporter(new BlockPos(WorldUtil.START_POS)));
                 TCRAdvancementData.finishAdvancement(TCRCoreMod.MOD_ID, serverPlayer);
                 CommandSourceStack commandSourceStack = serverPlayer.createCommandSourceStack().withPermission(2).withSuppressedOutput();
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/gamerule keepInventory true");
@@ -135,10 +134,11 @@ public class PlayerEventListeners {
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s epicskills:battleborn efn:efn_dodge true");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s dodge_parry_reward:passive dodge_parry_reward:stamina1 true");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s dodge efn:efn_dodge");
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s guard epicfight:parrying");
+                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s guard efn:efn_parry");
                 Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s passive1 dodge_parry_reward:stamina1");
                 ItemUtil.addItem(serverPlayer, Items.IRON_SWORD, 1);
                 ItemUtil.addItem(serverPlayer, ModItems.BACKPACK.get(), 1);
+                ItemUtil.addItem(serverPlayer, Items.LANTERN, 1);
                 ItemUtil.addItem(serverPlayer, Items.BREAD, 32);
                 ItemUtil.addItem(serverPlayer, TDGItems.TUDI_COMMAND_SPELL.get(), 1);
                 ItemUtil.addItem(serverPlayer, EpicSkillsItems.ABILIITY_STONE.get(), 1);
@@ -170,8 +170,7 @@ public class PlayerEventListeners {
             //第一次交互给传送石和提示
             if (blockState.is(ModBlocks.waystone)) {
                 if (!PlayerDataManager.wayStoneInteracted.get(serverPlayer)) {
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("press_to_open_portal_screen"), true);
-                    ItemUtil.addItem(serverPlayer, net.blay09.mods.waystones.item.ModItems.warpStone, 1, true);
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("press_to_open_portal_screen2"), false);
                     PlayerDataManager.wayStoneInteracted.put(serverPlayer, true);
                 }
             }
@@ -261,9 +260,19 @@ public class PlayerEventListeners {
 //                        entity.setGlowingTag(true);
 //                    }
 //                }
-                if (WorldUtil.inMainLand(serverPlayer) && serverPlayer.isSprinting()) {
-                    serverPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 10, 2, false, false, true));
+                if (WorldUtil.inMainLand(serverPlayer)) {
+                    if(serverPlayer.isSprinting()) {
+                        serverPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 10, 2, false, false, true));
+                    }
+                    if(serverPlayer.getY() < 63) {
+                        if(PlayerDataManager.wayStoneInteracted.get(serverPlayer)) {
+                            serverPlayer.changeDimension(serverPlayer.server.getLevel(Level.OVERWORLD), new SafeOverworldTeleporter());
+                        } else {
+                            serverPlayer.displayClientMessage(TCRCoreMod.getInfo("need_to_unlock_waystone").withStyle(ChatFormatting.RED), false);
+                        }
+                    }
                 }
+
             }
 
         }
@@ -296,7 +305,7 @@ public class PlayerEventListeners {
     }
 
     @SubscribeEvent
-    public static void onPlayerEnterDim(EntityTravelToDimensionEvent event) {
+    public static void onPlayerTryToEnterDim(EntityTravelToDimensionEvent event) {
 
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
             //允许创造进
@@ -364,6 +373,11 @@ public class PlayerEventListeners {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_dim_girl"), false);
                     PlayerDataManager.endEntered.put(serverPlayer, true);
                 }
+            }
+            //迁移到这延迟进行
+            if(event.getTo() == Level.OVERWORLD) {
+                //小小延迟，防止到主世界
+                TCRCapabilityProvider.getTCRPlayer(serverPlayer).setTickAfterTpToOverworld(60);
             }
             updateHealth(serverPlayer, event.getFrom());
             updateHealth(serverPlayer, event.getTo());

@@ -11,6 +11,7 @@ import com.p1nero.tcrcore.capability.TCRPlayer;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
+import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import net.alp.monsterexpansion.entity.custom.AbstractLargeMonster;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -77,10 +78,8 @@ public class ForgeEvents {
                 TCRDimSaveData dimSaveData = TCRDimSaveData.get(serverLevel);
                 dimSaveData.tickResetting();
                 if(dimSaveData.isResetting() || CataclysmDimensionMod.RESOURCE_LOCATION_INTEGER_MAP.getOrDefault(serverLevel.dimension().location(), 0) > 0) {
-                    Iterator<ServerPlayer> iterator = serverLevel.players().iterator();
-                    while (iterator.hasNext()) {
-                        ServerPlayer serverPlayer = iterator.next();
-                        serverPlayer.changeDimension(serverLevel.getServer().getLevel(Level.OVERWORLD), new PositionTeleporter(new BlockPos(WorldUtil.START_POS)));
+                    for (ServerPlayer serverPlayer : serverLevel.players()) {
+                        serverPlayer.changeDimension(serverLevel.getServer().getLevel(TCRDimensions.SANCTUM_LEVEL_KEY), new PositionTeleporter(new BlockPos(WorldUtil.START_POS)));
                         serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_demending", dimSaveData.getResetCooldown() / 20), false);
                         break;
                     }
