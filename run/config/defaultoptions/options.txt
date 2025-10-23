@@ -15,26 +15,26 @@ reducedDebugInfo:false
 showSubtitles:false
 directionalAudio:false
 touchscreen:false
-fullscreen:false
+fullscreen:true
 bobView:true
 toggleCrouch:false
 toggleSprint:false
 darkMojangStudiosBackground:false
 hideLightningFlashes:false
 mouseSensitivity:0.5
-fov:0.0
+fov:1.0
 screenEffectScale:1.0
-fovEffectScale:1.0
+fovEffectScale:0.0
 darknessEffectScale:1.0
-glintSpeed:0.5
-glintStrength:0.75
+glintSpeed:1.0
+glintStrength:1.0
 damageTiltStrength:1.0
 highContrast:false
 gamma:1.0
-renderDistance:12
+renderDistance:16
 simulationDistance:8
 entityDistanceScaling:1.0
-guiScale:0
+guiScale:3
 particles:0
 maxFps:260
 graphicsMode:1
@@ -42,10 +42,10 @@ ao:true
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:"false"
-resourcePacks:["vanilla","mod_resources","file/MMR.zip","file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip","file/Stay_True_1.20.zip","tcr_assets"]
-incompatibleResourcePacks:["file/MMR.zip","file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip"]
+resourcePacks:["vanilla","mod_resources","Moonlight Mods Dynamic Assets","file/OurStoryFTBTheme-1.20.x-1.1.zip","file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip","file/Stay_True_1.20.zip","tcr_assets"]
+incompatibleResourcePacks:["file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip"]
 lastServer:
-lang:en_us
+lang:zh_cn
 soundDevice:""
 chatVisibility:0
 chatOpacity:1.0
@@ -53,7 +53,7 @@ chatLineSpacing:0.0
 textBackgroundOpacity:0.5
 backgroundForChatOnly:true
 hideServerAddress:false
-advancedItemTooltips:false
+advancedItemTooltips:true
 pauseOnLostFocus:true
 overrideWidth:0
 overrideHeight:0
@@ -75,7 +75,7 @@ glDebugVerbosity:1
 skipMultiplayerWarning:true
 skipRealms32bitWarning:false
 hideMatchedNames:true
-joinedFirstServer:false
+joinedFirstServer:true
 hideBundleTutorial:false
 syncChunkWrites:false
 showAutosaveIndicator:true
@@ -84,8 +84,8 @@ onlyShowSecureChat:false
 panoramaScrollSpeed:1.0
 telemetryOptInExtra:false
 onboardAccessibility:false
-soundCategory_master:1.0
-soundCategory_music:1.0
+soundCategory_master:0.5044184602649008
+soundCategory_music:0.25523767605633785
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0
@@ -93,8 +93,21 @@ soundCategory_hostile:1.0
 soundCategory_neutral:1.0
 soundCategory_player:1.0
 soundCategory_ambient:1.0
-soundCategory_voice:1.0
-modelPart_cape:true
+soundCategory_voice:0.0
+soundCategory_extrasounds$master:1.0
+soundCategory_extrasounds$inventory:1.0
+soundCategory_extrasounds$action:1.0
+soundCategory_extrasounds$chat:1.0
+soundCategory_extrasounds$chat_mention:1.0
+soundCategory_extrasounds$effects:1.0
+soundCategory_extrasounds$hotbar:1.0
+soundCategory_extrasounds$typing:1.0
+soundCategory_extrasounds$item_drop:1.0
+soundCategory_extrasounds$empty_hotbar:1.0
+soundCategory_extrasounds$enabled_footstep:1.0
+soundCategory_extrasounds$enabled_effects:1.0
+soundCategory_extrasounds$enabled_poof:1.0
+modelPart_cape:false
 modelPart_jacket:true
 modelPart_left_sleeve:true
 modelPart_right_sleeve:true

@@ -1,0 +1,198 @@
+#Enable the progression system where entity information is gradually revealed as you progress
+enableProgressionSystem = true
+#Type of progression system to use: "kills" (original system based on kill count), "ranks" (rank-based system with chance to increase rank), or "sighting" (allows full discovery of entities with a spyglass)
+progressionSystemType = "ranks"
+#Number of kills required to unlock spawn locations
+#Range: > 1
+spawnLocationThreshold = 10
+#Number of kills required to unlock loot icons
+#Range: > 1
+lootIconThreshold = 20
+#Number of kills required to unlock loot drop chances
+#Range: > 1
+lootChanceThreshold = 50
+#Number of kills required to unlock advanced attributes (knockback resistance, armor, movement speed)
+#Range: > 1
+advancedAttributesThreshold = 30
+#Number of kills required to unlock entity descriptions
+#Range: > 1
+descriptionThreshold = 40
+#Number of kills required to unlock the mob-type chip (kills mode)
+#Range: > 1
+mobTypeChipKillsThreshold = 1
+#Minimum rank required to unlock the mob-type chip (E, D, C, B, A, S) - ranks mode
+mobTypeChipRank = "E"
+#Base chance (0.0-1.0) to increase rank when killing an entity (used when esMode = 'chance')
+#Range: 0.01 ~ 1.0
+rankKillChance = 0.15
+#Base chance (0.0-1.0) to increase rank when feeding an entity (used when esMode = 'chance')
+#Range: 0.01 ~ 1.0
+rankFeedChance = 0.03
+#Base chance (0.0-1.0) to increase rank when hitting an entity (used when esMode = 'chance')
+#Range: 0.01 ~ 1.0
+rankHitChance = 0.01
+#Base chance (0.0-1.0) to increase rank when trading with a villager (used when esMode = 'chance')
+#Range: 0.01 ~ 1.0
+rankTradeChance = 0.1
+#Chance (0.0-1.0) used by the /bestiary rank roll command to apply a rolled rank
+#Range: 0.0 ~ 1.0
+commandRolls = 0.15
+#Multiplier for rank increase chance when interacting with boss entities (higher value = easier) - chance mode only
+#Range: 1.0 ~ 10.0
+bossRankMultiplier = 3.0
+#If true, completing a spyglass observation may assign an initial rank via weighted roll; if false, observation only awards E→S points (no chance roll). Default: false
+allowObservationChanceRolls = false
+#E→S progression mode: 'chance' (existing behavior) or 'points' (deterministic points)
+esMode = "points"
+#Points required to advance from E to D (points mode)
+#Range: > 1
+pointsEToD = 50
+#Points required to advance from D to C (points mode)
+#Range: > 1
+pointsDToC = 100
+#Points required to advance from C to B (points mode)
+#Range: > 1
+pointsCToB = 200
+#Points required to advance from B to A (points mode)
+#Range: > 1
+pointsBToA = 300
+#Points required to advance from A to S (points mode)
+#Range: > 1
+pointsAToS = 400
+#Points awarded on killing an entity (points mode)
+#Range: > 0
+pointsKill = 5
+#Points awarded on feeding an entity (points mode)
+#Range: > 0
+pointsFeed = 1
+#Points awarded on hitting an entity (points mode)
+#Range: > 0
+pointsHit = 0
+#Points awarded on trading with a villager (points mode)
+#Range: > 0
+pointsTrade = 2
+#Points awarded on breeding (points mode)
+#Range: > 0
+pointsBreed = 2
+#Points awarded on observing with spyglass (points mode)
+#Range: > 0
+pointsObserve = 2
+#Points awarded on taming (points mode)
+#Range: > 0
+pointsTame = 5
+#Points awarded for special biome (points mode, reserved)
+#Range: > 0
+pointsSpecialBiome = 0
+#Multiplier applied to point awards when the context entity is a boss (points mode)
+#Range: 0.0 ~ 100.0
+pointsBossMultiplier = 2.0
+#Enable progressive rank difficulty (higher ranks are harder to achieve)
+enableProgressiveRankDifficulty = true
+#Difficulty multiplier for rank D (lower value = harder)
+#Range: 0.01 ~ 1.0
+rankDDifficultyMultiplier = 0.4
+#Difficulty multiplier for rank C (lower value = harder)
+#Range: 0.01 ~ 1.0
+rankCDifficultyMultiplier = 0.3
+#Difficulty multiplier for rank B (lower value = harder)
+#Range: 0.01 ~ 1.0
+rankBDifficultyMultiplier = 0.2
+#Difficulty multiplier for rank A (lower value = harder)
+#Range: 0.01 ~ 1.0
+rankADifficultyMultiplier = 0.1
+#Difficulty multiplier for rank S (lower value = harder)
+#Range: 0.01 ~ 1.0
+rankSDifficultyMultiplier = 0.05
+#Minimum rank required to unlock spawn locations (E, D, C, B, A, S)
+spawnLocationRank = "D"
+#Minimum rank required to unlock loot icons (E, D, C, B, A, S)
+lootIconRank = "C"
+#Minimum rank required to unlock loot drop chances (E, D, C, B, A, S)
+lootChanceRank = "A"
+#Minimum rank required to unlock advanced attributes (E, D, C, B, A, S)
+advancedAttributesRank = "B"
+#Minimum rank required to unlock entity descriptions (E, D, C, B, A, S)
+descriptionRank = "B"
+#Weight for rank E when discovering new entities (higher value = more common)
+#Range: 0 ~ 1000
+rankEWeight = 255
+#Weight for rank D when discovering new entities (higher value = more common)
+#Range: 0 ~ 1000
+rankDWeight = 255
+#Weight for rank C when discovering new entities (higher value = more common)
+#Range: 0 ~ 1000
+rankCWeight = 288
+#Weight for rank B when discovering new entities (higher value = more common)
+#Range: 0 ~ 1000
+rankBWeight = 120
+#Weight for rank A when discovering new entities (higher value = more common)
+#Range: 0 ~ 1000
+rankAWeight = 70
+#Weight for rank S when discovering new entities (higher value = more common)
+#Range: 0 ~ 1000
+rankSWeight = 12
+#Hide entities with 0 kills when progression system is enabled (for kill-based progression)
+hideZeroKillEntities = true
+#Hide entities with no rank when progression system is enabled (for rank-based progression)
+hideNoRankEntities = true
+#Forces the obfuscation of entities when progression system is enabled (if ranks are none or kills are 0)
+forceObfuscation = true
+#Hide undiscovered entities completely instead of showing them obfuscated
+hideUndiscovered = true
+#Enables the debug mode (for development purposes only)
+debugMode = false
+#Enables the Challenges page in the bestiary for rank x progression
+showChallenges = true
+#Enable Rank-X boss 'cheese' detection (beds, end crystals, respawn anchors). If false, disallowedCheese from datapacks are ignored.
+enableCheeseDetection = true
+#List of mob categories to be considered as monsters (all categories: "monster", "creature", "water_creature", "underground_water_creature", "ambient", "water_ambient", "axolotls", "misc")
+monsterCategories = []
+#List of entities that should not be shown in the bestiary (format: "minecraft:sheep")
+entityBlacklist = ["minecraft:armor_stand"]
+#List of entities that should be prioritized and included in the bestiary regardless of their category (format: "minecraft:sheep")
+entityIncludeList = []
+#Thresholds for total S-ranked entities to advance global progression. Progress fills between consecutive values. Default: [50]
+globalSRankThresholds = [50]
+#Which global progress bar to display under the entity list: "S" for S-ranks (>= S), or "X" for X-ranks. Default: S
+globalRankProgressBarType = "S"
+#If true, clicking the global progress bar cycles between S and X. Default: true
+enableGlobalRankProgressBarCycling = true
+#Which sprite to use for progress bars: 'vanilla' uses minecraft:textures/gui/container/villager2.png at fixed UVs; 'mod' uses araxers_bestiary:textures/gui/bestiary.png fixed UVs. Default: mod
+progressBarSpriteSource = "mod"
+#Enable the keybind to open the bestiary screen
+enableKeybind = true
+#Number of random loot sampling iterations used to estimate initial drop chances from loot tables (higher = more accurate, slower). Applies to initial generation before dynamic refinement.
+#Range: 50 ~ 2000
+initialLootSampleBatches = 1000
+#If true, gradually prewarm the loot cache over ticks after server start; if false, loot is generated lazily on demand
+prewarmLootCacheOnStart = true
+#Maximum number of entities to prewarm per server tick when prewarmLootCacheOnStart is enabled
+#Range: 1 ~ 500
+prewarmMaxEntitiesPerTick = 10
+#Enable best-effort loot table JSON inspection fallback to extract items without running deserializers. Safer in modded environments.
+enableLootJsonInspectionFallback = true
+#Enable supplementing loot from Global Loot Modifiers (GLMs) by reading their JSON directly. Disable if your pack logs condition decode errors (safer default).
+enableGlobalLootModifierSupplement = true
+#Enable tracking of actual entity drops to enhance loot information
+enableDynamicDropTracking = true
+#Number of drop events to track before calculating drop chances (higher value means more accurate chances)
+#Range: 10 ~ 1000
+dynamicDropSampleSize = 50
+#Weight given to dynamic drops vs. loot table entries (0.0 = only use loot tables, 1.0 = only use dynamic drops)
+#Range: 0.0 ~ 1.0
+dynamicDropWeight = 0.7
+#Ignore recording drops if killer's tool or enchantments may have modified the drops (e.g., Looting, Fire Aspect)
+ignoreModifiedDropEvents = true
+#When ignoreModifiedDropEvents is true: If this list is non-empty, only ignore drop events when the killer's held item has any enchantment from this list (e.g., "minecraft:looting"). If empty, any enchantment on the held item will cause the event to be ignored.
+modifiedDropEnchantments = ["minecraft:looting", "minecraft:fire_aspect"]
+#Enable low-end mode optimizations for GUI rendering and previews
+lowEndMode = false
+#Reduce cost of 3D entity preview in Bestiary (skip fancy path, lower preview FPS) when lowEndMode is enabled
+lowEndEntityPreview = true
+#Maximum scale for entity preview in Bestiary to avoid overdraw on low-end GPUs
+#Range: 40 ~ 200
+guiMaxEntityScale = 100
+#Multiplier for category marquee step interval in lowEndMode (e.g., 1.5 = 50% slower)
+#Range: 1.0 ~ 5.0
+lowEndMarqueeIntervalMultiplier = 1.5
+
