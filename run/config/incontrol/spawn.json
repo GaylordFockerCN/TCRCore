@@ -1,0 +1,230 @@
+[
+    {
+        "dimension": [
+            "tcrcore:sanctum"
+        ],
+        "mob": [
+            "tcrcore:custom_color_item",
+            "tcrcore:girl",
+            "tcrcore:guider",
+            "tcrcore:tutorial_golem"
+        ],
+        "result": "allow"
+    },
+    {
+        "dimension": [
+            "tcrcore:sanctum"
+        ],
+        "result": "deny"
+    },
+    {
+        "spawner": true,
+        "result": "allow"
+    },
+    {
+        "dimension": [
+            "cataclysm_dimension:cataclysm_forge_of_aeons"
+        ],
+        "mob": [
+            "cataclysm:the_watcher",
+            "cataclysm:the_prowler",
+            "cataclysm:the_harbinger"
+        ],
+        "result": "allow"
+    },
+    {
+        "dimension": [
+            "cataclysm_dimension:cataclysm_abyssal_depths"
+        ],
+        "mob": [
+            "cataclysm:deepling",
+            "cataclysm:deepling_angler",
+            "cataclysm:deepling_priest",
+            "cataclysm:deepling_warlock",
+            "cataclysm:deepling_brute",
+            "cataclysm:coralssus",
+            "cataclysm:coral_golem",
+            "cataclysm:the_leviathan"
+        ],
+        "result": "allow"
+    },
+    {
+        "dimension": [
+            "cataclysm_dimension:cataclysm_pharaohs_bane"
+        ],
+        "mob": [
+            "cataclysm:koboleton",
+            "cataclysm:wadjet",
+            "cataclysm:kobolediator",
+            "cataclysm:ancient_remnant"
+        ],
+        "result": "allow"
+    },
+    {
+        "dimension": [
+            "cataclysm_dimension:cataclysm_eternal_frosthold"
+        ],
+        "mob": [
+            "cataclysm:draugr",
+            "cataclysm:royal_draugr",
+            "cataclysm:elite_draugr",
+            "cataclysm:aptrgangr",
+            "cataclysm:maledictus"
+        ],
+        "result": "allow"
+    },
+    {
+        "dimension": [
+            "cataclysm_dimension:cataclysm_sanctum_fallen"
+        ],
+        "mob": [
+            "cataclysm:urchinkin",
+            "cataclysm:octohost",
+            "cataclysm:symbiocto",
+            "cataclysm:cindaria",
+            "cataclysm:hippocamtus",
+            "cataclysm:clawdian",
+            "cataclysm:scylla"
+        ],
+        "result": "allow"
+    },
+    {
+        "dimension": [
+            "cataclysm_dimension:cataclysm_souls_anvil"
+        ],
+        "mob": [
+            "cataclysm:piglin",
+            "cataclysm:piglin_brute",
+            "cataclysm:netherite_ministrosity",
+            "cataclysm:netherite_monstrosity"
+        ],
+        "result": "allow"
+    },
+    {
+        "dimension": [
+            "cataclysm_dimension:cataclysm_infernos_maw"
+        ],
+        "mob": [
+            "cataclysm:ignited_revenant",
+            "cataclysm:ignited_berserker",
+            "cataclysm:ignis"
+        ],
+        "result": "allow"
+    },
+    {
+        "dimension": [
+            "cataclysm_dimension:cataclysm_bastion_lost"
+        ],
+        "mob": [
+            "minecraft:shulker",
+            "cataclysm:endermaptera",
+            "cataclysm:ender_golem",
+            "cataclysm:ender_guardian"
+        ],
+        "result": "allow"
+    },
+    {
+        "dimension": [
+            "cataclysm_dimension:cataclysm_forge_of_aeons",
+            "cataclysm_dimension:cataclysm_abyssal_depths",
+            "cataclysm_dimension:cataclysm_pharaohs_bane",
+            "cataclysm_dimension:cataclysm_eternal_frosthold",
+            "cataclysm_dimension:cataclysm_sanctum_fallen",
+            "cataclysm_dimension:cataclysm_souls_anvil",
+            "cataclysm_dimension:cataclysm_infernos_maw",
+            "cataclysm_dimension:cataclysm_bastion_lost"
+        ],
+        "result": "deny"
+    },
+    {
+        "dimension": [
+            "minecraft:overworld",
+            "minecraft:the_nether",
+            "minecraft:the_end",
+            "callfromthedepth_:depth"
+        ],
+        "mincount": {
+            "amount": 700
+        },
+        "result": "deny"
+    },
+    {
+        "dimension": [
+            "minecraft:overworld",
+            "minecraft:the_nether",
+            "minecraft:the_end",
+            "callfromthedepth_:depth"
+        ],
+        "hostile": true,
+        "mincount": {
+            "amount": 39,
+            "hostile": true,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "dimension": [
+            "minecraft:overworld",
+            "minecraft:the_nether",
+            "minecraft:the_end",
+            "callfromthedepth_:depth"
+        ],
+        "passive": true,
+        "mincount": {
+            "amount": 13,
+            "passive": true,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": [
+            "cataclysm:endermaptera"
+        ],
+        "mincount": {
+            "amount": 7,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": [
+            "minecraft:creeper"
+        ],
+        "mincount": {
+            "amount": 3,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": [
+            "quark:stoneling"
+        ],
+        "mincount": {
+            "amount": 3,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": [
+            "upgrade_aquatic:nautilus"
+        ],
+        "mincount": {
+            "amount": 3,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": [
+            "minecraft:bat"
+        ],
+        "mincount": {
+            "amount": 3
+        },
+        "result": "deny"
+    }
+]
