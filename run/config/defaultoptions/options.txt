@@ -22,7 +22,7 @@ toggleSprint:false
 darkMojangStudiosBackground:false
 hideLightningFlashes:false
 mouseSensitivity:0.5
-fov:1.0
+fov:0.0
 screenEffectScale:1.0
 fovEffectScale:0.0
 darknessEffectScale:1.0
@@ -42,10 +42,10 @@ ao:true
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:"false"
-resourcePacks:["vanilla","mod_resources","Moonlight Mods Dynamic Assets","file/OurStoryFTBTheme-1.20.x-1.1.zip","file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip","file/Stay_True_1.20.zip","tcr_assets"]
+resourcePacks:["vanilla","mod_resources","Moonlight Mods Dynamic Assets","file/OurStoryFTBTheme-1.20.x-1.1.zip","file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip","file/Stay_True_1.20.zip","file/DMC5 yamato for Nightfall v1.1.zip","tcr_assets"]
 incompatibleResourcePacks:["file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip"]
 lastServer:
-lang:zh_cn
+lang:en_us
 soundDevice:""
 chatVisibility:0
 chatOpacity:1.0
@@ -84,8 +84,8 @@ onlyShowSecureChat:false
 panoramaScrollSpeed:1.0
 telemetryOptInExtra:false
 onboardAccessibility:false
-soundCategory_master:0.5044184602649008
-soundCategory_music:0.25523767605633785
+soundCategory_master:1.0
+soundCategory_music:1.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0
