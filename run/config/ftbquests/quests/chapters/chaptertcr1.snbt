@@ -140,10 +140,6 @@
 		{
 			description: [
 				"{ftbquests.chapter.chaptertcr1.quest225288608841219205.description1}"
-				""
-				""
-				"{ftbquests.chapter.chaptertcr1.quest225288608841219205.description2}"
-				"{ftbquests.chapter.chaptertcr1.quest225288608841219205.description3}"
 			]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
