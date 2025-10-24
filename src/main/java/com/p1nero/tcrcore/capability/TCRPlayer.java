@@ -42,11 +42,11 @@ import org.merlin204.wraithon.entity.WraithonEntities;
 import org.merlin204.wraithon.entity.wraithon.WraithonEntity;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
 import xaero.hud.minimap.waypoint.WaypointColor;
-import yesman.epicfight.api.utils.math.Vec2i;
 import yesman.epicfight.world.entity.ai.attribute.EpicFightAttributes;
 
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 public class TCRPlayer {
     public static final String PLAYER_NAME = "player_name";
@@ -177,87 +177,89 @@ public class TCRPlayer {
      * 移动到这延迟进行
      */
     public void tryMarkMapInOverworld(ServerPlayer serverPlayer) {
-        if(!PlayerDataManager.pillagerKilled.get(serverPlayer)) {
+        if (!PlayerDataManager.pillagerKilled.get(serverPlayer)) {
             TCRTaskManager.clearTask(serverPlayer);
             TCRTaskManager.KILL_PILLAGER.start(serverPlayer);
         }
-        if(needToMarkMapInOverworld && serverPlayer.serverLevel().dimension() == Level.OVERWORLD) {
-            ServerLevel overworld = serverPlayer.server.overworld();
-            //揭示预言，即解锁新玩法。根据记录的id解锁，初始阶段0， 1解锁时装和武器 2解锁盔甲和boss图鉴，3解锁附魔地狱末地，具体在FTB看
-            //同时按阶段来解锁boss提示
+
+        if (needToMarkMapInOverworld && serverPlayer.serverLevel().dimension() == Level.OVERWORLD) {
+            // 揭示预言，即解锁新玩法。根据记录的id解锁，初始阶段0，1解锁时装和武器 2解锁盔甲和boss图鉴，3解锁附魔地狱末地，具体在FTB看
+            // 同时按阶段来解锁boss提示
             int stage = PlayerDataManager.stage.getInt(serverPlayer);
             int newStage = stage + 1;
-            if(newStage > 5) {
+            if (newStage > 5) {
                 return;
             }
+
             TCRAdvancementData.finishAdvancement("stage" + (newStage), serverPlayer);
             PlayerDataManager.stage.put(serverPlayer, ((double) newStage));
 
-            if(!PlayerDataManager.mapMarked.get(serverPlayer)){
+            if (!PlayerDataManager.mapMarked.get(serverPlayer)) {
                 ItemUtil.addItem(serverPlayer, FTBQuestsItems.BOOK.get(), 1);
                 PlayerDataManager.mapMarked.put(serverPlayer, true);
             }
-            Vec2i pos = null;
-            if(newStage == 1) {
-                pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.SKY_ISLAND);//天空岛
-                if (pos != null) {
-                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("storm_pos"), new BlockPos(pos.x, 230, pos.y), WaypointColor.AQUA);
-                }
-            }
 
-            if(newStage == 2) {
-                pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.COVES);//隐秘水湾
-                if (pos != null) {
-                    BlockPos covesPos = new BlockPos(pos.x, 145, pos.y);
-                    TCRMainLevelSaveData.get(serverPlayer.serverLevel()).setAbyssPos(covesPos);
-                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("abyss_pos"), covesPos, WaypointColor.DARK_BLUE);
-                }
-            }
+            // 异步执行耗时的结构查找
+            CompletableFuture.supplyAsync(() -> {
+                        BlockPos pos = null;
+                        try {
+                            pos = switch (newStage) {
+                                case 1 -> WorldUtil.getNearbyStructurePos(serverPlayer, WorldUtil.SKY_ISLAND, 230); // 天空岛
+                                case 2 -> WorldUtil.getNearbyStructurePos(serverPlayer, WorldUtil.COVES, 145); // 隐秘水湾
+                                case 3 -> WorldUtil.getNearbyStructurePos(serverPlayer, WorldUtil.SAND, 64); // 奇美拉
+                                case 4 -> WorldUtil.getNearbyStructurePos(serverPlayer, WorldUtil.CURSED, 64); // 船长
+                                case 5 -> WorldUtil.getNearbyStructurePos(serverPlayer, WorldUtil.FIRE, 95);
+                                default -> pos;
+                            };
+                        } catch (Exception e) {
+                            // 记录异常但不要崩溃
+                            System.err.println("TCRCore : Error finding structure for stage " + newStage + ": " + e.getMessage());
+                        }
+                        return pos;
+                    })
+                    .thenAccept(pos -> {
 
-            if(newStage == 4) {
-                pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.CURSED);//船长
-                if (pos != null) {
-                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("cursed_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.BLUE);
-                }
-            }
+                        // 根据阶段设置路径点
+                        if (pos != null) {
+                            switch (newStage) {
+                                case 1:
+                                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("storm_pos"), pos, WaypointColor.AQUA);
+                                    break;
+                                case 2:
+                                    TCRMainLevelSaveData.get(serverPlayer.serverLevel()).setAbyssPos(pos);
+                                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("abyss_pos"), pos, WaypointColor.DARK_BLUE);
+                                    break;
+                                case 3:
+                                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("desert_pos"), pos, WaypointColor.YELLOW);
+                                    break;
+                                case 4:
+                                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("cursed_pos"), pos, WaypointColor.BLUE);
+                                    break;
+                                case 5:
+                                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("flame_pos"), pos, WaypointColor.RED);
+                                    break;
+                            }
 
-            if(newStage == 3) {
-                pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.SAND);//奇美拉
-                if (pos != null) {
-                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("desert_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.YELLOW);
-                }
-            }
+                            // 设置方向和粒子效果
+                            from = serverPlayer.getEyePosition();
+                            Vec3 target = new Vec3(pos.getX(), serverPlayer.getEyeY(), pos.getY());
+                            dir = target.subtract(from).normalize();
+                        }
 
-            if(newStage == 5) {
-                pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.FIRE);
-                if (pos != null) {
-                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("flame_pos"), new BlockPos(pos.x, 95, pos.y), WaypointColor.RED);
-                }
+                        if (stage <= 5) {
+                            serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("press_to_open_map")));
+                        }
 
-//                //召唤龙
-//                if(serverPlayer.getRandom().nextBoolean()) {
-//                    net.alp.monsterexpansion.entity.ModEntities.SKRYTHE.get().spawn(serverPlayer.serverLevel(), new BlockPos(WorldUtil.GOLEM_CENTER_POS_VEC3I.above(10)), MobSpawnType.MOB_SUMMONED);
-//                } else {
-//                    net.alp.monsterexpansion.entity.ModEntities.RHYZA.get().spawn(serverPlayer.serverLevel(), new BlockPos(WorldUtil.GOLEM_CENTER_POS_VEC3I.above(4)), MobSpawnType.MOB_SUMMONED);
-//                }
-            }
-
-            if(pos != null) {
-                from = serverPlayer.getEyePosition();
-                Vec3 target = new Vec3(pos.x, serverPlayer.getEyeY(), pos.y);
-                dir = target.subtract(from).normalize();
-            }
-
-            if(stage <= 5) {
-                serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("press_to_open_map")));
-            }
-
-            serverPlayer.level().playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), SoundEvents.END_PORTAL_SPAWN, serverPlayer.getSoundSource(), 1.0F, 1.0F);
-            spawnParticleTimer = particleCount;
-            needToMarkMapInOverworld = false;
-            TCRTaskManager.GO_TO_OVERWORLD.finish(serverPlayer);
+                        serverPlayer.level().playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(),
+                                SoundEvents.END_PORTAL_SPAWN, serverPlayer.getSoundSource(), 1.0F, 1.0F);
+                        spawnParticleTimer = particleCount;
+                        needToMarkMapInOverworld = false;
+                        if(stage <= 3) {
+                            serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_ftb_page"), false);
+                        }
+                        TCRTaskManager.GO_TO_OVERWORLD.finish(serverPlayer);
+                    });
         }
-
     }
 
     public void syncToClient(ServerPlayer serverPlayer) {
