@@ -1,16 +1,11 @@
 package com.p1nero.tcrcore.entity.custom.girl;
 
 import artifacts.item.ArtifactItem;
-import com.github.L_Ender.cataclysm.init.ModItems;
-import com.hm.efn.registries.EFNItem;
-import com.merlin204.sg.item.SGItems;
-import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.dialog_lib.api.IEntityNpc;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
 import com.p1nero.dialog_lib.api.component.DialogNode;
 import com.p1nero.dialog_lib.api.goal.LookAtConservingPlayerGoal;
 import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
-import com.p1nero.epicfightbow.item.EFBowItems;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.events.PlayerEventListeners;
@@ -21,10 +16,10 @@ import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.talhanation.smallships.client.option.ModGameOptions;
 import com.yesman.epicskills.client.gui.screen.SkillTreeScreen;
+import com.yesman.epicskills.client.input.EpicSkillsKeyMappings;
 import net.blay09.mods.waystones.block.ModBlocks;
 import net.genzyuro.uniqueaccessories.item.UAUniqueCurioItem;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
-import net.kenddie.fantasyarmor.item.FAItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.language.I18n;
@@ -53,10 +48,7 @@ import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
-import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModItems;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -70,9 +62,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import yesman.epicfight.client.ClientEngine;
 import yesman.epicfight.client.input.EpicFightKeyMappings;
 import yesman.epicfight.client.world.capabilites.entitypatch.player.LocalPlayerPatch;
-import yesman.epicfight.world.item.EpicFightItems;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, Merchant {
@@ -450,7 +440,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
 //            //盔甲
 //            DialogNode ans3 = new DialogNode.FinalNode(dBuilder.optWithBrackets(3), 2);
             //技能
-            DialogNode ans4 = new DialogNode(dBuilder.ans(5, I18n.get("item.epicskills.ability_stone"), I18n.get("item.epicskills.ability_stone"), EpicFightKeyMappings.SKILL_EDIT.getTranslatedKeyMessage()), dBuilder.optWithBrackets(4))
+            DialogNode ans4 = new DialogNode(dBuilder.ans(5, I18n.get("item.epicskills.ability_stone"), I18n.get("item.epicskills.ability_stone"), EpicSkillsKeyMappings.OPEN_SKILL_TREE.getTranslatedKeyMessage()), dBuilder.optWithBrackets(4))
                     .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(5), -1, (s) -> {
                         LocalPlayerPatch localPlayerPatch = ClientEngine.getInstance().getPlayerPatch();
                         if(localPlayerPatch != null) {

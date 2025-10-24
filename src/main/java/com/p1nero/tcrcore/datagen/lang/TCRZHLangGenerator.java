@@ -170,6 +170,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         this.addInfo("press_to_open_map", "按下§6[M]键§f以查看地图");
 
+        this.addInfo("godness_statue_pos", "女神像");
         this.addInfo("storm_pos", "风暴回响之所在：天空岛");
         this.addInfo("cursed_pos", "诅咒回响之所在：冰冻深海");
         this.addInfo("desert_pos", "沙漠回响之所在：奇美拉之监牢");

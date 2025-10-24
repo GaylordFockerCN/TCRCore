@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @SuppressWarnings("deprecation")
-public class OverworldWaypointUtil {
+public class WaypointUtil {
 
     public static void sendWaypoint(ServerPlayer player, String key, BlockPos pos, WaypointColor color) {
         PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new AddWaypointPacket(key, pos, color), player);

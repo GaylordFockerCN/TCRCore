@@ -16,18 +16,13 @@ import com.p1nero.tcrcore.datagen.TCRAdvancementData;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
-import com.p1nero.tcrcore.utils.ItemUtil;
-import com.p1nero.tcrcore.utils.OverworldWaypointUtil;
+import com.p1nero.tcrcore.utils.WaypointUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tudigong.util.StructureUtils;
-import dev.ftb.mods.ftbquests.item.FTBQuestsItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -45,7 +40,6 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -70,7 +64,6 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import xaero.hud.minimap.waypoint.WaypointColor;
-import yesman.epicfight.api.utils.math.Vec2i;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.entitypatch.player.ServerPlayerPatch;
 
@@ -160,6 +153,9 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
     @Override
     protected @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand) {
         if (player instanceof ServerPlayer serverPlayer) {
+
+            WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("godness_statue_pos"), new BlockPos(WorldUtil.GODNESS_STATUE_POS), WaypointColor.AQUA);
+
             TCRTaskManager.GIVE_ORACLE_TO_KEEPER.finish(serverPlayer);
             TCRTaskManager.BACK_TO_KEEPER.finish(serverPlayer);
             CompoundTag tag = new CompoundTag();

@@ -78,28 +78,9 @@ public class ControlEngineMixin {
                     }
                 } else {
                     if (canGuard.booleanValue()) {
-                        InteractionResult interactionResult = switch (Minecraft.getInstance().hitResult.getType()) {
-                            case ENTITY ->
-                                    ((EntityHitResult)Minecraft.getInstance().hitResult).getEntity().interact(Minecraft.getInstance().player, event.getHand());
-                            case BLOCK -> {
-                                BlockHitResult blockHitResult = ((BlockHitResult)Minecraft.getInstance().hitResult);
-                                BlockPos blockpos = blockHitResult.getBlockPos();
-                                BlockState blockstate = Minecraft.getInstance().level.getBlockState(blockpos);
-                                yield blockstate.use(Minecraft.getInstance().player.level(), Minecraft.getInstance().player, event.getHand(), blockHitResult);
-                            }
-                            default -> throw new IllegalArgumentException();
-                        };
-
-                        if (interactionResult.consumesAction() && ClientConfig.keyConflictResolveScope.cancelInteraction()) {
-                            event.setSwingHand(false);
-                            event.setCanceled(true);
-                        } else if (!interactionResult.consumesAction() && ClientConfig.keyConflictResolveScope.cancelItemUse()) {
-                            event.setSwingHand(false);
-                            event.setCanceled(true);
-                        }
-                        if(event.isCanceled()) {
-                            Minecraft.getInstance().player.displayClientMessage(TCRCoreMod.getInfo("weapon_no_interact").withStyle(ChatFormatting.GOLD), true);
-                        }
+                        event.setSwingHand(false);
+                        event.setCanceled(true);
+//                        Minecraft.getInstance().player.displayClientMessage(TCRCoreMod.getInfo("weapon_no_interact", EpicFightKeyMappings.SWITCH_MODE.getTranslatedKeyMessage()).withStyle(ChatFormatting.GOLD), true);
                     }
                 }
             }

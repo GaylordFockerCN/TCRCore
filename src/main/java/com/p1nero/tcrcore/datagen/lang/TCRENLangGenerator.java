@@ -168,6 +168,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addInfo("press_to_open_map", "§6[M]§f to view the map");
 
+        this.addInfo("godness_statue_pos", "Godness Statue");
         this.addInfo("storm_pos", "Location of the Storm Echo: Sky Island");
         this.addInfo("cursed_pos", "Location of the Cursed Echo: Ice Maze");
         this.addInfo("desert_pos", "Location of the Desert Echo: Chimera's Prison");

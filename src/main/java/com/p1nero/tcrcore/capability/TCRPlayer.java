@@ -10,7 +10,7 @@ import com.p1nero.tcrcore.network.packet.clientbound.OpenEndScreenPacket;
 import com.p1nero.tcrcore.network.packet.clientbound.SyncTCRPlayerPacket;
 import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
-import com.p1nero.tcrcore.utils.OverworldWaypointUtil;
+import com.p1nero.tcrcore.utils.WaypointUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import dev.ftb.mods.ftbquests.item.FTBQuestsItems;
 import net.minecraft.ChatFormatting;
@@ -27,8 +27,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -203,7 +201,7 @@ public class TCRPlayer {
             if(newStage == 1) {
                 pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.SKY_ISLAND);//天空岛
                 if (pos != null) {
-                    OverworldWaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("storm_pos"), new BlockPos(pos.x, 230, pos.y), WaypointColor.AQUA);
+                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("storm_pos"), new BlockPos(pos.x, 230, pos.y), WaypointColor.AQUA);
                 }
             }
 
@@ -212,28 +210,28 @@ public class TCRPlayer {
                 if (pos != null) {
                     BlockPos covesPos = new BlockPos(pos.x, 145, pos.y);
                     TCRMainLevelSaveData.get(serverPlayer.serverLevel()).setAbyssPos(covesPos);
-                    OverworldWaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("abyss_pos"), covesPos, WaypointColor.DARK_BLUE);
+                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("abyss_pos"), covesPos, WaypointColor.DARK_BLUE);
                 }
             }
 
             if(newStage == 4) {
                 pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.CURSED);//船长
                 if (pos != null) {
-                    OverworldWaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("cursed_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.BLUE);
+                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("cursed_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.BLUE);
                 }
             }
 
             if(newStage == 3) {
                 pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.SAND);//奇美拉
                 if (pos != null) {
-                    OverworldWaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("desert_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.YELLOW);
+                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("desert_pos"), new BlockPos(pos.x, 64, pos.y), WaypointColor.YELLOW);
                 }
             }
 
             if(newStage == 5) {
                 pos = WorldUtil.getNearbyStructurePos(overworld, serverPlayer.position(), WorldUtil.FIRE);
                 if (pos != null) {
-                    OverworldWaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("flame_pos"), new BlockPos(pos.x, 95, pos.y), WaypointColor.RED);
+                    WaypointUtil.sendWaypoint(serverPlayer, TCRCoreMod.getInfoKey("flame_pos"), new BlockPos(pos.x, 95, pos.y), WaypointColor.RED);
                 }
 
 //                //召唤龙
