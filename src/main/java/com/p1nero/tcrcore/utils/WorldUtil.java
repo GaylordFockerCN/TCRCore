@@ -1,9 +1,12 @@
 package com.p1nero.tcrcore.utils;
 
+import com.mojang.datafixers.util.Pair;
 import com.p1nero.tcrcore.worldgen.TCRDimensions;
+import com.p1nero.tudigong.TDGConfig;
+import com.p1nero.tudigong.util.StructureUtils;
 import com.yungnickyoung.minecraft.yungsapi.criteria.SafeStructureLocationPredicate;
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.core.Vec3i;
+import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -15,6 +18,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BaseCommandBlock;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.chunk.ChunkGenerator;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
@@ -60,6 +65,45 @@ public class WorldUtil {
     }
 
 
+    /**
+     * 获取结构位置
+     */
+    @Nullable
+    public static BlockPos getNearbyStructurePos(ServerPlayer serverPlayer, String structureId, int y) {
+        ServerLevel serverLevel = serverPlayer.serverLevel();
+        ResourceLocation structureResourceLocation = ResourceLocation.tryParse(structureId);
+        if (structureResourceLocation == null) {
+            return null;
+        }
+
+        ResourceKey<Structure> structureKey = ResourceKey.create(Registries.STRUCTURE, structureResourceLocation);
+        Registry<Structure> structureRegistry = serverLevel.registryAccess().registryOrThrow(Registries.STRUCTURE);
+
+        var structureHolderOpt = structureRegistry.getHolder(structureKey);
+        if (structureHolderOpt.isEmpty()) {
+            return null;
+        }
+
+        HolderSet<Structure> structureSet = HolderSet.direct(structureHolderOpt.get());
+
+        ChunkGenerator chunkGenerator = serverLevel.getChunkSource().getGenerator();
+        BlockPos playerPos = serverPlayer.blockPosition();
+
+        Pair<BlockPos, Holder<Structure>> result = chunkGenerator.findNearestMapStructure(
+                serverLevel,
+                structureSet,
+                playerPos,
+                20000,
+                false
+        );
+
+        if (result != null) {
+            BlockPos structurePos = result.getFirst();
+            return new BlockPos(structurePos.getX(), y, structurePos.getZ());
+        }
+
+        return null;
+    }
 
     /**
      * 获取结构位置

@@ -337,10 +337,6 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
         //对下面的补充，对话结束再说
         if(code == 1) {
             TCRAdvancementData.finishAdvancement("mark_map", player);
-            int stage = PlayerDataManager.stage.getInt(player);
-            if(stage <= 3) {
-                player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_ftb_page"), false);
-            }
         }
 
         if (code == 2) {
