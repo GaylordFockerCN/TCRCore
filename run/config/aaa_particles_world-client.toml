@@ -1,0 +1,10 @@
+#Whether to replace lightining renderer with Effekseer effect
+enable_lightning = true
+#Whether to replace explosion particles with Effekseer effect
+enable_explosion = false
+#Whether to play a beam on item entities
+enable_loot_beam = true
+#Whether to play a sound when a loot with beam effek drops on ground,
+#Requires "enable_loot_beam" enabled
+enable_loot_sound = true
+
