@@ -82,6 +82,6 @@ public abstract class VillagerMixin extends AbstractVillager {
                 cir.setReturnValue(InteractionResult.SUCCESS);
             }
         }
-        cir.setReturnValue(InteractionResult.PASS);
+        cir.setReturnValue(InteractionResult.sidedSuccess(this.level().isClientSide));
     }
 }
