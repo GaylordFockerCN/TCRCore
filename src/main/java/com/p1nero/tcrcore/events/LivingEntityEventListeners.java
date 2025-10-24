@@ -85,6 +85,7 @@ import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModItems;
 import org.merlin204.wraithon.entity.wraithon.WraithonEntity;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
 import yesman.epicfight.api.animation.AnimationPlayer;
+import yesman.epicfight.client.input.EpicFightKeyMappings;
 import yesman.epicfight.gameasset.Animations;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.entitypatch.player.PlayerPatch;
@@ -101,10 +102,26 @@ public class LivingEntityEventListeners {
     public static final String TRIGGERED = "death_triggered";
 
     @SubscribeEvent
-    public static void onLivingAttack(LivingAttackEvent event){
+    public static void onLivingAttack(LivingAttackEvent event) {
         LivingEntity entity = event.getEntity();
-        if(event.getSource().getEntity() instanceof ServerPlayer serverPlayer) {
-            if(serverPlayer.getMainHandItem().is(BlockFactorysBossesModItems.KNIGHT_SWORD.get()) && !serverPlayer.getCooldowns().isOnCooldown(BlockFactorysBossesModItems.KNIGHT_SWORD.get())) {
+        Entity attacker = event.getSource().getEntity();
+        if(attacker instanceof Player player && player.level().isClientSide) {
+            if(player.isLocalPlayer()) {
+                EpicFightCapabilities.getUnparameterizedEntityPatch(player, PlayerPatch.class).ifPresent(playerPatch -> {
+                    if (playerPatch.isVanillaMode()) {
+                        event.setCanceled(true);
+                        player.displayClientMessage(TCRCoreMod.getInfo("press_to_open_battle_mode", EpicFightKeyMappings.SWITCH_MODE.getTranslatedKeyMessage().copy().withStyle(ChatFormatting.GOLD)).withStyle(ChatFormatting.RED), true);
+                    }
+                });
+            }
+        }
+        if (attacker instanceof ServerPlayer serverPlayer) {
+            EpicFightCapabilities.getUnparameterizedEntityPatch(serverPlayer, PlayerPatch.class).ifPresent(playerPatch -> {
+                if (playerPatch.isVanillaMode()) {
+                    event.setCanceled(true);
+                }
+            });
+            if (serverPlayer.getMainHandItem().is(BlockFactorysBossesModItems.KNIGHT_SWORD.get()) && !serverPlayer.getCooldowns().isOnCooldown(BlockFactorysBossesModItems.KNIGHT_SWORD.get())) {
                 ServerLevel serverLevel = serverPlayer.serverLevel();
                 AbstractArrow entityToSpawn = new SwordWaveEntity(BlockFactorysBossesModEntities.SWORD_WAVE.get(), serverLevel);
                 entityToSpawn.setOwner(serverPlayer);
@@ -117,31 +134,25 @@ public class LivingEntityEventListeners {
                 serverLevel.addFreshEntity(entityToSpawn);
                 serverPlayer.getCooldowns().addCooldown(BlockFactorysBossesModItems.KNIGHT_SWORD.get(), 80);
             }
-            EpicFightCapabilities.getUnparameterizedEntityPatch(serverPlayer, ServerPlayerPatch.class).ifPresent(serverPlayerPatch -> {
-                if(serverPlayerPatch.isVanillaMode()) {
-                    event.setCanceled(true);
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("press_to_open_battle_mode"), true);
-                }
-            });
 
-            if(!serverPlayer.isCreative()) {
-                if(!PlayerDataManager.stormEyeBlessed.get(serverPlayer) && entity instanceof BulldrogiothEntity) {
+            if (!serverPlayer.isCreative()) {
+                if (!PlayerDataManager.stormEyeBlessed.get(serverPlayer) && entity instanceof BulldrogiothEntity) {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
                     event.setCanceled(true);
                     return;
                 }
-                if(!PlayerDataManager.abyssEyeBlessed.get(serverPlayer) && entity instanceof Bone_Chimera_Entity) {
+                if (!PlayerDataManager.abyssEyeBlessed.get(serverPlayer) && entity instanceof Bone_Chimera_Entity) {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
                     event.setCanceled(true);
                     return;
                 }
-                if(!PlayerDataManager.desertEyeBlessed.get(serverPlayer) && entity instanceof CaptainCornelia) {
+                if (!PlayerDataManager.desertEyeBlessed.get(serverPlayer) && entity instanceof CaptainCornelia) {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
                     event.setCanceled(true);
                     return;
                 }
-                if(!PlayerDataManager.cursedEyeBlessed.get(serverPlayer) && entity instanceof Arterius arterius) {
-                    if(!arterius.isInBattle()) {
+                if (!PlayerDataManager.cursedEyeBlessed.get(serverPlayer) && entity instanceof Arterius arterius) {
+                    if (!arterius.isInBattle()) {
                         event.setCanceled(true);
                         return;
                     }
@@ -152,21 +163,21 @@ public class LivingEntityEventListeners {
 
         }
 
-        if(event.getEntity() instanceof Bone_Chimera_Entity boneChimeraEntity) {
-            if(boneChimeraEntity.isDeadOrDying()) {
+        if (event.getEntity() instanceof Bone_Chimera_Entity boneChimeraEntity) {
+            if (boneChimeraEntity.isDeadOrDying()) {
                 event.setCanceled(true);
             }
         }
 
-        if(event.getEntity() instanceof UnderworldKnightEntity underworldKnight) {
-            if(underworldKnight.isDeadOrDying()) {
+        if (event.getEntity() instanceof UnderworldKnightEntity underworldKnight) {
+            if (underworldKnight.isDeadOrDying()) {
                 event.setCanceled(true);
             }
         }
 
-        if(event.getEntity() instanceof ServerPlayer serverPlayer) {
-            if(event.getSource().getEntity() instanceof UnderworldKnightEntity underworldKnight) {
-                if(!underworldKnight.getPersistentData().getBoolean("hurt_mark")) {
+        if (event.getEntity() instanceof ServerPlayer serverPlayer) {
+            if (event.getSource().getEntity() instanceof UnderworldKnightEntity underworldKnight) {
+                if (!underworldKnight.getPersistentData().getBoolean("hurt_mark")) {
                     event.setCanceled(true);
                 }
             }
@@ -174,7 +185,7 @@ public class LivingEntityEventListeners {
             EpicFightCapabilities.getUnparameterizedEntityPatch(serverPlayer, ServerPlayerPatch.class).ifPresent(serverPlayerPatch -> {
                 AnimationPlayer player = serverPlayerPatch.getAnimator().getPlayerFor(null);
                 //激流期间无敌
-                if(player != null && player.getAnimation() == Animations.TSUNAMI_REINFORCED) {
+                if (player != null && player.getAnimation() == Animations.TSUNAMI_REINFORCED) {
                     event.setCanceled(true);
                 }
             });
@@ -186,32 +197,32 @@ public class LivingEntityEventListeners {
     @SubscribeEvent
     public static void onEntityDrop(LivingDropsEvent event) {
         LivingEntity entity = event.getEntity();
-        if(!entity.level().isClientSide) {
+        if (!entity.level().isClientSide) {
 
-            if(entity instanceof IronGolem ironGolem && WorldUtil.isInStructure(ironGolem, WorldUtil.SKY_ISLAND)) {
+            if (entity instanceof IronGolem ironGolem && WorldUtil.isInStructure(ironGolem, WorldUtil.SKY_ISLAND)) {
                 event.setCanceled(true);
             }
 
-            if(entity instanceof Pillager) {
-                if(entity.getRandom().nextFloat() < 0.2F) {
+            if (entity instanceof Pillager) {
+                if (entity.getRandom().nextFloat() < 0.2F) {
                     ItemUtil.addItemEntity(entity, Items.GOLD_INGOT, 1, 0xc000ff);
                 }
-                if(entity.getRandom().nextFloat() < 0.1F) {
+                if (entity.getRandom().nextFloat() < 0.1F) {
                     ItemUtil.addItemEntity(entity, Items.DIAMOND, 1, 0xc000ff);
                 }
-                if(entity.getRandom().nextFloat() < 0.01F) {
+                if (entity.getRandom().nextFloat() < 0.01F) {
                     ItemUtil.addItemEntity(entity, Items.NETHERITE_INGOT, 1, 0xc000ff);
                 }
-                if(!event.getEntity().getLootTable().toString().endsWith("captain") && entity.hasGlowingTag()) {
+                if (!event.getEntity().getLootTable().toString().endsWith("captain") && entity.hasGlowingTag()) {
                     ItemUtil.addItemEntity(entity, AquamiraeItems.SHELL_HORN.get(), 1, ChatFormatting.GOLD.getColor());
                 }
-            } else if(entity instanceof Enemy) {
-                if(entity.getRandom().nextFloat() < 0.1F) {
+            } else if (entity instanceof Enemy) {
+                if (entity.getRandom().nextFloat() < 0.1F) {
                     ItemUtil.addItemEntity(entity, Items.IRON_INGOT, 1, 0xc000ff);
                 }
-                if(entity.getRandom().nextFloat() < 0.03F) {
+                if (entity.getRandom().nextFloat() < 0.03F) {
                     ItemUtil.addItemEntity(entity, Items.AMETHYST_SHARD, 1, 0xc000ff);
-                } else if(entity.getRandom().nextFloat() < 0.01F) {
+                } else if (entity.getRandom().nextFloat() < 0.01F) {
                     ItemUtil.addItemEntity(entity, FAItems.MOON_CRYSTAL.get(), 1, 0xc000ff);
                 }
             }
@@ -219,9 +230,9 @@ public class LivingEntityEventListeners {
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    public static void onLivingDeath(LivingDeathEvent event){
+    public static void onLivingDeath(LivingDeathEvent event) {
         LivingEntity livingEntity = event.getEntity();
-        if(event.isCanceled() || livingEntity.getPersistentData().getBoolean(TRIGGERED)) {
+        if (event.isCanceled() || livingEntity.getPersistentData().getBoolean(TRIGGERED)) {
             return;
         }
         livingEntity.getPersistentData().putBoolean(TRIGGERED, true);
@@ -250,34 +261,34 @@ public class LivingEntityEventListeners {
 
             if (livingEntity instanceof Ender_Guardian_Entity) {
                 PlayerDataManager.voidEyeKilled.put(player, true);
-                if(PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
+                if (PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
                     TCRTaskManager.FIND_ARTERIUS.start(player);
                 }
             }
 
             if (livingEntity instanceof Netherite_Monstrosity_Entity) {
                 PlayerDataManager.monstEyeKilled.put(player, true);
-                if(PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
+                if (PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
                     TCRTaskManager.FIND_ARTERIUS.start(player);
                 }
             }
 
             if (livingEntity instanceof The_Harbinger_Entity) {
                 PlayerDataManager.mechEyeKilled.put(player, true);
-                if(PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
+                if (PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
                     TCRTaskManager.FIND_ARTERIUS.start(player);
                 }
             }
 
-            if(livingEntity instanceof EnderDragon && !PlayerDataManager.voidEyeTraded.get(player)) {
+            if (livingEntity instanceof EnderDragon && !PlayerDataManager.voidEyeTraded.get(player)) {
                 ItemUtil.addItemEntity(player, ModItems.VOID_EYE.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
             }
 
-            if(livingEntity instanceof WitherBoss && !PlayerDataManager.mechEyeTraded.get(player)) {
+            if (livingEntity instanceof WitherBoss && !PlayerDataManager.mechEyeTraded.get(player)) {
                 ItemUtil.addItemEntity(player, ModItems.MECH_EYE.get(), 1, ChatFormatting.DARK_RED.getColor().intValue());
             }
 
-            if(event.getSource().getEntity() instanceof Player && livingEntity.getType().is(EntityTypeTags.RAIDERS) && !PlayerDataManager.pillagerKilled.get(player)) {
+            if (event.getSource().getEntity() instanceof Player && livingEntity.getType().is(EntityTypeTags.RAIDERS) && !PlayerDataManager.pillagerKilled.get(player)) {
 //                ItemStack itemStack = TCRItems.ANCIENT_ORACLE_FRAGMENT.get().getDefaultInstance();
 //                itemStack.getOrCreateTag().putString(TCRPlayer.PLAYER_NAME, player.getGameProfile().getName());
 //                ItemUtil.addItemEntity(player, itemStack, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
@@ -286,8 +297,8 @@ public class LivingEntityEventListeners {
                 PlayerDataManager.pillagerKilled.put(player, true);
             }
 
-            if(livingEntity instanceof IronGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND)) {
-                if(!PlayerDataManager.stormEyeTraded.get(player)) {
+            if (livingEntity instanceof IronGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND)) {
+                if (!PlayerDataManager.stormEyeTraded.get(player)) {
                     ItemUtil.addItemEntity(player, ModItems.STORM_EYE.get(), 1, ChatFormatting.AQUA.getColor().intValue());
                     player.displayClientMessage(TCRCoreMod.getInfo("kill_boss1"), false);
                     player.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("you_pass")));
@@ -296,7 +307,7 @@ public class LivingEntityEventListeners {
                 }
             }
 
-            if(livingEntity instanceof BulldrogiothEntity
+            if (livingEntity instanceof BulldrogiothEntity
                     && PlayerDataManager.stormEyeBlessed.get(player)
                     && !PlayerDataManager.abyssEyeTraded.get(player)) {
                 ItemUtil.addItemEntity(player, ModItems.ABYSS_EYE.get(), 1, ChatFormatting.BLUE.getColor().intValue());
@@ -304,12 +315,12 @@ public class LivingEntityEventListeners {
             }
 
 
-            if(livingEntity instanceof Bone_Chimera_Entity && !PlayerDataManager.desertEyeTraded.get(player) && PlayerDataManager.abyssEyeBlessed.get(player)) {
+            if (livingEntity instanceof Bone_Chimera_Entity && !PlayerDataManager.desertEyeTraded.get(player) && PlayerDataManager.abyssEyeBlessed.get(player)) {
                 ItemUtil.addItemEntity(player, ModItems.DESERT_EYE.get(), 1, ChatFormatting.YELLOW.getColor().intValue());
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss5"), false);
 
                 CommandSourceStack commandSourceStack = player.createCommandSourceStack().withPermission(2).withSuppressedOutput();
-                if(!PlayerDataManager.fireAvoidUnlocked.get(player)) {
+                if (!PlayerDataManager.fireAvoidUnlocked.get(player)) {
                     Objects.requireNonNull(player.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s dodge_parry_reward:passive tcrcore:fire_avoid true");
                     player.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", Component.translatable(TCRSkills.FIRE_AVOID.getTranslationKey()).withStyle(ChatFormatting.AQUA)), false);
                     player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.PLAYERS, 1.0F, 1.0F);
@@ -317,14 +328,14 @@ public class LivingEntityEventListeners {
                 }
             }
 
-            if(livingEntity instanceof CaptainCornelia && !PlayerDataManager.cursedEyeTraded.get(player) && PlayerDataManager.desertEyeBlessed.get(player)) {
+            if (livingEntity instanceof CaptainCornelia && !PlayerDataManager.cursedEyeTraded.get(player) && PlayerDataManager.desertEyeBlessed.get(player)) {
                 ItemUtil.addItemEntity(player, ModItems.CURSED_EYE.get(), 1, ChatFormatting.DARK_GREEN.getColor().intValue());
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss4"), false);
             }
 
         });
 
-        if(livingEntity.level() instanceof ServerLevel serverLevel) {
+        if (livingEntity.level() instanceof ServerLevel serverLevel) {
 
             if (CataclysmDimensions.LEVELS.contains(serverLevel.dimension()) && livingEntity.getType().is(Tags.EntityTypes.BOSSES)) {
                 TCRDimSaveData.get(serverLevel).setBossKilled(true);
@@ -333,7 +344,7 @@ public class LivingEntityEventListeners {
                 clickToReturn.setStyle(Style.EMPTY
                         .applyFormat(ChatFormatting.GREEN)
                         .withBold(true)
-                        .withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/execute in minecraft:overworld as @s run tp " + WorldUtil.START_POS.getX() + " " + WorldUtil.START_POS.getY() + " " + WorldUtil.START_POS.getZ()))
+                        .withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/execute in " + TCRDimensions.SANCTUM_LEVEL_KEY.location() + " as @s run tp " + WorldUtil.START_POS.getX() + " " + WorldUtil.START_POS.getY() + " " + WorldUtil.START_POS.getZ()))
                 );
 
                 serverLevel.players().forEach((serverPlayer -> {
@@ -344,34 +355,34 @@ public class LivingEntityEventListeners {
             }
 
             //保险措施，一般到不了
-            if(livingEntity instanceof Arterius arterius) {
+            if (livingEntity instanceof Arterius arterius) {
                 arterius.resetBossStatus(true);
                 arterius.backToHomePos();
                 arterius.setInBattle(false);
                 event.setCanceled(true);
             }
 
-            if(livingEntity instanceof WraithonEntity wraithonEntity && !wraithonEntity.isDead()) {
+            if (livingEntity instanceof WraithonEntity wraithonEntity && !wraithonEntity.isDead()) {
                 serverLevel.players().forEach(serverPlayer -> {
 //                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("wraithon_end_tip"), false);
                     TCRCapabilityProvider.getTCRPlayer(serverPlayer).setTickAfterBossDieLeft(200);
                 });
             }
 
-            if(livingEntity instanceof IronGolem ironGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
+            if (livingEntity instanceof IronGolem ironGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_ISLAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //秽土转生
                 EntityRespawnerMod.addToRespawn(ironGolem, 60, true);
                 ItemUtil.addItemEntity(livingEntity, SGItems.GOLEM_HEART.get(), 1, ChatFormatting.GOLD.getColor().intValue());
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
-            if(livingEntity instanceof Bone_Chimera_Entity boneChimeraEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.SAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
+            if (livingEntity instanceof Bone_Chimera_Entity boneChimeraEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.SAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //偷懒，直接秽土转生
                 EntityRespawnerMod.addToRespawn(boneChimeraEntity, 200, true);
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
-            if(livingEntity instanceof BulldrogiothEntity bulldrogiothEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.COVES) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
+            if (livingEntity instanceof BulldrogiothEntity bulldrogiothEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.COVES) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //秽土转生
                 EntityRespawnerMod.addToRespawn(bulldrogiothEntity, 300, true);
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
@@ -389,16 +400,16 @@ public class LivingEntityEventListeners {
 
         }
 
-        if(livingEntity instanceof CaptainCornelia) {
-            if(livingEntity.level().isClientSide) {
+        if (livingEntity instanceof CaptainCornelia) {
+            if (livingEntity.level().isClientSide) {
                 CorneliaMusicPlayer.stopBossMusic(livingEntity);
             } else {
                 ItemUtil.addItemEntity(livingEntity, EFNItem.DEEPDARK_HEART.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
             }
         }
 
-        if(livingEntity instanceof WraithonEntity wraithonEntity && !wraithonEntity.isDead()) {
-            if(livingEntity.level().isClientSide) {
+        if (livingEntity instanceof WraithonEntity wraithonEntity && !wraithonEntity.isDead()) {
+            if (livingEntity.level().isClientSide) {
                 WraithonMusicPlayer.stopBossMusic(livingEntity);
             } else {
                 ItemUtil.addItemEntity(livingEntity, SwordSoaringItems.VATANSEVER.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
@@ -407,23 +418,23 @@ public class LivingEntityEventListeners {
             }
         }
 
-        if(livingEntity instanceof ServerPlayer serverPlayer && !event.isCanceled()) {
+        if (livingEntity instanceof ServerPlayer serverPlayer && !event.isCanceled()) {
             serverPlayer.displayClientMessage(TCRCoreMod.getInfo("death_info"), false);
             ServerLevel wraithonLevel = serverPlayer.server.getLevel(WraithonDimensions.SANCTUM_OF_THE_WRAITHON_LEVEL_KEY);
-            if(wraithonLevel.players().isEmpty()) {
+            if (wraithonLevel.players().isEmpty()) {
                 wraithonLevel.getAllEntities().forEach(Entity::discard);
                 TCRDimSaveData.get(wraithonLevel).setBossSummoned(false);
             }
             //多人则重置出生点
-            if(!serverPlayer.server.isSingleplayer()) {
+            if (!serverPlayer.server.isSingleplayer()) {
                 serverPlayer.setRespawnPosition(TCRDimensions.SANCTUM_LEVEL_KEY, new BlockPos(WorldUtil.START_POS), 0, true, false);
             }
 
-            if(EntityUtil.getNearByPlayers(serverPlayer, 30).isEmpty()) {
-                if(event.getSource().getEntity() instanceof LivingEntity living) {
+            if (EntityUtil.getNearByPlayers(serverPlayer, 30).isEmpty()) {
+                if (event.getSource().getEntity() instanceof LivingEntity living) {
                     living.setHealth(living.getMaxHealth());
                     living.removeAllEffects();
-                    if(living instanceof WraithonEntity wraithonEntity) {
+                    if (living instanceof WraithonEntity wraithonEntity) {
                         wraithonEntity.setPhase(WraithonEntity.START_PHASE);
                     }
                 }
@@ -433,14 +444,14 @@ public class LivingEntityEventListeners {
 
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
-        if(TCRCoreMod.hasCheatMod()) {
+        if (TCRCoreMod.hasCheatMod()) {
             event.getEntity().setHealth(0);
         }
     }
 
     @SubscribeEvent
     public static void onLivingDialog(ServerNpcEntityInteractEvent event) {
-        if(event.getSelf() instanceof Villager) {
+        if (event.getSelf() instanceof Villager) {
             TCRCapabilityProvider.getTCRPlayer(event.getServerPlayer()).setCurrentTalkingEntity(null);
         }
     }
@@ -449,10 +460,10 @@ public class LivingEntityEventListeners {
      * 减少呼吸消耗
      */
     @SubscribeEvent
-    public static void onLivingBreath(LivingBreatheEvent event){
+    public static void onLivingBreath(LivingBreatheEvent event) {
         LivingEntity living = event.getEntity();
-        if(living instanceof Player player) {
-            if(EpicFightCapabilities.getEntityPatch(player, PlayerPatch.class).getSkillCapability().isEquipping(TCRSkills.WATER_AVOID)) {
+        if (living instanceof Player player) {
+            if (EpicFightCapabilities.getEntityPatch(player, PlayerPatch.class).getSkillCapability().isEquipping(TCRSkills.WATER_AVOID)) {
                 event.setCanBreathe(true);
                 event.setCanRefillAir(true);
                 event.setConsumeAirAmount(0);
@@ -465,8 +476,8 @@ public class LivingEntityEventListeners {
      * 出生地防刷怪
      */
     @SubscribeEvent
-    public static void onLivingSpawn(MobSpawnEvent.PositionCheck event){
-        if(WorldUtil.inMainLand(event.getEntity()) && event.getEntity() instanceof Enemy) {
+    public static void onLivingSpawn(MobSpawnEvent.PositionCheck event) {
+        if (WorldUtil.inMainLand(event.getEntity()) && event.getEntity() instanceof Enemy) {
             event.setResult(Event.Result.DENY);
         }
     }
@@ -474,65 +485,65 @@ public class LivingEntityEventListeners {
     public static Set<EntityType<?>> illegalEntityTypes = new HashSet<>();
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void onMobSpawn(MobSpawnEvent.FinalizeSpawn event){
-        if(AquamiraeUtils.isInIceMaze(event.getEntity())) {
-            if(event.getEntity() instanceof Pillager pillager && event.getEntity().getRandom().nextFloat() < 0.2) {
+    public static void onMobSpawn(MobSpawnEvent.FinalizeSpawn event) {
+        if (AquamiraeUtils.isInIceMaze(event.getEntity())) {
+            if (event.getEntity() instanceof Pillager pillager && event.getEntity().getRandom().nextFloat() < 0.2) {
                 pillager.getPersistentData().putString("DeathLootTable", Aquamirae.MODID + ":entities/maze_captain");
                 pillager.setGlowingTag(true);
             }
-            if(event.getEntity().getLootTable().toString().endsWith("captain")) {
+            if (event.getEntity().getLootTable().toString().endsWith("captain")) {
                 event.getEntity().setGlowingTag(true);
             }
         }
     }
 
     @SubscribeEvent
-    public static void onLivingJoin(EntityJoinLevelEvent event){
+    public static void onLivingJoin(EntityJoinLevelEvent event) {
 
-        if(event.getEntity().level().isClientSide) {
+        if (event.getEntity().level().isClientSide) {
             return;
         }
 
-        if(event.getEntity() instanceof Arterius arterius) {
+        if (event.getEntity() instanceof Arterius arterius) {
             arterius.setInBattle(false);
         }
 
         ServerLevel serverLevel = (ServerLevel) event.getEntity().level();
 
-        if(event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity) {
-            if(WorldUtil.isInStructure(bulldrogiothEntity, WorldUtil.COVES)) {
+        if (event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity) {
+            if (WorldUtil.isInStructure(bulldrogiothEntity, WorldUtil.COVES)) {
                 bulldrogiothEntity.setGlowingTag(true);
             }
         }
 
-        if(event.getEntity() instanceof ItemEntity itemEntity) {
-            if(PlayerEventListeners.illegalItems.contains(itemEntity.getItem().getItem())){
+        if (event.getEntity() instanceof ItemEntity itemEntity) {
+            if (PlayerEventListeners.illegalItems.contains(itemEntity.getItem().getItem())) {
                 event.setCanceled(true);
                 return;
             }
         }
 
-        if(illegalEntityTypes.contains(event.getEntity().getType())) {
+        if (illegalEntityTypes.contains(event.getEntity().getType())) {
             event.setCanceled(true);
             return;
         }
         UUID uuid = UUID.fromString("d4c3b2a1-f6e5-8b7a-0d9c-cba987654321");
-        if(event.getEntity() instanceof IronGolem ironGolem) {
-            if(WorldUtil.isInStructure(ironGolem, WorldUtil.SKY_ISLAND)){
+        if (event.getEntity() instanceof IronGolem ironGolem) {
+            if (WorldUtil.isInStructure(ironGolem, WorldUtil.SKY_ISLAND)) {
                 ironGolem.setCustomName(TCRCoreMod.getInfo("iron_golem_name"));
                 ironGolem.setCustomNameVisible(true);
                 ironGolem.setGlowingTag(true);
             }
         }
 
-        if(event.getEntity() instanceof EnderDragon enderDragon) {
+        if (event.getEntity() instanceof EnderDragon enderDragon) {
             enderDragon.getAttribute(Attributes.MAX_HEALTH).removeModifier(uuid);
             AttributeModifier healthBoost = new AttributeModifier(uuid, "Dragon Health Boost", 2, AttributeModifier.Operation.MULTIPLY_BASE);
             enderDragon.getAttribute(Attributes.MAX_HEALTH).addPermanentModifier(healthBoost);
             enderDragon.setHealth(enderDragon.getMaxHealth());
         }
 
-        if(event.getEntity() instanceof WitherBoss witherBoss) {
+        if (event.getEntity() instanceof WitherBoss witherBoss) {
             witherBoss.getAttribute(Attributes.MAX_HEALTH).removeModifier(uuid);
             AttributeModifier healthBoost = new AttributeModifier(uuid, "Wither Health Boost", 1, AttributeModifier.Operation.MULTIPLY_BASE);
             witherBoss.getAttribute(Attributes.MAX_HEALTH).addPermanentModifier(healthBoost);
@@ -556,8 +567,8 @@ public class LivingEntityEventListeners {
      * 保险
      */
     @SubscribeEvent
-    public static void onLivingDespawn(MobSpawnEvent.AllowDespawn event){
-        if(event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity && WorldUtil.isInStructure(bulldrogiothEntity, WorldUtil.COVES)) {
+    public static void onLivingDespawn(MobSpawnEvent.AllowDespawn event) {
+        if (event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity && WorldUtil.isInStructure(bulldrogiothEntity, WorldUtil.COVES)) {
             event.setResult(Event.Result.DENY);
         }
     }

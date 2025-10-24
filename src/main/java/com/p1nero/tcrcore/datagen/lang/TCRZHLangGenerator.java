@@ -121,7 +121,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         this.addInfo("second_after_boss_die_left", "将在 %d 秒后返回主世界");
 
-        this.addInfo("press_to_open_battle_mode", "§c请开启战斗模式!§r");
+        this.addInfo("press_to_open_battle_mode", "§c请按[%s]开启战斗模式!§r");
         this.addInfo("unlock_new_dim_girl", "§6摆渡人处已解锁新选项!§r");
         this.addInfo("unlock_new_dim", "§c[地狱]§d[末地]§6已解锁!§r");
         this.addInfo("iron_golem_name", "天空岛之守卫");

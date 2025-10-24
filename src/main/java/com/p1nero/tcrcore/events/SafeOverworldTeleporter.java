@@ -19,10 +19,10 @@ public class SafeOverworldTeleporter implements ITeleporter {
             return null;
         }
 
-        BlockPos safePos = newEntity.blockPosition().atY(80);
-        //防卡墙或水
-        while (!(destWorld.getBlockState(safePos).isAir() && destWorld.getBlockState(safePos.above()).isAir())) {
-            safePos = safePos.east();
+        BlockPos safePos = newEntity.blockPosition().atY(300);
+        //从上往下搜
+        while (destWorld.getBlockState(safePos).isAir()) {
+            safePos = safePos.below();
         }
         if (destWorld.getBlockState(safePos.below()).isAir()) {
             if(newEntity instanceof LivingEntity living) {

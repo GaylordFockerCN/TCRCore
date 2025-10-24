@@ -31,61 +31,61 @@ import yesman.epicfight.world.capabilities.entitypatch.player.PlayerPatch;
 @Mixin(ControlEngine.Events.class)
 public class ControlEngineMixin {
 
-    @Inject(method = "interactionEvent", at = @At("HEAD"), cancellable = true, remap = false)
-    private static void tcr$interactionEvent(InputEvent.InteractionKeyMappingTriggered event, CallbackInfo ci) {
-        if (Minecraft.getInstance().player == null) {
-            ci.cancel();
-        }
-
-        if (
-                event.getKeyMapping() == Minecraft.getInstance().options.keyAttack &&
-                        EpicFightKeyMappings.ATTACK.getKey() == Minecraft.getInstance().options.keyAttack.getKey() &&
-                        Minecraft.getInstance().hitResult.getType() == HitResult.Type.BLOCK &&
-                        ClientConfig.combatPreferredItems.contains(Minecraft.getInstance().player.getMainHandItem().getItem())
-        ) {
-            BlockPos bp = ((BlockHitResult) Minecraft.getInstance().hitResult).getBlockPos();
-            BlockState bs = Minecraft.getInstance().level.getBlockState(bp);
-
-            // Cancel digging when the player swings combat preferred items
-            if (!Minecraft.getInstance().player.getMainHandItem().getItem().canAttackBlock(bs, Minecraft.getInstance().player.level(), bp, Minecraft.getInstance().player) || Minecraft.getInstance().player.getMainHandItem().getDestroySpeed(bs) <= 1.0F) {
-                event.setSwingHand(false);
-                event.setCanceled(true);
-            }
-        }
-
-        if (
-                event.getKeyMapping() == Minecraft.getInstance().options.keyUse &&
-                        event.getKeyMapping().getKey().equals(EpicFightKeyMappings.GUARD.getKey())
-        ) {
-            MutableBoolean canGuard = new MutableBoolean();
-            MutableBoolean vanillaMode = new MutableBoolean();
-
-            EpicFightCapabilities.getUnparameterizedEntityPatch(Minecraft.getInstance().player, LocalPlayerPatch.class).ifPresent(playerpatch -> {
-                SkillContainer skillcontainer = playerpatch.getSkill(SkillSlots.GUARD);
-                if(playerpatch.getPlayerMode() == PlayerPatch.PlayerMode.VANILLA) {
-                    vanillaMode.setValue(true);
-                }
-                if (skillcontainer.getSkill() != null && skillcontainer.getSkill().canExecute(skillcontainer)) {
-                    canGuard.setValue(true);
-                }
-            });
-
-            if(!vanillaMode.getValue()) {
-                if (Minecraft.getInstance().hitResult.getType() == HitResult.Type.MISS) {
-                    if (canGuard.booleanValue() && ClientConfig.keyConflictResolveScope.cancelItemUse()) {
-                        event.setSwingHand(false);
-                        event.setCanceled(true);
-                    }
-                } else {
-                    if (canGuard.booleanValue()) {
-                        event.setSwingHand(false);
-                        event.setCanceled(true);
-//                        Minecraft.getInstance().player.displayClientMessage(TCRCoreMod.getInfo("weapon_no_interact", EpicFightKeyMappings.SWITCH_MODE.getTranslatedKeyMessage()).withStyle(ChatFormatting.GOLD), true);
-                    }
-                }
-            }
-        }
-        ci.cancel();
-    }
+//    @Inject(method = "interactionEvent", at = @At("HEAD"), cancellable = true, remap = false)
+//    private static void tcr$interactionEvent(InputEvent.InteractionKeyMappingTriggered event, CallbackInfo ci) {
+//        if (Minecraft.getInstance().player == null) {
+//            ci.cancel();
+//        }
+//
+//        if (
+//                event.getKeyMapping() == Minecraft.getInstance().options.keyAttack &&
+//                        EpicFightKeyMappings.ATTACK.getKey() == Minecraft.getInstance().options.keyAttack.getKey() &&
+//                        Minecraft.getInstance().hitResult.getType() == HitResult.Type.BLOCK &&
+//                        ClientConfig.combatPreferredItems.contains(Minecraft.getInstance().player.getMainHandItem().getItem())
+//        ) {
+//            BlockPos bp = ((BlockHitResult) Minecraft.getInstance().hitResult).getBlockPos();
+//            BlockState bs = Minecraft.getInstance().level.getBlockState(bp);
+//
+//            // Cancel digging when the player swings combat preferred items
+//            if (!Minecraft.getInstance().player.getMainHandItem().getItem().canAttackBlock(bs, Minecraft.getInstance().player.level(), bp, Minecraft.getInstance().player) || Minecraft.getInstance().player.getMainHandItem().getDestroySpeed(bs) <= 1.0F) {
+//                event.setSwingHand(false);
+//                event.setCanceled(true);
+//            }
+//        }
+//
+//        if (
+//                event.getKeyMapping() == Minecraft.getInstance().options.keyUse &&
+//                        event.getKeyMapping().getKey().equals(EpicFightKeyMappings.GUARD.getKey())
+//        ) {
+//            MutableBoolean canGuard = new MutableBoolean();
+//            MutableBoolean vanillaMode = new MutableBoolean();
+//
+//            EpicFightCapabilities.getUnparameterizedEntityPatch(Minecraft.getInstance().player, LocalPlayerPatch.class).ifPresent(playerpatch -> {
+//                SkillContainer skillcontainer = playerpatch.getSkill(SkillSlots.GUARD);
+//                if(playerpatch.getPlayerMode() == PlayerPatch.PlayerMode.VANILLA) {
+//                    vanillaMode.setValue(true);
+//                }
+//                if (skillcontainer.getSkill() != null && skillcontainer.getSkill().canExecute(skillcontainer)) {
+//                    canGuard.setValue(true);
+//                }
+//            });
+//
+//            if(!vanillaMode.getValue()) {
+//                if (Minecraft.getInstance().hitResult.getType() == HitResult.Type.MISS) {
+//                    if (canGuard.booleanValue() && ClientConfig.keyConflictResolveScope.cancelItemUse()) {
+//                        event.setSwingHand(false);
+//                        event.setCanceled(true);
+//                    }
+//                } else {
+//                    if (canGuard.booleanValue() && Minecraft.getInstance().hitResult.getType() == HitResult.Type.BLOCK) {
+//                        event.setSwingHand(false);
+//                        event.setCanceled(true);
+////                        Minecraft.getInstance().player.displayClientMessage(TCRCoreMod.getInfo("weapon_no_interact", EpicFightKeyMappings.SWITCH_MODE.getTranslatedKeyMessage()).withStyle(ChatFormatting.GOLD), true);
+//                    }
+//                }
+//            }
+//        }
+//        ci.cancel();
+//    }
 
 }

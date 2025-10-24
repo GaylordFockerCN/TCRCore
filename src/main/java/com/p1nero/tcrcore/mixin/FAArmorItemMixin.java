@@ -1,7 +1,7 @@
 package com.p1nero.tcrcore.mixin;
 
 import com.p1nero.tcrcore.TCRCoreMod;
-import net.kenddie.fantasyarmor.item.armor.lib.FAArmorItem;
+import net.kenddie.fantasyarmor.item.armor.FAArmorItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;

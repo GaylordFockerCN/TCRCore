@@ -175,6 +175,8 @@
 	"gamerule.initialMode": "新玩家默认模式",
 	"gamerule.initialMode.description": "0: 挖掘\n1: 战斗",
 	"gamerule.epicDrop": "启用Boss战利品的精美掉落效果",
+    "gamerule.skillReplaceCooldown": "技能替换冷却",
+    "gamerule.skillReplaceCooldown.description": "替换技能所需的冷却游戏刻",
 
 	"gui.epicfight.configurations": "史诗战斗配置",
 	"gui.epicfight.graphic_options": "史诗战斗图形设置",
@@ -239,6 +241,7 @@
 	"gui.epicfight.item_preferences.tooltip": "自动区分武器和工具",
 	"gui.epicfight.replace": "以下技能将被删除： %s",
 	"gui.epicfight.require_learning": "你必须先学习\"%s\"技能！",
+  "gui.epicfight.container_on_cooldown": "你可以在 %d 秒后替换技能！",
 	"gui.epicfight.learn": "学习",
 	"gui.epicfight.applied": "已学习",
 	"gui.epicfight.unusable": "无法学习",

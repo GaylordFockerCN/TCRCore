@@ -9,7 +9,7 @@ key_key.sneak:key.keyboard.left.shift:NONE
 key_key.sprint:key.keyboard.left.control:NONE
 key_key.drop:key.keyboard.q:NONE
 key_key.inventory:key.keyboard.e:NONE
-key_key.chat:key.keyboard.enter:NONE
+key_key.chat:key.keyboard.t:NONE
 key_key.playerlist:key.keyboard.tab:NONE
 key_key.pickItem:key.mouse.middle:NONE
 key_key.command:key.keyboard.slash:NONE
@@ -68,7 +68,7 @@ key_key.jei.maxTransferRecipeBookmark:key.keyboard.unknown:NONE
 key_key.jei.cheatItemStack:key.keyboard.unknown:NONE
 key_key.jei.nextRecipePage:key.keyboard.page.down:NONE
 key_key.epicfight.show_tooltip:key.keyboard.left.shift:NONE
-key_key.epicfight.switch_mode:key.keyboard.r:NONE
+key_key.epicfight.switch_mode:key.keyboard.f:NONE
 key_key.epicfight.dodge:key.keyboard.left.alt:NONE
 key_key.epicfight.guard:key.mouse.right:NONE
 key_key.epicfight.attack:key.mouse.left:NONE
@@ -238,5 +238,5 @@ key_key.efn.demon:key.mouse.right:NONE
 key_key.p1nero_ec.skill_1:key.keyboard.1:NONE
 key_key.p1nero_ec.skill_2:key.keyboard.2:NONE
 key_key.p1nero_ec.skill_3:key.keyboard.3:NONE
-key_key.tcrcore.riptide:key.keyboard.left.shift:NONE
+key_key.tcrcore.riptide:key.keyboard.left.alt:NONE
 key_keybind.invmove.toggleMove:key.keyboard.unknown:NONE

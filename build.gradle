@@ -164,9 +164,10 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     implementation fg.deobf("curse.maven:fluid-tick-structure-processor-1369713:7133622")
 //    implementation fg.deobf("libs:ba_bt:3.0.0")
-//    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7103001-sources-7103018")
-    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7129220-sources-7129223")
-    implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7129232-sources-7129236")
+//    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7129220-sources-7129223")
+    implementation fg.deobf("libs:epicfight:20.13.2.5")
+    implementation fg.deobf("libs:epicfight-skilltree:20.2.2.1")
+//    implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7129232-sources-7129236")
     implementation fg.deobf("curse.maven:p1nero-better-structure-block-970671:6817772")
 //    implementation fg.deobf("curse.maven:epic-fight-indestructible-915201:6915161")
     implementation fg.deobf("curse.maven:epic-fight-indestructible-915201:7125700")
@@ -207,7 +208,7 @@ dependencies {
     implementation fg.deobf("curse.maven:epic-fight-super-golem-1236331:6861276")
     implementation fg.deobf("curse.maven:epic-fight-super-warden-1272352:6640554")
 
-    implementation fg.deobf("curse.maven:fantasy-armor-1083998:6385161")
+    implementation fg.deobf("curse.maven:fantasy-armor-1083998:6949888")
 
     implementation fg.deobf("curse.maven:parcool-482378:6831668")
     implementation fg.deobf("curse.maven:official-epic-fight-x-parcool-1259252:6870242")

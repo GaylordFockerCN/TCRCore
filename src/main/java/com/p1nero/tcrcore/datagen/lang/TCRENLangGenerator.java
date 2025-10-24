@@ -119,7 +119,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("dim_demending", "§6Rebuilding... Wait[%d§6]s");
         this.addInfo("to_be_continue", "[P1nero]: §6Thank you for playing! Congratulations on experiencing all the content of the beta version. To be continued!");
         this.addInfo("second_after_boss_die_left", "Returning to the Overworld in %d seconds");
-        this.addInfo("press_to_open_battle_mode", "§cPlease enable Battle Mode!§r");
+        this.addInfo("press_to_open_battle_mode", "§cPress [%s] to enable Battle Mode!§r");
         this.addInfo("unlock_new_dim_girl", "§6New options unlocked at the Ferry girl!§r");
         this.addInfo("unlock_new_dim", "§c[Nether]§d[End]§6 unlocked!§r");
         this.addInfo("iron_golem_name", "Sky Island Guardian");

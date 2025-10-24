@@ -30,6 +30,9 @@ provider = "NULL"
 	mine_block_guide_option = "NONE"
 	#Allowed Values: NONE, INTERACTION, ITEM_USE, INTERACTION_AND_ITEMUSE
 	key_conflict_resolve_scope = "INTERACTION"
+	enable_player_vanilla_model = true
+	#Allowed Values: ADAPTIVE, SWITCH_MODE
+	preference_work = "ADAPTIVE"
 
 	[ingame.ui]
 		stamina_bar_x = 120
