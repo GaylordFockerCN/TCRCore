@@ -3,7 +3,7 @@ package com.p1nero.tcrcore.mixin;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.obscuria.aquamirae.common.items.weapon.PoisonedChakraItem;
-import dev.shadowsoffire.attributeslib.api.ALObjects;
+import dev.shadowsoffire.attributeslib.api.ALObjects.Attributes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -30,7 +30,7 @@ public abstract class PoisonedChakraMixin extends TieredItem {
         if (slot == EquipmentSlot.OFFHAND) {
             ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
             builder.putAll(multimap);
-            builder.put(ALObjects.Attributes.CRIT_CHANCE.get(), new AttributeModifier(UUID.fromString("A33F51D3-645C-4F38-A497-9C13A33DB5CF"), "Weapon modifier", 0.1, AttributeModifier.Operation.MULTIPLY_BASE));
+            builder.put(Attributes.CRIT_CHANCE.get(), new AttributeModifier(UUID.fromString("A33F51D3-645C-4F38-A497-9C13A33DB5CF"), "Weapon modifier", 0.1, AttributeModifier.Operation.ADDITION));
             cir.setReturnValue(builder.build()) ;
         } else {
             cir.setReturnValue(multimap);
