@@ -482,7 +482,7 @@ public class LivingEntityEventListeners {
      */
     @SubscribeEvent
     public static void onLivingSpawn(MobSpawnEvent.PositionCheck event) {
-        if (WorldUtil.inMainLandRange(event.getEntity()) && event.getEntity() instanceof Enemy) {
+        if (event.getLevel().getLevel().dimension() == TCRDimensions.SANCTUM_LEVEL_KEY && event.getEntity() instanceof Enemy) {
             event.setResult(Event.Result.DENY);
         }
     }
