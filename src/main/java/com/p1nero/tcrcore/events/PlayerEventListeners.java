@@ -266,7 +266,7 @@ public class PlayerEventListeners {
                     }
                     if(serverPlayer.getY() < 63) {
                         if(PlayerDataManager.wayStoneInteracted.get(serverPlayer)) {
-                            serverPlayer.changeDimension(serverPlayer.server.getLevel(Level.OVERWORLD), new SafeOverworldTeleporter());
+                            serverPlayer.changeDimension(serverPlayer.server.getLevel(Level.OVERWORLD), new OverworldVillageTeleporter());
                         } else {
                             serverPlayer.displayClientMessage(TCRCoreMod.getInfo("need_to_unlock_waystone").withStyle(ChatFormatting.RED), false);
                         }

@@ -24,11 +24,6 @@ public class SafeOverworldTeleporter implements ITeleporter {
         while (destWorld.getBlockState(safePos).isAir()) {
             safePos = safePos.below();
         }
-        if (destWorld.getBlockState(safePos.below()).isAir()) {
-            if(newEntity instanceof LivingEntity living) {
-                living.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 100, 1));
-            }
-        }
         newEntity.teleportTo(safePos.getX() + 0.5, safePos.getY(), safePos.getZ() + 0.5);
         return newEntity;
     }

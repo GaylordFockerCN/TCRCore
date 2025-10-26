@@ -8,9 +8,9 @@ import com.p1nero.dialog_lib.api.goal.LookAtConservingPlayerGoal;
 import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
+import com.p1nero.tcrcore.events.OverworldVillageTeleporter;
 import com.p1nero.tcrcore.events.PlayerEventListeners;
 import com.p1nero.tcrcore.events.SafeNetherTeleporter;
-import com.p1nero.tcrcore.events.SafeOverworldTeleporter;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
@@ -520,7 +520,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
             if(PlayerDataManager.wayStoneInteracted.get(serverPlayer)){
                 //传送主世界
                 ServerLevel level = serverPlayer.server.getLevel(Level.OVERWORLD);
-                serverPlayer.changeDimension(level, new SafeOverworldTeleporter());
+                serverPlayer.changeDimension(level, new OverworldVillageTeleporter());
             } else {
                 serverPlayer.displayClientMessage(TCRCoreMod.getInfo("need_to_unlock_waystone").withStyle(ChatFormatting.RED), false);
             }

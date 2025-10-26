@@ -18,14 +18,18 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BaseCommandBlock;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import yesman.epicfight.api.utils.math.Vec2i;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -46,6 +50,8 @@ public class WorldUtil {
     public static final String CURSED = "aquamirae:ship";
     public static final String FIRE = "tcrcore:underworld_arena";
     public static Vec2i storm, flame, abyss, cursed, desert;
+
+    public static List<MapColor> surfaceMaterials = Arrays.asList(MapColor.WATER, MapColor.ICE);
 
     private static final Pattern LOCATE_PATTERN = Pattern.compile(".*?\\[\\s*(-?\\d+)\\s*,\\s*~\\s*,\\s*(-?\\d+)\\s*\\].*");
 
@@ -88,6 +94,42 @@ public class WorldUtil {
 
         ChunkGenerator chunkGenerator = serverLevel.getChunkSource().getGenerator();
         BlockPos playerPos = serverPlayer.blockPosition();
+
+        Pair<BlockPos, Holder<Structure>> result = chunkGenerator.findNearestMapStructure(
+                serverLevel,
+                structureSet,
+                playerPos,
+                20000,
+                false
+        );
+
+        if (result != null) {
+            BlockPos structurePos = result.getFirst();
+            return new BlockPos(structurePos.getX(), y, structurePos.getZ());
+        }
+
+        return null;
+    }
+
+
+    @Nullable
+    public static BlockPos getNearbyStructurePos(ServerLevel serverLevel, BlockPos playerPos, String structureId, int y) {
+        ResourceLocation structureResourceLocation = ResourceLocation.tryParse(structureId);
+        if (structureResourceLocation == null) {
+            return null;
+        }
+
+        ResourceKey<Structure> structureKey = ResourceKey.create(Registries.STRUCTURE, structureResourceLocation);
+        Registry<Structure> structureRegistry = serverLevel.registryAccess().registryOrThrow(Registries.STRUCTURE);
+
+        var structureHolderOpt = structureRegistry.getHolder(structureKey);
+        if (structureHolderOpt.isEmpty()) {
+            return null;
+        }
+
+        HolderSet<Structure> structureSet = HolderSet.direct(structureHolderOpt.get());
+
+        ChunkGenerator chunkGenerator = serverLevel.getChunkSource().getGenerator();
 
         Pair<BlockPos, Holder<Structure>> result = chunkGenerator.findNearestMapStructure(
                 serverLevel,
@@ -193,4 +235,21 @@ public class WorldUtil {
 
         return baseCommandBlock.getLastOutput().getString();
     }
+
+    public static BlockPos getSurfaceBlockPos(ServerLevel serverLevel, int x, int z) {
+        int height = serverLevel.getHeight();
+        int minY = serverLevel.getMinBuildHeight();
+        BlockPos pos = new BlockPos(x, height, z);
+        for (int y = height; y > minY; y--) {
+            BlockState blockState = serverLevel.getBlockState(pos);
+            MapColor mapColor = blockState.getMapColor(serverLevel, pos);
+            if (blockState.getLightBlock(serverLevel, pos) >= 15 || surfaceMaterials.contains(mapColor)) {
+                return pos.above().immutable();
+            }
+            pos = pos.below();
+        }
+
+        return new BlockPos(x, height - 1, z);
+    }
+
 }
