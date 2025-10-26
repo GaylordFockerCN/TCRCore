@@ -7,7 +7,7 @@
 		arteriusAttackDamageMultiplier = 0.3
 		#最大生命值倍率
 		#Range: 0.0 ~ 1.7976931348623157E308
-		arteriusMaxHealthMultiplier = 1.0
+		arteriusMaxHealthMultiplier = 1.4
 		#命中时施加的debuff等级（从0开始）
 		#Range: 0 ~ 255
 		arteriusDebuffLevel = 2
