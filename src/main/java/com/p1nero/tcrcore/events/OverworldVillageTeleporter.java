@@ -29,6 +29,14 @@ public class OverworldVillageTeleporter implements ITeleporter {
             targetPos = TCRMainLevelSaveData.get(destWorld).getVillagePos();
         }
 
+        if(targetPos.equals(BlockPos.ZERO)) {
+            targetPos = newEntity.blockPosition().atY(300);
+            //从上往下搜
+            while (destWorld.getBlockState(targetPos).isAir()) {
+                targetPos = targetPos.below();
+            }
+        }
+
         newEntity.teleportTo(targetPos.getX() + 0.5, targetPos.getY(), targetPos.getZ() + 0.5);
         return newEntity;
     }

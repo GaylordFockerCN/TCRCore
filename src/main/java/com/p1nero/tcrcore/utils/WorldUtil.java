@@ -59,6 +59,10 @@ public class WorldUtil {
         return entity.level().dimension() == TCRDimensions.SANCTUM_LEVEL_KEY && entity.position().subtract(CENTER_POS).horizontalDistance() < 250;
     }
 
+    public static boolean inMainLandRange(Entity entity) {
+        return entity.position().subtract(CENTER_POS).horizontalDistance() < 250;
+    }
+
     public static boolean isInStructure(LivingEntity entity, String structure) {
         if(entity.level().isClientSide) {
             return false;
