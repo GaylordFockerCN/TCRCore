@@ -136,6 +136,11 @@ public class LivingEntityEventListeners {
             }
 
             if (!serverPlayer.isCreative()) {
+                if (!PlayerDataManager.pillagerKilled.get(serverPlayer) && entity instanceof IronGolem && WorldUtil.isInStructure(entity, WorldUtil.SKY_ISLAND)) {
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                    event.setCanceled(true);
+                    return;
+                }
                 if (!PlayerDataManager.stormEyeBlessed.get(serverPlayer) && entity instanceof BulldrogiothEntity) {
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
                     event.setCanceled(true);
@@ -477,7 +482,7 @@ public class LivingEntityEventListeners {
      */
     @SubscribeEvent
     public static void onLivingSpawn(MobSpawnEvent.PositionCheck event) {
-        if (WorldUtil.inMainLand(event.getEntity()) && event.getEntity() instanceof Enemy) {
+        if (event.getLevel().getLevel().dimension() == TCRDimensions.SANCTUM_LEVEL_KEY && event.getEntity() instanceof Enemy) {
             event.setResult(Event.Result.DENY);
         }
     }
