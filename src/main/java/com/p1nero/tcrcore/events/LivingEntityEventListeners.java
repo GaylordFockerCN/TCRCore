@@ -33,6 +33,7 @@ import com.p1nero.tcrcore.utils.EntityUtil;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRDimensions;
+import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import net.kenddie.fantasyarmor.item.FAItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
@@ -245,41 +246,65 @@ public class LivingEntityEventListeners {
         livingEntity.level().getEntitiesOfClass(ServerPlayer.class, (new AABB(center, center)).inflate(30)).forEach(player -> {
 
             if (livingEntity instanceof Scylla_Entity) {
-                PlayerDataManager.stormEyeKilled.put(player, true);
+                if(!PlayerDataManager.stormEyeKilled.get(player)) {
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 5, ChatFormatting.GOLD.getColor());
+                    PlayerDataManager.stormEyeKilled.put(player, true);
+                }
             }
 
             if (livingEntity instanceof Ignis_Entity) {
-                PlayerDataManager.flameEyeKilled.put(player, true);
+                if(!PlayerDataManager.flameEyeKilled.get(player)) {
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 5, ChatFormatting.GOLD.getColor());
+                    PlayerDataManager.flameEyeKilled.put(player, true);
+                }
             }
 
             if (livingEntity instanceof The_Leviathan_Entity) {
-                PlayerDataManager.abyssEyeKilled.put(player, true);
+                if(!PlayerDataManager.abyssEyeKilled.get(player)) {
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 5, ChatFormatting.GOLD.getColor());
+                    PlayerDataManager.abyssEyeKilled.put(player, true);
+                }
             }
 
             if (livingEntity instanceof Maledictus_Entity) {
-                PlayerDataManager.cursedEyeKilled.put(player, true);
+                if(!PlayerDataManager.cursedEyeKilled.get(player)) {
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 5, ChatFormatting.GOLD.getColor());
+                    PlayerDataManager.cursedEyeKilled.put(player, true);
+                }
             }
 
             if (livingEntity instanceof Ancient_Remnant_Entity) {
-                PlayerDataManager.desertEyeKilled.put(player, true);
+                if(!PlayerDataManager.desertEyeKilled.get(player)) {
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 5, ChatFormatting.GOLD.getColor());
+                    PlayerDataManager.desertEyeKilled.put(player, true);
+                }
             }
 
             if (livingEntity instanceof Ender_Guardian_Entity) {
-                PlayerDataManager.voidEyeKilled.put(player, true);
+                if(!PlayerDataManager.voidEyeKilled.get(player)) {
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 3, ChatFormatting.GOLD.getColor());
+                    PlayerDataManager.voidEyeKilled.put(player, true);
+                }
                 if (PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
                     TCRTaskManager.FIND_ARTERIUS.start(player);
                 }
             }
 
             if (livingEntity instanceof Netherite_Monstrosity_Entity) {
-                PlayerDataManager.monstEyeKilled.put(player, true);
+                if(!PlayerDataManager.monstEyeKilled.get(player)) {
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 3, ChatFormatting.GOLD.getColor());
+                    PlayerDataManager.monstEyeKilled.put(player, true);
+                }
                 if (PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
                     TCRTaskManager.FIND_ARTERIUS.start(player);
                 }
             }
 
             if (livingEntity instanceof The_Harbinger_Entity) {
-                PlayerDataManager.mechEyeKilled.put(player, true);
+                if(!PlayerDataManager.mechEyeKilled.get(player)) {
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 3, ChatFormatting.GOLD.getColor());
+                    PlayerDataManager.mechEyeKilled.put(player, true);
+                }
                 if (PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
                     TCRTaskManager.FIND_ARTERIUS.start(player);
                 }

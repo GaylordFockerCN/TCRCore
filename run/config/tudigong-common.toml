@@ -36,6 +36,8 @@ mark_location = true
 	highlight_duration_ticks = 600
 	#A list of structure resource locations that TuDiGong will not be able to find.
 	structure_blacklist = []
+	#When searching for structures, try to find structures in unexplored chunks. This may increase search times and is not applicable to biome searches.
+	avoid_duplicate_searches = true
 
 ["Entity Behavior"]
 	#Time in ticks before TuDiGong despawns if not interacted with.

@@ -253,6 +253,8 @@
   "item.efn.deepdark_heart.tcr_info": "击败§2[监守者]§r或§2[可妮莉亚船长]§r获取",
   "item.epicskills.ability_stone.tcr_info": "右键使用以获取技能点",
   "item.fromtheshadows.bottle_of_blood.tcr_info": "使用§d[尼赫莫斯]§r掉落物§c[晶化血髓]§r酿造获取",
+  "item.sophisticatedbackpacks.advanced_magnet_upgrade.tcr_info": "§c警告！此物品可能导致重要道具被吸入背包而失效！",
+  "item.sophisticatedbackpacks.magnet_upgrade.tcr_info": "§c警告！此物品可能导致重要道具被吸入背包而失效！",
   "item.tcrcore.abyss_core": "深渊精华",
   "item.tcrcore.abyss_core.usage": "击败[利维坦]掉落",
   "item.tcrcore.ancient_oracle_fragment": "神谕残卷",
@@ -291,6 +293,6 @@
   "tcrcore.task_desc.light_all_altar": "将§6[神之眼]§r置于祭坛上",
   "travelerstitles.tcrcore.sanctum": "梦之领域",
   "unlock_tip.tcrcore.battleborn.fire_avoid": "击败§6[骸骨奇美拉]§r习得",
-  "unlock_tip.tcrcore.battleborn.water_avoid": "使用绿宝石向§6[隐秘水湾]§r的村民交易习得",
+  "unlock_tip.tcrcore.battleborn.water_avoid1": "使用§d[紫水晶块]§f向§6[呱呱]§f交易习得",
   "unlock_tip.tcrcore.get_vatansever": "获得§d「卫疆刃」§f后解锁"
 }

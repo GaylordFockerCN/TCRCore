@@ -253,6 +253,8 @@
   "item.efn.deepdark_heart.tcr_info": "Obtained by defeating the §2[Warden]§r or §2[Captain Cornelia]§r",
   "item.epicskills.ability_stone.tcr_info": "Right-click to use and gain skill points",
   "item.fromtheshadows.bottle_of_blood.tcr_info": "Brewed using §c[Crystallized Blood Marrow]§r, a drop from §d[Nehemoth]§r",
+  "item.sophisticatedbackpacks.advanced_magnet_upgrade.tcr_info": "§cWarning! This item may cause important items to be sucked into the backpack and become invalid!",
+  "item.sophisticatedbackpacks.magnet_upgrade.tcr_info": "§cWarning! This item may cause important items to be sucked into the backpack and become invalid!",
   "item.tcrcore.abyss_core": "Abyss Essence",
   "item.tcrcore.abyss_core.usage": "Dropped by [The Leviathan] when defeated",
   "item.tcrcore.ancient_oracle_fragment": "Oracle Fragment",
@@ -291,6 +293,6 @@
   "tcrcore.task_desc.light_all_altar": "Light all altar.",
   "travelerstitles.tcrcore.sanctum": "Realm of the Dream",
   "unlock_tip.tcrcore.battleborn.fire_avoid": "Learned by defeating the §6[Bone Chimera]§r",
-  "unlock_tip.tcrcore.battleborn.water_avoid": "Learned by trading with villagers in §6[Coves]§r using emeralds",
+  "unlock_tip.tcrcore.battleborn.water_avoid1": "Learned by trading with §6[Ribbit]§f using §d[Block of Amethyst]§f",
   "unlock_tip.tcrcore.get_vatansever": "Unlocks after acquiring the §d[Vatansever]§f"
 }

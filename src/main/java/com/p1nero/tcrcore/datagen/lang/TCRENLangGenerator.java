@@ -40,6 +40,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addTask(TCRTaskManager.LIGHT_ALL_ALTAR, "Light all altar.");
         this.addTask(TCRTaskManager.GO_TO_OVERWORLD, "Go to Overworld");
 
+        this.addTCRItemInfo("§cWarning! This item may cause important items to be sucked into the backpack and become invalid!", net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_MAGNET_UPGRADE.get(), net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.MAGNET_UPGRADE.get());
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "Brewed using §c[Crystallized Blood Marrow]§r, a drop from §d[Nehemoth]§r");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "Obtained by defeating the §2[Warden]§r or §2[Captain Cornelia]§r");
         this.addTCRItemInfo(BlockFactorysBossesModItems.DRAGON_SKULL.get(), "Obtained by defeating the §c[Underworld Knight]§r or §4[Infernal Dragon]§r");
@@ -57,7 +58,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addKeyMapping(KeyMappings.SHOW_TASK, "Show/Hide Task");
 
         this.add("skill_tree.sword_soaring.unlock_tip", "Unlocked by trading with villagers in §6[Sky Island]§r using emeralds");
-        this.add("unlock_tip.tcrcore.battleborn.water_avoid", "Learned by trading with villagers in §6[Coves]§r using emeralds");
+        this.add("unlock_tip.tcrcore.battleborn.water_avoid1", "Learned by trading with §6[Ribbit]§f using §d[Block of Amethyst]§f");
         this.add("unlock_tip.tcrcore.battleborn.fire_avoid", "Learned by defeating the §6[Bone Chimera]§r");
         this.add("unlock_tip.tcrcore.get_vatansever", "Unlocks after acquiring the §d[Vatansever]§f");
         this.addSkill("water_avoid", "Water Avoidance Charm", "Allows free breathing underwater!");

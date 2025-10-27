@@ -12,6 +12,7 @@ import com.p1nero.tcrcore.save_data.TCRMainLevelSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WaypointUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
+import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import dev.ftb.mods.ftbquests.item.FTBQuestsItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -463,14 +464,17 @@ public class TCRPlayer {
                 if(item.is(ModItems.STORM_EYE.get()) && PlayerDataManager.stormEyeTraded.get(serverPlayer) && !PlayerDataManager.stormEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                     healthAdder += 2.0;
+                    ItemUtil.addItemEntity(serverPlayer, EpicSkillsItems.ABILIITY_STONE.get(), 1, ChatFormatting.GOLD.getColor());
                     PlayerDataManager.stormEyeBlessed.put(serverPlayer, true);
                 } else if(item.is(ModItems.ABYSS_EYE.get()) && PlayerDataManager.abyssEyeTraded.get(serverPlayer) && !PlayerDataManager.abyssEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                     healthAdder += 2.0;
+                    ItemUtil.addItemEntity(serverPlayer, EpicSkillsItems.ABILIITY_STONE.get(), 1, ChatFormatting.GOLD.getColor());
                     PlayerDataManager.abyssEyeBlessed.put(serverPlayer, true);
                 } else if(item.is(ModItems.DESERT_EYE.get()) && PlayerDataManager.desertEyeTraded.get(serverPlayer) && !PlayerDataManager.desertEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                     healthAdder += 2.0;
+                    ItemUtil.addItemEntity(serverPlayer, EpicSkillsItems.ABILIITY_STONE.get(), 2, ChatFormatting.GOLD.getColor());
                     PlayerDataManager.desertEyeBlessed.put(serverPlayer, true);
                     PlayerDataManager.canEnterNether.put(serverPlayer, true);
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
@@ -478,12 +482,14 @@ public class TCRPlayer {
                 } else if(item.is(ModItems.CURSED_EYE.get()) && PlayerDataManager.cursedEyeTraded.get(serverPlayer) && !PlayerDataManager.cursedEyeBlessed.get(serverPlayer)) {
                     ItemUtil.addItemEntity(serverPlayer, oracle, 1, ChatFormatting.LIGHT_PURPLE.getColor().intValue());
                     healthAdder += 2.0;
+                    ItemUtil.addItemEntity(serverPlayer, EpicSkillsItems.ABILIITY_STONE.get(), 3, ChatFormatting.GOLD.getColor());
                     PlayerDataManager.cursedEyeBlessed.put(serverPlayer, true);
                     PlayerDataManager.canEnterEnd.put(serverPlayer, true);
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("end_unlock").withStyle(ChatFormatting.LIGHT_PURPLE)));
                 } else if(item.is(ModItems.FLAME_EYE.get()) && PlayerDataManager.flameEyeTraded.get(serverPlayer) && !PlayerDataManager.flameEyeBlessed.get(serverPlayer)) {
                     healthAdder += 2.0;
+                    ItemUtil.addItemEntity(serverPlayer, EpicSkillsItems.ABILIITY_STONE.get(), 4, ChatFormatting.GOLD.getColor());
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     PlayerDataManager.flameEyeBlessed.put(serverPlayer, true);
                 } else if(item.is(ModItems.MONSTROUS_EYE.get()) && !PlayerDataManager.monstEyeBlessed.get(serverPlayer)) {

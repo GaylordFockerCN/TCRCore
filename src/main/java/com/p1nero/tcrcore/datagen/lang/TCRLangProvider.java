@@ -47,6 +47,12 @@ public abstract class TCRLangProvider extends LanguageProvider implements Dialog
         this.add(item.getDescriptionId() + ".tcr_info", info);
     }
 
+    public void addTCRItemInfo(String info, Item ...items) {
+        for (Item item : items) {
+            this.add(item.getDescriptionId() + ".tcr_info", info);
+        }
+    }
+
     /**
      * Skill 此时未注册不能run
      */

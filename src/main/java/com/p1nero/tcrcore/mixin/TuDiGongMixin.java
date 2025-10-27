@@ -2,7 +2,7 @@ package com.p1nero.tcrcore.mixin;
 
 import com.chaosthedude.explorerscompass.ExplorersCompass;
 import com.chaosthedude.naturescompass.NaturesCompass;
-import com.p1nero.dialog_lib.api.IEntityNpc;
+import com.p1nero.dialog_lib.api.custom.IEntityNpc;
 import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;

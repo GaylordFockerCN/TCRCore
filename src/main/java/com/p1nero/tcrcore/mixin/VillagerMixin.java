@@ -59,17 +59,13 @@ public abstract class VillagerMixin extends AbstractVillager {
             ItemStack mainHand = player.getMainHandItem();
             if (mainHand.is(Items.EMERALD)) {
                 CommandSourceStack commandSourceStack = serverPlayer.createCommandSourceStack().withPermission(2).withSuppressedOutput();
-                if(!PlayerDataManager.waterAvoidUnlocked.get(serverPlayer) && WorldUtil.isInStructure(serverPlayer, WorldUtil.COVES)) {
-                    Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s dodge_parry_reward:passive tcrcore:water_avoid true");
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill", Component.translatable(TCRSkills.WATER_AVOID.getTranslationKey()).withStyle(ChatFormatting.AQUA)), false);
-                    level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.PLAYERS, 1.0F, 1.0F);
-                    PlayerDataManager.waterAvoidUnlocked.put(serverPlayer, true);
-                } else if(!PlayerDataManager.swordSoaringUnlocked.get(serverPlayer) && WorldUtil.isInStructure(serverPlayer, WorldUtil.SKY_ISLAND)) {
+                if(!PlayerDataManager.swordSoaringUnlocked.get(serverPlayer) && WorldUtil.isInStructure(serverPlayer, WorldUtil.SKY_ISLAND)) {
                     Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s sword_soaring:sword_soaring_skills");
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("unlock_new_skill_page").withStyle(ChatFormatting.AQUA), false);
                     level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.PLAYERS, 1.0F, 1.0F);
                     PlayerDataManager.swordSoaringUnlocked.put(serverPlayer, true);
                 } else {
+                    //即返回原村民的交互操作，不拦截了
                     return;
                 }
                 mainHand.shrink(1);

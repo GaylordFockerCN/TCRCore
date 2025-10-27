@@ -4,11 +4,8 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRPlayer;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.MinecartItem;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -19,7 +16,7 @@ import java.util.Set;
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID)
 public class ItemEvents {
 
-    public static Set<Item> items = new HashSet<>();
+    public static Set<Item> additionalInfoItems = new HashSet<>();
     public static Set<Item> eyes = new HashSet<>();
 
     @SubscribeEvent
@@ -34,7 +31,7 @@ public class ItemEvents {
         }
         //TODO delete
 //        event.getToolTip().add(1, Component.literal(BuiltInRegistries.ITEM.getKey(event.getItemStack().getItem()).toString()));
-        if(items.contains(event.getItemStack().getItem())) {
+        if(additionalInfoItems.contains(event.getItemStack().getItem())) {
             event.getToolTip().add(1, Component.translatable(event.getItemStack().getItem().getDescriptionId() + ".tcr_info"));
         }
 

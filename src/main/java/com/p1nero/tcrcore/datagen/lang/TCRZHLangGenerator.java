@@ -40,6 +40,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addTask(TCRTaskManager.LIGHT_ALL_ALTAR, "将§6[神之眼]§r置于祭坛上");
         this.addTask(TCRTaskManager.GO_TO_OVERWORLD, "前往主世界");
 
+        this.addTCRItemInfo("§c警告！此物品可能导致重要道具被吸入背包而失效！", net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_MAGNET_UPGRADE.get(), net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.MAGNET_UPGRADE.get());
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "使用§d[尼赫莫斯]§r掉落物§c[晶化血髓]§r酿造获取");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "击败§2[监守者]§r或§2[可妮莉亚船长]§r获取");
         this.addTCRItemInfo(BlockFactorysBossesModItems.DRAGON_SKULL.get(), "击败§c[冥界骑士]§r或§4[炼狱魔龙]§r获取");
@@ -57,7 +58,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addKeyMapping(KeyMappings.SHOW_TASK, "隐藏/显示指引");
 
         this.add("skill_tree.sword_soaring.unlock_tip", "与§6[天空岛]§r村民用绿宝石交易解锁");
-        this.add("unlock_tip.tcrcore.battleborn.water_avoid", "使用绿宝石向§6[隐秘水湾]§r的村民交易习得");
+        this.add("unlock_tip.tcrcore.battleborn.water_avoid1", "使用§d[紫水晶块]§f向§6[呱呱]§f交易习得");
         this.add("unlock_tip.tcrcore.battleborn.fire_avoid", "击败§6[骸骨奇美拉]§r习得");
         this.add("unlock_tip.tcrcore.get_vatansever", "获得§d「卫疆刃」§f后解锁");
         this.addSkill("water_avoid", "避水咒", "可在水下自由呼吸！");

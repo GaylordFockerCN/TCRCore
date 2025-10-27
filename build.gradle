@@ -183,7 +183,7 @@ dependencies {
     implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7058350")
 //    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
     implementation fg.deobf("libs:p1nero_ec:20.12.0.3")
-    implementation fg.deobf("libs:p1nero_dl:1.6.0")
+    implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7152732")
     implementation fg.deobf("curse.maven:entity-respawner-1363764:7105518")
     implementation fg.deobf("libs:nightfall_invade:1.0.1")
     implementation fg.deobf("libs:mimic:1.0.0")
@@ -197,7 +197,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:radiant-gear-602199:6029352")
 
-    implementation fg.deobf("libs:tudigong:1.2.1")
+    implementation fg.deobf("libs:tudigong:1.3.0")
 //    implementation fg.deobf("curse.maven:tudigong-wayfinder-1350265:7076274")
     implementation fg.deobf("curse.maven:lithostitched-936015:6742615")//村庄插入
 

@@ -38,7 +38,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
 import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModEntities;
 import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModItems;
-import org.merlin204.wraithon.WraithonConfig;
 import org.slf4j.Logger;
 import yesman.epicfight.skill.SkillSlot;
 
@@ -96,7 +95,7 @@ public class TCRCoreMod {
                 ModEntities.DEEPLING.get(),
                 BlockFactorysBossesModEntities.FLAMING_SKELETON_GUARD_FIREBALL.get()
         ));
-        ItemEvents.items.addAll(List.of(
+        ItemEvents.additionalInfoItems.addAll(List.of(
                 ItemRegistry.BOTTLE_OF_BLOOD.get(),
                 BlockFactorysBossesModItems.DRAGON_SKULL.get(),
                 BlockFactorysBossesModItems.DRAGON_BONE.get(),
@@ -106,7 +105,9 @@ public class TCRCoreMod {
                 Items.DRAGON_EGG,
                 BlockFactorysBossesModItems.KNIGHT_SWORD.get(),
                 EFNItem.DEEPDARK_HEART.get(),
-                EpicSkillsItems.ABILIITY_STONE.get()
+                EpicSkillsItems.ABILIITY_STONE.get(),
+                net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.MAGNET_UPGRADE.get(),
+                net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_MAGNET_UPGRADE.get()
         ));
 
         ItemEvents.eyes.addAll(List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get(), ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get()));
