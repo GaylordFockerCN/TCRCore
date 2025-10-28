@@ -7,8 +7,8 @@
 			"rarity": "COMMON",
 			"content": "minecraft:coal",
 			"amount": {
-				"min": 256,
-				"max": 512
+				"min": 128,
+				"max": 256
 			},
 			"unitWorth": 100
 		},
@@ -18,8 +18,8 @@
 			"rarity": "COMMON",
 			"content": "minecraft:lapis_lazuli",
 			"amount": {
-				"min": 256,
-				"max": 512
+				"min": 128,
+				"max": 256
 			},
 			"unitWorth": 100
 		},
@@ -29,8 +29,8 @@
 			"rarity": "UNCOMMON",
 			"content": "minecraft:copper_ingot",
 			"amount": {
-				"min": 192,
-				"max": 384
+				"min": 96,
+				"max": 192
 			},
 			"unitWorth": 150
 		},
@@ -40,8 +40,8 @@
 			"rarity": "UNCOMMON",
 			"content": "minecraft:iron_ingot",
 			"amount": {
-				"min": 192,
-				"max": 384
+				"min": 96,
+				"max": 192
 			},
 			"unitWorth": 150
 		},
@@ -51,8 +51,8 @@
 			"rarity": "UNCOMMON",
 			"content": "minecraft:gold_ingot",
 			"amount": {
-				"min": 192,
-				"max": 384
+				"min": 96,
+				"max": 192
 			},
 			"unitWorth": 150
 		},
@@ -62,8 +62,8 @@
 			"rarity": "RARE",
 			"content": "minecraft:emerald",
 			"amount": {
-				"min": 64,
-				"max": 256
+				"min": 32,
+				"max": 128
 			},
 			"unitWorth": 200
 		},
@@ -73,8 +73,8 @@
 			"rarity": "RARE",
 			"content": "minecraft:diamond",
 			"amount": {
-				"min": 64,
-				"max": 256
+				"min": 32,
+				"max": 128
 			},
 			"unitWorth": 200
 		},
@@ -84,8 +84,8 @@
 			"rarity": "LEGENDARY",
 			"content": "minecraft:netherite_ingot",
 			"amount": {
-				"min": 4,
-				"max": 16
+				"min": 1,
+				"max": 4
 			},
 			"unitWorth": 1000
 		},
@@ -95,8 +95,8 @@
 			"rarity": "EPIC",
 			"content": "fantasy_armor:moon_crystal",
 			"amount": {
-				"min": 4,
-				"max": 16
+				"min": 1,
+				"max": 4
 			},
 			"unitWorth": 700
 		}

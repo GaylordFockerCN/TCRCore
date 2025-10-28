@@ -7,7 +7,7 @@
 			"content": "alexsmobs:bone_serpent",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1000
 		},
@@ -18,7 +18,7 @@
 			"content": "alexsmobs:centipede_head",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1001
 		},
@@ -29,7 +29,7 @@
 			"content": "alexsmobs:crimson_mosquito",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1002
 		},
@@ -40,7 +40,7 @@
 			"content": "alexsmobs:guster",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1003
 		},
@@ -51,7 +51,7 @@
 			"content": "alexsmobs:soul_vulture",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1004
 		},
@@ -62,7 +62,7 @@
 			"content": "alexsmobs:froststalker",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1005
 		},
@@ -73,7 +73,7 @@
 			"content": "alexsmobs:tusklin",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1006
 		},
@@ -84,7 +84,7 @@
 			"content": "alexsmobs:rocky_roller",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1007
 		},
@@ -95,7 +95,7 @@
 			"content": "alexsmobs:skelewag",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1008
 		},
@@ -106,7 +106,7 @@
 			"content": "alexsmobs:skreecher",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1009
 		},
@@ -117,7 +117,7 @@
 			"content": "block_factorys_bosses:soul_knight_wither_skeleton",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1010
 		},
@@ -128,7 +128,7 @@
 			"content": "block_factorys_bosses:soul_skeleton",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1011
 		},
@@ -139,7 +139,7 @@
 			"content": "block_factorys_bosses:flaming_skeleton_guard_sword",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1012
 		},
@@ -150,7 +150,7 @@
 			"content": "block_factorys_bosses:dragon_guard_sword",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1013
 		},
@@ -161,7 +161,7 @@
 			"content": "fromtheshadows:cleric",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1014
 		},
@@ -172,7 +172,7 @@
 			"content": "mowziesmobs:foliaath",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1015
 		},
@@ -183,7 +183,7 @@
 			"content": "mowziesmobs:umvuthana",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1016
 		},
@@ -194,7 +194,7 @@
 			"content": "mowziesmobs:umvuthana_raptor",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1017
 		},
@@ -205,7 +205,7 @@
 			"content": "mowziesmobs:umvuthana_crane",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1018
 		},
@@ -227,7 +227,7 @@
 			"content": "trials:bogged",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1020
 		},
@@ -238,7 +238,7 @@
 			"content": "trials:breeze",
 			"amount": {
 				"min": 1,
-				"max": 3
+				"max": 1
 			},
 			"unitWorth": 1021
 		}
