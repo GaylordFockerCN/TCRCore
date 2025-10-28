@@ -1,7 +1,7 @@
 {
 	default_hide_dependency_lines: true
 	default_quest_shape: ""
-	filename: "chaptertcr2"
+	filename: "wu_qi"
 	group: ""
 	hide_quest_until_deps_visible: true
 	icon: "cataclysm:ceraunus"
@@ -764,7 +764,13 @@
 				""
 				"{ftbquests.chapter.chaptertcr2.quest401042223978499222.description1}"
 			]
-			icon: "p1nero_bow:mortis"
+			icon: {
+				Count: 1
+				id: "p1nero_bow:mortis"
+				tag: {
+					Damage: 0
+				}
+			}
 			icon_scale: 1.5d
 			id: "0590C9C7242BCC96"
 			rewards: [{
@@ -777,7 +783,13 @@
 			subtitle: "{ftbquests.chapter.chaptertcr2.quest401042223978499222.subtitle}"
 			tasks: [{
 				id: "4C5C12FB9A27DB22"
-				item: "p1nero_bow:mortis"
+				item: {
+					Count: 1
+					id: "p1nero_bow:mortis"
+					tag: {
+						Damage: 0
+					}
+				}
 				optional_task: true
 				type: "item"
 			}]

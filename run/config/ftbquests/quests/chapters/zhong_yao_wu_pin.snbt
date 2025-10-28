@@ -1,0 +1,413 @@
+{
+	default_hide_dependency_lines: true
+	default_quest_shape: ""
+	filename: "zhong_yao_wu_pin"
+	group: ""
+	icon: "tcrcore:ancient_oracle_fragment"
+	id: "252FC81556BE3D4B"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest6337146310170777825.description1}"]
+			id: "57F210FE536818E1"
+			invisible: true
+			rewards: [{
+				id: "2DCC8895D83C14B4"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest6337146310170777825.subtitle}"
+			tasks: [{
+				id: "1222BA314401C853"
+				item: "tcrcore:ancient_oracle_fragment"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 4.0d
+		}
+		{
+			description: [
+				"{ftbquests.chapter.252FC81556BE3D4B.quest2021770627758923696.description1}"
+				"{ftbquests.chapter.252FC81556BE3D4B.quest2021770627758923696.description2}"
+				"{ftbquests.chapter.252FC81556BE3D4B.quest2021770627758923696.description3}"
+				"{ftbquests.chapter.252FC81556BE3D4B.quest2021770627758923696.description4}"
+				"{ftbquests.chapter.252FC81556BE3D4B.quest2021770627758923696.description5}"
+			]
+			id: "1C0EC5AC94E39FB0"
+			invisible: true
+			rewards: [{
+				id: "205FD6956B60B9A1"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest2021770627758923696.subtitle}"
+			tasks: [{
+				id: "309B4BEAAF17C057"
+				item: "minecraft:netherite_ingot"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"{ftbquests.chapter.252FC81556BE3D4B.quest5964140097553142986.description1}"
+				"{ftbquests.chapter.252FC81556BE3D4B.quest5964140097553142986.description2}"
+				"{ftbquests.chapter.252FC81556BE3D4B.quest5964140097553142986.description3}"
+			]
+			id: "52C4E1D1C15194CA"
+			invisible: true
+			rewards: [{
+				id: "10EAC68F67849046"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest5964140097553142986.subtitle}"
+			tasks: [{
+				id: "185E16B75258B485"
+				item: "fantasy_armor:moon_crystal"
+				type: "item"
+			}]
+			x: -8.0d
+			y: -4.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest5944135541529370519.description1}"]
+			id: "527DCFC819A1DF97"
+			invisible: true
+			rewards: [{
+				id: "589978CE9FB6A972"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest5944135541529370519.subtitle}"
+			tasks: [{
+				id: "2045D4FF8DDFFC5D"
+				item: "aquamirae:shell_horn"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -4.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest2205299458336238367.description1}"]
+			id: "1E9ACC2C557E2B1F"
+			invisible: true
+			rewards: [{
+				id: "2CF06ADF36F45E90"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest2205299458336238367.subtitle}"
+			tasks: [{
+				id: "1C87E186C57947A3"
+				item: "aquamirae:frozen_key"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -4.0d
+		}
+		{
+			description: [
+				"{ftbquests.chapter.252FC81556BE3D4B.quest2643745248865061760.description1}"
+				"{ftbquests.chapter.252FC81556BE3D4B.quest2643745248865061760.description2}"
+			]
+			id: "24B0784BF33A8B80"
+			invisible: true
+			rewards: [{
+				id: "48F597CFF8864425"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest2643745248865061760.subtitle}"
+			tasks: [{
+				id: "5734585C12BEE415"
+				item: "aquamirae:ship_graveyard_echo"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -4.0d
+		}
+		{
+			description: [
+				"{ftbquests.chapter.252FC81556BE3D4B.quest7775256599894434225.description1}"
+				"{ftbquests.chapter.252FC81556BE3D4B.quest7775256599894434225.description2}"
+			]
+			id: "6BE742AEBA3821B1"
+			invisible: true
+			rewards: [{
+				id: "35B811FC996F2B04"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest7775256599894434225.subtitle}"
+			tasks: [{
+				id: "59FA63A1E93D791D"
+				item: "efn:deepdark_heart"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest2169869265315588366.description1}"]
+			id: "1E1CEC99B02C690E"
+			invisible: true
+			rewards: [{
+				id: "0B28CF2F97BE551E"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest2169869265315588366.subtitle}"
+			tasks: [{
+				id: "68589446E31CEBCB"
+				item: "fromtheshadows:crimson_shell"
+				type: "item"
+			}]
+			x: 8.0d
+			y: -4.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest1702170312402154650.description1}"]
+			id: "179F52E171F2349A"
+			invisible: true
+			rewards: [{
+				id: "681A4A2899C201A5"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest1702170312402154650.subtitle}"
+			tasks: [{
+				id: "65A2A1AF34BD942E"
+				item: "dodosmobs:chimera_claw"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 4.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest3488672777360054910.description1}"]
+			id: "306A4168401F1A7E"
+			invisible: true
+			rewards: [{
+				id: "7FCB2FA4CF95DCFF"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest3488672777360054910.subtitle}"
+			tasks: [{
+				id: "3BA2F11F32F34F31"
+				item: "fromtheshadows:crystallized_blood"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest7623977956706730271.description1}"]
+			id: "69CDCF8EDCE9C11F"
+			invisible: true
+			rewards: [{
+				id: "78860CD85BDFBDDF"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest7623977956706730271.subtitle}"
+			tasks: [{
+				id: "0869C255D4AA8C63"
+				item: "fromtheshadows:corrupted_heart"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest7275702007544484942.description1}"]
+			id: "64F87C6D7349144E"
+			invisible: true
+			rewards: [{
+				id: "5107EC13B8F3B2DE"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest7275702007544484942.subtitle}"
+			tasks: [{
+				id: "51CB435E844D93D5"
+				item: "efn:duskfire_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -8.0d
+		}
+		{
+			description: [
+				"{ftbquests.chapter.252FC81556BE3D4B.quest1521002339387395093.description1}"
+				"{ftbquests.chapter.252FC81556BE3D4B.quest1521002339387395093.description2}"
+				"{ftbquests.chapter.252FC81556BE3D4B.quest1521002339387395093.description3}"
+			]
+			id: "151BAF91ADB94C15"
+			invisible: true
+			rewards: [{
+				id: "52B1648EBFAD2C73"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest1521002339387395093.subtitle}"
+			tasks: [{
+				id: "4175D8CDD1D12E87"
+				item: "epicskills:ability_stone"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest3458476712436019723.description1}"]
+			id: "2FFEFA3F04B5B20B"
+			invisible: true
+			rewards: [{
+				id: "59B30C211E97C81B"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest3458476712436019723.subtitle}"
+			tasks: [{
+				id: "623BD26731DEC673"
+				item: "tcrcore:proof_of_adventure"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest5557331432936050401.description1}"]
+			id: "4D1F9B7E87440EE1"
+			invisible: true
+			rewards: [{
+				id: "6FF415997FE9CB5C"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest5557331432936050401.subtitle}"
+			tasks: [{
+				id: "4C0B87B68AEB84A1"
+				item: "fdbosses:lightning_core"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest7990469202542007160.description1}"]
+			id: "6EE3D96786371378"
+			invisible: true
+			rewards: [{
+				id: "67CE06C2F9F5001C"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest7990469202542007160.subtitle}"
+			tasks: [{
+				id: "68943AAFCB84C2FB"
+				item: "fdbosses:fire_and_ice_core"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest6795423405472902442.description1}"]
+			id: "5E4E319565966D2A"
+			invisible: true
+			rewards: [{
+				id: "496DD201148A23A0"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest6795423405472902442.subtitle}"
+			tasks: [{
+				id: "7F02CF3CF1D93B5F"
+				item: "cataclysm:abyssal_sacrifice"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 8.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest8872242641152191514.description1}"]
+			id: "7B2089ACCAF32C1A"
+			invisible: true
+			rewards: [{
+				id: "46EB04ECD4E76CF6"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest8872242641152191514.subtitle}"
+			tasks: [{
+				id: "2F747DB2BD8F3BF2"
+				item: "cataclysm:necklace_of_the_desert"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			description: ["{ftbquests.chapter.252FC81556BE3D4B.quest1310141621149818918.description1}"]
+			id: "122E8EDCEE16E026"
+			invisible: true
+			rewards: [{
+				id: "3946C8BDB5FE5C85"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.252FC81556BE3D4B.quest1310141621149818918.subtitle}"
+			tasks: [{
+				id: "7A0A165B8D7FF61D"
+				item: "cataclysm:strange_key"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 8.0d
+		}
+	]
+	title: "{ftbquests.chapter.252FC81556BE3D4B.title}"
+}

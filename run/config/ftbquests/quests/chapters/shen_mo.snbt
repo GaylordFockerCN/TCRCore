@@ -1,7 +1,7 @@
 {
 	default_hide_dependency_lines: true
 	default_quest_shape: ""
-	filename: "6E911C0C47606679"
+	filename: "shen_mo"
 	group: ""
 	hide_quest_until_deps_visible: true
 	icon: "cataclysm:altar_of_fire"
@@ -118,12 +118,6 @@
 			id: "6FD4134465F4B80A"
 			rewards: [
 				{
-					count: 5
-					id: "33F7F3DB93C195CE"
-					item: "epicskills:ability_stone"
-					type: "item"
-				}
-				{
 					id: "4554E5EA99136194"
 					item: "tcrcore:rare_artifact_ticket"
 					type: "item"
@@ -158,12 +152,6 @@
 			id: "460AD9F2064DC761"
 			rewards: [
 				{
-					count: 5
-					id: "7B4F9FCDF7CF600F"
-					item: "epicskills:ability_stone"
-					type: "item"
-				}
-				{
 					id: "4BBDF4006D681216"
 					item: "tcrcore:rare_artifact_ticket"
 					type: "item"
@@ -196,12 +184,6 @@
 			]
 			id: "588584D95F9A501F"
 			rewards: [
-				{
-					count: 5
-					id: "16E7BEA1F0909A4F"
-					item: "epicskills:ability_stone"
-					type: "item"
-				}
 				{
 					id: "757372A10D9DCEF2"
 					item: "tcrcore:rare_artifact_ticket"
@@ -237,12 +219,6 @@
 			]
 			id: "3B4BBA5C2B7507EB"
 			rewards: [
-				{
-					count: 5
-					id: "6F3F90AF6A082B1E"
-					item: "epicskills:ability_stone"
-					type: "item"
-				}
 				{
 					id: "524085BD4C2D0366"
 					item: "tcrcore:rare_artifact_ticket"
@@ -280,12 +256,6 @@
 			]
 			id: "0C0A726EABBAB2E8"
 			rewards: [
-				{
-					count: 5
-					id: "786ED5571C1BD1E7"
-					item: "epicskills:ability_stone"
-					type: "item"
-				}
 				{
 					id: "4CF3CE22F74D8719"
 					item: "tcrcore:rare_artifact_ticket"
@@ -345,9 +315,9 @@
 			description: [
 				"{ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.description1}"
 				""
-				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6B63BADC1AD47A2B\"}}]"
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.rich_description1\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6B63BADC1AD47A2B\"}}]"
 				""
-				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.rich_description3\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.rich_description4\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1779FEDC1CD752E9\"}}]"
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1779FEDC1CD752E9\"}}]"
 			]
 			id: "2BF1F71D59A76031"
 			rewards: [{
@@ -571,7 +541,7 @@
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest9130988065080719209.subtitle}"
 			tasks: [{
 				entity: "minecraft:wither"
-				icon: "minecraft:wither_rose"
+				icon: "minecraft:nether_star"
 				id: "306DADBC7A51E380"
 				type: "kill"
 				value: 1L
@@ -598,7 +568,7 @@
 			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest738709073673023169.subtitle}"
 			tasks: [{
 				entity: "minecraft:ender_dragon"
-				icon: "minecraft:ender_eye"
+				icon: "minecraft:dragon_egg"
 				id: "10A8B6DE432B127E"
 				type: "kill"
 				value: 1L
@@ -667,8 +637,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.6E911C0C47606679.quest1186352138456383122.title}"
-			x: 1.3d
-			y: -5.0d
+			x: 1.0d
+			y: -5.5d
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
@@ -772,12 +742,6 @@
 			id: "3CD75C4FCB8D8CBC"
 			rewards: [
 				{
-					count: 5
-					id: "0822E74871CDA04C"
-					item: "epicskills:ability_stone"
-					type: "item"
-				}
-				{
 					id: "678A5990827C5D7B"
 					item: "tcrcore:rare_artifact_ticket"
 					type: "item"
@@ -832,12 +796,6 @@
 			id: "52F6B6200AB100C4"
 			rewards: [
 				{
-					count: 5
-					id: "3D05CF27A139B072"
-					item: "epicskills:ability_stone"
-					type: "item"
-				}
-				{
 					id: "0EC321F5EE04A543"
 					item: "tcrcore:rare_artifact_ticket"
 					type: "item"
@@ -875,12 +833,6 @@
 			]
 			id: "660B6B2EE98EF82A"
 			rewards: [
-				{
-					count: 5
-					id: "37A3A06CC5F00D2E"
-					item: "epicskills:ability_stone"
-					type: "item"
-				}
 				{
 					id: "6018A9DAFAD701DC"
 					item: "tcrcore:rare_artifact_ticket"
@@ -927,6 +879,66 @@
 			}]
 			x: 1.0d
 			y: 10.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			icon_scale: 1.5d
+			id: "75FC56E08479B2AD"
+			rewards: [
+				{
+					count: 4
+					id: "0AD970BFFFF2A83C"
+					item: "epicskills:ability_stone"
+					type: "item"
+				}
+				{
+					id: "5754A182B81A369F"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+			]
+			shape: "none"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest8501765718863884973.subtitle}"
+			tasks: [{
+				entity: "alexsmobs:void_worm"
+				icon: "alexsmobs:mysterious_worm"
+				id: "3820BA9AE2646328"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest8501765718863884973.title}"
+			x: -3.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			icon_scale: 1.5d
+			id: "3956BC43F4840662"
+			rewards: [
+				{
+					count: 4
+					id: "6CD15AA668DCE8B6"
+					item: "epicskills:ability_stone"
+					type: "item"
+				}
+				{
+					id: "71C6E2E944EF9199"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+			]
+			shape: "none"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest4131696708210132578.subtitle}"
+			tasks: [{
+				entity: "block_factorys_bosses:underworld_knight"
+				icon: "block_factorys_bosses:underworld_knight_spawn_egg"
+				id: "4382E046C5664F42"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest4131696708210132578.title}"
+			x: 4.0d
+			y: -5.5d
 		}
 	]
 	title: "{ftbquests.chapter.6E911C0C47606679.title}"

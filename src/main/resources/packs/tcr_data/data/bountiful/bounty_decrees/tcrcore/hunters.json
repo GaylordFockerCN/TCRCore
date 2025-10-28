@@ -1,0 +1,10 @@
+{
+	"objectives": [
+		"hunters_normal_objs",
+		"hunters_hard_objs"
+	],
+	"rewards": [
+		"hunters_normal_rews",
+		"hunters_hard_rews"
+	]
+}

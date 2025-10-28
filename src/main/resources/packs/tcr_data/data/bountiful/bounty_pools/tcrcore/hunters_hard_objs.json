@@ -1,0 +1,269 @@
+{
+	"content": {
+
+		"hunters_hard_obj_void_worm": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "alexsmobs:void_worm",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 200
+		},
+
+		"hunters_hard_obj_infernal_dragon": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "block_factorys_bosses:infernal_dragon",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 400
+		},
+
+		"hunters_hard_obj_sandworm": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "block_factorys_bosses:sandworm",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 401
+		},
+
+		"hunters_hard_obj_yeti": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "block_factorys_bosses:yeti",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 402
+		},
+
+		"hunters_hard_obj_underworld_knight": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "block_factorys_bosses:underworld_knight",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 403
+		},
+
+		"hunters_hard_obj_nehemoth": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "fromtheshadows:nehemoth",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 500
+		},
+
+		"hunters_hard_obj_malkuth": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "fdbosses:malkuth",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 201
+		},
+
+		"hunters_hard_obj_chesed": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "fdbosses:chesed",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 202
+		},
+
+		"hunters_hard_obj_ferrous_wroughtnaut": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "mowziesmobs:ferrous_wroughtnaut",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 404
+		},
+		"hunters_hard_obj_umvuthi": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "mowziesmobs:umvuthi",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 405
+		},
+
+		"hunters_hard_obj_frostmaw": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "mowziesmobs:frostmaw",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 406
+		},
+
+		"hunters_hard_obj_cloud_golem": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:cloud_golem",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 203
+		},
+
+		"hunters_hard_obj_endersent": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:endersent",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 407
+		},
+
+		"hunters_hard_obj_shulker_mimic": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:shulker_mimic",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 408
+		},
+
+		"hunters_hard_obj_skeletosaurus": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:skeletosaurus",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 409
+		},
+
+		"hunters_hard_obj_withered_abomination": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:withered_abomination",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 410
+		},
+
+		"hunters_hard_obj_lava_eater": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:lava_eater",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 411
+		},
+
+		"hunters_hard_obj_frostbitten_golem": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:frostbitten_golem",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 412
+		},
+
+		"hunters_hard_obj_overgrown_colossus": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:overgrown_colossus",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 413
+		},
+
+		"hunters_hard_obj_ancient_guardian": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:ancient_guardian",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 414
+		},
+
+		"hunters_hard_obj_posessed_paladin": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:posessed_paladin",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 415
+		},
+
+		"hunters_hard_obj_dune_sentinel": {
+			"type": "entity",
+			"timeMult": 10.0,
+			"rarity": "LEGENDARY",
+			"content": "legendary_monsters:dune_sentinel",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 416
+		}
+
+	}
+
+}
