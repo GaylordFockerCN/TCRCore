@@ -482,7 +482,7 @@
 	ScyllaHealthMultiplier = 1.0
 	#Scylla's Damage Multiplier
 	#Range: 0.0 ~ 1000000.0
-	ScyllaDamageMultiplier = 1.0
+	ScyllaDamageMultiplier = 0.7
 	#Scylla's Immune to Long distance attack range.
 	#Range: 1.0 ~ 1000000.0
 	"Scylla's prevent attacks from far away Range" = 10.0

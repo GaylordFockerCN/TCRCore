@@ -1,0 +1,15 @@
+{
+  "name": "villager_castle",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/rare/villager_castle",
+              "projection": "rigid",
+              "processors": "trek:mossify_20_percent"
+          }
+      }
+  ]
+}

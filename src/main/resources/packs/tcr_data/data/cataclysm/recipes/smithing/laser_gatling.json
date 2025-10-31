@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:nether_star"
+    },
+    "base": {
+        "item": "uniqueaccessories:magick_quiver"
+    },
+    "result": {
+        "item": "cataclysm:laser_gatling"
+    },
+    "template": {
+        "item": "cataclysm:witherite_ingot"
+    }
+}

@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore.item.custom;
 
+import com.p1nero.tcrcore.capability.TCRPlayer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -23,6 +24,9 @@ public class OracleItem extends SimpleDescriptionItem{
             if(!Minecraft.getInstance().isSingleplayer()) {
                 list.add(Component.translatable(this.getDescriptionId() + ".usage2").withStyle(ChatFormatting.GRAY));
             }
+        }
+        if(itemStack.hasTag() && itemStack.getOrCreateTag().contains(TCRPlayer.PLAYER_NAME)) {
+            list.add(Component.literal("——" + itemStack.getOrCreateTag().getString(TCRPlayer.PLAYER_NAME)).withStyle(ChatFormatting.AQUA));
         }
     }
 }

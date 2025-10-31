@@ -1,0 +1,78 @@
+{
+  "name": "rocks",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 3,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/very_common/crystal_rock",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 10,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/very_common/mid_rock_thin",
+              "projection": "terrain_matching",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 10,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/very_common/short_rock",
+              "projection": "terrain_matching",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 10,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/very_common/short_wide_1",
+              "projection": "terrain_matching",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 10,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/very_common/short_wide_2",
+              "projection": "terrain_matching",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 6,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/very_common/short_wide_3",
+              "projection": "terrain_matching",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 10,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/very_common/tall_thin_2",
+              "projection": "terrain_matching",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 10,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/very_common/tall_wide_3",
+              "projection": "terrain_matching",
+              "processors": "minecraft:empty"
+          }
+      }
+  ]
+}

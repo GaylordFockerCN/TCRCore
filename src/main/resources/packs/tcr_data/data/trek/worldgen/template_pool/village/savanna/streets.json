@@ -1,0 +1,78 @@
+{
+  "name": "streets",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/streets/corner_01",
+        "processors": "minecraft:street_savanna",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/streets/corner_02",
+        "processors": "minecraft:street_savanna",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/streets/straight_01",
+        "processors": "minecraft:street_savanna",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/streets/straight_02",
+        "processors": "minecraft:street_savanna",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/streets/straight_03",
+        "processors": "minecraft:street_savanna",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/streets/straight_04",
+        "processors": "minecraft:street_savanna",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/streets/circle_01",
+        "processors": "minecraft:street_savanna",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/streets/circle_02",
+        "processors": "minecraft:street_savanna",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    }
+  ],
+  "fallback": "trek:village/savanna/terminators"
+}

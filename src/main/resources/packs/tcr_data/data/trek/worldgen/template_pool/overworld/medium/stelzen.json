@@ -1,0 +1,24 @@
+{
+  "name": "stelzen",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/stelzen_1",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      },
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/stelzen_2",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      }
+  ]
+}

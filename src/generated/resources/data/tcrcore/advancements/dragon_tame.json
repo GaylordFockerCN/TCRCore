@@ -1,0 +1,40 @@
+{
+  "parent": "tcrcore:tcrcore",
+  "criteria": {
+    "dragon_tame": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "monsterexpansion:skrythe"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tame_animal"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.tcrcore.dragon_tame.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "monsterexpansion:skrythe_wing_membrane"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.tcrcore.dragon_tame"
+    }
+  },
+  "requirements": [
+    [
+      "dragon_tame"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

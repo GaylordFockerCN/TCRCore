@@ -1,0 +1,6 @@
+{
+  "values": [
+    "minecraft:mangrove_swamp",
+    {"id": "biomesoplenty:bayou","required": false}
+  ]
+}

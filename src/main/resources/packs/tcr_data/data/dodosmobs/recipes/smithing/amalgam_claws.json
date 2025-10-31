@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "dodosmobs:chimera_claw"
+    },
+    "base": {
+        "item": "epicfight:netherite_dagger"
+    },
+    "result": {
+        "item": "dodosmobs:amalgam_claws"
+    },
+    "template": {
+        "item": "minecraft:netherite_ingot"
+    }
+}

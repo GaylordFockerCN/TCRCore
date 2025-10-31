@@ -1,0 +1,8 @@
+{
+  "values": [
+    {"id": "terralith:siberian_grove","required": false},
+    {"id": "terralith:wintry_forest","required": false},
+    {"id": "terralith:wintry_lowlands","required": false},
+    {"id": "biomesoplenty:snowy_coniferous_forest","required": false}
+  ]
+}

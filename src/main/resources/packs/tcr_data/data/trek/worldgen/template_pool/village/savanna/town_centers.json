@@ -1,0 +1,86 @@
+{
+  "name": "town_centers",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/town_centers/savanna_market_1",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 110
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/town_centers/savanna_teepee_crossing_1",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 110
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/town_centers/savanna_totem_1",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 110
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/savanna/town_centers/savanna_tree_crossing_1",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 110
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "minecraft:village/savanna/zombie/town_centers/savanna_meeting_point_1",
+        "processors": "minecraft:zombie_savanna",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "minecraft:village/savanna/zombie/town_centers/savanna_meeting_point_2",
+        "processors": "minecraft:zombie_savanna",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "minecraft:village/savanna/zombie/town_centers/savanna_meeting_point_3",
+        "processors": "minecraft:zombie_savanna",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "minecraft:village/savanna/zombie/town_centers/savanna_meeting_point_4",
+        "processors": "minecraft:zombie_savanna",
+        "projection": "rigid"
+      },
+      "weight": 3
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

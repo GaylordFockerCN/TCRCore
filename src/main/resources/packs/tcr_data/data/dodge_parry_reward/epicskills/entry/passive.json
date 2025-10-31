@@ -209,7 +209,7 @@
       "skill": "tcrcore:water_avoid",
       "position_in_screen": [223, 250],
       "custom_condition": true,
-      "unlock_tip": "unlock_tip.tcrcore.battleborn.water_avoid"
+      "unlock_tip": "unlock_tip.tcrcore.battleborn.water_avoid1"
     },
     {
       "skill": "tcrcore:fire_avoid",

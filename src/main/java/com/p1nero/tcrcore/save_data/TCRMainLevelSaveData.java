@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.save_data;
 
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.storage.DimensionDataStorage;
 import org.jetbrains.annotations.NotNull;
 
 public class TCRMainLevelSaveData extends SavedData {
+    private BlockPos villagePos = BlockPos.ZERO;
     private BlockPos abyssPos = BlockPos.ZERO;
     private BlockPos desertPos = BlockPos.ZERO;
     private BlockPos stormPos = BlockPos.ZERO;
@@ -60,8 +62,16 @@ public class TCRMainLevelSaveData extends SavedData {
         }
     }
 
-    public static TCRMainLevelSaveData create() {
+    private static TCRMainLevelSaveData create() {
         return new TCRMainLevelSaveData();
+    }
+
+    public void setVillagePos(BlockPos villagePos) {
+        this.villagePos = villagePos;
+    }
+
+    public BlockPos getVillagePos() {
+        return villagePos;
     }
 
     public void setAbyssPos(BlockPos abyssPos) {
@@ -170,6 +180,9 @@ public class TCRMainLevelSaveData extends SavedData {
         pCompoundTag.putInt("covesPosX", abyssPos.getX());
         pCompoundTag.putInt("covesPosY", abyssPos.getY());
         pCompoundTag.putInt("covesPosZ", abyssPos.getZ());
+        pCompoundTag.putInt("villagePosX", villagePos.getX());
+        pCompoundTag.putInt("villagePosY", villagePos.getY());
+        pCompoundTag.putInt("villagePosZ", villagePos.getZ());
 
         pCompoundTag.putInt("desertPosX", desertPos.getX());
         pCompoundTag.putInt("desertPosY", desertPos.getY());
@@ -198,6 +211,11 @@ public class TCRMainLevelSaveData extends SavedData {
     }
 
     public void load(CompoundTag nbt) {
+        this.villagePos = new BlockPos(
+                nbt.getInt("villagePosX"),
+                nbt.getInt("villagePosY"),
+                nbt.getInt("vZ")
+        );
         this.abyssPos = new BlockPos(
                 nbt.getInt("covesPosX"),
                 nbt.getInt("covesPosY"),
@@ -239,7 +257,7 @@ public class TCRMainLevelSaveData extends SavedData {
     }
 
     public static TCRMainLevelSaveData get(ServerLevel worldIn) {
-        ServerLevel world = worldIn.getServer().getLevel(ServerLevel.OVERWORLD);
+        ServerLevel world = worldIn.getServer().getLevel(TCRDimensions.SANCTUM_LEVEL_KEY);
         DimensionDataStorage dataStorage = world.getDataStorage();
         TCRMainLevelSaveData levelSaveData = dataStorage.computeIfAbsent(TCRMainLevelSaveData::decode, TCRMainLevelSaveData::create, TCRMainLevelSaveData.NAME);
         levelSaveData.setLevel(world);

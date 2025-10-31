@@ -17,6 +17,7 @@ import org.lwjgl.glfw.GLFW;
 public class KeyMappings {
 
 	public static final KeyMapping RIPTIDE = new KeyMapping(buildKey("riptide"), GLFW.GLFW_KEY_LEFT_ALT, "key.categories." + TCRCoreMod.MOD_ID);
+    public static final KeyMapping SHOW_TASK = new KeyMapping(buildKey("show_task"), GLFW.GLFW_KEY_J, "key.categories." + TCRCoreMod.MOD_ID);
 
 	public static String buildKey(String name){
 		return "key." + TCRCoreMod.MOD_ID + "." + name;

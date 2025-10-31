@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:blaze_rod"
+    },
+    "base": {
+        "item": "magistuarmory:netherite_heavywarhammer"
+    },
+    "result": {
+        "item": "cataclysm:infernal_forge"
+    },
+    "template": {
+        "item": "cataclysm:monstrous_horn"
+    }
+}

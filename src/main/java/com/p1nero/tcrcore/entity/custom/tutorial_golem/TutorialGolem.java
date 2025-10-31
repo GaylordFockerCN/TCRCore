@@ -38,7 +38,7 @@ public class TutorialGolem extends IronGolem {
 
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 100.0f)
+                .add(Attributes.MAX_HEALTH, 1000.0f)
                 .add(Attributes.ATTACK_DAMAGE, 0.01f)
                 .add(Attributes.ATTACK_SPEED, 1.0F)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f)
@@ -61,7 +61,7 @@ public class TutorialGolem extends IronGolem {
     @Override
     public boolean hurt(@NotNull DamageSource source, float value) {
         if(source.getEntity() instanceof ServerPlayer serverPlayer) {
-            serverPlayer.displayClientMessage(TCRCoreMod.getInfo("hurt_damage", value).withStyle(ChatFormatting.RED), false);
+            serverPlayer.displayClientMessage(TCRCoreMod.getInfo("hurt_damage", String.format("%.2f", value)).withStyle(ChatFormatting.RED), false);
             if(PlayerDataManager.locked.get(serverPlayer)) {
                 this.addEffect(new MobEffectInstance(EpicFightMobEffects.INSTABILITY.get(), 200, 1));
             } else {
@@ -75,6 +75,9 @@ public class TutorialGolem extends IronGolem {
 
     @Override
     public void die(@NotNull DamageSource damageSource) {
+        if(damageSource.isCreativePlayer()) {
+            super.die(damageSource);
+        }
         this.setHealth(this.getMaxHealth());
     }
 

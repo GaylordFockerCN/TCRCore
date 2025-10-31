@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:nether_star"
+    },
+    "base": {
+        "item": "uniqueaccessories:small_propulsion_device"
+    },
+    "result": {
+        "item": "cataclysm:wither_assault_shoulder_weapon"
+    },
+    "template": {
+        "item": "cataclysm:witherite_ingot"
+    }
+}

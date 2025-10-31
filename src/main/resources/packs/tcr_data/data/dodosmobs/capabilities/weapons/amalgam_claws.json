@@ -1,13 +1,20 @@
 {
 	"attributes":
 	{
-		"common":
+		"one_hand":
 		{
-			"impact":0.5,
-			"max_strikes":1
+			"armor_negation":10.0,
+			"max_strikes":0,
+			"impact":0.9
+		},
+		"two_hand":
+		{
+			"armor_negation":10.0,
+			"max_strikes":1,
+			"impact":0.9
 		}
 	},
 	"hit_particle":"blunt",
 	"hit_sound":"entity.hit.blunt",
-	"type":"epicfight:sword"
+	"type":"epicfight:dagger"
 }

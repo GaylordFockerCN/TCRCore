@@ -1,0 +1,24 @@
+{
+  "name": "well_pillager_small",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/common/well_pillager_tiny",
+              "projection": "rigid",
+              "processors": "trek:combination/crackify_50_mossify_50"
+          }
+      },
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/common/well_pillager_small",
+              "projection": "rigid",
+              "processors": "trek:combination/crackify_50_mossify_50"
+          }
+      }
+  ]
+}

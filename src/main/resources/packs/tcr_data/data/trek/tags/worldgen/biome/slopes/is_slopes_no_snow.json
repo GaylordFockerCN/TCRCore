@@ -1,0 +1,15 @@
+{
+  "values": [
+    "minecraft:meadow",
+    {"id": "terralith:alpine_highlands","required": false},
+    {"id": "terralith:arid_highlands","required": false},
+    {"id": "terralith:steppe","required": false},
+    {"id": "biomesoplenty:highland","required": false},
+    {"id": "biomesoplenty:jade_cliffs","required": false},
+    {"id": "biomesoplenty:lavender_field","required": false},
+    {"id": "biomesoplenty:moor","required": false},
+    {"id": "biomesoplenty:scrubland","required": false},
+    {"id": "biomesoplenty:wasteland","required": false},
+    {"id": "biomesoplenty:wasteland_steppe","required": false}
+  ]
+}

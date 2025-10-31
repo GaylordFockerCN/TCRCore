@@ -25,5 +25,8 @@ public class TCRItemTabs {
                 output.accept(TCRItems.ANCIENT_ORACLE_FRAGMENT.get());
                 output.accept(TCRItems.ARTIFACT_TICKET.get());
                 output.accept(TCRItems.RARE_ARTIFACT_TICKET.get());
+                output.accept(TCRItems.VOID_CORE.get());
+                output.accept(TCRItems.ABYSS_CORE.get());
+                output.accept(TCRItems.PROOF_OF_ADVENTURE.get());
             }).build());
 }

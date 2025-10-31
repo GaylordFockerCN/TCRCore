@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:netherite_ingot"
+    },
+    "base": {
+        "item": "efn:nf_claw"
+    },
+    "result": {
+        "item": "cataclysm:tidal_claws"
+    },
+    "template": {
+        "item": "tcrcore:abyss_core"
+    }
+}

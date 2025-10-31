@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.datagen;
 
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.capability.TCRTaskManager;
 import com.p1nero.tcrcore.datagen.lang.TCRENLangGenerator;
 import com.p1nero.tcrcore.datagen.lang.TCRZHLangGenerator;
 import com.p1nero.tcrcore.datagen.loot.TCRLootTableProvider;
@@ -9,6 +10,7 @@ import com.p1nero.tcrcore.datagen.tags.TCRBlockTagGenerator;
 import com.p1nero.tcrcore.datagen.tags.TCREntityTagGenerator;
 import com.p1nero.tcrcore.datagen.tags.TCRItemTagGenerator;
 import com.p1nero.tcrcore.datagen.tags.TCRPoiTypeTagsProvider;
+import com.p1nero.tcrcore.worldgen.TCRWorldGenProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -17,6 +19,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.merlin204.wraithon.worldgen.WraithonWorldGenProvider;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -24,6 +27,8 @@ import java.util.concurrent.CompletableFuture;
 public class TCRDataGenerators {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void gatherData(GatherDataEvent event) {
+        TCRTaskManager.init();
+
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         ExistingFileHelper helper = event.getExistingFileHelper();
@@ -46,6 +51,6 @@ public class TCRDataGenerators {
                 new TCRBlockTagGenerator(output, lookupProvider, helper));
         generator.addProvider(event.includeServer(), new TCRItemTagGenerator(output, lookupProvider, blockTagGenerator.contentsGetter(), helper));
         generator.addProvider(event.includeServer(), new TCRPoiTypeTagsProvider(output, lookupProvider, helper));
-
+        generator.addProvider(event.includeServer(), new TCRWorldGenProvider(output, lookupProvider));
     }
 }

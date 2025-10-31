@@ -1,0 +1,107 @@
+
+{
+	"content": {
+
+		"hunters_normal_rews_coal": {
+			"type": "item",
+			"rarity": "COMMON",
+			"content": "minecraft:coal",
+			"amount": {
+				"min": 128,
+				"max": 256
+			},
+			"unitWorth": 100
+		},
+
+		"hunters_normal_rews_lapis_lazuli": {
+			"type": "item",
+			"rarity": "COMMON",
+			"content": "minecraft:lapis_lazuli",
+			"amount": {
+				"min": 128,
+				"max": 256
+			},
+			"unitWorth": 100
+		},
+
+		"hunters_normal_rews_copper_ingot": {
+			"type": "item",
+			"rarity": "UNCOMMON",
+			"content": "minecraft:copper_ingot",
+			"amount": {
+				"min": 96,
+				"max": 192
+			},
+			"unitWorth": 150
+		},
+
+		"hunters_normal_rews_iron_ingot": {
+			"type": "item",
+			"rarity": "UNCOMMON",
+			"content": "minecraft:iron_ingot",
+			"amount": {
+				"min": 96,
+				"max": 192
+			},
+			"unitWorth": 150
+		},
+
+		"hunters_normal_rews_gold_ingot": {
+			"type": "item",
+			"rarity": "UNCOMMON",
+			"content": "minecraft:gold_ingot",
+			"amount": {
+				"min": 96,
+				"max": 192
+			},
+			"unitWorth": 150
+		},
+
+		"hunters_normal_rews_emerald": {
+			"type": "item",
+			"rarity": "RARE",
+			"content": "minecraft:emerald",
+			"amount": {
+				"min": 32,
+				"max": 128
+			},
+			"unitWorth": 200
+		},
+
+		"hunters_normal_rews_diamond": {
+			"type": "item",
+			"rarity": "RARE",
+			"content": "minecraft:diamond",
+			"amount": {
+				"min": 32,
+				"max": 128
+			},
+			"unitWorth": 200
+		},
+
+		"hunters_normal_rews_netherite_ingot": {
+			"type": "item",
+			"rarity": "LEGENDARY",
+			"content": "minecraft:netherite_ingot",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 1000
+		},
+
+		"hunters_normal_rews_moon_crystal": {
+			"type": "item",
+			"rarity": "EPIC",
+			"content": "fantasy_armor:moon_crystal",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 700
+		}
+
+
+	}
+
+}

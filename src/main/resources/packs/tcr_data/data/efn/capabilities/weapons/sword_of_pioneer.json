@@ -2,10 +2,11 @@
   "type": "efn:pioneer",
   "attributes": {
     "common": {
-      "impact": 3.1,
+      "impact": 0.6,
       "armor_negation":10.0,
-      "max_strikes":3,
-      "damage_bonus": -2
+      "max_strikes":2,
+      "damage_bonus": 0.5,
+      "speed_bonus": 0.39
     }
   }
 }

@@ -1,6 +1,6 @@
 package com.p1nero.tcrcore.gameassets;
 
-import com.hm.efn.skill.passive.AvatarSkill;
+import com.hm.efn.skill.arts.AvatarSkill;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.skills.*;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

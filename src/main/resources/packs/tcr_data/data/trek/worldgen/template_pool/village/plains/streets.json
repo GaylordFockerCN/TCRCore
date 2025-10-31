@@ -1,0 +1,78 @@
+{
+  "name": "streets",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/plains/streets/corner_01",
+        "processors": "trek:village/street_plains",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/plains/streets/corner_02",
+        "processors": "trek:village/street_plains",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/plains/streets/straight_01",
+        "processors": "trek:village/street_plains",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/plains/streets/straight_02",
+        "processors": "trek:village/street_plains",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/plains/streets/straight_03",
+        "processors": "trek:village/street_plains",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/plains/streets/straight_04",
+        "processors": "trek:village/street_plains",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/plains/streets/crossroad_01",
+        "processors": "trek:village/street_plains",
+        "projection": "terrain_matching"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/plains/streets/crossroad_02",
+        "processors": "trek:village/street_plains",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    }
+  ],
+  "fallback": "trek:village/plains/terminators"
+}

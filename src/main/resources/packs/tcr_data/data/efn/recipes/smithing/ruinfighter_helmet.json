@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:quartz"
+    },
+    "base": {
+        "item": "minecraft:netherite_helmet"
+    },
+    "result": {
+        "item": "efn:ruinfighter_helmet"
+    },
+    "template": {
+        "item": "minecraft:netherite_ingot"
+    }
+}

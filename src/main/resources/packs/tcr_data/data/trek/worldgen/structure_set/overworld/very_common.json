@@ -1,0 +1,21 @@
+{
+    "structures": [
+        {
+            "structure": "trek:overworld/very_common/rocks",
+            "weight": 8
+        },
+        {
+            "structure": "trek:overworld/very_common/plains",
+            "weight": 5
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 16,
+        "separation": 8,
+        "spread_type": "linear",
+        "salt": 14357863,
+        "frequency_reduction_method": "default",
+        "frequency": 1
+    }
+}

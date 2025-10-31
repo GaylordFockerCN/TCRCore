@@ -1,0 +1,357 @@
+{
+	default_hide_dependency_lines: true
+	default_quest_shape: ""
+	filename: "yuan_meng_zhi_guan"
+	group: ""
+	icon: "cataclysm:goddess_statue"
+	id: "2A319D3255FD3C6C"
+	images: [{
+		height: 13.5d
+		image: "tcrcore:textures/ftb/altar_bg.png"
+		rotation: 0.0d
+		width: 24.0d
+		x: 0.0d
+		y: -9.5d
+	}]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["{ftbquests.chapter.chaptertcr1.quest6347185815800914950.description1}"]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			icon_scale: 2.0d
+			id: "5815BBDEE2362406"
+			invisible: true
+			shape: "none"
+			size: 1.5d
+			subtitle: "{ftbquests.chapter.chaptertcr1.quest6347185815800914950.subtitle}"
+			tasks: [{
+				advancement: "tcrcore:mark_map"
+				criterion: ""
+				icon: "minecraft:map"
+				id: "7159C4C4C1C35D49"
+				title: "{ftbquests.chapter.chaptertcr1.quest6347185815800914950.task.8167775748556545353.title}"
+				type: "advancement"
+			}]
+			x: 0.0d
+			y: -6.5d
+		}
+		{
+			description: [
+				"{ftbquests.chapter.chaptertcr1.quest2897062365475952465.description1}"
+				""
+				"{ftbquests.chapter.chaptertcr1.quest2897062365475952465.description2}"
+				"{ftbquests.chapter.chaptertcr1.quest2897062365475952465.description3}"
+				""
+				"{ftbquests.chapter.chaptertcr1.quest2897062365475952465.description4}"
+				"{ftbquests.chapter.chaptertcr1.quest2897062365475952465.description5}"
+			]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			icon: "cataclysm:storm_eye"
+			id: "28346EDF4258D751"
+			invisible: true
+			invisible_until_tasks: 1
+			rewards: [{
+				id: "2F7E004FF368033B"
+				item: "tcrcore:artifact_ticket"
+				type: "item"
+			}]
+			shape: "none"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.chaptertcr1.quest2897062365475952465.subtitle}"
+			tasks: [
+				{
+					id: "31BC2442C77FFB4A"
+					item: "cataclysm:storm_eye"
+					title: "{ftbquests.chapter.chaptertcr1.quest2897062365475952465.task.3583779272713567050.title}"
+					type: "item"
+				}
+				{
+					advancement: "tcrcore:stage1"
+					criterion: ""
+					id: "1FD065E2AF6B96F1"
+					type: "advancement"
+				}
+			]
+			title: "{ftbquests.chapter.chaptertcr1.quest2897062365475952465.title}"
+			x: 2.0d
+			y: -8.5d
+		}
+		{
+			description: [
+				"{ftbquests.chapter.chaptertcr1.quest4485700162389836201.description1}"
+				""
+				""
+				"{ftbquests.chapter.chaptertcr1.quest4485700162389836201.description2}"
+				"{ftbquests.chapter.chaptertcr1.quest4485700162389836201.description3}"
+				""
+				""
+				"{ftbquests.chapter.chaptertcr1.quest4485700162389836201.description4}"
+			]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			hide_until_deps_visible: true
+			icon: "cataclysm:abyss_eye"
+			id: "3E4068880C2881A9"
+			invisible: true
+			invisible_until_tasks: 1
+			rewards: [{
+				id: "23434BD7156649CF"
+				item: "tcrcore:artifact_ticket"
+				type: "item"
+			}]
+			shape: "none"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.chaptertcr1.quest4485700162389836201.subtitle}"
+			tasks: [
+				{
+					id: "2806721BDF8285C2"
+					item: "cataclysm:abyss_eye"
+					title: "{ftbquests.chapter.chaptertcr1.quest4485700162389836201.task.2884118075416937922.title}"
+					type: "item"
+				}
+				{
+					advancement: "tcrcore:stage2"
+					criterion: ""
+					id: "1EDBE68E3C402222"
+					type: "advancement"
+				}
+			]
+			title: "{ftbquests.chapter.chaptertcr1.quest4485700162389836201.title}"
+			x: -2.5d
+			y: -11.5d
+		}
+		{
+			description: ["{ftbquests.chapter.chaptertcr1.quest225288608841219205.description1}"]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			icon: "cataclysm:flame_eye"
+			id: "032062CBCDEC3C85"
+			invisible: true
+			invisible_until_tasks: 1
+			rewards: [
+				{
+					id: "2AC73061AD3361F8"
+					item: "block_factorys_bosses:dragon_skull"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "331642B1977C0113"
+					item: "block_factorys_bosses:dragon_bone"
+					type: "item"
+				}
+				{
+					id: "0112A644E7526EDD"
+					item: "tcrcore:artifact_ticket"
+					type: "item"
+				}
+			]
+			shape: "none"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.chaptertcr1.quest225288608841219205.subtitle}"
+			tasks: [
+				{
+					id: "00F6FB2F90E7EC54"
+					item: "cataclysm:flame_eye"
+					title: "{ftbquests.chapter.chaptertcr1.quest225288608841219205.task.69519025983974484.title}"
+					type: "item"
+				}
+				{
+					advancement: "tcrcore:stage5"
+					criterion: ""
+					id: "2C6345AD6627624E"
+					type: "advancement"
+				}
+			]
+			title: "{ftbquests.chapter.chaptertcr1.quest225288608841219205.title}"
+			x: 0.0d
+			y: -13.0d
+		}
+		{
+			description: [
+				"{ftbquests.chapter.chaptertcr1.quest3846763826501237441.description1}"
+				""
+				""
+				"{ftbquests.chapter.chaptertcr1.quest3846763826501237441.description2}"
+				"{ftbquests.chapter.chaptertcr1.quest3846763826501237441.description3}"
+			]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			icon: "cataclysm:cursed_eye"
+			id: "35627351B56DBAC1"
+			invisible: true
+			invisible_until_tasks: 1
+			rewards: [
+				{
+					id: "43792D0799C3D12C"
+					item: {
+						Count: 1
+						id: "aquamirae:three_bolt_suit"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7E3F9083132BDEE9"
+					item: {
+						Count: 1
+						id: "aquamirae:three_bolt_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "70CEAF78379BFD46"
+					item: {
+						Count: 1
+						id: "aquamirae:three_bolt_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "none"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.chaptertcr1.quest3846763826501237441.subtitle}"
+			tasks: [
+				{
+					id: "3188F71E2882792F"
+					item: "cataclysm:cursed_eye"
+					title: "{ftbquests.chapter.chaptertcr1.quest3846763826501237441.task.3569374413591836975.title}"
+					type: "item"
+				}
+				{
+					advancement: "tcrcore:stage4"
+					criterion: ""
+					id: "4F92F23FAC985303"
+					type: "advancement"
+				}
+			]
+			title: "{ftbquests.chapter.chaptertcr1.quest3846763826501237441.title}"
+			x: -2.0d
+			y: -8.5d
+		}
+		{
+			description: [
+				"{ftbquests.chapter.chaptertcr1.quest8215733437259381056.description1}"
+				""
+				""
+				"{ftbquests.chapter.chaptertcr1.quest8215733437259381056.description2}"
+				"{ftbquests.chapter.chaptertcr1.quest8215733437259381056.description3}"
+				""
+				"{ftbquests.chapter.chaptertcr1.quest8215733437259381056.description4}"
+			]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			icon: "cataclysm:desert_eye"
+			id: "720426084924F940"
+			invisible: true
+			invisible_until_tasks: 1
+			rewards: [{
+				id: "08AA206025974B91"
+				item: "tcrcore:artifact_ticket"
+				type: "item"
+			}]
+			shape: "none"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.chaptertcr1.quest8215733437259381056.subtitle}"
+			tasks: [
+				{
+					id: "1539B7BC0DD0556D"
+					item: "cataclysm:desert_eye"
+					title: "{ftbquests.chapter.chaptertcr1.quest8215733437259381056.task.1529455566782485869.title}"
+					type: "item"
+				}
+				{
+					advancement: "tcrcore:stage3"
+					criterion: ""
+					id: "59BE6E311BF5B10D"
+					type: "advancement"
+				}
+			]
+			title: "{ftbquests.chapter.chaptertcr1.quest8215733437259381056.title}"
+			x: 2.5d
+			y: -11.5d
+		}
+		{
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			id: "261ED495C5E3AEA1"
+			invisible: true
+			optional: true
+			shape: "none"
+			size: 2.0d
+			tasks: [{
+				id: "19EB265B386E00F2"
+				item: "cataclysm:mech_eye"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -15.0d
+		}
+		{
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			id: "3DA47BC417E1D50B"
+			invisible: true
+			optional: true
+			shape: "none"
+			size: 2.0d
+			tasks: [{
+				id: "0BB6BF2C23A5B7EB"
+				item: "cataclysm:void_eye"
+				type: "item"
+			}]
+			x: -6.0d
+			y: -12.0d
+		}
+		{
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			id: "12382A247CB2D102"
+			invisible: true
+			optional: true
+			shape: "none"
+			size: 2.0d
+			tasks: [{
+				id: "275B2CB357F46159"
+				item: "cataclysm:monstrous_eye"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -12.0d
+		}
+		{
+			dependencies: [
+				"12382A247CB2D102"
+				"261ED495C5E3AEA1"
+				"3DA47BC417E1D50B"
+			]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			id: "102F2CD255F309D2"
+			invisible: true
+			optional: true
+			shape: "none"
+			size: 3.0d
+			tasks: [{
+				id: "53A4DC7C24EA7312"
+				item: "mimic:mimic_invitation"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -10.5d
+		}
+	]
+	subtitle: ["{ftbquests.chapter.chaptertcr1.subtitle0}"]
+	title: "{ftbquests.chapter.chaptertcr1.title}"
+}

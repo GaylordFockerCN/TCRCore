@@ -1,0 +1,11 @@
+{
+  "values": [
+    "minecraft:snowy_taiga",
+    "minecraft:grove",
+    {"id": "terralith:alpine_grove","required": false},
+    {"id": "terralith:cold_shrubland","required": false},
+    {"id": "terralith:rocky_shrubland","required": false},
+    {"id": "terralith:snowy_maple_forest","required": false},
+    {"id": "terralith:snowy_shield","required": false}
+  ]
+}

@@ -1,4 +1,5 @@
 buildscript {
+    ext.kotlin_version = '2.2.0'
     repositories {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
@@ -6,6 +7,7 @@ buildscript {
     }
     dependencies {
         classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -16,6 +18,7 @@ plugins {
 }
 
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'kotlin'
 
 group = mod_group_id
 version = mod_version
@@ -153,25 +156,38 @@ repositories {
     flatDir {
         dir 'libs'
     }
+    mavenCentral()
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-
-    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7090045")
-
-    implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7090069")
+    implementation fg.deobf("curse.maven:fluid-tick-structure-processor-1369713:7133622")
+//    implementation fg.deobf("libs:ba_bt:3.0.0")
+    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7144412-sources-7144414")
+//    implementation fg.deobf("libs:epicfight:20.13.2.5")
+    implementation fg.deobf("libs:epicfight-skilltree:20.2.2.1")
+//    implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7129232-sources-7129236")
+    implementation fg.deobf("curse.maven:p1nero-better-structure-block-970671:6817772")
+//    implementation fg.deobf("curse.maven:epic-fight-indestructible-915201:6915161")
+    implementation fg.deobf("curse.maven:epic-fight-indestructible-915201:7125700")
 
     implementation fg.deobf("curse.maven:epic-fight-wraithon-1354901:7068815")
-    implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7018600")
-    implementation fg.deobf("curse.maven:p1neros-epic-bow-1338443:6964978")
-    implementation fg.deobf("curse.maven:sword-soaring-1011068:7035767")
+//    implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7018600")
+    implementation fg.deobf("libs:invincible:20.12.4.4")
+    implementation fg.deobf("libs:p1nero_bow:20.13.1.4")
+//    implementation fg.deobf("curse.maven:p1neros-epic-bow-1338443:6964978")
+//    implementation fg.deobf("curse.maven:sword-soaring-1011068:7035767")
+    implementation fg.deobf("libs:sword_soaring:20.13.1.10")
     implementation fg.deobf("libs:dodge_parry_reward:20.12.1")
     implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7058350")
-    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
-    implementation fg.deobf("libs:p1nero_ec:20.12.0.1")
-    implementation fg.deobf("libs:p1nero_dl:1.6.0")
+//    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
+    implementation fg.deobf("libs:p1nero_ec:20.12.0.3")
+    implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7152732")
+    implementation fg.deobf("curse.maven:entity-respawner-1363764:7105518")
+    implementation fg.deobf("libs:nightfall_invade:1.0.1")
+    implementation fg.deobf("libs:mimic:1.0.0")
+    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7140213")
 
     implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:6993788")
 
@@ -181,9 +197,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:radiant-gear-602199:6029352")
 
-    implementation fg.deobf("curse.maven:loot-beams-506757:5548970")
-
-    implementation fg.deobf("libs:tudigong:1.2.1")
+    implementation fg.deobf("libs:tudigong:1.3.0")
 //    implementation fg.deobf("curse.maven:tudigong-wayfinder-1350265:7076274")
     implementation fg.deobf("curse.maven:lithostitched-936015:6742615")//村庄插入
 
@@ -194,7 +208,7 @@ dependencies {
     implementation fg.deobf("curse.maven:epic-fight-super-golem-1236331:6861276")
     implementation fg.deobf("curse.maven:epic-fight-super-warden-1272352:6640554")
 
-    implementation fg.deobf("curse.maven:fantasy-armor-1083998:6385161")
+    implementation fg.deobf("curse.maven:fantasy-armor-1083998:6949888")
 
     implementation fg.deobf("curse.maven:parcool-482378:6831668")
     implementation fg.deobf("curse.maven:official-epic-fight-x-parcool-1259252:6870242")
@@ -222,7 +236,9 @@ dependencies {
     implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
     //主要boss
+//    implementation fg.deobf("curse.maven:legendary-monsters-944035:6776766")
     implementation fg.deobf("curse.maven:dodos-mobs-1349823:7018547")
+    implementation fg.deobf("curse.maven:mowzies-mobs-250498:6586086")
 //    implementation fg.deobf("curse.maven:bossesrise-1314084:6900933")
     implementation fg.deobf("libs:bossesrise:1.0.9.1")
     implementation fg.deobf("curse.maven:monster-expansion-1336105:7052712")
@@ -236,23 +252,19 @@ dependencies {
     implementation fg.deobf("curse.maven:qliphoth-awakening-1271707:7008606")
     implementation fg.deobf("curse.maven:fdlib-1271749:7008599")
 
-    //小动物
-    implementation fg.deobf("curse.maven:more-critters-1322511:6955615")
-
     implementation fg.deobf("curse.maven:ribbits-622967:6182692")
 
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.20.1:4.7.3")
 
     //结构类
+    implementation fg.deobf("curse.maven:explorers-compass-edited-1203888:6733733")
+    implementation fg.deobf("curse.maven:natures-compass-252848:4712189")
+
     implementation fg.deobf("curse.maven:ati-structures-964608:6730813")
 //    implementation fg.deobf("libs:trek:B0.5") //内置为数据包，curse forge用数据包形式下载
     implementation fg.deobf("curse.maven:when-dungeons-arise-442508:4983862")
-    implementation fg.deobf("curse.maven:hopo-better-mineshaft-623723:6631774")
     implementation fg.deobf("curse.maven:towns-and-towers-626761:4923828")
     implementation fg.deobf("curse.maven:cristel-lib-856996:5869180")
-    implementation fg.deobf("curse.maven:moogs-end-structures-892382:6915265")
-    implementation fg.deobf("curse.maven:mns-moogs-nether-structures-967466:5850727")
-    implementation fg.deobf("curse.maven:mss-moogs-soaring-structures-1040210:6079893")
     implementation fg.deobf("curse.maven:abridged-948999:6745463")
     implementation "curse.maven:lukis-grand-capitals-1003666:6786014"
 
@@ -276,9 +288,13 @@ dependencies {
     implementation fg.deobf("curse.maven:biomes-o-plenty-220318:6364065")
     implementation fg.deobf("curse.maven:terrablender-563928:6290448")
     implementation fg.deobf("curse.maven:glitchcore-955399:5787839")
-    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
-    implementation fg.deobf("curse.maven:obscure-tooltips-715660:4686579")//FIXME runData时需注释掉
-    implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:prism-lib-638111:4650325")
+    implementation fg.deobf("curse.maven:iceberg-520110:5838149")
 
     implementation fg.deobf("curse.maven:configured-457570:5180900")
     implementation fg.deobf("curse.maven:havns-style-combat-1355783:7062128")
@@ -331,6 +347,7 @@ dependencies {
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
 
     implementation fg.deobf("curse.maven:just-enough-resources-jer-240630:5057220")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -369,4 +386,7 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+kotlin {
+    jvmToolchain(17)
 }

@@ -1,0 +1,32 @@
+{
+  "values": [
+    "minecraft:deep_dark",
+    "minecraft:dripstone_caves",
+    "minecraft:lush_caves",
+    {"id": "floravive:badlands_caves","required": false},
+    {"id": "floravive:caves","required": false},
+    {"id": "floravive:cold_caves","required": false},
+    {"id": "floravive:diorite_caves","required": false},
+    {"id": "floravive:granite_caves","required": false},
+    {"id": "floravive:infested_caves","required": false},
+    {"id": "floravive:lukewarm_caves","required": false},
+    {"id": "floravive:mycelium_caves","required": false},
+    {"id": "floravive:ocean_caves","required": false},
+    {"id": "floravive:webby_caves","required": false},
+    {"id": "terralith:cave/andesite_caves","required": false},
+    {"id": "terralith:cave/crystal_caves","required": false},
+    {"id": "terralith:cave/deep_caves","required": false},
+    {"id": "terralith:cave/diorite_caves","required": false},
+    {"id": "terralith:cave/frostfire_caves","required": false},
+    {"id": "terralith:cave/fungal_caves","required": false},
+    {"id": "terralith:cave/granite_caves","required": false},
+    {"id": "terralith:cave/ice_caves","required": false},
+    {"id": "terralith:cave/infested_caves","required": false},
+    {"id": "terralith:cave/mantle_caves","required": false},
+    {"id": "terralith:cave/thermal_caves","required": false},
+    {"id": "terralith:cave/tuff_caves","required": false},
+    {"id": "terralith:cave/underground_jungle","required": false},
+    {"id": "biomesoplenty:glowing_grotto","required": false},
+    {"id": "biomesoplenty:spider_nest","required": false}
+  ]
+}

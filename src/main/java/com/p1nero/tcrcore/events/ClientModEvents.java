@@ -8,6 +8,7 @@ import com.p1nero.tcrcore.block.TCRBlocks;
 import com.p1nero.tcrcore.block.client.AltarBlockRenderer;
 import com.p1nero.tcrcore.block.entity.TCRBlockEntities;
 import com.p1nero.tcrcore.client.gui.BlockTooltipHandler;
+import com.p1nero.tcrcore.client.item_renderer.RenderDualBokken;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.entity.custom.girl.GirlGeoRenderer;
 import com.p1nero.tcrcore.entity.custom.guider.GuiderGeoRenderer;
@@ -16,17 +17,15 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ItemEntityRenderer;
-import net.minecraft.world.item.Items;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import yesman.epicfight.api.client.forgeevent.PatchedRenderersEvent;
 import yesman.epicfight.client.renderer.patched.entity.PIronGolemRenderer;
-import yesman.epicfight.config.ClientConfig;
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientModEvents {
@@ -83,5 +82,11 @@ public class ClientModEvents {
         event.registerBlockEntityRenderer(TCRBlockEntities.MONST_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
         event.registerBlockEntityRenderer(TCRBlockEntities.VOID_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
         event.registerBlockEntityRenderer(TCRBlockEntities.MECH_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
+    }
+
+
+    @SubscribeEvent
+    public static void registerItemRenderer(PatchedRenderersEvent.RegisterItemRenderer event) {
+        event.addItemRenderer(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "dual_bokken"), RenderDualBokken::new);
     }
 }

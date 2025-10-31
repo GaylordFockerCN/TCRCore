@@ -2,11 +2,15 @@
   "chat.epicskills.unlock_notification": "已解锁新技能树",
   "chat.epicskills.messages.no_page": "无技能树页面",
 
+  "gui.epicskills.messages.change_skill_one": "是否将技能%d替换为%d？",
+  "gui.epicskills.messages.change_skill_multiple": "是否将已习得的某个技能替换为%d？",
+
   "gui.epicskills.skill_tree": "技能树界面",
   "gui.epicskills.skill_tree.imported_node": "此技能来自%s",
 
   "gui.epicskills.exp_meter.tooltip": "已有/需要经验值以转化为技能点",
   "gui.epicskills.abilitypoints.tooltip": "技能点",
+  "gui.epicskills.openskilleditor.tooltip": "查看已学习的技能",
 
   "gui.epicskills.skillinfo.unlock": "解锁",
   "gui.epicskills.skillinfo.locked": "已锁定",
@@ -46,6 +50,10 @@
   "commands.epicskills.skilltree_progression.lock_tree.success.other": "已为%s个目标锁定%s",
   "commands.epicskills.skilltree_progression.lock_tree.failed": "无法锁定技能树。请清除所有节点或将强制选项设为true",
   "commands.epicskills.skilltree_progression.failed": "因玩家数据无效而执行命令失败",
+
+  "key.epicskills.gui": "史诗战斗: 技能树 GUI",
+
+  "key.epicskills.open_skill_tree": "打开技能树",
 
   "eof": "文件结束"
 }

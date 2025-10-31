@@ -5,7 +5,7 @@ autoSuggestions:true
 chatColors:true
 chatLinks:true
 chatLinksPrompt:true
-enableVsync:true
+enableVsync:false
 entityShadows:true
 forceUnicodeFont:false
 discrete_mouse_scroll:false
@@ -32,18 +32,18 @@ damageTiltStrength:1.0
 highContrast:false
 gamma:0.5
 renderDistance:12
-simulationDistance:12
+simulationDistance:8
 entityDistanceScaling:1.0
 guiScale:0
 particles:0
-maxFps:120
+maxFps:260
 graphicsMode:1
 ao:true
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:"true"
-resourcePacks:["vanilla","mod_resources","file/MMR.zip","file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip","file/Stay_True_1.20.zip","tcr_assets"]
-incompatibleResourcePacks:["file/MMR.zip","file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip"]
+resourcePacks:["vanilla","mod_resources","Moonlight Mods Dynamic Assets","file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip","file/Stay_True_1.20.zip","file/EclecticTrove-1.20.1-1.3.0.zip","file/Curios_Compat.zip","file/OurStoryFTBTheme-1.20.x-1.1.zip","file/DMC5 yamato for Nightfall v1.1.zip","file/Vulmoons calaclysm remake_0.1.zip","tcr_assets"]
+incompatibleResourcePacks:["file/xali\u0027s Enhanced Vanilla -1.11.2b-rev.54d51d4.zip"]
 lastServer:
 lang:zh_cn
 soundDevice:""
@@ -77,7 +77,7 @@ skipRealms32bitWarning:false
 hideMatchedNames:true
 joinedFirstServer:false
 hideBundleTutorial:false
-syncChunkWrites:false
+syncChunkWrites:true
 showAutosaveIndicator:true
 allowServerListing:true
 onlyShowSecureChat:false
@@ -94,6 +94,19 @@ soundCategory_neutral:1.0
 soundCategory_player:1.0
 soundCategory_ambient:1.0
 soundCategory_voice:1.0
+soundCategory_extrasounds$master:0.5
+soundCategory_extrasounds$inventory:1.0
+soundCategory_extrasounds$action:1.0
+soundCategory_extrasounds$chat:1.0
+soundCategory_extrasounds$chat_mention:1.0
+soundCategory_extrasounds$effects:1.0
+soundCategory_extrasounds$hotbar:1.0
+soundCategory_extrasounds$typing:1.0
+soundCategory_extrasounds$item_drop:1.0
+soundCategory_extrasounds$empty_hotbar:1.0
+soundCategory_extrasounds$enabled_footstep:1.0
+soundCategory_extrasounds$enabled_effects:1.0
+soundCategory_extrasounds$enabled_poof:1.0
 modelPart_cape:true
 modelPart_jacket:true
 modelPart_left_sleeve:true

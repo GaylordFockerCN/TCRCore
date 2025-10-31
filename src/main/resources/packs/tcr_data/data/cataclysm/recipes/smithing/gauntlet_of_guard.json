@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:netherite_ingot"
+    },
+    "base": {
+        "item": "epicfight:glove"
+    },
+    "result": {
+        "item": "cataclysm:gauntlet_of_guard"
+    },
+    "template": {
+        "item": "tcrcore:void_core"
+    }
+}

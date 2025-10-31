@@ -1,0 +1,25 @@
+{
+    "structures": [
+        {
+            "structure": "trek:overworld/very_rare/coves",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/very_rare/farm_island",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/very_rare/floating_farm_large",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 96,
+        "separation": 48,
+        "spread_type": "linear",
+        "salt": 14357984,
+        "frequency_reduction_method": "default",
+        "frequency": 1
+    }
+}

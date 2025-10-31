@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:quartz"
+    },
+    "base": {
+        "item": "minecraft:netherite_boots"
+    },
+    "result": {
+        "item": "efn:ruinfighter_boots"
+    },
+    "template": {
+        "item": "minecraft:netherite_ingot"
+    }
+}

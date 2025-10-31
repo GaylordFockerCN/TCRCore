@@ -1,0 +1,87 @@
+{
+  "name": "streets",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/streets/corner_01",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/streets/corner_02",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/streets/straight_01",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/streets/straight_02",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/streets/straight_03",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/streets/straight_04",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/streets/crossroad_01",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/streets/crossroad_02",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/streets/square_01",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    }
+  ],
+  "fallback": "trek:village/taiga/terminators"
+}

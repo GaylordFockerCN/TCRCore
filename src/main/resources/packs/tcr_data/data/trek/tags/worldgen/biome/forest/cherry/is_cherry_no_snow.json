@@ -1,0 +1,10 @@
+{
+  "values": [
+    {"id": "minecraft:cherry_grove","required": false},
+    {"id": "terralith:sakura_grove","required": false},
+    {"id": "terralith:sakura_valley","required": false},
+    {"id": "biomesoplenty:jacaranda_glade","required": false},
+    {"id": "biomesoplenty:maple_woods","required": false},
+    {"id": "biomesoplenty:marsh","required": false}
+  ]
+}

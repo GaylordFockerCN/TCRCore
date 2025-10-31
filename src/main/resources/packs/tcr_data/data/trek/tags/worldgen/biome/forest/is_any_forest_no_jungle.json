@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#trek:forest/birch/is_birch_forest",
+    "#trek:forest/dark_oak/is_dark_oak",
+    "#trek:forest/oak/is_oak_forest",
+    "#trek:forest/spruce/is_spruce_forest",
+    "#trek:forest/acacia/is_acacia_forest",
+    {"id": "floravive:arboretum","required": false},
+    {"id": "biomesoplenty:dead_forest","required": false}
+  ]
+}

@@ -1,9 +1,0 @@
-{
-  "type": "epicfight:trident",
-  "attributes": {
-    "common": {
-      "armor_negation":20.0,
-      "max_strikes":3
-    }
-  }
-}

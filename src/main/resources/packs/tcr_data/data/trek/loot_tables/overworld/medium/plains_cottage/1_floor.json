@@ -1,0 +1,137 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+      {
+          "rolls": 3,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:apple",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 2
+                          }
+                      }
+                  ]
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:cookie",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 2
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "rolls": 3,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:sunflower",
+                  "weight": 1
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:rose_bush",
+                  "weight": 1
+              },
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:peony",
+                  "weight": 1
+              }
+          ]
+      },
+      {
+          "rolls": 1,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:sweet_berries",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 2
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "rolls": 1,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:cake",
+                  "weight": 1
+              },
+              {
+                  "type": "minecraft:empty",
+                  "weight": 10
+              }
+          ]
+      },
+      {
+          "rolls": 1,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:honeycomb",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 3
+                          }
+                      }
+                  ]
+              },
+              {
+                  "type": "minecraft:empty",
+                  "weight": 3
+              }
+          ]
+      },
+      {
+          "rolls": 1,
+          "entries": [
+              {
+                  "type": "minecraft:item",
+                  "name": "minecraft:gold_nugget",
+                  "weight": 1,
+                  "functions": [
+                      {
+                          "function": "minecraft:set_count",
+                          "count": {
+                              "min": 1,
+                              "max": 4
+                          }
+                      }
+                  ]
+              },
+              {
+                  "type": "minecraft:empty",
+                  "weight": 5
+              }
+          ]
+      }
+  ]
+}

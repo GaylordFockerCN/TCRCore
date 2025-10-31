@@ -1,0 +1,15 @@
+{
+  "name": "centre_down",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/very_rare/floating_farm_large/centre_down",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      }
+  ]
+}

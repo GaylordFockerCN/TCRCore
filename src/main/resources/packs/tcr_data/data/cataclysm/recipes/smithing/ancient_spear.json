@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "cataclysm:sandstorm_in_a_bottle"
+    },
+    "base": {
+        "item": "epicfight:netherite_spear"
+    },
+    "result": {
+        "item": "cataclysm:ancient_spear"
+    },
+    "template": {
+        "item": "cataclysm:ancient_metal_ingot"
+    }
+}

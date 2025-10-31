@@ -1,0 +1,15 @@
+{
+  "name": "up_3",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/rare/portal_sword/up_3",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      }
+  ]
+}

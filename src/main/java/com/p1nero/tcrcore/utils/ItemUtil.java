@@ -99,8 +99,21 @@ public class ItemUtil {
         return itemEntity;
     }
 
+    public static CustomColorItemEntity addItemEntity(Entity spawnOn, ItemStack item, int count, int color){
+        CustomColorItemEntity itemEntity = addItemEntity(spawnOn, item, count);
+        itemEntity.setTeamColor(color);
+        return itemEntity;
+    }
+
     public static CustomColorItemEntity addItemEntity(Entity spawnOn, Item item, int count){
         CustomColorItemEntity itemEntity = new CustomColorItemEntity(spawnOn.level(), spawnOn.getX(), spawnOn.getY(), spawnOn.getZ(), item.getDefaultInstance().copyWithCount(count));
+        itemEntity.setPickUpDelay(40);
+        spawnOn.level().addFreshEntity(itemEntity);
+        return itemEntity;
+    }
+
+    public static CustomColorItemEntity addItemEntity(Entity spawnOn, ItemStack item, int count){
+        CustomColorItemEntity itemEntity = new CustomColorItemEntity(spawnOn.level(), spawnOn.getX(), spawnOn.getY(), spawnOn.getZ(), item.copyWithCount(count));
         itemEntity.setPickUpDelay(40);
         spawnOn.level().addFreshEntity(itemEntity);
         return itemEntity;

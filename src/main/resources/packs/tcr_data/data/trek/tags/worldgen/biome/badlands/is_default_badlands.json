@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:badlands",
+    {"id": "floravive:painted_badlands","required": false},
+    {"id": "terralith:painted_mountains","required": false},
+    {"id": "terralith:red_oasis","required": false},
+    {"id": "terralith:white_mesa","required": false}
+  ]
+}

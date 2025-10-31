@@ -1,0 +1,945 @@
+{
+	default_hide_dependency_lines: true
+	default_quest_shape: ""
+	filename: "shen_mo"
+	group: ""
+	hide_quest_until_deps_visible: true
+	icon: "cataclysm:altar_of_fire"
+	id: "6E911C0C47606679"
+	images: [
+		{
+			height: 4.0d
+			image: "tcrcore:textures/ftb/blue_dragon.png"
+			rotation: 0.0d
+			width: 7.0d
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			height: 4.4d
+			image: "tcrcore:textures/ftb/red_dragon.png"
+			rotation: 0.0d
+			width: 8.0d
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			height: 9.0d
+			image: "tcrcore:textures/ftb/ghost.png"
+			rotation: 0.0d
+			width: 14.0d
+			x: -7.5d
+			y: 6.5d
+		}
+		{
+			height: 9.0d
+			image: "tcrcore:textures/ftb/leviathan.png"
+			rotation: 0.0d
+			width: 16.0d
+			x: -12.5d
+			y: -3.5d
+		}
+		{
+			height: 10.0d
+			image: "tcrcore:textures/ftb/ignis.png"
+			rotation: 0.0d
+			width: 10.0d
+			x: -1.5d
+			y: -11.0d
+		}
+		{
+			height: 10.0d
+			image: "tcrcore:textures/ftb/dinosaur.png"
+			rotation: 0.0d
+			width: 12.0d
+			x: 13.5d
+			y: -4.0d
+		}
+		{
+			height: 10.0d
+			image: "tcrcore:textures/ftb/syclla.png"
+			rotation: 0.0d
+			width: 10.0d
+			x: 8.5d
+			y: 6.5d
+		}
+		{
+			height: 18.0d
+			image: "tcrcore:textures/ftb/monster_home.png"
+			order: -1
+			rotation: 0.0d
+			width: 32.0d
+			x: 0.0d
+			y: -1.5d
+		}
+	]
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.description1}"
+				"{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.description2}"
+				"{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.description3}"
+			]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			hide_until_deps_complete: false
+			hide_until_deps_visible: true
+			icon: "tudigong:tudi_temple"
+			icon_scale: 1.5d
+			id: "68EDC89BB022788B"
+			invisible: true
+			rewards: [{
+				id: "4B50245D1763A8CF"
+				item: "tudigong:tudi_command_spell"
+				type: "item"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.subtitle}"
+			tasks: [{
+				advancement: "tcrcore:stage3"
+				criterion: ""
+				id: "18A4D4525511C684"
+				title: "{ftbquests.chapter.6E911C0C47606679.quest7560919920425465995.task.1775777603170453124.title}"
+				type: "advancement"
+			}]
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: [
+				""
+				""
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest8058086817761900554.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest8058086817761900554.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"12C6899DBC971D90\"}}]"
+			]
+			id: "6FD4134465F4B80A"
+			rewards: [
+				{
+					id: "4554E5EA99136194"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+				{
+					id: "7C90D45EF83D3EE5"
+					item: "cataclysm:music_disc_the_leviathan"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest8058086817761900554.subtitle}"
+			tasks: [{
+				entity: "cataclysm:the_leviathan"
+				icon: "tcrcore:abyss_core"
+				id: "31F81725804DBD7A"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest8058086817761900554.title}"
+			x: -12.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: [
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest5047085965933135713.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest5047085965933135713.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"54C39AAE680800C8\"}}]"
+				""
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest5047085965933135713.rich_description3\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest5047085965933135713.rich_description4\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D76D92CF8D39AE7\"}}]"
+			]
+			id: "460AD9F2064DC761"
+			rewards: [
+				{
+					id: "4BBDF4006D681216"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+				{
+					id: "39EEF1B818CD16F5"
+					item: "cataclysm:music_disc_maledictus"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest5047085965933135713.subtitle}"
+			tasks: [{
+				entity: "cataclysm:maledictus"
+				icon: "cataclysm:cursium_ingot"
+				id: "0672B910E28C9389"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest5047085965933135713.title}"
+			x: -8.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: [
+				""
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest6378650516386893855.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest6378650516386893855.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"40217A88C9D46BB1\"}}]"
+			]
+			id: "588584D95F9A501F"
+			rewards: [
+				{
+					id: "757372A10D9DCEF2"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+				{
+					id: "0F7F01D817BE5F9C"
+					item: "cataclysm:music_disc_scylla"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest6378650516386893855.subtitle}"
+			tasks: [{
+				entity: "cataclysm:scylla"
+				icon: "cataclysm:essence_of_the_storm"
+				id: "2D1A10B1F70903F7"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest6378650516386893855.title}"
+			x: 9.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: [
+				""
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest4272713576519895019.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest4272713576519895019.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"49526E12F56F14D0\"}}]"
+				""
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest4272713576519895019.rich_description3\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest4272713576519895019.rich_description4\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3CB062BCA9BD0FEC\"}}]"
+			]
+			id: "3B4BBA5C2B7507EB"
+			rewards: [
+				{
+					id: "524085BD4C2D0366"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+				{
+					id: "2FE657C047451D37"
+					item: "cataclysm:music_disc_ancient_remnant"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest4272713576519895019.subtitle}"
+			tasks: [{
+				entity: "cataclysm:ancient_remnant"
+				icon: "cataclysm:ancient_metal_ingot"
+				id: "7A40C0DB2D45F3F3"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest4272713576519895019.title}"
+			x: 15.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: [
+				"{ftbquests.chapter.6E911C0C47606679.quest867631697875350248.description1}"
+				""
+				""
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest867631697875350248.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest867631697875350248.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"016F12E968740FBA\"}}]"
+				""
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest867631697875350248.rich_description3\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest867631697875350248.rich_description4\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"66B95BDCAFA07D10\"}}]"
+			]
+			id: "0C0A726EABBAB2E8"
+			rewards: [
+				{
+					id: "4CF3CE22F74D8719"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+				{
+					id: "4D7EE7D11E67FFDF"
+					item: "cataclysm:music_disc_ignis"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest867631697875350248.subtitle}"
+			tasks: [{
+				entity: "cataclysm:ignis"
+				icon: "cataclysm:ignitium_ingot"
+				id: "74DADD5A7C11C5F2"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest867631697875350248.title}"
+			x: 1.0d
+			y: -11.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: [
+				"{ftbquests.chapter.6E911C0C47606679.quest3774287354747791257.description1}"
+				""
+				""
+				"[\"\",{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3774287354747791257.rich_description1\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"606F5EBEBAB63DB6\"}}]"
+			]
+			icon: "efn:deepdark_heart"
+			id: "3460F65A23FDA799"
+			rewards: [{
+				count: 3
+				id: "1B26981A9BBD9863"
+				item: "epicskills:ability_stone"
+				type: "item"
+			}]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3774287354747791257.subtitle}"
+			tasks: [{
+				entity: "minecraft:warden"
+				icon: "efn:deepdark_heart"
+				id: "0D2A0E0DCC3F302F"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest3774287354747791257.title}"
+			x: -1.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: [
+				"{ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.description1}"
+				""
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.rich_description1\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6B63BADC1AD47A2B\"}}]"
+				""
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1779FEDC1CD752E9\"}}]"
+			]
+			id: "2BF1F71D59A76031"
+			rewards: [{
+				count: 3
+				id: "2E18B89F723C6319"
+				item: "epicskills:ability_stone"
+				type: "item"
+			}]
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.subtitle}"
+			tasks: [{
+				entity: "fromtheshadows:nehemoth"
+				icon: "fromtheshadows:horn_of_apocalypse"
+				id: "07C3F9FAB82A74B4"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest3166583718448422961.title}"
+			x: 2.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: [
+				""
+				""
+				"{ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.description1}"
+				""
+				"[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"083E31035AB51591\"}}]"
+			]
+			icon: "monsterexpansion:skrythe_frill"
+			id: "2C89A1EDBADA8DB5"
+			rewards: [
+				{
+					count: 4
+					id: "4D69F6191A356F5C"
+					item: "epicskills:ability_stone"
+					type: "item"
+				}
+				{
+					id: "23443CC7F973D649"
+					item: "tcrcore:artifact_ticket"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.subtitle}"
+			tasks: [{
+				entity: "monsterexpansion:skrythe"
+				icon: "monsterexpansion:skrythe_frill"
+				id: "1FA8DD758BB3E887"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest3209274251892395445.title}"
+			x: -3.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			icon: "block_factorys_bosses:yeti_spawn_egg"
+			id: "2E3DFA7D59FD06D4"
+			rewards: [{
+				count: 3
+				id: "51D404BA8E138337"
+				item: "epicskills:ability_stone"
+				type: "item"
+			}]
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3332094715611645652.subtitle}"
+			tasks: [{
+				entity: "block_factorys_bosses:yeti"
+				icon: "block_factorys_bosses:yeti_spawn_egg"
+				id: "3A5F56B41325A69C"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest3332094715611645652.title}"
+			x: 0.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: [""]
+			icon: {
+				Count: 1
+				id: "block_factorys_bosses:sandworm_dart"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "697EB87B461228FE"
+			rewards: [
+				{
+					count: 4
+					id: "3E3B93FA73E8DAC8"
+					item: "epicskills:ability_stone"
+					type: "item"
+				}
+				{
+					id: "058FEBB68525A947"
+					item: "tcrcore:artifact_ticket"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest7601716060644059390.subtitle}"
+			tasks: [{
+				entity: "block_factorys_bosses:sandworm"
+				icon: {
+					Count: 1
+					id: "block_factorys_bosses:sandworm_dart"
+					tag: {
+						Damage: 0
+					}
+				}
+				id: "424210C6D8BB4252"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest7601716060644059390.title}"
+			x: 3.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			id: "43AD812F245AB09F"
+			rewards: [{
+				id: "648AA1E1A2279C80"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest4876696010985484447.subtitle}"
+			tasks: [{
+				entity: "cataclysm:clawdian"
+				icon: "cataclysm:chitin_claw"
+				id: "2FA346342FA5D32F"
+				type: "kill"
+				value: 1L
+			}]
+			x: 9.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: ["{ftbquests.chapter.6E911C0C47606679.quest6338649673391673759.description1}"]
+			icon: "cataclysm:aptrgangr_head"
+			id: "57F7684B5A28119F"
+			rewards: [{
+				id: "017BBE4536481F10"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest6338649673391673759.subtitle}"
+			tasks: [{
+				entity: "cataclysm:aptrgangr"
+				icon: "cataclysm:aptrgangr_spawn_egg"
+				id: "276AF42DD7B2A226"
+				type: "kill"
+				value: 1L
+			}]
+			x: -8.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: ["[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest30034045548591528.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest30034045548591528.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"42B7E4648BDE15AD\"}}]"]
+			id: "006AB3CE281779A8"
+			rewards: [{
+				id: "7B621DDAF22D7741"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest30034045548591528.subtitle}"
+			tasks: [{
+				entity: "cataclysm:coralssus"
+				icon: "cataclysm:coral_chunk"
+				id: "4FE758CFA6529E00"
+				type: "kill"
+				value: 1L
+			}]
+			x: -12.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			id: "2774145CF1848544"
+			rewards: [{
+				id: "19002AA3C5940A63"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest2842919654199166276.subtitle}"
+			tasks: [{
+				entity: "cataclysm:kobolediator"
+				icon: "cataclysm:kobolediator_skull"
+				id: "2DC31AC8D68BC73A"
+				type: "kill"
+				value: 1L
+			}]
+			x: 15.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: ["{ftbquests.chapter.6E911C0C47606679.quest9130988065080719209.description1}"]
+			icon_scale: 1.5d
+			id: "7EB7C9446377B769"
+			rewards: [
+				{
+					count: 4
+					id: "1DB32CC3D669C6D0"
+					item: "epicskills:ability_stone"
+					type: "item"
+				}
+				{
+					id: "6D18910D14426DFB"
+					item: "tcrcore:artifact_ticket"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest9130988065080719209.subtitle}"
+			tasks: [{
+				entity: "minecraft:wither"
+				icon: "minecraft:nether_star"
+				id: "306DADBC7A51E380"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest9130988065080719209.title}"
+			x: 1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			description: ["[\"\",{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest738709073673023169.rich_description1\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"627E4A2C0428CC5A\"}}]"]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			icon_scale: 1.5d
+			id: "0A406BFD18A36EC1"
+			rewards: [{
+				count: 3
+				id: "3FFC98A10CE86EA4"
+				item: "epicskills:ability_stone"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.3d
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest738709073673023169.subtitle}"
+			tasks: [{
+				entity: "minecraft:ender_dragon"
+				icon: "minecraft:dragon_egg"
+				id: "10A8B6DE432B127E"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest738709073673023169.title}"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			icon: "block_factorys_bosses:dragon_skull"
+			icon_scale: 1.5d
+			id: "4E2DD4620173E511"
+			rewards: [
+				{
+					count: 4
+					id: "716CFBFF5641D334"
+					item: "epicskills:ability_stone"
+					type: "item"
+				}
+				{
+					id: "1915AD365EAFF389"
+					item: "tcrcore:artifact_ticket"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest5633392226306614545.subtitle}"
+			tasks: [{
+				entity: "block_factorys_bosses:infernal_dragon"
+				icon: "block_factorys_bosses:dragon_skull"
+				id: "03BBFB33B22431C9"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest5633392226306614545.title}"
+			x: 5.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			icon: "monsterexpansion:rhyza_tail"
+			id: "1076C4FBFF37BE92"
+			rewards: [
+				{
+					count: 4
+					id: "76D1BE099119C1A8"
+					item: "epicskills:ability_stone"
+					type: "item"
+				}
+				{
+					id: "008EC2074F211EC1"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest1186352138456383122.subtitle}"
+			tasks: [{
+				entity: "monsterexpansion:rhyza"
+				icon: "monsterexpansion:rhyza_tail"
+				id: "2D9D94888B5B48C1"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest1186352138456383122.title}"
+			x: 1.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			icon_scale: 1.5d
+			id: "5509B6D7C1DF4BB6"
+			rewards: [{
+				count: 3
+				id: "028AC83ABBE3DC5C"
+				item: "epicskills:ability_stone"
+				type: "item"
+			}]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest6127629805801130934.subtitle}"
+			tasks: [{
+				entity: "mowziesmobs:ferrous_wroughtnaut"
+				icon: "mowziesmobs:wrought_helmet"
+				id: "614173474E896E0C"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest6127629805801130934.title}"
+			x: 1.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			icon_scale: 1.5d
+			id: "29FCA2144193E4B7"
+			rewards: [{
+				count: 3
+				id: "5237FF2CF295CBC1"
+				item: "epicskills:ability_stone"
+				type: "item"
+			}]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest3025471257569387703.subtitle}"
+			tasks: [{
+				entity: "mowziesmobs:frostmaw"
+				icon: {
+					Count: 1
+					id: "mowziesmobs:ice_crystal"
+					tag: {
+						Damage: 0
+					}
+				}
+				id: "02FA8B5ABECE0D28"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest3025471257569387703.title}"
+			x: -4.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			icon_scale: 1.5d
+			id: "236A628B78740D00"
+			rewards: [{
+				count: 3
+				id: "21CEF973AB38E742"
+				item: "epicskills:ability_stone"
+				type: "item"
+			}]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest2551960490019654912.subtitle}"
+			tasks: [{
+				entity: "mowziesmobs:umvuthi"
+				icon: "mowziesmobs:sol_visage"
+				id: "02C024329915C365"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest2551960490019654912.title}"
+			x: 6.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			id: "23FBDAE499531BC7"
+			rewards: [{
+				id: "661A36084420E7CB"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest2592906685841611719.subtitle}"
+			tasks: [{
+				entity: "cataclysm:ignited_revenant"
+				icon: "cataclysm:burning_ashes"
+				id: "59ABE847E412F125"
+				type: "kill"
+				value: 1L
+			}]
+			x: 1.0d
+			y: -9.0d
+		}
+		{
+			dependencies: [
+				"68EDC89BB022788B"
+				"3DA47BC417E1D50B"
+			]
+			id: "3CD75C4FCB8D8CBC"
+			rewards: [
+				{
+					id: "678A5990827C5D7B"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+				{
+					id: "6268803745FA79FA"
+					item: "cataclysm:music_disc_ender_guardian"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest4384074260055690428.subtitle}"
+			tasks: [{
+				entity: "cataclysm:ender_guardian"
+				icon: "tcrcore:void_core"
+				id: "7D9A20ADEF956304"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest4384074260055690428.title}"
+			x: -12.0d
+			y: -11.0d
+		}
+		{
+			dependencies: [
+				"68EDC89BB022788B"
+				"3DA47BC417E1D50B"
+			]
+			id: "4E7CD062B7D50581"
+			rewards: [{
+				id: "63A800B486C545AE"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest5655624354480063873.subtitle}"
+			tasks: [{
+				entity: "cataclysm:ender_golem"
+				icon: "cataclysm:void_core"
+				id: "419FA718E57219EF"
+				type: "kill"
+				value: 1L
+			}]
+			x: -12.0d
+			y: -9.0d
+		}
+		{
+			dependencies: [
+				"68EDC89BB022788B"
+				"12382A247CB2D102"
+			]
+			id: "52F6B6200AB100C4"
+			rewards: [
+				{
+					id: "0EC321F5EE04A543"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+				{
+					id: "4888581BF185F436"
+					item: "cataclysm:music_disc_netherite_monstrosity"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest5978165804115493060.subtitle}"
+			tasks: [{
+				entity: "cataclysm:netherite_monstrosity"
+				icon: {
+					Count: 1
+					id: "cataclysm:monstrous_helm"
+					tag: {
+						Damage: 0
+					}
+				}
+				id: "3989EE9853B1FBE1"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest5978165804115493060.title}"
+			x: 15.0d
+			y: -11.0d
+		}
+		{
+			dependencies: [
+				"68EDC89BB022788B"
+				"261ED495C5E3AEA1"
+			]
+			id: "660B6B2EE98EF82A"
+			rewards: [
+				{
+					id: "6018A9DAFAD701DC"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+				{
+					id: "4B4F583A18FBF43E"
+					item: "cataclysm:music_disc_the_harbinger"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest7353088665843595306.subtitle}"
+			tasks: [{
+				entity: "cataclysm:the_harbinger"
+				icon: "cataclysm:witherite_ingot"
+				id: "6BB06FB311748574"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest7353088665843595306.title}"
+			x: 1.0d
+			y: 8.0d
+		}
+		{
+			dependencies: [
+				"68EDC89BB022788B"
+				"261ED495C5E3AEA1"
+			]
+			id: "788C8A436F0F2DF4"
+			rewards: [{
+				id: "6749D9083C76366F"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest8686469803521551860.subtitle}"
+			tasks: [{
+				entity: "cataclysm:the_prowler"
+				icon: "cataclysm:meat_shredder"
+				id: "7BE0DAD8340F45A5"
+				type: "kill"
+				value: 1L
+			}]
+			x: 1.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			icon_scale: 1.5d
+			id: "75FC56E08479B2AD"
+			rewards: [
+				{
+					count: 4
+					id: "0AD970BFFFF2A83C"
+					item: "epicskills:ability_stone"
+					type: "item"
+				}
+				{
+					id: "5754A182B81A369F"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+			]
+			shape: "none"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest8501765718863884973.subtitle}"
+			tasks: [{
+				entity: "alexsmobs:void_worm"
+				icon: "alexsmobs:mysterious_worm"
+				id: "3820BA9AE2646328"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest8501765718863884973.title}"
+			x: -3.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["68EDC89BB022788B"]
+			icon_scale: 1.5d
+			id: "3956BC43F4840662"
+			rewards: [
+				{
+					count: 4
+					id: "6CD15AA668DCE8B6"
+					item: "epicskills:ability_stone"
+					type: "item"
+				}
+				{
+					id: "71C6E2E944EF9199"
+					item: "tcrcore:rare_artifact_ticket"
+					type: "item"
+				}
+			]
+			shape: "none"
+			subtitle: "{ftbquests.chapter.6E911C0C47606679.quest4131696708210132578.subtitle}"
+			tasks: [{
+				entity: "block_factorys_bosses:underworld_knight"
+				icon: "block_factorys_bosses:underworld_knight_spawn_egg"
+				id: "4382E046C5664F42"
+				type: "kill"
+				value: 1L
+			}]
+			title: "{ftbquests.chapter.6E911C0C47606679.quest4131696708210132578.title}"
+			x: 4.0d
+			y: -5.5d
+		}
+	]
+	title: "{ftbquests.chapter.6E911C0C47606679.title}"
+}

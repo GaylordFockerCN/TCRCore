@@ -1,0 +1,7 @@
+{
+  "values": [
+    "#trek:forest/dark_oak/is_dark_forest_no_snow",
+    {"id": "terralith:lavender_forest","required": false},
+    {"id": "terralith:lavender_valley","required": false}
+  ]
+}

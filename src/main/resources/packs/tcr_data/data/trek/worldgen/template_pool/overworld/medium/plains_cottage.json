@@ -1,0 +1,15 @@
+{
+  "name": "plains_cottage",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/plains_cottage",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      }
+  ]
+}

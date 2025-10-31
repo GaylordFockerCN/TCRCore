@@ -61,17 +61,26 @@ public class TCRAdvancementData extends ForgeAdvancementProvider {
             Advancement kill_pillager = registerAdvancement(root, "kill_pillager", FrameType.CHALLENGE, Items.GOAT_HORN, true, true, true, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityTypeTags.RAIDERS)));
             Advancement mark_map = registerAdvancement(kill_pillager, "mark_map", FrameType.TASK, Items.MAP, true, true, true, new ImpossibleTrigger.TriggerInstance());
 
-            Advancement storm_eye = registerAdvancement(mark_map, "storm_eye", FrameType.CHALLENGE, ModItems.MUSIC_DISC_SCYLLA.get(), true, true, false, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.STORM_EYE.get()));
-            Advancement abyss_eye = registerAdvancement(mark_map, "abyss_eye", FrameType.CHALLENGE, ModItems.ABYSS_EYE.get(), true, true, false, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ABYSS_EYE.get()));
-            Advancement flame_eye = registerAdvancement(mark_map, "flame_eye", FrameType.CHALLENGE, ModItems.FLAME_EYE.get(), true, true, false, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.FLAME_EYE.get()));
-            Advancement desert_eye = registerAdvancement(mark_map, "desert_eye", FrameType.CHALLENGE, ModItems.REMNANT_SKULL.get(), true, true, false, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.DESERT_EYE.get()));
-            Advancement cursed_eye = registerAdvancement(mark_map, "cursed_eye", FrameType.CHALLENGE, AquamiraeItems.SHIP_GRAVEYARD_ECHO.get(), true, true, false, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CURSED_EYE.get()));
+//            Advancement storm_eye = registerAdvancement(mark_map, "storm_eye", FrameType.CHALLENGE, ModItems.MUSIC_DISC_SCYLLA.get(), true, true, false, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.STORM_EYE.get()));
+//            Advancement abyss_eye = registerAdvancement(mark_map, "abyss_eye", FrameType.CHALLENGE, ModItems.ABYSS_EYE.get(), true, true, false, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ABYSS_EYE.get()));
+//            Advancement flame_eye = registerAdvancement(mark_map, "flame_eye", FrameType.CHALLENGE, ModItems.FLAME_EYE.get(), true, true, false, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.FLAME_EYE.get()));
+//            Advancement desert_eye = registerAdvancement(mark_map, "desert_eye", FrameType.CHALLENGE, ModItems.REMNANT_SKULL.get(), true, true, false, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.DESERT_EYE.get()));
+//            Advancement cursed_eye = registerAdvancement(mark_map, "cursed_eye", FrameType.CHALLENGE, AquamiraeItems.SHIP_GRAVEYARD_ECHO.get(), true, true, false, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CURSED_EYE.get()));
 
-            Advancement flame_kill = registerAdvancement(flame_eye, "flame_kill", FrameType.CHALLENGE, ModItems.THE_INCINERATOR.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.IGNIS.get())));
-            Advancement abyss_kill = registerAdvancement(abyss_eye, "abyss_kill", FrameType.CHALLENGE, ModItems.TIDAL_CLAWS.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.THE_LEVIATHAN.get())));
-            Advancement storm_kill = registerAdvancement(storm_eye, "storm_kill", FrameType.CHALLENGE, ModItems.CERAUNUS.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.SCYLLA.get())));
-            Advancement desert_kill = registerAdvancement(desert_eye, "desert_kill", FrameType.CHALLENGE, ModItems.WRATH_OF_THE_DESERT.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.ANCIENT_REMNANT.get())));
-            Advancement cursed_kill = registerAdvancement(cursed_eye, "cursed_kill", FrameType.CHALLENGE, ModItems.SOUL_RENDER.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.MALEDICTUS.get())));
+            Advancement vatansever = Advancement.Builder.advancement()
+                    .display(SwordSoaringItems.VATANSEVER.get(),
+                            SwordSoaringItems.VATANSEVER.get().getDescription(),
+                            Component.literal(""),
+                            null,
+                            FrameType.CHALLENGE, true, true, false)
+                    .addCriterion(TCRCoreMod.MOD_ID, InventoryChangeTrigger.TriggerInstance.hasItems(SwordSoaringItems.VATANSEVER.get()))
+                    .save(consumer, ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "vatansever"), existingFileHelper);
+
+//            Advancement flame_kill = registerAdvancement(flame_eye, "flame_kill", FrameType.CHALLENGE, ModItems.THE_INCINERATOR.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.IGNIS.get())));
+//            Advancement abyss_kill = registerAdvancement(abyss_eye, "abyss_kill", FrameType.CHALLENGE, ModItems.TIDAL_CLAWS.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.THE_LEVIATHAN.get())));
+//            Advancement storm_kill = registerAdvancement(storm_eye, "storm_kill", FrameType.CHALLENGE, ModItems.CERAUNUS.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.SCYLLA.get())));
+//            Advancement desert_kill = registerAdvancement(desert_eye, "desert_kill", FrameType.CHALLENGE, ModItems.WRATH_OF_THE_DESERT.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.ANCIENT_REMNANT.get())));
+//            Advancement cursed_kill = registerAdvancement(cursed_eye, "cursed_kill", FrameType.CHALLENGE, ModItems.SOUL_RENDER.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.MALEDICTUS.get())));
 
             Advancement dragonRide = registerAdvancement(root, "dragon_tame", FrameType.CHALLENGE, net.alp.monsterexpansion.item.ModItems.SKRYTHE_WING_MEMBRANE.get(), true, true, false, TameAnimalTrigger.TriggerInstance.tamedAnimal(EntityPredicate.Builder.entity().of(net.alp.monsterexpansion.entity.ModEntities.SKRYTHE.get()).build()));
 

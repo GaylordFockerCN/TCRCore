@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:gold_block"
+    },
+    "base": {
+        "item": "quark:diamond_heart"
+    },
+    "result": {
+        "item": "minecraft:netherite_ingot"
+    },
+    "template": {
+        "item": "minecraft:lava_bucket"
+    }
+}

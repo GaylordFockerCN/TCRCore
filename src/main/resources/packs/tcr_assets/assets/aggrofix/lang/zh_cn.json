@@ -1,0 +1,9 @@
+{
+  "enchantment.aggrofix.aggrobaiting": "嘲讽",
+  "enchantment.aggrofix.aggrobaiting.desc": "右键吸引附近的怪物",
+  "config.aggrofix.aggrofix": "仇恨修复",
+  "gamerule.useAggroFix": "使用仇恨系统",
+  "enchantment.aggrofix.aggronizing": "深恶痛绝",
+  "enchantment.aggrofix.aggronizing.desc": "对生物造成伤害时，施加的仇恨值改为(1+附魔等级)×造成伤害",
+  "gamerule.useAggroFix.description": "切换仇恨系统"
+}

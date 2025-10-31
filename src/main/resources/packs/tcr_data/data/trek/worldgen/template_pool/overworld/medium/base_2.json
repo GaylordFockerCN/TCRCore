@@ -1,0 +1,15 @@
+{
+  "name": "base_2",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/base_2",
+              "projection": "rigid",
+              "processors": "minecraft:empty"
+          }
+      }
+  ]
+}

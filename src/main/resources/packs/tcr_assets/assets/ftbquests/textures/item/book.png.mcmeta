@@ -1,0 +1,18 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "ftbquests:item/book"
+  },
+
+  "animation": {
+    "interpolate": false,
+    "frametime": 20,
+    "frames": [
+      {"index": 0,"time": 100},
+      {"index": 1,"time": 3},
+      {"index": 0,"time": 3},
+      {"index": 1,"time": 3},
+      {"index": 0,"time": 3}
+     ]
+  }
+}

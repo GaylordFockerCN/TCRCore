@@ -1,0 +1,15 @@
+{
+  "values": [
+    "#trek:forest/acacia/is_acacia_forest_snow",
+    "#trek:forest/birch/is_birch_forest_snow",
+    "#trek:forest/cherry/is_cherry_snow",
+    "#trek:forest/dark_oak/is_dark_oak_snow",
+    "#trek:forest/oak/is_oak_forest_snow",
+    "#trek:forest/spruce/is_spruce_forest_snow",
+    "#trek:plains/is_plains_snow",
+    "#trek:slopes/is_slopes_snow",
+    {"id": "terralith:snowy_badlands","required": false},
+    {"id": "biomesoplenty:cold_desert","required": false},
+    {"id": "biomesoplenty:muskeg","required": false}
+  ]
+}

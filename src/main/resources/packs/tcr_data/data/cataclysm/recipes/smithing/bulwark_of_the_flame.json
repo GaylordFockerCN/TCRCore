@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "minecraft:blaze_rod"
+    },
+    "base": {
+        "item": "magistuarmory:netherite_pavese"
+    },
+    "result": {
+        "item": "cataclysm:bulwark_of_the_flame"
+    },
+    "template": {
+        "item": "cataclysm:ignitium_ingot"
+    }
+}

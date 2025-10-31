@@ -1,0 +1,10 @@
+{
+  "values": [
+    "minecraft:stony_peaks",
+    {"id": "terralith:emerald_peaks","required": false},
+    {"id": "terralith:rocky_mountains","required": false},
+    {"id": "terralith:stony_spires","required": false},
+    {"id": "terralith:yosemite_cliffs","required": false},
+    {"id": "biomesoplenty:crag","required": false}
+  ]
+}

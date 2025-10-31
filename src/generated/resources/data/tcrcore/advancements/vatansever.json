@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "tcrcore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sword_soaring:vatansever"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": ""
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "sword_soaring:vatansever",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "item.sword_soaring.vatansever"
+    }
+  },
+  "requirements": [
+    [
+      "tcrcore"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

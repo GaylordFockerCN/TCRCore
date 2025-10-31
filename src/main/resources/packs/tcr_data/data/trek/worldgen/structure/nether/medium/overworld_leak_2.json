@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#minecraft:is_nether",
+  "max_distance_from_center": 64,
+  "size": 1,
+  "spawn_overrides": {},
+  "start_height": {
+    "type": "minecraft:trapezoid",
+    "min_inclusive": {
+      "absolute": 32
+    },
+    "max_inclusive": {
+      "absolute": 96
+    }
+  },
+  "start_pool": "trek:nether/medium/overworld_leak_2",
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin",
+  "use_expansion_hack": false
+}

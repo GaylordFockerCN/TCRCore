@@ -1,0 +1,42 @@
+{
+  "name": "terminators",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/terminators/terminator_01",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/terminators/terminator_02",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/terminators/terminator_03",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "trek:village/taiga/terminators/terminator_04",
+        "processors": "trek:village/street_taiga",
+        "projection": "terrain_matching"
+      },
+      "weight": 1
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

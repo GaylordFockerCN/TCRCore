@@ -28,7 +28,7 @@ public class TCREntities {
             EntityType.Builder.<CustomColorItemEntity>of(CustomColorItemEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(6).updateInterval(20));
 
     public static final RegistryObject<EntityType<GuiderEntity>> GUIDER = register("guider",
-            EntityType.Builder.of(GuiderEntity::new, MobCategory.CREATURE).sized(0.6f, 1.9f).fireImmune());
+            EntityType.Builder.of(GuiderEntity::new, MobCategory.CREATURE).sized(0.8f, 2.3f).fireImmune());
 
     public static final RegistryObject<EntityType<GirlEntity>> GIRL = register("girl",
             EntityType.Builder.of(GirlEntity::new, MobCategory.CREATURE).sized(0.6f, 1.9f).fireImmune());

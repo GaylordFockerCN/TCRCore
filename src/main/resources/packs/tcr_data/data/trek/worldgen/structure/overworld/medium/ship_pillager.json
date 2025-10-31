@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#trek:ocean/is_not_frozen_ocean",
+  "max_distance_from_center": 64,
+  "project_start_to_heightmap": "MOTION_BLOCKING_NO_LEAVES",
+  "size": 2,
+  "spawn_overrides": {
+      "monster": {
+          "bounding_box": "full",
+          "spawns": [
+              {
+                  "type": "minecraft:pillager",
+                  "minCount": 1,
+                  "maxCount": 1,
+                  "weight": 1
+              }
+          ]
+      }
+  },
+  "start_height": {
+      "absolute": -1
+  },
+  "start_pool": "trek:overworld/medium/ship_pillager",
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "use_expansion_hack": false
+}

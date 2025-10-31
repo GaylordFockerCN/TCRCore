@@ -13,7 +13,6 @@ public class TCRRecipeGenerator extends TCRRecipeProvider implements IConditionB
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
 
-
     }
 
 }

@@ -1,0 +1,311 @@
+{
+	default_hide_dependency_lines: true
+	default_quest_shape: ""
+	filename: "shi_jie"
+	group: ""
+	hide_quest_details_until_startable: true
+	hide_quest_until_deps_visible: true
+	icon: "ribbits:giant_lilypad"
+	id: "5A7C68B10CEA5C38"
+	images: [{
+		height: 6.0d
+		image: "tcrcore:textures/ftb/ribbites.png"
+		rotation: 0.0d
+		width: 15.4d
+		x: 0.0d
+		y: -1.5d
+	}]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest8224116903557449688.description1}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest8224116903557449688.description2}"
+			]
+			hide_dependency_lines: true
+			hide_dependent_lines: true
+			hide_until_deps_complete: true
+			hide_until_deps_visible: true
+			id: "7221EEC023D3C7D8"
+			invisible: true
+			rewards: [{
+				id: "7D6A65A022DEC3EA"
+				item: "alexsmobs:animal_dictionary"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest8224116903557449688.subtitle}"
+			tasks: [{
+				advancement: "tcrcore:stage1"
+				criterion: ""
+				icon: "ribbits:giant_lilypad"
+				id: "765769321FA247F9"
+				title: "{ftbquests.chapter.5A7C68B10CEA5C38.quest8224116903557449688.task.8527400083449333753.title}"
+				type: "advancement"
+			}]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7221EEC023D3C7D8"]
+			description: [
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.description1}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.description2}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.description3}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.description4}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.description5}"
+			]
+			id: "2FC8D0A969FBC1CE"
+			rewards: [{
+				id: "2932CDC2E923659E"
+				item: "tudigong:tudi_command_spell"
+				type: "item"
+			}]
+			shape: "none"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.subtitle}"
+			tasks: [{
+				advancement: "tudigong:sincerity"
+				criterion: ""
+				icon: "tudigong:tudi_temple"
+				id: "307DE1524B2097F6"
+				type: "advancement"
+			}]
+			title: "{ftbquests.chapter.5A7C68B10CEA5C38.quest3443231341170901454.title}"
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["7221EEC023D3C7D8"]
+			description: [
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1470580929012265040.description1}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1470580929012265040.description2}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1470580929012265040.description3}"
+			]
+			icon: {
+				Count: 1
+				id: "sword_soaring:vatansever"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "14688D903F3D7050"
+			rewards: [{
+				id: "0901E56FD9C3CDD6"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest1470580929012265040.subtitle}"
+			tasks: [{
+				id: "3B59E0C7195CEE97"
+				title: "{ftbquests.chapter.5A7C68B10CEA5C38.quest1470580929012265040.task.4276696466893631127.title}"
+				type: "checkmark"
+			}]
+			title: "{ftbquests.chapter.5A7C68B10CEA5C38.quest1470580929012265040.title}"
+			x: 1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["7221EEC023D3C7D8"]
+			description: [
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description1}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description2}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description3}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description4}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description5}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.description6}"
+			]
+			icon: {
+				Count: 1
+				id: "patchouli:guide_book"
+				tag: {
+					"patchouli:book": "parcool:parcool_guide"
+				}
+			}
+			id: "4A7915DC854C5C44"
+			rewards: [{
+				id: "0577662FF99B07A4"
+				item: {
+					Count: 1
+					id: "patchouli:guide_book"
+					tag: {
+						"patchouli:book": "parcool:parcool_guide"
+					}
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "3DF19071D1E7D6CE"
+				title: "{ftbquests.chapter.5A7C68B10CEA5C38.quest5366344467862019140.task.4463507524228208334.title}"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["7221EEC023D3C7D8"]
+			id: "7B86731A7B61055D"
+			rewards: [
+				{
+					count: 32
+					id: "71C50C57B79B05B7"
+					item: {
+						Count: 1
+						id: "minecraft:firework_rocket"
+						tag: {
+							Fireworks: {
+								Flight: 3b
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 32
+					id: "31D57959CB9FD934"
+					item: {
+						Count: 1
+						id: "minecraft:firework_rocket"
+						tag: {
+							Fireworks: {
+								Flight: 2b
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 32
+					id: "1E43C2B3ABA9663A"
+					item: {
+						Count: 1
+						id: "minecraft:firework_rocket"
+						tag: {
+							Fireworks: {
+								Flight: 1b
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest8900928271120663901.subtitle}"
+			tasks: [{
+				id: "6D6C3A42A449DD81"
+				item: {
+					Count: 1
+					id: "minecraft:elytra"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["7221EEC023D3C7D8"]
+			description: [
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1892043973836821613.description1}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1892043973836821613.description2}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest1892043973836821613.description3}"
+			]
+			icon: "minecraft:iron_ore"
+			id: "1A41E3F83FF6546D"
+			rewards: [{
+				id: "63864E5C13928197"
+				item: "minecraft:diamond"
+				type: "item"
+			}]
+			shape: "rsquare"
+			tasks: [{
+				id: "09FB67DEA3FDE0C3"
+				title: "{ftbquests.chapter.5A7C68B10CEA5C38.quest1892043973836821613.task.719282771427451075.title}"
+				type: "checkmark"
+			}]
+			title: "{ftbquests.chapter.5A7C68B10CEA5C38.quest1892043973836821613.title}"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7221EEC023D3C7D8"]
+			description: [
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.description1}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.description2}"
+				""
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.description3}"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:firework_rocket"
+				tag: {
+					Fireworks: {
+						Flight: 3b
+					}
+				}
+			}
+			id: "67E822F4B51CE749"
+			rewards: [{
+				id: "33E3EFC36260F10F"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.subtitle}"
+			tasks: [{
+				id: "5293E10F1D65A447"
+				title: "{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.task.5950346987720516679.title}"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7221EEC023D3C7D8"]
+			description: [
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3288439856153403711.description1}"
+				""
+				"{ftbquests.chapter.5A7C68B10CEA5C38.quest3288439856153403711.image0}"
+			]
+			icon: "monsterexpansion:skrythe_frill"
+			id: "2DA2E2A05342A13F"
+			rewards: [{
+				id: "494045C0E9E4DE18"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "rsquare"
+			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest3288439856153403711.subtitle}"
+			tasks: [{
+				advancement: "tcrcore:dragon_tame"
+				criterion: ""
+				id: "71821EDE7FE53D51"
+				type: "advancement"
+			}]
+			title: "{ftbquests.chapter.5A7C68B10CEA5C38.quest3288439856153403711.title}"
+			x: 3.0d
+			y: 5.0d
+		}
+	]
+	subtitle: ["{ftbquests.chapter.5A7C68B10CEA5C38.subtitle0}"]
+	title: "{ftbquests.chapter.5A7C68B10CEA5C38.title}"
+}

@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "efn:duskfire_ingot"
+    },
+    "base": {
+        "item": "efn:ruinfighter_leggings"
+    },
+    "result": {
+        "item": "efn:duskfire_leggings"
+    },
+    "template": {
+        "item": "efn:duskfire_ingot"
+    }
+}

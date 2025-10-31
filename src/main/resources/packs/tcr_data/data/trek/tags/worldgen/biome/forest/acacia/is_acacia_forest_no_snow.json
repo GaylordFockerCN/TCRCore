@@ -1,0 +1,8 @@
+{
+  "values": [
+    {"id": "terralith:amethyst_canyon","required": false},
+    {"id": "terralith:amethyst_rainforest","required": false},
+    {"id": "terralith:moonlight_grove","required": false},
+    {"id": "terralith:moonlight_valley","required": false}
+  ]
+}

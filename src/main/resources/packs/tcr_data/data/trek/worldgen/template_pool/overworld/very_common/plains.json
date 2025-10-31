@@ -1,0 +1,51 @@
+{
+    "name": "plains",
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "trek:overworld/very_common/forgotten_garden",
+                "projection": "terrain_matching",
+                "processors": "minecraft:empty"
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "trek:overworld/very_common/plains_1",
+                "projection": "terrain_matching",
+                "processors": "minecraft:empty"
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "trek:overworld/very_common/plains_2",
+                "projection": "terrain_matching",
+                "processors": "minecraft:empty"
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "trek:overworld/very_common/plains_3",
+                "projection": "terrain_matching",
+                "processors": "minecraft:empty"
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "trek:overworld/very_common/plains_4",
+                "projection": "terrain_matching",
+                "processors": "minecraft:empty"
+            }
+        }
+    ]
+  }

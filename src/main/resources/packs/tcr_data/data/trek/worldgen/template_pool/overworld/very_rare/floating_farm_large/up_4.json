@@ -1,0 +1,19 @@
+{
+  "name": "up_4",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/very_rare/floating_farm_large/up_4",
+              "projection": "rigid",
+            "processors": [
+              {
+                "processor_type": "fluid_tick_structure_processor:fluid_tick"
+              }
+            ]
+          }
+      }
+  ]
+}

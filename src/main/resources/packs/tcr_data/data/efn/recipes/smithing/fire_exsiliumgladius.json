@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "cataclysm:kobolediator_skull"
+    },
+    "base": {
+        "item": "magistuarmory:netherite_estoc"
+    },
+    "result": {
+        "item": "efn:fire_exsiliumgladius"
+    },
+    "template": {
+        "item": "efn:duskfire_ingot"
+    }
+}

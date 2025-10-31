@@ -1,0 +1,13 @@
+{
+    "structures": [
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 48,
+        "separation": 24,
+        "spread_type": "linear",
+        "salt": 14357726,
+        "frequency_reduction_method": "default",
+        "frequency": 1
+    }
+}

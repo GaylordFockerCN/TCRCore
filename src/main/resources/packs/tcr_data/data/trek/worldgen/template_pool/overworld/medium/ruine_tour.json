@@ -1,0 +1,15 @@
+{
+  "name": "ruine_tour",
+  "fallback": "minecraft:empty",
+  "elements": [
+      {
+          "weight": 1,
+          "element": {
+              "element_type": "minecraft:single_pool_element",
+              "location": "trek:overworld/medium/ruine_tour",
+              "projection": "rigid",
+              "processors": "trek:combination/crackify_20_mossify_20"
+          }
+      }
+  ]
+}

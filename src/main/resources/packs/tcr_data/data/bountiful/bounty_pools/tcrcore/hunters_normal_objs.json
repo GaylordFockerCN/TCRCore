@@ -1,0 +1,248 @@
+{
+	"content": {
+
+		"hunters_normal_obj_bone_serpent": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "alexsmobs:bone_serpent",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1000
+		},
+
+		"hunters_normal_obj_centipede": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "alexsmobs:centipede_head",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1001
+		},
+
+		"hunters_normal_obj_crimson_mosquito": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "alexsmobs:crimson_mosquito",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1002
+		},
+
+		"hunters_normal_obj_guster": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "alexsmobs:guster",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1003
+		},
+
+		"hunters_normal_obj_soul_vulture": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "alexsmobs:soul_vulture",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1004
+		},
+
+		"hunters_normal_obj_froststalker": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "alexsmobs:froststalker",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1005
+		},
+
+		"hunters_normal_obj_tusklin": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "alexsmobs:tusklin",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1006
+		},
+
+		"hunters_normal_obj_rocky_roller": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "alexsmobs:rocky_roller",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1007
+		},
+
+		"hunters_normal_obj_skelewag": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "alexsmobs:skelewag",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1008
+		},
+
+		"hunters_normal_obj_skreecher": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "alexsmobs:skreecher",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1009
+		},
+
+		"hunters_normal_obj_soul_knight_wither_skeleton": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "block_factorys_bosses:soul_knight_wither_skeleton",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1010
+		},
+
+		"hunters_normal_obj_soul_skeleton": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "block_factorys_bosses:soul_skeleton",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1011
+		},
+
+		"hunters_normal_obj_flaming_skeleton_guard_sword": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "block_factorys_bosses:flaming_skeleton_guard_sword",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1012
+		},
+
+		"hunters_normal_obj_dragon_guard_sword": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "block_factorys_bosses:dragon_guard_sword",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1013
+		},
+
+		"hunters_normal_obj_cleric": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "fromtheshadows:cleric",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1014
+		},
+
+		"hunters_normal_obj_foliaath": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "mowziesmobs:foliaath",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1015
+		},
+
+		"hunters_normal_obj_umvuthana": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "mowziesmobs:umvuthana",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1016
+		},
+
+		"hunters_normal_obj_umvuthana_raptor": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "mowziesmobs:umvuthana_raptor",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1017
+		},
+
+		"hunters_normal_obj_umvuthana_crane": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "mowziesmobs:umvuthana_crane",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1018
+		},
+
+		"hunters_normal_obj_naga": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "mowziesmobs:naga",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1019
+		},
+
+		"hunters_normal_obj_bogged": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "trials:bogged",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1020
+		},
+
+		"hunters_normal_obj_breeze": {
+			"type": "entity",
+			"timeMult": 3.0,
+			"content": "trials:breeze",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 1021
+		}
+
+	}
+
+}

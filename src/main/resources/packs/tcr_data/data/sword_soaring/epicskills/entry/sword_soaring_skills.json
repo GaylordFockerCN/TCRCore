@@ -75,16 +75,18 @@
       "skill": "sword_soaring:sword_soaring_elytra_master"
     },
     {
-      "ability_points": 5,
       "hidden": false,
       "position_in_screen": [
         220,
         30
       ],
+      "custom_condition": true,
+      "unlock_tip": "unlock_tip.tcrcore.get_vatansever",
       "skill": "sword_soaring:kill_aura_1"
     },
     {
-      "ability_points": 5,
+      "custom_condition": true,
+      "unlock_tip": "unlock_tip.tcrcore.get_vatansever",
       "hidden": false,
       "position_in_screen": [
         320,
@@ -122,7 +124,8 @@
       "skill": "sword_soaring:wan_jian_gui_zong"
     },
     {
-      "ability_points": 5,
+      "custom_condition": true,
+      "unlock_tip": "unlock_tip.tcrcore.get_vatansever",
       "hidden": false,
       "position_in_screen": [
         220,
@@ -131,7 +134,8 @@
       "skill": "sword_soaring:screen_sword"
     },
     {
-      "ability_points": 5,
+      "custom_condition": true,
+      "unlock_tip": "unlock_tip.tcrcore.get_vatansever",
       "hidden": false,
       "position_in_screen": [
         320,

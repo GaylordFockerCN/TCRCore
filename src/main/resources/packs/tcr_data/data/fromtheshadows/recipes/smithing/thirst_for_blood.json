@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "fromtheshadows:diabolium_ingot"
+    },
+    "base": {
+        "item": "magistuarmory:netherite_ranseur"
+    },
+    "result": {
+        "item": "fromtheshadows:thirst_for_blood"
+    },
+    "template": {
+        "item": "fromtheshadows:corrupted_heart"
+    }
+}

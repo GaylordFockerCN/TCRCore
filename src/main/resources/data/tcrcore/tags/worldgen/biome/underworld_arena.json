@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "biomesoplenty:crag",
+    "biomesoplenty:volcanic_plains",
+    "biomesoplenty:wasteland",
+    "biomesoplenty:dryland",
+    "biomesoplenty:lush_desert",
+    "biomesoplenty:wasteland_steppe"
+  ]
+}

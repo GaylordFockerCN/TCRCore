@@ -1,7 +1,7 @@
 {
     "type": "minecraft:smithing_transform",
     "addition": {
-        "item": "minecraft:blaze_powder"
+        "item": "minecraft:blaze_rod"
     },
     "base": {
         "item": "minecraft:netherite_boots"
@@ -10,6 +10,6 @@
         "item": "cataclysm:ignitium_boots"
     },
     "template": {
-        "item": "cataclysm:cursium_ingot"
+        "item": "cataclysm:ignitium_ingot"
     }
 }

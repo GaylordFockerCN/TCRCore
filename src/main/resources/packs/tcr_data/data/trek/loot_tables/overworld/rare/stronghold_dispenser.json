@@ -1,0 +1,69 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 7,
+                                "min": 2
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:arrow",
+                    "weight": 10
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:tipped_arrow",
+                    "weight": 30,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 7
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_potion",
+                            "id": "minecraft:harming"
+                        },
+                        {
+                            "function": "minecraft:set_potion",
+                            "id": "minecraft:poison",
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:random_chance",
+                                    "chance": 0.5
+                                }
+                            ]
+                        },
+                        {
+                            "function": "minecraft:set_potion",
+                            "id": "minecraft:slowness",
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:random_chance",
+                                    "chance": 0.33
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "rolls": {
+                "type": "minecraft:uniform",
+                "max": 2,
+                "min": 1
+            }
+        }
+    ]
+}

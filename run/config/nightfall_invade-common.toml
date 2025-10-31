@@ -1,0 +1,41 @@
+
+["BOSS Config"]
+
+	["BOSS Config"."Arterius Config"]
+		#攻击力倍率 （基础伤害 + 武器伤害）*倍率
+		#Range: 0.0 ~ 1.7976931348623157E308
+		arteriusAttackDamageMultiplier = 0.3
+		#最大生命值倍率
+		#Range: 0.0 ~ 1.7976931348623157E308
+		arteriusMaxHealthMultiplier = 1.4
+		#命中时施加的debuff等级（从0开始）
+		#Range: 0 ~ 255
+		arteriusDebuffLevel = 2
+		#命中时施加的debuff时长（tick）
+		#Range: > 0
+		arteriusDebuffDuration = 60
+		#命中拥有debuff敌人时额外造成的伤害（基于自身攻击力的一定百分比）
+		#Range: 0.0 ~ 1.7976931348623157E308
+		arteriusDebuffExDamage = 0.3
+		#命中拥有debuff敌人时额外造成的伤害（基于目标最大生命值的一定百分比）
+		#Range: 0.0 ~ 1.7976931348623157E308
+		arteriusDebuffExHPDamage = 0.05
+		#攻击额外附带基于攻击力一定百分比的火焰伤害
+		#Range: 0.0 ~ 1.7976931348623157E308
+		arteriusExFireDamage = 0.5
+		#受到的单次伤害限制，不超过最大生命值的一定百分比
+		#Range: 0.0 ~ 1.0
+		arteriusDamageCap = 0.08
+		#累计的伤害达到最大生命值一定比例后，减伤率开始提升
+		#Range: 0.0 ~ 1.0
+		arteriusDamageThreshold = 0.06
+		#累计的伤害达到最大生命值一定比例后，减伤率达到最大值
+		#Range: 0.0 ~ 1.0
+		arteriusDamageMaxThreshold = 0.12
+		#减伤率能达到的最大值
+		#Range: 0.0 ~ 1.0
+		arteriusMaxReduction = 0.9
+		#减伤率从最大值减少到0所需要的时间（tick）
+		#Range: > 0
+		arteriusDecaySecond = 100
+

@@ -1,0 +1,77 @@
+{
+    "structures": [
+        {
+            "structure": "trek:overworld/rare/abandoned_castle_pillager",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/castle",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/elven_tree",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/island_village_1",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/maya",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/mushroom_island",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/pillager_mansion",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/portal_sword",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/pyramide_of_anubis",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/sleepy_island",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/sunken_city",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/tower_island",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/villager_castle",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/villager_fortress",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/villager_island",
+            "weight": 1
+        },
+        {
+            "structure": "trek:overworld/rare/wooden_manor",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 48,
+        "separation": 24,
+        "spread_type": "linear",
+        "salt": 14357742,
+        "frequency_reduction_method": "default",
+        "frequency": 1
+    }
+}

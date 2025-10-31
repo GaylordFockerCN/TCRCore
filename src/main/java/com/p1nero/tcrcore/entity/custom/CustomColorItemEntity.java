@@ -1,15 +1,22 @@
 package com.p1nero.tcrcore.entity.custom;
 
+import com.github.L_Ender.cataclysm.init.ModItems;
+import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.entity.TCREntities;
+import com.p1nero.tcrcore.item.TCRItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class CustomColorItemEntity extends ItemEntity {
     private static final EntityDataAccessor<Integer> COLOR = SynchedEntityData.defineId(CustomColorItemEntity.class, EntityDataSerializers.INT);
@@ -31,6 +38,24 @@ public class CustomColorItemEntity extends ItemEntity {
     }
 
     @Override
+    public boolean hurt(@NotNull DamageSource damageSource, float value) {
+        if(!damageSource.isCreativePlayer()
+                && List.of(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(),
+                ModItems.MONSTROUS_EYE.get(),
+                ModItems.VOID_EYE.get(),
+                ModItems.MECH_EYE.get(),
+                ModItems.ABYSS_EYE.get(),
+                ModItems.STORM_EYE.get(),
+                ModItems.CURSED_EYE.get(),
+                ModItems.FLAME_EYE.get(),
+                ModItems.DESERT_EYE.get())
+                .contains(getItem().getItem())) {
+            return false;
+        }
+        return super.hurt(damageSource, value);
+    }
+
+    @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.getEntityData().define(COLOR, 16777215);
@@ -48,9 +73,12 @@ public class CustomColorItemEntity extends ItemEntity {
         tag.putInt("color_id", this.getTeamColor());
     }
 
+    /**
+     * 有Loot Beam了，故取消
+     */
     @Override
     public boolean isCurrentlyGlowing() {
-        return true;
+        return false;
     }
 
     public void setTeamColor(int color){

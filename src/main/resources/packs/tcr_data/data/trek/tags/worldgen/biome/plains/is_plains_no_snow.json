@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:plains",
+    "minecraft:sunflower_plains",
+    {"id": "floravive:boreal_plains","required": false},
+    {"id": "terralith:blooming_plateau","required": false},
+    {"id": "terralith:brushland","required": false},
+    {"id": "biomesoplenty:field","required": false},
+    {"id": "biomesoplenty:grassland","required": false},
+    {"id": "biomesoplenty:overgrown_greens","required": false},
+    {"id": "biomesoplenty:pasture","required": false}
+  ]
+}

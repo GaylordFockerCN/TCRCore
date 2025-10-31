@@ -1,0 +1,10 @@
+{
+  "type": "cataclysm:amethyst_bless",
+  "ingredients": {
+    "item": "tcrcore:proof_of_adventure"
+  },
+  "result": {
+    "item": "efn:yamato_dmc_in_sheath"
+  },
+  "time": 120
+}

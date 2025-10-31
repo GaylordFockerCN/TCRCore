@@ -1,7 +1,5 @@
 package com.p1nero.tcrcore.mixin;
 
-import com.p1nero.p1nero_ec.PECConfig;
-import com.p1nero.p1nero_ec.capability.DataManager;
 import com.p1nero.p1nero_ec.capability.PECPlayer;
 import com.p1nero.p1nero_ec.network.PECPacketHandler;
 import com.p1nero.p1nero_ec.network.PECPacketRelay;
@@ -30,7 +28,7 @@ import yesman.epicfight.world.entity.DodgeLocationIndicator;
 /**
  * 完美闪避的一些全局设定
  */
-@Mixin(value = DodgeLocationIndicator.class)
+@Mixin(value = DodgeLocationIndicator.class, priority = 10000)
 public abstract class DodgeLocationIndicatorMixin extends LivingEntity {
 
     @Shadow(remap = false) private LivingEntityPatch<?> entitypatch;
@@ -60,7 +58,7 @@ public abstract class DodgeLocationIndicatorMixin extends LivingEntity {
                 }
             }
             if (!damageSource.is(EpicFightDamageTypeTags.BYPASS_DODGE)) {
-                this.entitypatch.onDodgeSuccess(damageSource, this.position());
+                this.entitypatch.onDodgeSuccess(damageSource, this.getBoundingBox().getCenter());
             }
             this.discard();
             cir.setReturnValue(false);

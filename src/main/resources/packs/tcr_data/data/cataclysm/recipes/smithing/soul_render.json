@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "cataclysm:black_steel_ingot"
+    },
+    "base": {
+        "item": "magistuarmory:netherite_concavehalberd"
+    },
+    "result": {
+        "item": "cataclysm:soul_render"
+    },
+    "template": {
+        "item": "cataclysm:cursium_ingot"
+    }
+}

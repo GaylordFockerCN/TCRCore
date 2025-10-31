@@ -1,0 +1,12 @@
+{
+  "values": [
+    "minecraft:stony_shore",
+    {"id": "floravive:cold_stony_shore","required": false},
+    {"id": "floravive:diorite_stony_shore","required": false},
+    {"id": "floravive:granite_stony_shore","required": false},
+    {"id": "floravive:lukewarm_stony_shore","required": false},
+    {"id": "floravive:warm_stony_shore","required": false},
+    {"id": "terralith:gravel_beach","required": false},
+    {"id": "biomesoplenty:gravel_beach","required": false}
+  ]
+}
