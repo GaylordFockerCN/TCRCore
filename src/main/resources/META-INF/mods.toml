@@ -62,7 +62,7 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="epicfight"
 mandatory=true
-versionRange="[20.11,)"
+versionRange="[20.13,)"
 ordering="AFTER"
 side="BOTH"
 

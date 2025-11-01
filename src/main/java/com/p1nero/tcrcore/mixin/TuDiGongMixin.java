@@ -2,11 +2,13 @@ package com.p1nero.tcrcore.mixin;
 
 import com.chaosthedude.explorerscompass.ExplorersCompass;
 import com.chaosthedude.naturescompass.NaturesCompass;
-import com.p1nero.dialog_lib.api.custom.IEntityNpc;
-import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
+import com.p1nero.dialog_lib.api.entity.custom.IEntityNpc;
+import com.p1nero.dialog_lib.client.screen.builder.DialogueScreenBuilder;
+import com.p1nero.dialog_lib.client.screen.builder.StreamDialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.utils.ItemUtil;
+import com.p1nero.tudigong.TuDiGongMod;
 import com.p1nero.tudigong.entity.TudiGongEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
@@ -43,12 +45,12 @@ public abstract class TuDiGongMixin implements IEntityNpc {
     }
 
     @OnlyIn(Dist.CLIENT)
-    @Inject(method = "getDialogueBuilder", at = @At("HEAD"), remap = false, cancellable = true)
-    private void tcr$getDialogBuilder(CompoundTag compoundTag, CallbackInfoReturnable<DialogueScreenBuilder> cir) {
+    @Inject(method = "getDialogueScreen", at = @At("HEAD"), remap = false, cancellable = true)
+    private void tcr$getDialogueScreen(CompoundTag compoundTag, CallbackInfoReturnable<DialogueScreenBuilder> cir) {
         if(!compoundTag.getBoolean("giftGet")) {
-            DialogueScreenBuilder builder = new DialogueScreenBuilder((TudiGongEntity)(Object)this);
+            StreamDialogueScreenBuilder builder = new StreamDialogueScreenBuilder((TudiGongEntity)(Object)this, TuDiGongMod.MOD_ID);
             builder.start(1)
-                    .addFinalChoice(TCRCoreMod.getInfo("tudigong_gift"), 111);
+                    .addFinalOption(TCRCoreMod.getInfo("tudigong_gift"), 111);
             cir.setReturnValue(builder);
         }
     }

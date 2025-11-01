@@ -177,54 +177,6 @@ public abstract class TCRLangProvider extends LanguageProvider implements Dialog
         this.add("screen.tcr.opt." + key + "_" + id, text);
     }
 
-    public void addVillagerName(String profession, String text) {
-        this.add("villager.tcr." + profession.toLowerCase(Locale.ROOT) + ".key", text);
-    }
-
-    public void addVillagerAns(String profession, int id, String text) {
-        this.add("villager.tcr." + profession.toLowerCase(Locale.ROOT) + ".ans." + id, text);
-    }
-
-    public void addVillagerOpt(String profession, int id, String text) {
-        this.add("villager.tcr." + profession.toLowerCase(Locale.ROOT) + ".opt." + id, text);
-    }
-
-    public void addVillagerName(VillagerProfession profession, String text) {
-        this.add("villager.tcr." + profession.name().toLowerCase(Locale.ROOT) + ".key", text);
-    }
-
-    public void addVillagerAns(VillagerProfession profession, int id, String text) {
-        this.add("villager.tcr." + profession.name().toLowerCase(Locale.ROOT) + ".ans." + id, text);
-    }
-
-    public void addVillagerOpt(VillagerProfession profession, int id, String text) {
-        this.add("villager.tcr." + profession.name().toLowerCase(Locale.ROOT) + ".opt." + id, text);
-    }
-
-    public void addDialogEntityName(EntityType<?> entity, String text) {
-        this.add(entity + ".dialog_name", text);
-    }
-    public void addDialog(EntityType<?> entity, int i, String text) {
-        this.add(entity + ".dialog" + i, text);
-    }
-    public void addDialog(RegistryObject<? extends EntityType<?>> entity, int i, String text) {
-        this.add(entity.get() + ".dialog" + i, text);
-    }
-
-    public void addDialog(RegistryObject<? extends EntityType<?>> entity, String answer, String text) {
-        this.add(entity.get() + ".dialog" + answer, text);
-    }
-    public void addDialogChoice(EntityType<?> entity, int i, String text) {
-        this.add(entity + ".choice" + i, text);
-    }
-    public void addDialogChoice(RegistryObject<? extends EntityType<?>> entity, int i, String text) {
-        this.add(entity.get() + ".choice" + i, text);
-    }
-
-    public void addDialogChoice(RegistryObject<? extends EntityType<?>> entity, String choice, String text) {
-        this.add(entity.get() + ".choice." + choice, text);
-    }
-
     public void addSubtitle(RegistryObject<SoundEvent> sound, String name) {
         String[] splitSoundName = sound.getId().getPath().split("\\.", 3);
         this.add("subtitles." + TCRCoreMod.MOD_ID + "." + splitSoundName[0] + "." + splitSoundName[2], name);

@@ -11,6 +11,7 @@ import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.worldgen.TCRBiomes;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
+import com.yungnickyoung.minecraft.ribbits.module.EntityTypeModule;
 import net.alp.monsterexpansion.entity.ModEntities;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EntityType;
@@ -81,6 +82,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "上面写着古老的神谕，暗示了火种散落的地方。回主城给守望者看看吧，说不定对冒险有帮助！");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c多人模式请勿占据他人任务道具！每人都需各自提交！", 2);
 
+        this.addInfo("require_item_to_wake", "需要[%s]以唤醒...");
         this.addInfo("weapon_no_interact", "武器禁止交互！请使用其他物品或按[%s]切换非战斗模式");
         this.addInfo("tudigong_gift", "[见面礼]");
         this.addInfo("tudigong_gift_get", "§6[土地公]§f: 老夫不中用矣，此宝具赠予你罢！");
@@ -326,6 +328,9 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 6, "继续");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 7, "告辞");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 8, "§a我已寻回他们的回响了");
+
+        this.addDialogAnswer(EntityTypeModule.RIBBIT.get(), 0, "咕咕嘎嘎！");
+        this.addDialogOption(EntityTypeModule.RIBBIT.get(), 0, "收下");
 
     }
 }

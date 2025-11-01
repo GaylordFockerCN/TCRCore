@@ -1,0 +1,45 @@
+{
+  "type": "lithostitched:add_template_pool_elements",
+  "predicate": {
+    "type": "lithostitched:mod_loaded",
+    "mod_id": "t_and_t"
+  },
+  "template_pools": [
+    "kaisyn:village/badlands_pueblo/houses",
+    "kaisyn:village/birch_forest_romanian/houses",
+    "kaisyn:village/exclusives/classic/houses",
+    "kaisyn:village/exclusives/iberian/houses",
+    "kaisyn:village/exclusives/mediterranean/houses/corner",
+    "kaisyn:village/exclusives/nilotic/houses",
+    "kaisyn:village/exclusives/piglin/houses",
+    "kaisyn:village/exclusives/rustic/houses",
+    "kaisyn:village/exclusives/swedish/houses",
+    "kaisyn:village/exclusives/tudor/houses",
+    "kaisyn:village/exclusives/wandering_trader_camp/houses",
+    "kaisyn:village/flower_forest_japanese/houses",
+    "kaisyn:village/forest_ruins/houses",
+    "kaisyn:village/jungle_tribal/houses",
+    "kaisyn:village/meadow_swiss/houses",
+    "kaisyn:village/mushroom_fields_fantasy/houses",
+    "kaisyn:village/old_growth_taiga_polish/houses",
+    "kaisyn:village/snowy_taiga_viking/houses",
+    "kaisyn:village/sparse_jungle_polynesian/houses",
+    "kaisyn:village/swamp_boat/houses",
+    "kaisyn:village/wooded_badlands_tipi/houses"
+  ],
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "lithostitched:delegating",
+        "delegate": {
+          "element_type": "minecraft:single_pool_element",
+          "projection": "terrain_matching",
+          "location": "bountiful_npc:village/adventurers_guild",
+          "processors": "minecraft:empty"
+        },
+        "forced_count": 1
+      }
+    }
+  ]
+}

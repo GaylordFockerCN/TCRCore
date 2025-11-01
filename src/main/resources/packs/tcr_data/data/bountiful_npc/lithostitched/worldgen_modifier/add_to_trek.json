@@ -1,0 +1,32 @@
+{
+  "type": "lithostitched:add_template_pool_elements",
+  "predicate": {
+    "type": "lithostitched:mod_loaded",
+    "mod_id": "mr_trek"
+  },
+  "template_pools": [
+    "trek:village/plains/houses",
+    "trek:village/desert/houses",
+    "trek:village/savanna/houses",
+    "trek:village/snowy/houses",
+    "trek:village/taiga/houses",
+    "trek:village/mushroom/houses",
+    "trek:village/swamp/houses",
+    "trek:village/swamp/houses"
+  ],
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "lithostitched:delegating",
+        "delegate": {
+          "element_type": "minecraft:single_pool_element",
+          "projection": "terrain_matching",
+          "location": "bountiful_npc:village/adventurers_guild",
+          "processors": "minecraft:empty"
+        },
+        "forced_count": 1
+      }
+    }
+  ]
+}

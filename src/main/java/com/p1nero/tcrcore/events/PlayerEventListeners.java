@@ -122,6 +122,7 @@ public class PlayerEventListeners {
     public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         Player player = event.getEntity();
         if (player instanceof ServerPlayer serverPlayer) {
+            TCRCapabilityProvider.syncPlayerDataToClient(serverPlayer);
             if (!PlayerDataManager.firstJoint.get(serverPlayer)) {
                 serverPlayer.setRespawnPosition(TCRDimensions.SANCTUM_LEVEL_KEY, new BlockPos(WorldUtil.START_POS), 90, true, false);
                 ServerLevel targetLevel = serverPlayer.server.getLevel(TCRDimensions.SANCTUM_LEVEL_KEY);
@@ -154,8 +155,6 @@ public class PlayerEventListeners {
                 serverPlayer.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 9999, 9999));
                 serverPlayer.addEffect(new MobEffectInstance(MobEffects.LUCK, 9999, 9999));
             }
-
-            TCRCapabilityProvider.syncPlayerDataToClient(serverPlayer);
 
             PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new CSTipPacket(), serverPlayer);
         }
@@ -349,6 +348,7 @@ public class PlayerEventListeners {
     @SubscribeEvent
     public static void onPlayerEnterDim(PlayerEvent.PlayerChangedDimensionEvent event) {
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
+            TCRCapabilityProvider.syncPlayerDataToClient(serverPlayer);
             if (event.getFrom() == WraithonDimensions.SANCTUM_OF_THE_WRAITHON_LEVEL_KEY) {
                 ServerLevel wraithonLevel = serverPlayer.server.getLevel(WraithonDimensions.SANCTUM_OF_THE_WRAITHON_LEVEL_KEY);
                 if (wraithonLevel.players().isEmpty()) {

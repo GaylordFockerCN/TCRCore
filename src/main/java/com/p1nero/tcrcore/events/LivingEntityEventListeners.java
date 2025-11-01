@@ -19,10 +19,10 @@ import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.dialog_lib.events.ServerNpcEntityInteractEvent;
 import com.p1nero.entityrespawner.EntityRespawnerMod;
+import com.p1nero.entityrespawner.entity.SoulEntity;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
-import com.p1nero.tcrcore.capability.TCRPlayer;
 import com.p1nero.tcrcore.capability.TCRTaskManager;
 import com.p1nero.tcrcore.client.sound.CorneliaMusicPlayer;
 import com.p1nero.tcrcore.client.sound.WraithonMusicPlayer;
@@ -64,9 +64,7 @@ import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
@@ -408,13 +406,19 @@ public class LivingEntityEventListeners {
 
             if (livingEntity instanceof Bone_Chimera_Entity boneChimeraEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.SAND) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //偷懒，直接秽土转生
-                EntityRespawnerMod.addToRespawn(boneChimeraEntity, 200, true);
+                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(boneChimeraEntity, 200, true);
+                if(boneChimeraEntity.getPersistentData().contains("spawnX") && soulEntity != null) {
+                    soulEntity.setPos(readSpawnPos(boneChimeraEntity));
+                }
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
             if (livingEntity instanceof BulldrogiothEntity bulldrogiothEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.COVES) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //秽土转生
-                EntityRespawnerMod.addToRespawn(bulldrogiothEntity, 300, true);
+                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(bulldrogiothEntity, 300, true);
+                if(bulldrogiothEntity.getPersistentData().contains("spawnX") && soulEntity != null) {
+                    soulEntity.setPos(readSpawnPos(bulldrogiothEntity));
+                }
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
@@ -543,6 +547,13 @@ public class LivingEntityEventListeners {
         if (event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity) {
             if (WorldUtil.isInStructure(bulldrogiothEntity, WorldUtil.COVES)) {
                 bulldrogiothEntity.setGlowingTag(true);
+                saveSpawnPos(bulldrogiothEntity);
+            }
+        }
+
+        if (event.getEntity() instanceof Bone_Chimera_Entity boneChimeraEntity) {
+            if (WorldUtil.isInStructure(boneChimeraEntity, WorldUtil.SAND)) {
+                saveSpawnPos(boneChimeraEntity);
             }
         }
 
@@ -591,6 +602,20 @@ public class LivingEntityEventListeners {
 //                livingEntity.setHealth(livingEntity.getMaxHealth());
 //            }
 //        }
+    }
+
+    public static void saveSpawnPos(Entity entity) {
+        if(!entity.getPersistentData().contains("spawnX")) {
+            entity.getPersistentData().putDouble("spawnX", entity.getX());
+            entity.getPersistentData().putDouble("spawnY", entity.getY());
+            entity.getPersistentData().putDouble("spawnZ", entity.getZ());
+        }
+    }
+
+    public static Vec3 readSpawnPos(Entity entity) {
+        return new Vec3(entity.getPersistentData().getDouble("spawnX"),
+                entity.getPersistentData().getDouble("spawnY"),
+                entity.getPersistentData().getDouble("spawnZ"));
     }
 
     /**

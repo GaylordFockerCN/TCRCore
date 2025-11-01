@@ -8,6 +8,7 @@ import com.p1nero.tcrcore.utils.WorldUtil;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -47,6 +48,9 @@ public class BlockEvents {
 
     @SubscribeEvent
     public static void onBlockPlace(BlockEvent.EntityPlaceEvent event) {
+        if(event.getEntity() instanceof Player player && player.isCreative()) {
+            return;
+        }
         //主城保护
         if(event.getEntity() != null && WorldUtil.inMainLand(event.getEntity())) {
             event.setCanceled(true);

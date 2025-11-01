@@ -2,6 +2,8 @@ package com.p1nero.tcrcore.mixin;
 
 import com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Ancient_Remnant.Ancient_Remnant_Entity;
 import com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.IABoss_monster;
+import com.github.L_Ender.cataclysm.init.ModItems;
+import com.p1nero.tcrcore.TCRCoreMod;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -22,19 +24,14 @@ public abstract class Ancient_Remnant_EntityMixin extends IABoss_monster {
 
     @Shadow(remap = false) public abstract boolean getNecklace();
 
-    @Shadow(remap = false) public abstract void setNecklace(boolean necklace);
-
     /**
-     * 直接唤醒
+     * 添加提示
      */
-    @Inject(method = "mobInteract" , at = @At("HEAD"), cancellable = true)
+    @Inject(method = "mobInteract" , at = @At("HEAD"))
     private void tcr$mobInteract(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
-        if(!this.getNecklace()) {
-            this.setHomePos(this.blockPosition());
-            this.setNecklace(true);
-            cir.setReturnValue(InteractionResult.SUCCESS);
+        if(!this.getNecklace() && level().isClientSide) {
+            player.displayClientMessage(TCRCoreMod.getInfo("require_item_to_wake", ModItems.NECKLACE_OF_THE_DESERT.get().getDescription()), true);
         }
-        cir.setReturnValue(InteractionResult.CONSUME);
     }
 
 }

@@ -3,9 +3,10 @@ package com.p1nero.tcrcore.entity.custom.girl;
 import artifacts.item.ArtifactItem;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
 import com.p1nero.dialog_lib.api.component.DialogNode;
-import com.p1nero.dialog_lib.api.custom.IEntityNpc;
-import com.p1nero.dialog_lib.api.goal.LookAtConservingPlayerGoal;
-import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
+import com.p1nero.dialog_lib.api.entity.custom.IEntityNpc;
+import com.p1nero.dialog_lib.api.entity.goal.LookAtConservingPlayerGoal;
+import com.p1nero.dialog_lib.client.screen.DialogueScreen;
+import com.p1nero.dialog_lib.client.screen.builder.DialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.events.OverworldVillageTeleporter;
@@ -14,9 +15,7 @@ import com.p1nero.tcrcore.events.SafeNetherTeleporter;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
-import com.talhanation.smallships.client.option.ModGameOptions;
 import com.yesman.epicskills.client.gui.screen.SkillTreeScreen;
-import com.yesman.epicskills.client.input.EpicSkillsKeyMappings;
 import net.blay09.mods.waystones.block.ModBlocks;
 import net.genzyuro.uniqueaccessories.item.UAUniqueCurioItem;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
@@ -425,38 +424,38 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
 
     @OnlyIn(Dist.CLIENT)
     @Override
-    public DialogueScreenBuilder getDialogueBuilder(CompoundTag compoundTag) {
-        DialogueScreenBuilder treeBuilder = new DialogueScreenBuilder(this);
-        DialogueComponentBuilder dBuilder = new DialogueComponentBuilder(this);
+    public DialogueScreen getDialogueScreen(CompoundTag compoundTag) {
+        DialogueScreenBuilder treeBuilder = new DialogueScreenBuilder(this, TCRCoreMod.MOD_ID);
+        DialogueComponentBuilder dBuilder = treeBuilder.getComponentBuildr();
 
-        if(!compoundTag.getBoolean("boat")) {
-            DialogNode root = new DialogNode(dBuilder.ans(0), dBuilder.optWithBrackets(0));//开场白 | 返回
-            //你是何人
-            DialogNode ans1 = new DialogNode(dBuilder.ans(3, ModGameOptions.SAIL_KEY.getTranslatedKeyMessage().copy().withStyle(ChatFormatting.GOLD)), dBuilder.optWithBrackets(1))
-                    .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(8), 3));
-
-//            //武器
-//            DialogNode ans2 = new DialogNode.FinalNode(dBuilder.optWithBrackets(2), 1);
-//            //盔甲
-//            DialogNode ans3 = new DialogNode.FinalNode(dBuilder.optWithBrackets(3), 2);
-            //技能
-            DialogNode ans4 = new DialogNode(dBuilder.ans(5, I18n.get("item.epicskills.ability_stone"), I18n.get("item.epicskills.ability_stone"), EpicSkillsKeyMappings.OPEN_SKILL_TREE.getTranslatedKeyMessage()), dBuilder.optWithBrackets(4))
-                    .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(5), -1, (s) -> {
-                        LocalPlayerPatch localPlayerPatch = ClientEngine.getInstance().getPlayerPatch();
-                        if(localPlayerPatch != null) {
-                            Minecraft.getInstance().setScreen(new SkillTreeScreen(localPlayerPatch));
-                        }
-                    }));
-            //饰品
-            DialogNode ans7 = new DialogNode.FinalNode(dBuilder.optWithBrackets(9), 7);
-            root.addChild(ans1)
-//                    .addChild(ans2)
-//                    .addChild(ans3)
-                    .addChild(ans7)
-                    .addChild(ans4);
-            root.addLeaf(dBuilder.optWithBrackets(10), 8);
-            treeBuilder.setRoot(root);
-        } else {
+//        if(!compoundTag.getBoolean("boat")) {
+//            DialogNode root = new DialogNode(dBuilder.ans(0), dBuilder.optWithBrackets(0));//开场白 | 返回
+//            //你是何人
+//            DialogNode ans1 = new DialogNode(dBuilder.ans(3, ModGameOptions.SAIL_KEY.getTranslatedKeyMessage().copy().withStyle(ChatFormatting.GOLD)), dBuilder.optWithBrackets(1))
+//                    .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(8), 3));
+//
+////            //武器
+////            DialogNode ans2 = new DialogNode.FinalNode(dBuilder.optWithBrackets(2), 1);
+////            //盔甲
+////            DialogNode ans3 = new DialogNode.FinalNode(dBuilder.optWithBrackets(3), 2);
+//            //技能
+//            DialogNode ans4 = new DialogNode(dBuilder.ans(5, I18n.get("item.epicskills.ability_stone"), I18n.get("item.epicskills.ability_stone"), EpicSkillsKeyMappings.OPEN_SKILL_TREE.getTranslatedKeyMessage()), dBuilder.optWithBrackets(4))
+//                    .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(5), -1, (s) -> {
+//                        LocalPlayerPatch localPlayerPatch = ClientEngine.getInstance().getPlayerPatch();
+//                        if(localPlayerPatch != null) {
+//                            Minecraft.getInstance().setScreen(new SkillTreeScreen(localPlayerPatch));
+//                        }
+//                    }));
+//            //饰品
+//            DialogNode ans7 = new DialogNode.FinalNode(dBuilder.optWithBrackets(9), 7);
+//            root.addChild(ans1)
+////                    .addChild(ans2)
+////                    .addChild(ans3)
+//                    .addChild(ans7)
+//                    .addChild(ans4);
+//            root.addLeaf(dBuilder.optWithBrackets(10), 8);
+//            return treeBuilder.buildWith(root);
+//        } else {
             DialogNode root = new DialogNode(dBuilder.ans(0), dBuilder.optWithBrackets(0));//开场白 | 返回
             //你是何人
             DialogNode ans1 = new DialogNode(dBuilder.ans(1), dBuilder.optWithBrackets(1))
@@ -499,9 +498,8 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
 
             root.addLeaf(dBuilder.optWithBrackets(10), 8);
 
-            treeBuilder.setRoot(root);
-        }
-        return treeBuilder;
+            return treeBuilder.buildWith(root);
+//        }
     }
 
     @Override

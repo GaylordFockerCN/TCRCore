@@ -4,14 +4,13 @@ import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.hm.efn.registries.EFNItem;
 import com.p1nero.dialog_lib.api.component.DialogNode;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
-import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
-import net.minecraft.ChatFormatting;
+import com.p1nero.dialog_lib.client.screen.builder.StreamDialogueScreenBuilder;
+import com.p1nero.tcrcore.TCRCoreMod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
@@ -23,7 +22,7 @@ public class HandleArteriusDialog {
         boolean arteriusKilled = serverData.getBoolean("arterius_killed");
         boolean canGetInvite = serverData.getBoolean("can_get_invite");
         boolean inviteGet = serverData.getBoolean("invite_get");
-        DialogueScreenBuilder treeBuilder = new DialogueScreenBuilder(self);
+        StreamDialogueScreenBuilder treeBuilder = new StreamDialogueScreenBuilder(self, TCRCoreMod.MOD_ID);
         DialogueComponentBuilder componentBuilder = treeBuilder.getComponentBuildr();
         DialogNode root;
         if (arteriusKilled) {

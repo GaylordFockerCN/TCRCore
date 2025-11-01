@@ -4,9 +4,10 @@ import com.github.dodo.dodosmobs.init.ModEntities;
 import com.obscuria.aquamirae.registry.AquamiraeEntities;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
 import com.p1nero.dialog_lib.api.component.DialogNode;
-import com.p1nero.dialog_lib.api.custom.IEntityNpc;
-import com.p1nero.dialog_lib.api.goal.LookAtConservingPlayerGoal;
-import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
+import com.p1nero.dialog_lib.api.entity.custom.IEntityNpc;
+import com.p1nero.dialog_lib.api.entity.goal.LookAtConservingPlayerGoal;
+import com.p1nero.dialog_lib.client.screen.DialogueScreen;
+import com.p1nero.dialog_lib.client.screen.builder.StreamDialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
@@ -179,78 +180,79 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public DialogueScreenBuilder getDialogueBuilder(CompoundTag compoundTag) {
+    public DialogueScreen getDialogueScreen(CompoundTag compoundTag) {
         int stage = compoundTag.getInt("stage");
-        DialogueScreenBuilder treeBuilder = new DialogueScreenBuilder(this);
-        DialogueComponentBuilder dBuilder = new DialogueComponentBuilder(this);
+        StreamDialogueScreenBuilder treeBuilder = new StreamDialogueScreenBuilder(this, TCRCoreMod.MOD_ID);
+        DialogueComponentBuilder dBuilder = treeBuilder.getComponentBuildr();
         if (compoundTag.getBoolean("from_hurt")) {
-            treeBuilder.start(5).addFinalChoice(6);
-            return treeBuilder;
+            treeBuilder.start(5).addFinalOption(6);
+            return treeBuilder.build();
         }
         if(compoundTag.getBoolean("finished") && compoundTag.getBoolean("finish_all_eye_boss")) {
             if(compoundTag.getBoolean("finish_all_altar_boss")) {
                 treeBuilder.start(8)
-                        .addChoice(12, 11)
+                        .addOption(12, 11)
                         .thenExecute(4)
                         .thenExecute((dialogueScreen -> GuiderGeoRenderer.useRedModel = true))
-                        .addChoice(13, 12)
-                        .addChoice(14, 13)
-                        .addFinalChoice(15, 3);
+                        .addOption(13, 12)
+                        .addOption(14, 13)
+                        .addFinalOption(15, 3);
             } else {
-                treeBuilder.start(21).addFinalChoice(0);
+                treeBuilder.start(21).addFinalOption(0);
             }
-            return treeBuilder;
+            return treeBuilder.build();
         }
 
         if (compoundTag.getBoolean("is_oracle")) {
             switch (stage) {
                 case 0 -> treeBuilder.start(7)
-                        .addChoice(dBuilder.optWithBrackets(9),
+                        .addOption(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(15,
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
                                         TCRCoreMod.getInfo("iron_golem_name").withStyle(ChatFormatting.GOLD),
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA)))
                         .thenExecute(2)
-                        .addFinalChoice(dBuilder.optWithBrackets(5), 1);
+                        .addFinalOption(dBuilder.optWithBrackets(5), 1);
 
                 case 1 -> treeBuilder.start(7)
-                        .addChoice(dBuilder.optWithBrackets(9),
+                        .addOption(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(16,
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.COVES))).withStyle(ChatFormatting.BLUE),
                                         EntityRegistry.BULLDROGIOTH.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.COVES))).withStyle(ChatFormatting.BLUE),
                                         ItemRegistry.CRIMSON_SHELL.get().getDescription().copy().withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
-                        .addFinalChoice(dBuilder.optWithBrackets(5), 1);
+                        .addFinalOption(dBuilder.optWithBrackets(5), 1);
 
                 case 3 -> treeBuilder.start(7)
-                        .addChoice(dBuilder.optWithBrackets(9),
+                        .addOption(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(17,
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.CURSED))).withStyle(ChatFormatting.DARK_GREEN),
                                         AquamiraeEntities.CAPTAIN_CORNELIA.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.CURSED))).withStyle(ChatFormatting.DARK_GREEN)))
                         .thenExecute(2)
-                        .addFinalChoice(dBuilder.optWithBrackets(5), 1);
+                        .addFinalOption(dBuilder.optWithBrackets(5), 1);
 
                 case 2 -> treeBuilder.start(7)
-                        .addChoice(dBuilder.optWithBrackets(9),
+                        .addOption(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(18,
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW),
                                         ModEntities.BONE_CHIMERA.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SAND))).withStyle(ChatFormatting.YELLOW)))
                         .thenExecute(2)
-                        .addFinalChoice(dBuilder.optWithBrackets(5), 1);
+                        .addFinalOption(dBuilder.optWithBrackets(5), 1);
 
                 case 4 -> treeBuilder.start(7)
-                        .addChoice(dBuilder.optWithBrackets(9),
+                        .addOption(dBuilder.optWithBrackets(9),
                                 dBuilder.ans(19,
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED),
                                         BlockFactorysBossesModEntities.UNDERWORLD_KNIGHT.get().getDescription().copy().withStyle(ChatFormatting.RED),
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.FIRE))).withStyle(ChatFormatting.RED)))
                         .thenExecute(2)
-                        .addFinalChoice(dBuilder.optWithBrackets(5), 1);
-                default -> treeBuilder.start(20).addFinalChoice(17);
+                        .addFinalOption(dBuilder.optWithBrackets(5), 1);
+                default -> treeBuilder.start(20).addFinalOption(17);
             }
+            return treeBuilder.build();
         }
         //正式起航，改变一下对话
         else if(compoundTag.getBoolean("map_mark")) {
@@ -275,8 +277,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
 //                    .addChild(ans1)
                     .addChild(ans3);
 
-            treeBuilder.setRoot(root);
-            return treeBuilder;
+            return treeBuilder.buildWith(root);
         } else {
             DialogNode root = new DialogNode(dBuilder.ans(0), dBuilder.optWithBrackets(0));//开场白 | 返回
 
@@ -295,21 +296,20 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
 //                root.addChild(new DialogNode(dBuilder.ans(6), dBuilder.optWithBrackets(8))
 //                        .addChild(root));
                 treeBuilder.start(0)
-                        .addChoice(dBuilder.optWithBrackets(7),
+                        .addOption(dBuilder.optWithBrackets(7),
                                 dBuilder.ans(15,
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA),
                                         TCRCoreMod.getInfo("iron_golem_name").withStyle(ChatFormatting.GOLD),
                                         Component.literal(StructureUtils.getPrettyStructureName(ResourceLocation.parse(WorldUtil.SKY_ISLAND))).withStyle(ChatFormatting.AQUA)))
                         .thenExecute(2)
-                        .addFinalChoice(dBuilder.optWithBrackets(5), 1);
-                return treeBuilder;
+                        .addFinalOption(dBuilder.optWithBrackets(5), 1);
+                return treeBuilder.build();
             }
 
             root.addChild(ans1).addChild(ans2).addChild(ans3);
 
-            treeBuilder.setRoot(root);
+            return treeBuilder.buildWith(root);
         }
-        return treeBuilder;
     }
 
     @Override
@@ -353,7 +353,7 @@ public class GuiderEntity extends PathfinderMob implements IEntityNpc, GeoEntity
 
         if(!PlayerDataManager.pillagerKilled.get(player)) {
             TCRTaskManager.KILL_PILLAGER.start(player);
-            DialogueComponentBuilder dBuilder = new DialogueComponentBuilder(this);
+            DialogueComponentBuilder dBuilder = new DialogueComponentBuilder(this, TCRCoreMod.MOD_ID);
             player.displayClientMessage(dBuilder.buildDialogue(this, dBuilder.ans(3)), false);
         }
         this.setConversingPlayer(null);

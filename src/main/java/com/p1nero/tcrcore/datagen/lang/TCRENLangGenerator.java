@@ -11,6 +11,7 @@ import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.worldgen.TCRBiomes;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
+import com.yungnickyoung.minecraft.ribbits.module.EntityTypeModule;
 import net.alp.monsterexpansion.entity.ModEntities;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EntityType;
@@ -81,6 +82,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "It bears an ancient oracle hinting at the locations of scattered embers. Show it to the The Sanctuary Keeper in the The Sanctuary; it might aid your adventure!");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§cIn multiplayer mode, do not occupy other players'! Everyone must submit their own!", 2);
 
+        this.addInfo("require_item_to_wake", "Require [%s]...");
         this.addInfo("weapon_no_interact", "Can not interact! Please press [%s] vanilla mode or other item.");
         this.addInfo("tudigong_gift", "[Gift]");
         this.addInfo("tudigong_gift_get", "§6[TuDi]§f: I have grown old and useless, so I pass this treasure on to you！");
@@ -324,5 +326,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 6, "Continue");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 7, "Take my leave");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 8, "§aFinish");
+
+        this.addDialogAnswer(EntityTypeModule.RIBBIT.get(), 0, "Gu Gu ga ga!");
+        this.addDialogOption(EntityTypeModule.RIBBIT.get(), 0, "Accept");
     }
 }

@@ -1,8 +1,7 @@
 package com.p1nero.tcrcore.client.gui;
 
 import com.p1nero.dialog_lib.api.component.DialogNode;
-import com.p1nero.dialog_lib.client.screen.DialogueScreenBuilder;
-import com.p1nero.dialog_lib.client.screen.ScreenDialogueBuilder;
+import com.p1nero.dialog_lib.client.screen.builder.StreamDialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.datagen.lang.TCRLangProvider;
 import net.minecraft.ChatFormatting;
@@ -19,7 +18,7 @@ public class BanPortalScreenHandler {
     public static void addScreen() {
         ScreenDialogueBuilder builder = new ScreenDialogueBuilder(TCRCoreMod.MOD_ID, name);
 
-        DialogueScreenBuilder screenBuilder = new DialogueScreenBuilder(Component.literal("").append(builder.name().copy().withStyle(ChatFormatting.AQUA)).append(": \n"));
+        StreamDialogueScreenBuilder screenBuilder = new StreamDialogueScreenBuilder(Component.literal("").append(builder.name().copy().withStyle(ChatFormatting.AQUA)).append(": \n"), "", TCRCoreMod.MOD_ID);
 
         DialogNode root = new DialogNode(builder.ans(0))
                 .addLeaf(builder.opt(0));
