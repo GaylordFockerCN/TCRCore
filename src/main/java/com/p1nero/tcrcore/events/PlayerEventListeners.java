@@ -263,7 +263,7 @@ public class PlayerEventListeners {
                     if(serverPlayer.isSprinting()) {
                         serverPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 10, 2, false, false, true));
                     }
-                    if(serverPlayer.getY() < 63) {
+                    if(serverPlayer.getY() < 63 && !serverPlayer.isPassenger()) {
                         if(PlayerDataManager.wayStoneInteracted.get(serverPlayer)) {
                             serverPlayer.changeDimension(serverPlayer.server.getLevel(Level.OVERWORLD), new OverworldVillageTeleporter());
                         } else {

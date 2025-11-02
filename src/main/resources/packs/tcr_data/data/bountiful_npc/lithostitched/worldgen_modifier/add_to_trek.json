@@ -11,7 +11,6 @@
     "trek:village/snowy/houses",
     "trek:village/taiga/houses",
     "trek:village/mushroom/houses",
-    "trek:village/swamp/houses",
     "trek:village/swamp/houses"
   ],
   "elements": [
@@ -21,11 +20,11 @@
         "element_type": "lithostitched:delegating",
         "delegate": {
           "element_type": "minecraft:single_pool_element",
-          "projection": "terrain_matching",
+          "projection": "rigid",
           "location": "bountiful_npc:village/adventurers_guild",
           "processors": "minecraft:empty"
         },
-        "forced_count": 1
+        "forced_count": 3
       }
     }
   ]

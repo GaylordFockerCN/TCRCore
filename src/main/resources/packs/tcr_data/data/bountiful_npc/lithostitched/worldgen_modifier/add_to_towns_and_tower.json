@@ -11,13 +11,11 @@
     "kaisyn:village/exclusives/iberian/houses",
     "kaisyn:village/exclusives/mediterranean/houses/corner",
     "kaisyn:village/exclusives/nilotic/houses",
-    "kaisyn:village/exclusives/piglin/houses",
     "kaisyn:village/exclusives/rustic/houses",
     "kaisyn:village/exclusives/swedish/houses",
     "kaisyn:village/exclusives/tudor/houses",
     "kaisyn:village/exclusives/wandering_trader_camp/houses",
     "kaisyn:village/flower_forest_japanese/houses",
-    "kaisyn:village/forest_ruins/houses",
     "kaisyn:village/jungle_tribal/houses",
     "kaisyn:village/meadow_swiss/houses",
     "kaisyn:village/mushroom_fields_fantasy/houses",
@@ -34,11 +32,11 @@
         "element_type": "lithostitched:delegating",
         "delegate": {
           "element_type": "minecraft:single_pool_element",
-          "projection": "terrain_matching",
+          "projection": "rigid",
           "location": "bountiful_npc:village/adventurers_guild",
           "processors": "minecraft:empty"
         },
-        "forced_count": 1
+        "forced_count": 3
       }
     }
   ]
