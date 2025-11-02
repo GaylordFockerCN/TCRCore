@@ -1,0 +1,39 @@
+
+["Directional Indicator"]
+	# arrow that shows where incoming damage came from
+	# Enables the directional damage indicator
+	"Enable Directional Indicator" = true
+	# 0-1 (inclusive)
+	"Directional Indicator Texture" = 0
+	# Red (0-255)
+	"Directional Indicator Red" = 206
+	# Green (0-255)
+	"Directional Indicator Green" = 0
+	# Blue (0-255)
+	"Directional Indicator Blue" = 37
+	# Alpha (0-255)
+	"Directional Indicator Alpha" = 255
+	# Distance from the center of the screen that the directional damage indicator appears.
+	"Directional Indicator Distance" = 0
+	# Fade out the damage indicator over time
+	"Enable Fade Out" = true
+	# Time for damage indicator to show (in ticks)
+	"Indicate Time" = 25
+
+["Damage Text"]
+	# floating text that shows the amount of damage done to an entity
+	# Enables damage text
+	"Enable Damage Text" = true
+
+["Health Bar"]
+	# a text health bar for entities
+	# Enables health bar
+	"Enable Health Bar" = false
+	# Only show health bar for entities the player is directly looking at. If false, shows health bar for all nearby entities
+	"Only Show Target Health Bar" = false
+
+["Blood Overlay"]
+	# an overlay of red outlining your screen when you take damage
+	# Enables blood overlay
+	"Enable Blood Overlay" = false
+
