@@ -28,7 +28,7 @@ public abstract class AnimatedAttackGoalMixin <T extends MobPatch<?>> extends Go
     @Shadow(remap = false) @Final protected T mobpatch;
 
     @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
-    private void smc$tick(CallbackInfo ci) {
+    private void tcr$tick(CallbackInfo ci) {
         List<Entity> list = EntityUtil.getNearByEntities(this.mobpatch.getOriginal(), 3);
         if(list.stream().anyMatch(entity -> {
             if(entity instanceof Enemy) {
@@ -43,7 +43,7 @@ public abstract class AnimatedAttackGoalMixin <T extends MobPatch<?>> extends Go
     }
 
     @Inject(method = "canUse", at = @At("HEAD"), cancellable = true)
-    private void smc$canUse(CallbackInfoReturnable<Boolean> cir) {
+    private void tcr$canUse(CallbackInfoReturnable<Boolean> cir) {
         List<Entity> list = EntityUtil.getNearByEntities(this.mobpatch.getOriginal(), 3);
         if(list.stream().anyMatch(entity -> {
             if(entity instanceof Enemy) {

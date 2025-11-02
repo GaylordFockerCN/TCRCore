@@ -169,6 +169,7 @@ public class PlayerEventListeners {
             //第一次交互给传送石和提示
             if (blockState.is(ModBlocks.waystone)) {
                 if (!PlayerDataManager.wayStoneInteracted.get(serverPlayer)) {
+                    ItemUtil.addItemEntity(serverPlayer, net.blay09.mods.waystones.item.ModItems.warpStone.getDefaultInstance());
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("press_to_open_portal_screen2"), false);
                     PlayerDataManager.wayStoneInteracted.put(serverPlayer, true);
                 }

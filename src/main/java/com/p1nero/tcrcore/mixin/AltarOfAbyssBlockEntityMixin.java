@@ -23,7 +23,7 @@ public abstract class AltarOfAbyssBlockEntityMixin extends BaseContainerBlockEnt
         super(p_155076_, p_155077_, p_155078_);
     }
 
-    @Inject(method = "setItem", at = @At("HEAD"), remap = false, cancellable = true)
+    @Inject(method = "setItem", at = @At("HEAD"), cancellable = true)
     private void tcr$setItem(int index, ItemStack stack, CallbackInfo ci) {
         if(!stack.is(ModItems.ABYSSAL_SACRIFICE.get()) && this.level != null) {
             EntityUtil.nearPlayerDo(this.level, this.getBlockPos().getCenter(), 5, (player -> {

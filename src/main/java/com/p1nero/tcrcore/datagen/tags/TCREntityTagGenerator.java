@@ -30,7 +30,7 @@ public class TCREntityTagGenerator extends EntityTypeTagsProvider {
     }
     @Override
     public @NotNull String getName() {
-        return "SMC Entity Tags";
+        return "TCR Entity Tags";
     }
 
 }

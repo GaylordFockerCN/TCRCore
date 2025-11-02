@@ -273,6 +273,7 @@
   "item.tcrcore.rare_artifact_ticket.usage": "Obtained from certain quests in the quest book. Can be used to refine rare artifact with the §3[Ferry girl]§r at the §d[Saint Harbor]§r",
   "item.tcrcore.void_core": "Void Essence",
   "item.tcrcore.void_core.usage": "Dropped by [Ender Guardian] when defeated",
+  "item.waystones.warp_stone.tcr_info": "Click the §6[Scroll]§r button in the inventory to return to previously activated stones!",
   "itemGroup.tcr.items": "The Casket of Reveries — Core Items",
   "key.categories.tcrcore": "The Casket of Reveries — Core",
   "key.tcrcore.riptide": "Riptide",

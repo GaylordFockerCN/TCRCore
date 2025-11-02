@@ -22,6 +22,6 @@ public class TCRBiomeTagGenerator extends BiomeTagsProvider {
 
     @Override
     public @NotNull String getName() {
-        return "SMC Biome Tags";
+        return "TCR Biome Tags";
     }
 }

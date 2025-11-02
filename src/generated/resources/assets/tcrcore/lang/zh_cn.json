@@ -273,6 +273,7 @@
   "item.tcrcore.rare_artifact_ticket.usage": "通过任务书某些任务获取。可在§d[圣殿港口]§r的§3[摆渡人]§r处提炼稀有饰品",
   "item.tcrcore.void_core": "虚空精华",
   "item.tcrcore.void_core.usage": "击败[末影守卫]掉落",
+  "item.waystones.warp_stone.tcr_info": "点击物品栏中的传送卷轴按钮以进行传送。",
   "itemGroup.tcr.items": "远梦之棺 —— 核心 物品",
   "key.categories.tcrcore": "远梦之棺 —— 核心",
   "key.tcrcore.riptide": "激流",

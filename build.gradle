@@ -7,7 +7,6 @@ buildscript {
     }
     dependencies {
         classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -18,7 +17,6 @@ plugins {
 }
 
 apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'kotlin'
 
 group = mod_group_id
 version = mod_version
@@ -143,6 +141,15 @@ repositories {
     }
 
     maven {
+        name "create maven"
+        url "https://maven.createmod.net"
+    }
+
+    maven { // Registrate
+        url "https://maven.tterrag.com/"
+    }
+
+    maven {
         // location of the maven that hosts JEI files since January 2023
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
@@ -157,6 +164,20 @@ repositories {
         dir 'libs'
     }
     mavenCentral()
+}
+
+reobf {
+    jarJar {}
+}
+
+tasks.jarJar.finalizedBy('reobfJarJar')
+
+tasks.jarJar.configure {
+    archiveClassifier.set('')
+}
+
+jar {
+    archiveClassifier.set('slim')
 }
 
 dependencies {
@@ -267,6 +288,15 @@ dependencies {
     implementation fg.deobf("curse.maven:natures-compass-252848:4712189")
     implementation fg.deobf("curse.maven:ati-structures-964608:6730813")
 
+//    implementation fg.deobf("curse.maven:idas-605375:7046799")
+    implementation fg.deobf("libs:idas_forge:1.12.1")
+    implementation fg.deobf("libs:supplementaries:3.1.41")
+    implementation fg.deobf("curse.maven:integrated-api-817709:6369317")
+//    implementation fg.deobf("curse.maven:supplementaries-412082:7113231")
+    implementation fg.deobf("curse.maven:quark-243121:6427817")
+    implementation fg.deobf("curse.maven:zeta-968868:6432578")
+    implementation fg.deobf("curse.maven:selene-499980:7119907")
+
     implementation fg.deobf("libs:lukis-grand-capitals:1.1.2")
 //    implementation fg.deobf("libs:trek:B0.5") //内置为数据包，curse forge用数据包形式下载
     implementation fg.deobf("curse.maven:when-dungeons-arise-442508:4983862")
@@ -350,6 +380,14 @@ dependencies {
     implementation fg.deobf("curse.maven:embeddium-908741:5681725")
     implementation fg.deobf("curse.maven:oculus-581495:6020952")
 
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+    jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC1.20,MC1.21)")
+
+    implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}-${create_version_build}:slim") { transitive = false }
+
+    implementation fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}") { transitive = false }
+    implementation fg.deobf("dev.engine-room.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
+
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
 
@@ -393,7 +431,4 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
-}
-kotlin {
-    jvmToolchain(17)
 }

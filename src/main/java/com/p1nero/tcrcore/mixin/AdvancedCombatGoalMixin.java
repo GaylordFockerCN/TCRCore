@@ -27,7 +27,7 @@ public class AdvancedCombatGoalMixin<T extends MobPatch<?>> {
     protected T mobPatch;
 
     @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
-    private void smc$tick(CallbackInfo ci) {
+    private void tcr$tick(CallbackInfo ci) {
         List<Entity> list = EntityUtil.getNearByEntities(this.mobPatch.getOriginal(), 3);
         if(list.stream().anyMatch(entity -> {
             if(entity instanceof Enemy) {
@@ -42,7 +42,7 @@ public class AdvancedCombatGoalMixin<T extends MobPatch<?>> {
     }
 
     @Inject(method = "canUse", at = @At("HEAD"), cancellable = true)
-    private void smc$canUse(CallbackInfoReturnable<Boolean> cir) {
+    private void tcr$canUse(CallbackInfoReturnable<Boolean> cir) {
         List<Entity> list = EntityUtil.getNearByEntities(this.mobPatch.getOriginal(), 3);
         if(list.stream().anyMatch(entity -> {
             if(entity instanceof Enemy) {

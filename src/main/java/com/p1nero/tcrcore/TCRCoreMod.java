@@ -96,6 +96,7 @@ public class TCRCoreMod {
                 BlockFactorysBossesModEntities.FLAMING_SKELETON_GUARD_FIREBALL.get()
         ));
         ItemEvents.additionalInfoItems.addAll(List.of(
+                net.blay09.mods.waystones.item.ModItems.warpStone,
                 ItemRegistry.BOTTLE_OF_BLOOD.get(),
                 BlockFactorysBossesModItems.DRAGON_SKULL.get(),
                 BlockFactorysBossesModItems.DRAGON_BONE.get(),

@@ -11,6 +11,7 @@ import yesman.epicfight.api.utils.math.Vec2i;
 import java.util.function.Function;
 
 public class OverworldVillageTeleporter implements ITeleporter {
+    public static final String VILLAGE = "#towns_and_towers:town";
     @Override
     public Entity placeEntity(Entity entity, ServerLevel currentWorld, ServerLevel destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
         Entity newEntity = repositionEntity.apply(false);
@@ -20,7 +21,7 @@ public class OverworldVillageTeleporter implements ITeleporter {
 
         BlockPos targetPos = BlockPos.ZERO;
         if(TCRMainLevelSaveData.get(destWorld).getVillagePos().equals(BlockPos.ZERO)){
-            Vec2i villagePos = WorldUtil.getNearbyStructurePos(destWorld, newEntity.position(), "#minecraft:village");
+            Vec2i villagePos = WorldUtil.getNearbyStructurePos(destWorld, newEntity.position(), VILLAGE);
             if(villagePos != null) {
                 targetPos = WorldUtil.getSurfaceBlockPos(destWorld, villagePos.x, villagePos.y);
                 TCRMainLevelSaveData.get(destWorld).setVillagePos(targetPos);
