@@ -10,7 +10,7 @@
 				"min": 128,
 				"max": 256
 			},
-			"unitWorth": 100
+			"unitWorth": 9
 		},
 
 		"hunters_normal_rews_lapis_lazuli": {
@@ -21,7 +21,7 @@
 				"min": 128,
 				"max": 256
 			},
-			"unitWorth": 100
+			"unitWorth": 9
 		},
 
 		"hunters_normal_rews_copper_ingot": {
@@ -32,7 +32,7 @@
 				"min": 96,
 				"max": 192
 			},
-			"unitWorth": 150
+			"unitWorth": 24
 		},
 
 		"hunters_normal_rews_iron_ingot": {
@@ -43,7 +43,7 @@
 				"min": 96,
 				"max": 192
 			},
-			"unitWorth": 150
+			"unitWorth": 24
 		},
 
 		"hunters_normal_rews_gold_ingot": {
@@ -54,7 +54,7 @@
 				"min": 96,
 				"max": 192
 			},
-			"unitWorth": 26
+			"unitWorth": 24
 		},
 
 		"hunters_normal_rews_emerald": {
