@@ -3,6 +3,7 @@ package com.p1nero.tcrcore.mixin;
 import com.chaosthedude.explorerscompass.ExplorersCompass;
 import com.chaosthedude.naturescompass.NaturesCompass;
 import com.p1nero.dialog_lib.api.entity.custom.IEntityNpc;
+import com.p1nero.dialog_lib.client.screen.DialogueScreen;
 import com.p1nero.dialog_lib.client.screen.builder.DialogueScreenBuilder;
 import com.p1nero.dialog_lib.client.screen.builder.StreamDialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
@@ -46,12 +47,12 @@ public abstract class TuDiGongMixin implements IEntityNpc {
 
     @OnlyIn(Dist.CLIENT)
     @Inject(method = "getDialogueScreen", at = @At("HEAD"), remap = false, cancellable = true)
-    private void tcr$getDialogueScreen(CompoundTag compoundTag, CallbackInfoReturnable<DialogueScreenBuilder> cir) {
+    private void tcr$getDialogueScreen(CompoundTag compoundTag, CallbackInfoReturnable<DialogueScreen> cir) {
         if(!compoundTag.getBoolean("giftGet")) {
             StreamDialogueScreenBuilder builder = new StreamDialogueScreenBuilder((TudiGongEntity)(Object)this, TuDiGongMod.MOD_ID);
             builder.start(1)
                     .addFinalOption(TCRCoreMod.getInfo("tudigong_gift"), 111);
-            cir.setReturnValue(builder);
+            cir.setReturnValue(builder.build());
         }
     }
 

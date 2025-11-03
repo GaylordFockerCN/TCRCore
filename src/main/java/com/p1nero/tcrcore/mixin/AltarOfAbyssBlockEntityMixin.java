@@ -7,7 +7,6 @@ import com.p1nero.tcrcore.utils.EntityUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -23,14 +22,12 @@ public abstract class AltarOfAbyssBlockEntityMixin extends BaseContainerBlockEnt
         super(p_155076_, p_155077_, p_155078_);
     }
 
-    @Inject(method = "setItem", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "setItem", at = @At("HEAD"))
     private void tcr$setItem(int index, ItemStack stack, CallbackInfo ci) {
         if(!stack.is(ModItems.ABYSSAL_SACRIFICE.get()) && this.level != null) {
             EntityUtil.nearPlayerDo(this.level, this.getBlockPos().getCenter(), 5, (player -> {
                 player.displayClientMessage(TCRCoreMod.getInfo("require_item_to_wake", ModItems.ABYSSAL_SACRIFICE.get().getDescription()).withStyle(ChatFormatting.LIGHT_PURPLE), true);
             }));
-            Block.popResource(this.level, this.getBlockPos(), stack.copy());
-            ci.cancel();
         }
     }
 }
