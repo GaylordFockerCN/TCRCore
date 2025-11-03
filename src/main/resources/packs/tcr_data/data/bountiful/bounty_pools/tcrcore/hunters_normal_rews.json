@@ -7,7 +7,7 @@
 			"rarity": "COMMON",
 			"content": "minecraft:coal",
 			"amount": {
-				"min": 64,
+				"min": 1,
 				"max": 128
 			},
 			"unitWorth": 9
@@ -18,7 +18,7 @@
 			"rarity": "COMMON",
 			"content": "minecraft:lapis_lazuli",
 			"amount": {
-				"min": 64,
+				"min": 1,
 				"max": 128
 			},
 			"unitWorth": 9
@@ -29,7 +29,7 @@
 			"rarity": "UNCOMMON",
 			"content": "minecraft:copper_ingot",
 			"amount": {
-				"min": 48,
+				"min": 1,
 				"max": 96
 			},
 			"unitWorth": 24
@@ -40,7 +40,7 @@
 			"rarity": "UNCOMMON",
 			"content": "minecraft:iron_ingot",
 			"amount": {
-				"min": 48,
+				"min": 1,
 				"max": 96
 			},
 			"unitWorth": 24
@@ -51,7 +51,7 @@
 			"rarity": "UNCOMMON",
 			"content": "minecraft:gold_ingot",
 			"amount": {
-				"min": 48,
+				"min": 1,
 				"max": 96
 			},
 			"unitWorth": 24
@@ -62,7 +62,7 @@
 			"rarity": "RARE",
 			"content": "minecraft:emerald",
 			"amount": {
-				"min": 16,
+				"min": 1,
 				"max": 64
 			},
 			"unitWorth": 39
@@ -73,7 +73,7 @@
 			"rarity": "RARE",
 			"content": "minecraft:diamond",
 			"amount": {
-				"min": 16,
+				"min": 1,
 				"max": 64
 			},
 			"unitWorth": 39
