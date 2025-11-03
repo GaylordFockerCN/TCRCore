@@ -7,9 +7,9 @@
 			"content": "alexsmobs:bone_serpent",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_centipede": {
@@ -18,9 +18,9 @@
 			"content": "alexsmobs:centipede_head",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_crimson_mosquito": {
@@ -29,9 +29,9 @@
 			"content": "alexsmobs:crimson_mosquito",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_guster": {
@@ -40,9 +40,9 @@
 			"content": "alexsmobs:guster",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_soul_vulture": {
@@ -51,9 +51,9 @@
 			"content": "alexsmobs:soul_vulture",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_froststalker": {
@@ -62,9 +62,9 @@
 			"content": "alexsmobs:froststalker",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_tusklin": {
@@ -73,9 +73,9 @@
 			"content": "alexsmobs:tusklin",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_rocky_roller": {
@@ -84,9 +84,9 @@
 			"content": "alexsmobs:rocky_roller",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_skelewag": {
@@ -95,9 +95,9 @@
 			"content": "alexsmobs:skelewag",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_skreecher": {
@@ -106,9 +106,9 @@
 			"content": "alexsmobs:skreecher",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_soul_knight_wither_skeleton": {
@@ -117,9 +117,9 @@
 			"content": "block_factorys_bosses:soul_knight_wither_skeleton",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_soul_skeleton": {
@@ -128,9 +128,9 @@
 			"content": "block_factorys_bosses:soul_skeleton",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_flaming_skeleton_guard_sword": {
@@ -139,9 +139,9 @@
 			"content": "block_factorys_bosses:flaming_skeleton_guard_sword",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_dragon_guard_sword": {
@@ -150,9 +150,9 @@
 			"content": "block_factorys_bosses:dragon_guard_sword",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_cleric": {
@@ -161,9 +161,9 @@
 			"content": "fromtheshadows:cleric",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_foliaath": {
@@ -172,9 +172,9 @@
 			"content": "mowziesmobs:foliaath",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_umvuthana": {
@@ -183,9 +183,9 @@
 			"content": "mowziesmobs:umvuthana",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_umvuthana_raptor": {
@@ -194,9 +194,9 @@
 			"content": "mowziesmobs:umvuthana_raptor",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_umvuthana_crane": {
@@ -205,9 +205,9 @@
 			"content": "mowziesmobs:umvuthana_crane",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_naga": {
@@ -216,9 +216,9 @@
 			"content": "mowziesmobs:naga",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_bogged": {
@@ -227,9 +227,9 @@
 			"content": "trials:bogged",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_breeze": {
@@ -238,9 +238,9 @@
 			"content": "trials:breeze",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		},
 
 		"hunters_normal_obj_nehemoth": {
@@ -249,9 +249,9 @@
 			"content": "fromtheshadows:nehemoth",
 			"amount": {
 				"min": 1,
-				"max": 1
+				"max": 7
 			},
-			"unitWorth": 500
+			"unitWorth": 165
 		}
 	}
 
