@@ -2,7 +2,29 @@
 {
 	"content": {
 
-		"hunters_hard_rews_ability_stone_d1": {
+		"hunters_boss_rews_netherite_ingot": {
+			"type": "item",
+			"rarity": "LEGENDARY",
+			"content": "minecraft:netherite_ingot",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 250
+		},
+
+		"hunters_boss_rews_moon_crystal": {
+			"type": "item",
+			"rarity": "EPIC",
+			"content": "fantasy_armor:moon_crystal",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 250
+		},
+
+		"hunters_boss_rews_ability_stone_d1": {
 			"type": "item",
 			"rarity": "LEGENDARY",
 			"content": "epicskills:ability_stone",
@@ -13,7 +35,7 @@
 			"unitWorth": 1000
 		},
 
-		"hunters_hard_rews_ability_stone_d2": {
+		"hunters_boss_rews_ability_stone_d2": {
 			"type": "item",
 			"rarity": "LEGENDARY",
 			"content": "epicskills:ability_stone",
@@ -24,7 +46,7 @@
 			"unitWorth": 1000
 		},
 
-		"hunters_hard_rews_ability_stone_d3": {
+		"hunters_boss_rews_ability_stone_d3": {
 			"type": "item",
 			"rarity": "LEGENDARY",
 			"content": "epicskills:ability_stone",
@@ -35,7 +57,7 @@
 			"unitWorth": 1000
 		},
 
-		"hunters_hard_rews_ability_stone_d4": {
+		"hunters_boss_rews_ability_stone_d4": {
 			"type": "item",
 			"rarity": "LEGENDARY",
 			"content": "epicskills:ability_stone",
@@ -46,7 +68,7 @@
 			"unitWorth": 1000
 		},
 
-		"hunters_hard_rews_ability_stone_d5": {
+		"hunters_boss_rews_ability_stone_d5": {
 			"type": "item",
 			"rarity": "LEGENDARY",
 			"content": "epicskills:ability_stone",

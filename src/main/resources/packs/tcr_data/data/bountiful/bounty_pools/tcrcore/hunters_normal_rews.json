@@ -77,28 +77,6 @@
 				"max": 64
 			},
 			"unitWorth": 39
-		},
-
-		"hunters_normal_rews_netherite_ingot": {
-			"type": "item",
-			"rarity": "LEGENDARY",
-			"content": "minecraft:netherite_ingot",
-			"amount": {
-				"min": 1,
-				"max": 4
-			},
-			"unitWorth": 1250
-		},
-
-		"hunters_normal_rews_moon_crystal": {
-			"type": "item",
-			"rarity": "EPIC",
-			"content": "fantasy_armor:moon_crystal",
-			"amount": {
-				"min": 1,
-				"max": 4
-			},
-			"unitWorth": 625
 		}
 
 

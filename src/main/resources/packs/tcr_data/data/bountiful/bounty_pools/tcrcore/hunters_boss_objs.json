@@ -1,7 +1,7 @@
 {
 	"content": {
 
-		"hunters_hard_obj_void_worm": {
+		"hunters_boss_obj_void_worm": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "EPIC",
@@ -13,7 +13,7 @@
 			"unitWorth": 4000
 		},
 
-		"hunters_hard_obj_infernal_dragon": {
+		"hunters_boss_obj_infernal_dragon": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "EPIC",
@@ -25,7 +25,7 @@
 			"unitWorth": 4000
 		},
 
-		"hunters_hard_obj_sandworm": {
+		"hunters_boss_obj_sandworm": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "EPIC",
@@ -37,7 +37,7 @@
 			"unitWorth": 4000
 		},
 
-		"hunters_hard_obj_yeti": {
+		"hunters_boss_obj_yeti": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -49,7 +49,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_underworld_knight": {
+		"hunters_boss_obj_underworld_knight": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "EPIC",
@@ -61,7 +61,7 @@
 			"unitWorth": 4000
 		},
 
-		"hunters_hard_obj_malkuth": {
+		"hunters_boss_obj_malkuth": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "LEGENDARY",
@@ -73,7 +73,7 @@
 			"unitWorth": 5000
 		},
 
-		"hunters_hard_obj_chesed": {
+		"hunters_boss_obj_chesed": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "LEGENDARY",
@@ -85,7 +85,7 @@
 			"unitWorth": 5000
 		},
 
-		"hunters_hard_obj_ferrous_wroughtnaut": {
+		"hunters_boss_obj_ferrous_wroughtnaut": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -96,7 +96,7 @@
 			},
 			"unitWorth": 3000
 		},
-		"hunters_hard_obj_umvuthi": {
+		"hunters_boss_obj_umvuthi": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -108,7 +108,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_frostmaw": {
+		"hunters_boss_obj_frostmaw": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -120,7 +120,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_cloud_golem": {
+		"hunters_boss_obj_cloud_golem": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "EPIC",
@@ -132,7 +132,7 @@
 			"unitWorth": 4000
 		},
 
-		"hunters_hard_obj_endersent": {
+		"hunters_boss_obj_endersent": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -144,7 +144,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_shulker_mimic": {
+		"hunters_boss_obj_shulker_mimic": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -156,7 +156,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_skeletosaurus": {
+		"hunters_boss_obj_skeletosaurus": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -168,7 +168,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_withered_abomination": {
+		"hunters_boss_obj_withered_abomination": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -180,7 +180,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_lava_eater": {
+		"hunters_boss_obj_lava_eater": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -192,7 +192,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_frostbitten_golem": {
+		"hunters_boss_obj_frostbitten_golem": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -204,7 +204,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_overgrown_colossus": {
+		"hunters_boss_obj_overgrown_colossus": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -216,7 +216,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_ancient_guardian": {
+		"hunters_boss_obj_ancient_guardian": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -228,7 +228,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_posessed_paladin": {
+		"hunters_boss_obj_posessed_paladin": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
@@ -240,7 +240,7 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_hard_obj_dune_sentinel": {
+		"hunters_boss_obj_dune_sentinel": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "RARE",
