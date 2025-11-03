@@ -413,7 +413,7 @@ public class LivingEntityEventListeners {
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
             }
 
-            if (livingEntity instanceof BulldrogiothEntity bulldrogiothEntity && WorldUtil.isInStructure(livingEntity, WorldUtil.COVES) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
+            if (livingEntity instanceof BulldrogiothEntity bulldrogiothEntity && EntityUtil.getNearByEntities(serverLevel, bulldrogiothEntity.position(), 50, BulldrogiothEntity.class).size() <= 3 && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //秽土转生
                 SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(bulldrogiothEntity, 300, true);
                 if(bulldrogiothEntity.getPersistentData().contains("spawnX") && soulEntity != null) {
