@@ -10,7 +10,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 20
+			"unitWorth": 4000
 		},
 
 		"hunters_hard_obj_infernal_dragon": {
@@ -22,7 +22,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 40
+			"unitWorth": 4000
 		},
 
 		"hunters_hard_obj_sandworm": {
@@ -34,7 +34,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 41
+			"unitWorth": 4000
 		},
 
 		"hunters_hard_obj_yeti": {
@@ -46,7 +46,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 42
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_underworld_knight": {
@@ -58,7 +58,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 43
+			"unitWorth": 4000
 		},
 
 		"hunters_hard_obj_nehemoth": {
@@ -70,7 +70,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 60
+			"unitWorth": 1000
 		},
 
 		"hunters_hard_obj_malkuth": {
@@ -82,7 +82,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 21
+			"unitWorth": 5000
 		},
 
 		"hunters_hard_obj_chesed": {
@@ -94,7 +94,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 22
+			"unitWorth": 5000
 		},
 
 		"hunters_hard_obj_ferrous_wroughtnaut": {
@@ -106,7 +106,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 44
+			"unitWorth": 3000
 		},
 		"hunters_hard_obj_umvuthi": {
 			"type": "entity",
@@ -117,7 +117,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 45
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_frostmaw": {
@@ -129,7 +129,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 46
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_cloud_golem": {
@@ -141,7 +141,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 23
+			"unitWorth": 5000
 		},
 
 		"hunters_hard_obj_endersent": {
@@ -153,7 +153,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 47
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_shulker_mimic": {
@@ -165,7 +165,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 48
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_skeletosaurus": {
@@ -177,7 +177,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 49
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_withered_abomination": {
@@ -189,7 +189,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 50
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_lava_eater": {
@@ -201,7 +201,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 51
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_frostbitten_golem": {
@@ -213,7 +213,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 52
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_overgrown_colossus": {
@@ -225,7 +225,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 53
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_ancient_guardian": {
@@ -237,7 +237,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 54
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_posessed_paladin": {
@@ -249,7 +249,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 55
+			"unitWorth": 3000
 		},
 
 		"hunters_hard_obj_dune_sentinel": {
@@ -261,7 +261,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 56
+			"unitWorth": 3000
 		}
 
 	}

@@ -9,7 +9,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1000
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_centipede": {
@@ -20,7 +20,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1001
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_crimson_mosquito": {
@@ -31,7 +31,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1002
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_guster": {
@@ -42,7 +42,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1003
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_soul_vulture": {
@@ -53,7 +53,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1004
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_froststalker": {
@@ -64,7 +64,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1005
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_tusklin": {
@@ -75,7 +75,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1006
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_rocky_roller": {
@@ -86,7 +86,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1007
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_skelewag": {
@@ -97,7 +97,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1008
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_skreecher": {
@@ -108,7 +108,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1009
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_soul_knight_wither_skeleton": {
@@ -119,7 +119,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1010
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_soul_skeleton": {
@@ -130,7 +130,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1011
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_flaming_skeleton_guard_sword": {
@@ -141,7 +141,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1012
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_dragon_guard_sword": {
@@ -152,7 +152,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1013
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_cleric": {
@@ -163,7 +163,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1014
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_foliaath": {
@@ -174,7 +174,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1015
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_umvuthana": {
@@ -185,7 +185,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1016
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_umvuthana_raptor": {
@@ -196,7 +196,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1017
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_umvuthana_crane": {
@@ -207,7 +207,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1018
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_naga": {
@@ -218,7 +218,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1019
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_bogged": {
@@ -229,7 +229,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1020
+			"unitWorth": 500
 		},
 
 		"hunters_normal_obj_breeze": {
@@ -240,7 +240,7 @@
 				"min": 1,
 				"max": 1
 			},
-			"unitWorth": 1021
+			"unitWorth": 500
 		}
 
 	}
