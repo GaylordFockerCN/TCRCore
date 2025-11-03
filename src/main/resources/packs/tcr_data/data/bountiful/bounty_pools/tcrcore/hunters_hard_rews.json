@@ -21,7 +21,7 @@
 				"min": 2,
 				"max": 2
 			},
-			"unitWorth": 2000
+			"unitWorth": 1000
 		},
 
 		"hunters_hard_rews_ability_stone_d3": {
@@ -32,7 +32,7 @@
 				"min": 3,
 				"max": 3
 			},
-			"unitWorth": 3000
+			"unitWorth": 1000
 		},
 
 		"hunters_hard_rews_ability_stone_d4": {
@@ -43,7 +43,7 @@
 				"min": 4,
 				"max": 4
 			},
-			"unitWorth": 4000
+			"unitWorth": 1000
 		},
 
 		"hunters_hard_rews_ability_stone_d5": {
@@ -54,7 +54,7 @@
 				"min": 5,
 				"max": 5
 			},
-			"unitWorth": 5000
+			"unitWorth": 1000
 		}
 
 
