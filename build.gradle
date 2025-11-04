@@ -226,7 +226,7 @@ dependencies {
     //悬赏板
     implementation fg.deobf("curse.maven:kambrik-455585:4654401")
     implementation fg.deobf("curse.maven:bountiful-309516:5937417")
-    implementation fg.deobf("libs:bountiful_npc:1.0.1")
+    implementation fg.deobf("libs:bountiful_npc:1.0.2")
 
     implementation fg.deobf("curse.maven:global-shaderpack-properties-1344473:6982618")//全局光影包配置，添加灾变维度用。
 
