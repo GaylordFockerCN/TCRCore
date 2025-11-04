@@ -459,10 +459,11 @@ public class LivingEntityEventListeners {
                 wraithonLevel.getAllEntities().forEach(Entity::discard);
                 TCRDimSaveData.get(wraithonLevel).setBossSummoned(false);
             }
-            //多人则重置出生点
-            if (!serverPlayer.server.isSingleplayer()) {
-                serverPlayer.setRespawnPosition(TCRDimensions.SANCTUM_LEVEL_KEY, new BlockPos(WorldUtil.START_POS), 0, true, false);
-            }
+
+//            //多人则重置出生点
+//            if (!serverPlayer.server.isSingleplayer()) {
+//                serverPlayer.setRespawnPosition(TCRDimensions.SANCTUM_LEVEL_KEY, new BlockPos(WorldUtil.START_POS), 0, true, false);
+//            }
 
             if (EntityUtil.getNearByPlayers(serverPlayer, 30).isEmpty()) {
                 if (event.getSource().getEntity() instanceof LivingEntity living) {

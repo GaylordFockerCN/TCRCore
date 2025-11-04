@@ -11,7 +11,7 @@ import yesman.epicfight.api.utils.math.Vec2i;
 import java.util.function.Function;
 
 public class OverworldVillageTeleporter implements ITeleporter {
-    public static final String VILLAGE = "#towns_and_towers:town";
+    public static final String VILLAGE = "#tcrcore:villages_to_spawn";
     @Override
     public Entity placeEntity(Entity entity, ServerLevel currentWorld, ServerLevel destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
         Entity newEntity = repositionEntity.apply(false);

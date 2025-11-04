@@ -226,7 +226,7 @@ dependencies {
     //悬赏板
     implementation fg.deobf("curse.maven:kambrik-455585:4654401")
     implementation fg.deobf("curse.maven:bountiful-309516:5937417")
-    implementation fg.deobf("libs:bountiful_npc:1.0.1")
+    implementation fg.deobf("libs:bountiful_npc:1.0.2")
 
     implementation fg.deobf("curse.maven:global-shaderpack-properties-1344473:6982618")//全局光影包配置，添加灾变维度用。
 
@@ -263,7 +263,7 @@ dependencies {
     implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
     //主要boss
-//    implementation fg.deobf("curse.maven:legendary-monsters-944035:6776766")
+    implementation fg.deobf("curse.maven:legendary-monsters-944035:6776766")
     implementation fg.deobf("curse.maven:dodos-mobs-1349823:7018547")
     implementation fg.deobf("curse.maven:mowzies-mobs-250498:6586086")
 //    implementation fg.deobf("curse.maven:bossesrise-1314084:6900933")
@@ -284,6 +284,8 @@ dependencies {
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.20.1:4.7.3")
 
     //结构类
+    implementation fg.deobf("curse.maven:wits-909375:4789318")
+    implementation fg.deobf("curse.maven:integrated-villages-661376:6701488")
     implementation fg.deobf("curse.maven:explorers-compass-edited-1203888:6733733")
     implementation fg.deobf("curse.maven:natures-compass-252848:4712189")
     implementation fg.deobf("curse.maven:ati-structures-964608:6730813")

@@ -1,0 +1,186 @@
+[
+  {
+    "section": "Equipe de Produção",
+    "disciplines": [
+      {
+        "discipline": "Autor",
+        "titles": [
+          {
+            "title": "",
+            "names": ["P1nero"]
+          }
+        ]
+      },
+      {
+        "discipline": "Planejador",
+        "titles": [
+          {
+            "title": "",
+            "names": ["P1nero"]
+          }
+        ]
+      },
+      {
+        "discipline": "Programador",
+        "titles": [
+          {
+            "title": "",
+            "names": ["P1nero"]
+          }
+        ]
+      },
+      {
+        "discipline": "Livro de Missões, Manual Ilustrado, Produção de Tutorial",
+        "titles": [
+          {
+            "title": "",
+            "names": ["P1nero"]
+          }
+        ]
+      },
+      {
+        "discipline": "Design de Diálogo",
+        "titles": [
+          {
+            "title": "",
+            "names": ["P1nero"]
+          }
+        ]
+      },
+      {
+        "discipline": "Design de História",
+        "titles": [
+          {
+            "title": "",
+            "names": ["P1nero"]
+          }
+        ]
+      },
+      {
+        "discipline": "Diretor de Arte",
+        "titles": [
+          {
+            "title": "",
+            "names": ["P1nero"]
+          }
+        ]
+      },
+      {
+        "discipline": "Cenário de Fundo",
+        "titles": [
+          {
+            "title": "",
+            "names": ["P1nero"]
+          }
+        ]
+      },
+      {
+        "discipline": "Apoio Externo",
+        "titles": [
+          {
+            "title": "Santuário ",
+            "names": ["El_mal（玩建筑的牢E）"]
+          },
+          {
+            "title": "Algumas Animações",
+            "names": ["merlin204"]
+          },
+          {
+            "title": "Algumas Texturas",
+            "names": [
+              "一只路过的小吴 Alguns Itens",
+              "XVIII-凌 Alguns Efeitos de Espada",
+              "Ao Algumas Habilidades, npc",
+              "脚踏梯子hill Rastro"
+            ]
+          },
+          {
+            "title": "Terreno",
+            "names": ["wonderful艾晨"]
+          },
+          {
+            "title": "Criar ServerPack",
+            "names": ["KamiKaguya"]
+          }
+        ]
+      },
+      {
+        "discipline": "Apoio de Equipamento",
+        "titles": [
+          {
+            "title": "Patrocínio do Servidor de Testes",
+            "names": ["白露（NHBlock）"]
+          },
+          {
+            "title": "Assistência na Filmagem",
+            "names": ["Arcadia"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Contribuições do Beta Fechado",
+    "disciplines": [
+      {
+        "discipline": "",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "T_muse_Y",
+              "HuaSheng_peanuts",
+              "merlin204",
+              "ShelMarow",
+              "Arcadia",
+              "霖",
+              "32spark",
+              "脚踏梯子hill"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Espaço Publicitário Disponível",
+    "disciplines": [
+      {
+        "discipline": "Espaço Publicitário Disponível",
+        "titles": [
+          {
+            "title": "Espaço Publicitário Disponível",
+            "names": [
+              "Espaço Publicitário Disponível",
+              "Contate P1nero para detalhes"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Agradecimentos Especiais",
+    "disciplines": [
+      {
+        "discipline": "",
+        "titles": [
+          {
+            "title": "I18n (Tradutores para outros idiomas podem adicionar seu nome aqui)",
+            "names": ["zh_cn, en_us - P1nero"]
+          },
+          {
+            "title": "Tributos",
+            "names": [
+              "Yesman",
+              "Super Awesome Baby Team",
+              "Minecraft",
+              "Minecraft Forge",
+              "E todos os mods, pacotes de recursos e pacotes de shaders usados neste modpack."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

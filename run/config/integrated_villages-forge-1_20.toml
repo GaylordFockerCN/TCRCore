@@ -1,0 +1,16 @@
+
+["Integrated Villages"]
+
+	###########################################################################################################
+	## General settings.
+	###########################################################################################################
+	["Integrated Villages".General]
+		# Whether or not vanilla villages should be disabled.
+		# Default: true
+		#
+		"Disable Vanilla Villages" = false
+		# Whether or not create contraptions such as windmills will be activated on world generation. Turning this to false could prevent some lag.
+		# Default: true
+		#
+		"Activate Create Contraptions" = true
+

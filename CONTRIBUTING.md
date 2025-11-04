@@ -7,16 +7,15 @@ First and foremost, I want to extend my deepest gratitude to every contributor w
 If you'd like to contribute translations, please focus on the following sections:
 
 ### 🎯 Core Mod
-**Location**: [`generated/resources/assets/tcrcore/lang`](https://github.com/GaylordFockerCN/TCRCore/tree/master/src/generated/resources/assets/tcrcore/lang)
+**Location**: [`main/resources/packs/tcr_assets/assets/tcrcore_i18n_patch/lang`](https://github.com/GaylordFockerCN/TCRCore/tree/master/src/main/resources/packs/tcr_assets/assets/tcrcore_i18n_patch/lang)
 
-💡 **Important**: Please don't add new translations directly to the generated folder! Instead, add them to:
-[`main/resources/packs/tcr_assets/assets/tcrcore_i18n_patch/lang`](https://github.com/GaylordFockerCN/TCRCore/tree/master/src/main/resources/packs/tcr_assets/assets/tcrcore_i18n_patch/lang)
+💡 **Important**: English fix: [`TCRENLangGenerator.java`](https://github.com/GaylordFockerCN/TCRCore/blob/master/src/main/java/com/p1nero/tcrcore/datagen/lang/TCRENLangGenerator.java)
 
 ### 🏆 FTB Quests
 **Location**: [`main/resources/packs/tcr_assets/assets/tcr_ftb_lang/lang`](https://github.com/GaylordFockerCN/TCRCore/tree/master/src/main/resources/packs/tcr_assets/assets/tcr_ftb_lang/lang)
 
 ### 🗺️ Structure Names
-**Location**: [`main/resources/packs/tcr_assets/assets/explorerscompass/lang`](https://github.com/GaylordFockerCN/TCRCore/tree/master/src/main/resources/packs/tcr_assets/assets/explorerscompass/lang)
+**Location**: [`main/resources/packs/tcr_assets/assets/structure_translations/lang`](https://github.com/GaylordFockerCN/TCRCore/tree/master/src/main/resources/packs/tcr_assets/assets/structure_translations/lang)
 
 🌐 **Note**: Structure names are shared with the Explorers Compass mod.
 
