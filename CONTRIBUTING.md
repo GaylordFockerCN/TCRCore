@@ -15,7 +15,7 @@ If you'd like to contribute translations, please focus on the following sections
 **Location**: [`main/resources/packs/tcr_assets/assets/tcr_ftb_lang/lang`](https://github.com/GaylordFockerCN/TCRCore/tree/master/src/main/resources/packs/tcr_assets/assets/tcr_ftb_lang/lang)
 
 ### 🗺️ Structure Names
-**Location**: [`main/resources/packs/tcr_assets/assets/explorerscompass/lang`](https://github.com/GaylordFockerCN/TCRCore/tree/master/src/main/resources/packs/tcr_assets/assets/explorerscompass/lang)
+**Location**: [`main/resources/packs/tcr_assets/assets/structure_translations/lang`](https://github.com/GaylordFockerCN/TCRCore/tree/master/src/main/resources/packs/tcr_assets/assets/structure_translations/lang)
 
 🌐 **Note**: Structure names are shared with the Explorers Compass mod.
 

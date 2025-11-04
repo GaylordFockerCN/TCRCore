@@ -51,9 +51,15 @@ public class BlockEvents {
         if(event.getEntity() instanceof Player player && player.isCreative()) {
             return;
         }
-        //主城保护
-        if(event.getEntity() != null && WorldUtil.inMainLand(event.getEntity())) {
-            event.setCanceled(true);
+        if(event.getEntity() != null) {
+            //主城保护
+            if(WorldUtil.inMainLand(event.getEntity())) {
+                event.setCanceled(true);
+            }
+            //幻境禁止摆放
+            if(CataclysmDimensions.LEVELS.contains(event.getEntity().level().dimension())) {
+                event.setCanceled(true);
+            }
         }
     }
 

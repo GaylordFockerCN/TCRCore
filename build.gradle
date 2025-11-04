@@ -263,7 +263,7 @@ dependencies {
     implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
     //主要boss
-//    implementation fg.deobf("curse.maven:legendary-monsters-944035:6776766")
+    implementation fg.deobf("curse.maven:legendary-monsters-944035:6776766")
     implementation fg.deobf("curse.maven:dodos-mobs-1349823:7018547")
     implementation fg.deobf("curse.maven:mowzies-mobs-250498:6586086")
 //    implementation fg.deobf("curse.maven:bossesrise-1314084:6900933")
