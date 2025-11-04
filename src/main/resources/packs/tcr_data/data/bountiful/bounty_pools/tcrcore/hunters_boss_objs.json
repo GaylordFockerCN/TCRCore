@@ -120,136 +120,16 @@
 			"unitWorth": 3000
 		},
 
-		"hunters_boss_obj_cloud_golem": {
+		"hunters_boss_obj_wither": {
 			"type": "entity",
 			"timeMult": 10.0,
 			"rarity": "EPIC",
-			"content": "legendary_monsters:cloud_golem",
+			"content": "minecraft:wither",
 			"amount": {
 				"min": 1,
 				"max": 1
 			},
 			"unitWorth": 4000
-		},
-
-		"hunters_boss_obj_endersent": {
-			"type": "entity",
-			"timeMult": 10.0,
-			"rarity": "RARE",
-			"content": "legendary_monsters:endersent",
-			"amount": {
-				"min": 1,
-				"max": 1
-			},
-			"unitWorth": 3000
-		},
-
-		"hunters_boss_obj_shulker_mimic": {
-			"type": "entity",
-			"timeMult": 10.0,
-			"rarity": "RARE",
-			"content": "legendary_monsters:shulker_mimic",
-			"amount": {
-				"min": 1,
-				"max": 1
-			},
-			"unitWorth": 3000
-		},
-
-		"hunters_boss_obj_skeletosaurus": {
-			"type": "entity",
-			"timeMult": 10.0,
-			"rarity": "RARE",
-			"content": "legendary_monsters:skeletosaurus",
-			"amount": {
-				"min": 1,
-				"max": 1
-			},
-			"unitWorth": 3000
-		},
-
-		"hunters_boss_obj_withered_abomination": {
-			"type": "entity",
-			"timeMult": 10.0,
-			"rarity": "RARE",
-			"content": "legendary_monsters:withered_abomination",
-			"amount": {
-				"min": 1,
-				"max": 1
-			},
-			"unitWorth": 3000
-		},
-
-		"hunters_boss_obj_lava_eater": {
-			"type": "entity",
-			"timeMult": 10.0,
-			"rarity": "RARE",
-			"content": "legendary_monsters:lava_eater",
-			"amount": {
-				"min": 1,
-				"max": 1
-			},
-			"unitWorth": 3000
-		},
-
-		"hunters_boss_obj_frostbitten_golem": {
-			"type": "entity",
-			"timeMult": 10.0,
-			"rarity": "RARE",
-			"content": "legendary_monsters:frostbitten_golem",
-			"amount": {
-				"min": 1,
-				"max": 1
-			},
-			"unitWorth": 3000
-		},
-
-		"hunters_boss_obj_overgrown_colossus": {
-			"type": "entity",
-			"timeMult": 10.0,
-			"rarity": "RARE",
-			"content": "legendary_monsters:overgrown_colossus",
-			"amount": {
-				"min": 1,
-				"max": 1
-			},
-			"unitWorth": 3000
-		},
-
-		"hunters_boss_obj_ancient_guardian": {
-			"type": "entity",
-			"timeMult": 10.0,
-			"rarity": "RARE",
-			"content": "legendary_monsters:ancient_guardian",
-			"amount": {
-				"min": 1,
-				"max": 1
-			},
-			"unitWorth": 3000
-		},
-
-		"hunters_boss_obj_posessed_paladin": {
-			"type": "entity",
-			"timeMult": 10.0,
-			"rarity": "RARE",
-			"content": "legendary_monsters:posessed_paladin",
-			"amount": {
-				"min": 1,
-				"max": 1
-			},
-			"unitWorth": 3000
-		},
-
-		"hunters_boss_obj_dune_sentinel": {
-			"type": "entity",
-			"timeMult": 10.0,
-			"rarity": "RARE",
-			"content": "legendary_monsters:dune_sentinel",
-			"amount": {
-				"min": 1,
-				"max": 1
-			},
-			"unitWorth": 3000
 		}
 
 	}

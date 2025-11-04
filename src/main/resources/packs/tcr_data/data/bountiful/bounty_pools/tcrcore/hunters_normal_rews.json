@@ -77,6 +77,17 @@
 				"max": 64
 			},
 			"unitWorth": 39
+		},
+
+		"hunters_normal_rews_ghast_tear": {
+			"type": "item",
+			"rarity": "RARE",
+			"content": "minecraft:ghast_tear",
+			"amount": {
+				"min": 1,
+				"max": 64
+			},
+			"unitWorth": 39
 		}
 
 
