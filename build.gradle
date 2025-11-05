@@ -305,7 +305,6 @@ dependencies {
     implementation fg.deobf("curse.maven:towns-and-towers-626761:4923828")
     implementation fg.deobf("curse.maven:cristel-lib-856996:5869180")
     implementation fg.deobf("curse.maven:abridged-948999:6745463")
-    implementation "curse.maven:lukis-grand-capitals-1003666:6786014"
 
     //螺旋塔村
     implementation "curse.maven:spiral-tower-villages-1280127:6705885"
