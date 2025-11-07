@@ -18,7 +18,7 @@ public class TitleScreenMixin extends Screen {
     }
 
     @Inject(at = @At("RETURN"), method = "init")
-    private void addCustomButton(CallbackInfo ci) {
+    private void tcr$addCustomButton(CallbackInfo ci) {
         int buttonWidth = 200;
         int buttonHeight = 20;
         int x = (this.width - buttonWidth) / 2;

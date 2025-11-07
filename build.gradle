@@ -204,8 +204,7 @@ dependencies {
     implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7058350")
 //    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
     implementation fg.deobf("libs:p1nero_ec:20.12.0.3")
-//    implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7163593")
-    implementation fg.deobf("libs:p1nero_dl:2.0.1")
+    implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7177400")
     implementation fg.deobf("curse.maven:entity-respawner-1363764:7105518")
     implementation fg.deobf("libs:nightfall_invade:1.0.1")
     implementation fg.deobf("libs:mimic:1.0.0")
@@ -226,7 +225,7 @@ dependencies {
     //悬赏板
     implementation fg.deobf("curse.maven:kambrik-455585:4654401")
     implementation fg.deobf("curse.maven:bountiful-309516:5937417")
-    implementation fg.deobf("libs:bountiful_npc:1.0.2")
+    implementation fg.deobf("libs:bountiful_npc:1.0.3")
 
     implementation fg.deobf("curse.maven:global-shaderpack-properties-1344473:6982618")//全局光影包配置，添加灾变维度用。
 
