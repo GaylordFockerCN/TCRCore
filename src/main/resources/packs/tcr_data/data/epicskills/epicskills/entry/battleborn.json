@@ -23,7 +23,7 @@
 		{
 			"skill": "epicfight:berserker",
 			"position_in_screen": [340, 100],
-			"ability_points": 5
+			"ability_points": 3
 		},
 		{
 			"skill": "epicfight:bonebreaker",
@@ -33,7 +33,7 @@
 				}
 			],
 			"position_in_screen": [440, 100],
-			"ability_points": 5
+			"ability_points": 3
 		},
 		{
 			"skill": "epicfight:adaptive_skin",
@@ -43,7 +43,7 @@
 				}
 			],
 			"position_in_screen": [240, 100],
-			"ability_points": 5
+			"ability_points": 3
 		},
 		{
 			"skill": "epicfight:vengeance",
@@ -53,33 +53,33 @@
 				}
 			],
 			"position_in_screen": [340, 170],
-			"ability_points": 5
+			"ability_points": 3
 		},
 		{
 			"skill": "epicfight:forbidden_strength",
 			"position_in_screen": [120, 100],
-			"ability_points": 5
+			"ability_points": 3
 		},
 		{
 			"skill": "epicfight:hypervitality",
 			"position_in_screen": [20, 100],
-			"ability_points": 5
+			"ability_points": 3
 		},
         {
           "skill": "efn:precise_parry",
           "position_in_screen": [120, 170],
-          "ability_points": 5
+          "ability_points": 3
         },
         {
           "skill": "efn:execution",
           "position_in_screen": [220, 170],
-          "ability_points": 5
+          "ability_points": 2
         }
         ,
         {
           "skill": "efn:stomp",
           "position_in_screen": [20, 170],
-          "ability_points": 5
+          "ability_points": 2
         }
 	],
 	"priority": 0
