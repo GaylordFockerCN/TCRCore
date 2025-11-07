@@ -32,6 +32,7 @@ provider = "NULL"
 	enable_player_vanilla_model = true
 	#Allowed Values: ADAPTIVE, SWITCH_MODE
 	preference_work = "ADAPTIVE"
+	mining_preferred_items = []
 
 	[ingame.ui]
 		stamina_bar_x = 120

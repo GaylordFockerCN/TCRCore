@@ -183,6 +183,12 @@ jar {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    implementation fg.deobf("curse.maven:fancymenu-367706:6918987")
+    implementation fg.deobf("curse.maven:drippy-loading-screen-511770:6412211")
+    implementation fg.deobf("curse.maven:konkrete-410295:5028413")
+    implementation fg.deobf("curse.maven:melody-938643:5109692")
+
     implementation fg.deobf("curse.maven:fluid-tick-structure-processor-1369713:7133622")
 //    implementation fg.deobf("libs:ba_bt:3.0.0")
     implementation fg.deobf("curse.maven:epic-fight-mod-405076:7144412-sources-7144414")
@@ -326,9 +332,15 @@ dependencies {
     implementation fg.deobf("curse.maven:terrablender-563928:6290448")
     implementation fg.deobf("curse.maven:glitchcore-955399:5787839")
 
-    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
-        jarJar.ranged(it, "[2.3.0,)")
+    dependencies {
+        compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
+        implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0")) {
+            jarJar.ranged(it, "[0.5.0,)")
+        }
     }
+//    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
+//        jarJar.ranged(it, "[2.3.0,)")
+//    }
 //    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉

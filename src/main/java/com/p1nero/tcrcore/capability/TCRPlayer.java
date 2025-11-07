@@ -489,7 +489,7 @@ public class TCRPlayer {
                     serverPlayer.connection.send(new ClientboundSetTitleTextPacket(TCRCoreMod.getInfo("end_unlock").withStyle(ChatFormatting.LIGHT_PURPLE)));
                 } else if(item.is(ModItems.FLAME_EYE.get()) && PlayerDataManager.flameEyeTraded.get(serverPlayer) && !PlayerDataManager.flameEyeBlessed.get(serverPlayer)) {
                     healthAdder += 2.0;
-                    ItemUtil.addItemEntity(serverPlayer, EpicSkillsItems.ABILIITY_STONE.get(), 4, ChatFormatting.GOLD.getColor());
+                    ItemUtil.addItemEntity(serverPlayer, EpicSkillsItems.ABILIITY_STONE.get(), 6, ChatFormatting.GOLD.getColor());
                     serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), 1.0F, 1.0F, serverPlayer.getRandom().nextInt()));
                     PlayerDataManager.flameEyeBlessed.put(serverPlayer, true);
                 } else if(item.is(ModItems.MONSTROUS_EYE.get()) && !PlayerDataManager.monstEyeBlessed.get(serverPlayer)) {

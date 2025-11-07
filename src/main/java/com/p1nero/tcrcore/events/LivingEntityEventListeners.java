@@ -50,6 +50,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -484,6 +485,11 @@ public class LivingEntityEventListeners {
     public static void onLivingHurt(LivingHurtEvent event) {
         if (TCRCoreMod.hasCheatMod()) {
             event.getEntity().setHealth(0);
+        }
+        if(event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity) {
+            if(event.getSource().is(DamageTypes.IN_WALL)) {
+                bulldrogiothEntity.moveTo(bulldrogiothEntity.position().add(0, 1, 0));
+            }
         }
     }
 

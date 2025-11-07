@@ -37,7 +37,7 @@ public class OverworldVillageTeleporter implements ITeleporter {
                 targetPos = targetPos.below();
             }
         }
-
+        destWorld.setDefaultSpawnPos(targetPos, 0);
         newEntity.teleportTo(targetPos.getX() + 0.5, targetPos.getY(), targetPos.getZ() + 0.5);
         return newEntity;
     }
