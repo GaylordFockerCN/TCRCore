@@ -472,6 +472,9 @@ public class LivingEntityEventListeners {
                     if (living instanceof WraithonEntity wraithonEntity) {
                         wraithonEntity.setPhase(WraithonEntity.START_PHASE);
                     }
+                    if (living instanceof Arterius arterius) {
+                        arterius.resetBossStatus(true);
+                    }
                 }
             }
         }
