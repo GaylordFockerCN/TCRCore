@@ -325,6 +325,10 @@ dependencies {
     implementation fg.deobf("curse.maven:biomes-o-plenty-220318:6364065")
     implementation fg.deobf("curse.maven:terrablender-563928:6290448")
     implementation fg.deobf("curse.maven:glitchcore-955399:5787839")
+
+    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
+        jarJar.ranged(it, "[2.3.0,)")
+    }
 //    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
@@ -344,7 +348,7 @@ dependencies {
 
     //饰品
     implementation fg.deobf("curse.maven:artifacts-312353:6399828")
-    implementation fg.deobf("curse.maven:unique-accessories-1336987:7039658")
+    implementation fg.deobf("curse.maven:unique-accessories-1336987:7189976")
     implementation fg.deobf("curse.maven:apothic-attributes-898963:5634071")
     implementation fg.deobf("curse.maven:placebo-283644:6274231")
 
@@ -383,10 +387,6 @@ dependencies {
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 
     jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC1.20,MC1.21)")
-
-    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
-        jarJar.ranged(it, "[2.3.0,)")
-    }
 
     implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}-${create_version_build}:slim") { transitive = false }
 

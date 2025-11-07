@@ -177,12 +177,12 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("cursed_pos", "Location of the Cursed Echo: Ice Maze");
         this.addInfo("desert_pos", "Location of the Desert Echo: Chimera's Prison");
         this.addInfo("flame_pos", "Location of the Flame Echo: Underworld Arena");
-        this.addInfo("abyss_pos", "Location of the Abyss Echo: Coves");
+        this.addInfo("abyss_pos", "Location of the Abyss Echo: Ribbit Village");
 
         this.addAdvancement("dragon_tame", "Dragon Tamer", "Tame Skrythe");
         this.addAdvancement(TCRCoreMod.MOD_ID, "The Casket of Reveries", "Where the dream begins. Head to the The Sanctuary to find the The Sanctuary Keeper.");
         this.addAdvancement(TCRCoreMod.MOD_ID + "_weapon", "King's Treasury", "All obtainable and adapted weapons or materials. Check [JEI] for acquisition methods and details.");
-        this.addAdvancement("find_ymsw", "Coves", "Reach the Coves");
+        this.addAdvancement("find_ymsw", "Ribbit Village", "Reach the Ribbit Village");
         this.addAdvancement("aquamirae_weapon", "Sea Spirit Tale - Weapons", "");
         this.addAdvancement("cataclysm_weapon", "Cataclysm - Weapons", "");
         this.addAdvancement("legend_weapon", "Legendary Weapons", "");

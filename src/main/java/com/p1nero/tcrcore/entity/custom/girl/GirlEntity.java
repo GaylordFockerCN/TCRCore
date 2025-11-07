@@ -16,6 +16,7 @@ import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.yesman.epicskills.client.gui.screen.SkillTreeScreen;
+import com.yesman.epicskills.client.input.EpicSkillsKeyMappings;
 import net.blay09.mods.waystones.block.ModBlocks;
 import net.genzyuro.uniqueaccessories.item.UAUniqueCurioItem;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
@@ -466,7 +467,7 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
 //            //盔甲
 //            DialogNode ans3 = new DialogNode.FinalNode(dBuilder.optWithBrackets(3), 2);
             //技能
-            DialogNode ans4 = new DialogNode(dBuilder.ans(5, I18n.get("item.epicskills.ability_stone"), I18n.get("item.epicskills.ability_stone"), EpicFightKeyMappings.SKILL_EDIT.getTranslatedKeyMessage()), dBuilder.optWithBrackets(4))
+            DialogNode ans4 = new DialogNode(dBuilder.ans(5, I18n.get("item.epicskills.ability_stone"), I18n.get("item.epicskills.ability_stone"), EpicSkillsKeyMappings.OPEN_SKILL_TREE.getTranslatedKeyMessage()), dBuilder.optWithBrackets(4))
                     .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(5), -1, (s) -> {
                         LocalPlayerPatch localPlayerPatch = ClientEngine.getInstance().getPlayerPatch();
                         if(localPlayerPatch != null) {

@@ -179,12 +179,12 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("cursed_pos", "诅咒回响之所在：冰冻深海");
         this.addInfo("desert_pos", "沙漠回响之所在：奇美拉之监牢");
         this.addInfo("flame_pos", "烈焰回响之所在：幽冥竞技场");
-        this.addInfo("abyss_pos", "深渊回响之所在：隐秘水湾");
+        this.addInfo("abyss_pos", "深渊回响之所在：呱呱村庄");
 
         this.addAdvancement("dragon_tame", "驯龙高手", "驯服斯克里兹");
         this.addAdvancement(TCRCoreMod.MOD_ID, "远梦之棺", "梦开始的地方，前往主城寻找守护者。");
         this.addAdvancement(TCRCoreMod.MOD_ID + "_weapon", "王之宝库", "所有可获得的且进行过适配的武器或材料，可通过 [JEI] 查看获取方式及详细信息");
-        this.addAdvancement("find_ymsw", "隐秘水湾", "抵达隐秘水湾");
+        this.addAdvancement("find_ymsw", "呱呱村庄", "抵达呱呱村庄");
         this.addAdvancement("aquamirae_weapon", "海灵物语-武器", "");
         this.addAdvancement("cataclysm_weapon", "灾变-武器", "");
         this.addAdvancement("legend_weapon", "传奇武器", "");
