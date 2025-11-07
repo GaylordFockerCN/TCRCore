@@ -17,7 +17,7 @@ public abstract class ItemMixin {
     @Shadow
     public abstract String toString();
 
-    @Inject(method = "getName", at = @At("RETURN"), cancellable = true)
+    @Inject(method = {"getName", "m_7626_"}, at = @At("RETURN"), cancellable = true, remap = false)
     private void tcr$getDesc(ItemStack itemStack, CallbackInfoReturnable<Component> cir){
         if(ItemEvents.eyes.contains((Item) (Object) this)){
             cir.setReturnValue(cir.getReturnValue().copy().withStyle(ChatFormatting.GOLD));

@@ -262,7 +262,7 @@ dependencies {
     implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
     //主要boss
-    implementation fg.deobf("curse.maven:legendary-monsters-944035:6776766")
+//    implementation fg.deobf("curse.maven:legendary-monsters-944035:6776766")
     implementation fg.deobf("curse.maven:dodos-mobs-1349823:7018547")
     implementation fg.deobf("curse.maven:mowzies-mobs-250498:6586086")
 //    implementation fg.deobf("curse.maven:bossesrise-1314084:6900933")
@@ -372,7 +372,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:resourceful-config-714059:6231176")
     implementation fg.deobf("curse.maven:structure-layout-optimizer-1087831:6125412")
-    implementation fg.deobf("curse.maven:noisium-930207:5650506")
+//    implementation fg.deobf("curse.maven:noisium-930207:5650506")
     implementation fg.deobf("curse.maven:async-locator-625069:4603343")
 
     implementation fg.deobf("curse.maven:fancy-toasts-1326436:6932752")//优化进度贴图
@@ -381,7 +381,12 @@ dependencies {
     implementation fg.deobf("curse.maven:oculus-581495:6020952")
 
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+
     jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC1.20,MC1.21)")
+
+    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
+        jarJar.ranged(it, "[2.3.0,)")
+    }
 
     implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}-${create_version_build}:slim") { transitive = false }
 
