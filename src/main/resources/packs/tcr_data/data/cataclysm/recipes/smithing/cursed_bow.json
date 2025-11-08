@@ -4,7 +4,7 @@
         "item": "cataclysm:black_steel_ingot"
     },
     "base": {
-        "item": "p1nero_bow:mortis"
+        "item": "minecraft:bow"
     },
     "result": {
         "item": "cataclysm:cursed_bow"
