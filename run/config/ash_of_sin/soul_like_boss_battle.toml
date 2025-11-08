@@ -1,0 +1,20 @@
+#Soul Like Boss Battle Distance
+#Radius of Soul Like Boss Battle. Minimum is 1, maximum is 128.(Default is 64 blocks)
+#Range: 1 ~ 128
+"Soul Like Boss Battle Distance" = 64
+#Iron Golem Entity
+#Iron Golem entity id.
+"Iron Golem Entity" = ["minecraft:iron_golem", "create:contraption", "create:stationary_contraption"]
+#Soul Like Boss Battle Check Player Gamemode
+#Soul Like Boss Battle Valid Player's Gamemode: [survival, adventure, creative, spectator]
+Gamemode = ["survival", "adventure"]
+#Soul Like Boss Battle On
+#Enable Soul Like Boss Battle
+"Soul Like Boss Battle On" = true
+#Anti-Iron Golem
+#Not allow Iron Golem hurt BOSS.
+"Anti-Iron Golem" = true
+#Soul Like Boss Battle Entity
+#Soul Like Boss Battle Entity id.
+"Soul Like Boss Battle Entity" = ["minecraft:wither", "minecraft:ender_dragon", "minecraft:warden", "minecraft:iron_golem", "cataclysm:ender_guardian", "cataclysm:ignis", "cataclysm:netherite_monstrosity", "cataclysm:the_harbinger", "cataclysm:the_leviathan", "cataclysm:ancient_ancient_remnant", "cataclysm:ancient_remnant", "cataclysm:maledictus", "aquamirae:captain_cornelia", "fromtheshadows:bulldrogioth", "dodosmobs:bone_chimera", "block_factorys_bosses:infernal_dragon", "block_factorys_bosses:sandworm", "block_factorys_bosses:yeti", "block_factorys_bosses:underworld_knight", "fdbosses:malkuth", "fdbosses:chesed", "nightfall_invade:arterius", "alexsmobs:void_worm", "mowziesmobs:ferrous_wroughtnaut", "mowziesmobs:frostmaw", "mowziesmobs:umvuthi", "callfromthedepth_:agonysoul", "callfromthedepth_:injured_ancient_guard", "callfromthedepth_:deepdarkestspawn", "callfromthedepth_:deepdarkestspwansecondphase"]
+
