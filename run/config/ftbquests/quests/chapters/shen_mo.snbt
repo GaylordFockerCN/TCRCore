@@ -482,7 +482,6 @@
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
-			description: ["[\"\",{\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest30034045548591528.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.6E911C0C47606679.quest30034045548591528.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"42B7E4648BDE15AD\"}}]"]
 			id: "006AB3CE281779A8"
 			rewards: [{
 				id: "7B621DDAF22D7741"

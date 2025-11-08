@@ -1084,7 +1084,6 @@
 			y: 5.25d
 		}
 		{
-			dependencies: ["0590C9C7242BCC96"]
 			hide_dependency_lines: false
 			hide_dependent_lines: true
 			icon: {

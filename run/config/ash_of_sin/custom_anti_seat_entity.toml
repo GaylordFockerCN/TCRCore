@@ -1,0 +1,6 @@
+#Anti On
+#Enable Anti-Seat Entity
+"Anti On" = true
+#Anti-Seat Entity
+"Anti-Seat Entity" = ["minecraft:wither", "minecraft:ender_dragon", "minecraft:warden", "minecraft:iron_golem", "cataclysm:ender_guardian", "cataclysm:ignis", "cataclysm:netherite_monstrosity", "cataclysm:the_harbinger", "cataclysm:the_leviathan", "cataclysm:ancient_ancient_remnant", "cataclysm:ancient_remnant", "cataclysm:maledictus", "aquamirae:captain_cornelia", "fromtheshadows:bulldrogioth", "fromtheshadows:nehemoth", "dodosmobs:bone_chimera", "block_factorys_bosses:infernal_dragon", "block_factorys_bosses:sandworm", "block_factorys_bosses:yeti", "block_factorys_bosses:underworld_knight", "fdbosses:malkuth", "fdbosses:chesed", "nightfall_invade:arterius", "alexsmobs:void_worm", "mowziesmobs:ferrous_wroughtnaut", "mowziesmobs:frostmaw", "mowziesmobs:umvuthi", "callfromthedepth_:agonysoul", "callfromthedepth_:injured_ancient_guard", "callfromthedepth_:deepdarkestspawn", "callfromthedepth_:deepdarkestspwansecondphase", "minecraft:zombie", "minecraft:husk", "minecraft:drowned", "minecraft:skeleton", "minecraft:wither_skeleton", "minecraft:stray", "minecraft:pillager", "minecraft:vindicator", "mowziesmobs:umvuthana", "mowziesmobs:umvuthana_raptor", "mowziesmobs:umvuthana_crane", "quark:forgotten"]
+
