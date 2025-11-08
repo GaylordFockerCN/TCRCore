@@ -76,6 +76,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.p1nero.ss.item.SwordSoaringItems;
+import net.shelmarow.nightfall_invade.entity.NFIEntities;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
 import net.sonmok14.fromtheshadows.server.entity.mob.BulldrogiothEntity;
 import net.unusual.blockfactorysbosses.entity.SwordWaveEntity;
@@ -362,6 +363,15 @@ public class LivingEntityEventListeners {
                 player.displayClientMessage(TCRCoreMod.getInfo("kill_boss4"), false);
             }
 
+            //保险措施，一般到不了
+            if (livingEntity instanceof Arterius arterius) {
+                if(!PlayerDataManager.flameEyeTraded.get(player) && PlayerDataManager.cursedEyeBlessed.get(player)) {
+                    ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
+                }
+                player.displayClientMessage(TCRCoreMod.getInfo("kill_arterius", NFIEntities.ARTERIUS.get().getDescription().copy().withStyle(ChatFormatting.RED), EFNItem.DUSKFIRE_INGOT.get().getDescription()), false);
+                ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), 2 + arterius.getRandom().nextInt(3), ChatFormatting.RED.getColor());
+            }
+
         });
 
         if (livingEntity.level() instanceof ServerLevel serverLevel) {
@@ -566,13 +576,13 @@ public class LivingEntityEventListeners {
                 saveSpawnPos(boneChimeraEntity);
             }
         }
-
-        if (event.getEntity() instanceof ItemEntity itemEntity) {
-            if (PlayerEventListeners.illegalItems.contains(itemEntity.getItem().getItem())) {
-                event.setCanceled(true);
-                return;
-            }
-        }
+//
+//        if (event.getEntity() instanceof ItemEntity itemEntity) {
+//            if (PlayerEventListeners.illegalItems.contains(itemEntity.getItem().getItem())) {
+//                event.setCanceled(true);
+//                return;
+//            }
+//        }
 
         if (illegalEntityTypes.contains(event.getEntity().getType())) {
             event.setCanceled(true);

@@ -1,7 +1,9 @@
 package com.p1nero.tcrcore.events;
 
+import com.hm.efn.gameasset.EFNSkills;
 import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
+import com.p1nero.dpr.gameassets.DPRSkills;
 import com.p1nero.fast_tpa.network.PacketRelay;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
@@ -21,10 +23,13 @@ import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import com.p1nero.tudigong.entity.XianQiEntity;
 import com.p1nero.tudigong.item.TDGItems;
+import com.yesman.epicskills.EpicSkills;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
+import com.yesman.epicskills.registry.entry.EpicSkillsSkillTrees;
 import com.yesman.epicskills.skilltree.SkillTree;
 import com.yesman.epicskills.world.capability.SkillTreeProgression;
 import net.blay09.mods.waystones.block.ModBlocks;
+import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.BlockPos;
@@ -47,6 +52,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -67,6 +73,11 @@ import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import org.merlin204.wraithon.util.PositionTeleporter;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
 import top.theillusivec4.curios.api.event.CurioEquipEvent;
+import yesman.epicfight.network.EpicFightNetworkManager;
+import yesman.epicfight.skill.Skill;
+import yesman.epicfight.skill.SkillContainer;
+import yesman.epicfight.skill.SkillSlot;
+import yesman.epicfight.skill.SkillSlots;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.entitypatch.player.ServerPlayerPatch;
 
@@ -128,15 +139,26 @@ public class PlayerEventListeners {
                 ServerLevel targetLevel = serverPlayer.server.getLevel(TCRDimensions.SANCTUM_LEVEL_KEY);
                 serverPlayer = (ServerPlayer) serverPlayer.changeDimension(targetLevel, new PositionTeleporter(new BlockPos(WorldUtil.START_POS)));
                 TCRAdvancementData.finishAdvancement(TCRCoreMod.MOD_ID, serverPlayer);
-                CommandSourceStack commandSourceStack = serverPlayer.createCommandSourceStack().withPermission(2).withSuppressedOutput();
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/gamerule keepInventory true");
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/gamerule mobGriefing false");
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s epicskills:battleborn efn:efn_step true");
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s epicskills:battleborn efn:efn_dodge true");
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s dodge_parry_reward:passive dodge_parry_reward:stamina1 true");
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s dodge efn:efn_dodge");
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s guard efn:efn_parry");
-                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s passive1 dodge_parry_reward:stamina1");
+                serverPlayer.server.getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).set(true, serverPlayer.server);
+                serverPlayer.server.getGameRules().getRule(GameRules.RULE_MOBGRIEFING).set(true, serverPlayer.server);
+                ServerPlayer finalServerPlayer = serverPlayer;
+                ResourceKey<SkillTree> dpr = ResourceKey.create(SkillTree.SKILL_TREE_REGISTRY_KEY, ResourceLocation.fromNamespaceAndPath("dodge_parry_reward", "passive"));
+                serverPlayer.getCapability(SkillTreeProgression.SKILL_TREE_PROGRESSION).ifPresent(skillTreeProgression -> {
+                    skillTreeProgression.unlockNode(EpicSkillsSkillTrees.BATTLEBORN, EFNSkills.EFN_DODGE_ROLL, finalServerPlayer);
+                    skillTreeProgression.unlockNode(EpicSkillsSkillTrees.BATTLEBORN, EFNSkills.EFN_DODGE_STEP, finalServerPlayer);
+                    skillTreeProgression.unlockNode(dpr, DPRSkills.STAMINA1, finalServerPlayer);
+                });
+//                CommandSourceStack commandSourceStack = serverPlayer.createCommandSourceStack().withPermission(2).withSuppressedOutput();
+//                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s epicskills:battleborn efn:efn_step true");
+//                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s epicskills:battleborn efn:efn_dodge true");
+//                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/skilltree unlock @s dodge_parry_reward:passive dodge_parry_reward:stamina1 true");
+//                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s dodge efn:efn_dodge");
+//                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s guard efn:efn_parry");
+//                Objects.requireNonNull(serverPlayer.getServer()).getCommands().performPrefixedCommand(commandSourceStack, "/epicfight skill add @s passive1 dodge_parry_reward:stamina1");
+                addSkill(serverPlayer, EFNSkills.EFN_DODGE_ROLL, SkillSlots.DODGE);
+                addSkill(serverPlayer, EFNSkills.EFN_PARRY, SkillSlots.GUARD);
+                addSkill(serverPlayer, DPRSkills.STAMINA1, SkillSlots.PASSIVE1);
+
                 ItemUtil.addItem(serverPlayer, Items.IRON_SWORD, 1);
                 ItemUtil.addItem(serverPlayer, ModItems.BACKPACK.get(), 1);
                 ItemUtil.addItem(serverPlayer, Items.LANTERN, 1);
@@ -157,6 +179,20 @@ public class PlayerEventListeners {
             }
 
             PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new CSTipPacket(), serverPlayer);
+        }
+    }
+
+    public static void addSkill(ServerPlayer player, Skill skill, SkillSlot slot) {
+        ServerPlayerPatch playerpatch = EpicFightCapabilities.getEntityPatch(player, ServerPlayerPatch.class);
+        SkillContainer skillContainer = playerpatch.getSkillCapability().getSkillContainerFor(slot);
+
+        if (skillContainer.setSkill(skill)) {
+            if (skill.getCategory().learnable()) {
+                playerpatch.getSkillCapability().addLearnedSkill(skill);
+            }
+
+            EpicFightNetworkManager.sendToPlayer(skillContainer.createSyncPacketToLocalPlayer(), player);
+            EpicFightNetworkManager.sendToAllPlayerTrackingThisEntity(skillContainer.createSyncPacketToRemotePlayer(), player);
         }
     }
 
@@ -207,7 +243,7 @@ public class PlayerEventListeners {
     @SubscribeEvent
     public static void onCurioEquip(CurioEquipEvent event) {
         if (illegalItems.contains(event.getStack().getItem())) {
-            if (event.getEntity() instanceof Player player && !PlayerDataManager.wraithonKilled.get(player)) {
+            if (event.getEntity() instanceof Player player && (!PlayerDataManager.wraithonKilled.get(player) || event.getStack().is(UAItems.STARVED_WOLF_SKULL.get()))) {
                 player.displayClientMessage(TCRCoreMod.getInfo("illegal_item_tip"), true);
                 event.setResult(Event.Result.DENY);
             }
