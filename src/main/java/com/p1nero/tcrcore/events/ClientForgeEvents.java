@@ -1,21 +1,30 @@
 package com.p1nero.tcrcore.events;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.obscuria.obscureapi.api.BossBarsRenderManager;
 import com.p1nero.dialog_lib.client.screen.DialogueScreen;
 import com.p1nero.dialog_lib.events.ClientNpcEntityDialogueEvent;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.client.gui.*;
 import net.alp.monsterexpansion.entity.custom.AbstractLargeMonster;
-import net.alp.monsterexpansion.entity.custom.SkrytheEntity;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
+import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.CustomizeGuiOverlayEvent;
 import net.minecraftforge.client.event.RenderGuiEvent;
 import net.minecraftforge.client.event.RenderGuiOverlayEvent;
+import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
+
+import java.util.Optional;
+
+import static net.minecraft.client.gui.components.BossHealthOverlay.GUI_BARS_LOCATION;
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID, value = Dist.CLIENT)
 public class ClientForgeEvents {
@@ -24,6 +33,30 @@ public class ClientForgeEvents {
     public static void onClientTick(TickEvent.ClientTickEvent event){
         if(Minecraft.getInstance().player != null) {
             CustomGuiderRenderer.tick(Minecraft.getInstance().player);
+        }
+    }
+
+    /**
+     * FIXME 官方要改的话记得删
+     */
+    @SubscribeEvent
+    public static void onRenderBossBar(CustomizeGuiOverlayEvent.BossEventProgress event){
+        Optional<BossBarsRenderManager.Style> style = BossBarsRenderManager.getStyle(event.getBossEvent().getName());
+        if (style.isPresent()) {
+            Component component = event.getBossEvent().getName();
+            if (style.get().shouldRenderBar()) {
+                RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+                RenderSystem.setShaderTexture(0, GUI_BARS_LOCATION);
+            }
+            Minecraft minecraft = Minecraft.getInstance();
+            style.get().getFunction().render(minecraft, event.getGuiGraphics(), event.getX(), event.getY(), event.getBossEvent(), component);
+            if (style.get().shouldRenderName()) {
+                int x = event.getWindow().getGuiScaledWidth() / 2 - minecraft.font.width(component) / 2;
+                int y = event.getY() - 9;
+                event.getGuiGraphics().drawString(minecraft.font, component, x, y, 16777215);
+            }
+
+            event.setIncrement(style.get().getIncrement(minecraft));
         }
     }
 
@@ -56,5 +89,13 @@ public class ClientForgeEvents {
             HandleArteriusDialog.openDialogScreen(arterius, event.getLocalPlayer(), event.getServerData());
         }
     }
+
+    //TODO 1.7.10再上
+//    @SubscribeEvent
+//    public static void onRenderBackground(ScreenEvent.BackgroundRendered event) {
+//        if(Minecraft.getInstance().level == null) {
+//            event.getGuiGraphics().fill(0, 0, event.getScreen().width, event.getScreen().height, FastColor.ABGR32.color(255, 255, 255, 255));
+//        }
+//    }
 
 }

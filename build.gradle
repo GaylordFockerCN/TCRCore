@@ -133,6 +133,14 @@ mixin {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+
+    repositories {
+        maven { url = "https://maven.bawnorton.com/releases" }
+
+        // Mirror
+        maven { url = "https://maven.enjarai.dev/mirrors" }
+    }
+
     maven {
         url "https://cursemaven.com"
         content {
@@ -183,6 +191,8 @@ jar {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    implementation fg.deobf("curse.maven:shelmarows-hud-1346457:7201614")
 
     implementation fg.deobf("curse.maven:fancymenu-367706:6918987")
     implementation fg.deobf("curse.maven:drippy-loading-screen-511770:6412211")
@@ -338,9 +348,16 @@ dependencies {
             jarJar.ranged(it, "[0.5.0,)")
         }
     }
-//    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
-//        jarJar.ranged(it, "[2.3.0,)")
-//    }
+
+    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.7-beta.1"))
+    implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-forge:0.3.7-beta.1")) {
+        jarJar.ranged(it, "[0.3.7-beta.1,)")
+    }
+
+    //FIXME run的时候得注释掉
+    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
+        jarJar.ranged(it, "[2.3.0,)")
+    }
 //    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
