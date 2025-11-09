@@ -1,0 +1,9 @@
+#缩放
+#Range: 0.0 ~ 10.0
+scale = 0.8
+#显示位置
+#Range: 1 ~ 8
+position = 4
+#标识ID黑名单
+blacklist = ["jei_skp", "emi_skp"]
+
