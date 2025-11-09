@@ -90,12 +90,11 @@ public class ClientForgeEvents {
         }
     }
 
-    //TODO 1.7.10再上
-//    @SubscribeEvent
-//    public static void onRenderBackground(ScreenEvent.BackgroundRendered event) {
-//        if(Minecraft.getInstance().level == null) {
-//            event.getGuiGraphics().fill(0, 0, event.getScreen().width, event.getScreen().height, FastColor.ABGR32.color(255, 255, 255, 255));
-//        }
-//    }
+    @SubscribeEvent
+    public static void onRenderBackground(ScreenEvent.BackgroundRendered event) {
+        if(Minecraft.getInstance().level == null) {
+            event.getGuiGraphics().fill(0, 0, event.getScreen().width, event.getScreen().height, FastColor.ABGR32.color(255, 255, 255, 255));
+        }
+    }
 
 }

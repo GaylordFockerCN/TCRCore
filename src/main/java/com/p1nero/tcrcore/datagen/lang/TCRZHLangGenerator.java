@@ -20,7 +20,7 @@ import net.shelmarow.nightfall_invade.entity.NFIEntities;
 import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
 import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModItems;
 
-public class TCRZHLangGenerator extends TCRLangProvider {
+public class    TCRZHLangGenerator extends TCRLangProvider {
     public TCRZHLangGenerator(PackOutput output) {
         super(output, "zh_cn");
     }
@@ -121,7 +121,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("illegal_item_tip2", "§6当前没有使用此物品的命运。");
 
         this.addInfo("dim_demending", "§6幻境重铸中...请等待[%d§6]秒");
-        this.addInfo("to_be_continue", "[P1nero]: §6感谢游玩！恭喜你体验完测试版的全部内容，未完待续！");
+        this.addInfo("to_be_continue2", "[P1nero]: §6感谢游玩！更多Boss持续制作中，未完待续！");
 
         this.addInfo("second_after_boss_die_left", "将在 %d 秒后返回主世界");
 

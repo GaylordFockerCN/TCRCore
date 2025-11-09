@@ -121,7 +121,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("after_heal_stop_attack", "§6Stop attack to clear anger.");
         this.addInfo("cloud_follow_me", "§6[Magic Cloud]: §fHi, follow me!");
         this.addInfo("dim_demending", "§6Rebuilding... Wait[%d§6]s");
-        this.addInfo("to_be_continue", "[P1nero]: §6Thank you for playing! Congratulations on experiencing all the content of the beta version. To be continued!");
+        this.addInfo("to_be_continue2", "[P1nero]: §6Thank you for playing! More bosses are in the works, stay tuned for more!");
         this.addInfo("second_after_boss_die_left", "Returning to the Overworld in %d seconds");
         this.addInfo("press_to_open_battle_mode", "§cPress [%s] to enable Battle Mode!§r");
         this.addInfo("unlock_new_dim_girl", "§6New options unlocked at the Ferry girl!§r");

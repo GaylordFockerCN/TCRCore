@@ -355,9 +355,9 @@ dependencies {
     }
 
     //FIXME run的时候得注释掉
-    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
-        jarJar.ranged(it, "[2.3.0,)")
-    }
+//    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
+//        jarJar.ranged(it, "[2.3.0,)")
+//    }
 //    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
