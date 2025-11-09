@@ -7,6 +7,6 @@ import java.util.List;
 public class BossHealthOverlayMixinCanceller implements MixinCanceller {
     @Override
     public boolean shouldCancel(List<String> list, String s) {
-        return s.equals("com.obscuria.obscureapi.mixin.client.BossHealthOverlayMixin");
+        return s.equals("com.obscuria.obscureapi.mixin.client.MixinBossHealthOverlay");
     }
 }

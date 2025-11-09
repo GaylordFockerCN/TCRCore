@@ -219,7 +219,7 @@ dependencies {
     implementation fg.deobf("libs:dodge_parry_reward:20.12.1")
     implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7058350")
 //    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
-    implementation fg.deobf("libs:p1nero_ec:20.12.0.3")
+    implementation fg.deobf("libs:p1nero_ec:20.13.0.4")
     implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7177400")
     implementation fg.deobf("curse.maven:entity-respawner-1363764:7105518")
     implementation fg.deobf("libs:nightfall_invade:1.0.1")
@@ -266,7 +266,7 @@ dependencies {
     implementation fg.deobf("curse.maven:patchouli-306770:6164575")
 
     implementation fg.deobf("curse.maven:ob-aquamirae-536254:4616373")
-    implementation fg.deobf("curse.maven:obscure-api-638417:4616364")
+    implementation fg.deobf("curse.maven:obscure-api-638417:7171906")
 
     //ftb
     implementation fg.deobf("libs:ftbquestlocalizer:3.2.2")
@@ -354,7 +354,7 @@ dependencies {
         jarJar.ranged(it, "[0.3.7-beta.1,)")
     }
 
-    //FIXME run的时候得注释掉
+//    //FIXME run的时候得注释掉
 //    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
 //        jarJar.ranged(it, "[2.3.0,)")
 //    }
