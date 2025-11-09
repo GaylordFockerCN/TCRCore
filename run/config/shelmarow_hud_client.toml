@@ -1,0 +1,61 @@
+
+["HUD Settings"]
+	#是否启用HUD
+	hud_enabled = true
+	#状态条风格
+	#Allowed Values: SIMPLE, SOUL_LIKE
+	status_bar_type = "SOUL_LIKE"
+	#显示状态条
+	enable_status_bar = true
+	#显示物品栏
+	enable_hotbar = false
+	#HUD 显示位置
+	#Allowed Values: TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT
+	position = "TOP_LEFT"
+	#文字显示
+	#Allowed Values: NONE, NAME, VALUE, NAME_AND_VALUE
+	show_text = "NAME_AND_VALUE"
+	#BAR 尺寸
+	#Range: 0.0 ~ 10.0
+	bar_scale = 1.0
+	#BAR X偏移位置
+	#Range: > -2147483647
+	bar_offsetX = 0
+	#BAR Y偏移位置
+	#Range: > -2147483647
+	bar_offsetY = 0
+	#HOTBAR 尺寸
+	#Range: 0.0 ~ 10.0
+	hotbar_scale = 1.0
+	#HOTBAR X偏移位置
+	#Range: > -2147483647
+	hotbar_offsetX = 30
+	#HOTBAR Y偏移位置
+	#Range: > -2147483647
+	hotbar_offsetY = 0
+	#快捷栏是否会避让状态条（只在位置为top时生效）
+	hotbar_avoid = false
+	#每点生命值所占的像素宽度
+	#Range: 0.1 ~ 2.147483647E9
+	pix_per_health = 6.0
+	#生命值条的最大宽度
+	#Range: > 6
+	max_health_width = 100
+	#每点魔力值所占的像素宽度
+	#Range: 0.1 ~ 2.147483647E9
+	pix_per_mana = 0.8
+	#魔力值条的最大宽度
+	#Range: > 6
+	max_mana_width = 90
+	#每点耐力值所占的像素宽度
+	#Range: 0.1 ~ 2.147483647E9
+	pix_per_stamina = 10.0
+	#耐力值条的最大宽度
+	#Range: > 6
+	max_stamina_width = 80
+	#反转BOSS血条的垂直位置
+	boss_bar_invert = true
+	#BOSS 血条的垂直偏移量
+	#Range: > -2147483647
+	boss_bar_y_offset = 40
+
