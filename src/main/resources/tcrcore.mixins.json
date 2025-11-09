@@ -16,7 +16,6 @@
     "Bone_ChimeraMixin",
     "BossSpawnerBlockEntityMixin",
     "CaptainCorneliaMixin",
-    "CeraunusMixin",
     "DodgeAnimationMixin",
     "DodgeLocationIndicatorMixin",
     "DodgeSkillMixin",
