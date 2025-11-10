@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore.events;
 
+import com.github.L_Ender.cataclysm.Cataclysm;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.obscuria.obscureapi.api.BossBarsRenderManager;
 import com.p1nero.dialog_lib.client.screen.DialogueScreen;
@@ -9,6 +10,7 @@ import com.p1nero.tcrcore.client.gui.*;
 import net.alp.monsterexpansion.entity.custom.AbstractLargeMonster;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.Villager;
@@ -28,6 +30,8 @@ import static net.minecraft.client.gui.components.BossHealthOverlay.GUI_BARS_LOC
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID, value = Dist.CLIENT)
 public class ClientForgeEvents {
+
+    public static final ResourceLocation BACKGROUND_LOCATION = ResourceLocation.fromNamespaceAndPath(Cataclysm.MODID,"textures/block/azure_seastone_bricks.png");
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event){
@@ -93,7 +97,8 @@ public class ClientForgeEvents {
     @SubscribeEvent
     public static void onRenderBackground(ScreenEvent.BackgroundRendered event) {
         if(Minecraft.getInstance().level == null) {
-            event.getGuiGraphics().fill(0, 0, event.getScreen().width, event.getScreen().height, FastColor.ABGR32.color(255, 255, 255, 255));
+            event.getGuiGraphics().blit(BACKGROUND_LOCATION, 0, 0, 0, 0.0F, 0.0F, event.getScreen().width, event.getScreen().height, 32, 32);
+//            event.getGuiGraphics().fill(0, 0, event.getScreen().width, event.getScreen().height, FastColor.ABGR32.color(255, 255, 255, 255));
         }
     }
 

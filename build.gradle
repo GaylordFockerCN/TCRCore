@@ -200,7 +200,7 @@ dependencies {
     implementation fg.deobf("curse.maven:melody-938643:5109692")
 
     implementation fg.deobf("curse.maven:fluid-tick-structure-processor-1369713:7133622")
-//    implementation fg.deobf("libs:ba_bt:3.0.0")
+    implementation fg.deobf("libs:ba_bt:3.0.0")
     implementation fg.deobf("curse.maven:epic-fight-mod-405076:7144412-sources-7144414")
 //    implementation fg.deobf("libs:epicfight:20.13.2.5")
     implementation fg.deobf("libs:epicfight-skilltree:20.2.2.1")
@@ -298,18 +298,17 @@ dependencies {
 
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.20.1:4.7.3")
 
-    //结构类
-    implementation fg.deobf("curse.maven:wits-909375:4789318")
-    implementation fg.deobf("curse.maven:integrated-villages-661376:6701488")
     implementation fg.deobf("curse.maven:explorers-compass-edited-1203888:6733733")
     implementation fg.deobf("curse.maven:natures-compass-252848:4712189")
+    implementation fg.deobf("curse.maven:wits-909375:4789318")//定位工具，生产环境不加
+
+    //结构类
     implementation fg.deobf("curse.maven:ati-structures-964608:6730813")
 
-//    implementation fg.deobf("curse.maven:idas-605375:7046799")
+    implementation fg.deobf("curse.maven:integrated-villages-661376:6701488")
     implementation fg.deobf("libs:idas_forge:1.12.1")
     implementation fg.deobf("libs:supplementaries:3.1.41")
     implementation fg.deobf("curse.maven:integrated-api-817709:6369317")
-//    implementation fg.deobf("curse.maven:supplementaries-412082:7113231")
     implementation fg.deobf("curse.maven:quark-243121:6427817")
     implementation fg.deobf("curse.maven:zeta-968868:6432578")
     implementation fg.deobf("curse.maven:selene-499980:7119907")
@@ -354,7 +353,7 @@ dependencies {
         jarJar.ranged(it, "[0.3.7-beta.1,)")
     }
 
-//    //FIXME run的时候得注释掉
+////    //FIXME run的时候得注释掉
 //    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
 //        jarJar.ranged(it, "[2.3.0,)")
 //    }
@@ -405,7 +404,6 @@ dependencies {
 
     implementation fg.deobf("curse.maven:resourceful-config-714059:6231176")
     implementation fg.deobf("curse.maven:structure-layout-optimizer-1087831:6125412")
-//    implementation fg.deobf("curse.maven:noisium-930207:5650506")
     implementation fg.deobf("curse.maven:async-locator-625069:4603343")
 
     implementation fg.deobf("curse.maven:fancy-toasts-1326436:6932752")//优化进度贴图

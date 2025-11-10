@@ -61,6 +61,7 @@ import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Enemy;
+import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
@@ -588,6 +589,11 @@ public class LivingEntityEventListeners {
             event.setCanceled(true);
             return;
         }
+
+        if(event.getEntity() instanceof Guardian guardian && WorldUtil.isInStructure(guardian, "ba_bt:ocean_tower")) {
+            event.setCanceled(true);
+        }
+
         UUID uuid = UUID.fromString("d4c3b2a1-f6e5-8b7a-0d9c-cba987654321");
         if (event.getEntity() instanceof IronGolem ironGolem) {
             if (WorldUtil.isInStructure(ironGolem, WorldUtil.SKY_ISLAND)) {

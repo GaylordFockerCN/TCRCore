@@ -11,6 +11,7 @@
     "Ancient_Remnant_EntityMixin",
     "AnimatedAttackGoalMixin",
     "ArteriusMixin",
+    "AttackAnimationMixin",
     "BackpackConfigMixin",
     "BoatItemMixin",
     "Bone_ChimeraMixin",
