@@ -155,24 +155,9 @@
             "minecraft:the_end",
             "callfromthedepth_:depth"
         ],
-        "hostile": true,
-        "mincount": {
-            "amount": 39,
-            "hostile": true,
-            "perplayer": true
-        },
-        "result": "deny"
-    },
-    {
-        "dimension": [
-            "minecraft:overworld",
-            "minecraft:the_nether",
-            "minecraft:the_end",
-            "callfromthedepth_:depth"
-        ],
         "passive": true,
         "mincount": {
-            "amount": 13,
+            "amount": 39,
             "passive": true,
             "perplayer": true
         },
@@ -200,7 +185,37 @@
     },
     {
         "mob": [
+            "fromtheshadows:froglin"
+        ],
+        "mincount": {
+            "amount": 3,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": [
             "quark:stoneling"
+        ],
+        "mincount": {
+            "amount": 3,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": [
+            "quark:toretoise"
+        ],
+        "mincount": {
+            "amount": 3,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": [
+            "alexsmobs:fly"
         ],
         "mincount": {
             "amount": 3,

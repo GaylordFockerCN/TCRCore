@@ -282,7 +282,7 @@ public class LivingEntityEventListeners {
 
             if (livingEntity instanceof Ender_Guardian_Entity) {
                 if(!PlayerDataManager.voidEyeKilled.get(player)) {
-                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 3, ChatFormatting.GOLD.getColor());
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 5, ChatFormatting.GOLD.getColor());
                     PlayerDataManager.voidEyeKilled.put(player, true);
                 }
                 if (PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
@@ -292,7 +292,7 @@ public class LivingEntityEventListeners {
 
             if (livingEntity instanceof Netherite_Monstrosity_Entity) {
                 if(!PlayerDataManager.monstEyeKilled.get(player)) {
-                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 3, ChatFormatting.GOLD.getColor());
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 5, ChatFormatting.GOLD.getColor());
                     PlayerDataManager.monstEyeKilled.put(player, true);
                 }
                 if (PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
@@ -302,7 +302,7 @@ public class LivingEntityEventListeners {
 
             if (livingEntity instanceof The_Harbinger_Entity) {
                 if(!PlayerDataManager.mechEyeKilled.get(player)) {
-                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 3, ChatFormatting.GOLD.getColor());
+                    ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), 5, ChatFormatting.GOLD.getColor());
                     PlayerDataManager.mechEyeKilled.put(player, true);
                 }
                 if (PlayerDataManager.canGetInviteTip(player) && !PlayerDataManager.letterGet.get(player)) {
