@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore;
 
+import com.aetherteam.aether.entity.AetherEntityTypes;
 import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.hm.efn.registries.EFNItem;
@@ -85,6 +86,7 @@ public class TCRCoreMod {
         PlayerEventListeners.illegalItems.add(artifacts.registry.ModItems.SCARF_OF_INVISIBILITY.get());
 
         LivingEntityEventListeners.illegalEntityTypes.addAll(List.of(
+                AetherEntityTypes.FIRE_MINION.get(),
                 ModEntities.URCHINKIN.get(),
                 ModEntities.KOBOLETON.get(),
                 ModEntities.ELITE_DRAUGR.get(),

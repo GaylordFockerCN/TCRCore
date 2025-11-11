@@ -278,10 +278,13 @@ dependencies {
     implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
     //主要boss
-//    implementation fg.deobf("curse.maven:legendary-monsters-944035:6776766")
+    implementation fg.deobf("curse.maven:call-from-the-depths-1013658:7097966")
+    implementation fg.deobf("curse.maven:aether-255308:6134920")
+    implementation fg.deobf("curse.maven:aether-lost-content-318602:4927038")
+
+    implementation fg.deobf("curse.maven:structure-gel-api-378802:5278429")
     implementation fg.deobf("curse.maven:dodos-mobs-1349823:7018547")
     implementation fg.deobf("curse.maven:mowzies-mobs-250498:6586086")
-//    implementation fg.deobf("curse.maven:bossesrise-1314084:6900933")
     implementation fg.deobf("libs:bossesrise:1.0.9.1")
     implementation fg.deobf("curse.maven:monster-expansion-1336105:7052712")
     implementation fg.deobf("curse.maven:from-the-shadow-reborn-986907:7037169")
