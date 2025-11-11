@@ -361,7 +361,6 @@ dependencies {
 //        jarJar.ranged(it, "[2.3.0,)")
 //    }
 //    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
-//    implementation fg.deobf("curse.maven:upgrade-aquatic-326895:6393133")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉

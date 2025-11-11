@@ -590,7 +590,7 @@ public class LivingEntityEventListeners {
             return;
         }
 
-        if(event.getEntity() instanceof Guardian guardian && WorldUtil.isInStructure(guardian, "ba_bt:ocean_tower")) {
+        if(event.getEntity() instanceof Guardian guardian && WorldUtil.isInStructure(guardian, WorldUtil.OCEAN_GOLEM)) {
             event.setCanceled(true);
         }
 

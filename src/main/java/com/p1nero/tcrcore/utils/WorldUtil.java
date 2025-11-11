@@ -50,6 +50,10 @@ public class WorldUtil {
     public static final String SAND = "dodosmobs:jungle_prison";
     public static final String CURSED = "aquamirae:ship";
     public static final String FIRE = "tcrcore:underworld_arena";
+    public static final String SKY_GOLEM = "lost_aether_content:platinum_dungeon";
+    public static final String OCEAN_GOLEM = "ba_bt:ocean_tower";
+    public static final String LAND_GOLEM = "ba_bt:land_tower";
+    public static final String CURSED_GOLEM = "callfromthedepth_:marbleforge";
     public static Vec2i storm, flame, abyss, cursed, desert;
 
     public static List<MapColor> surfaceMaterials = Arrays.asList(MapColor.WATER, MapColor.ICE);

@@ -1,19 +1,19 @@
 package com.p1nero.tcrcore.mixin;
 
+import com.merlin204.avalon.epicfight.animations.AvalonAttackAnimation;
 import com.merlin204.sg.item.SGItems;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import yesman.epicfight.api.animation.types.AttackAnimation;
 import yesman.epicfight.api.animation.types.DynamicAnimation;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 import yesman.epicfight.world.capabilities.item.CapabilityItem;
 
-@Mixin(AttackAnimation.class)
-public class AttackAnimationMixin {
+@Mixin(AvalonAttackAnimation.class)
+public class AvalonAttackAnimationMixin {
 
     @Inject(method = "getPlaySpeed", at = @At("RETURN"), cancellable = true, remap = false)
     private void tcr$getPlaySpeed(LivingEntityPatch<?> entityPatch, DynamicAnimation animation, CallbackInfoReturnable<Float> cir) {
