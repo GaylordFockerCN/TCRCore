@@ -85,7 +85,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addInfo("require_item_to_wake", "[%s]が必要だそうだ");
         this.addInfo("weapon_no_interact", "インタラクトできません！[%s]をお押しください。または他の物をお使いください。");
-        this.addInfo("tudigong_gift", "[初見のお礼]");
+        this.addInfo("tudigong_gift", "[初対面のお礼]");
         this.addInfo("tudigong_gift_get", "§6[土地神様]§f:　これはワシを一生懸命守った宝物だ。君に大事に使うなら良い！");
         this.addInfo("need_to_unlock_waystone", "起動されていない転送石がまだあるそうだ");
         this.addInfo("nether_unlock", "地獄が解放された！");
@@ -96,7 +96,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("can_not_do_this_too_early", "§6私にとって早い過ぎだ");
         this.addInfo("captain_start_heal", "§cコネリアーは回復している！火力を全開しないと");
         this.addInfo("illegal_item_tip", "§c禁止されたアイテム");
-        this.addInfo("illegal_item_tip2", "§6これを使う時はまだだようだ。");
+        this.addInfo("illegal_item_tip2", "§6これを使う時はまだ来なかったようだ。");
 
         this.addInfo("shift_to_pic", "しゃがんで攻撃すると回収できる");
         this.addInfo("no_place_to_ship", "置く場がないようだ");
@@ -256,48 +256,48 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.GUIDER.get(), 9, "神様の指示を解読");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 0, "つまり、他の世界から来たの？");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 1, "私はこの世界の法則の守護者です。その日、天国はおかしい現象が起こったり、雷をしたりしました時、君はこの世界にいらっしゃいました。あなたは他の世界からの勇者と間違えません！");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 2, "昔、この世界は the world was full of vitality, and heroic spirits protected the heavens and earth. Until one day, the §d「Black Tide」§f descended upon the world, everything was corrupted, and some villagers even turned into illagers. The gods, unable to resist the §d「Black Tide」§f, became spirits, the world was destroyed, leaving only a vast ocean. According to the ancient prophecy, I sealed their remaining power here, §6but some of their sparks have scattered to various places.§f Cursed, I cannot leave this place, so I can only wait silently for a savior to appear...");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 3, "Though the world is destroyed, with the ferryman's power, stepping into the Primordial Ocean can restore the past! The ancient prophecy says that once you retrieve all the lost sparks from the world of the past, you can rebuild the temple, perform the ritual, cleanse the §d「Black Tide」§f, and restart the world! But before that, first §6defeat an illager (pillager)§f and then §fcome back to me.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 4, "It seems you truly are the savior foretold in the prophecy! Have you collected any §d『Oracle Fragments』§f during your journey? Give the §d『Oracle Fragments』§f to me, and I will reveal the locations of the sparks recorded in the oracle! Once you light all the sparks, I will initiate the §d「Black Tide」§f cleansing ritual!");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 5, "Why did you attack me?");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 6, "Since you have proven your strength, I shall shed my disguise and show you my true form.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 7, "§d『Oracle Fragments!』§f Give them to me, and I will reveal the locations of the sparks scattered in the world of the past as recorded in the oracle! Once you step into the memory of the Overworld, I will mark the clues revealed by the oracle for you!");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 2, "昔、この世界の生命力は強かったです。英雄の魂は天界と土地を守りました。ある日、§d「黒潮」§f は世界に現れました。世の全ては侵食されました。村人は悪者になってしまいました。神様たちは、「黒潮」を防げれなかったです。そのため、神様たちは精霊になり、世界は滅ばせました。今は海しかありません。神様の指示から、神様たち残った力をここに封印しました。§6しかし、ある力は世界の他の場所に残りました。§f 呪われた私は、ここから離れません。救世主を待つしかできませんでした...");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 3, "この世界は滅ばせましたが、フェーリの女の子の力から、原初の海へ足を踏むと、過去へ行けるようになります。神様の指示から、神様たち残った力をここに無事で戻ると、この聖域を再建きます。儀式を始め、「黒潮」を浄化せます。世界を復活できます。その前に、§6邪悪の村人を倒してくれませんか§f。倒したらここにお戻りください。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 4, "あなたはやっぱりこの世界の救世主様です！§d『神様の指示の一部』§fを見つかりましたか。それを私に渡したら。神様たち残った力の位置を解読いたし、マークいたします。全ての炎を点火したら、「黒潮」を浄化する術式を始めます。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 5, "なぜ私を攻撃したの？");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 6, "救世主様の力を拝見させくれましたので、偽装を抜けました。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 7, "それは§d『神様の指示の一部』§fですね。ぜひ解読させてください！記録された世界の神様たち残った力をマークさせてください！");
 
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 8, "O prophesied savior, what troubles you?");
-        this.addDialogOption(TCREntities.GUIDER.get(), 10, "How can I obtain the most powerful strength in this world?");
-        this.addDialogOption(TCREntities.GUIDER.get(), 11, "What should we do next?");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 8, "世界を救う様、なにかお困りですか。");
+        this.addDialogOption(TCREntities.GUIDER.get(), 10, "世界の最強の力はどうやって手に入れるの？");
+        this.addDialogOption(TCREntities.GUIDER.get(), 11, "次はなにをすべきか。");
 
-        this.addDialogOption(TCREntities.GUIDER.get(), 16, "What are the other unknown altars in the long corridor?");
+        this.addDialogOption(TCREntities.GUIDER.get(), 16, "廊下の他の祭壇はどういうこと？");
 
-        this.addDialogOption(TCREntities.GUIDER.get(), 12, "[I have lit all the altars, begin the ritual!]");
-        this.addDialogOption(TCREntities.GUIDER.get(), 13, "[I don't understand...]");
-        this.addDialogOption(TCREntities.GUIDER.get(), 14, "[Who are you, really?]");
-        this.addDialogOption(TCREntities.GUIDER.get(), 15, "[Continue]"); // Pull into the barrier
-        this.addDialogOption(TCREntities.GUIDER.get(), 17, "[You caught me, hehe]");
-        this.addDialogOption(TCREntities.GUIDER.get(), 18, "How can I obtain Oracle Fragments?");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 9, "The §dEnder Dragon§f, located within the End's alien space, has a deep connection to the §d「Black Tide」§f. After defeating it, the essence it gives birth to can be forged into the Yamato, a power from another world, immeasurable.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 10, "You simply need to give the §d『Oracle Fragments』§f to me. Once you step into the memory of the Overworld, I will reveal the locations of the sparks recorded in the oracle! Then you can go to the places I mark on the map, defeat the demons, reclaim the sparks, §6and offer them at the altars in the long corridor§f. Once all sparks are retrieved, you can initiate the ritual to purify the §d「Black Tide」§f!");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 11, "Outsider... You don't actually believe you're some savior, do you... Hahahaha, you are merely a puppet I used to reclaim my power!");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 12, "Everything you defeated, they were the divine guardians of this world, the very ones who stood in the way of my grand plan! This place is my dwelling. As long as they are gone, losing a few illagers means nothing to me. Moreover, the demon god sparks you brought back can help me rebuild my physical form.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 13, "Who am I? You, as a sacrificial offering, have no right to know! What foolish ritual? After absorbing your power, the world shall be under my rule! Die!");
+        this.addDialogOption(TCREntities.GUIDER.get(), 12, "[全ての祭壇を点火した！術式を始め！]");
+        this.addDialogOption(TCREntities.GUIDER.get(), 13, "[ちょっとわからない...]");
+        this.addDialogOption(TCREntities.GUIDER.get(), 14, "[お前は誰か？？]");
+        this.addDialogOption(TCREntities.GUIDER.get(), 15, "[続く]"); // Pull into the barrier
+        this.addDialogOption(TCREntities.GUIDER.get(), 17, "[しまった、ｗ]");
+        this.addDialogOption(TCREntities.GUIDER.get(), 18, "『神様の指示の一部』はどうやって手に入れるの？");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 9, "§dエンダードラゴン§fは、 ジ・エンドに住んでいます。§d「黒潮」§fと淵源があります。倒したら、その残片はヤマトを作れます。この世界の外からの力ので、ただの話で説明できません。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 10, "『神様の指示の一部』を渡してくれば十分です。記録された世界に入ると、 神様たち残った力をマークいたします。マークした場所を見つけ、悪魔を倒して、 神様たち残った力を取り返し、§6廊下の祭壇をご点火ください。§f全ての祭壇を点火したら、「黒潮」を浄化の術式を始められます！");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 11, "他所者よ... まさか救世主って童謡を信じているか... ハハハ！お前はただ俺の力を取り返す傀儡だ！");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 12, "全てを倒した敵は、この世界の守護者だった！俺の最終プランを止まった者よ！ここは俺を束縛された場所だった。守護者の死のために、少しの村人を失ったのは俺にとって最高だ！君のおかけで、悪魔たちの力から肉体を回復された！");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 13, "俺は誰？犠牲するための傀儡は分かる権利がない！術式？何にかそれ？君の力を俺になったら、この世界は俺の法則を従うしかない！死ね！");
 
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 14, "This... I once battled the §d「Black Tide Legion」§f here. Some of the spirits sealed in the altars have lost their response and will never return... But the remaining spirits are enough to initiate the ritual.");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 14, "これは... ここで§d「黒潮の軍隊」§fと戦いました。祭壇に封印された精霊たちはもう戻ってくれません... でも、残った精霊たちは儀式を始めるのは、十分です。");
 
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 15, "§bThe Eye of Storm§f... I sense it scattered in §6[%s]§f, defeat %s and reclaim it! I will wait here.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 19, "§6The Eye of Blaze§f... I sense it scattered in §6[%s]§f, defeat %s and reclaim it! I will wait here.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 16, "§3The Eye of Abyss§f... I sense it scattered in §6[%s]§f, defeat %s and reclaim it! I will wait here.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 17, "§2The Eye of Curse§f... I sense it scattered in §6[%s]§f defeat %s and reclaim it! I will wait here.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§eThe Eye of Desert§f... I sense it scattered in §6[%s]§f defeat %s and reclaim it! I will wait here.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 20, "Following the normal process, how could there be extra Oracle Fragments? Did you steal them from someone?");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 21, "Since you have lit all the altars, after you §6enter and defeat the spirits, absorbing the power of all the spirits§f, we shall begin the ritual!");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "Go to the place I guide you, retrieve the §d[Eye of God]§f, and offer it to §6[the goddess statue in the central courtyard of the temple]§f. The goddess statue will reveal the oracle to you!");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 15, "§b暴風の目§f... §6[%s]§fで感じられた、それを倒し、取り返せ！ここに待ってるよ。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 19, "§6火炎の目§f... §6[%s]§fで感じられた、それを倒し、取り返せ！ここに待ってるよ。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 16, "§3アビスの目§f... §6[%s]§fで感じられた、それを倒し、取り返せ！ここに待ってるよ。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 17, "§2呪われた目§f... §6[%s]§fで感じられた、それを倒し、取り返せ！ここに待ってるよ。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§e砂漠の目§f... §6[%s]§fで感じられた、それを倒し、取り返せ！ここに待ってるよ。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 20, "正規ルートなのに、なぜもう一つの『神様の指示の一部』を手に入れますか。他の人から盗ましたか。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 21, "全てのの祭壇を点火してくれましたので、§6中の精霊を倒し、力を吸収しましたら§f、術式を始められます！");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "マークされた場所へ、§d[神の目]§fを取り返し、§6[庭の中の女神様の像をお供えください]§f。女神様は『神様の指示の一部』を差し上げるよ！");
 
-        this.addDialogAnswer(TCREntities.GIRL.get(), 0, "Long time no see, esteemed one!");
-        this.addDialogAnswer(TCREntities.GIRL.get(), 1, "Have you forgotten me? I am the Ferry girl of the Saint Temple, here to guide the lost. If you have any rare treasures, show them to me. I can extract their memoria and transform them into artifacts! When you can set foot in §cthe Nether§f or §dthe End§f, I can also give you a ride.");
-        this.addDialogAnswer(TCREntities.GIRL.get(), 2, "If you have sufficient experience, open the skill panel to learn skills. §6Click the experience orb in the top right corner of the skill tree interface to convert experience into skill points.§f Skill allocation is crucial; consider learning skills that enhance survivability, like Health Boost!");
-        this.addDialogAnswer(TCREntities.GIRL.get(), 3, "I am the Ferry girl of the Saint Temple, here to guide the lost. If you have any rare treasures, show them to me. I can extract their memoria and transform them into artifacts! When you can set foot in §cthe Nether§f or §dthe End§f, I can also give you a ride. As a first meeting gift, take this artifact. Press §d[%s]§f to deploy the sail and travel thousands of miles!");
-        this.addDialogAnswer(TCREntities.GIRL.get(), 4, "Esteemed one, are you sure you wish to go? I cannot bring you back... Please ensure you have the Waystone with you.");
-        this.addDialogAnswer(TCREntities.GIRL.get(), 5, "§d[%s]§f can be obtained through relic chests or by completing certain quests. If you possess §d[%s]§f, press §6[%s]§f to open the skill panel and learn skills. Skill allocation is very important—it is recommended to learn skills like Health Boost and others that enhance survivability!");
+        this.addDialogAnswer(TCREntities.GIRL.get(), 0, "お久しぶりです。");
+        this.addDialogAnswer(TCREntities.GIRL.get(), 1, "私をお忘れましたか。私は聖域のフェーリの女の子と申します。迷った子を案内いたします。宝物があったら、ぜひ私に拝見させてください。それの記憶をアーチファクトに鍛造いたします。§c地獄§fまたは§dジ・エンド§fへご旅行する時、足を助けいたします。");
+        this.addDialogAnswer(TCREntities.GIRL.get(), 2, "経験値は十分でしたら、スキルツリーでスキルをご習得できます。§6右上で経験値をスキルポイントにお引き換えます§f。スキルをよくアンロックください。生存率を上げるスキルはおすすめいたします。例えば、生命力を上げるスキルはおすすめいたします。");
+        this.addDialogAnswer(TCREntities.GIRL.get(), 3, "私は聖域のフェーリの女の子と申します。迷った子を案内いたします。宝物があったら、ぜひ私に拝見させてください。それの記憶をアーチファクトに鍛造いたします。§c地獄§fまたは§dジ・エンド§fへご旅行する時、足を助けいたします。初対面のお礼ので、これをお取りください。§d[%s]§fを押すと帆を開い、出航できます！");
+        this.addDialogAnswer(TCREntities.GIRL.get(), 4, "どこかご探索したいところがありますか。力不足ので、ここに戻る魔法は把握できません。転送石をお持ちください。");
+        this.addDialogAnswer(TCREntities.GIRL.get(), 5, "§d[%s]§fはレリックの箱、または任務からご入手できます。§d[%s]§fがあれば、§6[%s]§fを押すとスキルをご習得できます。生存率を上げるために、スキルをご習得はおすすめいたします。");
 
         this.addDialogOption(TCREntities.GIRL.get(), 0, "戻る");
         this.addDialogOption(TCREntities.GIRL.get(), 1, "あなたは誰？");
@@ -311,13 +311,13 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.GIRL.get(), 9, "アーチファクト精錬");
         this.addDialogOption(TCREntities.GIRL.get(), 10, "§aオーバーワールドへ行く§f");
 
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 0, "Otherworldly one, why have you come here?");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 1, "Hahaha, the Sanctuary Keeper entrusted the Eye of Flame to me to prevent it from falling into the hands of the unworthy. Even if she were to come herself, she would have to get through me! Let me see if you have what it takes!");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 2, "Otherworldly one, long time no see!");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 3, "Are you ready?");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 4, "During the Black Tide, the §6[Piglin clan]§f§f of the Nether created [%s] to resist the darkness. Unfortunately, they were defeated and lost their sanity. However, they still recognize [%s§f§f]. Use [%s§f§f] to trade with them, and you may unveil the secrets of the ancient war machines.");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 5, "[%s] and [%s] guard the echoes of [%s] and [%s], respectively.");
-        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 6, "After you retrieve them, come find me again, and I will show you the power of §4§l[The Lethean Sea]§f§f!");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 0, "他所者よ、なぜここに来る？");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 1, "ハハハッ、 聖域のキーパーは火炎の目を悪者に手に入れないため俺に頼まれた。彼女はここに来ても、俺を倒すしかない！お主の力をみせてくれ！");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 2, "他所者よ、久しぶりだ！");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 3, "アー・ユウ・レーディ？");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 4, "「黒潮」の時、地獄にいる§6[ピグリンクラン]§fは暗いを防ぐために[%s]を作った。残念だから、彼たちは負けた。意識も混乱になった。しかし、彼たちは[%s§f§f]を覚えている。[%s§f§f]を使って交易を始められる。昔の戦争機械の秘密を分かる。");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 5, "[%s]と[%s]は[%s]と[%s]のエッコをそれぞれで守っている。");
+        this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 6, "それを取り返すと、俺を見つけてくれ！その時に§4§l[レシアンの海]§f§fの力を見せてやる！");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 0, "火炎の目を取り返す");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 1, "お前を殺す");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 2, "準備できた");
