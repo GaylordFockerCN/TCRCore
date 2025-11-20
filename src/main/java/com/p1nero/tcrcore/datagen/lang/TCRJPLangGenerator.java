@@ -34,7 +34,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addBiome(TCRBiomes.AIR, "奈落");
 
         this.addTask(TCRTaskManager.KILL_PILLAGER, "邪悪な村人を殺す");
-        this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "§6[神様の指示の一部]§rを聖域のキーパーに渡す");
+        this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "§6[神託の欠片]§rを聖域のキーパーに渡す");
         this.addTask(TCRTaskManager.BACK_TO_KEEPER, "聖域のキーパーに戻る");
         this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "§6[神の目]§rを女神の像供える");
         this.addTask(TCRTaskManager.FIND_ARTERIUS, "アテリュスに戻る");
@@ -79,7 +79,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ARTIFACT_TICKET.get(), "任務書のある任務から入手. §d[聖人の港湾]§rの§3[フェリーの女の子]§rでアーチファクトを交易できる");
         this.add(TCRItems.RARE_ARTIFACT_TICKET.get(), "金のアーチファクト真髄");
         this.addItemUsageInfo(TCRItems.RARE_ARTIFACT_TICKET.get(), "任務書のある任務から入手. §d[聖人の港湾]§rの§3[フェリーの女の子]§rでレアーアーチファクトを交易できる");
-        this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神様の指示の一部");
+        this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神託の欠片");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神様の指示を書いている。聖域キーパに渡すと、炎の種の位置を分かるようになる");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c他人のクエストアイテムを盗まないでください", 2);
 
@@ -258,10 +258,10 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GUIDER.get(), 1, "私はこの世界の法則の守護者です。その日、天国はおかしい現象が起こったり、雷をしたりしました時、君はこの世界にいらっしゃいました。あなたは他の世界からの勇者と間違えません！");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 2, "昔、この世界の生命力は強かったです。英雄の魂は天界と土地を守りました。ある日、§d「黒潮」§f は世界に現れました。世の全ては侵食されました。村人は悪者になってしまいました。神様たちは、「黒潮」を防げれなかったです。そのため、神様たちは精霊になり、世界は滅ばせました。今は海しかありません。神様の指示から、神様たち残った力をここに封印しました。§6しかし、ある力は世界の他の場所に残りました。§f 呪われた私は、ここから離れません。救世主を待つしかできませんでした...");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 3, "この世界は滅ばせましたが、フェーリの女の子の力から、原初の海へ足を踏むと、過去へ行けるようになります。神様の指示から、神様たち残った力をここに無事で戻ると、この聖域を再建きます。儀式を始め、「黒潮」を浄化せます。世界を復活できます。その前に、§6邪悪の村人を倒してくれませんか§f。倒したらここにお戻りください。");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 4, "あなたはやっぱりこの世界の救世主様です！§d『神様の指示の一部』§fを見つかりましたか。それを私に渡したら。神様たち残った力の位置を解読いたし、マークいたします。全ての炎を点火したら、「黒潮」を浄化する術式を始めます。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 4, "あなたはやっぱりこの世界の救世主様です！§d『神託の欠片』§fを見つかりましたか。それを私に渡したら。神様たち残った力の位置を解読いたし、マークいたします。全ての炎を点火したら、「黒潮」を浄化する術式を始めます。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 5, "なぜ私を攻撃したの？");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 6, "救世主様の力を拝見させくれましたので、偽装を抜けました。");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 7, "それは§d『神様の指示の一部』§fですね。ぜひ解読させてください！記録された世界の神様たち残った力をマークさせてください！");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 7, "それは§d『神託の欠片』§fですね。ぜひ解読させてください！記録された世界の神様たち残った力をマークさせてください！");
 
         this.addDialogAnswer(TCREntities.GUIDER.get(), 8, "世界を救う様、なにかお困りですか。");
         this.addDialogOption(TCREntities.GUIDER.get(), 10, "世界の最強の力はどうやって手に入れるの？");
@@ -274,9 +274,9 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.GUIDER.get(), 14, "[お前は誰か？？]");
         this.addDialogOption(TCREntities.GUIDER.get(), 15, "[続く]"); // Pull into the barrier
         this.addDialogOption(TCREntities.GUIDER.get(), 17, "[しまった、ｗ]");
-        this.addDialogOption(TCREntities.GUIDER.get(), 18, "『神様の指示の一部』はどうやって手に入れるの？");
+        this.addDialogOption(TCREntities.GUIDER.get(), 18, "『神託の欠片』はどうやって手に入れるの？");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 9, "§dエンダードラゴン§fは、 ジ・エンドに住んでいます。§d「黒潮」§fと淵源があります。倒したら、その残片はヤマトを作れます。この世界の外からの力ので、ただの話で説明できません。");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 10, "『神様の指示の一部』を渡してくれば十分です。記録された世界に入ると、 神様たち残った力をマークいたします。マークした場所を見つけ、悪魔を倒して、 神様たち残った力を取り返し、§6廊下の祭壇をご点火ください。§f全ての祭壇を点火したら、「黒潮」を浄化の術式を始められます！");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 10, "『神託の欠片』を渡してくれば十分です。記録された世界に入ると、 神様たち残った力をマークいたします。マークした場所を見つけ、悪魔を倒して、 神様たち残った力を取り返し、§6廊下の祭壇をご点火ください。§f全ての祭壇を点火したら、「黒潮」を浄化の術式を始められます！");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 11, "他所者よ... まさか救世主って童謡を信じているか... ハハハ！お前はただ俺の力を取り返す傀儡だ！");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 12, "全てを倒した敵は、この世界の守護者だった！俺の最終プランを止まった者よ！ここは俺を束縛された場所だった。守護者の死のために、少しの村人を失ったのは俺にとって最高だ！君のおかけで、悪魔たちの力から肉体を回復された！");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 13, "俺は誰？犠牲するための傀儡は分かる権利がない！術式？何にかそれ？君の力を俺になったら、この世界は俺の法則を従うしかない！死ね！");
@@ -288,9 +288,9 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GUIDER.get(), 16, "§3アビスの目§f... §6[%s]§fで感じられた、それを倒し、取り返せ！ここに待ってるよ。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 17, "§2呪われた目§f... §6[%s]§fで感じられた、それを倒し、取り返せ！ここに待ってるよ。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 18, "§e砂漠の目§f... §6[%s]§fで感じられた、それを倒し、取り返せ！ここに待ってるよ。");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 20, "正規ルートなのに、なぜもう一つの『神様の指示の一部』を手に入れますか。他の人から盗ましたか。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 20, "正規ルートなのに、なぜもう一つの『神託の欠片』を手に入れますか。他の人から盗ましたか。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 21, "全てのの祭壇を点火してくれましたので、§6中の精霊を倒し、力を吸収しましたら§f、術式を始められます！");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "マークされた場所へ、§d[神の目]§fを取り返し、§6[庭の中の女神様の像をお供えください]§f。女神様は『神様の指示の一部』を差し上げるよ！");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "マークされた場所へ、§d[神の目]§fを取り返し、§6[庭の中の女神様の像をお供えください]§f。女神様は『神託の欠片』を差し上げるよ！");
 
         this.addDialogAnswer(TCREntities.GIRL.get(), 0, "お久しぶりです。");
         this.addDialogAnswer(TCREntities.GIRL.get(), 1, "私をお忘れましたか。私は聖域のフェーリの女の子と申します。迷った子を案内いたします。宝物があったら、ぜひ私に拝見させてください。それの記憶をアーチファクトに鍛造いたします。§c地獄§fまたは§dジ・エンド§fへご旅行する時、足を助けいたします。");
