@@ -43,7 +43,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addTCRItemInfo(net.blay09.mods.waystones.item.ModItems.warpStone, "§6[転送巻]§rをインベントリに押すと前で発見された転送石へ戻れるよ！");
         this.addTCRItemInfo("§c警告：このアイテムで重要なものをバックパックに送ったら、使えなくなる可能性があるよ！", net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_MAGNET_UPGRADE.get(), net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.MAGNET_UPGRADE.get());
-        this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "§c[結晶骨髄]§rで作ったポーション, または§d[ネヘモス]§rのドロップだ");
+        this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "§c[結晶骨髄]§rで作ったポーション, または§d[ネヘモス]§rから入手");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "§2[ヴォーデン]§rと§2[コネリア船長]§rから入手");
         this.addTCRItemInfo(BlockFactorysBossesModItems.DRAGON_SKULL.get(), "§c[地下騎士]§rと§4[地獄ドラゴン]§rから入手");
         this.addTCRItemInfo(ModItems.CORAL_CHUNK.get(), "§dレヴァイアサンの幻§rの§a[コーラル巨像]§rから入手");
@@ -52,7 +52,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addTCRItemInfo(ModItems.CHITIN_CLAW.get(), "§dスキュラの幻§rの§3[巨爪衛兵]§rから入手");
         this.addTCRItemInfo(BlockFactorysBossesModItems.KNIGHT_SWORD.get(), "§c[地下騎士]§rから入手");
         this.addTCRItemInfo(Items.DRAGON_EGG, "§dジ・エンド§rの§d[エンダードラゴン]§rから入手");
-        this.addTCRItemInfo(EpicSkillsItems.ABILIITY_STONE.get(), "右クリックでスキルレベルもらえる");
+        this.addTCRItemInfo(EpicSkillsItems.ABILIITY_STONE.get(), "右クリックでスキルポイントもらえる");
 
         this.add("itemGroup.tcr.items", "The Casket of Reveries — コアアイテム");
         this.add("key.categories." + TCRCoreMod.MOD_ID, "The Casket of Reveries — コア");
@@ -124,7 +124,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("to_be_continue2", "[P1nero]: §6プレイいただき、誠にありがとうございます！ボスをたくさん作っていますから少々お待ち下さい！");
         this.addInfo("second_after_boss_die_left", "%d秒でオーバーワールドに戻れる");
         this.addInfo("press_to_open_battle_mode", "§c[%s]を押すとバトルモードになる§r");
-        this.addInfo("unlock_new_dim_girl", "§6新しいものはフェーリの女の子に解放された！§r");
+        this.addInfo("unlock_new_dim_girl", "§6新しいものは渡し守の少女に解放された！§r");
         this.addInfo("unlock_new_dim", "§c[地獄]と§d[ジ・エンド]§6を解放された！§r");
         this.addInfo("iron_golem_name", "天空の島守護者");
 
@@ -208,7 +208,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addAdvancement("stage5", "ステージ５", "");
 
         this.add(TCREntities.GUIDER.get(), "聖域のキーパー");
-        this.add(TCREntities.GIRL.get(), "フェーリの女の子");
+        this.add(TCREntities.GIRL.get(), "渡し守の少女");
         this.add(TCREntities.TUTORIAL_GOLEM.get(), "訓練用のゴーレム");
 
         BanPortalScreenHandler.onGenerateEN(this);
@@ -257,7 +257,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GUIDER.get(), 0, "つまり、他の世界から来たの？");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 1, "私はこの世界の法則の守護者です。その日、天国はおかしい現象が起こったり、雷をしたりしました時、君はこの世界にいらっしゃいました。あなたは他の世界からの勇者と間違えません！");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 2, "昔、この世界の生命力は強かったです。英雄の魂は天界と土地を守りました。ある日、§d「黒潮」§f は世界に現れました。世の全ては侵食されました。村人は悪者になってしまいました。神様たちは、「黒潮」を防げれなかったです。そのため、神様たちは精霊になり、世界は滅ばせました。今は海しかありません。神様の指示から、神様たち残った力をここに封印しました。§6しかし、ある力は世界の他の場所に残りました。§f 呪われた私は、ここから離れません。救世主を待つしかできませんでした...");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 3, "この世界は滅ばせましたが、フェーリの女の子の力から、原初の海へ足を踏むと、過去へ行けるようになります。神様の指示から、神様たち残った力をここに無事で戻ると、この聖域を再建きます。儀式を始め、「黒潮」を浄化せます。世界を復活できます。その前に、§6邪悪の村人を倒してくれませんか§f。倒したらここにお戻りください。");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 3, "この世界は滅ばせましたが、渡し守の少女の力から、原初の海へ足を踏むと、過去へ行けるようになります。神様の指示から、神様たち残った力をここに無事で戻ると、この聖域を再建きます。儀式を始め、「黒潮」を浄化せます。世界を復活できます。その前に、§6邪悪の村人を倒してくれませんか§f。倒したらここにお戻りください。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 4, "あなたはやっぱりこの世界の救世主様です！§d『神託の欠片』§fを見つかりましたか。それを私に渡したら。神様たち残った力の位置を解読いたし、マークいたします。全ての炎を点火したら、「黒潮」を浄化する術式を始めます。");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 5, "なぜ私を攻撃したの？");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 6, "救世主様の力を拝見させくれましたので、偽装を抜けました。");
@@ -293,9 +293,9 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.GUIDER.get(), 22, "マークされた場所へ、§d[神の目]§fを取り返し、§6[庭の中の女神様の像をお供えください]§f。女神様は『神託の欠片』を差し上げるよ！");
 
         this.addDialogAnswer(TCREntities.GIRL.get(), 0, "お久しぶりです。");
-        this.addDialogAnswer(TCREntities.GIRL.get(), 1, "私をお忘れましたか。私は聖域のフェーリの女の子と申します。迷った子を案内いたします。宝物があったら、ぜひ私に拝見させてください。それの記憶をアーチファクトに鍛造いたします。§c地獄§fまたは§dジ・エンド§fへご旅行する時、足を助けいたします。");
+        this.addDialogAnswer(TCREntities.GIRL.get(), 1, "私をお忘れましたか。私は聖域の渡し守の少女と申します。迷った子を案内いたします。宝物があったら、ぜひ私に拝見させてください。それの記憶をアーチファクトに鍛造いたします。§c地獄§fまたは§dジ・エンド§fへご旅行する時、足を助けいたします。");
         this.addDialogAnswer(TCREntities.GIRL.get(), 2, "経験値は十分でしたら、スキルツリーでスキルをご習得できます。§6右上で経験値をスキルポイントにお引き換えます§f。スキルをよくアンロックください。生存率を上げるスキルはおすすめいたします。例えば、生命力を上げるスキルはおすすめいたします。");
-        this.addDialogAnswer(TCREntities.GIRL.get(), 3, "私は聖域のフェーリの女の子と申します。迷った子を案内いたします。宝物があったら、ぜひ私に拝見させてください。それの記憶をアーチファクトに鍛造いたします。§c地獄§fまたは§dジ・エンド§fへご旅行する時、足を助けいたします。初対面のお礼ので、これをお取りください。§d[%s]§fを押すと帆を開い、出航できます！");
+        this.addDialogAnswer(TCREntities.GIRL.get(), 3, "私は聖域の渡し守の少女と申します。迷った子を案内いたします。宝物があったら、ぜひ私に拝見させてください。それの記憶をアーチファクトに鍛造いたします。§c地獄§fまたは§dジ・エンド§fへご旅行する時、足を助けいたします。初対面のお礼ので、これをお取りください。§d[%s]§fを押すと帆を開い、出航できます！");
         this.addDialogAnswer(TCREntities.GIRL.get(), 4, "どこかご探索したいところがありますか。力不足ので、ここに戻る魔法は把握できません。転送石をお持ちください。");
         this.addDialogAnswer(TCREntities.GIRL.get(), 5, "§d[%s]§fはレリックの箱、または任務からご入手できます。§d[%s]§fがあれば、§6[%s]§fを押すとスキルをご習得できます。生存率を上げるために、スキルをご習得はおすすめいたします。");
 
