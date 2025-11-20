@@ -216,21 +216,22 @@ dependencies {
     implementation fg.deobf("curse.maven:epic-fight-indestructible-915201:7125700")
 
     implementation fg.deobf("curse.maven:epic-fight-wraithon-1354901:7068815")
-//    implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7018600")
-    implementation fg.deobf("libs:invincible:20.12.4.4")
+    implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7235628")
     implementation fg.deobf("libs:p1nero_bow:20.13.1.4")
 //    implementation fg.deobf("curse.maven:p1neros-epic-bow-1338443:6964978")
 //    implementation fg.deobf("curse.maven:sword-soaring-1011068:7035767")
     implementation fg.deobf("libs:sword_soaring:20.13.1.10")
     implementation fg.deobf("libs:dodge_parry_reward:20.12.1")
-    implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7058350")
-//    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7080544")
+    implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7225899")
     implementation fg.deobf("libs:p1nero_ec:20.13.0.4")
     implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7177400")
     implementation fg.deobf("curse.maven:entity-respawner-1363764:7105518")
-    implementation fg.deobf("libs:nightfall_invade:1.0.1")
+
+    implementation fg.deobf("curse.maven:nightfall-invade-1362602:7239394")
+    implementation fg.deobf("curse.maven:combat-evolution-1377795:7239349")
     implementation fg.deobf("libs:mimic:1.0.0")
-    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7140213")
+//    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7140213")
+    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7232450")
 
     implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:6993788")
 
@@ -363,9 +364,9 @@ dependencies {
     }
 
 ////    //FIXME run的时候得注释掉
-//    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
-//        jarJar.ranged(it, "[2.3.0,)")
-//    }
+    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
+        jarJar.ranged(it, "[2.3.0,)")
+    }
 //    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
