@@ -1,0 +1,12 @@
+{
+  "type": "ba_bt:land_tower",
+
+  "avoid_structures": "#structure/land_tower_avoid_structures",
+
+  "biomes": "#ba_bt:has_structure/land_tower_biomes",
+
+  "step": "surface_structures",
+
+  "spawn_overrides": {}
+
+}

@@ -192,6 +192,12 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
+//    implementation "curse.maven:preloading-tricks-1372086:7227679"
+    implementation "libs:preloading-tricks:2.5.6"
+    implementation ("libs:tcrmodfilter:1.0.0")
+//    implementation ("curse.maven:preloading-tricks-1372086:7210447")
+    implementation fg.deobf("curse.maven:accelerated-rendering-1314021:7196153")
+
     implementation fg.deobf("curse.maven:shelmarows-hud-1346457:7201614")
 
     implementation fg.deobf("curse.maven:fancymenu-367706:6918987")
@@ -405,8 +411,7 @@ dependencies {
     implementation fg.deobf("curse.maven:fast-tpa-1122207:6680358")
 
     implementation fg.deobf("curse.maven:resourceful-config-714059:6231176")
-    implementation fg.deobf("curse.maven:structure-layout-optimizer-1087831:6125412")
-    implementation fg.deobf("curse.maven:async-locator-625069:4603343")
+//    implementation fg.deobf("curse.maven:async-locator-625069:4603343")
 
     implementation fg.deobf("curse.maven:fancy-toasts-1326436:6932752")//优化进度贴图
 

@@ -9,6 +9,7 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.client.gui.*;
 import net.alp.monsterexpansion.entity.custom.AbstractLargeMonster;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.LevelLoadingScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FastColor;
@@ -31,7 +32,7 @@ import static net.minecraft.client.gui.components.BossHealthOverlay.GUI_BARS_LOC
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID, value = Dist.CLIENT)
 public class ClientForgeEvents {
 
-    public static final ResourceLocation BACKGROUND_LOCATION = ResourceLocation.fromNamespaceAndPath(Cataclysm.MODID,"textures/block/azure_seastone_bricks.png");
+    public static final ResourceLocation BACKGROUND_LOCATION = ResourceLocation.withDefaultNamespace("textures/gui/light_dirt_background.png");
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event){
@@ -96,7 +97,7 @@ public class ClientForgeEvents {
 
     @SubscribeEvent
     public static void onRenderBackground(ScreenEvent.BackgroundRendered event) {
-        if(Minecraft.getInstance().level == null) {
+        if(Minecraft.getInstance().level == null && !(event.getScreen() instanceof LevelLoadingScreen)) {
             event.getGuiGraphics().blit(BACKGROUND_LOCATION, 0, 0, 0, 0.0F, 0.0F, event.getScreen().width, event.getScreen().height, 32, 32);
 //            event.getGuiGraphics().fill(0, 0, event.getScreen().width, event.getScreen().height, FastColor.ABGR32.color(255, 255, 255, 255));
         }
