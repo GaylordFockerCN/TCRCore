@@ -1,0 +1,11 @@
+{
+	"objectives": [
+		"toolsmith_objs",
+		"_metal_objs"
+	],
+	"rewards": [
+		"toolsmith_rews",
+		"_gardening_rews",
+		"_equip_rews"
+	]
+}

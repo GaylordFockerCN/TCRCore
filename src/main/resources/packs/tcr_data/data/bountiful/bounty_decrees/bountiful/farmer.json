@@ -1,0 +1,9 @@
+{
+	"objectives": [
+		"farmer_objs"
+	],
+	"rewards": [
+		"farmer_rews",
+		"_gardening_rews"
+	]
+}
