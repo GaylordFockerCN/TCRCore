@@ -11,7 +11,7 @@ import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.worldgen.TCRBiomes;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
-import com.yungnickyoung.minecraft.リビットs.module.EntityTypeModule;
+import com.yungnickyoung.minecraft.ribbits.module.EntityTypeModule;
 import net.alp.monsterexpansion.entity.ModEntities;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EntityType;
@@ -20,9 +20,9 @@ import net.shelmarow.nightfall_invade.entity.NFIEntities;
 import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
 import net.unusual.blockfactorysbosses.init.BlockFactorysBossesModItems;
 
-public class TCRENLangGenerator extends TCRLangProvider {
-    public TCRENLangGenerator(PackOutput output) {
-        super(output, "ja_JP");
+public class TCRJPLangGenerator extends TCRLangProvider {
+    public TCRJPLangGenerator(PackOutput output) {
+        super(output, "ja_jp");
     }
 
     @Override
