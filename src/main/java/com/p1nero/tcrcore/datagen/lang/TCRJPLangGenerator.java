@@ -76,9 +76,9 @@ public class TCRJPLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ABYSS_CORE.get(), "アビス真髄");
         this.addItemUsageInfo(TCRItems.ABYSS_CORE.get(), "[レヴァイアサン]から入手");
         this.add(TCRItems.ARTIFACT_TICKET.get(), "アーチファクト真髄");
-        this.addItemUsageInfo(TCRItems.ARTIFACT_TICKET.get(), "任務書のある任務から入手. §d[聖人の港湾]§rの§3[フェリーの女の子]§rでアーチファクトを交易できる");
+        this.addItemUsageInfo(TCRItems.ARTIFACT_TICKET.get(), "任務書のある任務から入手. §d[聖人の港湾]§rの§3[渡し守の少女]§rでアーチファクトを交易できる");
         this.add(TCRItems.RARE_ARTIFACT_TICKET.get(), "金のアーチファクト真髄");
-        this.addItemUsageInfo(TCRItems.RARE_ARTIFACT_TICKET.get(), "任務書のある任務から入手. §d[聖人の港湾]§rの§3[フェリーの女の子]§rでレアーアーチファクトを交易できる");
+        this.addItemUsageInfo(TCRItems.RARE_ARTIFACT_TICKET.get(), "任務書のある任務から入手. §d[聖人の港湾]§rの§3[渡し守の少女]§rでレアーアーチファクトを交易できる");
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神託の欠片");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神様の指示を書いている。聖域キーパに渡すと、炎の種の位置を分かるようになる");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c他人のクエストアイテムを盗まないでください", 2);
