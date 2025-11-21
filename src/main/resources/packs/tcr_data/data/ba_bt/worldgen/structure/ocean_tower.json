@@ -1,0 +1,12 @@
+{
+  "type": "ba_bt:ocean_tower",
+
+  "avoid_structures": "#structure/ocean_tower_avoid_structures",
+
+  "biomes": "#ba_bt:has_structure/ocean_tower_biomes",
+
+  "step": "surface_structures",
+
+  "spawn_overrides": {}
+
+}

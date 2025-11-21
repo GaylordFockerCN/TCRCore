@@ -8,6 +8,6 @@
     "toomanyplayers.async_networking": true,
     "yacl.lazy_animated_image": true,
     "kiwi.faster_annotation": true,
-    "pack_resources_cache": true,
+    "pack_resources_cache": false,
     "avoid_redundant_list_resources": true
 }

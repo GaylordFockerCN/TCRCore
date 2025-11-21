@@ -140,8 +140,7 @@
         "dimension": [
             "minecraft:overworld",
             "minecraft:the_nether",
-            "minecraft:the_end",
-            "callfromthedepth_:depth"
+            "minecraft:the_end"
         ],
         "mincount": {
             "amount": 700
@@ -152,8 +151,7 @@
         "dimension": [
             "minecraft:overworld",
             "minecraft:the_nether",
-            "minecraft:the_end",
-            "callfromthedepth_:depth"
+            "minecraft:the_end"
         ],
         "passive": true,
         "mincount": {
@@ -216,16 +214,6 @@
     {
         "mob": [
             "alexsmobs:fly"
-        ],
-        "mincount": {
-            "amount": 3,
-            "perplayer": true
-        },
-        "result": "deny"
-    },
-    {
-        "mob": [
-            "upgrade_aquatic:nautilus"
         ],
         "mincount": {
             "amount": 3,
