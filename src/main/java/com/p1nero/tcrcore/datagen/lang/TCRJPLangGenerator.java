@@ -193,7 +193,7 @@ public class TCRJPLangGenerator extends TCRLangProvider {
         this.addAdvancement("abyss_eye", "アビスの目", "§a§oアビスを土地を食う時、彼は海の床と自分を縫った。体はバブルの城になった。");
         this.addAdvancement("flame_eye", "火炎の目", "§a§oマグマは世界を覆う時、彼は自分の心臓を取って、消えないビーコンを作った。");
         this.addAdvancement("desert_eye", "砂漠の目", "§a§o守護者たちは化け物ではなかった。彼たちは子民の願いのだ。");
-        this.addAdvancement("cursed_eye", "呪われた目", "§a§o裏切り者は彼女の背骨を刺した時、凍結された涙は三千本の船を氷で閉じ込めた。");
+        this.addAdvancement("cursed_eye", "呪われた目", "§a§o裏切り者は彼女の背骨を刺した時、凍結された涙は三千本の船を氷で閉じ込められた。");
 
         this.addAdvancement("flame_kill", "イグニスの魂", "イグニスを倒して、火葬を入手。");
         this.addAdvancement("storm_kill", "スキュラの魂", "スキュラを倒して、庭波戟を入手。");
