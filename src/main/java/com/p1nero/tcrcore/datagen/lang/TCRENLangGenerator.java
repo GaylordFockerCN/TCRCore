@@ -30,18 +30,18 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.add("epicfight.skill_slot.passive4", "Passive 4");
         this.add("epicfight.skill_slot.passive5", "Passive 5");
-        this.add("travelerstitles.tcrcore.sanctum", "Realm of the Dream");
+        this.add("travelerstitles.tcrcore.sanctum", "Realm of Dreams");
         this.addBiome(TCRBiomes.AIR, "Void Region");
 
         this.addTask(TCRTaskManager.KILL_PILLAGER, "Kill an illager");
-        this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "Give §6[Oracle]§r to The Keeper");
+        this.addTask(TCRTaskManager.GIVE_ORACLE_TO_KEEPER, "Give the §6[Oracle]§r to The Keeper");
         this.addTask(TCRTaskManager.BACK_TO_KEEPER, "Go back to The Keeper");
-        this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "Offer §6[Eye]§r to Godness Statue");
+        this.addTask(TCRTaskManager.FIND_GODNESS_STATUE, "Offer §6[Eye]§r to Goddess Statue");
         this.addTask(TCRTaskManager.FIND_ARTERIUS, "Go back to Arterius");
-        this.addTask(TCRTaskManager.LIGHT_ALL_ALTAR, "Light all altar.");
-        this.addTask(TCRTaskManager.GO_TO_OVERWORLD, "Go to Overworld");
+        this.addTask(TCRTaskManager.LIGHT_ALL_ALTAR, "Light all the altars.");
+        this.addTask(TCRTaskManager.GO_TO_OVERWORLD, "Go to the Overworld");
 
-        this.addTCRItemInfo(net.blay09.mods.waystones.item.ModItems.warpStone, "Click the §6[Scroll]§r button in the inventory to return to previously activated stones!");
+        this.addTCRItemInfo(net.blay09.mods.waystones.item.ModItems.warpStone, "Click the §6[Scroll]§r button in the inventory to teleport to activated waystones!");
         this.addTCRItemInfo("§cWarning! This item may cause important items to be sucked into the backpack and become invalid!", net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_MAGNET_UPGRADE.get(), net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.MAGNET_UPGRADE.get());
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "Brewed using §c[Crystallized Blood Marrow]§r, a drop from §d[Nehemoth]§r");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "Obtained by defeating the §2[Warden]§r or §2[Captain Cornelia]§r");
@@ -59,20 +59,20 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addKeyMapping(KeyMappings.RIPTIDE, "Riptide");
         this.addKeyMapping(KeyMappings.SHOW_TASK, "Show/Hide Task");
 
-        this.add("skill_tree.sword_soaring.unlock_tip", "Unlocked by trading with villagers in §6[Sky Island]§r using emeralds");
+        this.add("skill_tree.sword_soaring.unlock_tip", "Unlocked by interacting with villagers in §6[Sky Island]§r using emeralds");
         this.add("unlock_tip.tcrcore.battleborn.water_avoid1", "Learned by trading with §6[Ribbit]§f using §d[Block of Amethyst]§f");
         this.add("unlock_tip.tcrcore.battleborn.fire_avoid", "Learned by defeating the §6[Bone Chimera]§r");
-        this.add("unlock_tip.tcrcore.get_vatansever", "Unlocks after acquiring the §d[Vatansever]§f");
-        this.addSkill("water_avoid", "Water Avoidance Charm", "Allows free breathing underwater!");
+        this.add("unlock_tip.tcrcore.get_vatansever", "Unlocks after obtaining the §d[Vatansever]§f");
+        this.addSkill("water_avoid", "Water Avoidance Charm", "Allows breathing underwater!");
         this.addSkill("fire_avoid", "Fire Avoidance Charm", "Immunity to fire damage!");
         this.addSkill("perfect_dodge", "Dodge Effect", "Play a cool animation when perfect dodge!");
 
         this.add(TCRItems.PROOF_OF_ADVENTURE.get(), "Proof of Adventure");
         this.addItemUsageInfo(TCRItems.PROOF_OF_ADVENTURE.get(), "Forged from the names of all foes vanquished by your blade. Your journey has reached its end, and your courage is now legend.");
         this.add(TCRItems.DUAL_BOKKEN.get(), "Bokeen");
-        this.addItemUsageInfo(TCRItems.DUAL_BOKKEN.get(), "I may have skill issue but I m not lacking on dedication so do you lacking in dedication?");
+        this.addItemUsageInfo(TCRItems.DUAL_BOKKEN.get(), "I may have skill issue but I'm not lacking on dedication so do you lacking in dedication?");
         this.add(TCRItems.VOID_CORE.get(), "Void Essence");
-        this.addItemUsageInfo(TCRItems.VOID_CORE.get(), "Dropped by [Ender Guardian] when defeated");
+        this.addItemUsageInfo(TCRItems.VOID_CORE.get(), "Dropped by the [Ender Guardian] when defeated");
         this.add(TCRItems.ABYSS_CORE.get(), "Abyss Essence");
         this.addItemUsageInfo(TCRItems.ABYSS_CORE.get(), "Dropped by [The Leviathan] when defeated");
         this.add(TCRItems.ARTIFACT_TICKET.get(), "Artifact Essence");
@@ -84,28 +84,28 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§cIn multiplayer mode, do not occupy other players'! Everyone must submit their own!", 2);
 
         this.addInfo("require_item_to_wake", "Require [%s]...");
-        this.addInfo("weapon_no_interact", "Can not interact! Please press [%s] vanilla mode or other item.");
+        this.addInfo("weapon_no_interact", "Cannot interact! Please press [%s] vanilla mode or other item.");
         this.addInfo("tudigong_gift", "[Gift]");
-        this.addInfo("tudigong_gift_get", "§6[TuDi]§f: I have grown old and useless, so I pass this treasure on to you！");
+        this.addInfo("tudigong_gift_get", "§6[TuDi]§f: I have grown old and incapable, so Ill pass this treasure to you！");
         this.addInfo("need_to_unlock_waystone", "Some waystones remain inactive!");
         this.addInfo("nether_unlock", "Nether Unlocked!");
         this.addInfo("end_unlock", "End Unlocked!");
-        this.addInfo("nothing_happen_after_bless", "§dNothing happen... The [Eye] has been used.");
+        this.addInfo("nothing_happen_after_bless", "§dNothing happened... The [Eye] has been used.");
         this.addInfo("dim_max_4_players", "§6Cloudland can only contain 4 players!");
-        this.addInfo("can_not_enter_before_finish", "§6You are not destined to enter the cloudland.");
+        this.addInfo("can_not_enter_before_finish", "§6You are not destined to enter this cloudland.");
         this.addInfo("can_not_do_this_too_early", "§6You are not destined to do this.");
-        this.addInfo("captain_start_heal", "§cCornelia start healing! Increase your damage!");
+        this.addInfo("captain_start_heal", "§cCornelia started healing! Increase your damage!");
         this.addInfo("illegal_item_tip", "§cIllegal Item!");
         this.addInfo("illegal_item_tip2", "§6Currently, you are not destined to use this item.");
 
-        this.addInfo("shift_to_pic", "Attack when pressing Shift to take");
-        this.addInfo("no_place_to_ship", "No Space for ship!");
+        this.addInfo("shift_to_pic", "Attack when pressing Shift to pick-up");
+        this.addInfo("no_place_to_ship", "No space for ship!");
         this.addInfo("boss_killed_ready_return", "§6Boss has been defeated! Block interaction unlocked!");
         this.addInfo("click_to_return", "§a[Click to return]");
         this.addInfo("cs_warning", "§c§l WARNING！Compute Shader is inactive now! You could enable it in Epic Fight config to get a better experience!");
         this.addInfo("wraithon_start_tip", "§d[Wraithon]: §6Outsider, your journey ends here!");
         this.addInfo("wraithon_end_tip", "§d[Wraithon]: §6This... is impossible...");
-        this.addInfo("dim_block_no_interact", "§cBoss not defeated! Cannot interact with the cloudland block yet!");
+        this.addInfo("dim_block_no_interact", "§cBoss has not been defeated! Cannot interact with the cloudland blocks yet!");
         this.addInfo("altar_dim_info", "Cloudland Info:");
         this.addInfo("related_loot", "Monster: [%s] | Related Loot: [%s]");
         this.add(TCRBlocks.CURSED_ALTAR_BLOCK.get(), "Cursed Altar");
@@ -118,10 +118,10 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRBlocks.MECH_ALTAR_BLOCK.get(), "Mech Altar");
 
         this.addInfo("attack_to_restart", "§cAttack to restart");
-        this.addInfo("after_heal_stop_attack", "§6Stop attack to clear anger.");
+        this.addInfo("after_heal_stop_attack", "§6Stop attack to clear anggression.");
         this.addInfo("cloud_follow_me", "§6[Magic Cloud]: §fHi, follow me!");
         this.addInfo("dim_demending", "§6Rebuilding... Wait[%d§6]s");
-        this.addInfo("to_be_continue2", "[P1nero]: §6Thank you for playing! More bosses are in the works, stay tuned for more!");
+        this.addInfo("to_be_continue2", "[P1nero]: §6Thank you for playing! More bosses are in the making, stay tuned for more!");
         this.addInfo("second_after_boss_die_left", "Returning to the Overworld in %d seconds");
         this.addInfo("press_to_open_battle_mode", "§cPress [%s] to enable Battle Mode!§r");
         this.addInfo("unlock_new_dim_girl", "§6New options unlocked at the Ferry girl!§r");
@@ -137,7 +137,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("kill_boss5", "§e[Voice from unknown origin]:§r Hahaha, I am free at last!");
 
         this.addInfo("finish_all_eye", "§dAll altars are lit!§r");
-        this.addInfo("time_to_altar", "The scattered embers have been found. It's time to return and light the altars...");
+        this.addInfo("time_to_altar", "The scattered embers have been found. It's time to return and light-up the altars...");
         this.addInfo("time_to_ask_godness_statue", "§d*This item can be used at the statue of the Goddess.");
         this.addInfo("time_to_end", "All altars are lit. It's time to find the The Sanctuary Keeper to perform the ritual...");
 
@@ -154,7 +154,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("use_true_eye_tip", "Please use [%s] to right-click the altar core");
 
         this.addInfo("add_item_tip", "New item obtained: %s × %d!");
-        this.addInfo("skill_point_lack", "This skill requires %d skill points to cast");
+        this.addInfo("skill_point_lack", "This skill requires %d skill points to unlock");
         this.addInfo("press_to_open_portal_screen2", "Click the §6[Scroll]§r in the inventory to return to previously activated stones!");
         this.addInfo("press_to_show_progress", "Press §6[L]§f to view guidance!");
         this.addInfo("press_to_skill_tree", "Sufficient EXP available. Press §6[K]§f to allocate skill points!");
@@ -162,7 +162,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("lock_tutorial_sub", "§cMove the mouse to switch targets!");
         this.addInfo("riptide_tutorial", "§6[[%s§6]§f to §bRiptide");
         this.addInfo("dodge_tutorial", "§6[[%s§6]§f to dodge");
-        this.addInfo("weapon_innate_tutorial", "§6[[%s§6]§f to weapon skill");
+        this.addInfo("weapon_innate_tutorial", "§6[[%s§6]§f to use your weapon's skill");
         this.addInfo("weapon_innate_charge_tutorial", "§6[Perfect Dodge]§c or §6[Perfect Parry]§c can charge certain weapons!");
         this.addInfo("perfect_dodge_tutorial", "§cDodge in time to Perfect Dodge!");
         this.addInfo("hurt_damage", "Dealt [ %s ] damage!");
@@ -172,7 +172,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addInfo("press_to_open_map", "§6[M]§f to view the map");
 
-        this.addInfo("godness_statue_pos", "Godness Statue");
+        this.addInfo("godness_statue_pos", "Goddess Statue");
         this.addInfo("storm_pos", "Location of the Storm Echo: Sky Island");
         this.addInfo("cursed_pos", "Location of the Cursed Echo: Ice Maze");
         this.addInfo("desert_pos", "Location of the Desert Echo: Chimera's Prison");
@@ -186,20 +186,20 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addAdvancement("aquamirae_weapon", "Sea Spirit Tale - Weapons", "");
         this.addAdvancement("cataclysm_weapon", "Cataclysm - Weapons", "");
         this.addAdvancement("legend_weapon", "Legendary Weapons", "");
-        this.addAdvancement("ef_legacy", "Epic Fight - Weapons", "All can be obtained through crafting, featuring different weapon skills and animation templates. Check JEI for recipes and skill info.");
-        this.addAdvancement("kill_pillager", "Proof of Allegiance", "The task is complete. Time to return to the The Sanctuary Keeper.");
-        this.addAdvancement("mark_map", "Marking Locations", "The The Sanctuary Keeper has marked the locations of the scattered Divine Eyes on your map. Now, go reclaim them!");
-        this.addAdvancement("storm_eye", "Eye of the Storm", "§a§oWhen war tore the clouds, she used the storm as a stairway, building a suspended paradise for her people.");
-        this.addAdvancement("abyss_eye", "Eye of the Abyss", "§a§oWhen the abyss devoured the land, He sewed Himself into the seabed, His flesh becoming a city of bubbles.");
-        this.addAdvancement("flame_eye", "Eye of the Flame", "§a§oWhere magma surged, He gouged out His heart, forging an eternal beacon.");
+        this.addAdvancement("ef_legacy", "Epic Fight - Weapons", "Everything are obtainable through crafting, featuring different weapon skills and animation templates. Check JEI for recipes and skill info.");
+        this.addAdvancement("kill_pillager", "Proof of Allegiance", "The task is complete. Return to the The Sanctuary Keeper.");
+        this.addAdvancement("mark_map", "Marking Locations", "The Sanctuary Keeper has marked the locations of the scattered Divine Eye on your map. Now, go reclaim them!");
+        this.addAdvancement("storm_eye", "Eye of the Storm", "§a§oWhen war ripped the sky, she used the storm as a stairway, building a suspended paradise for her people.");
+        this.addAdvancement("abyss_eye", "Eye of the Abyss", "§a§oWhen the abyss devoured the land, He fused himself into the seabed, his flesh became a city of bubbles.");
+        this.addAdvancement("flame_eye", "Eye of the Flame", "§a§oWhere magma surged, He pulled out his heart, forging an eternal beacon.");
         this.addAdvancement("desert_eye", "Eye of the Desert", "§a§oThe guardians are not monsters; they are living tombstones willingly transformed by the people.");
-        this.addAdvancement("cursed_eye", "Cursed Eye", "§a§oWhen the betrayer pierced her spine, frozen tears instantly sealed three thousand ghost ships.");
+        this.addAdvancement("cursed_eye", "Cursed Eye", "§a§oWhen the traitor pierced her back, frozen tears instantly sealed three thousand ghost ships.");
 
-        this.addAdvancement("flame_kill", "Soul of Ignis", "Defeat Ignis and obtain Cremation Burial.");
-        this.addAdvancement("storm_kill", "Soul of Scylla", "Defeat Scylla and obtain Courtyard Wave Anchor Halberd.");
-        this.addAdvancement("abyss_kill", "Soul of The Leviathan", "Defeat The Leviathan and obtain Tide Claw.");
-        this.addAdvancement("desert_kill", "Soul of Ancient Remnant", "Defeat Ancient Remnant and obtain Sandstorm's Wrath.");
-        this.addAdvancement("cursed_kill", "Soul of Maledictus", "Defeat Maledictus and obtain Soul-Severing War Halberd.");
+        this.addAdvancement("flame_kill", "Soul of Ignis", "Defeat Ignis and obtain The Incinerator.");
+        this.addAdvancement("storm_kill", "Soul of Scylla", "Defeat Scylla and obtain The Ceraunus.");
+        this.addAdvancement("abyss_kill", "Soul of The Leviathan", "Defeat The Leviathan and obtain The Tidal Claw.");
+        this.addAdvancement("desert_kill", "Soul of Ancient Remnant", "Defeat Ancient Remnant and obtain The Wrath of the Desert.");
+        this.addAdvancement("cursed_kill", "Soul of Maledictus", "Defeat Maledictus and obtain The Soul Render.");
 
         this.addAdvancement("stage1", "Stage 1", "");
         this.addAdvancement("stage2", "Stage 2", "");
@@ -214,7 +214,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         BanPortalScreenHandler.onGenerateEN(this);
 
         this.addDialogAnswer(ModEntities.SKRYTHE.get(), 0, "Chosen One, I have long awaited your arrival.");
-        this.addDialogAnswer(ModEntities.SKRYTHE.get(), 1, "I am Skrythe, the divine steed. During the Black Tide War, I suffered grave injuries and have slumbered until now. Upon awakening, I sensed signs of revival within the Sanctuary, thus I returned. The Sanctuary Keeper, upon seeing me, informed me of the matter regarding the Chosen One and commanded me to await you here.");
+        this.addDialogAnswer(ModEntities.SKRYTHE.get(), 1, "I am Skrythe, The Divine Steed. During the Black Tide War, I suffered grave injuries and have slumbered until now. Upon awakening, I sensed signs of revival within the Sanctuary, thus I returned. The Sanctuary Keeper, upon seeing me, informed me of the matter regarding the Chosen One and commanded me to await you here.");
         this.addDialogOption(ModEntities.SKRYTHE.get(), 0, "Who are you?");
         this.addDialogOption(ModEntities.SKRYTHE.get(), 1, "Tame");
 
@@ -255,13 +255,13 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.GUIDER.get(), 8, "Wow, how did you turn into a beautiful girl?");
         this.addDialogOption(TCREntities.GUIDER.get(), 9, "Reveal the Oracle");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 0, "So... you drifted here from beyond this world?");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 1, "I am the guardian deity of this world. On that day, the heavens showed strange signs, thunder roared, and you descended upon this land. You must be the otherworldly heroes foretold in the ancient prophecy!");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 2, "Once, the world was full of vitality, and heroic spirits protected the heavens and earth. Until one day, the §d「Black Tide」§f descended upon the world, everything was corrupted, and some villagers even turned into illagers. The gods, unable to resist the §d「Black Tide」§f, became spirits, the world was destroyed, leaving only a vast ocean. According to the ancient prophecy, I sealed their remaining power here, §6but some of their sparks have scattered to various places.§f Cursed, I cannot leave this place, so I can only wait silently for a savior to appear...");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 3, "Though the world is destroyed, with the ferryman's power, stepping into the Primordial Ocean can restore the past! The ancient prophecy says that once you retrieve all the lost sparks from the world of the past, you can rebuild the temple, perform the ritual, cleanse the §d「Black Tide」§f, and restart the world! But before that, first §6defeat an illager (pillager)§f and then §fcome back to me.");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 1, "I am a deity, a guardian of this world. On that day, the heavens showed strange signs, thunder roared, and you descended upon this land. You must be the otherworldly heroes foretold in the ancient prophecy!");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 2, "Once, the world was full of life, and heroic spirits protected the heavens and earth. Until one day, the §d「Black Tide」§f descended upon the world, everything was corrupted, and some villagers even turned into illagers. The gods, unable to resist the §d「Black Tide」§f, became spirits, the world was destroyed, leaving only a vast ocean. According to the ancient prophecy, I sealed their remaining power here, §6but some of their sparks have scattered to various places.§f Cursed, I cannot leave this place, so I can only wait silently for a savior to appear...");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 3, "Though the world is destroyed, with the ferryman's power, stepping into the Primordial Ocean can restore the past! The ancient prophecy says that once you retrieve all the lost divine eyes from the world of the past, you can rebuild the temple, perform the ritual, cleanse the §d「Black Tide」§f, and restart the world! But before that, first §6defeat an illager (pillager)§f and then §fcome back to me.");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 4, "It seems you truly are the savior foretold in the prophecy! Have you collected any §d『Oracle Fragments』§f during your journey? Give the §d『Oracle Fragments』§f to me, and I will reveal the locations of the sparks recorded in the oracle! Once you light all the sparks, I will initiate the §d「Black Tide」§f cleansing ritual!");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 5, "Why did you attack me?");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 6, "Since you have proven your strength, I shall shed my disguise and show you my true form.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 7, "§d『Oracle Fragments!』§f Give them to me, and I will reveal the locations of the sparks scattered in the world of the past as recorded in the oracle! Once you step into the memory of the Overworld, I will mark the clues revealed by the oracle for you!");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 7, "§d『Oracle Fragments!』§f Give them to me, and I will reveal the locations of the divine eyes scattered in the world of the past as recorded in the oracle! Once you step into the memory of the Overworld, I will mark the clues revealed by the oracle for you!");
 
         this.addDialogAnswer(TCREntities.GUIDER.get(), 8, "O prophesied savior, what troubles you?");
         this.addDialogOption(TCREntities.GUIDER.get(), 10, "How can I obtain the most powerful strength in this world?");
@@ -276,12 +276,12 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.GUIDER.get(), 17, "[You caught me, hehe]");
         this.addDialogOption(TCREntities.GUIDER.get(), 18, "How can I obtain Oracle Fragments?");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 9, "The §dEnder Dragon§f, located within the End's alien space, has a deep connection to the §d「Black Tide」§f. After defeating it, the essence it gives birth to can be forged into the Yamato, a power from another world, immeasurable.");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 10, "You simply need to give the §d『Oracle Fragments』§f to me. Once you step into the memory of the Overworld, I will reveal the locations of the sparks recorded in the oracle! Then you can go to the places I mark on the map, defeat the demons, reclaim the sparks, §6and offer them at the altars in the long corridor§f. Once all sparks are retrieved, you can initiate the ritual to purify the §d「Black Tide」§f!");
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 11, "Outsider... You don't actually believe you're some savior, do you... Hahahaha, you are merely a puppet I used to reclaim my power!");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 10, "You simply need to give the §d『Oracle Fragments』§f to me. Once you step into the memory of the Overworld, I will reveal the locations of the divine eyes recorded in the oracle! Then you can go to the places I've marked on your map, defeat the demons, reclaim the divine eyes, §6and offer them at the altars in the long corridor§f. Once the divine eyes are retrieved, you can initiate the ritual to purify the §d「Black Tide」§f!");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 11, "Outsider... You don't actually believe you're some savior, do you? Hahahaha, you are merely a puppet I've used to reclaim my power!");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 12, "Everything you defeated, they were the divine guardians of this world, the very ones who stood in the way of my grand plan! This place is my dwelling. As long as they are gone, losing a few illagers means nothing to me. Moreover, the demon god sparks you brought back can help me rebuild my physical form.");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 13, "Who am I? You, as a sacrificial offering, have no right to know! What foolish ritual? After absorbing your power, the world shall be under my rule! Die!");
 
-        this.addDialogAnswer(TCREntities.GUIDER.get(), 14, "This... I once battled the §d「Black Tide Legion」§f here. Some of the spirits sealed in the altars have lost their response and will never return... But the remaining spirits are enough to initiate the ritual.");
+        this.addDialogAnswer(TCREntities.GUIDER.get(), 14, "This... I've once fought the §d「Black Tide Legion」§f here. Some of the spirits sealed in the altars have lost their response and will never return... But the remaining spirits are enough to initiate the ritual.");
 
         this.addDialogAnswer(TCREntities.GUIDER.get(), 15, "§bThe Eye of Storm§f... I sense it scattered in §6[%s]§f, defeat %s and reclaim it! I will wait here.");
         this.addDialogAnswer(TCREntities.GUIDER.get(), 19, "§6The Eye of Blaze§f... I sense it scattered in §6[%s]§f, defeat %s and reclaim it! I will wait here.");
@@ -323,7 +323,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 2, "I'm ready");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 3, "Wait a moment");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 4, "Spar with me");
-        this.addDialogOption(NFIEntities.ARTERIUS.get(), 5, "Ask information");
+        this.addDialogOption(NFIEntities.ARTERIUS.get(), 5, "Ask for information");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 6, "Continue");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 7, "Take my leave");
         this.addDialogOption(NFIEntities.ARTERIUS.get(), 8, "§aFinish");
