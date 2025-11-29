@@ -68,8 +68,7 @@ import java.util.List;
 public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, Merchant {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-    @Nullable
-    private Player conversingPlayer;
+
     @Nullable
     private Player tradingPlayer;
     private MerchantOffers offers = new MerchantOffers();
@@ -103,8 +102,8 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                     this.setPos(new BlockPos(WorldUtil.GIRL_POS).getCenter());
                 }
             }
-            if(conversingPlayer != null && (conversingPlayer.isRemoved() || conversingPlayer.isDeadOrDying() || conversingPlayer.distanceTo(this) > 5)) {
-                conversingPlayer = null;
+            if(getConversingPlayer() != null && (getConversingPlayer().isRemoved() || getConversingPlayer().isDeadOrDying() || getConversingPlayer().distanceTo(this) > 5)) {
+                setConversingPlayer(null);
             }
         }
     }
@@ -548,16 +547,6 @@ public class GirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         }
 
         this.setConversingPlayer(null);
-    }
-
-    @Override
-    public void setConversingPlayer(@Nullable Player player) {
-        this.conversingPlayer = player;
-    }
-
-    @Override
-    public @Nullable Player getConversingPlayer() {
-        return conversingPlayer;
     }
 
     @Override

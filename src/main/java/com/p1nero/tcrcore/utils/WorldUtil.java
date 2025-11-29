@@ -35,6 +35,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class WorldUtil {
+    public static final Vec3i AINE_IRIS_POS = new Vec3i(80, 74, -133);
     public static final Vec3i GIRL_POS = new Vec3i(80, 74, -133);
     public static final Vec3i GIRL_PORTAL_POS = new Vec3i(80, 73, -138);
     public static final Vec3i START_POS = new Vec3i(-3, 75, -190);

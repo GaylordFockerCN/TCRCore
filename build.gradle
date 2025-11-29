@@ -148,6 +148,11 @@ repositories {
         }
     }
 
+    exclusiveContent {
+        forRepository { maven { name = "Modrinth"; url = "https://api.modrinth.com/maven" } }
+        filter { includeGroup "maven.modrinth" }
+    }
+
     maven {
         name "create maven"
         url "https://maven.createmod.net"
@@ -192,9 +197,8 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-//    implementation "curse.maven:preloading-tricks-1372086:7227679"
-    implementation "libs:preloading-tricks:2.5.6"
-    implementation ("libs:tcrmodfilter:1.0.0")
+    implementation "maven.modrinth:preloading-tricks:3.2.2"
+    implementation ("libs:tcrmodfilter:1.0.3")
 //    implementation ("curse.maven:preloading-tricks-1372086:7210447")
     implementation fg.deobf("curse.maven:accelerated-rendering-1314021:7196153")
 
@@ -284,8 +288,8 @@ dependencies {
     implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
     //主要boss
-    implementation fg.deobf("curse.maven:call-from-the-depths-1013658:7097966")
     implementation fg.deobf("curse.maven:aether-255308:6134920")
+    implementation fg.deobf("curse.maven:deep-aether-852465:6839617")
     implementation fg.deobf("curse.maven:aether-lost-content-318602:4927038")
     implementation fg.deobf("libs:ba_bt:3.0.0")
 
@@ -364,9 +368,9 @@ dependencies {
     }
 
 ////    //FIXME run的时候得注释掉
-    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
-        jarJar.ranged(it, "[2.3.0,)")
-    }
+//    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
+//        jarJar.ranged(it, "[2.3.0,)")
+//    }
 //    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉

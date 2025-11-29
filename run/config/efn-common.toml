@@ -2,82 +2,77 @@
 [yamato_catcher]
 	#Entities that CANNOT be caught by Yamato Catcher (format: modid:entity_id)
 	#These entities will be ignored regardless of knockback resistance
+	#This is a SERVER-SIDE setting
 	#Example: ["minecraft:wither", "minecraft:ender_dragon"]
 	yamatoCatcherBlacklist = ["minecraft:wither", "minecraft:ender_dragon"]
 	#Entities that CAN be caught by Yamato Catcher (format: modid:entity_id)
 	#These entities can be caught regardless of knockback resistance
+	#This is a SERVER-SIDE setting
 	#Example: ["minecraft:player", "minecraft:zombie"]
 	yamatoCatcherWhitelist = ["minecraft:zombie", "minecraft:drowned", "minecraft:husk", "minecraft:skeleton", "minecraft:wither_skeleton", "minecraft:stray", "minecraft:bogged", "minecraft:Pillager", "minecraft:evoker", "minecraft:vindicator", "minecraft:blaze", "minecraft:piglin", "minecraft:zombified_piglin", "minecraft:enderman"]
 
 [yamato_global_stun]
 	#Entities that can be Global Focus stunned by Yamato successful parry + attack combo (format: modid:entity_id)
 	#These entities will receive YamatoStunEffect when hit
+	#This is a SERVER-SIDE setting
 	#Use 'modid:all' to include all entities from a mod
 	#Example: ["minecraft:zombie", "cataclysm:all", "iceandfire:all"]
 	yamatoStunWhitelist = ["cataclysm:all", "wom:all"]
 
 [yamato_parry_stun]
 	#Duration of stun effect applied after successful parry + attack combo (in ticks, 20 ticks = 1 second)
+	#This is a SERVER-SIDE setting
 	#Range: 1 ~ 200
 	yamatoParryStunDuration = 20
 	#Cooldown between parry stuns (in ticks, 20 ticks = 1 second)
+	#This is a SERVER-SIDE setting
 	#Range: 1 ~ 1200
 	yamatoParryStunCooldown = 60
 
 [animation]
 	#Entities that won't play Yamato's stun animations (format: modid:entity_id)
+	#This is a SERVER-SIDE setting
 	#Example: ["minecraft:wither", "minecraft:ender_dragon"]
 	animationBlacklist = ["minecraft:wither", "minecraft:ender_dragon"]
 	#Entities that can play Yamato's stun animations (format: modid:entity_id)
+	#This is a SERVER-SIDE setting
 	#Example: ["minecraft:player", "minecraft:zombie", "minecraft:skeleton"]
 	animationWhitelist = ["wom:evil_skeleton", "wom:hollow", "wom:saulomonk", "wom:lycanth"]
 
 [yamato_reward]
 	#Enable/disable the skill book reward for Yamato JudgementCut-End
 	#When enabled, players will receive JudgementCut-End skill book after reaching the kill threshold
+	#This is a SERVER-SIDE setting
 	#Default: true (enabled)
 	yamatoRewardEnabled = true
 	#Number of kills required to receive the Yamato JudgementCut-End reward
 	#Set to 0 to disable the reward system
+	#This is a SERVER-SIDE setting
 	#Default: 100 kills
 	#Range: 0 ~ 10000
 	yamatoRewardKillThreshold = 100
 
-[judgementcut_end_camera]
-	#Enable/disable camera animations for JudgementCut-End
-	#When enabled, JudgementCut-End will play cinematic camera animations
-	#Default: true (enabled)
-	enableCameraAnimations = true
-
-[judgementcut_end_particles]
-	#Enable/disable particle effects for JudgementCut-End
-	#Disable Judgement Cut End's particle effects that may cause rendering incompatibility
-	#Default: true (enabled)
-	enableJudgementCutEndParticles = true
-
-["judgementcut_end_screendistortion effect"]
-	#Enable/disable screendistortion effects for JudgementCut-End
-	#Disable Judgement Cut End's screendistortion effects
-	#Default: true (enabled)
-	enableJudgementCutEndScreendistortion = true
-
 [yamato_parry_timeslow]
 	#Yamato parry timeslowdown
 	#Disable time slowdown effect that Yamato parry
+	#This is a SERVER-SIDE setting
 	#Default: true (enabled)
 	enableYamatoParryTimeSlowdown = true
 	#Delay before time slowdown effect starts (in ticks)
 	#20 ticks = 1 second. This creates a brief pause before the slowdown
+	#This is a SERVER-SIDE setting
 	#Default: 5 ticks (0.25 seconds)
 	#Range: 0 ~ 40
 	yamatoParryTimeSlowDelay = 5
 	#End tick of time slowdown effect (in ticks)
 	#20 ticks = 1 second. When the time slowdown end
+	#This is a SERVER-SIDE setting
 	#Default: 8 ticks-lasts 3 ticks
 	#Range: 1 ~ 100
 	yamatoParryTimeSlowDuration = 8
 	#Strength level of time slowdown effect
 	#1 = 1% speed, 2 = 2% speed, 3 = 3% speed, 4 = 4% speed, 5 = 5% speed
+	#This is a SERVER-SIDE setting
 	#Default: 3
 	#Range: 1 ~ 20
 	yamatoParryTimeSlowAmplifier = 3
@@ -85,20 +80,24 @@
 [dualsword_dodge_timeslow]
 	#Dualsword dodge timeslowdown
 	#Disable time slowdown effect that Dualsword dodge
+	#This is a SERVER-SIDE setting
 	#Default: true (enabled)
 	enableDualswordDodgeTimeSlowdown = true
 	#Delay before time slowdown effect starts (in ticks)
 	#20 ticks = 1 second. This creates a brief pause before the slowdown
+	#This is a SERVER-SIDE setting
 	#Default: 4 ticks
 	#Range: 0 ~ 100
 	DualswordDodgeTimeSlowDelay = 4
 	#End time of slowdown effect (in ticks)
 	#20 ticks = 1 second. When the time slowdown end
+	#This is a SERVER-SIDE setting
 	#Default: 7 ticks
 	#Range: 1 ~ 100
 	DualswordDodgeTimeSlowDuration = 7
 	#Strength level of time slowdown effect
 	#1 = 1% speed, 2 = 2% speed, 3 = 3% speed, 4 = 4% speed, 5 = 5% speed
+	#This is a SERVER-SIDE setting
 	#Default: 5
 	#Range: 1 ~ 20
 	DualswordDodgeTimeSlowAmplifier = 5
@@ -106,28 +105,26 @@
 [judgementcut_end_damage]
 	#Base damage rate for Judgement Cut End
 	#This multiplies the base damage calculation
+	#This is a SERVER-SIDE setting
 	#Default: 2.0
 	#Range: 0.1 ~ 100.0
 	judgementCutEndDamageRate = 2.0
 	#Cut rate for Judgement Cut End (percentage of max health)
 	#This determines how much percentage damage is dealt based on target's max health
+	#This is a SERVER-SIDE setting
 	#Default: 0.4 (40%)
 	#Range: 0.01 ~ 1.0
 	judgementCutEndCutRate = 0.4
 	#Damage multiplier against Cataclysm bosses
 	#This multiplies the damage when attacking Cataclysm bosses
+	#This is a SERVER-SIDE setting
 	#Default: 1.0 (no multiplier)
 	#Range: 0.1 ~ 10.0
 	judgementCutEndBossDamageMultiplier = 1.0
 	#Health percentage used in damage calculation
 	#This is the percentage of max health used in the formula: cutRate * (maxHealth * healthPercentage)
+	#This is a SERVER-SIDE setting
 	#Default: 0.4 (40%)
 	#Range: 0.01 ~ 1.0
 	judgementCutEndHealthPercentage = 0.4
-
-[bloodlust_posteffect]
-	#Enable/disable post-effect when bloodlust's skill active
-	#When enabled, bloodlust's skill will play post-effect
-	#Default: true (enabled)
-	enablePost-Effects = true
 

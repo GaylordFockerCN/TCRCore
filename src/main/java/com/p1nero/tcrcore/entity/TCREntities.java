@@ -2,6 +2,7 @@ package com.p1nero.tcrcore.entity;
 
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.entity.custom.CustomColorItemEntity;
+import com.p1nero.tcrcore.entity.custom.aine_iris.AineIrisEntity;
 import com.p1nero.tcrcore.entity.custom.girl.GirlEntity;
 import com.p1nero.tcrcore.entity.custom.guider.GuiderEntity;
 import com.p1nero.tcrcore.entity.custom.tutorial_golem.TutorialGolem;
@@ -33,6 +34,8 @@ public class TCREntities {
     public static final RegistryObject<EntityType<GirlEntity>> GIRL = register("girl",
             EntityType.Builder.of(GirlEntity::new, MobCategory.CREATURE).sized(0.6f, 1.9f).fireImmune());
 
+    public static final RegistryObject<EntityType<AineIrisEntity>> AINE_IRIS = register("aine_iris",
+            EntityType.Builder.of(AineIrisEntity::new, MobCategory.CREATURE).sized(0.6f, 1.9f).fireImmune());
 
     public static final RegistryObject<EntityType<TutorialGolem>> TUTORIAL_GOLEM = register("tutorial_golem",
             EntityType.Builder.of(TutorialGolem::new, MobCategory.CREATURE).sized(1.4F, 2.7f).fireImmune());
@@ -45,6 +48,7 @@ public class TCREntities {
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(GUIDER.get(), GuiderEntity.setAttributes());
         event.put(GIRL.get(), GuiderEntity.setAttributes());
+        event.put(AINE_IRIS.get(), GuiderEntity.setAttributes());
         event.put(TUTORIAL_GOLEM.get(), TutorialGolem.setAttributes());
     }
 

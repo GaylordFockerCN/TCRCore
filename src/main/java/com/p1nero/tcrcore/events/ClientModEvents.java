@@ -10,6 +10,7 @@ import com.p1nero.tcrcore.block.entity.TCRBlockEntities;
 import com.p1nero.tcrcore.client.gui.BlockTooltipHandler;
 import com.p1nero.tcrcore.client.item_renderer.RenderDualBokken;
 import com.p1nero.tcrcore.entity.TCREntities;
+import com.p1nero.tcrcore.entity.custom.aine_iris.AineIrisRenderer;
 import com.p1nero.tcrcore.entity.custom.girl.GirlGeoRenderer;
 import com.p1nero.tcrcore.entity.custom.guider.GuiderGeoRenderer;
 import com.p1nero.tcrcore.entity.custom.tutorial_golem.TutorialGolemRenderer;
@@ -36,6 +37,7 @@ public class ClientModEvents {
         EntityRenderers.register(TCREntities.CUSTOM_COLOR_ITEM.get(), ItemEntityRenderer::new);
         EntityRenderers.register(TCREntities.GUIDER.get(), GuiderGeoRenderer::new);
         EntityRenderers.register(TCREntities.GIRL.get(), GirlGeoRenderer::new);
+        EntityRenderers.register(TCREntities.AINE_IRIS.get(), AineIrisRenderer::new);
         EntityRenderers.register(TCREntities.TUTORIAL_GOLEM.get(), TutorialGolemRenderer::new);
 
         BlockTooltipHandler.registerBlockTooltip(TCRBlocks.ABYSS_ALTAR_BLOCK,

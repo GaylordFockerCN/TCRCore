@@ -1,6 +1,5 @@
 package com.p1nero.tcrcore.events;
 
-import com.github.L_Ender.cataclysm.Cataclysm;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.obscuria.obscureapi.api.BossBarsRenderManager;
 import com.p1nero.dialog_lib.client.screen.DialogueScreen;
@@ -12,7 +11,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.LevelLoadingScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraftforge.api.distmarker.Dist;

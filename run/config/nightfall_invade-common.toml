@@ -38,4 +38,7 @@
 		#减伤率从最大值减少到0所需要的时间（tick）
 		#Range: > 0
 		arteriusDecaySecond = 100
+		#命中敌人时额外造成的伤害（基于目标最大生命值的一定百分比）
+		#Range: 0.0 ~ 1.7976931348623157E308
+		arteriusExHPDamage = 0.012
 
