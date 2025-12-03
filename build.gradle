@@ -206,7 +206,6 @@ dependencies {
     implementation fg.deobf("curse.maven:melody-938643:5109692")
 
     implementation fg.deobf("curse.maven:fluid-tick-structure-processor-1369713:7133622")
-    implementation fg.deobf("libs:ba_bt:3.0.0")
     implementation fg.deobf("curse.maven:epic-fight-mod-405076:7144412-sources-7144414")
 //    implementation fg.deobf("libs:epicfight:20.13.2.5")
     implementation fg.deobf("libs:epicfight-skilltree:20.2.2.1")
@@ -288,6 +287,7 @@ dependencies {
     implementation fg.deobf("curse.maven:call-from-the-depths-1013658:7097966")
     implementation fg.deobf("curse.maven:aether-255308:6134920")
     implementation fg.deobf("curse.maven:aether-lost-content-318602:4927038")
+    implementation fg.deobf("libs:ba_bt:3.0.0")
 
     implementation fg.deobf("curse.maven:structure-gel-api-378802:5278429")
     implementation fg.deobf("curse.maven:dodos-mobs-1349823:7018547")
