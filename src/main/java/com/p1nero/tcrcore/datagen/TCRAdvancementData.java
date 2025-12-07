@@ -1,9 +1,7 @@
 package com.p1nero.tcrcore.datagen;
 
 import com.github.L_Ender.cataclysm.Cataclysm;
-import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.github.L_Ender.cataclysm.init.ModItems;
-import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.tcrcore.TCRCoreMod;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementProgress;
@@ -25,7 +23,6 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import net.p1nero.ss.item.SwordSoaringItems;
 import org.jetbrains.annotations.NotNull;
-import yesman.epicfight.world.item.EpicFightItems;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -82,7 +79,7 @@ public class TCRAdvancementData extends ForgeAdvancementProvider {
 //            Advancement desert_kill = registerAdvancement(desert_eye, "desert_kill", FrameType.CHALLENGE, ModItems.WRATH_OF_THE_DESERT.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.ANCIENT_REMNANT.get())));
 //            Advancement cursed_kill = registerAdvancement(cursed_eye, "cursed_kill", FrameType.CHALLENGE, ModItems.SOUL_RENDER.get(), true, true, false, KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(ModEntities.MALEDICTUS.get())));
 
-            Advancement dragonRide = registerAdvancement(root, "dragon_tame", FrameType.CHALLENGE, net.alp.monsterexpansion.item.ModItems.SKRYTHE_WING_MEMBRANE.get(), true, true, false, TameAnimalTrigger.TriggerInstance.tamedAnimal(EntityPredicate.Builder.entity().of(net.alp.monsterexpansion.entity.ModEntities.SKRYTHE.get()).build()));
+            Advancement dragonRide = registerAdvancement(root, "dragon_tame", FrameType.CHALLENGE, net.saksolm.monsterexpansion.item.ModItems.SKRYTHE_WING_MEMBRANE.get(), true, true, false, TameAnimalTrigger.TriggerInstance.tamedAnimal(EntityPredicate.Builder.entity().of(net.saksolm.monsterexpansion.entity.ModEntities.SKRYTHE.get()).build()));
 
             Advancement stage1 = registerAdvancement(root, "stage1", FrameType.CHALLENGE, Items.ANVIL, false, false, true);
             Advancement stage2 = registerAdvancement(root, "stage2", FrameType.CHALLENGE, Items.ANVIL, false, false, true);

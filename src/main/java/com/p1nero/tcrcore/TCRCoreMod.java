@@ -86,7 +86,7 @@ public class TCRCoreMod {
         PlayerEventListeners.illegalItems.add(artifacts.registry.ModItems.SCARF_OF_INVISIBILITY.get());
 
         LivingEntityEventListeners.illegalEntityTypes.addAll(List.of(
-//                AetherEntityTypes.FIRE_MINION.get(),
+//                AetherEntityTypes.FIRE_MINION.get(), //TODO
                 ModEntities.URCHINKIN.get(),
                 ModEntities.KOBOLETON.get(),
                 ModEntities.ELITE_DRAUGR.get(),

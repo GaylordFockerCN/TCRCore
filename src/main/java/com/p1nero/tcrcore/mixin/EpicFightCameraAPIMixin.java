@@ -6,10 +6,10 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import yesman.epicfight.client.world.capabilites.entitypatch.player.LocalPlayerPatch;
+import yesman.epicfight.api.client.camera.EpicFightCameraAPI;
 
-@Mixin(LocalPlayerPatch.class)
-public class LocalPlayerPatchMixin {
+@Mixin(EpicFightCameraAPI.class)
+public class EpicFightCameraAPIMixin {
 
     @Inject(method = "toggleLockOn", at = @At("HEAD"), remap = false)
     private void tcr$setLockOn(CallbackInfo ci) {

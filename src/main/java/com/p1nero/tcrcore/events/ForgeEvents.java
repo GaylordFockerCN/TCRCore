@@ -1,6 +1,5 @@
 package com.p1nero.tcrcore.events;
 
-import com.hm.efn.registries.EFNItem;
 import com.p1nero.cataclysm_dimension.CataclysmDimensionMod;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.dialog_lib.events.ServerNpcEntityInteractEvent;
@@ -12,7 +11,6 @@ import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRDimensions;
-import net.alp.monsterexpansion.entity.custom.AbstractLargeMonster;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -22,17 +20,15 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.saksolm.monsterexpansion.entity.custom.AbstractLargeMonster;
 import net.shelmarow.nightfall_invade.entity.NFIEntities;
 import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
 import org.merlin204.mimic.item.MimicItems;
 import org.merlin204.wraithon.util.PositionTeleporter;
-
-import java.util.Iterator;
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID)
 public class ForgeEvents {

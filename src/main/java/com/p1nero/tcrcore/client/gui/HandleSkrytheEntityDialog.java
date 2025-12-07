@@ -2,12 +2,12 @@ package com.p1nero.tcrcore.client.gui;
 
 import com.p1nero.dialog_lib.client.screen.builder.StreamDialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
-import net.alp.monsterexpansion.entity.custom.AbstractLargeMonster;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.saksolm.monsterexpansion.entity.custom.AbstractLargeMonster;
 
 @OnlyIn(Dist.CLIENT)
 public class HandleSkrytheEntityDialog {

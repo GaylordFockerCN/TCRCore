@@ -227,10 +227,10 @@ dependencies {
     implementation fg.deobf("curse.maven:p1neros-epic-x-cataclysm-1325059:7305680")
     implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7177400")
     implementation fg.deobf("curse.maven:entity-respawner-1363764:7105518")
-    implementation fg.deobf("curse.maven:nightfall-invade-1362602:7239394")
 
     implementation fg.deobf("libs:EpicFightNightfall:2.4")
-    implementation fg.deobf("curse.maven:combat-evolution-1377795:7239349")
+    implementation fg.deobf("curse.maven:nightfall-invade-1362602:7284519")
+    implementation fg.deobf("curse.maven:combat-evolution-1377795:7303078")
     implementation fg.deobf("libs:mimic:1.0.0")
 
 //    implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:6993788")
@@ -294,7 +294,7 @@ dependencies {
     implementation fg.deobf("curse.maven:dodos-mobs-1349823:7018547")
     implementation fg.deobf("curse.maven:mowzies-mobs-250498:6586086")
     implementation fg.deobf("libs:bossesrise:1.0.9.1")
-    implementation fg.deobf("curse.maven:monster-expansion-1336105:7052712")
+    implementation fg.deobf("curse.maven:monster-expansion-1336105:7268733")
     implementation fg.deobf("curse.maven:from-the-shadow-reborn-986907:7037169")
     implementation fg.deobf("curse.maven:more-hitboxes-1115989:6942239")
     implementation fg.deobf("libs:cataclysm_dimension:1.5.6")
@@ -365,9 +365,9 @@ dependencies {
     }
 
 ////    //FIXME run的时候得注释掉
-//    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
-//        jarJar.ranged(it, "[2.3.0,)")
-//    }
+    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
+        jarJar.ranged(it, "[2.3.0,)")
+    }
 //    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉

@@ -59,7 +59,7 @@
     "ClientAnimatorMixin",
     "ControlEngineMixin",
     "EFClientConfigMixin",
-    "LocalPlayerPatchMixin",
+    "EpicFightCameraAPIMixin",
     "LogoRendererMixin",
     "PanoramaRendererMixin",
     "SkillTreeScreenAccessor",

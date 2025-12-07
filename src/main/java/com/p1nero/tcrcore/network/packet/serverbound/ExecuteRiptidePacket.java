@@ -22,6 +22,7 @@ public record ExecuteRiptidePacket() implements BasePacket {
     @Override
     public void execute(Player player) {
         if(player instanceof ServerPlayer serverPlayer){
+            //TODO 高塔加进来后加回来
 //            if(serverPlayer.hasEffect(BTExtras.DEPTH_DROPPER_EFFECT.get())){
 //                return;
 //            }

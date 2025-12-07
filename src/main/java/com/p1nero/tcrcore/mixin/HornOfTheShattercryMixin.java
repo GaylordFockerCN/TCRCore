@@ -1,8 +1,8 @@
 package com.p1nero.tcrcore.mixin;
 
-import net.alp.monsterexpansion.item.HornOfTheShattercryItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
+import net.saksolm.monsterexpansion.item.HornOfTheShattercryItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

@@ -240,3 +240,4 @@ key_key.p1nero_ec.skill_2:key.keyboard.2:NONE
 key_key.p1nero_ec.skill_3:key.keyboard.3:NONE
 key_key.tcrcore.riptide:key.keyboard.left.alt:NONE
 key_keybind.invmove.toggleMove:key.keyboard.unknown:NONE
+key_key.modernui.zoom:key.keyboard.unknown
