@@ -59,7 +59,6 @@
     "ClientAnimatorMixin",
     "ControlEngineMixin",
     "EFClientConfigMixin",
-    "LocalPlayerPatchAccessor",
     "LocalPlayerPatchMixin",
     "LogoRendererMixin",
     "PanoramaRendererMixin",

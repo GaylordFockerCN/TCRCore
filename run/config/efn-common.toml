@@ -67,7 +67,7 @@
 	#End tick of time slowdown effect (in ticks)
 	#20 ticks = 1 second. When the time slowdown end
 	#This is a SERVER-SIDE setting
-	#Default: 8 ticks-lasts 3 ticks
+	#Default: 6 ticks
 	#Range: 1 ~ 100
 	yamatoParryTimeSlowDuration = 8
 	#Strength level of time slowdown effect
@@ -92,7 +92,7 @@
 	#End time of slowdown effect (in ticks)
 	#20 ticks = 1 second. When the time slowdown end
 	#This is a SERVER-SIDE setting
-	#Default: 7 ticks
+	#Default: 6 ticks
 	#Range: 1 ~ 100
 	DualswordDodgeTimeSlowDuration = 7
 	#Strength level of time slowdown effect

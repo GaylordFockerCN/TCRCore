@@ -198,7 +198,7 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     implementation "maven.modrinth:preloading-tricks:3.2.2"
-    implementation ("libs:tcrmodfilter:1.0.3")
+    implementation ("libs:tcrmodfilter:1.0.4")
 //    implementation ("curse.maven:preloading-tricks-1372086:7210447")
     implementation fg.deobf("curse.maven:accelerated-rendering-1314021:7196153")
 
@@ -210,7 +210,7 @@ dependencies {
     implementation fg.deobf("curse.maven:melody-938643:5109692")
 
     implementation fg.deobf("curse.maven:fluid-tick-structure-processor-1369713:7133622")
-    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7144412-sources-7144414")
+    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7303229-sources-7303230")
 //    implementation fg.deobf("libs:epicfight:20.13.2.5")
     implementation fg.deobf("libs:epicfight-skilltree:20.2.2.1")
 //    implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7129232-sources-7129236")
@@ -219,24 +219,21 @@ dependencies {
     implementation fg.deobf("curse.maven:epic-fight-indestructible-915201:7125700")
 
     implementation fg.deobf("curse.maven:epic-fight-wraithon-1354901:7068815")
-    implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7235628")
+    implementation fg.deobf("curse.maven:epic-fight-invincible-1184379:7303619")
     implementation fg.deobf("libs:p1nero_bow:20.13.1.4")
-//    implementation fg.deobf("curse.maven:p1neros-epic-bow-1338443:6964978")
-//    implementation fg.deobf("curse.maven:sword-soaring-1011068:7035767")
-    implementation fg.deobf("libs:sword_soaring:20.13.1.10")
+    implementation fg.deobf("curse.maven:sword-soaring-1011068:7305158")
     implementation fg.deobf("libs:dodge_parry_reward:20.12.1")
     implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7225899")
-    implementation fg.deobf("libs:p1nero_ec:20.13.0.4")
+    implementation fg.deobf("curse.maven:p1neros-epic-x-cataclysm-1325059:7305680")
     implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7177400")
     implementation fg.deobf("curse.maven:entity-respawner-1363764:7105518")
-
     implementation fg.deobf("curse.maven:nightfall-invade-1362602:7239394")
+
+    implementation fg.deobf("libs:EpicFightNightfall:2.4")
     implementation fg.deobf("curse.maven:combat-evolution-1377795:7239349")
     implementation fg.deobf("libs:mimic:1.0.0")
-//    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7140213")
-    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7232450")
 
-    implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:6993788")
+//    implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:6993788")
 
     implementation fg.deobf("curse.maven:better-lock-on-1339577:7037697")
 
@@ -264,7 +261,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:parcool-482378:6831668")
     implementation fg.deobf("curse.maven:official-epic-fight-x-parcool-1259252:6870242")
-    implementation fg.deobf("curse.maven:epic-fight-impactful-945308:6855087")
+    implementation fg.deobf("curse.maven:epic-fight-impactful-945308:7304553")
 
     implementation fg.deobf("curse.maven:clear-water-286098:4744630")
 

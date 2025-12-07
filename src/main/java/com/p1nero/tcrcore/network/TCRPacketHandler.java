@@ -31,7 +31,6 @@ public class TCRPacketHandler {
 
         register(CSTipPacket.class, CSTipPacket::decode);
 
-        register(SetTargetPacket.class, SetTargetPacket::decode);
         register(SyncTCRPlayerPacket.class, SyncTCRPlayerPacket::decode);
         register(AddAvlEntityAfterImageParticle.class, AddAvlEntityAfterImageParticle::decode);
 

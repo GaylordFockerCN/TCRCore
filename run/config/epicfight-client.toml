@@ -9,12 +9,8 @@ provider = "NULL"
 	long_press_count = 2
 	#Range: 0 ~ 30
 	max_hit_projectiles = 30
-	#Range: 0.0 ~ 1.0
-	laser_pointer_color = 0.328125
-	enable_laser_pointer = true
 	camera_auto_switch = true
 	blood_effects = true
-	aiming_correction = true
 	show_epicfight_attributes = true
 	first_person_model = true
 	enable_pov_action = false
@@ -32,7 +28,21 @@ provider = "NULL"
 	enable_player_vanilla_model = true
 	#Allowed Values: ADAPTIVE, SWITCH_MODE
 	preference_work = "ADAPTIVE"
-	mining_preferred_items = []
+	mining_preferred_items = ["minecraft:air"]
+	#Range: 0.0 ~ 1.0
+	target_outline_color = 0.0
+	#Defines how the camera toggles perspectives.
+	#
+	#    1. Vanilla (Default)
+	#       Uses Minecraft’s default behavior.
+	#       Cycles through all available perspectives.
+	#
+	#    2. Skip Third-Person Front Perspective
+	#       Skips only the front view when toggling.
+	#       Other perspectives remain available.
+	#
+	#Allowed Values: VANILLA, SKIP_THIRD_PERSON_FRONT
+	camera_perspective_toggle_mode = "SKIP_THIRD_PERSON_FRONT"
 
 	[ingame.ui]
 		stamina_bar_x = 120
@@ -61,4 +71,17 @@ provider = "NULL"
 		charging_bar_x_base = "CENTER"
 		#Allowed Values: TOP, BOTTOM, CENTER
 		charging_bar_y_base = "CENTER"
+
+	[ingame.camera]
+		#Allowed Values: ALWAYS_BACK, WHEN_AIMING, ALWAYS
+		camera_mode = "ALWAYS"
+		#Range: -10 ~ 10
+		horizontal_location = -4
+		#Range: -2 ~ 5
+		vertical_location = 0
+		#Range: 6 ~ 10
+		zoom = 7
+		#Range: 5 ~ 25
+		lock_on_range = 20
+		lock_on_quick_shift = true
 
