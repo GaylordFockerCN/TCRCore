@@ -12,6 +12,11 @@
   ],
   "entityWhitelist": [
     "botania:mana_burst",
+    "cinematiccataclysm:maledictus_cutscene",
+    "cinematiccataclysm:scylla_cutscene",
+    "cinematiccataclysm:ignis_cutscene",
+    "cinematiccataclysm:ancient_remnant_cutscene",
+    "cinematiccataclysm:leviathan_cutscene",
     "drg_flares:drg_flares",
     "quark:soul_bead",
     "sword_soaring:babylon",
