@@ -25,7 +25,7 @@
         "walk": "epicfight:biped/living/walk",
         "chase": "epicfight:biped/living/walk",
         "mount": "epicfight:biped/living/mount",
-        "fall": "epicfight:biped/living/fall",
+        "fall": "epicfight:biped/living/swim",
         "death": "epicfight:biped/living/death"
     },
 	"humanoid_weapon_motions": [  

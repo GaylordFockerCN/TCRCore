@@ -14,6 +14,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+    id("me.modmuss50.mod-publish-plugin") version "1.1.0"
 }
 
 apply plugin: 'org.spongepowered.mixin'
@@ -299,6 +300,7 @@ dependencies {
     implementation fg.deobf("curse.maven:more-hitboxes-1115989:6942239")
     implementation fg.deobf("libs:cataclysm_dimension:1.5.6")
     implementation fg.deobf("curse.maven:lendercataclysm-551586:6906993")
+    implementation fg.deobf("curse.maven:cinematic-cataclysm-1399324:7302287")
     implementation fg.deobf("curse.maven:curios-309927:6418456")
     implementation fg.deobf("curse.maven:lionfish-api-1001614:5922047")
 
@@ -365,7 +367,7 @@ dependencies {
     }
 
 ////    //FIXME run的时候得注释掉
-    implementation(jarJar("io.github.steveplays28:noisium:2.3.0")) {
+    compileOnly(jarJar("io.github.steveplays28:noisium:2.3.0")) {
         jarJar.ranged(it, "[2.3.0,)")
     }
 //    implementation fg.deobf("curse.maven:armourers-workshop-229523:6965580")//FIXME runData时需注释掉
@@ -472,4 +474,31 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+
+def getFullModVersion() {
+    return "${mod_version}-mc${minecraft_version}-forge"
+}
+
+publishMods {
+    def releaseNotesFile = project.file("RELEASE_NOTES.md")
+    def releaseNotesContent = releaseNotesFile.text
+
+    changelog = """
+|${releaseNotesContent}
+""".stripMargin().trim()
+
+    modLoaders.add("forge")
+    type = STABLE
+    displayName = getFullModVersion()
+    file = tasks.jar.archiveFile
+
+    curseforge {
+        accessToken = System.getenv("CURSEFORGE_TOKEN")
+        projectId = "1325071"
+        minecraftVersions.add(minecraft_version)
+        projectSlug = "tcr-core"
+    }
+
 }
