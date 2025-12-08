@@ -492,7 +492,7 @@ publishMods {
     modLoaders.add("forge")
     type = STABLE
     displayName = getFullModVersion()
-    file = tasks.jar.archiveFile
+    file = tasks.jarJar.archiveFile
 
     curseforge {
         accessToken = System.getenv("CURSEFORGE_TOKEN")
