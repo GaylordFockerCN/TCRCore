@@ -275,7 +275,7 @@
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.description1": "击败潜伏在\u00266[{structure.ribbits.ribbit_village}]\u0026r的\u00262{entity.fromtheshadows.bulldrogioth}\u0026r，夺回{item.cataclysm.abyss_eye}&r",
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.description2": "\u0026l\u0026c战利品：{item.fromtheshadows.crimson_shell}&r",
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.description3": "可在{block.minecraft.crafting_table}合成\u00266岩壳套装\u0026r",
-  "ftbquests.chapter.chaptertcr1.quest4485700162389836201.description4": "\u0026l\u0026c额外奖励：使用{item.minecraft.emerald}与当地{entity.ribbits.ribbit}交易解锁\u0026r\u00266{skill.tcrcore.water_avoid}\u0026r\u0026r",
+  "ftbquests.chapter.chaptertcr1.quest4485700162389836201.description4": "\u0026l\u0026c额外奖励：使用{block.minecraft.amethyst_block}与当地{entity.ribbits.ribbit}交易解锁\u0026r\u00266{skill.tcrcore.water_avoid}\u0026r\u0026r",
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.subtitle": "“深渊吞噬陆地时，祂将自己缝进海床，血肉化成气泡之城”",
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.task.2884118075416937922.title": "深渊之火种",
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.title": "深渊之火种\u0026a[难度☆]\u0026r",
