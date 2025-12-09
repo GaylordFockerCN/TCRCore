@@ -1,0 +1,11 @@
+{
+  "type": "tcrcore:sanctum_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "tcrcore:air"
+    },
+    "settings": "tcrcore:sea"
+  }
+}

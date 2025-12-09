@@ -211,8 +211,7 @@ dependencies {
     implementation fg.deobf("curse.maven:melody-938643:5109692")
 
     implementation fg.deobf("curse.maven:fluid-tick-structure-processor-1369713:7133622")
-    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7303229-sources-7303230")
-//    implementation fg.deobf("libs:epicfight:20.13.2.5")
+    implementation fg.deobf("curse.maven:epic-fight-mod-405076:7311949-sources-7311950")
     implementation fg.deobf("libs:epicfight-skilltree:20.2.2.1")
 //    implementation fg.deobf("curse.maven:epic-fight-skill-tree-1295882:7129232-sources-7129236")
     implementation fg.deobf("curse.maven:p1nero-better-structure-block-970671:6817772")
