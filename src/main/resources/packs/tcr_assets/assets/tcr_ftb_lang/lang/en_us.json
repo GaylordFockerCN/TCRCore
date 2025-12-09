@@ -283,7 +283,7 @@
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.description1": "Defeat the §2Bulldrogioth§r lurking in §6[{structure.ribbits.ribbit_village}]§r to reclaim the Eye of the Abyss.",
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.description2": "§l§cLoot: Crimson Carapace§6",
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.description3": "Can be crafting with the Crafting Table for §6Rock Shell Set§r",
-  "ftbquests.chapter.chaptertcr1.quest4485700162389836201.description4": "§l§cExtra Reward: Trade with local {entity.ribbits.ribbit} using emeralds to unlock §r§6【Water Avoidance Charm】§r§r",
+  "ftbquests.chapter.chaptertcr1.quest4485700162389836201.description4": "§l§cExtra Reward: Trade with local {entity.ribbits.ribbit} using {block.minecraft.amethyst_block} to unlock §r§6【Water Avoidance Charm】§r§r",
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.subtitle": "\"When the abyss devoured the land, He sewed Himself into the seabed, His flesh becoming a city of bubbles.\"",
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.task.2884118075416937922.title": "Abyss Ember",
   "ftbquests.chapter.chaptertcr1.quest4485700162389836201.title": "Abyss Ember§a[Difficulty☆]§r",
