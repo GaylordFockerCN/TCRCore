@@ -19,24 +19,24 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /**
  *  取消前置眼睛限制
  */
-@Mixin(value = BTMonolith.class, remap = false)
+@Mixin(value = BTMonolith.class)
 public abstract class BTMonolithMixin extends Entity {
 
-    @Shadow
+    @Shadow(remap = false)
     @Final
     private EntityType<?> monolithType;
 
-    @Shadow
+    @Shadow(remap = false)
     @Final
     private Item correctMonolithKey;
 
-    @Shadow
+    @Shadow(remap = false)
     public abstract int getKeyCountInEntity();
 
-    @Shadow
+    @Shadow(remap = false)
     protected abstract void increaseKeyCount(Player player, InteractionHand hand);
 
-    @Shadow
+    @Shadow(remap = false)
     public abstract void setEyeSlotDisplayed();
 
     public BTMonolithMixin(EntityType<?> p_19870_, Level p_19871_) {
